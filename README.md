@@ -90,11 +90,10 @@
 
 ## 联系我
 
-**微信群：**
+**微信：**
 
-> 如果链接失效了，可以 [提一个 issue 说明](https://github.com/openimsdk/openkf/issues/new/choose)
+<p><img src="http://sm.nsddd.top/0d6775b78a7bd57e0d8b45cd695bf0df.png" alt="WeChat Group" style="max-width:30%;height:auto;"></p>
 
-![024ef07a8c5e56d914a677bb54cf587](http://sm.nsddd.top/sm202311271344480.jpg)
 
 ## 数字游民资源
 
