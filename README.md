@@ -91,6 +91,7 @@
 ## 联系我
 
 **微信：**
+> 如果要申请加入远程工作 & 生活旅游社群，备注 `称呼-dn`
 
 <p><img src="http://sm.nsddd.top/0d6775b78a7bd57e0d8b45cd695bf0df.png" alt="WeChat Group" style="max-width:30%;height:auto;"></p>
 
