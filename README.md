@@ -23,6 +23,10 @@
     - 微信公众号：[NCC社区](https://mp.weixin.qq.com/s/KBty2Av38St0i-cU0qvAwQ)
     - 微信小程序：NCC游民村
     - 小红书：[NCC共创共居社区](http://xhslink.com/MsnbDu)
+- **Q Space社区**： QS 社区最开始去呆过一个月，预约安吉没有床位了，QS 价格非常优惠，性价比很高。
+    - 地址： Q* Space地处浙江省杭州市萧山区梅林村，距离萧山机场20分钟车程，离地铁站15分钟。
+    - 微信公众号：Q* Space社区
+    - 小红书： [Q*Space社区](https://www.xiaohongshu.com/user/profile/64c1f883000000001403b528?xsec_token=&xsec_source=pc_search）
 - **其他社区（没去过，不好评价）**
     - 天星村
     - NCC黑多岛
@@ -113,6 +117,7 @@
 ## 数字游民资源
 
 - [数字游民部落](https://jarodise.com/) - Jarod Zhang的博客
+- [不上班研究所](https://www.toocool.cc/) - 专注于研究低成本互联网创业项目，靠谱的副业赚钱干货，自由职业者远程工作信息，互联网诈骗套路揭秘等。
 - [Nomad List](https://nomadlist.com/) - Best Places to Live for Digital Nomads
 
 ## 参考资料
