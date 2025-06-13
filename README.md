@@ -19,11 +19,20 @@
 
 ## ✨ 为什么选择这份指南？
 
-> **"我从大学开始远程工作，从 OpenIM 开源社区实习到外企工作，再到现在的 AI 创业，完全的旅居和远程工作让我走过了泰国、尼泊尔、韩国、马来西亚、新加坡等7个国家，国内更是深度体验了大理、杭州、深圳、青岛、昆明等数字游民圣地..."** — @cubxxw
-> 喜欢记录和分享，如果你有兴趣可以阅读我的旅游的笔记 [polarsteps-cubxxw](https://www.polarsteps.com/cubxxw)
-> 个人介绍 [about me](https://nsddd.top/zh/about/)
-> 旅途中的思考笔记 [flomo-original](https://diary.nsddd.top/flomo-original/)
-> 小红书 [RedNote](https://www.xiaohongshu.com/user/profile/62a33af9000000001b025dd3)
+> [!TIP]
+> @cubxxw：从大学开启远程工作模式，历经OpenIM开源社区实习、外企任职，现投身AI创业。完全旅居与远程工作的经历，足迹遍布泰国、尼泊尔、韩国、马来西亚、新加坡等7个国家；国内深度体验大理、杭州、深圳、青岛、昆明等「数字游民圣地」。  
+
+**「内容分享与链接聚合」**  
+- **旅游的跟踪**：[polarsteps-cubxxw](https://www.polarsteps.com/cubxxw)  
+- **个人介绍**：[about me](https://nsddd.top/zh/about/)  
+- **旅途思考笔记**：[flomo-original](https://diary.nsddd.top/flomo-original/)  
+- **小红书平台**：[RedNote](https://www.xiaohongshu.com/user/profile/62a33af9000000001b025dd3)  
+
+
+### 优化说明  
+1. **结构分层**：将经历与分享链接分为独立模块，通过标题与符号（「」/-）区分层级，提升阅读节奏感。  
+2. **关键信息强化**：用「数字游民圣地」标注国内城市属性，链接部分采用统一列表格式，便于快速定位。  
+3. **引用格式规范**：保留原引用语气，调整标点符号（如中文引号「」替代英文""），符合中文阅读习惯。
 
 ### 💫 这不仅仅是一份指南，更是
 
