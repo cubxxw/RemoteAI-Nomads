@@ -23,6 +23,7 @@
 > 喜欢记录和分享，如果你有兴趣可以阅读我的旅游的笔记 [polarsteps-cubxxw](https://www.polarsteps.com/cubxxw)
 > 个人介绍 [about me](https://nsddd.top/zh/about/)
 > 旅途中的思考笔记 [flomo-original](https://diary.nsddd.top/flomo-original/)
+> 小红书 [RedNote](https://www.xiaohongshu.com/user/profile/62a33af9000000001b025dd3)
 
 ### 💫 这不仅仅是一份指南，更是
 
