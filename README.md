@@ -466,7 +466,7 @@
 - 🇨🇳 **云南三城记** (2024.9)：昆明-大理-丽江48天
 
 > 📖 **完整旅行记录**：[Polarsteps主页](https://www.polarsteps.com/cubxxw)
-> 🌐 **个人博客**：[nsddd.top/dn](https://nsddd.top/dn)
+> 🌐 **个人博客**：[cubxxw.com](https://cubxxw.com)
 
 ### 💭 成长感悟
 
@@ -630,9 +630,9 @@
 
 ### 📖 相关文章
 
-- [如何开始数字游民生活？完整指南](https://nsddd.top/dn)
-- [远程工作效率提升的10个技巧](https://nsddd.top/dn)
-- [东南亚数字游民城市深度对比](https://nsddd.top/dn)
+- [如何开始数字游民生活？完整指南](https://cubxxw.com)
+- [远程工作效率提升的10个技巧](https://cubxxw.com)
+- [东南亚数字游民城市深度对比](https://cubxxw.com)
 
 ---
 
