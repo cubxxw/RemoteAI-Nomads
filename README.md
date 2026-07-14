@@ -593,10 +593,12 @@
 
 **🔥 想要加入数字游民大家庭？**
 
-添加微信：`nsddd_top`  
+添加微信：`cubxxwAI`  
 备注：`姓名-DN`
 
-![WeChat QR Code](.//wechat.jpg)
+<a href="./wechat.jpg" target="_blank"><img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-cubxxwAI-brightgreen?logo=wechat&style=flat-square"></a>
+
+<img src="./wechat.jpg" alt="WeChat QR Code" width="240" />
 
 *只接纳高质量远程工作者 • AI创业者 • 数字游民社群*
 
