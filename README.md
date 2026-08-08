@@ -505,6 +505,7 @@
 - **ExpressVPN**：全球网络访问
 - **Google Translate**：实时翻译
 - **Maps.me**：离线地图导航
+- **[UK SIM Keep-Number Reminder](https://getgiffgaff.com/tools/keep-number-reminder/)**：为低频使用的英国 giffgaff SIM 在浏览器本地生成第 5 个月缓冲提醒并导出 ICS 日历；无需注册，不收集号码或账号资料。第 5 个月是提前复核缓冲，不是运营商期限或号码状态保证。
 
 #### 📋 **效率工具**
 - **TripIt**：行程自动整理
