@@ -23,7 +23,7 @@
 
 [Booking](https://www.booking.com/)、[Airbnb](https://www.airbnb.com/)可比较实际日期的短住与月住报价。另查房东近期评价、平台最终账单和取消条款；不要只比较搜索列表里的最低起价。
 
-先看[目的地页](../README.md#全球目的地)里的具体办公入口，再选择通勤方便的住宿。社区规模与活动随季节变，运营方名单不能证明每天有人一起工作。
+先看[目的地页](../README.md#destinations)里的具体办公入口，再选择通勤方便的住宿。社区规模与活动随季节变，运营方名单不能证明每天有人一起工作。
 
 [The Wired Nomad](https://thewirednomad.com/)用于发现带网络资料的住房；[r/digitalnomad](https://www.reddit.com/r/digitalnomad/)用于搜同季节、同工作类型的体验。两者都需要进一步核对，不能代替房间通话测试。
 

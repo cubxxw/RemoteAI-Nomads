@@ -1,6 +1,6 @@
 # 先验住处和工位，再决定住一个月
 
-[返回首页](../README.md) · [目的地](../README.md#全球目的地) · [入境与工作](entry-and-work.md)
+[返回首页](../README.md) · [目的地](../README.md#destinations) · [入境与工作](entry-and-work.md)
 
 目的地好玩不等于工作日过得舒服。下面是本指南的选址方法，属于编辑建议；用你自己的会议、住房报价和试住结果验证。
 
