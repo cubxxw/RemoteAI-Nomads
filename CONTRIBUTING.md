@@ -35,4 +35,4 @@
 
 检查本地文件和锚点链接，确认每个价格都有币种及服务范围；写入真实核读日。中文定稿按作者声音与去 AI 味白名单做最小检查，保留事实、限定词和引用。
 
-README每期保留一张十城主表，短评不超过25字，同城只出现一次。详细口径放[数据与方法](web/docs/data-and-methods.md)。在`web/`运行`npm run seasonal:readme`只更新主表与本期变化，提交前用`npm run seasonal:readme -- --check`检查；不填写未经实现或没有依据的新增、涨跌。
+README每期保留一张十城主表，短评不超过25字，主表内同城只出现一次。国内推荐与需求分类另列，城市、数值和“更多”链接均由网页同一排序逻辑生成；国内缺评分的目的地只给资料入口。详细口径放[数据与方法](web/docs/data-and-methods.md)。在`web/`运行`npm run seasonal:readme`更新主表、国内推荐、需求分类与本期变化，提交前用`npm run seasonal:readme -- --check`检查；不填写未经实现或没有依据的新增、涨跌。

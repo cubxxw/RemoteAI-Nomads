@@ -4,6 +4,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parseState, rankCities, SEASONAL_VIEW, stateParams, flag, PRESETS, esc } from '../public/modules/ranking.js';
 import { UI_PRESETS, quickFilters } from '../public/modules/rank-controls.js';
 import { recommendationEligible } from '../public/modules/recommendation-policy.js';
+import { DOMESTIC_START, DOMESTIC_END, NEEDS_START, NEEDS_END, DOMESTIC_COUNT, domesticRecommendations, recommendationViews, renderDomesticBlock, renderNeedsBlock } from './readme-discovery.mjs';
 
 const webRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const GROUP_KEYS = ['default', 'budget', 'internet', 'visa', 'safe'];
@@ -21,7 +22,6 @@ const normalized = value => String(value).normalize('NFKC').replace(/\s/g,'').to
 const temperature = city => Math.round(city.months[SEASONAL_VIEW.month - 1].meanC) + '°C';
 const cost = city => '$' + Math.round(city.budget).toLocaleString('en-US');
 const visaLabels = {domestic:'境内',visa_free:'免签',evisa:'电子签',arrival:'落地签',visa_required:'需签证',permit:'需许可'};
-export const needLinks = ['budget','visa','winter'].map(key=>({key,label:{budget:'省钱优先',visa:'签证免签',winter:'冬天避寒'}[key],url:siteOrigin+'/?preset='+key}));
 
 export function assertReaderCopy(text) {
   const banned = BANNED_TERMS.find(term=>normalized(text).includes(normalized(term)));
@@ -148,7 +148,11 @@ export function renderChangesBlock(catalog,editorial,edition) {
   const lines=[CHANGES_START,'## 本期变化',''];
   for (const change of edition.changes) {
     let text;
-    if (change.kind==='layout') text=`本月推荐合并为${TOP_COUNT}城单表，每座城市只出现一次。`;
+    if (change.kind==='layout') text=`本月${TOP_COUNT}城之外，补充国内${DOMESTIC_COUNT}城与${recommendationViews().length}类需求推荐。`;
+    else if (change.kind==='domestic_coverage') {
+      const domestic=domesticRecommendations(catalog);
+      text=`国内目录已收录${domestic.total}座目的地，大理、万宁等可直接查看。`;
+    }
     else if (change.kind==='preset_weights') {
       const values=[PRESETS.budget.weights.cost,PRESETS.internet.weights.internet,PRESETS.safe.weights.safety];
       if (new Set(values).size!==1 || !Number.isFinite(change.previous_primary_weight) || change.previous_primary_weight<=values[0]) throw new Error('权重变化与当前预设不符。');
@@ -178,10 +182,11 @@ export function replaceSeasonalBlock(readme,block,start=START,end=END) {
   if (next.a!==0 || next.b!==block.length) throw new Error('生成内容越过区块标记。');
   return readme.slice(0,old.a)+block+readme.slice(old.b);
 }
-export function replaceSeasonalBlocks(readme,table,changes) {
-  const a=bounds(readme,START,END),b=bounds(readme,CHANGES_START,CHANGES_END);
-  if (!(a.b<=b.a || b.b<=a.a)) throw new Error('README区块标记不可嵌套或交叉。');
-  return replaceSeasonalBlock(replaceSeasonalBlock(readme,table),changes,CHANGES_START,CHANGES_END);
+export function replaceSeasonalBlocks(readme,table,changes,discovery=[]) {
+  const blocks=[{start:START,end:END,block:table},{start:CHANGES_START,end:CHANGES_END,block:changes},...discovery];
+  const ranges=blocks.map(({start,end})=>bounds(readme,start,end)).sort((a,b)=>a.a-b.a);
+  if (ranges.some((range,index)=>index>0 && ranges[index-1].b>range.a)) throw new Error('README区块标记不可嵌套或交叉。');
+  return blocks.reduce((text,{block,start,end})=>replaceSeasonalBlock(text,block,start,end),readme);
 }
 
 export async function generateSeasonalReadme({
@@ -193,7 +198,10 @@ export async function generateSeasonalReadme({
   const [original,rawCatalog,rawEditorial,rawEdition]=await Promise.all([readFile(readmePath,'utf8'),readFile(rankingsPath,'utf8'),readFile(editorialPath,'utf8'),readFile(editionPath,'utf8')]);
   const catalog=JSON.parse(rawCatalog),editorial=JSON.parse(rawEditorial),edition=JSON.parse(rawEdition);
   const table=renderSeasonalBlock(catalog,editorial,edition),changes=renderChangesBlock(catalog,editorial,edition);
-  const updated=replaceSeasonalBlocks(original,table,changes);
+  const updated=replaceSeasonalBlocks(original,table,changes,[
+    {start:DOMESTIC_START,end:DOMESTIC_END,block:renderDomesticBlock(catalog)},
+    {start:NEEDS_START,end:NEEDS_END,block:renderNeedsBlock(catalog)},
+  ]);
   assertReaderCopy(updated);
   return {readmePath,original,updated};
 }
@@ -201,11 +209,11 @@ async function main(args) {
   if (args.some(arg=>arg!=='--check') || args.length>1) throw new Error('用法：node scripts/update-seasonal-readme.mjs [--check]');
   const result=await generateSeasonalReadme();
   if (args.includes('--check')) {
-    if (result.original!==result.updated) throw new Error('README本月十城或本期变化与资料不一致，请运行 npm run seasonal:readme。');
-    console.log('README十城、短评与本期变化检查通过。');
+    if (result.original!==result.updated) throw new Error('README本月十城、国内推荐、需求分类或本期变化与资料不一致，请运行 npm run seasonal:readme。');
+    console.log('README十城、国内推荐、需求分类与本期变化检查通过。');
   } else {
     if (result.original!==result.updated) await writeFile(result.readmePath,result.updated);
-    console.log(`README已同步${SEASONAL_VIEW.id}十城主表与本期变化。`);
+    console.log(`README已同步${SEASONAL_VIEW.id}十城、国内推荐、需求分类与本期变化。`);
   }
 }
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href===import.meta.url) main(process.argv.slice(2)).catch(error=>{console.error(error.message);process.exitCode=1;});
