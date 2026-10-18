@@ -8,13 +8,13 @@
 
 以下是 2026 年 10–12 月的出发起点，适合先试住一周，再决定是否住一个月。季节是历史规律，出发当天仍要核对天气和街区现状。
 
-| 你想解决的问题 | 可以先看 | 决定前确认一件事 |
-| --- | --- | --- |
-| 按中国时间上班，少改作息 | [吉隆坡](https://nomads.cubxxw.com/cities/kuala-lumpur/) | 与中国同一时区；从房门到工位的通勤是否舒服。 |
-| 秋天住在有烟火气的城市 | [河内](https://nomads.cubxxw.com/cities/hanoi/) | 10–11 月可先比较；房间噪音要在工作时段确认。 |
-| 找固定工位，慢慢认识同伴 | [清迈](https://nomads.cubxxw.com/cities/chiang-mai/) | 11–12 月优先；先问住处和工位现状，长住前查空气质量。 |
-| 英语环境，吃饭和日常方便 | [槟城](https://nomads.cubxxw.com/cities/penang/) | 看清住处到工位的步行路线，下雨时也能走。 |
-| 接近欧洲团队的工作时间 | [拉斯帕尔马斯](https://nomads.cubxxw.com/cities/las-palmas/) | 先落实适用签证和住房，再决定停留时间。 |
+| 你更在意 | 先看这里，再确认条件 |
+| --- | --- |
+| 按中国时间上班 | [吉隆坡](https://nomads.cubxxw.com/cities/kuala-lumpur/)与中国同一时区，少改作息；从房门到工位的通勤是否舒服。 |
+| 秋天的城市生活 | [河内](https://nomads.cubxxw.com/cities/hanoi/)有烟火气，10–11 月可先比较；房间噪音要在工作时段确认。 |
+| 固定工位和同伴 | [清迈](https://nomads.cubxxw.com/cities/chiang-mai/)可以慢慢认识人，11–12 月优先；先问住处和工位现状，长住前查空气质量。 |
+| 英语和日常便利 | [槟城](https://nomads.cubxxw.com/cities/penang/)吃饭方便；看清住处到工位的步行路线，下雨时也能走。 |
+| 欧洲团队的作息 | [拉斯帕尔马斯](https://nomads.cubxxw.com/cities/las-palmas/)接近欧洲团队的工作时间；先落实适用签证和住房，再决定停留时间。 |
 
 [更完整的目的地笔记](guides/destination-notes.md)保留街区、工位报价和出处。想去兰塔岛，注意 [KoHub 的运营季从 11 月 1 日开始](https://kohub.org/)；越南中部秋冬出行先看[官方气候说明](https://vietnam.travel/things-to-do/weather-and-climate-vietnam)，雨季与河内不同。
 
