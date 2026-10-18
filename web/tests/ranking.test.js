@@ -64,3 +64,12 @@ test('abroad excludes mainland and Hong Kong, Macao and Taiwan entries without l
  assert.deepEqual(rankCities(catalog,state).map(c=>c.countryCode),['JP','TH']);
  assert.equal(stateParams(state).get('abroad'),'1');
 });
+
+test('stable preset links resolve shared weights and conditions while explicit filters override defaults',()=>{
+ const budget=parseState(new URL('https://nomads.test/?preset=budget'));assert.equal(budget.weights.cost,50);assert.equal(budget.weights.safety,25);
+ const visa=parseState(new URL('https://nomads.test/?preset=visa'));assert.equal(visa.visa,'visa_free');
+ const winter=parseState(new URL('https://nomads.test/?preset=winter'));assert.equal(winter.month,1);assert.equal(winter.warm,true);
+ const override=parseState(new URL('https://nomads.test/?preset=winter&month=2&warm=0&w=0,100,0,0,0,0'));assert.equal(override.month,2);assert.equal(override.warm,false);assert.equal(override.weights.cost,100);
+ assert.equal(parseState(new URL('https://nomads.test/?preset=visa&visa=')).visa,'');
+ for(const key of ['unknown','constructor','__proto__'])assert.deepEqual(parseState(new URL('https://nomads.test/?preset='+key)).weights,DEFAULT_WEIGHTS);
+});

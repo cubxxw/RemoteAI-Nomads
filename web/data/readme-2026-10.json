@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "month": "2026-10",
+  "updated_at": "2026-10-18",
+  "city_notes": [
+    {
+      "slug": "ubud",
+      "reasons": [
+        {
+          "text": "Outpost有通话间，巴厘岛也能安排会议",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "Outpost",
+              "url": "https://destinationoutpost.co/cowork-in-ubud/"
+            }
+          ]
+        },
+        {
+          "text": "{temperature}的巴厘岛，乌布有Outpost工位",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fethiye",
+      "reasons": [
+        {
+          "text": "厄吕代尼兹的蓝色海湾，十月还能续夏天",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "厄吕代尼兹",
+              "url": "https://goturkiye.com/branding/press-releases/summer-continues-in-the-turkish-riviera-and-the-turkaegean"
+            }
+          ]
+        },
+        {
+          "text": "费特希耶的十月海岸约{temperature}",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "hangzhou",
+      "reasons": [
+        {
+          "text": "西湖边约{temperature}，下班还能绕湖走一段",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        },
+        {
+          "text": "杭州{temperature}的秋天，把西湖散步接进日常",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "shenzhen",
+      "reasons": [
+        {
+          "text": "华强北一站配齐元器件，适合做硬件原型",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "华强北",
+              "url": "https://www.szft.gov.cn/ftxx/xwdt/ftdt/content/post_12972999.html"
+            }
+          ]
+        },
+        {
+          "text": "深圳仍有{temperature}，硬件协作集中在华强北",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "antalya",
+      "reasons": [
+        {
+          "text": "十月逛卡莱伊奇老城，比盛夏走得舒服",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "卡莱伊奇",
+              "url": "https://goturkiye.com/antalya/see"
+            }
+          ]
+        },
+        {
+          "text": "{temperature}逛卡莱伊奇，安塔利亚的秋天刚好",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://goturkiye.com/antalya/see",
+          "title": "Antalya: Kaleiçi",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_tourism_body",
+          "limits": "地点与设施说明；天气列另取城市历史均温，不将旅游推广语当作逐日预报。"
+        }
+      ]
+    },
+    {
+      "slug": "lisbon",
+      "reasons": [
+        {
+          "text": "里斯本坡道{temperature}，欧洲作息更好配合",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        },
+        {
+          "text": "里斯本约{temperature}，坡道散步换上秋装",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "malaga",
+      "reasons": [
+        {
+          "text": "马拉加{temperature}，把午休留给地中海",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        },
+        {
+          "text": "地中海边的马拉加，十月约{temperature}",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pokhara",
+      "reasons": [
+        {
+          "text": "秋天去费瓦湖，等鱼尾峰映进湖面",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "费瓦湖",
+              "url": "https://ntb.gov.np/en/the-beauty-of-pokhara-in-autumn"
+            }
+          ]
+        },
+        {
+          "text": "博卡拉月花费≈{cost}，秋天围着费瓦湖生活",
+          "facts": [
+            {
+              "kind": "cost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "chengdu",
+      "reasons": [
+        {
+          "text": "国庆后回到成都街区，约{temperature}过秋天",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        },
+        {
+          "text": "成都十月约{temperature}，节后回到街区日常",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "las-palmas",
+      "reasons": [
+        {
+          "text": "拉斯坎特拉斯海滩，秋天也能沿海过日子",
+          "facts": [
+            {
+              "kind": "source",
+              "token": "拉斯坎特拉斯",
+              "url": "https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/"
+            }
+          ]
+        },
+        {
+          "text": "拉斯帕尔马斯约{temperature}，秋天沿海散步",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.hellocanaryislands.com/beaches/gran-canaria/las-canteras-beach/",
+          "title": "Las Canteras beach — Hello Canary Islands",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_tourism_body",
+          "limits": "地点与设施说明；天气列另取城市历史均温，不将旅游推广语当作逐日预报。"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "kind": "layout",
+      "recorded_at": "2026-10-18"
+    },
+    {
+      "kind": "preset_weights",
+      "previous_primary_weight": 80,
+      "recorded_at": "2026-10-18"
+    },
+    {
+      "kind": "travel_advisories",
+      "recorded_at": "2026-10-18"
+    },
+    {
+      "kind": "quick_filters",
+      "recorded_at": "2026-10-18"
+    }
+  ]
+}

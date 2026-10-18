@@ -85,3 +85,18 @@ test('worker keeps public browsing available during D1 outage and reports databa
   const health=await worker.fetch(new Request('https://nomads.example/healthz'),production,{waitUntil(){}});assert.equal(health.status,503);assert.equal((await health.json()).ok,false);
  }finally{if(before===undefined)delete globalThis.caches;else globalThis.caches=before;}
 });
+
+test('stable README preset links render matching rows and selected controls before JavaScript during an outage',async()=>{
+ const catalog=JSON.parse(await readFile(new URL('../public/published-pages/rankings.json',import.meta.url),'utf8'));
+ const env={PREVIEW:'false',SITE_ORIGIN:'https://nomads.example',ASSETS:{async fetch(request){return new URL(request.url).pathname.endsWith('manifest.json')?Response.json({version:1,paths:['/','/cities/']}):Response.json(catalog)}}};
+ for(const key of ['budget','visa','winter'])for(const path of ['/','/cities/']){
+  const url=new URL('https://nomads.example'+path+'?preset='+key),state=parseState(url),expected=rankCities(catalog,state).slice(0,40);
+  const response=await publishedFallback(new Request(url),env);assert.equal(response.status,200);
+  const body=await response.text(),slugs=[...body.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].map(match=>match[1]);
+  assert.deepEqual(slugs,expected.map(city=>city.slug));
+  assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
+  assert.match(body,/content="noindex,follow"/);
+  if(key==='visa')assert.ok(expected.every(city=>city.visa.code==='visa_free'));
+  if(key==='winter')assert.equal(state.month,1);
+ }
+});

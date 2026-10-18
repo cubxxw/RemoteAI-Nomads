@@ -1,21 +1,36 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { parseState, rankCities, SEASONAL_VIEW, stateParams } from '../public/modules/ranking.js';
-import { UI_PRESETS } from '../public/modules/rank-controls.js';
+import { parseState, rankCities, SEASONAL_VIEW, stateParams, flag, PRESETS } from '../public/modules/ranking.js';
+import { UI_PRESETS, quickFilters } from '../public/modules/rank-controls.js';
+import { recommendationEligible } from '../public/modules/recommendation-policy.js';
 
 const webRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const GROUP_KEYS = ['default', 'budget', 'internet', 'visa', 'safe'];
-export const START = '<!-- seasonal:2026-10:start -->';
-export const END = '<!-- seasonal:2026-10:end -->';
+export const START = '<!-- seasonal:table:start -->';
+export const END = '<!-- seasonal:table:end -->';
+export const CHANGES_START = '<!-- seasonal:changes:start -->';
+export const CHANGES_END = '<!-- seasonal:changes:end -->';
+export const BANNED_TERMS = ['先确认','别预设','不能视为','仅供参考','核读','旧资料','旧评分','不是 Mbps','并非四个平台'];
+export const MAX_REASON_LENGTH = 25;
+export const TOP_COUNT = 10;
 const siteOrigin = 'https://nomads.cubxxw.com';
-const guide = 'guides/seasonal-2026-10.md';
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const md = value => String(value).replaceAll('|', '\\|').replace(/[\r\n]+/g, ' ');
+const md = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replace(/[\\[\]|`*]/g,'\\$&').replace(/[\r\n]+/g,' ');
+const normalized = value => String(value).normalize('NFKC').replace(/\s/g,'').toLowerCase();
+const temperature = city => Math.round(city.months[SEASONAL_VIEW.month - 1].meanC) + '°C';
+const cost = city => '$' + Math.round(city.budget).toLocaleString('en-US');
+const visaLabels = {domestic:'境内',visa_free:'免签',evisa:'电子签',arrival:'落地签',visa_required:'需签证',permit:'需许可'};
+export const needLinks = ['budget','visa','winter'].map(key=>({key,label:{budget:'省钱优先',visa:'签证免签',winter:'冬天避寒'}[key],url:siteOrigin+'/?preset='+key}));
+
+export function assertReaderCopy(text) {
+  const banned = BANNED_TERMS.find(term=>normalized(text).includes(normalized(term)));
+  if (banned) throw new Error('README文案含禁用词：'+banned+'，请改写短评。');
+}
 
 // Editorial text supplies context and citations, never the membership or order.
-export function seasonalGroups(catalog, editorial) {
+function reviewedProfiles(catalog, editorial) {
   if (!Array.isArray(catalog) || !catalog.length) throw new Error('公开城市快照为空。');
   if (editorial?.version !== 1 || editorial.month !== SEASONAL_VIEW.id || !datePattern.test(editorial.checked_at)) {
     throw new Error('本期短评的版本、月份或核读日期与网站不一致。');
@@ -35,6 +50,10 @@ export function seasonalGroups(catalog, editorial) {
     }
     profiles.set(profile.slug, profile);
   }
+  return profiles;
+}
+export function seasonalGroups(catalog, editorial) {
+  const profiles=reviewedProfiles(catalog,editorial);
   return GROUP_KEYS.map(key => {
     const preset = UI_PRESETS[key];
     if (!preset) throw new Error(`网站缺少预设：${key}`);
@@ -57,82 +76,135 @@ export function seasonalGroups(catalog, editorial) {
   });
 }
 
-export function renderSeasonalBlock(catalog, editorial) {
-  const groups = seasonalGroups(catalog, editorial);
-  const count = new Set(groups.flatMap(group => group.cities.map(city => city.slug))).size;
-  const [year, month] = editorial.month.split('-').map(Number);
-  const lines = [
-    START,
-    `## ${year} 年 ${month} 月，先看这五组`,
-    '',
-    `每组取网站本期视角的前五名，共 ${count} 座城市。核读于 ${editorial.checked_at}，适合先试住一周，再决定是否住整月。`,
-    '',
-    '综合推荐保留原 Metric Score；省钱、网速和安全视角把主指标权重设为 **50%**，其余指标合计50%，与网页一致。已核读暂勿前往提醒先于权重生效。个性化花费分由旧月参考连续换算。签证友好先筛大陆普通护照免签标签，再按综合分排序；免签入境与工作许可分别核实。网络仍是旧评分，**不是 Mbps**。',
-    '',
-    `${SEASONAL_VIEW.note} [筛选理由与来源](${guide})。`,
-    '',
-  ];
-  for (const group of groups) {
-    lines.push(`### ${group.label}`, '');
-    if (group.key === 'budget') {
-      const values = group.cities.map(city => city.budget);
-      if (values.some(value => typeof value !== 'number' || !Number.isFinite(value))) throw new Error('省钱前五的旧月参考金额不完整。');
-      lines.push(`本组旧月参考为 **USD ${Math.min(...values).toLocaleString('en-US')}–${Math.max(...values).toLocaleString('en-US')}**；住宿条件和包含项未统一，不能视为现价或最低生活门槛。`, '');
-    }
-    if (group.key === 'safe') lines.push('采用旧安全评分排序；出发前仍要核对最新旅行提醒与具体街区。', '');
-    lines.push(group.key === 'budget' ? '| 城市 | 旧月参考 / USD | 十月的工作与生活 |' : '| 城市 | 十月的工作与生活 |');
-    lines.push(group.key === 'budget' ? '| --- | ---: | --- |' : '| --- | --- |');
-    for (const [index, city] of group.cities.entries()) {
-      const cells = [`${index + 1}. [${md(city.name)}](${siteOrigin}/cities/${city.slug}/)`];
-      if (group.key === 'budget') cells.push(`$${city.budget.toLocaleString('en-US')}`);
-      cells.push(`${md(city.editorial.summary)} [来源](${guide}#${city.slug})`);
-      lines.push(`| ${cells.join(' | ')} |`);
-    }
-    lines.push('', `[更多${group.label} · ${group.total} 座城市 →](${group.url})`, '');
-  }
-  lines.push(
-    `这 ${count} 城都做过 web、Reddit、X 和小红书定向检索；原帖、部分评论与搜索摘要分别记录，**并非四个平台的正文都已读到**。季节依据包括常年气候与历史体验，未冒充本月天气、房价或全城网速。[逐城来源与读取范围](${guide})。`,
-    END,
-  );
-  return lines.join('\n');
+function editionState() {
+  return parseState(new URL(`/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`,siteOrigin));
 }
 
-export function replaceSeasonalBlock(readme, block) {
-  const starts = readme.split(START).length - 1;
-  const ends = readme.split(END).length - 1;
-  if (starts || ends) {
-    if (starts !== 1 || ends !== 1 || readme.indexOf(END) < readme.indexOf(START)) throw new Error('README 本期区块标记缺失、重复或顺序错误。');
-    return readme.slice(0, readme.indexOf(START)) + block + readme.slice(readme.indexOf(END) + END.length);
+export function chooseReason(city, note, profile) {
+  const errors=[];
+  for (const candidate of note?.reasons || []) {
+    try {
+      if (typeof candidate.text !== 'string' || /[\r\n|<>\[\]`*#]/.test(candidate.text)) throw new Error('需要单行纯文本');
+      const text=candidate.text.replaceAll('{temperature}',temperature(city)).replaceAll('{cost}',cost(city));
+      assertReaderCopy(text);
+      if (!text.trim() || [...text].length>MAX_REASON_LENGTH || /[{}]/.test(text)) throw new Error('短评须为1–25字');
+      if (text.split(/[。！？!?]/).filter(part=>part.trim()).length>1) throw new Error('短评只保留一句话');
+      if (!Array.isArray(candidate.facts) || !candidate.facts.length) throw new Error('缺少城市事实');
+      for (const fact of candidate.facts) {
+        const token=fact.kind==='climate' ? temperature(city) : fact.kind==='cost' ? cost(city) : fact.token;
+        if (fact.kind==='source') {
+          const source=profile.sources.find(source=>source.url===fact.url);
+          if (!source || /search/i.test(source.read_scope) || !/(?:opened|已打开|已读)/.test(source.read_scope) || !token || [...token].length<2 || [city.name,city.nameEn,city.slug,profile.name_zh].includes(token)) throw new Error('地点事实需要已读取的城市来源');
+        } else if (!['climate','cost'].includes(fact.kind)) throw new Error('未知事实类型');
+        if (!token || !text.includes(token)) throw new Error('短评未包含对应城市事实');
+      }
+      return text;
+    } catch(error) { errors.push(error.message); }
   }
-  // One-time migration of the existing README; all later runs use the markers.
-  const start = readme.indexOf('## 先缩小到几个选择\n');
-  const end = readme.indexOf('网站打开就是排行。', start);
-  if (start < 0 || end < 0) throw new Error('README 没有本期标记；请明确放置区块，避免改写其他内容。');
-  return readme.slice(0, start) + block + '\n\n## 按自己的条件看排行\n\n' + readme.slice(end);
+  throw new Error(`${city.slug}没有合格短评，请重写：${errors.join('；') || '未提供候选文案'}`);
+}
+
+export function seasonalTopTen(catalog, editorial, edition) {
+  const profiles=reviewedProfiles(catalog,editorial);
+  if (edition?.version!==1 || edition.month!==editorial.month || !datePattern.test(edition.updated_at)) throw new Error('README期号或更新时间与网站不一致。');
+  if (new Set(catalog.map(city=>city.slug)).size!==catalog.length) throw new Error('公开目录存在重复城市。');
+  const notes=new Map();
+  for (const note of edition.city_notes || []) {
+    if (!slugPattern.test(note.slug) || notes.has(note.slug)) throw new Error('README城市短评标识重复或不合法。');
+    for (const source of note.sources || []) {
+      const url=new URL(source.url);
+      if (url.protocol!=='https:' || url.username || url.password || !source.title || !datePattern.test(source.read_at) || source.read_scope!=='opened_official_tourism_body') throw new Error('README补充来源须为已读取的官方正文。');
+    }
+    notes.set(note.slug,note);
+  }
+  const cities=rankCities(catalog,editionState()).slice(0,TOP_COUNT);
+  if (cities.length!==TOP_COUNT) throw new Error('本期不足十城，需补充资料后生成。');
+  const reasons=new Set();
+  return cities.map(city=>{
+    const mean=city.months[SEASONAL_VIEW.month-1]?.meanC;
+    if (!Number.isFinite(city.budget) || city.budget<=0 || !Number.isFinite(mean) || !visaLabels[city.visa?.code] || !/^[A-Z]{2}$/.test(city.countryCode)) throw new Error(city.slug+'缺少表格所需的消费、气候或入境字段。');
+    const profile=profiles.get(city.slug);
+    if (!profile) throw new Error(city.slug+'缺少城市来源。');
+    const note=notes.get(city.slug);
+    const reason=chooseReason(city,note,{...profile,sources:[...profile.sources,...(note?.sources||[])]});
+    if (reasons.has(reason)) throw new Error('不同城市不得重复使用同一句短评。');
+    reasons.add(reason);
+    return {...city,reason};
+  });
+}
+
+export function renderSeasonalBlock(catalog,editorial,edition) {
+  const cities=seasonalTopTen(catalog,editorial,edition);
+  const [year,month]=edition.month.split('-').map(Number);
+  const lines=[START,`## ${year}年${month}月，去哪住一阵`,'',`| 城市 | 月花费 / USD | ${month}月均温 | 大陆护照 | 为什么这个月去 |`,'| --- | ---: | ---: | --- | --- |'];
+  for (const [index,city] of cities.entries()) lines.push(`| ${index+1}. [${md(city.name)}](${siteOrigin}/cities/${city.slug}/) ${flag(city.countryCode)} | ≈${cost(city)} | ${temperature(city)} | ${visaLabels[city.visa.code]} | ${city.reason} |`);
+  lines.push(END);
+  const block=lines.join('\n');assertReaderCopy(block);return block;
+}
+
+export function renderChangesBlock(catalog,editorial,edition) {
+  if (!Array.isArray(edition.changes) || edition.changes.length<3 || edition.changes.length>5 || new Set(edition.changes.map(change=>change.kind)).size!==edition.changes.length) throw new Error('本期变化须有3–5条且不重复。');
+  const lines=[CHANGES_START,'## 本期变化',''];
+  for (const change of edition.changes) {
+    let text;
+    if (change.kind==='layout') text=`本月推荐合并为${TOP_COUNT}城单表，每座城市只出现一次。`;
+    else if (change.kind==='preset_weights') {
+      const values=[PRESETS.budget.weights.cost,PRESETS.internet.weights.internet,PRESETS.safe.weights.safety];
+      if (new Set(values).size!==1 || !Number.isFinite(change.previous_primary_weight) || change.previous_primary_weight<=values[0]) throw new Error('权重变化与当前预设不符。');
+      text=`省钱、网速、安全的主权重从${change.previous_primary_weight}%降到${values[0]}%。`;
+    } else if (change.kind==='travel_advisories') {
+      const excluded=catalog.filter(city=>!recommendationEligible(city)).length;
+      if (!excluded) throw new Error('没有可证实的出行排除更新。');
+      text=`${excluded}座有明确暂勿前往提醒的城市退出推荐，城市资料保留。`;
+    } else if (change.kind==='quick_filters') {
+      const keys=quickFilters(editionState(),new Date(edition.updated_at+'T12:00:00+08:00')).map(filter=>filter.key);
+      if (!['asia','domestic','abroad','month'].every(key=>keys.includes(key))) throw new Error('快捷筛选更新与网页实现不符。');
+      text='新增亚洲、国内、国外标签，可叠加本月推荐。';
+    } else throw new Error('未知本期变化类型：'+change.kind);
+    if (!datePattern.test(change.recorded_at) || !change.recorded_at.startsWith(edition.month+'-') || change.recorded_at>edition.updated_at) throw new Error('本期变化必须记录本月实际发生的更新。');
+    assertReaderCopy(text);lines.push('- '+text);
+  }
+  lines.push(CHANGES_END);return lines.join('\n');
+}
+
+function bounds(text,start,end) {
+  const a=text.indexOf(start),b=text.indexOf(end);
+  if (text.split(start).length!==2 || text.split(end).length!==2 || a<0 || b<a) throw new Error('README区块标记缺失、重复或顺序错误。');
+  return {a,b:b+end.length};
+}
+export function replaceSeasonalBlock(readme,block,start=START,end=END) {
+  const old=bounds(readme,start,end),next=bounds(block,start,end);
+  if (next.a!==0 || next.b!==block.length) throw new Error('生成内容越过区块标记。');
+  return readme.slice(0,old.a)+block+readme.slice(old.b);
+}
+export function replaceSeasonalBlocks(readme,table,changes) {
+  const a=bounds(readme,START,END),b=bounds(readme,CHANGES_START,CHANGES_END);
+  if (!(a.b<=b.a || b.b<=a.a)) throw new Error('README区块标记不可嵌套或交叉。');
+  return replaceSeasonalBlock(replaceSeasonalBlock(readme,table),changes,CHANGES_START,CHANGES_END);
 }
 
 export async function generateSeasonalReadme({
-  readmePath = resolve(webRoot, '../README.md'),
-  rankingsPath = resolve(webRoot, 'public/published-pages/rankings.json'),
-  editorialPath = resolve(webRoot, 'data/seasonal-2026-10.json'),
-} = {}) {
-  const [readme, rankings, editorial] = await Promise.all([readFile(readmePath, 'utf8'), readFile(rankingsPath, 'utf8'), readFile(editorialPath, 'utf8')]);
-  const content = renderSeasonalBlock(JSON.parse(rankings), JSON.parse(editorial));
-  return { readmePath, original: readme, updated: replaceSeasonalBlock(readme, content) };
+  readmePath=resolve(webRoot,'../README.md'),
+  rankingsPath=resolve(webRoot,'public/published-pages/rankings.json'),
+  editorialPath=resolve(webRoot,`data/seasonal-${SEASONAL_VIEW.id}.json`),
+  editionPath=resolve(webRoot,`data/readme-${SEASONAL_VIEW.id}.json`),
+}={}) {
+  const [original,rawCatalog,rawEditorial,rawEdition]=await Promise.all([readFile(readmePath,'utf8'),readFile(rankingsPath,'utf8'),readFile(editorialPath,'utf8'),readFile(editionPath,'utf8')]);
+  const catalog=JSON.parse(rawCatalog),editorial=JSON.parse(rawEditorial),edition=JSON.parse(rawEdition);
+  const table=renderSeasonalBlock(catalog,editorial,edition),changes=renderChangesBlock(catalog,editorial,edition);
+  const updated=replaceSeasonalBlocks(original,table,changes);
+  assertReaderCopy(updated);
+  return {readmePath,original,updated};
 }
-
 async function main(args) {
-  if (args.some(arg => arg !== '--check') || args.length > 1) throw new Error('用法：node scripts/update-seasonal-readme.mjs [--check]');
-  const result = await generateSeasonalReadme();
+  if (args.some(arg=>arg!=='--check') || args.length>1) throw new Error('用法：node scripts/update-seasonal-readme.mjs [--check]');
+  const result=await generateSeasonalReadme();
   if (args.includes('--check')) {
-    if (result.original !== result.updated) throw new Error('README 本期内容与网站排序或短评不一致；请运行 npm run seasonal:readme。');
-    console.log('README 本期五组与公开快照、网站排序及短评一致。');
+    if (result.original!==result.updated) throw new Error('README本月十城或本期变化与资料不一致，请运行 npm run seasonal:readme。');
+    console.log('README十城、短评与本期变化检查通过。');
   } else {
-    if (result.original !== result.updated) await writeFile(result.readmePath, result.updated);
-    console.log(`README 已同步 ${SEASONAL_VIEW.id} 的五组 Top 5。`);
+    if (result.original!==result.updated) await writeFile(result.readmePath,result.updated);
+    console.log(`README已同步${SEASONAL_VIEW.id}十城主表与本期变化。`);
   }
 }
-
-if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
-  main(process.argv.slice(2)).catch(error => { console.error(error.message); process.exitCode = 1; });
-}
+if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href===import.meta.url) main(process.argv.slice(2)).catch(error=>{console.error(error.message);process.exitCode=1;});

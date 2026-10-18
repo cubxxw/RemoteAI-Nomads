@@ -91,13 +91,14 @@ export const isDefault = (w) => KEYS.every((k) => w[k] === DEFAULT_WEIGHTS[k]);
 const legacyPresetKeys={'5,80,5,5,4,1':'budget','5,5,4,5,80,1':'internet','80,5,5,5,4,1':'safe'};
 export function parseState(url) {
   const p = url.searchParams;
+  const preset = Object.hasOwn(PRESETS, p.get('preset')) ? PRESETS[p.get('preset')] : PRESETS.default;
   const parts = p.get("w")?.split(",");
   const raw =
     parts?.length === 6
       ? Object.fromEntries(KEYS.map((k, i) => [k, parts[i]]))
-      : DEFAULT_WEIGHTS;
+      : preset.weights;
   const weights=validWeights(raw), presetKey=legacyPresetKeys[KEYS.map(key=>weights[key]).join(',')];
-  const m = Number(p.get("month")),
+  const m = Number(p.has('month') ? p.get('month') : preset.month),
     b = Number(p.get("budget")),
     lim = Number(p.get("limit"));
   return {
@@ -110,7 +111,7 @@ export function parseState(url) {
     abroad: p.get('abroad') === '1',
     budget: Number.isFinite(b) && b > 0 && b <= 100000 ? Math.round(b) : null,
     month: Number.isInteger(m) && m > 0 && m < 13 ? m : null,
-    visa: [
+    visa: !p.has('visa') ? preset.visa || '' : [
       "visa_free",
       "evisa",
       "arrival",
@@ -121,7 +122,7 @@ export function parseState(url) {
       ? p.get("visa")
       : "",
     season: p.get("season") === SEASONAL_VIEW.id && m === SEASONAL_VIEW.month ? SEASONAL_VIEW.id : "",
-    warm: p.get("warm") === "1",
+    warm: p.has('warm') ? p.get('warm') === '1' : !!preset.warm,
     incomplete: p.get("incomplete") === "1",
     limit: [40, 80, 120, 160, 200, 240, 280, 320, 360].includes(lim) ? lim : 40,
   };
