@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Candidate observation; never an automatic publish command",
+  "type":"object","additionalProperties":false,
+  "required":["entity_id","metric","value","unit","scope","source_url","checked_at","evidence_level","reason"],
+  "properties":{
+    "entity_id":{"type":"string","minLength":2},
+    "metric":{"enum":["monthly_budget","workspace_price","internet_upload_mbps","internet_latency_ms","visa_income","visa_funds","stay_days","ai_region_status"]},
+    "value":{"type":["number","string","null"]},
+    "unit":{"type":"string"},
+    "currency":{"type":["string","null"],"pattern":"^[A-Z]{3}$"},
+    "scope":{"type":"string","minLength":5},
+    "source_url":{"type":"string","format":"uri","pattern":"^https://"},
+    "source_published_at":{"type":["string","null"],"format":"date"},
+    "checked_at":{"type":"string","format":"date"},
+    "effective_at":{"type":["string","null"],"format":"date"},
+    "expires_at":{"type":["string","null"],"format":"date"},
+    "evidence_level":{"enum":["official_read","operator_quote","secondary_read","search_snippet","personal_test"]},
+    "reason":{"type":"string","minLength":10},
+    "conflicts_with":{"type":"array","items":{"type":"string"}}
+  }
+}

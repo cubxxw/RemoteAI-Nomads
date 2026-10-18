@@ -1,0 +1,9 @@
+# Optional local DSH comparison server only; the demo does not need credentials.
+# Production native Flash uses Worker Secrets; see docs/deployment.md.
+DEEPSEEK_API_KEY=
+DEEPSEEK_MODEL=deepseek-flash
+AGENT_BRIDGE_SECRET=replace_with_a_random_service_secret
+AGENT_ORIGIN=http://127.0.0.1:8789
+WEB_ORIGIN=http://127.0.0.1:8787
+LOCAL_D1=true
+AGENT_CHECKER=deepseek

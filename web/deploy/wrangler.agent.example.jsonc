@@ -1,0 +1,39 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "remoteai-nomads-agent",
+  "account_id": "00000000000000000000000000000000",
+  "main": "agent-worker.js",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": false,
+  "preview_urls": false,
+  "containers": [
+    {
+      "class_name": "NomadAgent",
+      "image": "Dockerfile",
+      "image_build_context": "..",
+      "max_instances": 1,
+      "instance_type": "basic"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NOMAD_AGENT",
+        "class_name": "NomadAgent"
+      }
+    ]
+  },
+  "exports": {
+    "NomadAgent": {
+      "type": "durable-object",
+      "storage": "sqlite"
+    }
+  },
+  "vars": {
+    "WEB_ORIGIN": "https://nomads.example.com",
+    "DEEPSEEK_MODEL": "deepseek-flash"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id":31,"key":"monthly-mean-and-air-quality",
+    "question":"清迈1月历史月均温和降水是多少？22.3°C代表夜温吗？这些记录能判断空气质量好吗？只按现有数据简洁回答。",
+    "assertions":{"tools_any":["get_months"]}
+  },
+  {
+    "id":32,"key":"more-than-fifty-database-queries",
+    "question":"请依次用get_city读取札幌、岘港、福冈、名古屋、清迈、槟城、东京、里斯本、大理这9座城市；最后只给一行各城市名称与引用，不做推荐或扩展。城市卡片可以不放。",
+    "assertions":{"tools_any":["get_city"],"min_city_reads":9}
+  }
+]

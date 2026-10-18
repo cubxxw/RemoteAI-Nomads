@@ -1,0 +1,37 @@
+{
+  "name": "remoteai-nomads-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "db:seed": "wrangler d1 execute DB --local --file .data/seed.sql",
+    "check": "node scripts/check-syntax.mjs && node --test tests/*.test.js",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "agent": "node agent/server.mjs",
+    "costs:sync": "node scripts/sync-costs.mjs --apply",
+    "fx:sync": "node scripts/sync-costs.mjs --apply --fx-only",
+    "evals": "node evals/run-flash.mjs",
+    "evals:live": "node evals/run-flash.mjs --live",
+    "evals:semantics": "node evals/run-flash-semantics.mjs",
+    "evals:dsh": "node evals/run.mjs",
+    "data:bootstrap": "node scripts/bootstrap-public.mjs",
+    "data:pages": "node scripts/build-public-pages.mjs",
+    "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/containers": "0.3.7",
+    "@deepseek-ai/dsh-sdk-client": "0.2.1-alpha.2",
+    "@deepseek-ai/dsh-sdk-minimal": "0.2.1-alpha.2"
+  },
+  "overrides": {
+    "fflate": "0.8.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

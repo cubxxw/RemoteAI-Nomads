@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {esc,filters,canonicalPair,shell,money} from '../src/render.js';
+test('untrusted imported text is escaped in text and attributes',()=>{assert.equal(esc('<img src="x" onerror="evil()">'), '&lt;img src=&quot;x&quot; onerror=&quot;evil()&quot;&gt;');});
+test('invalid and excessive filters have bounded values',()=>{const f=filters(new URL('https://test/cities/?month=13&budget=-1&page=-5&q='+ 'a'.repeat(500)));assert.equal(f.month,null);assert.equal(f.budget,null);assert.equal(f.page,1);assert.equal(f.q.length,100);});
+test('comparison order has only one canonical URL',()=>{assert.equal(canonicalPair('penang','chiang-mai'),'chiang-mai-vs-penang');assert.equal(canonicalPair('chiang-mai','penang'),'chiang-mai-vs-penang');});
+test('missing cost is not a zero-price city',()=>{assert.equal(money(null),'待补录');assert.equal(money(850),'$850');});
+test('preview and unapproved content remain noindex',()=>{assert.match(shell({title:'x',description:'y',body:'',indexable:true,env:{PREVIEW:'true'}}),/noindex,follow/);assert.match(shell({title:'x',description:'y',body:'',indexable:false,env:{PREVIEW:'false'}}),/noindex,follow/);});
+test('published page has canonical and safe JSON-LD',()=>{const html=shell({title:'x',description:'y',body:'',path:'/cities/penang/',indexable:true,env:{PREVIEW:'false',SITE_ORIGIN:'https://example.com'},jsonld:{name:'</script><script>evil</script>'}});assert.match(html,/https:\/\/example.com\/cities\/penang\//);assert.match(html,/index,follow/);assert.ok(!html.includes('</script><script>evil'));});

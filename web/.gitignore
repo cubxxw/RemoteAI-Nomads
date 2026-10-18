@@ -1,0 +1,16 @@
+node_modules/
+.wrangler/
+.data/
+dist/
+output/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Personal deployment bindings; copy a shareable example to configure your account.
+wrangler.production.jsonc
+deploy/wrangler.agent.jsonc
+
+__pycache__/
+
+evals/semantic-results/

@@ -1,0 +1,59 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "remoteai-nomads",
+  "account_id": "00000000000000000000000000000000",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-17",
+  "compatibility_flags": [
+    "enable_request_signal"
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "nomads.example.com",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "remoteai-nomads-production",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "version_metadata": {
+    "binding": "WORKER_VERSION"
+  },
+  "vars": {
+    "PREVIEW": "false",
+    "SITE_ORIGIN": "https://nomads.example.com",
+    "PUBLIC_AGENT": "false",
+    "AGENT_DAILY_LIMIT": "20",
+    "DEEPSEEK_MODEL": "deepseek-flash"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NOMAD_AGENT",
+        "class_name": "NomadAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "nomad-flash-v1",
+      "new_sqlite_classes": [
+        "NomadAgent"
+      ]
+    }
+  ]
+}

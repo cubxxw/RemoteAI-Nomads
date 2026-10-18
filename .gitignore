@@ -1,0 +1,57 @@
+# Local agent instructions and tool state
+AGENTS.md
+AGENTS.local.md
+.codex/
+.agents/
+.claude/
+.pi/
+.local/
+.worktrees/
+.gstack/
+_briefs/
+
+# Credentials; keep shareable environment templates
+.env
+.env.*
+!.env.example
+!.env.*.example
+.secrets/
+/credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Operating system and editor files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Rebuildable dependencies, caches, and test output
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+.pytest_cache/
+/coverage/
+/test-results/
+/playwright-report/
+
+# Temporary downloads and raw API responses
+# Publish curated data and source ledgers in data/ and research/ instead.
+/tmp/
+/temp/
+/artifacts/
+/data/raw/
+/research/raw/
+*.log
+*.tmp
+*.temp

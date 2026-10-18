@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,access} from 'node:fs/promises';
+import {createHash,randomUUID} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+const cfg=Object.fromEntries((await readFile('.dev.vars','utf8')).split('\n').filter(l=>l.includes('=')).map(l=>{const i=l.indexOf('=');return [l.slice(0,i),l.slice(i+1).trim()];}));
+const origin='http://127.0.0.1:8789';const owner=createHash('sha256').update(randomUUID()).digest('hex');
+const headers={Authorization:'Bearer '+cfg.AGENT_BRIDGE_SECRET,'X-Nomads-Owner':owner,'Content-Type':'application/json'};
+const reports={};
+const responses=await Promise.all(Array.from({length:3},()=>fetch(origin+'/answer',{method:'POST',headers,body:JSON.stringify({question:'比较清迈和槟城，给出预算与月份差异。'})})));
+assert.equal(responses.filter(r=>r.ok).length,1);assert.equal(responses.filter(r=>r.status===429).length,2);reports.atomic_owner_admission=true;
+const response=responses.find(r=>r.ok),reader=response.body.getReader();let data='',runId;
+while(!runId){const part=await reader.read();assert.ok(!part.done);data+=new TextDecoder().decode(part.value);runId=data.match(/"run_id":"([a-f0-9-]+)"/)?.[1];}
+const parent=Number(execFileSync('lsof',['-tiTCP:8789','-sTCP:LISTEN'],{encoding:'utf8'}).trim());
+const children=()=>{try{return execFileSync('pgrep',['-P',String(parent)],{encoding:'utf8'}).trim().split('\n').filter(Boolean).map(Number);}catch{return [];}};
+await new Promise(r=>setTimeout(r,700));const during=children().filter(pid=>{try{return execFileSync('lsof',['-a','-p',String(pid),'-d','cwd','-Fn'],{encoding:'utf8'}).includes(runId);}catch{return false;}});
+const other={...headers,'X-Nomads-Owner':createHash('sha256').update('other').digest('hex')};
+assert.equal((await fetch(origin+'/runs/'+runId,{headers:other})).status,404);
+assert.equal((await fetch(origin+'/cancel',{method:'POST',headers:other,body:JSON.stringify({run_id:runId})})).status,404);reports.cross_owner_read_cancel_refused=true;
+const cancelled=await(await fetch(origin+'/cancel',{method:'POST',headers,body:JSON.stringify({run_id:runId})})).json();assert.equal(cancelled.runtime_reaped,true);assert.equal(cancelled.status,'cancelled');
+await reader.cancel();const after=children();assert.ok(during.every(p=>!after.includes(p)));await assert.rejects(access('.data/agent/tmp/'+runId));reports.cancel={runtime_reaped:true,child_pids_during:during,child_pids_after:after,session_removed:true};
+assert.equal((await fetch('http://127.0.0.1:8787/api/agent/answer',{method:'POST',headers:{Origin:'https://untrusted.invalid','Content-Type':'application/json'},body:'{}'})).status,403);reports.cross_site_refused=true;
+assert.equal((await fetch('http://127.0.0.1:8787/api/internal/nomad-tool',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'get_coverage',args:{}})})).status,404);reports.unauthenticated_tool_refused=true;
+assert.equal((await fetch('http://127.0.0.1:8787/api/agent/evals/'+runId)).status,404);reports.private_eval_route_unavailable_to_browser=true;
+await writeFile('.data/agent/runtime-validation.json',JSON.stringify(reports,null,2));console.log(JSON.stringify(reports));

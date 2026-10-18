@@ -1,0 +1,12 @@
+*
+!package.json
+!package-lock.json
+!deploy/
+!deploy/Dockerfile
+!agent/
+!agent/**
+!src/
+!src/**
+!public/
+!public/modules/
+!public/modules/**

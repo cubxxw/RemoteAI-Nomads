@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-14",
+  "recommendations_are": "带条件的编辑建议，不是现场验证或全球排名",
+  "destinations": [
+    {
+      "id": "chiang-mai",
+      "name": "清迈",
+      "country": "泰国",
+      "timezone": "Asia/Bangkok",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10月下旬先试住，11–12月优先",
+      "areas_to_compare": "Nimman / Santitham / Old City",
+      "good_fit": "咖啡馆与持续停留的工作同伴",
+      "caveats": "洪水影响、航线噪音、年初空气污染、旺季工位",
+      "source_ids": [
+        "R-1w597j6",
+        "T-DVFeEs0Ex1v",
+        "O01",
+        "O16"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 420,
+          "currency": "USD",
+          "period": "30晚折算",
+          "source_date": "2026-09-02",
+          "scope": "老城酒店房间，原价14/晚；非现价",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "bangkok",
+      "name": "曼谷",
+      "country": "泰国",
+      "timezone": "Asia/Bangkok",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "秋冬候选，近期预警另查",
+      "areas_to_compare": "BTS/MRT附近",
+      "good_fit": "城市设施与交通",
+      "caveats": "通勤、热湿、社交需主动",
+      "source_ids": [
+        "X-2101566345322078215",
+        "T-DSwurnVFCpb"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 700,
+          "currency": "USD",
+          "period": "月",
+          "source_date": "2026-09-20",
+          "scope": "作者公寓支出，租期未知",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "koh-lanta",
+      "name": "兰塔岛",
+      "country": "泰国",
+      "timezone": "Asia/Bangkok",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "11月1日至次年4月30日KoHub营业",
+      "areas_to_compare": "Long Beach / KoHub步行范围",
+      "good_fit": "海滩与现成工位",
+      "caveats": "10月关闭、摩托依赖、每日通话间3h限制",
+      "source_ids": [
+        "O05",
+        "O06",
+        "R-1qg6doj"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 6900,
+          "currency": "THB",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "仅办公会员，不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "hanoi",
+      "name": "河内",
+      "country": "越南",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10–11月季节候选",
+      "areas_to_compare": "Tây Hồ / Trúc Bạch",
+      "good_fit": "凉爽秋季与城市生活",
+      "caveats": "噪音、空气、房内线路、月租待核",
+      "source_ids": [
+        "O04",
+        "O15",
+        "Q01"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 1900000,
+          "currency": "VND",
+          "period": "月起",
+          "source_date": "2026-10-14",
+          "scope": "Toong Phan Boi Chau工位，不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "da-nang",
+      "name": "岘港",
+      "country": "越南",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10月降级，后续优先比较春季",
+      "areas_to_compare": "Mỹ An / An Thượng / 河边住宅",
+      "good_fit": "海滩与开发者咖啡馆",
+      "caveats": "本月积水/滑坡、施工、霉味、短租质量",
+      "source_ids": [
+        "R-1kic8aj",
+        "X-2017205056857395496",
+        "O02",
+        "O03"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 800,
+          "currency": "USD",
+          "period": "月",
+          "source_date": "2025-05-09",
+          "scope": "My An37层基础一居室旧短租",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "hoi-an",
+      "name": "会安",
+      "country": "越南",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "9–1月湿，2–8月较晴热",
+      "areas_to_compare": "古城/田野，通勤单独核",
+      "good_fit": "散步与慢生活",
+      "caveats": "雨季洪水、稳定会议未核",
+      "source_ids": [
+        "O04",
+        "R-1q31zyd"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "kuala-lumpur",
+      "name": "吉隆坡",
+      "country": "马来西亚",
+      "timezone": "Asia/Kuala_Lumpur",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "全年工作便利候选，热湿有雨",
+      "areas_to_compare": "轨道站 / Bangsar / TTDI",
+      "good_fit": "英语与同一时区",
+      "caveats": "不能把两人餐费账本当单人总预算",
+      "source_ids": [
+        "X-2102054171465981996"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 500,
+          "currency": "USD",
+          "period": "月下沿",
+          "source_date": "2026-09-21",
+          "scope": "作者一居室范围500–700；租期未知",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "penang",
+      "name": "槟城",
+      "country": "马来西亚",
+      "timezone": "Asia/Kuala_Lumpur",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "全年热湿，按天气安排",
+      "areas_to_compare": "George Town",
+      "good_fit": "美食、老城与固定工位",
+      "caveats": "海滩期待、月房租待核",
+      "source_ids": [
+        "O07",
+        "R-1dt0y7a"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 320,
+          "currency": "MYR",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Settlements共享工位，不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "kuching",
+      "name": "古晋",
+      "country": "马来西亚",
+      "timezone": "Asia/Kuching",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "11–3月较湿",
+      "areas_to_compare": "市区 / LinQ-uP",
+      "good_fit": "市区工作、周末雨林",
+      "caveats": "晚间权限与砂拉越许可另核",
+      "source_ids": [
+        "O26"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 350,
+          "currency": "MYR",
+          "period": "月",
+          "source_date": "2026-10-07",
+          "scope": "LinQ-uP工位；旧一轮核价",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "canggu",
+      "name": "Canggu",
+      "country": "印度尼西亚",
+      "timezone": "Asia/Makassar",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10月天气与雨季进程另核，接受阵雨再长住",
+      "areas_to_compare": "住处附近的工位与活动",
+      "good_fit": "冲浪和创作者社交",
+      "caveats": "拥堵、房型/币种混用、隔音防潮",
+      "source_ids": [
+        "R-1scfepj",
+        "R-1w8qyql"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "ubud",
+      "name": "Ubud",
+      "country": "印度尼西亚",
+      "timezone": "Asia/Makassar",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10月天气与雨季进程另核，接受阵雨再长住",
+      "areas_to_compare": "住所到工位实际通勤",
+      "good_fit": "自然与安静日常",
+      "caveats": "300美元为熟客优惠，不能复用为市场价",
+      "source_ids": [
+        "X-2101566345322078215"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 300,
+          "currency": "USD",
+          "period": "月",
+          "source_date": "2026-09-20",
+          "scope": "一居bungalow含厨房，熟客优惠；不是公开房价",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "luang-prabang",
+      "name": "琅勃拉邦",
+      "country": "老挝",
+      "timezone": "Asia/Vientiane",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "11–2月后续候选",
+      "areas_to_compare": "市区古城，实测住所",
+      "good_fit": "河边古城与离线工作",
+      "caveats": "供电与欧洲服务器延迟",
+      "source_ids": [
+        "R-1vsjrbk",
+        "R-1n0yygi"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "dumaguete",
+      "name": "杜马盖地",
+      "country": "菲律宾",
+      "timezone": "Asia/Manila",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "2–4月后续候选",
+      "areas_to_compare": "有备电的市区房源",
+      "good_fit": "潜水行程",
+      "caveats": "停电、日工位备电未核",
+      "source_ids": [
+        "R-1uo51f9"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "siargao",
+      "name": "锡亚高",
+      "country": "菲律宾",
+      "timezone": "Asia/Manila",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "本轮未核全岛最佳月份",
+      "areas_to_compare": "General Luna检索起点 / 工位附近",
+      "good_fit": "冲浪与海岛社交",
+      "caveats": "供电与住所Wi-Fi差异",
+      "source_ids": [
+        "R-1vhwax8",
+        "O14"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 7500,
+          "currency": "PHP",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Coco Space工位，不含住宿",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "las-palmas",
+      "name": "Las Palmas",
+      "country": "西班牙",
+      "timezone": "Atlantic/Canary",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "秋冬候选",
+      "areas_to_compare": "Las Canteras",
+      "good_fit": "欧洲时区城市海滩",
+      "caveats": "月租待核、通话间权益、申根天数",
+      "source_ids": [
+        "O08",
+        "R-1pactei",
+        "Q02"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 150,
+          "currency": "EUR",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Soppa flex工位，不含房；175固定24h",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "madeira",
+      "name": "Madeira",
+      "country": "葡萄牙",
+      "timezone": "Atlantic/Madeira",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "秋季候选，当前天气/步道另核",
+      "areas_to_compare": "Funchal / Ponta do Sol",
+      "good_fit": "徒步与山海",
+      "caveats": "免费工位白天开放、社区季节分歧、机场风况",
+      "source_ids": [
+        "O10",
+        "R-1qnfn6a",
+        "Q02"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 0,
+          "currency": "EUR",
+          "period": "白天工位",
+          "source_date": "2026-10-14",
+          "scope": "官方Ponta do Sol09–18；不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "taghazout",
+      "name": "Taghazout",
+      "country": "摩洛哥",
+      "timezone": "Africa/Casablanca",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "本季候选，天气另查",
+      "areas_to_compare": "明确提供办公的共居",
+      "good_fit": "冲浪与共居社交",
+      "caveats": "咖啡馆禁电脑、夜间权限、房型起价",
+      "source_ids": [
+        "O09",
+        "O20",
+        "R-1s6urwm",
+        "R-123owjv"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 29.5,
+          "currency": "EUR",
+          "period": "日，住满月条件",
+          "source_date": "2026-10-14",
+          "scope": "SunDesk Budget起价，含房/早餐/办公，不含午晚餐",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "plovdiv",
+      "name": "Plovdiv",
+      "country": "保加利亚",
+      "timezone": "Europe/Sofia",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "春秋候选，夏季炎热",
+      "areas_to_compare": "Kapana / 工位通勤",
+      "good_fit": "老城步行",
+      "caveats": "住所线路未核、申根累计",
+      "source_ids": [
+        "O11"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 96,
+          "currency": "EUR",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Cat and Mouse开放工位含VAT；固定162",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "tbilisi",
+      "name": "第比利斯",
+      "country": "格鲁吉亚",
+      "timezone": "Asia/Tbilisi",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "待补最新住房/工作许可",
+      "areas_to_compare": "待短住选区",
+      "good_fit": "食物、文化与山地周末",
+      "caveats": "中国护照非一年免签、税率不泛化",
+      "source_ids": [
+        "R-1tzl36f",
+        "O19"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "ohrid",
+      "name": "Ohrid",
+      "country": "北马其顿",
+      "timezone": "Europe/Skopje",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "春末/9月候选，秋冬另核",
+      "areas_to_compare": "湖边与CoWorkOhrid通勤",
+      "good_fit": "湖景古城",
+      "caveats": "旧年租金、咖啡馆弱网、吸烟",
+      "source_ids": [
+        "R-yeru57"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "sarajevo",
+      "name": "Sarajevo",
+      "country": "波黑",
+      "timezone": "Europe/Sarajevo",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "春末至秋初，冬季空气另查",
+      "areas_to_compare": "按实际坡度选房",
+      "good_fit": "历史街区与周末上山",
+      "caveats": "作者长文在评论，当前报价待核",
+      "source_ids": [
+        "R-wgvde0"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "tirana",
+      "name": "Tirana",
+      "country": "阿尔巴尼亚",
+      "timezone": "Europe/Tirane",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "春秋试住",
+      "areas_to_compare": "工位附近，线路逐房试",
+      "good_fit": "城市与巴尔干旅行",
+      "caveats": "找工作同伴困难、部分场所电/网波动",
+      "source_ids": [
+        "R-1ubnvpi",
+        "O27"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 150,
+          "currency": "EUR",
+          "period": "月",
+          "source_date": "2026-10-07",
+          "scope": "Coolab共享工位；固定180公布24h",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "florianopolis",
+      "name": "Florianópolis",
+      "country": "巴西",
+      "timezone": "America/Sao_Paulo",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "11–3月海滩旺季，房租提前核",
+      "areas_to_compare": "Campeche / Lagoa",
+      "good_fit": "冲浪、徒步、美洲班次",
+      "caveats": "跨岛耗时、旺季房价、短访措施期限",
+      "source_ids": [
+        "R-1e5t3ss",
+        "R-1i04jfi",
+        "O12",
+        "O28"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 400,
+          "currency": "BRL",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Impact Hub flex工位；unlimited725，不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "oaxaca",
+      "name": "Oaxaca City",
+      "country": "墨西哥",
+      "timezone": "America/Mexico_City",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "11月后继续询价，节庆另核",
+      "areas_to_compare": "Centro / 工位附近",
+      "good_fit": "文化、美食、美洲班次",
+      "caveats": "夜间噪音、周日关门、签证/房租待核",
+      "source_ids": [
+        "O13"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 2500,
+          "currency": "MXN",
+          "period": "月",
+          "source_date": "2026-10-14",
+          "scope": "Gubixi工位，不含房",
+          "not_a_city_average": true
+        }
+      ]
+    },
+    {
+      "id": "arequipa",
+      "name": "Arequipa",
+      "country": "秘鲁",
+      "timezone": "America/Lima",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "4–10月少雨线索",
+      "areas_to_compare": "先短住测试",
+      "good_fit": "建筑、食物与高原户外",
+      "caveats": "高原、Cusco测速不能移植",
+      "source_ids": [
+        "R-1hy0xwf"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "cuenca",
+      "name": "Cuenca",
+      "country": "厄瓜多尔",
+      "timezone": "America/Guayaquil",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "最佳月份待核",
+      "areas_to_compare": "备电住所 / IMPAQTO",
+      "good_fit": "专注与古城",
+      "caveats": "供电、高原、噪音、月租待核",
+      "source_ids": [
+        "R-1uiyzsn",
+        "R-1gdhzzk"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": []
+    },
+    {
+      "id": "buenos-aires",
+      "name": "Buenos Aires",
+      "country": "阿根廷",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "recommendation_for": "2026-10_to_2026-12",
+      "seasonal_choice": "10–12月春季到初夏候选",
+      "areas_to_compare": "Palermo / Belgrano / Colegiales",
+      "good_fit": "城市文化与社交",
+      "caveats": "租金/汇率变化、国籍许可条件",
+      "source_ids": [
+        "R-1peh2dn",
+        "R-1iehgml"
+      ],
+      "monthly_total_budget": null,
+      "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
+      "price_observations": [
+        {
+          "amount": 1050,
+          "currency": "USD",
+          "period": "月",
+          "source_date": "2025-12-05",
+          "scope": "Palermo一居室Airbnb旧个案",
+          "not_a_city_average": true
+        }
+      ]
+    }
+  ],
+  "secondary_candidates": [
+    "Da Lat",
+    "Bansko",
+    "大理",
+    "安吉",
+    "黄山"
+  ]
+}

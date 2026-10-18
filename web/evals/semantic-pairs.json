@@ -1,0 +1,37 @@
+{
+  "description": "Four controlled semantic pairs. Evidence is deliberately minimal; numerical survey values match the locally verified 2025 e-Stat table. These are synthetic audit fixtures, not end-to-end user runs.",
+  "pairs": [
+    {
+      "id": "assumed-bed-floor",
+      "target_error": "A proposed nightly price cannot establish the minimum price of every paid bed in China.",
+      "question": "总预算500元，想在中国住30天。按25元一晚这个自设床位情景，能得出什么结论？",
+      "evidence": [{"id":"E1","tool":"plan_budget","args":{"budget":500,"currency":"CNY","days":30,"expenses":[{"label":"床位规划假设","amount":25,"period":"day"}]},"data":{"budget":500,"currency":"CNY","days":30,"reserve":0,"expenses":[{"label":"床位规划假设","amount":25,"period":"day","basis":"planning_assumption","total":750}],"spending":750,"remaining":-250,"basis":"按输入的规划假设验算，不是市场报价；未填写项目仍需从余额中支出。"},"cities":[]}],
+      "positive": "按25元/晚这个规划假设，30天床位费是750元，当前住宿情景超出500元预算250元。这不能证明中国所有付费床位都超预算，其他实际床位价格仍需核实。[E1]",
+      "negative": "按25元/晚这个规划假设，30天床位费是750元，超出500元预算250元。因此中国任何付费床位住30天都会超出500元，只有免费住宿才可能成立。[E1]"
+    },
+    {
+      "id": "name-zero-match",
+      "target_error": "No match in a city-name search does not establish absence of low-price lodging records.",
+      "question": "搜索“低价小城”没有结果，能说明中国没有低价住宿报价吗？",
+      "evidence": [{"id":"E1","tool":"search_cities","args":{"query":"低价小城","country":"CN"},"data":{"country":{"id":"CN","name_zh":"中国"},"matched":0,"cities":[],"name_match_scope":"只对城市名称或国家名称做字面子串匹配；不是住宿价格、消费类别或报价覆盖查询。"},"cities":[]}],
+      "positive": "不能。零结果只说明没有城市或国家名称与“低价小城”这个字面名称匹配；本次没有查询住宿价格覆盖，不能由此判断中国有没有低价住宿报价。[E1]",
+      "negative": "能。本次在中国搜索“低价小城”得到零结果，说明数据库里中国低价住宿报价的覆盖就是0。[E1]"
+    },
+    {
+      "id": "national-city-scope",
+      "target_error": "National resident household housing spending is not a Tokyo market rent quote.",
+      "question": "e-Stat里21667日元这项是什么口径，能当成东京单人月租吗？",
+      "evidence": [{"id":"E1","tool":"get_costs","args":{"city":"tokyo","scope":"national","currency":"JPY","category":"housing"},"data":{"city":"tokyo","country_id":"JP","observations":[{"provider":"estat","field":"housing","label":"住房支出（含自有住房家庭）","amount":21667,"currency":"JPY","period":"month","unit":"JPY/单身家庭/月","scope":"national","household_size":1,"sample_start":"2025-01-01","sample_end":"2025-12-31","quality_flags":["national_not_city","resident_households_not_nomads","includes_owner_occupiers","annual_average"]}],"limitations":["这是2025年日本全国单身家庭实际月均住房支出，含自有住房家庭；不是东京城市租房报价。"]},"cities":[]}],
+      "positive": "21667日元是2025年日本全国单身家庭的月均住房支出，包含自有住房家庭。它不是东京单人租房的市场报价，不能直接拿来当东京月租。[E1]",
+      "negative": "21667日元是2025年东京单人租房的市场月租，e-Stat这条记录已经确认了这个城市报价，可以直接拿来当东京月租。[E1]"
+    },
+    {
+      "id": "housing-double-count",
+      "target_error": "Total consumption already contains housing; replacing housing requires subtracting the original housing component before adding the replacement assumption.",
+      "question": "173042日元总消费已含21667日元住房。如果仅做一个以85000日元假设月租替换住房的结构情景，应该怎么算？",
+      "evidence": [{"id":"E1","tool":"get_costs","args":{"city":"tokyo","scope":"national","currency":"JPY"},"data":{"national_reference":{"scope":"national","household_size":1,"currency":"JPY","period":"month","total_consumption":173042,"housing_spend_included":21667,"nonhousing_consumption":151375,"sample_end":"2025-12-31","basis":"居民全国平均总消费已含住房。非住房=总消费－住房；不能将总额再加一遍房租，也不是城市短租报价。"}},"cities":[]}],
+      "positive": "仅做住房替换情景，应先扣掉原住房：173042−21667=151375日元非住房，再加假设月租85000，合计236375日元。这只是全国平均结构与假设月租组成的情景，不是东京实际预算或报价。[E1]",
+      "negative": "仅做住房替换情景，可以把173042日元总消费当作非住房，再加假设月租85000，合计258042日元。这只是全国平均结构与假设月租组成的情景，不是东京实际预算或报价。[E1]"
+    }
+  ]
+}
