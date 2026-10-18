@@ -224,8 +224,9 @@ test('additional recommendations respond to data changes and fail on missing evi
 test('need rows expose metric units and use January temperatures for winter rather than October',()=>{
  const block=renderNeedsBlock(catalog);
  assert.equal((block.match(/<th scope="row"/g)||[]).length,6);
+ assert.equal((block.match(/<td nowrap>/g)||[]).length,6);assert.equal((block.match(/<th scope="col"/g)||[]).length,2);
  assert.equal((block.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,18);
- assert.match(block,/网络10\.0\/10 · ≈\$1,900\/月/);assert.match(block,/安全9\.0\/10 · ≈\$1,240\/月/);
+ assert.match(block,/malaga\/\">马拉加<\/a> · 10\/10 · ≈\$1,900\/月/);assert.match(block,/fethiye\/\">费特希耶<\/a> · 9\/10 · ≈\$1,240\/月/);
  assert.match(block,/muscat\/\">马斯喀特<\/a> · 22°C · ≈\$1,340\/月/);
  assert.ok(block.includes('budget=1000&amp;month=10'));assert.ok(block.includes('preset=winter&amp;abroad=1'));assertReaderCopy(block);
 });

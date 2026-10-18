@@ -88,16 +88,18 @@ export function renderDomesticBlock(catalog) {
 function needDetail(city, view) {
   if (view.metric === 'budget') return money(city.budget) + '/月';
   if (view.metric === 'temperature') return temperature(city, view.state.month) + ' · ' + money(city.budget) + '/月';
-  const label = view.metric === 'internet' ? '网络' : '安全';
-  return label + city.scores[view.metric].toFixed(1) + '/10 · ' + money(city.budget) + '/月';
+  return city.scores[view.metric] + '/10 · ' + money(city.budget) + '/月';
 }
 
 export function renderNeedsBlock(catalog) {
   const views = needRecommendations(catalog);
-  const lines = [NEEDS_START, '## 按你在意的选', '', `除1月避寒外，均取本期${SEASONAL_VIEW.month}月视角；每行依对应条件排序，列出前三名。网络与安全列展示评分。`, '',
+  const lines = [NEEDS_START, '## 按你在意的选', '', `除1月避寒外，均取本期${SEASONAL_VIEW.month}月视角；每行列出对应条件的前三名。网络与安全用评分表示。手机可横滑表格。`, '',
     '<table tabindex="0" aria-label="按预算、签证、网络、安全与季节选城市，可横向滚动">',
-    '<thead><tr><th scope="col" nowrap>你在意什么</th><th scope="col" nowrap>先看这3座</th><th scope="col" nowrap>更多选择</th></tr></thead>', '<tbody>'];
-  for (const view of views) lines.push(`<tr><th scope="row" nowrap>${esc(view.label)}</th><td>${view.cities.map(city => `${cityLink(city)} · ${esc(needDetail(city, view))}`).join('<br>')}</td><td nowrap><a href="${esc(view.url)}">查看${view.total}城 →</a></td></tr>`);
+    '<thead><tr><th scope="col" nowrap>你在意什么</th><th scope="col" nowrap>先看这3座</th></tr></thead>', '<tbody>'];
+  for (const view of views) {
+    const label=view.label.split(/＋| · /).map(esc).join('<br>');
+    lines.push(`<tr><th scope="row" nowrap>${label}<br><a href="${esc(view.url)}">查看${view.total}城 →</a></th><td nowrap>${view.cities.map(city => `${cityLink(city)} · ${esc(needDetail(city, view))}`).join('<br>')}</td></tr>`);
+  }
   lines.push('</tbody>', '</table>', NEEDS_END);
   return lines.join('\n');
 }
