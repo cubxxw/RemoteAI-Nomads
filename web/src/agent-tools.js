@@ -1,6 +1,7 @@
 import {travelAdvisory,recommendationEligible,RECOMMENDATION_POLICY_URL} from '../public/modules/recommendation-policy.js';
 import { loadRankings } from "./rank-pages.js";
 import { readCityCosts, readFxRate } from "./cost-data.js";
+import {regionalCoverage} from './regional-data.js';
 import { calculateBudget } from "./agent-budget.js";
 import { snapshotBudget } from "./agent-plan-state.js";
 import { exploreBudgetOptions } from "./agent-budget-options.js";
@@ -102,8 +103,8 @@ const specs = [
   ],
   [
     "get_costs",
-    "深入查城市的CostCompass实际单项价格/挂牌租金与来源、单位、日期。日本另提供e-Stat全国单身家庭支出，不能冒充城市房租或单人游民最低预算。currency为展示货币，保留原额；租金/月、餐费/次、商品单位不可直接相加。返回覆盖缺口和质量标记，供方案推算。",
-    { city: str("城市slug或准确名称；不填city时可用country查看价格覆盖与可查城市"), country:str("ISO2或准确国家名，查看真正有消费报价的城市，不能用城市名称搜索结果推断全国价格覆盖"), currency: str("ISO3展示币种，默认CNY",3), scope:{type:"string",enum:["city","national","all"],description:"城市报价或全国统计，日本e-Stat选national；默认all平衡返回两者"}, category: str("可选消费类别，如housing/food/transportation/total_consumption"), limit: {type:"integer",minimum:1,maximum:30} },
+    "读取有来源的消费观察。城市单项报价、国内州县食品监测与居民年度统计、日本全国e-Stat分别保留地域、单位和日期。区域/全国参考不是城市房租或最低预算，均价不是下限。currency为展示币种；不能把公斤价或人均年支出直接相加成旅居月预算。返回缺口，供继续推算可调整方案。",
+    { city: str("城市slug或准确名称；不填city时可用country查看价格覆盖与可查城市"), country:str("ISO2或准确国家名，查看真正有消费报价的城市，不能用城市名称搜索结果推断全国价格覆盖"), currency: str("ISO3展示币种，默认CNY",3), scope:{type:"string",enum:["city","regional","national","all"],description:"城市报价、国内区域参考或全国统计；默认all分别返回，不能混同地域"}, category: str("可选消费类别，如housing/food/transportation/total_consumption"), limit: {type:"integer",minimum:1,maximum:30} },
     [],
   ],
   [
@@ -492,7 +493,7 @@ export async function executeNomadTool(env, name, args) {
       if(representative)costs=await readCityCosts(env,representative.id,{currency:args.currency||'CNY'});
     }
     const observations=(costs?.observations||[]).filter(o=>o.scope==='national'&&(!args.category||o.category===args.category)).slice(0,args.limit||20);
-    return {data:{country:c,country_id:c.id,scope:'country',priced_city_count:priced.length,city_observations:priced.reduce((s,c)=>s+c.observation_count,0),priced_cities:priced,national,national_reference:nationalReference(costs?.observations||[]),observations,fx:costs?.fx,methodology:costs?.methodology,meaning:'这是当前导入的整个国家覆盖；国家统计直接见observations；城市报价需按priced_cities名称读取。未列城市暂无本来源样本，无需逐个查空，但不表示没有服务或价格高低。'},cities:[],sources:(costs?.sources||[]).filter(s=>s.id.startsWith('estat:')||s.id.startsWith('ecb:')),warnings:costs?.limitations||[],read_only:true};
+    return {data:{country:c,country_id:c.id,scope:'country',regional_reference_destinations:c.id==='CN'?await regionalCoverage(env,c.id):[],priced_city_count:priced.length,city_observations:priced.reduce((s,c)=>s+c.observation_count,0),priced_cities:priced,national,national_reference:nationalReference(costs?.observations||[]),observations,fx:costs?.fx,methodology:costs?.methodology,meaning:'这是当前导入的整个国家覆盖；国家统计直接见observations；城市报价需按priced_cities名称读取。未列城市暂无本来源样本，无需逐个查空，但不表示没有服务或价格高低。'},cities:[],sources:(costs?.sources||[]).filter(s=>s.id.startsWith('estat:')||s.id.startsWith('ecb:')),warnings:costs?.limitations||[],read_only:true};
   }
   if (name === "convert_currency") {
     const rate = await readFxRate(env,args.from,args.to);

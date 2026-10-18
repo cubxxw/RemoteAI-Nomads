@@ -58,7 +58,7 @@ test('catalog and original scores survive exclusions, with coverage distinct fro
  const before=structuredClone(catalog);
  const complete=catalog.filter(c=>KEYS.every(key=>Number.isFinite(c.scores[key])));
  assert.equal(complete.length,224);
- assert.equal(catalog.length,348);
+ assert.equal(catalog.length,350);
  assert.equal(rankCities(catalog,state('')).length,223);
  for(const slug of blocked)assert.ok(catalog.find(c=>c.slug===slug));
  const kabul=catalog.find(c=>c.slug==='kabul');

@@ -42,7 +42,7 @@ def sanitize(value):
 tables = ['countries','sources','cities','city_months','metric_definitions','metric_observations',
   'ai_availability','visa_programs','workspace_quotes','editorial_pages','editorial_cities',
   'score_models','city_scores','city_entry_conditions','city_locations','city_climate_months',
-  'cost_observations','fx_rates']
+  'cost_observations','fx_rates','geo_areas','city_geo_areas','regional_reference_observations']
 editorial_slugs = {'first-month','chiang-mai-vs-penang','chiang-mai-vs-da-nang'}
 editorial_ids = {r['id'] for r in snapshot.execute('SELECT id,slug FROM editorial_pages') if r['slug'] in editorial_slugs}
 counts = {}

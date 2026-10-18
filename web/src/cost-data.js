@@ -1,3 +1,4 @@
+import {readRegionalReferences} from './regional-data.js';
 const DAY = 86400000;
 const CATEGORIES = ['housing', 'food', 'utilities', 'transportation'];
 const rows = async (env, sql, args = []) => (await env.DB.prepare(sql).bind(...args).all()).results || [];
@@ -80,19 +81,21 @@ export async function readCityCosts(env, cityId, { currency = 'CNY', now = new D
   if (!/^[A-Z]{3}$/.test(currency)) throw new Error('INVALID_CURRENCY');
   const city = await env.DB.prepare('SELECT id,country_id FROM cities WHERE id=?').bind(cityId).first();
   if (!city) return null;
-  const found = await rows(env, `WITH latest AS (
+  const cityPrices = await rows(env, `WITH latest AS (
     SELECT o.*,ROW_NUMBER() OVER(PARTITION BY provider,COALESCE(city_id,''),field ORDER BY sample_end DESC,checked_at DESC,id DESC) AS rn
     FROM cost_observations o WHERE city_id=? OR (country_id=? AND scope='national')
   ) SELECT o.*,s.url source_url,s.title source_title FROM latest o JOIN sources s ON s.id=o.source_id WHERE rn=1 ORDER BY o.scope,o.category,o.field`, [cityId, city.country_id]);
+  const regional = city.country_id === 'CN' ? await readRegionalReferences(env, cityId, {now}) : [];
+  const found = [...cityPrices,...regional];
   const fx = {};
   for (const from of [...new Set(['USD', 'JPY', ...found.map(o => o.currency)])]) fx[from] = await readFxRate(env, from, currency, { now });
   const observations = found.map(o => {
     const { rn, payload_hash, ...value } = o;
     const rate = fx[o.currency];
-    const quality_flags = decode(o.quality_flags, []);
-    const stale = age(o.sample_end, now) > (o.provider === 'estat' ? 550 : 60);
+    const quality_flags = Array.isArray(o.quality_flags) ? [...o.quality_flags] : decode(o.quality_flags, []);
+    const stale = age(o.sample_end, now) > (o.provider === 'estat' || o.period === 'year' ? 550 : 60);
     if (stale) quality_flags.push('stale_observation');
-    return { ...value, observed_at: o.sample_end, quality_flags, detail: decode(o.detail, {}), stale,
+    return { ...value, observed_at: o.sample_end, quality_flags: [...new Set(quality_flags)], detail: typeof o.detail === 'object' ? o.detail : decode(o.detail, {}), stale,
       conversion: rate ? { amount: Math.round(o.amount * rate.rate * 100) / 100, currency, rate: rate.rate, date: rate.date, source_id: rate.source_id, stale: rate.stale } : null };
   });
   const hasEstat = found.some(o => o.provider === 'estat' && o.scope === 'national');
@@ -112,12 +115,14 @@ export async function readCityCosts(env, cityId, { currency = 'CNY', now = new D
   const sync_status = runs.map(r => ({ provider: r.provider, checked_at: r.finished_at, status: r.status, error: decode(r.summary, {}).error || null }));
   const local = observations.filter(o => o.scope === 'city');
   return { city_id: cityId, country_id: city.country_id, observations, sources, fx, sync_status, methodology, reference_total: null,
-    coverage: { city_observations: local.length, national_observations: observations.length - local.length,
+    coverage: { city_observations: local.length, national_observations: observations.filter(o=>o.scope==='national').length,
+      regional_observations: regional.length,
       missing_categories: CATEGORIES.filter(c => !local.some(o => o.category === c)) },
     limitations: [
       '单项商品、票价、月租的单位不同，不能直接相加；没有完整且同口径的月预算。',
       'CostCompass 是第三方采集的报价样本，住房是挂牌价，不证明短租、合租或实际成交价。',
       ...(city.country_id === 'JP' ? ['e-Stat 是日本全国单身家庭实际月均支出，含自有住房家庭，不是城市租房报价，也不是游民预算。'] : []),
+      ...(regional.length ? ['区域食品监测和居民年度支出保留真实地域与采样期，不能直接当成本城住宿报价、月预算或价格下限。'] : []),
       ...(methodology?.notes || []),
       ...(Object.values(fx).some(r => r?.stale) ? ['汇率参考已超过7天；换算保留原汇率日期，不能作为实时交易价。'] : []),
     ] };

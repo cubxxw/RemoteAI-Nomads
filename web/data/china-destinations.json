@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "beijing",
+    "name_zh": "北京",
+    "name_en": "Beijing",
+    "photo_url": "/images/city-beijing.webp",
+    "photo_credit": "N509FZ / CC BY 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "wiki_coordinates": [
+      {
+        "lat": 39.90666667,
+        "lon": 116.3975,
+        "primary": "",
+        "globe": "earth"
+      }
+    ],
+    "identity": "explicit_city_article"
+  },
+  {
+    "slug": "guangzhou",
+    "name_zh": "广州",
+    "name_en": "Guangzhou",
+    "photo_url": "/images/city-guangzhou.webp",
+    "photo_credit": "Tim Wu / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Canton_Tower_20241027.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "wiki_coordinates": [
+      {
+        "lat": 23.13,
+        "lon": 113.26,
+        "primary": "",
+        "globe": "earth"
+      }
+    ],
+    "identity": "explicit_city_article"
+  }
+]

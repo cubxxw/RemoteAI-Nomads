@@ -2384,3 +2384,9 @@ footer > div:first-child > p {
 /* A dated editorial view is visible and removable; it never alters source scores. */
 .rank-season-note { margin: 0 0 12px; max-width: 100%; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
 .rank-season-note a { color: var(--green); white-space: nowrap; }
+
+/* Unscored places stay discoverable without suggesting a low rank. */
+.rank-unrated-heading{padding:28px 0 16px;border-top:1px solid var(--line);margin-top:8px;color:var(--ink-3)}
+.rank-unrated-heading strong{display:flex;align-items:baseline;gap:12px;color:var(--ink);font-weight:500;font-size:17px}
+.rank-unrated-heading strong span{font-size:13px;color:var(--ink-3);font-weight:400}
+.rank-unrated-heading p{margin:6px 0 0;font-size:13px}
