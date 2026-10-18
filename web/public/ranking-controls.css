@@ -173,6 +173,8 @@
   #ranking-root .rank-controls-line{padding:0;gap:0}
   #ranking-root .rank-controls-line>#toggle-filters{font-size:13px;padding-inline:8px}
   #ranking-root .preset-chip{font-size:13px;padding-inline:12px}
+  #ranking-root .rank-quick-chip{padding-inline:10px;gap:6px}
+  #ranking-root .rank-quick-chip:last-child{margin-left:4px}
   #ranking-root .rank-active-filters{padding:8px 0;gap:4px}
   #ranking-root .rank-active-filters .rank-pill{font-size:12px}
   #ranking-root .ranking-columns{display:none}

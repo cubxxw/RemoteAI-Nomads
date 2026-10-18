@@ -22,9 +22,10 @@ export function applyRankingFilter(state, key, value) {
 export function quickFilters(state, date = new Date()) {
   const month = currentMonth(date);
   return [
-    {key:'global',label:'全球',selected:!state.region&&!state.country},
+    {key:'global',label:'全球',selected:!state.region&&!state.country&&!state.abroad},
     {key:'asia',label:'亚洲',selected:state.region==='亚洲'&&!state.country},
     {key:'domestic',label:'国内',selected:state.country==='CN'},
+    {key:'abroad',label:'国外',selected:!!state.abroad},
     {key:'month',label:'本月推荐',detail:month+'月',selected:state.month===month},
   ];
 }
@@ -33,8 +34,14 @@ export function toggleQuickFilter(state, key, date = new Date()) {
   if (key==='global'||key==='asia'||key==='domestic') {
     state.region=key==='asia'&&!selected?'亚洲':'';
     state.country=key==='domestic'&&!selected?'CN':'';
+    if(key!=='asia')state.abroad=false;
     // An overseas entry filter cannot describe a domestic trip.
     if (state.country==='CN') state.visa='';
+  }
+  if(key==='abroad') {
+    state.abroad=!selected;
+    state.country='';
+    if(state.visa==='domestic')state.visa='';
   }
   if (key==='month') {
     applyRankingFilter(state,'month',selected?null:currentMonth(date));
@@ -50,6 +57,7 @@ export function activeFilters(state) {
     state.q && { key: 'q', label: '搜索：' + state.q },
     state.region && { key: 'region', label: state.region },
     state.country && {key:'country',label:state.country==='CN'?'国内':'国家：'+state.country},
+    state.abroad && {key:'abroad',label:'国外'},
     state.budget && { key: 'budget', label: '月预算 ≤ $' + state.budget.toLocaleString('en-US') },
     state.month && !state.season && { key: 'month', label: state.month + '月出发' },
     state.season === SEASONAL_VIEW.id && { key: 'season', label: SEASONAL_VIEW.label },
@@ -62,6 +70,7 @@ export function additionalFilters(state,date=new Date()) {
   return activeFilters(state).filter(filter=>
     !(filter.key==='region'&&state.region==='亚洲'&&!state.country)&&
     !(filter.key==='country'&&state.country==='CN')&&
+    filter.key!=='abroad'&&
     !(filter.key==='month'&&state.month===currentMonth(date)));
 }
 export function restorePreference(url, storage) {
@@ -85,7 +94,7 @@ export function commandItems(data, query = '') {
   const needle = query.normalize('NFKC').trim().toLocaleLowerCase();
   const actions = [
     ...Object.entries(UI_PRESETS).map(([key,p]) => ({ kind: 'preset', value: key, label: p.label, detail: p.note || '切换排名视角', keywords: key === 'internet' ? '网速 网络 宽带 internet wifi' : key === 'visa' ? '签证 免签 护照 visa' : '' })),
-    ...quickFilters(parseState(new URL('https://nomads.example/'))).map(filter=>({kind:'quick',value:filter.key,label:filter.label,detail:'快捷筛选'+(filter.detail?' · '+filter.detail:''),keywords:filter.key==='domestic'?'中国 境内 国内':''})),
+    ...quickFilters(parseState(new URL('https://nomads.example/'))).map(filter=>({kind:'quick',value:filter.key,label:filter.label,detail:'快捷筛选'+(filter.detail?' · '+filter.detail:''),keywords:filter.key==='domestic'?'中国 境内 国内':filter.key==='abroad'?'境外 海外 国外':''})),
     ...Object.entries(VISA_LABELS).map(([value,label]) => ({ kind: 'filter', key: 'visa', value, label, detail: '签证筛选 · 原资料待核验', keywords: '签证 护照 visa' })),
     ...['亚洲','欧洲','美洲','非洲','大洋洲'].map(value => ({ kind: 'filter', key: 'region', value, label: value, detail: '按地区筛选' })),
     ...Array.from({length:12}, (_,i) => ({ kind:'filter', key:'month', value:i+1, label: i+1+'月出发', detail: '有原推荐记录的城市' })),

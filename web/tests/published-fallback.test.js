@@ -70,6 +70,10 @@ test('domestic and month shortcuts render the same scoped rows before JavaScript
  assert.ok(slugs.length>0&&slugs.every(slug=>catalog.find(city=>city.slug===slug).countryCode==='CN'));
  assert.match(body,/data-quick-filter="domestic" aria-pressed="true"/);
  assert.match(body,/class="rank-country-link" href="\/countries\/cn\/"/);
+ const abroad=await publishedFallback(new Request('https://nomads.example/?abroad=1&region=%E4%BA%9A%E6%B4%B2&month=10'),env),foreignBody=await abroad.text();
+ const foreignSlugs=[...foreignBody.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].map(m=>m[1]);
+ assert.ok(foreignSlugs.length>0&&foreignSlugs.every(slug=>{const city=catalog.find(c=>c.slug===slug);return city.region==='亚洲'&&!['CN','HK','MO','TW'].includes(city.countryCode);}));
+ assert.match(foreignBody,/data-quick-filter="abroad" aria-pressed="true"/);
 });
 test('worker keeps public browsing available during D1 outage and reports database health honestly',async()=>{
  const {env}=environment(),before=globalThis.caches;let reads=0;

@@ -58,3 +58,9 @@ test('domestic scope uses country identity and survives a shared URL',()=>{
  assert.match(html,/class="rank-country-link" href="\/countries\/cn\/"/);
  assert.match(html,/class="rank-city-link" href="\/cities\/xiamen\/"/);
 });
+test('abroad excludes mainland and Hong Kong, Macao and Taiwan entries without losing the selected region',()=>{
+ const catalog=['CN','HK','MO','TW','JP','TH','DE'].map(code=>({...city(code),countryCode:code,region:code==='DE'?'欧洲':'亚洲'}));
+ const state=parseState(new URL('https://nomads.test/?abroad=1&region=亚洲'));
+ assert.deepEqual(rankCities(catalog,state).map(c=>c.countryCode),['JP','TH']);
+ assert.equal(stateParams(state).get('abroad'),'1');
+});

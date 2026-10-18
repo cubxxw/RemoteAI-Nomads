@@ -403,7 +403,7 @@ root.addEventListener('click', event => {
   const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>toggleQuickFilter(state,quick.dataset.quickFilter));
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
-  if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' ? false : ''); });
+  if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' || key === 'abroad' ? false : ''); });
   if (event.target.closest('[data-reset-all],#reset-ranking')) resetAll();
   if (event.target.closest('#undo-ranking')) {
     clearTimeout(searchTimer);searchTimer = null;
@@ -421,7 +421,7 @@ filterPopover.addEventListener('change', event => {
   positionFilters();
 });
 document.querySelector('#include-incomplete').addEventListener('change', event => change(() => { state.incomplete = event.target.checked; }));
-document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',country:'',budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
+document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',country:'',abroad:false,budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
 document.querySelector('#reset-weights').addEventListener('click', () => {endWeightGesture();change(() => {state.weights = {...DEFAULT_WEIGHTS};});});
 document.addEventListener('pointerdown', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
 document.addEventListener('focusin', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });

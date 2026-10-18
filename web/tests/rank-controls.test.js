@@ -109,3 +109,15 @@ test('current-month shortcut composes with geography, follows Singapore month bo
  assert.deepEqual(additionalFilters(state,date),[]);
  toggleQuickFilter(state,'month',date);assert.equal(state.month,null);assert.equal(state.country,'CN');
 });
+test('abroad composes with Asia and month, switches cleanly from domestic and remains shareable',()=>{
+ const state=parseState(new URL('https://nomads.test/?country=CN&month=10&w=5,80,5,5,4,1'));
+ toggleQuickFilter(state,'abroad');assert.equal(state.abroad,true);assert.equal(state.country,'');assert.equal(state.month,10);assert.equal(state.weights.cost,80);
+ toggleQuickFilter(state,'asia');assert.equal(state.abroad,true);assert.equal(state.region,'亚洲');
+ assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+ const local=storage();savePreference(state,local);assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);
+ assert.ok(commandItems([],'国外').some(item=>item.kind==='quick'&&item.value==='abroad'));
+ assert.equal(additionalFilters(state,new Date('2026-10-18T00:00:00Z')).length,0);
+ toggleQuickFilter(state,'abroad');assert.equal(state.abroad,false);assert.equal(state.region,'亚洲');
+ toggleQuickFilter(state,'abroad');toggleQuickFilter(state,'domestic');assert.equal(state.country,'CN');assert.equal(state.abroad,false);
+ toggleQuickFilter(state,'abroad');toggleQuickFilter(state,'global');assert.equal(state.abroad,false);assert.equal(state.region,'');assert.equal(state.country,'');
+});

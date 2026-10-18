@@ -101,6 +101,7 @@ export function parseState(url) {
       ? p.get("region")
       : "",
     country: /^[A-Z]{2}$/.test((p.get('country') || '').toUpperCase()) ? p.get('country').toUpperCase() : '',
+    abroad: p.get('abroad') === '1',
     budget: Number.isFinite(b) && b > 0 && b <= 100000 ? Math.round(b) : null,
     month: Number.isInteger(m) && m > 0 && m < 13 ? m : null,
     visa: [
@@ -124,6 +125,7 @@ export function stateParams(s) {
   if (s.q) p.set("q", s.q);
   if (s.region) p.set("region", s.region);
   if (s.country) p.set('country', s.country);
+  if (s.abroad) p.set('abroad', '1');
   if (s.month) p.set("month", String(s.month));
   if (s.season === SEASONAL_VIEW.id && s.month === SEASONAL_VIEW.month) p.set("season", s.season);
   if (s.budget) p.set("budget", String(s.budget));
@@ -177,6 +179,7 @@ export function rankCities(cities, state) {
       continue;
     if (state.region && city.region !== state.region) continue;
     if (state.country && city.countryCode !== state.country) continue;
+    if (state.abroad && (!city.countryCode || ['CN','HK','MO','TW'].includes(city.countryCode))) continue;
     if (state.season === SEASONAL_VIEW.id && state.month === SEASONAL_VIEW.month && (SEASONAL_VIEW.excludedCountries.includes(city.countryCode) || city.visa.code === "unavailable")) continue;
     if (state.budget && (city.budget === null || city.budget > state.budget))
       continue;
