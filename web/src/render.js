@@ -1,3 +1,4 @@
+import {travelAdvisory} from '../public/modules/recommendation-policy.js';
 import {agentMarkup} from './agent-markup.js';
 import {icon} from '../public/modules/icons.js';
 export {icon};
@@ -19,7 +20,7 @@ export function photo(c,cls='',loading='lazy'){return c.photo_url?`<img class="$
 export function card(c){return `<article class="city-card">
  <div class="card-photo"><a href="/cities/${esc(c.slug)}/" aria-label="了解${esc(c.name_zh)}">${photo(c)}</a><button class="save" data-save="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="收藏${esc(c.name_zh)}" aria-pressed="false">${icon('heart')}</button></div>
  <div class="card-place"><div><h3><a href="/cities/${esc(c.slug)}/">${esc(c.name_zh)}</a></h3><span>${esc(c.name_en)} · ${esc(c.country_name)}</span></div><span class="region-label">${esc(c.region)}</span></div>
- <p class="card-summary">${esc(c.summary)}</p><div class="card-bottom"><div><strong>${money(c.budget_amount)}</strong><span>${c.budget_amount?' / 月估算':'月成本'}</span></div><button class="compare-add" data-compare="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="将${esc(c.name_zh)}加入对比" aria-pressed="false">${icon('plus')}<span>对比</span></button></div>
+ <p class="card-summary">${esc(travelAdvisory(c)?.reason || c.summary)}</p><div class="card-bottom"><div><strong>${money(c.budget_amount)}</strong><span>${c.budget_amount?' / 月估算':'月成本'}</span></div><button class="compare-add" data-compare="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="将${esc(c.name_zh)}加入对比" aria-pressed="false">${icon('plus')}<span>对比</span></button></div>
  </article>`;}
 export function searchForm(f={},compact=false){return `<form action="/cities/" method="get" class="search-form ${compact?'compact':''}">
  <label class="search-query"><span>想去哪里</span><input name="q" type="search" value="${esc(f.q||'')}" placeholder="搜索城市或国家" aria-label="搜索城市或国家"></label>

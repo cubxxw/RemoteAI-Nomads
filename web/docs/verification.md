@@ -4,6 +4,7 @@
 
 | 想核对什么 | 记录 |
 | --- | --- |
+| 推荐资格、官方出行提醒与排除范围 | [推荐资格规则](recommendation-policy.md) |
 | 本期五组推荐、偏好权重、来源与分享链接 | [十月榜单复核](seasonal-ranking-2026-10.md) |
 | 公开源码、全新安装和 GitHub 入口 | [源码交付复核](source-release-2026-10-18.md) |
 | 小狐入口、对话保存、移动端、当前部署与 D1 配额影响 | [小狐验收](companion-verification-2026-10-18.md) |

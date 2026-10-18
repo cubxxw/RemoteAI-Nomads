@@ -7,11 +7,11 @@
 <!-- seasonal:2026-10:start -->
 ## 2026 年 10 月，先看这五组
 
-每组取网站本期视角的前五名，共 16 座城市。核读于 2026-10-18，适合先试住一周，再决定是否住整月。
+每组取网站本期视角的前五名，共 13 座城市。核读于 2026-10-18，适合先试住一周，再决定是否住整月。
 
-综合推荐保留原 Metric Score；省钱、网速和安全视角把主指标权重设为 **80%**，其余权重与网页一致。个性化花费分由旧月参考连续换算。签证友好先筛大陆普通护照免签标签，再按综合分排序；免签入境与工作许可分别核实。网络仍是旧评分，**不是 Mbps**。
+综合推荐保留原 Metric Score；省钱、网速和安全视角把主指标权重设为 **50%**，其余指标合计50%，与网页一致。已核读暂勿前往提醒先于权重生效。个性化花费分由旧月参考连续换算。签证友好先筛大陆普通护照免签标签，再按综合分排序；免签入境与工作许可分别核实。网络仍是旧评分，**不是 Mbps**。
 
-本期按已核读的赴日、阿富汗提醒及通行条件筛选；仅供大陆普通护照出发参考，不是全目录风险审查。 [筛选理由与来源](guides/seasonal-2026-10.md)。
+本期另按赴日提醒及通行条件筛选；暂勿前往范围始终排除。大陆普通护照参考，非全目录风险审查。 [筛选理由与来源](guides/seasonal-2026-10.md)。
 
 ### 综合推荐
 
@@ -27,29 +27,29 @@
 
 ### 省钱优先
 
-本组旧月参考为 **USD 450–740**；住宿条件和包含项未统一，不能视为现价或最低生活门槛。
+本组旧月参考为 **USD 450–950**；住宿条件和包含项未统一，不能视为现价或最低生活门槛。
 
 | 城市 | 旧月参考 / USD | 十月的工作与生活 |
 | --- | ---: | --- |
 | 1. [博卡拉](https://nomads.cubxxw.com/cities/pokhara/) | $450 | 秋季适合湖畔散步；先测上传与备用电源，进出道路单独查，别把徒步条件当办公条件。 [来源](guides/seasonal-2026-10.md#pokhara) |
-| 2. [拉巴斯](https://nomads.cubxxw.com/cities/la-paz/) | $480 | 干季尾端可安排城市散步；高海拔先留适应时间，住所保暖与机场交通别省略。 [来源](guides/seasonal-2026-10.md#la-paz) |
-| 3. [成都](https://nomads.cubxxw.com/cities/chengdu/) | $730 | 国庆假期已过，适合按街区建立日常；秋雨留室内工位，远郊社群先算交通。 [来源](guides/seasonal-2026-10.md#chengdu) |
-| 4. [撒马尔罕](https://nomads.cubxxw.com/cities/samarkand/) | $720 | 秋季适合古城步行；会议多的人先试住测速，旧帖推荐的工位可能已经变动。 [来源](guides/seasonal-2026-10.md#samarkand) |
-| 5. [河内](https://nomads.cubxxw.com/cities/hanoi/) | $740 | 十月适合在街区步行；省钱也要留安静房间预算，会议时段试噪音和公司网络。 [来源](guides/seasonal-2026-10.md#hanoi) |
+| 2. [成都](https://nomads.cubxxw.com/cities/chengdu/) | $730 | 国庆假期已过，适合按街区建立日常；秋雨留室内工位，远郊社群先算交通。 [来源](guides/seasonal-2026-10.md#chengdu) |
+| 3. [乌布（巴厘岛）](https://nomads.cubxxw.com/cities/ubud/) | $800 | 稻田边可选固定工位；本年雨季预计偏晚，订房仍要验空调、夜间噪声和雨天通勤。 [来源](guides/seasonal-2026-10.md#ubud) |
+| 4. [杭州](https://nomads.cubxxw.com/cities/hangzhou/) | $950 | 秋季适合湖边日常；先短住选片区，旧房状况与新区通勤要一起看，留好雨天工位。 [来源](guides/seasonal-2026-10.md#hangzhou) |
+| 5. [撒马尔罕](https://nomads.cubxxw.com/cities/samarkand/) | $720 | 秋季适合古城步行；会议多的人先试住测速，旧帖推荐的工位可能已经变动。 [来源](guides/seasonal-2026-10.md#samarkand) |
 
-[更多省钱优先 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=5%2C80%2C5%2C5%2C4%2C1)
+[更多省钱优先 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=25%2C50%2C8%2C10%2C5%2C2)
 
 ### 网速优先
 
 | 城市 | 十月的工作与生活 |
 | --- | --- |
-| 1. [马拉加](https://nomads.cubxxw.com/cities/malaga/) | 十月海边气温温和；夜里加衣，先确认工位营业。若按北京时间9点开工，需凌晨在线。 [来源](guides/seasonal-2026-10.md#malaga) |
-| 2. [里斯本](https://nomads.cubxxw.com/cities/lisbon/) | 秋季适合步行与社交；短租和桌椅先落实，雨天增多。若按北京时间9点开工，需凌晨在线。 [来源](guides/seasonal-2026-10.md#lisbon) |
-| 3. [深圳](https://nomads.cubxxw.com/cities/shenzhen/) | 雨季通常已过，硬件协作资源多；十月仍常偏热，先试空调和工位社群。 [来源](guides/seasonal-2026-10.md#shenzhen) |
-| 4. [杭州](https://nomads.cubxxw.com/cities/hangzhou/) | 秋季适合湖边日常；先短住选片区，旧房状况与新区通勤要一起看，留好雨天工位。 [来源](guides/seasonal-2026-10.md#hangzhou) |
-| 5. [拉斯帕尔马斯（大加那利）](https://nomads.cubxxw.com/cities/las-palmas/) | 十月适合海边工作日；按具体房间测工作网络，游客短租与本地长租分开算。 [来源](guides/seasonal-2026-10.md#las-palmas) |
+| 1. [杭州](https://nomads.cubxxw.com/cities/hangzhou/) | 秋季适合湖边日常；先短住选片区，旧房状况与新区通勤要一起看，留好雨天工位。 [来源](guides/seasonal-2026-10.md#hangzhou) |
+| 2. [深圳](https://nomads.cubxxw.com/cities/shenzhen/) | 雨季通常已过，硬件协作资源多；十月仍常偏热，先试空调和工位社群。 [来源](guides/seasonal-2026-10.md#shenzhen) |
+| 3. [成都](https://nomads.cubxxw.com/cities/chengdu/) | 国庆假期已过，适合按街区建立日常；秋雨留室内工位，远郊社群先算交通。 [来源](guides/seasonal-2026-10.md#chengdu) |
+| 4. [马拉加](https://nomads.cubxxw.com/cities/malaga/) | 十月海边气温温和；夜里加衣，先确认工位营业。若按北京时间9点开工，需凌晨在线。 [来源](guides/seasonal-2026-10.md#malaga) |
+| 5. [里斯本](https://nomads.cubxxw.com/cities/lisbon/) | 秋季适合步行与社交；短租和桌椅先落实，雨天增多。若按北京时间9点开工，需凌晨在线。 [来源](guides/seasonal-2026-10.md#lisbon) |
 
-[更多网速优先 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=5%2C5%2C4%2C5%2C80%2C1)
+[更多网速优先 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=25%2C10%2C5%2C8%2C50%2C2)
 
 ### 签证友好
 
@@ -73,11 +73,11 @@
 | 2. [费特希耶](https://nomads.cubxxw.com/cities/fethiye/) | 十月适合海岸散步与徒步；先订可用工位，肩季也可能拥挤，别预设房租会降。 [来源](guides/seasonal-2026-10.md#fethiye) |
 | 3. [深圳](https://nomads.cubxxw.com/cities/shenzhen/) | 雨季通常已过，硬件协作资源多；十月仍常偏热，先试空调和工位社群。 [来源](guides/seasonal-2026-10.md#shenzhen) |
 | 4. [慕尼黑](https://nomads.cubxxw.com/cities/munich/) | 节庆已结束，可安排凉秋城市生活；早晚添衣，工位日票须先问可用性。 [来源](guides/seasonal-2026-10.md#munich) |
-| 5. [成都](https://nomads.cubxxw.com/cities/chengdu/) | 国庆假期已过，适合按街区建立日常；秋雨留室内工位，远郊社群先算交通。 [来源](guides/seasonal-2026-10.md#chengdu) |
+| 5. [马拉加](https://nomads.cubxxw.com/cities/malaga/) | 十月海边气温温和；夜里加衣，先确认工位营业。若按北京时间9点开工，需凌晨在线。 [来源](guides/seasonal-2026-10.md#malaga) |
 
-[更多安全第一 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=80%2C5%2C5%2C5%2C4%2C1)
+[更多安全第一 · 83 座城市 →](https://nomads.cubxxw.com/?month=10&season=2026-10&w=50%2C10%2C12%2C15%2C10%2C3)
 
-这 16 城都做过 web、Reddit、X 和小红书定向检索；原帖、部分评论与搜索摘要分别记录，**并非四个平台的正文都已读到**。季节依据包括常年气候与历史体验，未冒充本月天气、房价或全城网速。[逐城来源与读取范围](guides/seasonal-2026-10.md)。
+这 13 城都做过 web、Reddit、X 和小红书定向检索；原帖、部分评论与搜索摘要分别记录，**并非四个平台的正文都已读到**。季节依据包括常年气候与历史体验，未冒充本月天气、房价或全城网速。[逐城来源与读取范围](guides/seasonal-2026-10.md)。
 <!-- seasonal:2026-10:end -->
 
 ## 按自己的条件看排行

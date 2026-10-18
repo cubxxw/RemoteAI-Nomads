@@ -5,7 +5,7 @@ export const PREFERENCE_KEY = 'nomads-ranking-view-v1';
 export const UI_PRESETS = {
   default: { ...PRESETS.default, label: '综合推荐' },
   budget: PRESETS.budget,
-  internet: { label: '网速优先', weights: { safety: 5, cost: 5, climate: 4, life: 5, internet: 80, community: 1 } },
+  internet: PRESETS.internet,
   visa: { ...PRESETS.visa, label: '签证友好', note: '大陆护照免签 · 原资料待核验' },
   winter: PRESETS.winter,
   safe: PRESETS.safe,

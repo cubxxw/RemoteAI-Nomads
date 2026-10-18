@@ -57,9 +57,9 @@ test('a saved dated view stays visible and removable without duplicate month pil
  selected.season='';assert.ok(activeFilters(selected).some(c=>c.key==='month'));
 });
 
-test('named numeric priorities actually dedicate eighty percent to their leading metric',()=>{
+test('named numeric priorities actually dedicate fifty percent to their leading metric',()=>{
  for(const [name,key] of [['budget','cost'],['internet','internet'],['safe','safety']]){
-  const weights=UI_PRESETS[name].weights,total=Object.values(weights).reduce((a,b)=>a+b,0);assert.equal(weights[key]/total,0.8);
+  const weights=UI_PRESETS[name].weights,total=Object.values(weights).reduce((a,b)=>a+b,0);assert.equal(weights[key]/total,0.5);
  }
 });
 
@@ -111,7 +111,7 @@ test('current-month shortcut composes with geography, follows Singapore month bo
 });
 test('abroad composes with Asia and month, switches cleanly from domestic and remains shareable',()=>{
  const state=parseState(new URL('https://nomads.test/?country=CN&month=10&w=5,80,5,5,4,1'));
- toggleQuickFilter(state,'abroad');assert.equal(state.abroad,true);assert.equal(state.country,'');assert.equal(state.month,10);assert.equal(state.weights.cost,80);
+ toggleQuickFilter(state,'abroad');assert.equal(state.abroad,true);assert.equal(state.country,'');assert.equal(state.month,10);assert.equal(state.weights.cost,50);
  toggleQuickFilter(state,'asia');assert.equal(state.abroad,true);assert.equal(state.region,'亚洲');
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
  const local=storage();savePreference(state,local);assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);

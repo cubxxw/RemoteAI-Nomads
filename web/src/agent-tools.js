@@ -1,3 +1,4 @@
+import {travelAdvisory,recommendationEligible,RECOMMENDATION_POLICY_URL} from '../public/modules/recommendation-policy.js';
 import { loadRankings } from "./rank-pages.js";
 import { readCityCosts, readFxRate } from "./cost-data.js";
 import { calculateBudget } from "./agent-budget.js";
@@ -291,6 +292,7 @@ const one = async (db, sql, args = []) =>
     .bind(...args)
     .first();
 const brief = (c) => ({
+  recommendation: {eligible:recommendationEligible(c),review_scope:"已核读提醒的排除规则；入榜不等于安全保证",advisory:travelAdvisory(c)},
   slug: c.slug,
   name: c.name,
   name_en: c.nameEn,
@@ -355,6 +357,7 @@ export async function executeNomadTool(env, name, args) {
       if (v) sourceIds.add(v);
     });
   async function remember(c) {
+    const advisory=travelAdvisory(c);if(advisory)warnings.push(advisory.reason+"；官方来源："+advisory.url);
     if (!cities.some((x) => x.slug === c.slug)) cities.push(brief(c));
     const r = await dbCity(c);
     if (r) {
@@ -428,6 +431,8 @@ export async function executeNomadTool(env, name, args) {
       returned_count:cities.length,
       result_scope:'matched是筛选命中数；returned_count是受limit截取的返回数，两者都不是全国实际城市总数',
       cities,
+      excluded_for_travel_advisory: scoped.filter(c=>!recommendationEligible(c)).map(c=>({slug:c.slug,name:c.name,advisory:travelAdvisory(c)})),
+      advisory_scope: '已核读提醒的目录排除项；不是当前条件下全部未命中城市，也不等于其余城市都已安全核查',
       climate_at_month: selectedMonth
         ? filtered.slice(0, args.limit || 5).map((c) => ({
             city: c.slug,
@@ -811,8 +816,9 @@ export async function executeNomadTool(env, name, args) {
     dataOut = {
       countries: (await one(db, "SELECT count(*) n FROM countries")).n,
       cities: all.length,
-      complete_scores: rankCities(all, parseState(new URL("http://local/")))
-        .length,
+      complete_scores: all.filter(c=>KEYS.every(key=>Number.isFinite(c.scores[key]))).length,
+      recommendable_complete_scores: rankCities(all, parseState(new URL("http://local/"))).length,
+      excluded_for_travel_advisory: all.filter(c=>!recommendationEligible(c)).length,
       locations: all.filter((c) => c.lat !== null).length,
       climate_cities: all.filter((c) => c.months.some((m) => m.meanC !== null))
         .length,
@@ -825,6 +831,9 @@ export async function executeNomadTool(env, name, args) {
   if (name === "get_method")
     dataOut = {
       default_weights: DEFAULT_WEIGHTS,
+      preset_weights: Object.fromEntries(Object.entries(PRESETS).map(([key,preset])=>[key,preset.weights])),
+      recommendation_rule: {before_scoring:true,url:RECOMMENDATION_POLICY_URL,scope:'已核读暂勿前往范围适用于所有推荐；其余城市并不等于已完成安全审查'},
+      custom_cost_formula: '按历史月参考USD连续计分：clamp(10-2.5*log2(amount/300),0,10)，缺金额不推测便宜；不是现价或最低生活门槛',
       original_formula:
         "安全×0.3125+成本×0.25+环境×0.1875+生活×0.1875+网络×0.0625+社区很强0.5/有社区0.2/小众安静0",
       custom_formula: "六项正权重加权均值×1.05，四舍五入一位小数",

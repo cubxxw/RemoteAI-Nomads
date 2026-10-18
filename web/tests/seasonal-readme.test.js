@@ -13,10 +13,10 @@ const editorial = JSON.parse(await readFile(new URL('../data/seasonal-2026-10.js
 const clone = value => structuredClone(value);
 const expected = {
   default: ['ubud', 'fethiye', 'hangzhou', 'shenzhen', 'antalya'],
-  budget: ['pokhara', 'la-paz', 'chengdu', 'samarkand', 'hanoi'],
-  internet: ['malaga', 'lisbon', 'shenzhen', 'hangzhou', 'las-palmas'],
+  budget: ['pokhara', 'chengdu', 'ubud', 'hangzhou', 'samarkand'],
+  internet: ['hangzhou', 'shenzhen', 'chengdu', 'malaga', 'lisbon'],
   visa: ['fethiye', 'antalya', 'izmir', 'tashkent', 'samarkand'],
-  safe: ['hangzhou', 'fethiye', 'shenzhen', 'munich', 'chengdu'],
+  safe: ['hangzhou', 'fethiye', 'shenzhen', 'munich', 'malaga'],
 };
 
 test('the current five Top 5 groups come from the public catalog and shared website presets', () => {
@@ -46,11 +46,11 @@ test('all share URLs reproduce the exact website order, weights and dated season
   }
 });
 
-test('80 percent presets are normalized while visa is a hard filter with the original score', () => {
+test('50 percent presets are normalized while visa is a hard filter with the original score', () => {
   const groups = seasonalGroups(catalog, editorial);
   for (const [groupKey, metric] of [['budget', 'cost'], ['internet', 'internet'], ['safe', 'safety']]) {
     const { state } = groups.find(group => group.key === groupKey);
-    assert.equal(state.weights[metric], 80);
+    assert.equal(state.weights[metric], 50);
     assert.equal(KEYS.reduce((sum, key) => sum + state.weights[key], 0), 100);
   }
   for (const key of ['default', 'visa']) {
@@ -72,10 +72,11 @@ test('membership responds to public data rather than editorial order or hardcode
   assert.deepEqual(groups.find(group => group.key === 'internet').cities.map(city => city.slug), expected.internet);
 });
 
-test('sixteen unique researched cities cover all 25 rows and record all four platform checks', () => {
+test('every current Top 5 city is covered by the sixteen researched profiles with four platform checks', () => {
   const slugs = new Set(seasonalGroups(catalog, editorial).flatMap(group => group.cities.map(city => city.slug)));
-  assert.equal(slugs.size, 16);
-  assert.deepEqual([...slugs].sort(), editorial.cities.map(city => city.slug).sort());
+  assert.equal(slugs.size, 13);
+  assert.ok([...slugs].every(slug=>editorial.cities.some(city=>city.slug===slug)));
+  assert.equal(editorial.cities.length,16);
   assert.equal(editorial.checked_at, '2026-10-18');
   for (const city of editorial.cities) {
     assert.ok(city.summary.length <= 60, `${city.slug} needs a concise summary`);
@@ -123,8 +124,8 @@ test('every row has a city page and a stable guide anchor; all five more links a
     assert.ok(block.includes(`](${group.url})`));
     for (const city of group.cities) assert.ok(block.includes(`](guides/seasonal-2026-10.md#${city.slug})`));
   }
-  assert.match(block, /USD 450–740/);
-  for (const amount of [450, 480, 730, 720, 740]) assert.ok(block.includes(`$${amount}`));
+  assert.match(block, /USD 450–950/);
+  for (const amount of [450, 730, 800, 950, 720]) assert.ok(block.includes(`$${amount}`));
   assert.match(block, /不能视为现价或最低生活门槛/);
   assert.match(block, /不是 Mbps/);
   assert.match(block, /并非四个平台的正文都已读到/);

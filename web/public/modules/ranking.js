@@ -1,9 +1,10 @@
 import { cityMatchesQuery } from "./country-search.js";
+import {recommendationEligible} from './recommendation-policy.js';
 // A dated editorial view; the underlying historical scores remain unchanged.
 export const SEASONAL_VIEW = {
   id: '2026-10', month: 10, label: '10月出发建议', reviewedAt: '2026-10-18',
-  excludedCountries: ['JP', 'AF'],
-  note: '本期按已核读的赴日、阿富汗提醒及通行条件筛选；仅供大陆普通护照出发参考，不是全目录风险审查。',
+  excludedCountries: ['JP'],
+  note: '本期另按赴日提醒及通行条件筛选；暂勿前往范围始终排除。大陆普通护照参考，非全目录风险审查。',
   methodology: 'https://github.com/cubxxw/RemoteAI-Nomads/blob/main/guides/seasonal-2026-10.md',
 };
 export const KEYS = [
@@ -38,14 +39,15 @@ export const PRESETS = {
   budget: {
     label: "省钱优先",
     weights: {
-      safety: 5,
-      cost: 80,
-      climate: 5,
-      life: 5,
-      internet: 4,
-      community: 1,
+      safety: 25,
+      cost: 50,
+      climate: 8,
+      life: 10,
+      internet: 5,
+      community: 2,
     },
   },
+  internet: {label:'网速优先',weights:{safety:25,cost:10,climate:5,life:8,internet:50,community:2}},
   winter: {
     label: "冬天避寒",
     weights: {
@@ -62,12 +64,12 @@ export const PRESETS = {
   safe: {
     label: "安全第一",
     weights: {
-      safety: 80,
-      cost: 5,
-      climate: 5,
-      life: 5,
-      internet: 4,
-      community: 1,
+      safety: 50,
+      cost: 10,
+      climate: 12,
+      life: 15,
+      internet: 10,
+      community: 3,
     },
   },
   visa: { label: "大陆护照免签", weights: DEFAULT_WEIGHTS, visa: "visa_free" },
@@ -84,6 +86,9 @@ export function validWeights(input) {
   return KEYS.some((k) => w[k] > 0) ? w : { ...DEFAULT_WEIGHTS };
 }
 export const isDefault = (w) => KEYS.every((k) => w[k] === DEFAULT_WEIGHTS[k]);
+// Upgrade the three formerly published presets in saved views and old links.
+// Other user-defined weights remain explicit choices; advisories still apply.
+const legacyPresetKeys={'5,80,5,5,4,1':'budget','5,5,4,5,80,1':'internet','80,5,5,5,4,1':'safe'};
 export function parseState(url) {
   const p = url.searchParams;
   const parts = p.get("w")?.split(",");
@@ -91,11 +96,12 @@ export function parseState(url) {
     parts?.length === 6
       ? Object.fromEntries(KEYS.map((k, i) => [k, parts[i]]))
       : DEFAULT_WEIGHTS;
+  const weights=validWeights(raw), presetKey=legacyPresetKeys[KEYS.map(key=>weights[key]).join(',')];
   const m = Number(p.get("month")),
     b = Number(p.get("budget")),
     lim = Number(p.get("limit"));
   return {
-    weights: validWeights(raw),
+    weights: {...(PRESETS[presetKey]?.weights || weights)},
     q: (p.get("q") || "").normalize("NFKC").trim().slice(0, 100),
     region: ["亚洲", "欧洲", "非洲", "美洲", "大洋洲"].includes(p.get("region"))
       ? p.get("region")
@@ -172,6 +178,7 @@ export function rankCities(cities, state) {
   const query = state.q.normalize("NFKC").trim().toLocaleLowerCase();
   const result = [], preciseScores = new Map();
   for (const city of cities) {
+    if (!recommendationEligible(city)) continue;
     if (
       query &&
       !cityMatchesQuery(city, query)
