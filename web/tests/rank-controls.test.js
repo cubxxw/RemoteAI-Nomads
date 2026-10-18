@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseState, stateParams, DEFAULT_WEIGHTS } from '../public/modules/ranking.js';
-import { UI_PRESETS, PREFERENCE_KEY, restorePreference, savePreference, activeFilters, viewLabel, commandItems, applyRankingFilter } from '../public/modules/rank-controls.js';
+import { UI_PRESETS, PREFERENCE_KEY, restorePreference, savePreference, activeFilters, viewLabel, commandItems, applyRankingFilter, quickFilters, toggleQuickFilter, additionalFilters } from '../public/modules/rank-controls.js';
 
 const storage = () => {
   const values = new Map();
@@ -88,4 +88,24 @@ test('changing another filter preserves an explicitly selected dated departure v
  applyRankingFilter(state,'region','欧洲');
  assert.equal(stateParams(state).toString(),'region=%E6%AC%A7%E6%B4%B2&month=10&season=2026-10');
  assert.deepEqual(activeFilters(state).map(item=>item.label),['欧洲','10月出发建议']);
+});
+test('quick geography switches a real country constraint while retaining the chosen ranking',()=>{
+ const state=parseState(new URL('https://nomads.test/?region=欧洲&visa=visa_free&w=5,80,5,5,4,1'));
+ const weights={...state.weights};
+ toggleQuickFilter(state,'domestic');assert.equal(state.country,'CN');assert.equal(state.region,'');assert.equal(state.visa,'');assert.deepEqual(state.weights,weights);
+ const local=storage();savePreference(state,local);assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);
+ assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+ assert.deepEqual(quickFilters(state).filter(f=>f.selected).map(f=>f.key),['domestic']);
+ assert.deepEqual(additionalFilters(state),[]);
+ toggleQuickFilter(state,'asia');assert.equal(state.country,'');assert.equal(state.region,'亚洲');
+ toggleQuickFilter(state,'asia');assert.equal(state.region,'');
+ toggleQuickFilter(state,'domestic');applyRankingFilter(state,'region','欧洲');assert.equal(state.country,'');
+});
+test('current-month shortcut composes with geography, follows Singapore month boundaries and can be removed',()=>{
+ const state=parseState(new URL('https://nomads.test/?country=CN&month=1&warm=1'));
+ const date=new Date('2026-10-31T16:01:00Z');
+ toggleQuickFilter(state,'month',date);assert.equal(state.month,11);assert.equal(state.country,'CN');assert.equal(state.warm,false);
+ assert.deepEqual(quickFilters(state,date).filter(f=>f.selected).map(f=>f.key),['domestic','month']);
+ assert.deepEqual(additionalFilters(state,date),[]);
+ toggleQuickFilter(state,'month',date);assert.equal(state.month,null);assert.equal(state.country,'CN');
 });

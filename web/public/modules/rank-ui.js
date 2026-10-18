@@ -13,7 +13,7 @@ import {
   renderRow,
 } from "./ranking.js";
 import { RankMap } from "./rank-map.js";
-import { UI_PRESETS, activeFilters, viewLabel, restorePreference, savePreference, commandItems, applyRankingFilter } from "./rank-controls.js";
+import { UI_PRESETS, additionalFilters, viewLabel, restorePreference, savePreference, commandItems, applyRankingFilter, quickFilters, toggleQuickFilter } from "./rank-controls.js";
 const root = document.querySelector("#ranking-root");
 const data = unpackRankingData(
   JSON.parse(document.querySelector("#ranking-data").textContent),
@@ -281,6 +281,7 @@ function renderWeightPreview() {
 }
 function syncControls() {
   const seasonNote = document.querySelector('#rank-season-note');if (seasonNote) seasonNote.hidden = state.season !== SEASONAL_VIEW.id;
+  for (const filter of quickFilters(state)) { const button=root.querySelector(`[data-quick-filter="${filter.key}"]`);button.classList.toggle('selected',filter.selected);button.setAttribute('aria-pressed',String(filter.selected));if(filter.detail)button.querySelector('span').textContent=filter.detail; }
   renderWeightPreview();
   for (const input of weightInputs) {
     const key = input.dataset.weight;
@@ -310,7 +311,7 @@ function syncControls() {
   document.querySelector('#undo-ranking').hidden = !undoStack.length;
   const container = document.querySelector('#active-ranking-filters');
   const focusedKey = container.contains(document.activeElement) ? document.activeElement.dataset.removeFilter : null;
-  const filters = activeFilters(state);
+  const filters = additionalFilters(state);
   container.replaceChildren();container.hidden = !filters.length;
   for (const filter of filters) {
     const button = document.createElement('button');button.type = 'button';button.className = 'rank-pill';button.dataset.removeFilter = filter.key;
@@ -399,6 +400,7 @@ function applyPreset(key) {
   change(() => { state.weights = {...preset.weights};state.warm = !!preset.warm;state.visa = preset.visa || '';applyRankingFilter(state,'month',preset.month || state.month); });
 }
 root.addEventListener('click', event => {
+  const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>toggleQuickFilter(state,quick.dataset.quickFilter));
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
   if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' ? false : ''); });
@@ -419,7 +421,7 @@ filterPopover.addEventListener('change', event => {
   positionFilters();
 });
 document.querySelector('#include-incomplete').addEventListener('change', event => change(() => { state.incomplete = event.target.checked; }));
-document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
+document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',country:'',budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
 document.querySelector('#reset-weights').addEventListener('click', () => {endWeightGesture();change(() => {state.weights = {...DEFAULT_WEIGHTS};});});
 document.addEventListener('pointerdown', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
 document.addEventListener('focusin', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
@@ -428,6 +430,19 @@ window.addEventListener('resize', () => { positionFilters();updatePresetOverflow
 window.addEventListener('scroll', () => { if (!filterPopover.hidden) positionFilters(); },{passive:true});
 document.querySelector('.preset-row').addEventListener('scroll', updatePresetOverflow,{passive:true});
 document.querySelector('#show-more-cities').addEventListener('click', event => { event.preventDefault();state.limit = Math.min(360,state.limit+40);render();commit(); });
+// Preserve native controls, text selection, and modified clicks within a row.
+function navigateRow(event) {
+  const row=event.target.closest('.ranking-row');
+  if(!row||event.defaultPrevented||event.target.closest('a,button,input,select,textarea,summary,[role="button"]')||window.getSelection()?.toString())return;
+  const href=row.querySelector('.rank-city-link')?.href;if(!href)return;
+  if(event.type==='auxclick'&&event.button!==1)return;
+  if(event.type==='click'&&event.button!==0)return;
+  event.preventDefault();
+  if(event.button===1||event.metaKey||event.ctrlKey||event.shiftKey)window.open(href,'_blank','noopener');
+  else location.assign(href);
+}
+list.addEventListener('click',navigateRow);
+list.addEventListener('auxclick',navigateRow);
 list.addEventListener('pointerover', event => { const row = event.target.closest('[data-city]');if (row && active !== row.dataset.city) highlight(row.dataset.city); });
 list.addEventListener('focusin', event => { const row = event.target.closest('[data-city]');if (row) highlight(row.dataset.city); });
 window.addEventListener('popstate', () => { clearTimeout(searchTimer);searchTimer = null;state = parseState(new URL(location.href));search.value = state.q;searchHistory = false;searchCheckpoint = false;render();savePreference(state,preferenceStorage); });
@@ -458,6 +473,7 @@ function executeCommand(index) {
   if (item.kind === 'city') { location.href = '/cities/' + encodeURIComponent(item.value) + '/';return; }
   commandDialog.close();
   if (item.kind === 'preset') applyPreset(item.value);
+  if (item.kind === 'quick') change(()=>toggleQuickFilter(state,item.value));
   if (item.kind === 'filter') change(() => {applyRankingFilter(state,item.key,item.value);});
   if (item.kind === 'search') change(() => {state.q = item.value;search.value = state.q;});
   if (item.kind === 'weights') openWeights(commandOpener);

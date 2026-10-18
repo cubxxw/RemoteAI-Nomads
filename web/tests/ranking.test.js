@@ -48,3 +48,13 @@ test('rounding for display never falls back to the old Metric Score to order dif
  const state={...parseState(new URL('https://nomads.test/')),weights};
  assert.equal(rankCities([dearer,cheap],state)[0].slug,'cheap');
 });
+test('domestic scope uses country identity and survives a shared URL',()=>{
+ const china={...city('xiamen'),countryCode:'CN',country:'中国'},foreign={...city('china-town'),name:'中国城',countryCode:'TH'};
+ const state=parseState(new URL('https://nomads.test/?country=cn&month=1'));
+ assert.equal(state.country,'CN');assert.deepEqual(rankCities([foreign,china],state).map(c=>c.slug),['xiamen']);
+ assert.equal(stateParams(state).get('country'),'CN');
+ assert.equal(parseState(new URL('https://nomads.test/?country=<script>')).country,'');
+ const html=renderRow({...china,rank:1,score:8.6},state);
+ assert.match(html,/class="rank-country-link" href="\/countries\/cn\/"/);
+ assert.match(html,/class="rank-city-link" href="\/cities\/xiamen\/"/);
+});

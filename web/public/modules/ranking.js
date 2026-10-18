@@ -14,8 +14,9 @@ export const KEYS = [
   "internet",
   "community",
 ];
-export const displayMonth = (state) =>
-  state.month || new Date().getUTCMonth() + 1;
+const monthFormatter = new Intl.DateTimeFormat('en-US', {timeZone:'Asia/Singapore',month:'numeric'});
+export const currentMonth = (date = new Date()) => Number(monthFormatter.format(date));
+export const displayMonth = (state) => state.month || currentMonth();
 export const LABELS = {
   safety: "安全",
   cost: "花费",
@@ -99,6 +100,7 @@ export function parseState(url) {
     region: ["亚洲", "欧洲", "非洲", "美洲", "大洋洲"].includes(p.get("region"))
       ? p.get("region")
       : "",
+    country: /^[A-Z]{2}$/.test((p.get('country') || '').toUpperCase()) ? p.get('country').toUpperCase() : '',
     budget: Number.isFinite(b) && b > 0 && b <= 100000 ? Math.round(b) : null,
     month: Number.isInteger(m) && m > 0 && m < 13 ? m : null,
     visa: [
@@ -121,6 +123,7 @@ export function stateParams(s) {
   const p = new URLSearchParams();
   if (s.q) p.set("q", s.q);
   if (s.region) p.set("region", s.region);
+  if (s.country) p.set('country', s.country);
   if (s.month) p.set("month", String(s.month));
   if (s.season === SEASONAL_VIEW.id && s.month === SEASONAL_VIEW.month) p.set("season", s.season);
   if (s.budget) p.set("budget", String(s.budget));
@@ -173,6 +176,7 @@ export function rankCities(cities, state) {
     )
       continue;
     if (state.region && city.region !== state.region) continue;
+    if (state.country && city.countryCode !== state.country) continue;
     if (state.season === SEASONAL_VIEW.id && state.month === SEASONAL_VIEW.month && (SEASONAL_VIEW.excludedCountries.includes(city.countryCode) || city.visa.code === "unavailable")) continue;
     if (state.budget && (city.budget === null || city.budget > state.budget))
       continue;
@@ -249,7 +253,7 @@ export function renderRow(c, state) {
   return `<article class="ranking-row" data-city="${esc(c.slug)}" data-score="${c.score ?? ""}" aria-label="${c.rank ? "第" + c.rank + "名，" : ""}${esc(c.name)}" tabindex="-1">
  <span class="rank-number" role="img" aria-label="${c.rank ? "第" + c.rank + "名" : "资料待补"}"><span class="rank-digit" aria-hidden="true">${c.rank ?? "—"}</span></span>
  <a class="rank-photo" href="/cities/${esc(c.slug)}/" tabindex="-1" aria-hidden="true">${c.photo ? `<img src="${esc(c.photo.endsWith(".webp") ? c.photo.replace(".webp", ".thumb.webp") : c.photo)}" alt="" width="48" height="48" loading="lazy">` : `<span>${esc(c.name.slice(0, 1))}</span>`}</a>
- <div class="rank-identity"><a class="rank-city-link" href="/cities/${esc(c.slug)}/"><strong>${esc(c.name)}</strong><span class="country-flag" role="img" aria-label="${esc(c.country)}旗帜">${["TW", "XK"].includes(c.countryCode) ? `<img src="/flags/${c.countryCode.toLowerCase()}.svg" alt="" width="16" height="12">` : flag(c.countryCode)}</span></a><span class="rank-english">${esc(c.nameEn)} <span>· ${esc(c.country)}</span></span><p title="${esc(c.why)}">${esc(c.why)}</p><span class="mobile-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)} · 旧资料</span></div>
+ <div class="rank-identity"><a class="rank-city-link" href="/cities/${esc(c.slug)}/"><strong>${esc(c.name)}</strong></a><span class="rank-english"><span class="rank-city-name-en">${esc(c.nameEn)}</span><span class="rank-country-separator" aria-hidden="true">·</span><a class="rank-country-link" href="/countries/${esc(c.countryCode.toLowerCase())}/" aria-label="查看${esc(c.country)}的城市"><span class="country-flag" role="img" aria-label="${esc(c.country)}旗帜">${["TW", "XK"].includes(c.countryCode) ? `<img src="/flags/${c.countryCode.toLowerCase()}.svg" alt="" width="16" height="12">` : flag(c.countryCode)}</span><span>${esc(c.country)}</span></a></span><p title="${esc(c.why)}">${esc(c.why)}</p><span class="mobile-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)} · 旧资料</span></div>
  <div class="rank-metric cost-cell"><span class="metric-mobile-label">月花费</span><strong title="历史估算；${esc(c.budgetBasis)}">${c.budget === null ? "—" : "≈" + money(c.budget)}</strong><small>USD / 月</small></div>
  <div class="rank-metric safety-cell"><span class="metric-mobile-label">安全</span><strong>${n(c.scores.safety)}</strong>${bar(c.scores.safety)}</div>
  <div class="rank-metric climate-cell"><span class="metric-mobile-label">${month} 月均温</span><strong title="2023–2025 ERA5 历史均温；非天气预报">${mean === null || mean === undefined ? "—" : Math.round(mean) + "°"}</strong><small>${month} 月均温</small></div>
@@ -257,7 +261,7 @@ export function renderRow(c, state) {
  <div class="rank-season">${monthBand(c, state.month)}</div>
  <span class="rank-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span>
  <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${c.score === null ? "资料待补" : isDefault(state.weights) ? "指标分" : "自定义分"}</small></div>
- <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false">＋</button>
+ <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></button>
  </article>`;
 }
 export function advantages(a, b) {

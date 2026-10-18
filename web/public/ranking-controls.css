@@ -31,6 +31,12 @@
 #ranking-root .preset-chip{padding:4px 14px;flex-shrink:0;border:0;min-height:36px}
 #ranking-root .preset-chip:before{content:"";position:absolute;inset:-4px 0}
 #ranking-root .preset-row[data-overflow="true"]{mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent)}
+#ranking-root .rank-quick-filters{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:8px 0;border-bottom:1px solid var(--line)}
+#ranking-root .rank-quick-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;min-height:36px;padding:6px 14px;font-size:13px;color:var(--ink-3,var(--muted));background:transparent;cursor:pointer}
+#ranking-root .rank-quick-chip.selected{background:var(--ink-1,var(--ink));color:var(--paper,#fafafa);font-weight:500}
+#ranking-root .rank-quick-chip>span{font-size:12px;color:var(--ink-3,var(--muted));font-variant-numeric:tabular-nums}
+#ranking-root .rank-quick-chip.selected>span{color:inherit;opacity:.8}
+#ranking-root .rank-quick-chip:last-child{margin-left:8px}
 #ranking-root .rank-active-filters{display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 #ranking-root .rank-active-filters .rank-pill{color:var(--ink-1,var(--ink));background:var(--green-soft,var(--soft));font-size:13px;min-height:36px;padding-inline:12px}
 #ranking-root .rank-active-filters .rank-pill svg{width:16px;height:16px}
@@ -84,19 +90,26 @@
 #ranking-root .rank-command-item>svg{width:20px;height:20px;flex:none;color:var(--ink-3,var(--muted));margin-left:auto}
 #ranking-root .rank-command-footer{display:flex;justify-content:space-between;gap:16px;padding:12px 20px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3,var(--muted))}
 #ranking-root .ranking-body{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
-#ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:24px 48px minmax(180px,1fr) 92px 58px 68px 58px 112px 70px 52px 44px;gap:8px}
-#ranking-root .ranking-columns{padding:8px 0;font-size:12px;line-height:20px;white-space:nowrap;color:var(--ink-3,var(--muted))}
+#ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:28px 48px minmax(180px,1fr) 92px 58px 68px 58px 112px 70px 52px 44px;gap:8px}
+#ranking-root .ranking-columns{padding:10px 0;font-size:13px;line-height:20px;white-space:nowrap;color:var(--ink-3,var(--muted))}
 #ranking-root .ranking-columns>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
-#ranking-root .ranking-row{min-height:100px}
+#ranking-root .ranking-row{min-height:108px;cursor:pointer;font-variant-numeric:tabular-nums}
+#ranking-root .ranking-row:focus-within{background:var(--green-soft,var(--soft))}
+#ranking-root .rank-country-link{display:inline-flex;align-items:center;gap:4px;min-height:24px;max-width:100%;color:var(--ink-2,var(--muted));border-radius:3px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+#ranking-root .rank-country-link:hover{color:var(--green);text-decoration-color:currentColor}
+#ranking-root .rank-country-link:focus-visible,#ranking-root .rank-city-link:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+#ranking-root .rank-country-link .country-flag{font-size:13px;line-height:1;flex:none}
+#ranking-root .rank-country-link .country-flag img{width:16px;height:12px;vertical-align:middle}
 #ranking-root .rank-photo,#ranking-root .rank-photo img{width:48px;height:56px;border-radius:6px}
 #ranking-root .rank-identity{padding:12px 0}
-#ranking-root .rank-city-link strong{font-size:17px;font-weight:500;color:var(--ink-1,var(--ink))}
-#ranking-root .rank-english{font-size:13px;color:var(--ink-3,var(--muted))}
-#ranking-root .rank-identity p{font-size:14px;color:var(--ink-2,var(--muted));margin-top:4px;line-height:1.6}
-#ranking-root .rank-metric strong{font-size:15px;font-weight:500}
-#ranking-root .rank-score strong{font-size:22px;font-weight:500;color:var(--green)}
+#ranking-root .rank-city-link strong{font-size:18px;font-weight:600;color:var(--ink-1,var(--ink));letter-spacing:-.025em}
+#ranking-root .rank-english{display:flex;align-items:center;flex-wrap:wrap;gap:0 6px;font-size:13px;color:var(--ink-3,var(--muted));line-height:1.6}
+#ranking-root .rank-identity p{font-size:15px;color:var(--ink-2,var(--muted));margin-top:4px;line-height:1.5}
+#ranking-root .rank-metric strong{font-size:17px;font-weight:500;letter-spacing:-.02em;line-height:1.4}
+#ranking-root .rank-score strong{font-size:24px;font-weight:600;color:var(--green);letter-spacing:-.035em}
 #ranking-root .rank-score small,#ranking-root .rank-metric small,#ranking-root .rank-visa{font-size:12px;color:var(--ink-3,var(--muted))}
 #ranking-root .rank-number{font-size:14px;color:var(--ink-3,var(--muted))}
+#ranking-root .month-mark.chosen:not(:nth-child(1)):not(:nth-child(6)):not(:nth-child(12))>span{visibility:hidden}
 #ranking-root .rank-compare{border-radius:999px;color:var(--ink-3,var(--muted));background:transparent}
 #ranking-root .rank-compare[aria-pressed="true"]{background:var(--ink-1,var(--ink));color:var(--paper)}
 #ranking-root .rank-data-notes{display:flex;gap:8px 20px;align-items:center;flex-wrap:wrap;padding-top:16px;color:var(--ink-3,var(--muted));font-size:12px}
@@ -127,13 +140,13 @@
   #ranking-root .ranking-toolbar h1{font-size:28px}
   #ranking-root #ranking-search-form{width:180px;min-width:140px}
   #ranking-root .rank-toolbar-actions .agent-launch>span{display:none}
-  #ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:20px 40px minmax(150px,1fr) 80px 50px 60px 50px 96px 48px 44px;gap:6px}
+  #ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:28px 40px minmax(150px,1fr) 80px 50px 60px 50px 96px 48px 44px;gap:6px}
   #ranking-root .rank-photo,#ranking-root .rank-photo img{width:40px;height:48px}
   #ranking-root .rank-visa,#ranking-root .ranking-columns>span:nth-child(9){display:none}
   #ranking-root .rank-identity p{font-size:14px}
 }
 @media(max-width:900px) and (min-width:701px){
-  #ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:20px 40px minmax(120px,1fr) 78px 44px 56px 44px 80px 44px 44px;gap:4px}
+  #ranking-root .ranking-columns,#ranking-root .ranking-row{grid-template-columns:28px 40px minmax(120px,1fr) 78px 44px 56px 44px 80px 44px 44px;gap:4px}
   #ranking-root .rank-city-link strong{font-size:16px}
   #ranking-root .rank-metric strong{font-size:14px}
   #ranking-root .ranking-columns{font-size:11px}
@@ -169,13 +182,15 @@
   #ranking-root .rank-photo img{width:48px;height:56px}
   #ranking-root .rank-identity{grid-column:3/5;grid-row:1;padding:0}
   #ranking-root .rank-city-link{min-height:28px;gap:6px}
-  #ranking-root .rank-city-link strong{font-size:18px;font-weight:500}
+  #ranking-root .rank-city-link strong{font-size:18px;font-weight:600}
   #ranking-root .rank-english{font-size:12px;line-height:1.5}
-  #ranking-root .rank-english>span{display:none}
+  #ranking-root .rank-english>.rank-city-name-en{display:inline;max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #ranking-root .rank-english>.rank-country-separator{display:none}
+  #ranking-root .rank-country-link{min-height:28px}
   #ranking-root .rank-identity p{font-size:14px;line-height:1.5;margin:2px 0}
   #ranking-root .mobile-visa{font-size:11px;color:var(--ink-3,var(--muted));display:block;line-height:1.5}
   #ranking-root .rank-score{grid-column:5;grid-row:1;align-self:start;padding-top:2px}
-  #ranking-root .rank-score strong{font-size:22px;letter-spacing:-.04em}
+  #ranking-root .rank-score strong{font-size:24px;letter-spacing:-.04em}
   #ranking-root .rank-score small{font-size:10px;margin-top:0;white-space:nowrap}
   #ranking-root .rank-compare{grid-column:5;grid-row:2;align-self:center;height:36px;min-height:36px;margin-top:4px;width:44px}
   #ranking-root .cost-cell{grid-column:2/4;grid-row:2;display:flex;align-items:baseline;gap:6px;justify-self:start;margin-top:8px;text-align:left}
@@ -190,7 +205,8 @@
   #ranking-root .internet-cell{grid-column:4/6;justify-self:end}
   #ranking-root .rank-metric .metric-mobile-label{display:inline;position:static;width:auto;height:auto;clip:auto;overflow:visible;font-size:11px;color:var(--ink-3,var(--muted))}
   #ranking-root .cost-cell>.metric-mobile-label,#ranking-root .climate-cell>small,#ranking-root .micro-bar{display:none}
-  #ranking-root .rank-metric strong{font-size:13px;font-weight:500}
+  #ranking-root .rank-metric strong{font-size:15px;font-weight:500}
+  #ranking-root .cost-cell strong{font-size:17px}
   #ranking-root .rank-visa{display:none}
   #ranking-root .rank-data-notes{gap:4px 16px}
   #ranking-root .ranking-empty{padding:48px 0}

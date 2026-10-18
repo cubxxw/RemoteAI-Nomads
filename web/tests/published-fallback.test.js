@@ -60,6 +60,17 @@ test('two published cities can still be compared for the requested month without
  const reverse=await publishedFallback(new Request('https://nomads.example/compare/b-city-vs-a-city/?month=2'),env);assert.equal(reverse.status,308);assert.equal(reverse.headers.get('Location'),'https://nomads.example/compare/a-city-vs-b-city/?month=2');
  assert.equal(await publishedFallback(new Request('https://nomads.example/compare/a-city-vs-unknown/'),env),null);
 });
+test('domestic and month shortcuts render the same scoped rows before JavaScript during an outage',async()=>{
+ const catalog=JSON.parse(await readFile(new URL('../public/published-pages/rankings.json',import.meta.url),'utf8'));
+ const url=new URL('https://nomads.example/?country=CN&month=10');
+ const env={PREVIEW:'false',SITE_ORIGIN:url.origin,ASSETS:{async fetch(request){return new URL(request.url).pathname.endsWith('manifest.json')?Response.json({version:1,paths:['/']}):Response.json(catalog);}}};
+ const response=await publishedFallback(new Request(url),env),body=await response.text();
+ const slugs=[...body.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].map(m=>m[1]);
+ assert.deepEqual(slugs,rankCities(catalog,parseState(url)).slice(0,40).map(city=>city.slug));
+ assert.ok(slugs.length>0&&slugs.every(slug=>catalog.find(city=>city.slug===slug).countryCode==='CN'));
+ assert.match(body,/data-quick-filter="domestic" aria-pressed="true"/);
+ assert.match(body,/class="rank-country-link" href="\/countries\/cn\/"/);
+});
 test('worker keeps public browsing available during D1 outage and reports database health honestly',async()=>{
  const {env}=environment(),before=globalThis.caches;let reads=0;
  const production={...env,SITE_ORIGIN:'https://nomads.example',RELEASE_ID:'outage-integration',DB:{prepare(){reads++;throw Error("D1_ERROR: Your account has exceeded D1's free tier daily row read limit.");}}};
