@@ -138,7 +138,7 @@ export function renderSeasonalBlock(catalog,editorial,edition) {
   // GitHub strips CSS, but supports nowrap cells. Keep the table itself
   // scrollable on phones instead of breaking Chinese labels into columns.
   const lines=[START,`## ${year}年${month}月，去哪住一阵`,'',`<table tabindex="0" aria-label="${year}年${month}月十城推荐，可横向滚动">`,`<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>${month}月均温</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>`,'<tbody>'];
-  for (const [index,city] of cities.entries()) lines.push(`<tr><td nowrap>${index+1}. <a href="${siteOrigin}/cities/${city.slug}/">${esc(city.name)}</a> ${flag(city.countryCode)}</td><td nowrap align="right">≈${cost(city)}</td><td nowrap align="right">${temperature(city)}</td><td nowrap>${visaLabels[city.visa.code]}</td><td nowrap>${esc(city.reason)}</td></tr>`);
+  for (const [index,city] of cities.entries()) lines.push(`<tr><td nowrap>${index+1}. <a href="${siteOrigin}/cities/${city.slug}/">${esc(city.name.replace(/（[^）]*）/g,''))}</a> ${flag(city.countryCode)}</td><td nowrap align="right">≈${cost(city)}</td><td nowrap align="right">${temperature(city)}</td><td nowrap>${visaLabels[city.visa.code]}</td><td nowrap>${esc(city.reason)}</td></tr>`);
   lines.push('</tbody>','</table>',END);
   const block=lines.join('\n');assertReaderCopy(block);return block;
 }

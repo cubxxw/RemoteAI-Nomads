@@ -134,6 +134,7 @@ test('the main table has five columns, ten linked cities, rounded data and one c
  for(const row of rows){assert.equal((row.match(/<td\b/g)||[]).length,5);const reason=row.match(/<td nowrap>([^<]+)<\/td><\/tr>$/)[1];assert.ok([...reason].length<=25);assert.ok(reason.length>0)}
  assert.match(block,/≈\$1,240<\/td><td nowrap align="right">22°C<\/td><td nowrap>免签/);assert.match(block,/≈\$950<\/td><td nowrap align="right">21°C<\/td><td nowrap>境内/);
  assert.equal((block.match(/<th scope="col" nowrap>/g)||[]).length,5);assert.equal((block.match(/<td nowrap/g)||[]).length,50);
+ assert.ok(block.includes('/cities/las-palmas/">拉斯帕尔马斯</a>'));assert.ok(block.includes('/cities/ubud/">乌布</a>'));
  assert.match(block,/🇮🇩/);assert.match(block,/🇳🇵/);assertReaderCopy(block);
  const reasons=seasonalTopTen(catalog,editorial,edition).map(c=>c.reason);assert.equal(new Set(reasons).size,10);
  assert.ok(!block.includes('[来源]'));assert.ok(!block.includes('###'));
