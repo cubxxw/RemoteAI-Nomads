@@ -1,7 +1,7 @@
 {
   "version": 1,
   "month": "2026-10",
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-19",
   "city_notes": [
     {
       "slug": "ubud",
@@ -249,7 +249,11 @@
   "changes": [
     {
       "kind": "layout",
-      "recorded_at": "2026-10-18"
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "kind": "domestic_coverage",
+      "recorded_at": "2026-10-19"
     },
     {
       "kind": "preset_weights",
@@ -258,10 +262,6 @@
     },
     {
       "kind": "travel_advisories",
-      "recorded_at": "2026-10-18"
-    },
-    {
-      "kind": "quick_filters",
       "recorded_at": "2026-10-18"
     }
   ]

@@ -22,15 +22,52 @@
 </table>
 <!-- seasonal:table:end -->
 
-[省钱优先 →](https://nomads.cubxxw.com/?preset=budget) · [签证免签 →](https://nomads.cubxxw.com/?preset=visa) · [冬天避寒 →](https://nomads.cubxxw.com/?preset=winter)
+<!-- seasonal:domestic:start -->
+## 国内先看哪里
+
+已收录14座国内目的地，5座有完整评分。这里不限定出发月份，按综合分排序。
+
+<table tabindex="0" aria-label="国内综合推荐，可横向滚动">
+<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>10月均温</th><th scope="col" nowrap>推荐月份</th></tr></thead>
+<tbody>
+<tr><td nowrap>1. <a href="https://nomads.cubxxw.com/cities/xiamen/">厦门</a></td><td nowrap align="right">≈$780</td><td nowrap align="right">26°C</td><td nowrap>1–3月 · 11–12月</td></tr>
+<tr><td nowrap>2. <a href="https://nomads.cubxxw.com/cities/hangzhou/">杭州</a></td><td nowrap align="right">≈$950</td><td nowrap align="right">21°C</td><td nowrap>3月 · 10–11月</td></tr>
+<tr><td nowrap>3. <a href="https://nomads.cubxxw.com/cities/shenzhen/">深圳</a></td><td nowrap align="right">≈$1,080</td><td nowrap align="right">26°C</td><td nowrap>1–3月 · 10–12月</td></tr>
+<tr><td nowrap>4. <a href="https://nomads.cubxxw.com/cities/chengdu/">成都</a></td><td nowrap align="right">≈$730</td><td nowrap align="right">19°C</td><td nowrap>3–5月 · 10月</td></tr>
+<tr><td nowrap>5. <a href="https://nomads.cubxxw.com/cities/shanghai/">上海</a></td><td nowrap align="right">≈$1,200</td><td nowrap align="right">—</td><td nowrap>4月 · 10–11月</td></tr>
+</tbody>
+</table>
+
+[查看全部国内目的地 →](https://nomads.cubxxw.com/?country=CN)
+
+也可以看<a href="https://nomads.cubxxw.com/cities/dali/">大理</a>（18°C） · <a href="https://nomads.cubxxw.com/cities/anji/">安吉</a> · <a href="https://nomads.cubxxw.com/cities/kunming/">昆明</a>（18°C） · <a href="https://nomads.cubxxw.com/cities/quanzhou/">泉州</a>（26°C） · <a href="https://nomads.cubxxw.com/cities/tengchong/">腾冲</a>（19°C） · <a href="https://nomads.cubxxw.com/cities/wanning/">万宁</a>（27°C） · <a href="https://nomads.cubxxw.com/cities/wuxi/">无锡</a>（20°C） · <a href="https://nomads.cubxxw.com/cities/beijing/">北京</a> · <a href="https://nomads.cubxxw.com/cities/guangzhou/">广州</a>。气温取10月均温，这9座的月预算与评分还在补充。
+<!-- seasonal:domestic:end -->
+
+<!-- seasonal:needs:start -->
+## 按你在意的选
+
+除1月避寒外，均取本期10月视角；每行列出对应条件的前三名。网络与安全用评分表示。手机可横滑表格。
+
+<table tabindex="0" aria-label="按预算、签证、网络、安全与季节选城市，可横向滚动">
+<thead><tr><th scope="col" nowrap>你在意什么</th><th scope="col" nowrap>先看这3座</th></tr></thead>
+<tbody>
+<tr><th scope="row" nowrap>月预算≤$1,000<br><a href="https://nomads.cubxxw.com/?preset=budget&amp;budget=1000&amp;month=10&amp;season=2026-10">查看21城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/pokhara/">博卡拉</a> · ≈$450/月<br><a href="https://nomads.cubxxw.com/cities/chengdu/">成都</a> · ≈$730/月<br><a href="https://nomads.cubxxw.com/cities/ubud/">乌布</a> · ≈$800/月</td></tr>
+<tr><th scope="row" nowrap>大陆护照免签<br>≤$1,000<br><a href="https://nomads.cubxxw.com/?preset=visa&amp;budget=1000&amp;month=10&amp;season=2026-10">查看8城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/tashkent/">塔什干</a> · ≈$940/月<br><a href="https://nomads.cubxxw.com/cities/samarkand/">撒马尔罕</a> · ≈$720/月<br><a href="https://nomads.cubxxw.com/cities/rabat/">拉巴特</a> · ≈$800/月</td></tr>
+<tr><th scope="row" nowrap>国外<br>网络优先<br><a href="https://nomads.cubxxw.com/?preset=internet&amp;abroad=1&amp;month=10&amp;season=2026-10">查看79城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/malaga/">马拉加</a> · 10/10 · ≈$1,900/月<br><a href="https://nomads.cubxxw.com/cities/lisbon/">里斯本</a> · 10/10 · ≈$2,050/月<br><a href="https://nomads.cubxxw.com/cities/las-palmas/">拉斯帕尔马斯</a> · 10/10 · ≈$1,600/月</td></tr>
+<tr><th scope="row" nowrap>国外<br>安全优先<br><a href="https://nomads.cubxxw.com/?preset=safe&amp;abroad=1&amp;month=10&amp;season=2026-10">查看79城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/fethiye/">费特希耶</a> · 9/10 · ≈$1,240/月<br><a href="https://nomads.cubxxw.com/cities/munich/">慕尼黑</a> · 9/10 · ≈$2,470/月<br><a href="https://nomads.cubxxw.com/cities/malaga/">马拉加</a> · 8/10 · ≈$1,900/月</td></tr>
+<tr><th scope="row" nowrap>10月温暖<br>18–28°C<br><a href="https://nomads.cubxxw.com/?warm=1&amp;abroad=1&amp;month=10&amp;season=2026-10">查看22城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/ubud/">乌布</a> · 26°C · ≈$800/月<br><a href="https://nomads.cubxxw.com/cities/fethiye/">费特希耶</a> · 22°C · ≈$1,240/月<br><a href="https://nomads.cubxxw.com/cities/antalya/">安塔利亚</a> · 22°C · ≈$1,140/月</td></tr>
+<tr><th scope="row" nowrap>提前看1月避寒<br><a href="https://nomads.cubxxw.com/?preset=winter&amp;abroad=1">查看23城 →</a></th><td nowrap><a href="https://nomads.cubxxw.com/cities/muscat/">马斯喀特</a> · 22°C · ≈$1,340/月<br><a href="https://nomads.cubxxw.com/cities/merida/">梅里达</a> · 24°C · ≈$1,160/月<br><a href="https://nomads.cubxxw.com/cities/las-palmas/">拉斯帕尔马斯</a> · 19°C · ≈$1,600/月</td></tr>
+</tbody>
+</table>
+<!-- seasonal:needs:end -->
 
 <!-- seasonal:changes:start -->
 ## 本期变化
 
-- 本月推荐合并为10城单表，每座城市只出现一次。
+- 本月10城之外，补充国内5城与6类需求推荐。
+- 国内目录已收录14座目的地，大理、万宁等可直接查看。
 - 省钱、网速、安全的主权重从80%降到50%。
 - 7座有明确暂勿前往提醒的城市退出推荐，城市资料保留。
-- 新增亚洲、国内、国外标签，可叠加本月推荐。
 <!-- seasonal:changes:end -->
 
 数据为参考值，出发前请核实。[数据与方法](web/docs/data-and-methods.md)。

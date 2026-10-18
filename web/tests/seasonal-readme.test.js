@@ -5,7 +5,8 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_WEIGHTS, KEYS, parseState, rankCities, SEASONAL_VIEW, stateParams } from '../public/modules/ranking.js';
 import { UI_PRESETS } from '../public/modules/rank-controls.js';
-import { BANNED_TERMS, CHANGES_START, CHANGES_END, END, GROUP_KEYS, START, assertReaderCopy, chooseReason, generateSeasonalReadme, needLinks, renderSeasonalBlock, renderChangesBlock, replaceSeasonalBlock, replaceSeasonalBlocks, seasonalGroups, seasonalTopTen } from '../scripts/update-seasonal-readme.mjs';
+import { BANNED_TERMS, CHANGES_START, CHANGES_END, END, GROUP_KEYS, START, assertReaderCopy, chooseReason, generateSeasonalReadme, renderSeasonalBlock, renderChangesBlock, replaceSeasonalBlock, replaceSeasonalBlocks, seasonalGroups, seasonalTopTen } from '../scripts/update-seasonal-readme.mjs';
+import { DOMESTIC_START, DOMESTIC_END, NEEDS_START, NEEDS_END, domesticRecommendations, needRecommendations, recommendationViews, recommendedMonths, renderDomesticBlock, renderNeedsBlock } from '../scripts/readme-discovery.mjs';
 
 const webRoot = fileURLToPath(new URL('../', import.meta.url));
 const catalog = JSON.parse(await readFile(new URL('../public/published-pages/rankings.json', import.meta.url), 'utf8'));
@@ -175,13 +176,59 @@ test('missing coverage, duplicate records and incomplete main-table data stop ge
  assert.throws(()=>renderSeasonalBlock([],editorial,edition),/快照为空/);
 });
 
-test('the three stable need links select the same website presets and survive a state URL roundtrip',()=>{
- assert.deepEqual(needLinks.map(link=>link.key),['budget','visa','winter']);
- for(const link of needLinks){
-  const state=parseState(new URL(link.url)),preset=UI_PRESETS[link.key];
-  assert.deepEqual(state.weights,preset.weights);assert.equal(state.visa,preset.visa||'');assert.equal(state.month,preset.month||null);assert.equal(state.warm,!!preset.warm);
-  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+test('six need links reproduce their exact cities, counts, filters and weights on the website',()=>{
+ const groups=needRecommendations(catalog);
+ assert.deepEqual(groups.map(group=>group.key),['budget','visa','internet','safe','warm','winter']);
+ const top={budget:['pokhara','chengdu','ubud'],visa:['tashkent','samarkand','rabat'],internet:['malaga','lisbon','las-palmas'],safe:['fethiye','munich','malaga'],warm:['ubud','fethiye','antalya'],winter:['muscat','merida','las-palmas']};
+ for(const group of groups){
+  assert.deepEqual(group.cities.map(city=>city.slug),top[group.key]);
+  const state=parseState(new URL(group.url));
+  assert.deepEqual(state,group.state);assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+  const all=rankCities(catalog,state);assert.equal(group.total,all.length);assert.deepEqual(group.cities,all.slice(0,3));
+  assert.equal(state.month,group.key==='winter'?1:10);assert.equal(state.season,group.key==='winter'?'':'2026-10');
+  if(['internet','safe','warm','winter'].includes(group.key))assert.ok(group.cities.every(city=>!['CN','HK','MO','TW'].includes(city.countryCode)));
+  if(['budget','visa'].includes(group.key)){assert.equal(state.budget,1000);assert.ok(group.cities.every(city=>city.budget<=1000))}
+  if(group.key==='visa'){assert.equal(state.visa,'visa_free');assert.ok(group.cities.every(city=>city.visa.code==='visa_free'))}
+  if(group.key==='warm'||group.key==='winter')assert.ok(group.cities.every(city=>city.months[state.month-1].meanC>=18&&city.months[state.month-1].meanC<=28));
+  assert.deepEqual(state.weights,UI_PRESETS[group.key==='warm'?'default':group.key].weights);
  }
+ assert.equal(recommendationViews().length,6);
+});
+
+test('domestic recommendations show five scored cities and all nine unscored directory links without guessed values',()=>{
+ const before=clone(catalog),group=domesticRecommendations(catalog);
+ assert.equal(group.total,14);assert.equal(group.scoredCount,5);assert.equal(group.other.length,9);
+ assert.deepEqual(group.cities.map(city=>city.slug),['xiamen','hangzhou','shenzhen','chengdu','shanghai']);
+ assert.equal(group.other[0].slug,'dali');assert.ok(group.other.every(city=>city.score===null&&city.rank===null));
+ assert.ok(group.cities.every(city=>city.countryCode==='CN'));assert.equal(new Set([...group.cities,...group.other].map(city=>city.slug)).size,14);
+ assert.deepEqual(group.cities,rankCities(catalog,parseState(new URL(group.url))).filter(city=>city.score!==null).slice(0,5));
+ const block=renderDomesticBlock(catalog);assert.equal((block.match(/<tr><td nowrap>/g)||[]).length,5);
+ assert.match(block,/shanghai\/\">上海<\/a><\/td><td nowrap align="right">≈\$1,200<\/td><td nowrap align="right">—<\/td>/);
+ assert.match(block,/dali\/\">大理<\/a>（18°C）/);assert.ok(!block.includes('$0'));assertReaderCopy(block);
+ assert.equal(recommendedMonths(group.cities[0]),'1–3月 · 11–12月');assert.equal(recommendedMonths(group.cities[1]),'3月 · 10–11月');
+ assert.deepEqual(catalog,before);
+});
+
+test('additional recommendations respond to data changes and fail on missing evidence rather than padding ranks',()=>{
+ const data=clone(catalog);data.find(city=>city.slug==='chengdu').baseScore=10;
+ assert.equal(domesticRecommendations(data).cities[0].slug,'chengdu');
+ data.find(city=>city.slug==='rabat').budget=1100;
+ assert.equal(needRecommendations(data).find(view=>view.key==='visa').cities[2].slug,'agadir');
+ const incomplete=clone(catalog);incomplete.find(city=>city.slug==='shanghai').scores.life=null;
+ assert.throws(()=>domesticRecommendations(incomplete),/不足五座/);
+ const noJanuary=clone(catalog);for(const city of noJanuary)city.months[0].meanC=null;
+ assert.throws(()=>needRecommendations(noJanuary),/winter 缺少前三名/);
+ assert.throws(()=>needRecommendations([...catalog,catalog[0]]),/重复/);
+});
+
+test('need rows expose metric units and use January temperatures for winter rather than October',()=>{
+ const block=renderNeedsBlock(catalog);
+ assert.equal((block.match(/<th scope="row"/g)||[]).length,6);
+ assert.equal((block.match(/<td nowrap>/g)||[]).length,6);assert.equal((block.match(/<th scope="col"/g)||[]).length,2);
+ assert.equal((block.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,18);
+ assert.match(block,/malaga\/\">马拉加<\/a> · 10\/10 · ≈\$1,900\/月/);assert.match(block,/fethiye\/\">费特希耶<\/a> · 9\/10 · ≈\$1,240\/月/);
+ assert.match(block,/muscat\/\">马斯喀特<\/a> · 22°C · ≈\$1,340\/月/);
+ assert.ok(block.includes('budget=1000&amp;month=10'));assert.ok(block.includes('preset=winter&amp;abroad=1'));assertReaderCopy(block);
 });
 
 test('three to five monthly changes describe actual weights, reviewed exclusions and available shortcuts',()=>{
@@ -192,7 +239,7 @@ test('three to five monthly changes describe actual weights, reviewed exclusions
  assert.throws(()=>renderChangesBlock(catalog,editorial,{...edition,changes:[{kind:'layout'}]}),/3–5/);
 });
 
-test('monthly generation changes only the two marked blocks and preserves every surrounding byte',()=>{
+test('monthly generation preserves every byte outside all four marked blocks',()=>{
  const table=renderSeasonalBlock(catalog,editorial,edition),changes=renderChangesBlock(catalog,editorial,edition);
  const prefix='# Human intro\n\n一行入口。\n\n',middle='\n\n稳定的三个需求链接\n\n',tail='\n\n数据脚注\n\n## 运行与许可\n```sh\nnpm run demo\n```\nMIT\n';
  const old=prefix+START+'\nold table\n'+END+middle+CHANGES_START+'\nold updates\n'+CHANGES_END+tail;
@@ -201,6 +248,14 @@ test('monthly generation changes only the two marked blocks and preserves every 
  assert.equal(replaceSeasonalBlocks(next,table,changes),next);
  const future=replaceSeasonalBlocks(next,table.replace('2026年10月','2026年11月'),changes.replace('7座','8座'));
  assert.ok(future.startsWith(prefix));assert.ok(future.endsWith(tail));assert.ok(future.includes(middle));
+ const domestic=renderDomesticBlock(catalog),needs=renderNeedsBlock(catalog);
+ const discoveries=[{start:DOMESTIC_START,end:DOMESTIC_END,block:domestic},{start:NEEDS_START,end:NEEDS_END,block:needs}];
+ const expanded=prefix+START+END+middle+DOMESTIC_START+DOMESTIC_END+middle+NEEDS_START+NEEDS_END+middle+CHANGES_START+CHANGES_END+tail;
+ const rendered=replaceSeasonalBlocks(expanded,table,changes,discoveries);
+ assert.equal(rendered,prefix+table+middle+domestic+middle+needs+middle+changes+tail);
+ assert.equal(replaceSeasonalBlocks(rendered,table,changes,discoveries),rendered);
+ assert.throws(()=>replaceSeasonalBlocks(prefix+START+DOMESTIC_START+END+DOMESTIC_END+NEEDS_START+NEEDS_END+CHANGES_START+CHANGES_END,table,changes,discoveries),/嵌套/);
+ assert.throws(()=>replaceSeasonalBlocks(expanded.replace(NEEDS_END,''),table,changes,discoveries),/标记/);
 });
 
 test('malformed, duplicate and overlapping markers cannot overwrite unrelated README content',()=>{
@@ -210,12 +265,13 @@ test('malformed, duplicate and overlapping markers cannot overwrite unrelated RE
  assert.throws(()=>replaceSeasonalBlock(START+END,'unbounded output'),/标记/);
 });
 
-test('the checked-in README is one table, three need links, one footnote and has no generation drift',async()=>{
+test('the checked-in README has three tables, 27 distinct cities, one footnote and no generation drift',async()=>{
  const result=await generateSeasonalReadme();assert.equal(result.original,result.updated);
  assert.ok(result.updated.startsWith('# RemoteAI Nomads\n\n帮中文远程工作者选城市。[打开排行 →]'));
- assert.equal((result.updated.match(/<table\b/g)||[]).length,1);assert.equal((result.updated.match(/数据为参考值，出发前请核实/g)||[]).length,1);
- assert.equal((result.updated.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,10);
- for(const link of needLinks)assert.ok(result.updated.includes(`](${link.url})`));
+ assert.equal((result.updated.match(/<table\b/g)||[]).length,3);assert.equal((result.updated.match(/数据为参考值，出发前请核实/g)||[]).length,1);
+ assert.equal((result.updated.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,42);
+ assert.equal(new Set([...result.updated.matchAll(/nomads\.cubxxw\.com\/cities\/([a-z-]+)\//g)].map(match=>match[1])).size,27);
+ for(const link of recommendationViews())assert.ok(result.updated.includes(link.url.replaceAll('&','&amp;')));
  assertReaderCopy(result.updated);
  execFileSync(process.execPath,['scripts/update-seasonal-readme.mjs','--check'],{cwd:webRoot,stdio:'pipe'});
  assert.equal(await readFile(result.readmePath,'utf8'),result.original);
