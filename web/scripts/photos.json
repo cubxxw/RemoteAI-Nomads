@@ -7293,5 +7293,27 @@
       186
     ],
     "modification": "resized and re-encoded; square thumbnail crop"
+  },
+  "beijing": {
+    "url": "/images/city-beijing.webp",
+    "credit": "N509FZ / CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source_page": "https://en.wikipedia.org/wiki/Beijing",
+    "identity_match": "explicit_city_article+CostCompass_CN_coordinates",
+    "sha256": "bf6d45a1e3678925af5bca9b882937aaa91a3b30a21294d7629bf6f1bca1d083",
+    "modification": "resized and re-encoded; thumbnail resized"
+  },
+  "guangzhou": {
+    "url": "/images/city-guangzhou.webp",
+    "credit": "Tim Wu / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canton_Tower_20241027.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_page": "https://en.wikipedia.org/wiki/Guangzhou",
+    "identity_match": "explicit_city_article+CostCompass_CN_coordinates",
+    "sha256": "59d1678ff8f413da75996f68c28e11e12ebf61f3be8f7f34fba2edbb98684fd3",
+    "modification": "resized and re-encoded; thumbnail resized"
   }
 }

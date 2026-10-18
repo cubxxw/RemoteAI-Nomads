@@ -200,7 +200,9 @@ export function rankCities(cities, state) {
     }
     const precise = scoreValue(city, state.weights);
     const score = precise === null ? null : Math.round(precise * 10) / 10;
-    if (score === null && !state.incomplete) continue;
+    // A domestic view/search is also a discovery surface, not only a score table.
+    // Other active filters still require their evidence; no budget or month is guessed.
+    if (score === null && !state.incomplete && state.country !== 'CN' && !(query && city.countryCode === 'CN')) continue;
     preciseScores.set(city.slug, precise);
     result.push({ ...city, score });
   }
@@ -271,9 +273,23 @@ export function renderRow(c, state) {
  <div class="rank-metric internet-cell"><span class="metric-mobile-label">网络</span><strong title="旧资料网络评分；不是房间实测 Mbps">${n(c.scores.internet)}</strong>${bar(c.scores.internet)}</div>
  <div class="rank-season">${monthBand(c, state.month)}</div>
  <span class="rank-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span>
- <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${c.score === null ? "资料待补" : isDefault(state.weights) ? "指标分" : "自定义分"}</small></div>
+ <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${c.score === null ? "未评分" : isDefault(state.weights) ? "指标分" : "自定义分"}</small></div>
  <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></button>
  </article>`;
+}
+export function unratedHeading(cities) {
+  const count=cities.filter(c=>c.score===null).length;
+  if(!count)return '';
+  const domestic=cities.filter(c=>c.score===null).every(c=>c.countryCode==='CN');
+  return `<div class="rank-unrated-heading" role="heading" aria-level="2"><strong>${domestic?'继续了解国内目的地':'更多已收录目的地'}<span>${count} 座</span></strong><p>按已有资料继续了解，暂不参与评分</p></div>`;
+}
+export function renderRankingList(cities,state) {
+  let inserted=false;
+  return cities.map(c=>{
+    const heading=c.score===null&&!inserted?unratedHeading(cities):'';
+    if(c.score===null)inserted=true;
+    return heading+renderRow(c,state);
+  }).join('');
 }
 export function advantages(a, b) {
   return KEYS.filter(

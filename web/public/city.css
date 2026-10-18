@@ -219,3 +219,18 @@
 .city-at-a-glance small{text-wrap:balance}
 
 .city-travel-advisory{border-left:3px solid var(--ink);padding:12px 16px;margin:0 0 24px;background:var(--soft);font-size:15px;line-height:1.7}.city-travel-advisory strong{font-weight:600}.city-travel-advisory p{margin-top:4px}.city-travel-advisory a{color:var(--green);text-decoration:underline;text-underline-offset:3px}.city-travel-advisory span{display:block;color:var(--muted);font-size:12px}
+
+.city-regional-references{margin:24px 0 32px}
+.city-regional-references>h3{font-weight:500;font-size:19px;margin:0 0 20px}
+.city-regional-group{border-top:1px solid var(--line);padding:20px 0}
+.city-regional-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.city-regional-heading strong{font-weight:500;font-size:15px}
+.city-regional-heading>span,.city-regional-source{font-size:12px;color:var(--ink-3)}
+.city-regional-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin:20px 0}
+.city-regional-values dt{font-size:14px;color:var(--ink-2);margin:0 0 4px}
+.city-regional-values dd{margin:0;font-size:24px;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.city-regional-values dd small{font-size:12px;color:var(--ink-3);font-weight:400;letter-spacing:0}
+.city-regional-source{display:flex;flex-direction:column;gap:6px;overflow-wrap:anywhere;margin:12px 0 0}
+.city-regional-source a{color:var(--green);text-underline-offset:3px}
+@media(max-width:480px){.city-regional-values{gap:16px}.city-regional-values dd{font-size:21px}.city-regional-heading>span{width:100%}}
+.city-regional-references>h3{scroll-margin-top:88px}

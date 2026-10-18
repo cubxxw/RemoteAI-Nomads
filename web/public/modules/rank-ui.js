@@ -11,6 +11,7 @@ import {
   stateParams,
   rankCities,
   renderRow,
+  unratedHeading,
 } from "./ranking.js";
 import { RankMap } from "./rank-map.js";
 import { UI_PRESETS, additionalFilters, viewLabel, restorePreference, savePreference, commandItems, applyRankingFilter, quickFilters, toggleQuickFilter } from "./rank-controls.js";
@@ -86,7 +87,7 @@ function render(initial = false) {
   const start = performance.now();
   ranked = rankCities(data, state);
   const sorted = performance.now();
-  const current = [...list.children];
+  const current = [...list.querySelectorAll('.ranking-row')];
   const focused = document.activeElement;
   const restoreFocus = list.contains(focused);
   const before = new Map();
@@ -101,7 +102,12 @@ function render(initial = false) {
   const visible = ranked.slice(0, state.limit),
     nextSet = new Set(visible.map((c) => c.slug));
   const frag = document.createDocumentFragment();
+  let unratedInserted=false;
   for (const c of visible) {
+    if(c.score===null&&!unratedInserted){
+      const heading=document.createElement('template');heading.innerHTML=unratedHeading(visible);
+      frag.append(heading.content);unratedInserted=true;
+    }
     let el = pool.get(c.slug);
     if (!el) {
       const t = document.createElement("template");
@@ -129,7 +135,7 @@ function render(initial = false) {
       );
     }
     el.querySelector(".rank-score small").textContent =
-      c.score === null ? "资料待补" : isDefault(state.weights) ? "指标分" : "自定义分";
+      c.score === null ? "未评分" : isDefault(state.weights) ? "指标分" : "自定义分";
     el.classList.toggle("is-active", c.slug === active);
     frag.append(el);
   }
@@ -162,7 +168,7 @@ function render(initial = false) {
   if (restoreFocus && focused.isConnected)
     focused.focus({ preventScroll: true });
   if (!initial && !motion.matches)
-    for (const el of list.children) {
+    for (const el of list.querySelectorAll('.ranking-row')) {
       const old = before.get(el.dataset.city),
         now = el.getBoundingClientRect();
       if (now.bottom < 0 || now.top > innerHeight + 100) continue;
@@ -290,7 +296,9 @@ function syncControls() {
     document.querySelector('#output-' + key).value = state.weights[key];
   }
   if (!composing && document.activeElement !== search) search.value = state.q;
-  document.querySelector('#include-incomplete').checked = state.incomplete;
+  document.querySelector('#include-incomplete').checked = state.incomplete || state.country==='CN';
+  document.querySelector('#include-incomplete').disabled = state.country==='CN';
+  document.querySelector('#incomplete-label').textContent = state.country==='CN' ? '国内视角保留未评分目的地' : '包含指标待补的城市';
   document.querySelectorAll('[data-filter-input]').forEach(input => {
     const value = String(state[input.dataset.filterInput] ?? '');
     if (value && ![...input.options].some(option => option.value === value)) {

@@ -42,14 +42,14 @@ test('a fresh offline bootstrap rebuilds the public database and every fallback 
   const database = new DatabaseSync(databasePath, { readOnly: true });
   try {
     validatePublicDatabase(database, publication);
-    assert.equal(database.prepare('SELECT count(*) n FROM cities').get().n, 348);
+    assert.equal(database.prepare('SELECT count(*) n FROM cities').get().n, seed.publication.rows.cities);
     assert.equal(database.prepare('SELECT count(*) n FROM countries').get().n, 258);
     for (const table of EMPTY_TABLES) assert.equal(database.prepare('SELECT count(*) n FROM ' + table).get().n, 0);
   } finally { database.close(); }
   assert.deepEqual((await readdir(temporary)).sort(), ['.data']);
   const pages = await buildPublicPages({ databasePath, publicationPath, outputDirectory: join(temporary, 'public/published-pages'), origin: 'https://demo.example.org' });
-  assert.equal(pages.file_count, 618);
-  assert.equal(pages.paths.length, 617);
+  assert.equal(pages.file_count, 9 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages);
+  assert.equal(pages.paths.length, 8 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages);
   assert.equal(pages.all_responses_status, 200);
   assert.equal(pages.private_notes_exported, 0);
   assert.equal(pages.origin, 'https://demo.example.org');

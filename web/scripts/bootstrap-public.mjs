@@ -10,7 +10,7 @@ import { gunzipSync } from 'node:zlib';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const PUBLIC_ORIGIN = 'https://nomads.cubxxw.com';
-export const PUBLIC_TABLES = ['countries', 'sources', 'cities', 'city_months', 'metric_definitions', 'metric_observations', 'ai_availability', 'visa_programs', 'workspace_quotes', 'editorial_pages', 'editorial_cities', 'score_models', 'city_scores', 'city_entry_conditions', 'city_locations', 'city_climate_months', 'cost_observations', 'fx_rates'];
+export const PUBLIC_TABLES = ['countries', 'sources', 'cities', 'city_months', 'metric_definitions', 'metric_observations', 'ai_availability', 'visa_programs', 'workspace_quotes', 'editorial_pages', 'editorial_cities', 'score_models', 'city_scores', 'city_entry_conditions', 'city_locations', 'city_climate_months', 'cost_observations', 'fx_rates', 'geo_areas', 'city_geo_areas', 'regional_reference_observations'];
 export const EMPTY_TABLES = ['notion_links', 'content_documents', 'import_runs', 'visa_observations', 'cost_sync_runs', 'agent_admissions'];
 const ALL_TABLES = new Set([...PUBLIC_TABLES, ...EMPTY_TABLES]);
 export const publicSha256 = value => createHash('sha256').update(value).digest('hex');
