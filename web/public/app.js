@@ -1,4 +1,5 @@
 import {icon} from './modules/icons.js';
+import './modules/wechat-ui.js';
 
 const safeRead = (key, fallback) => {
   try {
