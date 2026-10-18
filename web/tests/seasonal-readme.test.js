@@ -128,11 +128,12 @@ test('README has the shared comprehensive top ten exactly once, independently of
 
 test('the main table has five columns, ten linked cities, rounded data and one concise reason per city',()=>{
  const block=renderSeasonalBlock(catalog,editorial,edition);
- const rows=block.split('\n').filter(line=>/^\| \d+\./.test(line));
- assert.equal(rows.length,10);assert.equal((block.match(/^\| 城市/gm)||[]).length,1);
+ const rows=block.split('\n').filter(line=>/^<tr><td nowrap>/.test(line));
+ assert.equal(rows.length,10);assert.equal((block.match(/<table\b/g)||[]).length,1);
  assert.equal((block.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,10);
- for(const row of rows){assert.equal(row.split('|').length,7);const reason=row.split('|')[5].trim();assert.ok([...reason].length<=25);assert.ok(reason.length>0)}
- assert.match(block,/≈\$1,240 \| 22°C \| 免签/);assert.match(block,/≈\$950 \| 21°C \| 境内/);
+ for(const row of rows){assert.equal((row.match(/<td\b/g)||[]).length,5);const reason=row.match(/<td nowrap>([^<]+)<\/td><\/tr>$/)[1];assert.ok([...reason].length<=25);assert.ok(reason.length>0)}
+ assert.match(block,/≈\$1,240<\/td><td nowrap align="right">22°C<\/td><td nowrap>免签/);assert.match(block,/≈\$950<\/td><td nowrap align="right">21°C<\/td><td nowrap>境内/);
+ assert.equal((block.match(/<th scope="col" nowrap>/g)||[]).length,5);assert.equal((block.match(/<td nowrap/g)||[]).length,50);
  assert.match(block,/🇮🇩/);assert.match(block,/🇳🇵/);assertReaderCopy(block);
  const reasons=seasonalTopTen(catalog,editorial,edition).map(c=>c.reason);assert.equal(new Set(reasons).size,10);
  assert.ok(!block.includes('[来源]'));assert.ok(!block.includes('###'));
@@ -211,7 +212,7 @@ test('malformed, duplicate and overlapping markers cannot overwrite unrelated RE
 test('the checked-in README is one table, three need links, one footnote and has no generation drift',async()=>{
  const result=await generateSeasonalReadme();assert.equal(result.original,result.updated);
  assert.ok(result.updated.startsWith('# RemoteAI Nomads\n\n帮中文远程工作者选城市。[打开排行 →]'));
- assert.equal((result.updated.match(/^\| 城市/gm)||[]).length,1);assert.equal((result.updated.match(/数据为参考值，出发前请核实/g)||[]).length,1);
+ assert.equal((result.updated.match(/<table\b/g)||[]).length,1);assert.equal((result.updated.match(/数据为参考值，出发前请核实/g)||[]).length,1);
  assert.equal((result.updated.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,10);
  for(const link of needLinks)assert.ok(result.updated.includes(`](${link.url})`));
  assertReaderCopy(result.updated);
@@ -235,4 +236,11 @@ test('city and data-method links retain source and publication boundaries behind
  const method=await readFile(new URL('../docs/data-and-methods.md',import.meta.url),'utf8');
  for(const city of editorial.cities)assert.ok(guide.includes(`id="${city.slug}"`));
  for(const phrase of ['2023–2025','不能视为','不是实测Mbps','并非四个平台的正文都已读到'])assert.ok(method.includes(phrase));
+});
+
+test('HTML table escapes city names and preserves the compact, keyboard-scrollable structure',()=>{
+ const changed=clone(catalog);changed.find(city=>city.slug==='ubud').name='<img src=x onerror=alert(1)>';
+ const block=renderSeasonalBlock(changed,editorial,edition);
+ assert.ok(!block.includes('<img'));assert.ok(block.includes('&lt;img src=x onerror=alert(1)&gt;'));
+ assert.match(block,/<table tabindex="0" aria-label="[^"]+可横向滚动"/);
 });
