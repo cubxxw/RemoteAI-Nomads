@@ -45,6 +45,9 @@ if (opener && dialog) {
     backdropPressed = false;
   });
   dialog.addEventListener('keydown', event => {
+    // Page shortcuts must not open another panel above this modal.
+    event.stopPropagation();
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') event.preventDefault();
     if (event.key !== 'Tab') return;
     const controls = [...dialog.querySelectorAll('a[href], button:not(:disabled), input:not(:disabled)')];
     const first = controls[0], last = controls.at(-1);
