@@ -39,6 +39,10 @@
 
 发现价格失效、城市信息有误，欢迎[提一个问题](https://github.com/cubxxw/RemoteAI-Nomads/issues/new)；请带上日期和公开来源。[如何补充经验](CONTRIBUTING.md)。
 
+微信：**cubxxwAI**，也可以扫码添加。
+
+<a href="wechat-cubxxwai.jpg"><img src="wechat-cubxxwai.jpg" alt="微信 cubxxwAI 的好友二维码" width="220"></a>
+
 网站使用 Cloudflare Workers + D1；助手调用 DeepSeek Flash，不需要云容器。网页与数据库可在[免费额度](https://developers.cloudflare.com/d1/platform/pricing/)内运行，模型调用按量收费。Notion 只留给人写描述和编辑手记。
 
 ```sh
