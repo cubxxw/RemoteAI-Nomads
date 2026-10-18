@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseState, DEFAULT_WEIGHTS } from '../public/modules/ranking.js';
-import { UI_PRESETS, PREFERENCE_KEY, restorePreference, savePreference, activeFilters, viewLabel, commandItems } from '../public/modules/rank-controls.js';
+import { parseState, stateParams, DEFAULT_WEIGHTS } from '../public/modules/ranking.js';
+import { UI_PRESETS, PREFERENCE_KEY, restorePreference, savePreference, activeFilters, viewLabel, commandItems, applyRankingFilter } from '../public/modules/rank-controls.js';
 
 const storage = () => {
   const values = new Map();
@@ -48,4 +48,44 @@ test('command search finds Chinese cities, visas and useful fallback actions', (
   assert.ok(commandItems(data,'签证').some(item => item.kind === 'filter' && item.key === 'visa'));
   assert.ok(commandItems(data,'网速').some(item => item.kind === 'preset' && item.value === 'internet'));
   assert.equal(commandItems(data,'未录入地点').at(-1).kind,'search');
+});
+
+test('a saved dated view stays visible and removable without duplicate month pills',()=>{
+ const selected=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const conditions=activeFilters(selected);assert.equal(conditions.filter(c=>c.key==='season').length,1);assert.ok(!conditions.some(c=>c.key==='month'));
+ const local=storage();savePreference(selected,local);assert.equal(restorePreference(new URL('https://nomads.test/'),local).season,'2026-10');
+ selected.season='';assert.ok(activeFilters(selected).some(c=>c.key==='month'));
+});
+
+test('named numeric priorities actually dedicate eighty percent to their leading metric',()=>{
+ for(const [name,key] of [['budget','cost'],['internet','internet'],['safe','safety']]){
+  const weights=UI_PRESETS[name].weights,total=Object.values(weights).reduce((a,b)=>a+b,0);assert.equal(weights[key]/total,0.8);
+ }
+});
+
+test('changing the month through a command keeps visible conditions and shared state consistent',()=>{
+ const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const january=commandItems([],'1月').find(item=>item.kind==='filter'&&item.key==='month'&&item.value===1);
+ applyRankingFilter(state,january.key,january.value);
+ assert.deepEqual(activeFilters(state).map(item=>item.label),['1月出发']);
+ assert.equal(stateParams(state).toString(),'month=1');
+ assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+ const local=storage();savePreference(state,local);
+ assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);
+ applyRankingFilter(state,'month',10);
+ assert.deepEqual(activeFilters(state).map(item=>item.label),['10月出发']);
+});
+
+test('clearing the selected month also removes its warmth and dated departure conditions',()=>{
+ const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10&warm=1'));
+ applyRankingFilter(state,'month',null);
+ assert.deepEqual(activeFilters(state),[]);
+ assert.equal(stateParams(state).toString(),'');
+});
+
+test('changing another filter preserves an explicitly selected dated departure view',()=>{
+ const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ applyRankingFilter(state,'region','欧洲');
+ assert.equal(stateParams(state).toString(),'region=%E6%AC%A7%E6%B4%B2&month=10&season=2026-10');
+ assert.deepEqual(activeFilters(state).map(item=>item.label),['欧洲','10月出发建议']);
 });

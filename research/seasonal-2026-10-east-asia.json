@@ -1,0 +1,531 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "scope": "2026年10月、面向大陆普通护照远程工作者的当季编辑候选研究",
+  "methodology": {
+    "paid_api_calls": 0,
+    "shared_browser_used": false,
+    "platform_boundary": "X与小红书仅完成定向检索/公开搜索入口访问尝试，均未核读相关原帖。不可将四平台尝试写成四平台证据齐备。",
+    "safety_boundary": "日本官方提醒不是法律禁令；未发现解除属于检索结果，不是对未来有效性的保证。",
+    "japan_followup_checks": {
+      "queries": [
+        "site:jp.china-embassy.gov.cn \"解除\" \"前往日本\"",
+        "site:mfa.gov.cn \"2026\" \"日本\" \"取消\" \"提醒\""
+      ],
+      "result": "未定位解除提醒公告；索引找到3/26更新提醒，但原页跳系统维护。",
+      "later_notice": {
+        "url": "https://cs.mfa.gov.cn/gyls/lsgz/lsyj/202603/t20260326_11881693.shtml",
+        "published_at": "2026-03-26",
+        "read_scope": "search_excerpt；打开原页跳系统维护，未核读正文。"
+      },
+      "colour_level_boundary": {
+        "url": "https://cs.mfa.gov.cn/zggmcg/ljmdd/yz_645708/rb_647322/",
+        "read_scope": "search_excerpt；原页跳系统维护。",
+        "notes": "索引文字写福岛黄色、其他地区蓝色。本轮不声称已核读原页，也不采用社交转述的全日本红色预警说法。"
+      },
+      "primary_opened_notice": "https://jp.china-embassy.gov.cn/lsfw_0/lstx_138409/202603/t20260304_11868741.htm"
+    }
+  },
+  "cities": [
+    {
+      "slug": "fukuoka",
+      "name_zh": "福冈",
+      "summary": "10月常年体感适合步行与建立工作日常，但大陆出发先处理官方赴日提醒，不能只凭旧安全分推荐。",
+      "practical": [
+        "如已在日本且有适用停留与工作资格，可从天神/博多交通便利处试住；先实测房内会议和上传。",
+        "Colive官方证明有10月社区项目，不证明今天仍可报名、住宿包含或有工位空余；先看日期并向主办方确认。",
+        "Engineer Cafe与当地开发者聚会是查询入口，活动自报、免费公共空间和房内专用工位不能混为一谈。"
+      ],
+      "recommendation_status": "excluded_from_2026_10_mainland_departure_rankings",
+      "exclusion_reason": "本期大陆普通护照当季出发榜的编辑排除：已核读驻日使馆避免赴日提醒，未查到解除；保留原城市分数，不把官方出行提醒解释为法律禁令。",
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.data.jma.go.jp/stats/data/en/normal/normal.html",
+          "title": "JMA 1991–2020气候常年值",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开月均温、日高/低温与降水量表。",
+          "evidence": "福冈10月常年月均温19.6°C。",
+          "limits": "多年平均不是2026当月实况或未来天气预报。"
+        },
+        {
+          "platform": "operator",
+          "url": "https://www.colivefukuoka.com/",
+          "title": "Colive Fukuoka",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读首页项目定位、October项目入口与社区说明，未登录会员区。",
+          "evidence": "主办方将自身定义为社区而非单一物理空间，展示2026 October Program。",
+          "limits": "属于主办方推广；未核验参与人数、剩余名额或今天可参加日期，不提供住宿或网速保证。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/fukuoka/comments/1rkj159/starting_a_weekly_deep_work_session_in_fukuoka/",
+          "title": "Starting a weekly Deep Work session in Fukuoka",
+          "published_at": "2026-03-04",
+          "read_at": "2026-10-18",
+          "read_scope": "原帖正文与主办者/版主可见评论。",
+          "evidence": "发帖者称计划每周五在Engineer Cafe聚集开发者，并自述独自在家工作难保持效率。",
+          "limits": "自发聚会初期邀请，不证明10月18日仍按该日程运营，参加前再查本周安排。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/JapanTravel/comments/1x4ruw0/28m_fukuoka_4_days/",
+          "title": "28M Fukuoka 4 days",
+          "published_at": "2026-10-13",
+          "read_at": "2026-10-18",
+          "read_scope": "已读旅行正文及部分可见评论，未看未展示媒体。",
+          "evidence": "作者自述10月晴天散步体验、城区景点集中和餐饮交通方便。",
+          "limits": "短期观光个案；没有房间测速、整月账单或合法远程工作证明。"
+        },
+        {
+          "platform": "official",
+          "url": "https://jp.china-embassy.gov.cn/lsfw_0/lstx_138409/202603/t20260304_11868741.htm",
+          "title": "驻日本大使馆再次提醒中国公民近期避免前往日本",
+          "published_at": "2026-03-04",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方正文及截至本次读取的领事提醒索引。",
+          "evidence": "使馆3月4日再次提出近期避免赴日的出行提醒。",
+          "limits": "不是法律禁令，也不是四城犯罪率调查。本轮未找到解除公告，不能据此保证提醒永远有效。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Fukuoka October 2026 digital nomad official climate coworking"
+          ],
+          "result": "已实际打开官方季节、运营或出行资格正文，具体范围逐来源记录。",
+          "read_scope": "公开网页正文；不代表实时房源/房间测速。",
+          "notes": "季节常年规律与2026公告分开；未付费调用数据接口。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/ Fukuoka October 2026 digital nomad"
+          ],
+          "result": "已打开原帖正文及可见选定评论，未读取所有评论；见sources。",
+          "read_scope": "原帖与可见文字；未分析附件图片/视频。",
+          "notes": "个人体验和主办方自述均不是城市总体结论。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Fukuoka October 2026 nomad",
+            "Fukuoka October digital nomad [domains: x.com, twitter.com]",
+            "https://x.com/search?q=Fukuoka October digital nomad&src=typed_query&f=live"
+          ],
+          "result": "检索未定位可核读的相关原帖；直接打开对应X搜索页均返回403。",
+          "read_scope": "搜索结果片段及403错误；未读X原帖、图片、视频或评论。",
+          "notes": "不把无关账号页、X自动趋势页或第三方转述当已核验经验。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 福冈 2026 10月 旅居",
+            "福冈 10月 旅居 [domains: xiaohongshu.com, xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=福冈 10月 旅居"
+          ],
+          "result": "站点定向检索未提供可核读的相关笔记；直接搜索入口工具不可访问。",
+          "read_scope": "索引搜索/访问失败；未读笔记正文、图片、视频或评论。",
+          "notes": "出现的什么值得买等聚合转述未当作小红书原帖证据；未使用付费接口。"
+        }
+      ]
+    },
+    {
+      "slug": "okinawa-naha",
+      "name_zh": "冲绳那霸",
+      "summary": "10月仍暖，适合把城市工作日与海边周末分开；台风、离岛交通与大陆出发提醒是优先条件。",
+      "practical": [
+        "不租车可先围绕那霸日常设施与单轨选住处，别把全冲绳景点当作下班步行范围。",
+        "离岛/潜水活动按临近海况和船班决定，保留可取消住宿与交通余地。",
+        "没有核验本月具体工位价格或房间Mbps；海边照片不能代替工作条件验证。"
+      ],
+      "recommendation_status": "excluded_from_2026_10_mainland_departure_rankings",
+      "exclusion_reason": "本期大陆普通护照当季出发榜的编辑排除：已核读驻日使馆避免赴日提醒，未查到解除；保留原城市分数，不把官方出行提醒解释为法律禁令。",
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://visitokinawajapan.com/plan-your-trip/when-to-visit-climate-seasons/okinawa-october/",
+          "title": "Okinawa in October",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读官方October天气、活动、游泳限制与台风提醒正文。",
+          "evidence": "官网称10月适合户外，白天通常仍暖，明确10月仍可能有台风。",
+          "limits": "冲绳区域指南，不是那霸逐日预报；平均海温不是气温，不能保证海滩开放或船班。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1d6w8am/okinawa_naha/",
+          "title": "Okinawa - Naha",
+          "published_at": "2024-06-03",
+          "read_at": "2026-10-18",
+          "read_scope": "已读关于10月住一个月的提问及在那霸评论者回复。",
+          "evidence": "在地评论者称那霸城市感较强，但坐公交去不少自然景点不便，并主动说明自己体验有偏向。",
+          "limits": "2024经验，主帖是计划不是完成旅居报告；不能证明2026交通不变。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/JapanTravelTips/comments/1wvu8qr/going_to_okinawa_soon_and_have_a_couple_of/",
+          "title": "Going to Okinawa soon, and have a couple of questions",
+          "published_at": "2026-10-02",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开10月赴冲绳计划正文和可见租车/潜水讨论。",
+          "evidence": "出行者担忧天气对潜水预订的影响，评论讨论那霸外租车需求。",
+          "limits": "出发前问答与个人建议，不是完成行程、船班实时状态或包车必要性的官方结论。"
+        },
+        {
+          "platform": "official",
+          "url": "https://jp.china-embassy.gov.cn/lsfw_0/lstx_138409/202603/t20260304_11868741.htm",
+          "title": "驻日本大使馆再次提醒中国公民近期避免前往日本",
+          "published_at": "2026-03-04",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方正文及截至本次读取的领事提醒索引。",
+          "evidence": "使馆3月4日再次提出近期避免赴日的出行提醒。",
+          "limits": "不是法律禁令，也不是四城犯罪率调查。本轮未找到解除公告，不能据此保证提醒永远有效。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Okinawa Naha October weather official tourism"
+          ],
+          "result": "已实际打开官方季节、运营或出行资格正文，具体范围逐来源记录。",
+          "read_scope": "公开网页正文；不代表实时房源/房间测速。",
+          "notes": "季节常年规律与2026公告分开；未付费调用数据接口。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/ Okinawa Naha October 2026 remote work"
+          ],
+          "result": "已打开原帖正文及可见选定评论，未读取所有评论；见sources。",
+          "read_scope": "原帖与可见文字；未分析附件图片/视频。",
+          "notes": "个人体验和主办方自述均不是城市总体结论。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com 那覇 2026 10月 コワーキング",
+            "Naha Okinawa October coworking [domains: x.com, twitter.com]",
+            "https://x.com/search?q=Naha Okinawa October coworking&src=typed_query&f=live"
+          ],
+          "result": "检索未定位可核读的相关原帖；直接打开对应X搜索页均返回403。",
+          "read_scope": "搜索结果片段及403错误；未读X原帖、图片、视频或评论。",
+          "notes": "不把无关账号页、X自动趋势页或第三方转述当已核验经验。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 冲绳 那霸 2026 10月 旅居",
+            "冲绳 那霸 10月 旅居 [domains: xiaohongshu.com, xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=冲绳 那霸 10月 旅居"
+          ],
+          "result": "站点定向检索未提供可核读的相关笔记；直接搜索入口工具不可访问。",
+          "read_scope": "索引搜索/访问失败；未读笔记正文、图片、视频或评论。",
+          "notes": "出现的什么值得买等聚合转述未当作小红书原帖证据；未使用付费接口。"
+        }
+      ]
+    },
+    {
+      "slug": "kyoto",
+      "name_zh": "京都",
+      "summary": "10月适合把散步与正式工位结合，但现在不能承诺红叶高峰，也不应把旅游旺季咖啡馆当免费办公室。",
+      "practical": [
+        "官方FAQ的通常红叶节奏是10月底开始、11月中旬高峰；2026实况日历计划10月30日发布。",
+        "先选住宿附近可接电话的正规工位，避免每天拖着电脑跨城坐拥挤公交。",
+        "查指定日期可取消房型；11月旺季找房困难的个案不能反推全京都10月最低价。"
+      ],
+      "recommendation_status": "excluded_from_2026_10_mainland_departure_rankings",
+      "exclusion_reason": "本期大陆普通护照当季出发榜的编辑排除：已核读驻日使馆避免赴日提醒，未查到解除；保留原城市分数，不把官方出行提醒解释为法律禁令。",
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://kyoto.travel/en/news/autumn-sightseeing-tips/",
+          "title": "Helpful Tips for Autumn Sightseeing in Kyoto",
+          "published_at": "2026-10-13",
+          "read_at": "2026-10-18",
+          "read_scope": "已读官方2026秋季分散游览、红叶实况发布日期与夜间开放说明。",
+          "evidence": "官网计划10月30日发布2026红叶实况日历，并鼓励分散游览。",
+          "limits": "不是当日已红叶的保证；不能由旅游活动推导工作或住宿条件。"
+        },
+        {
+          "platform": "official",
+          "url": "https://global.kyoto.travel/en/faq/detail.php?faq_id=2040",
+          "title": "When would be the best time to see the autumn leaves?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读官方FAQ正文。",
+          "evidence": "通常10月底开始变色、11月中旬达到高峰；山区可能稍早。",
+          "limits": "常年规律，年份与地点存在差别，不是2026精确预测。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/Kyoto/comments/1rbbzhr/looking_for_quiet_places_to_work_remotely_in/",
+          "title": "Looking for quiet places to work remotely in Kyoto for a month",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "原帖及可见关于咖啡馆、图书馆和付费工位的评论。",
+          "evidence": "评论提醒旺季咖啡馆不适合一杯咖啡占整天，并提供正规工位/通话设施线索。",
+          "limits": "帖子讨论春季旅游时段，作为场所使用反例，不冒充2026年10月现场观察；价格须向运营方再核。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/KyotoTravel/comments/1x4wl5f/accommodations_help/",
+          "title": "Accommodations Help",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖和预算、位置、独立卫浴等条件及可见建议。",
+          "evidence": "作者为2026年11月27–30日两人寻找市中心独卫房，反映指定旺季条件下找房困难。",
+          "limits": "是未来11月特定房型询问，不是10月当日市场调查；绝不能据此定城市房价下限。"
+        },
+        {
+          "platform": "official",
+          "url": "https://jp.china-embassy.gov.cn/lsfw_0/lstx_138409/202603/t20260304_11868741.htm",
+          "title": "驻日本大使馆再次提醒中国公民近期避免前往日本",
+          "published_at": "2026-03-04",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方正文及截至本次读取的领事提醒索引。",
+          "evidence": "使馆3月4日再次提出近期避免赴日的出行提醒。",
+          "limits": "不是法律禁令，也不是四城犯罪率调查。本轮未找到解除公告，不能据此保证提醒永远有效。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "site:kyoto.travel October 2026 autumn travel tips"
+          ],
+          "result": "已实际打开官方季节、运营或出行资格正文，具体范围逐来源记录。",
+          "read_scope": "公开网页正文；不代表实时房源/房间测速。",
+          "notes": "季节常年规律与2026公告分开；未付费调用数据接口。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/ Kyoto October 2026 digital nomad coworking crowds"
+          ],
+          "result": "已打开原帖正文及可见选定评论，未读取所有评论；见sources。",
+          "read_scope": "原帖与可见文字；未分析附件图片/视频。",
+          "notes": "个人体验和主办方自述均不是城市总体结论。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Kyoto October 2026 nomad coworking",
+            "Kyoto October coworking [domains: x.com, twitter.com]",
+            "https://x.com/search?q=Kyoto October coworking&src=typed_query&f=live"
+          ],
+          "result": "检索未定位可核读的相关原帖；直接打开对应X搜索页均返回403。",
+          "read_scope": "搜索结果片段及403错误；未读X原帖、图片、视频或评论。",
+          "notes": "不把无关账号页、X自动趋势页或第三方转述当已核验经验。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 京都 2026 10月 旅居",
+            "京都 10月 旅居 [domains: xiaohongshu.com, xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=京都 10月 旅居"
+          ],
+          "result": "站点定向检索未提供可核读的相关笔记；直接搜索入口工具不可访问。",
+          "read_scope": "索引搜索/访问失败；未读笔记正文、图片、视频或评论。",
+          "notes": "出现的什么值得买等聚合转述未当作小红书原帖证据；未使用付费接口。"
+        }
+      ]
+    },
+    {
+      "slug": "yokohama",
+      "name_zh": "横滨",
+      "summary": "10月可做东京周边的城市生活基地，但历史雨量不低，10月25日交通限制和大陆出行提醒需先看。",
+      "practical": [
+        "住宿选择先围绕自己的车站、工位和日常路线；不因离东京近就忽略通勤时间与费用。",
+        "2026年10月25日马拉松主要区域约6:30–15:30交通管制，相关高速路时段另列，按具体路线查官方图。",
+        "本月下班聚会能提供社交线索，不证明固定数字游民社区、工位空余或未来活动仍举行。"
+      ],
+      "recommendation_status": "excluded_from_2026_10_mainland_departure_rankings",
+      "exclusion_reason": "本期大陆普通护照当季出发榜的编辑排除：已核读驻日使馆避免赴日提醒，未查到解除；保留原城市分数，不把官方出行提醒解释为法律禁令。",
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.data.jma.go.jp/tcc/tcc/products/climate/climatview/graph_mkhtml_nrm.php?e=6&k=0&m=9&n=47670&r=0&s=1&y=2025",
+          "title": "JMA Yokohama Monthly Normal",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开横滨观测站月度常年值表。",
+          "evidence": "10月常年月均温18.5°C、降水240.4mm。",
+          "limits": "平年月值不是2026实况或逐日预报；不能把气温适宜等同连续晴天。"
+        },
+        {
+          "platform": "official",
+          "url": "https://zh-tw.yokohamamarathon.jp/traffic/",
+          "title": "2026横滨马拉松交通管制",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读赛事官方繁中交通管制正文与日期时段；未读取PDF地图。",
+          "evidence": "2026年10月25日主要区域约6:30–15:30管制，另列高速道路时段。",
+          "limits": "只对应赛事范围和指定日期，实际路线看地图；不能推为整个10月交通不便。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/Yokohama/comments/1wyvh8e/after_work_beers_in_yokohama_tuesday_october_6/",
+          "title": "After work Beers in Yokohama - October 6, 2026",
+          "published_at": "2026-10-06",
+          "read_at": "2026-10-18",
+          "read_scope": "已读活动原帖与组织者到场/每周安排回复。",
+          "evidence": "有人组织下班聚会，称只需支付自点餐饮且欢迎不喝酒的人。",
+          "limits": "10月6日已过；不是自动加入保证，未来安排要再确认；也不是办公条件证据。"
+        },
+        {
+          "platform": "official",
+          "url": "https://jp.china-embassy.gov.cn/lsfw_0/lstx_138409/202603/t20260304_11868741.htm",
+          "title": "驻日本大使馆再次提醒中国公民近期避免前往日本",
+          "published_at": "2026-03-04",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方正文及截至本次读取的领事提醒索引。",
+          "evidence": "使馆3月4日再次提出近期避免赴日的出行提醒。",
+          "limits": "不是法律禁令，也不是四城犯罪率调查。本轮未找到解除公告，不能据此保证提醒永远有效。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Yokohama October official weather travel coworking"
+          ],
+          "result": "已实际打开官方季节、运营或出行资格正文，具体范围逐来源记录。",
+          "read_scope": "公开网页正文；不代表实时房源/房间测速。",
+          "notes": "季节常年规律与2026公告分开；未付费调用数据接口。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/ Yokohama October 2026 digital nomad"
+          ],
+          "result": "已打开原帖正文及可见选定评论，未读取所有评论；见sources。",
+          "read_scope": "原帖与可见文字；未分析附件图片/视频。",
+          "notes": "个人体验和主办方自述均不是城市总体结论。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com 横浜 2026 10月 コワーキング",
+            "Yokohama October coworking [domains: x.com, twitter.com]",
+            "https://x.com/search?q=Yokohama October coworking&src=typed_query&f=live"
+          ],
+          "result": "检索未定位可核读的相关原帖；直接打开对应X搜索页均返回403。",
+          "read_scope": "搜索结果片段及403错误；未读X原帖、图片、视频或评论。",
+          "notes": "不把无关账号页、X自动趋势页或第三方转述当已核验经验。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 横滨 2026 10月 旅居",
+            "横滨 10月 旅居 [domains: xiaohongshu.com, xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=横滨 10月 旅居"
+          ],
+          "result": "站点定向检索未提供可核读的相关笔记；直接搜索入口工具不可访问。",
+          "read_scope": "索引搜索/访问失败；未读笔记正文、图片、视频或评论。",
+          "notes": "出现的什么值得买等聚合转述未当作小红书原帖证据；未使用付费接口。"
+        }
+      ]
+    },
+    {
+      "slug": "taipei",
+      "name_zh": "台北",
+      "summary": "中文生活与公共交通有吸引力，但大陆普通护照不能被视为可直接自由行，10月还要为东北季风与短租质量留余地。",
+      "practical": [
+        "先核对本人身份和可申请途径。海外留学、永居、依亲或工作等是带条件的类别，不是持大陆护照在第三国旅游就自动有资格。",
+        "大陆出境所需证件/签注与台湾方面入境许可分别核对；外国护照免签或外国人数字游民签证不能套用。",
+        "北部入秋受东北季风影响；先看房间除湿、隔音和实际工作网络，餐饮便利不能抵消短租问题。"
+      ],
+      "recommendation_status": "excluded_from_2026_10_mainland_departure_rankings",
+      "exclusion_reason": "本期大陆普通护照当季出发榜的编辑排除：一般居民个人游资格不能默认成立，海外特殊身份途径须个案核对；保留城市资料，不称普遍禁止赴台。",
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.immigration.gov.tw/5385/7244/7250/7257/7266/36084/",
+          "title": "大陆地区人民旅居国外或港澳线上申请来台观光须知",
+          "published_at": "2022-05-11",
+          "read_at": "2026-10-18",
+          "read_scope": "已读当前公开须知资格、证明、停留与证件部分。",
+          "evidence": "列明海外留学、永居、依亲及旅居一年以上并有工作证明等条件类别。",
+          "limits": "该具体网页发布日期较早；应向适用驻外馆处核对最新申请渠道。它不支持一般大陆居民直接自由行。"
+        },
+        {
+          "platform": "official",
+          "url": "https://www.nia.gov.cn/n741440/n741542/c1118378/content.html",
+          "title": "暂停大陆居民赴台个人游试点公告",
+          "published_at": "2019-07-31",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开国家移民管理局转载的官方公告全文。",
+          "evidence": "公告自2019年8月1日起暂停47城大陆居民赴台个人游试点。",
+          "limits": "这是原始暂停公告，本次检索未找到全面恢复公告；不外推为所有身份/事由均不能赴台。"
+        },
+        {
+          "platform": "official",
+          "url": "https://edu.cwa.gov.tw/PopularScience/wt/wt_3.html",
+          "title": "中央气象署：随季节变换的风—季风",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读季风形成、10月后的风向与北部降雨说明正文。",
+          "evidence": "10月后东北季风趋稳定，携带水气可令北部和东北部阴雨。",
+          "limits": "气候原理不是2026年10月预报，也不代表整月每天有雨。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1pvxroz/my_review_of_taipei_as_a_nomad_destination/",
+          "title": "My review of Taipei as a nomad destination",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读作者7周体验正文的交通与住宿部分；未完整读取所有评论。",
+          "evidence": "作者认可公共交通但不满意短租价格与房屋质量，并区分独住公寓和合租房间。",
+          "limits": "个人自报，绝对发帖日期未在已读页面稳定显示；搜索标约9个月前，不冒充本月体验或价格下限。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Taipei October 2026 digital nomad rain typhoon official"
+          ],
+          "result": "已实际打开官方季节、运营或出行资格正文，具体范围逐来源记录。",
+          "read_scope": "公开网页正文；不代表实时房源/房间测速。",
+          "notes": "季节常年规律与2026公告分开；未付费调用数据接口。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/ Taipei October 2026 digital nomad"
+          ],
+          "result": "已打开原帖正文及可见选定评论，未读取所有评论；见sources。",
+          "read_scope": "原帖与可见文字；未分析附件图片/视频。",
+          "notes": "个人体验和主办方自述均不是城市总体结论。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Taipei October 2026 nomad",
+            "Taipei October nomad [domains: x.com, twitter.com]",
+            "https://x.com/search?q=Taipei October nomad&src=typed_query&f=live"
+          ],
+          "result": "检索未定位可核读的相关原帖；直接打开对应X搜索页均返回403。",
+          "read_scope": "搜索结果片段及403错误；未读X原帖、图片、视频或评论。",
+          "notes": "不把无关账号页、X自动趋势页或第三方转述当已核验经验。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 台北 2026 10月 旅居",
+            "台北 10月 旅居 [domains: xiaohongshu.com, xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=台北 10月 旅居"
+          ],
+          "result": "站点定向检索未提供可核读的相关笔记；直接搜索入口工具不可访问。",
+          "read_scope": "索引搜索/访问失败；未读笔记正文、图片、视频或评论。",
+          "notes": "出现的什么值得买等聚合转述未当作小红书原帖证据；未使用付费接口。"
+        }
+      ]
+    }
+  ]
+}

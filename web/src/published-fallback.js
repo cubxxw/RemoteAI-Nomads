@@ -1,6 +1,7 @@
 import {shell} from './render.js';
 import {comparisonBody,comparisonFit} from './comparison-page.js';
 import {displayMonth} from '../public/modules/ranking.js';
+import {rankingPageFromData} from './rank-pages.js';
 const security={
   'X-Content-Type-Options':'nosniff',
   'Referrer-Policy':'strict-origin-when-cross-origin',
@@ -31,6 +32,13 @@ export async function publishedFallback(request,env){
       return new Response(request.method==='HEAD'?null:body,{headers:{...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, s-maxage=60','X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')}});
     }
     if(!manifest.paths.includes(url.pathname))return null;
+    if(url.pathname==='/'||url.pathname==='/cities/'){
+      const ranking=await env.ASSETS.fetch(new Request(new URL('/published-pages/rankings.json',url),{method:'GET'}));
+      if(!ranking.ok)return null;
+      const page=rankingPageFromData(await ranking.json(),url);
+      const body=shell({env,...page});
+      return new Response(request.method==='HEAD'?null:body,{headers:{...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, s-maxage=60','X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')}});
+    }
     const path=url.pathname==='/api/rankings'?'/published-pages/rankings.json':url.pathname==='/sitemap.xml'?'/published-pages/sitemap.xml':'/published-pages'+url.pathname;
     const asset=await env.ASSETS.fetch(new Request(new URL(path,url),{method:'GET'}));
     if(!asset.ok)return null;

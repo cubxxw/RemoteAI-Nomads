@@ -144,7 +144,7 @@
   #ranking-root .ranking-toolbar{display:block;position:relative;padding:12px 0 0;min-height:0}
   #ranking-root .ranking-toolbar h1{font-size:30px;line-height:1.3;letter-spacing:-.04em;margin:0 0 4px}
   #ranking-root .rank-toolbar-actions{justify-content:space-between;gap:4px}
-  #ranking-root #ranking-search-form{flex:1;min-width:0;width:auto;max-width:none}
+  #ranking-root #ranking-search-form{order:0;flex:1;min-width:0;width:auto;max-width:none}
   #ranking-root #rank-search{font-size:14px;padding-right:12px}
   #ranking-root #ranking-search-form>kbd{display:none}
   #ranking-root .rank-toolbar-actions .agent-launch{padding-inline:10px}

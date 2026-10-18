@@ -4,6 +4,7 @@ import {
   KEYS,
   DEFAULT_WEIGHTS,
   PRESETS,
+  SEASONAL_VIEW,
   isDefault,
   validWeights,
   parseState,
@@ -12,7 +13,7 @@ import {
   renderRow,
 } from "./ranking.js";
 import { RankMap } from "./rank-map.js";
-import { UI_PRESETS, activeFilters, viewLabel, restorePreference, savePreference, commandItems } from "./rank-controls.js";
+import { UI_PRESETS, activeFilters, viewLabel, restorePreference, savePreference, commandItems, applyRankingFilter } from "./rank-controls.js";
 const root = document.querySelector("#ranking-root");
 const data = unpackRankingData(
   JSON.parse(document.querySelector("#ranking-data").textContent),
@@ -116,8 +117,6 @@ function render(initial = false) {
       );
       el.querySelector(".rank-score strong").textContent =
         c.score === null ? "—" : c.score.toFixed(1);
-      el.querySelector(".rank-score small").textContent =
-        c.score === null ? "资料待补" : "指标分";
       const month = displayMonth(state),
         temp = c.months[month - 1]?.meanC;
       el.querySelector(".climate-cell strong").textContent =
@@ -129,6 +128,8 @@ function render(initial = false) {
         m.classList.toggle("chosen", state.month === i + 1),
       );
     }
+    el.querySelector(".rank-score small").textContent =
+      c.score === null ? "资料待补" : isDefault(state.weights) ? "指标分" : "自定义分";
     el.classList.toggle("is-active", c.slug === active);
     frag.append(el);
   }
@@ -279,6 +280,7 @@ function renderWeightPreview() {
   if (!leading.length) { const item=document.createElement('li');item.textContent='当前条件下暂无可排序的城市';container.append(item); }
 }
 function syncControls() {
+  const seasonNote = document.querySelector('#rank-season-note');if (seasonNote) seasonNote.hidden = state.season !== SEASONAL_VIEW.id;
   renderWeightPreview();
   for (const input of weightInputs) {
     const key = input.dataset.weight;
@@ -301,6 +303,7 @@ function syncControls() {
     button.classList.toggle('selected',match);button.setAttribute('aria-pressed',String(match));
   });
   document.querySelector('#view-sort').textContent = viewLabel(state);
+  document.querySelector('.ranking-columns span:nth-last-child(2)').textContent = isDefault(state.weights) ? '指标分' : '自定义分';
   document.querySelector('#weights-result').value = ranked.length + ' 座城市';
   document.querySelector('#ranking-result-count').textContent = ranked.length + ' 座城市' + (ranked.some(c => c.rank === null) ? ' · 含待补指标' : '');
   document.querySelector('#reset-ranking').hidden = !stateParams({...state,limit:40}).toString();
@@ -393,12 +396,12 @@ search.addEventListener('blur', finishSearch);
 document.querySelector('#ranking-search-form').addEventListener('submit', event => { event.preventDefault();finishSearch();commit(searchHistory);render(); });
 function applyPreset(key) {
   const preset = UI_PRESETS[key];if (!preset) return;
-  change(() => { state.weights = {...preset.weights};state.warm = !!preset.warm;state.visa = preset.visa || '';if (preset.month) state.month = preset.month; });
+  change(() => { state.weights = {...preset.weights};state.warm = !!preset.warm;state.visa = preset.visa || '';applyRankingFilter(state,'month',preset.month || state.month); });
 }
 root.addEventListener('click', event => {
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
-  if (remove) change(() => { const key = remove.dataset.removeFilter;state[key] = key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' ? false : '';if (key === 'month') state.warm = false; });
+  if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' ? false : ''); });
   if (event.target.closest('[data-reset-all],#reset-ranking')) resetAll();
   if (event.target.closest('#undo-ranking')) {
     clearTimeout(searchTimer);searchTimer = null;
@@ -412,11 +415,11 @@ root.addEventListener('click', event => {
 filterToggle.addEventListener('click', () => filterPopover.hidden ? openFilters() : closeFilters(true));
 filterPopover.addEventListener('change', event => {
   const input = event.target.closest('[data-filter-input]');
-  if (input) change(() => { const key = input.dataset.filterInput;state[key] = key === 'month' || key === 'budget' ? (input.value ? Number(input.value) : null) : input.value;if (key === 'month' && !state.month) state.warm = false; });
+  if (input) change(() => { const key = input.dataset.filterInput;applyRankingFilter(state,key,key === 'month' || key === 'budget' ? (input.value ? Number(input.value) : null) : input.value); });
   positionFilters();
 });
 document.querySelector('#include-incomplete').addEventListener('change', event => change(() => { state.incomplete = event.target.checked; }));
-document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',budget:null,month:null,visa:'',warm:false,incomplete:false});search.value = ''; }));
+document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
 document.querySelector('#reset-weights').addEventListener('click', () => {endWeightGesture();change(() => {state.weights = {...DEFAULT_WEIGHTS};});});
 document.addEventListener('pointerdown', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
 document.addEventListener('focusin', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
@@ -455,7 +458,7 @@ function executeCommand(index) {
   if (item.kind === 'city') { location.href = '/cities/' + encodeURIComponent(item.value) + '/';return; }
   commandDialog.close();
   if (item.kind === 'preset') applyPreset(item.value);
-  if (item.kind === 'filter') change(() => {state[item.key] = item.value;});
+  if (item.kind === 'filter') change(() => {applyRankingFilter(state,item.key,item.value);});
   if (item.kind === 'search') change(() => {state.q = item.value;search.value = state.q;});
   if (item.kind === 'weights') openWeights(commandOpener);
   if (item.kind === 'reset') resetAll();

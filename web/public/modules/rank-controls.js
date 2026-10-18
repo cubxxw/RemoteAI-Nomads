@@ -1,16 +1,23 @@
 import { cityMatchesQuery } from "./country-search.js";
-import { DEFAULT_WEIGHTS, KEYS, LABELS, PRESETS, parseState, stateParams } from './ranking.js';
+import { DEFAULT_WEIGHTS, KEYS, LABELS, PRESETS, SEASONAL_VIEW, parseState, stateParams } from './ranking.js';
 
 export const PREFERENCE_KEY = 'nomads-ranking-view-v1';
 export const UI_PRESETS = {
   default: { ...PRESETS.default, label: '综合推荐' },
   budget: PRESETS.budget,
-  internet: { label: '网速优先', weights: { safety: 20, cost: 15, climate: 10, life: 15, internet: 55, community: 5 } },
+  internet: { label: '网速优先', weights: { safety: 5, cost: 5, climate: 4, life: 5, internet: 80, community: 1 } },
   visa: { ...PRESETS.visa, label: '签证友好', note: '大陆护照免签 · 原资料待核验' },
   winter: PRESETS.winter,
   safe: PRESETS.safe,
 };
 export const VISA_LABELS = { visa_free: '大陆护照免签', evisa: '电子签', arrival: '落地签', visa_required: '需签证', domestic: '境内', permit: '通行证 / 签注' };
+export function applyRankingFilter(state, key, value) {
+  state[key] = value;
+  if (key === 'month') {
+    if (!state.month) state.warm = false;
+    if (state.month !== SEASONAL_VIEW.month) state.season = '';
+  }
+}
 export function viewLabel(state) {
   if (KEYS.every(key => state.weights[key] === DEFAULT_WEIGHTS[key])) return 'Metric Score';
   return [...KEYS].sort((a,b) => state.weights[b] - state.weights[a]).filter(key => state.weights[key] > 0).slice(0,3).map(key => LABELS[key]).join(' · ');
@@ -20,7 +27,8 @@ export function activeFilters(state) {
     state.q && { key: 'q', label: '搜索：' + state.q },
     state.region && { key: 'region', label: state.region },
     state.budget && { key: 'budget', label: '月预算 ≤ $' + state.budget.toLocaleString('en-US') },
-    state.month && { key: 'month', label: state.month + '月出发' },
+    state.month && !state.season && { key: 'month', label: state.month + '月出发' },
+    state.season === SEASONAL_VIEW.id && { key: 'season', label: SEASONAL_VIEW.label },
     state.visa && { key: 'visa', label: VISA_LABELS[state.visa] || state.visa },
     state.warm && { key: 'warm', label: '历史均温 18–28°C' },
     state.incomplete && { key: 'incomplete', label: '含待补资料' },

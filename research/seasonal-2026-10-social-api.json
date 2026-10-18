@@ -1,0 +1,188 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "method": "在公开检索后，通过已授权数据接口定点读取。共10次付费请求，未购买套餐；此文件只存自写摘要与公开原帖链接。",
+  "read_boundary": "post_text/caption只代表发布文案；未读取图片、视频或评论。search_caption_only未读正文。",
+  "cities": [
+    {
+      "slug": "ubud",
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "url": "https://www.xiaohongshu.com/explore/6ad2722d000000000a026e6f",
+          "title": "近期住客的乌布房间体验",
+          "published_at": "2026-10-16T18:51:25Z",
+          "read_scope": "opened_post_caption",
+          "evidence": "一位住客描述个别房间空调覆盖、夜间动物噪声和蚊虫问题。",
+          "limits": "仅为个人住宿经历，未核验商家回应；未读取图片、视频或评论，不能外推全城住宿。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    },
+    {
+      "slug": "hangzhou",
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "url": "https://www.xiaohongshu.com/explore/6ac2ee05000000000b00405e",
+          "title": "旅居杭州两年的找房经验",
+          "published_at": "2026-10-05T00:23:33Z",
+          "read_scope": "opened_post_caption",
+          "evidence": "作者先短住再看房，提到老城区生活方便与旧房屋状况、新区房龄与通勤之间的取舍。",
+          "limits": "作者为退休旅居者，未提供本月可订报价或工作网络实测；未读取图片和评论。",
+          "read_at": "2026-10-18"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/i/status/2109615079234883737",
+          "title": "青山湖十月景观记录",
+          "published_at": "2026-10-12T12:00:04Z",
+          "read_scope": "opened_post_text",
+          "evidence": "帖子文案记录青山湖浮萍与树色变化，可作本月自然景观线索。",
+          "limits": "只读发布文案，未看视频；不能据此确认全市红叶进度或天气。",
+          "read_at": "2026-10-18"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/i/status/2111468399700414675",
+          "title": "杭州桂花记录",
+          "published_at": "2026-10-17T14:44:30Z",
+          "read_scope": "opened_post_text",
+          "evidence": "作者发文记录杭州桂花开放。",
+          "limits": "仅单帖文案，未看视频；不能推定花期覆盖、持续时间或全城状况。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "x",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu",
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "url": "https://www.xiaohongshu.com/explore/6ad07891000000001400c800",
+          "title": "回成都旅居两个月的个人感受",
+          "published_at": "2026-10-15T06:54:09Z",
+          "read_scope": "opened_post_caption",
+          "evidence": "作者肯定日常服务便利，也提到过街体验和二手烟影响舒适度。",
+          "limits": "个人两个月生活经历，未提供当前房租或房间网络实测；未读取图片和评论。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    },
+    {
+      "slug": "shenzhen",
+      "sources": [
+        {
+          "platform": "x",
+          "url": "https://x.com/i/status/2109904109503692970",
+          "title": "ShanHaiWoo十月深圳共创活动公告",
+          "published_at": "2026-10-13T07:08:34Z",
+          "read_scope": "opened_post_text",
+          "evidence": "活动公告提及十月下半月深圳共创住宿计划及奖学金申请。",
+          "limits": "奖学金截止10月15日，核读时已过；不能推荐继续申请或断言免费住宿仍可得。公告不等于参与者体验。",
+          "read_at": "2026-10-18"
+        },
+        {
+          "platform": "xiaohongshu",
+          "url": "https://www.xiaohongshu.com/explore/6ace3fdd000000000b007948",
+          "title": "深圳低成本周末活动线索",
+          "published_at": null,
+          "read_scope": "search_caption_only",
+          "evidence": "检索文案提到低成本周末活动与公交出行。",
+          "limits": "只有截断的搜索文案，未读笔记全文、图片或评论；不作为月预算依据。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "x",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    },
+    {
+      "slug": "munich",
+      "sources": [
+        {
+          "platform": "x",
+          "url": "https://x.com/i/status/2111136648289296700",
+          "title": "十月慕尼黑单日天气感受",
+          "published_at": "2026-10-16T16:46:14Z",
+          "read_scope": "opened_post_text",
+          "evidence": "作者描述当天约20°C、体感舒适。",
+          "limits": "仅个人单日感受，不能外推整月或夜间温度；未读取附图。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "x",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    },
+    {
+      "slug": "fethiye",
+      "sources": [
+        {
+          "platform": "x",
+          "url": "https://x.com/i/status/2094048979482796307",
+          "title": "费特希耶旅居宣传中的网络与消费说法",
+          "published_at": "2026-08-30T13:05:56Z",
+          "read_scope": "opened_post_text",
+          "evidence": "帖子以便宜、网络好和海滩宣传费特希耶旅居。",
+          "limits": "缺乏金额、测速条件与住宿样本，且不是十月经历；只用于说明宣传与具体工作条件需分开，不据此确认现价或全城网速。",
+          "read_at": "2026-10-18"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "x",
+          "status": "body_read",
+          "checked_at": "2026-10-18",
+          "method": "定向检索及API定点读取；正文与搜索文案分开记录"
+        }
+      ]
+    }
+  ]
+}

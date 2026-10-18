@@ -1,0 +1,745 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "cities": [
+    {
+      "slug": "fethiye",
+      "name_zh": "费特希耶",
+      "summary": "10月仍是土耳其西南海岸可考虑的户外窗口；费特希耶更适合把海岸、徒步与短期驻留放在一起安排。官方当季旅游定位有依据，但安静、低价和稳定工位不能保证。",
+      "practical": [
+        "官方10月海岸文章明确列出 Fethiye、Göcek、Ölüdeniz；它支持秋季海岸出游，不是2026年每日天气或可下海保证。",
+        "2022年10月实住作者报告天气舒适，但也说当时愿意长期使用的联合办公选择少、工位接近满员。建议先确认现在营业、可预约座位和视频会议条件，再订整月房。",
+        "Reddit 有月底到访者仍觉得拥挤、物价高的反例；不要把肩季直接换算成低房租。当前房价与通勤时间未取得实时报价。",
+        "旅游/过境免签90/180成立；它没有解决中国护照远程工作的许可问题。"
+      ],
+      "entry_check": {
+        "country": "Türkiye / 土耳其",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "成立，但应显示目的和停留限制",
+        "effective_at": "2026-01-02",
+        "purpose": "旅游、过境",
+        "stay_limit": {
+          "per_visit_days": null,
+          "rolling_window_days": 180,
+          "cumulative_days": 90,
+          "note": "官方中国条款是180天内累计90天；不能理解为每次入境重新获得90天。"
+        },
+        "work_rights": "旅游/过境免签不授予工作或学习权；相应活动须预先申请相应签证。上述来源未解决为境外雇主远程办公的具体法律归类，不能写成中国护照已有数字游民工作许可。",
+        "practical_requirements": [
+          "使馆提醒护照有效期不少于6个月，并有空白签证页。",
+          "准备返程机票、住宿、行程及资金证明，供入境抽查。"
+        ],
+        "official_sources": [
+          "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm"
+        ],
+        "limits": "这是2026-10-18对已打开官方正文的核对，不是个案入境获准保证。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://goturkiye.com/branding/press-releases/summer-continues-in-the-turkish-riviera-and-the-turkaegean",
+          "title": "Summer continues in the Turkish Riviera and the Turkaegean — GoTürkiye",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取10月开头及 Fethiye/Göcek/Ölüdeniz 段落",
+          "evidence": "官方旅游文章以10月为语境，点名费特希耶、Göcek与Ölüdeniz沿岸秋季线路。",
+          "limits": "旅游推广文字，未标可核实的发布日期；不能推导2026-10实时海温、降雨、票价或全城客流。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.holdall.work/destinations/fethiye",
+          "title": "Fethiye, Turkey · holdall",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取到访年月、季节、工位和地点说明；未实测网速或向场地确认",
+          "evidence": "作者注明2022年10月住一周；记录早10月舒适暖天，以及当时少量可用工位接近满员、宜预订的经验。",
+          "limits": "历史个体体验。页面虽出现2026-10重述价格，但自己标低置信度且含汇率重算，本研究不采用它作为2026实时报价；也不采用其非官方签证/时区说法。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1oznq3j/turkey_as_digital_nomad_base_2026_and_beyond/",
+          "title": "Turkey as digital nomad base 2026 and beyond?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取涉及费特希耶、Ölüdeniz及10月底到访的评论；未读完全部评论树",
+          "evidence": "相关评论称自己10月底去费特希耶/Ölüdeniz，仍觉得人多且价格高，形成对“秋季必然安静便宜”的反例。",
+          "limits": "评论相对日期未核定精确日；到访年份和消费清单未核实，不能当作2026物价、客流或治安统计。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "title": "Visa Information For Foreigners — Türkiye MFA",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方总表并读取 China 条款及相邻说明",
+          "evidence": "中国普通护照条款写明：自2026-01-02起，任意180天内累计不超过90天免签。",
+          "limits": "核对的是中国普通护照条款；不能从其他国家或公务护照条款推导中国普通护照待遇，也不能据此推导工作权。"
+        },
+        {
+          "platform": "web",
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "evidence": "明确中国普通护照免签限旅游、过境，90/180天；提醒护照有效期不少于6个月并留空白签证页，备妥返程机票、住宿、行程及资金证明。工作、学习须事先办相应签证。",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Fethiye October 2026 autumn digital nomad coworking weather"
+          ],
+          "result": "已读GoTürkiye官方10月海岸正文及2022年10月实住工作报告；未找到可靠2026-10城市网速或租金实测。",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据",
+          "notes": "优先检索2026与10月；历史气候和历史旅居经验均单列局限，不冒充2026-10实况。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Fethiye October digital nomad coworking internet"
+          ],
+          "result": "已读讨论中10月底到访的拥挤、价格反例；未获得日期精确可核的2026-10全篇在地报告。",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链",
+          "notes": "主观体验只作反例；相对时间不转换成未经核实的精确发布日期，价格和网速不外推全城。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Fethiye October 2026",
+            "site:x.com Fethiye October",
+            "https://x.com/search?q=Fethiye%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的相关原帖",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频",
+          "notes": "放宽年份后仍未获得合格原帖；搜索命中包含无关资料或账号加入月份，不能当作10月在地经历，也不能据此声称平台没有内容。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 费特希耶 10月 2026",
+            "site:xiaohongshu.com 费特希耶 十月",
+            "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%B9%E7%89%B9%E5%B8%8C%E8%80%B6%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的相关原笔记",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频",
+          "notes": "未使用付费接口、账号登录或共享浏览器；未把搜索摘要写成已读笔记，也不能据此断定平台没有内容。"
+        }
+      ]
+    },
+    {
+      "slug": "antalya",
+      "name_zh": "安塔利亚",
+      "summary": "10月仍适合海岸城市生活与古迹步行，历史均温20.9°C；需要给秋雨留余地。城市生活便利不能推导短租便宜，Alanya 的游民活动也不能当作安塔利亚市内工位。",
+      "practical": [
+        "土耳其气象局10月历史值：月均20.9°C、平均日最高27.3°C、平均日最低15.9°C，月雨量76.6毫米；这是气候统计，不是本月预报。",
+        "Reddit 讨论有秋季体验不错的意见，也有10月回访仍觉得拥挤、短租成本高的反例；付款前核对房源和工作地点。",
+        "主办方列 Türkiye Nomad Fest 于2026-10-18至25日在 Alanya 举办；Alanya 与 Antalya 市区是不同城市，不能把它宣传成市内步行可达社群。未验证活动现场实际举行或余票。",
+        "旅游/过境免签90/180成立；工作或学习仍需相应许可，不能把免签榜写成工作签证榜。"
+      ],
+      "entry_check": {
+        "country": "Türkiye / 土耳其",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "成立，但应显示目的和停留限制",
+        "effective_at": "2026-01-02",
+        "purpose": "旅游、过境",
+        "stay_limit": {
+          "per_visit_days": null,
+          "rolling_window_days": 180,
+          "cumulative_days": 90,
+          "note": "官方中国条款是180天内累计90天；不能理解为每次入境重新获得90天。"
+        },
+        "work_rights": "旅游/过境免签不授予工作或学习权；相应活动须预先申请相应签证。上述来源未解决为境外雇主远程办公的具体法律归类，不能写成中国护照已有数字游民工作许可。",
+        "practical_requirements": [
+          "使馆提醒护照有效期不少于6个月，并有空白签证页。",
+          "准备返程机票、住宿、行程及资金证明，供入境抽查。"
+        ],
+        "official_sources": [
+          "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm"
+        ],
+        "limits": "这是2026-10-18对已打开官方正文的核对，不是个案入境获准保证。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?k=H&m=ANTALYA",
+          "title": "Antalya — Resmî İklim İstatistikleri, MGM",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取统计表 Ekim/10月列及表头",
+          "evidence": "10月表格：月均20.9°C、平均日最高27.3°C、平均日最低15.9°C；降水76.6毫米、平均雨日6.20天。",
+          "limits": "历史站点气候统计；当前子页没有清楚展示统计基准期，未推定为1991—2020，也不是2026天气预报。"
+        },
+        {
+          "platform": "web",
+          "url": "https://goturkiye.com/branding/press-releases/summer-continues-in-the-turkish-riviera-and-the-turkaegean",
+          "title": "Summer continues in the Turkish Riviera and the Turkaegean — GoTürkiye",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取10月语境及 Antalya 段落",
+          "evidence": "官方文章将安塔利亚秋季描写为较夏季凉爽、适合古迹与海岸行程。",
+          "limits": "推广性、非逐日天气；没有据此保证游客少、房租低或泳况安全。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1t8yc85/mediterranean_turkey/",
+          "title": "Mediterranean Turkey",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取有关安塔利亚、10月回访、租房和春秋的评论",
+          "evidence": "评论对春秋海岸生活有好评，也有10月回访仍感到拥挤及短租成本压力的经历。",
+          "limits": "页面只给相对日期，精确发布日期和消费口径未核定；评论中的住房法规说法未当作法律事实。"
+        },
+        {
+          "platform": "web",
+          "url": "https://turkiyenomadfest.com/",
+          "title": "Türkiye Nomad Fest — Alanya 2026",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取活动日期、Alanya地点和日程；未报名或联系主办方",
+          "evidence": "主办方公布2026-10-18至25日活动，地点 Alanya 的 Anjeliq Downtown Hotel，并列出共同办公和分享日程。",
+          "limits": "主办方预告，不是现场报道；Alanya不等于Antalya市区，未核验报名余量、活动兑现或交通耗时。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "title": "Visa Information For Foreigners — Türkiye MFA",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方总表并读取 China 条款及相邻说明",
+          "evidence": "中国普通护照条款写明：自2026-01-02起，任意180天内累计不超过90天免签。",
+          "limits": "核对的是中国普通护照条款；不能从其他国家或公务护照条款推导中国普通护照待遇，也不能据此推导工作权。"
+        },
+        {
+          "platform": "web",
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "evidence": "明确中国普通护照免签限旅游、过境，90/180天；提醒护照有效期不少于6个月并留空白签证页，备妥返程机票、住宿、行程及资金证明。工作、学习须事先办相应签证。",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Antalya October 2026 digital nomad coworking autumn"
+          ],
+          "result": "已读官方10月气候表、官方秋季文章及2026年Alanya活动主办页；后者明确不属于Antalya市区。",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据",
+          "notes": "优先检索2026与10月；历史气候和历史旅居经验均单列局限，不冒充2026-10实况。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Antalya October 2026 internet coworking cost"
+          ],
+          "result": "已读旅居讨论正文/评论；另检出2026游泳照片帖，但没有把未验证图片、相对时间或个别游泳评论当成海温证据。",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链",
+          "notes": "主观体验只作反例；相对时间不转换成未经核实的精确发布日期，价格和网速不外推全城。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Antalya October 2026 coworking",
+            "site:x.com Antalya October",
+            "https://x.com/search?q=Antalya%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的相关原帖",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频",
+          "notes": "放宽年份后仍未获得合格原帖；搜索命中包含无关资料或账号加入月份，不能当作10月在地经历，也不能据此声称平台没有内容。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 安塔利亚 10月 2026",
+            "site:xiaohongshu.com 安塔利亚 十月",
+            "https://www.xiaohongshu.com/search_result?keyword=%E5%AE%89%E5%A1%94%E5%88%A9%E4%BA%9A%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的相关原笔记",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频",
+          "notes": "未使用付费接口、账号登录或共享浏览器；未把搜索摘要写成已读笔记，也不能据此断定平台没有内容。"
+        }
+      ]
+    },
+    {
+      "slug": "izmir",
+      "name_zh": "伊兹密尔",
+      "summary": "10月更适合把伊兹密尔当作温和的海湾城市驻留地：历史均温19.0°C，夜间加衣并备雨天安排。办公与社交体验分歧明显，应按具体街区、住处网络和雇主地域政策选择。",
+      "practical": [
+        "气象局1938—2025统计中10月月均19.0°C、平均日最高24.1°C、最低14.7°C，月雨量44.0毫米；不是对2026年本周的预报。",
+        "历史月住报告称其房间和联合办公网络顺畅；另一10月主帖却反映融入社群、语言和公司设备地域限制困难。两者说明个人条件差异大，不能泛称全城英语友好或工作无障碍。",
+        "历史报告提到 Alsancak、Bornova、Karşıyaka 等生活片区；只能作为选址线索，当前房价、工位营业和通勤需重查，旧帖美元预算不用于2026报价。",
+        "Çeşme、Alaçatı、Urla 属伊兹密尔省其他目的地；省内秋季旅游推荐不能替代市区通勤与办公证据。"
+      ],
+      "entry_check": {
+        "country": "Türkiye / 土耳其",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "成立，但应显示目的和停留限制",
+        "effective_at": "2026-01-02",
+        "purpose": "旅游、过境",
+        "stay_limit": {
+          "per_visit_days": null,
+          "rolling_window_days": 180,
+          "cumulative_days": 90,
+          "note": "官方中国条款是180天内累计90天；不能理解为每次入境重新获得90天。"
+        },
+        "work_rights": "旅游/过境免签不授予工作或学习权；相应活动须预先申请相应签证。上述来源未解决为境外雇主远程办公的具体法律归类，不能写成中国护照已有数字游民工作许可。",
+        "practical_requirements": [
+          "使馆提醒护照有效期不少于6个月，并有空白签证页。",
+          "准备返程机票、住宿、行程及资金证明，供入境抽查。"
+        ],
+        "official_sources": [
+          "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm"
+        ],
+        "limits": "这是2026-10-18对已打开官方正文的核对，不是个案入境获准保证。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=IZMIR",
+          "title": "İzmir — Resmî İklim İstatistikleri, MGM",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取统计期间、表头及 Ekim/10月列",
+          "evidence": "1938—2025统计表10月：月均19.0°C、平均日最高24.1°C、最低14.7°C；月雨44.0毫米、雨日5.31天。",
+          "limits": "城市站历史统计不覆盖全省各海岸微气候，也不是2026-10实时天气或海温。"
+        },
+        {
+          "platform": "web",
+          "url": "https://goturkiye.com/branding/press-releases/summer-continues-in-the-turkish-riviera-and-the-turkaegean",
+          "title": "Summer continues in the Turkish Riviera and the Turkaegean — GoTürkiye",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取 İzmir/Çeşme/Alaçatı/Urla 相关段落",
+          "evidence": "官方10月旅游文提到伊兹密尔省的Çeşme、Alaçatı与Urla秋季饮食和海岸行程。",
+          "limits": "这些地点不能等同伊兹密尔市中心；该材料不证明市区房租、办公网络或通勤时间。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/16zohgq/any_digital_nomdas_in_izmir/",
+          "title": "Any digital nomads in Izmir?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及相关语言/公司设备评论；未读完整评论树",
+          "evidence": "10月检索命中的历史主帖描述刚到访后难找到游民社群、语言有障碍；评论另有公司笔记本因身处土耳其被锁的个人经历。",
+          "limits": "索引指向2023-10，正文只显示相对日期，未核定精确日。公司锁机不是土耳其对所有设备的普遍政策，也未据此推荐绕过雇主控制。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/ylwzjn/1_month_1443_izmir_turkey/",
+          "title": "1 Month ($1,443) - Izmir, Turkey",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者主评论中的片区、费用及网络段落",
+          "evidence": "历史一个月报告提到生活片区、社交和自己住宿/工位超过50Mbps的体验，与另一帖形成条件不同的反例。",
+          "limits": "约四年前个体报告，未核实精确入住月；旧美元费用、SIM套餐和两处网速不能当作2026全城价格或网速。未打开其外链表格、地图、房源。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "title": "Visa Information For Foreigners — Türkiye MFA",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方总表并读取 China 条款及相邻说明",
+          "evidence": "中国普通护照条款写明：自2026-01-02起，任意180天内累计不超过90天免签。",
+          "limits": "核对的是中国普通护照条款；不能从其他国家或公务护照条款推导中国普通护照待遇，也不能据此推导工作权。"
+        },
+        {
+          "platform": "web",
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "evidence": "明确中国普通护照免签限旅游、过境，90/180天；提醒护照有效期不少于6个月并留空白签证页，备妥返程机票、住宿、行程及资金证明。工作、学习须事先办相应签证。",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Izmir October 2026 digital nomad coworking autumn"
+          ],
+          "result": "已读MGM城市10月气候表与官方省内秋季旅游文，明确区分市区和省内度假镇。",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据",
+          "notes": "优先检索2026与10月；历史气候和历史旅居经验均单列局限，不冒充2026-10实况。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Izmir October coworking internet digital nomad"
+          ],
+          "result": "已读历史10月社群求助和另一历史月住报告；没有把旧费用或个人网络测速升级为2026城市事实。",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链",
+          "notes": "主观体验只作反例；相对时间不转换成未经核实的精确发布日期，价格和网速不外推全城。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Izmir October 2026",
+            "\"Izmir\" \"October\" (domain: x.com)",
+            "https://x.com/search?q=Izmir%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的相关原帖",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频",
+          "notes": "放宽年份后仍未获得合格原帖；搜索命中包含无关资料或账号加入月份，不能当作10月在地经历，也不能据此声称平台没有内容。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 伊兹密尔 10月 2026",
+            "\"伊兹密尔\" \"10月\" (domain: xiaohongshu.com)",
+            "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%8A%E5%85%B9%E5%AF%86%E5%B0%94%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的相关原笔记",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频",
+          "notes": "未使用付费接口、账号登录或共享浏览器；未把搜索摘要写成已读笔记，也不能据此断定平台没有内容。"
+        }
+      ]
+    },
+    {
+      "slug": "tashkent",
+      "name_zh": "塔什干",
+      "summary": "10月适合用塔什干作为城市工作和周末出行的基地；季节上已从炎热夏天转向偏凉早晚。五城里它有本月可读的联合办公报道，但场地营业时间和网络仍须逐店确认。",
+      "practical": [
+        "官方旅游资料把秋季列为适宜城市旅行的季节。WMO/Uzhydromet旧气候表10月平均日高21.0°C、日低7.2°C，仅作带衣参考；不是当前逐日预报。",
+        "2026-10-08本地媒体列出多家联合办公的地点、日票和开放时间：同一品牌也有24小时与限定时段分支。应按实际办公时段选店，先试日票和会议网络。",
+        "一篇历史夏季月住报告认为工作期间舒适高效，却觉得整月停留缺少变化；其夏季40°C体验不用于10月天气，旧英镑工位价也不作当前报价。",
+        "城市住宿与工作地点最好一并选；跨城观光可以作为周末方案，但本次没有核验具体车次、余票或票价。",
+        "中国普通护照单次免签30天、任意180天累计90天，另有住宿登记；没有远程工作许可结论。"
+      ],
+      "entry_check": {
+        "country": "Uzbekistan / 乌兹别克斯坦",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "成立，但应显示单次30天及目的限制",
+        "effective_at": "2025-06-01",
+        "purpose": "符合协定的短期访问；工作、学习、媒体及其他需特别许可活动除外",
+        "stay_limit": {
+          "per_visit_days": 30,
+          "rolling_window_days": 180,
+          "cumulative_days": 90,
+          "note": "入境日计第一天；30天不是90天，不能用累计额度代替单次上限。"
+        },
+        "work_rights": "免签不授予工作权；工作、学习等须事先办相应签证。来源未明确境外远程办公的具体法律归类，不能因此宣传为已获数字游民工作许可。",
+        "practical_requirements": [
+          "超过规定的短暂免登记期限须办理住宿登记；酒店或房东应按规定办理，更换住址也需登记，保留凭证。",
+          "需停留超过30天或改变为工作/学习目的时，通常须提前办妥相应签证，不能依赖入境后延长免签。"
+        ],
+        "official_sources": [
+          "https://gov.uz/en/mfa/news/view/53659",
+          "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm"
+        ],
+        "conflicts": "乌外交部通用签证页混有旧中国10日条款；本次采用乌外交部中国协定专项公告与中国使馆问答的一致30/90/180规则。",
+        "limits": "住宿登记按使馆问答的工作日和住宿类型细则办理，未把别国旅客的登记豁免扩展至中国旅客。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://uzbekistan.travel/en/i/travel-tips/",
+          "title": "Travel tips — Uzbekistan Travel",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取季节、旅行和交通相关正文",
+          "evidence": "官方旅游资料把春秋称为适合旅行的季节，并介绍城市间铁路出行。",
+          "limits": "全国性季节建议，不是塔什干2026-10气象实况；页面所列车次频率和地铁时间未另作当前核验，未采用为实时交通承诺。"
+        },
+        {
+          "platform": "web",
+          "url": "https://uzbekistan.travel/en/o/where-spend-weekend-tashkent/",
+          "title": "Where to spend a weekend in Tashkent?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取塔什干公园和秋季相关段落",
+          "evidence": "官方介绍塔什干植物园等公园秋色及城市周末活动。",
+          "limits": "城市和近郊景点混列，未把远郊湖山写成市内步行；无2026-10逐日天气、空气质量或通勤测量。"
+        },
+        {
+          "platform": "web",
+          "url": "https://worldweather.wmo.int/en/json/115_en.json",
+          "title": "WMO World Weather Information Service — Tashkent climatology",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市JSON中的提供机构、气候日期字段与10月条目",
+          "evidence": "城市JSON由Uzhydromet提供；10月平均日最高21.0°C、平均日最低7.2°C，降水34.1毫米、雨日8.1天。",
+          "limits": "基准期字段空白，气候条目的提交日期为2001-05-14；这是较旧气候资料，不是2026预测、实测或月均温。普通HTML页只呈现壳，采用实际读取的JSON数据。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.spot.uz/ru/2026/10/08/coworking/",
+          "title": "Коворкинги в Ташкенте: сколько они стоят, где находятся и что предлагают — Spot",
+          "published_at": "2026-10-08",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取场地、价格及开放时段的主体列表",
+          "evidence": "2026-10-08的本地报道列出GroundZero、CSpace等场地及日票/开放时间；不同品牌及分支的24小时或限定时段安排不同。",
+          "limits": "媒体整理不是本次现场或运营商确认；没有实测网速、噪音、会议保密性和空位，价格也可能随后变动。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1m7wfsc/trip_report_a_month_in_tashkent_3_things_i_loved/",
+          "title": "Trip Report: A month in Tashkent — 3 things I loved, 6 things I liked and 7 negatives",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖工作、场地、夏季天气、城市布局与跨城建议段落",
+          "evidence": "作者一个月工作经历肯定GroundZero Kitob Olami的环境与电话间，但认为整月城市生活不够丰富，建议短些停留并搭配周末旅行。",
+          "limits": "历史夏季个体报告，非2026-10气象或实时报价；英镑月费和40°C体感均不外推本月。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1w0k2df/digital_nomads_whove_travelled_central_asia/",
+          "title": "Digital nomads who’ve travelled Central Asia?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖延期说明及相关网络、咖啡馆评论",
+          "evidence": "评论有城市视频通话顺畅的经验，也有住宿Wi-Fi或热点不稳、适合办公咖啡馆不多的相反经验。",
+          "limits": "主帖是计划且后来延期，不是已完成旅行报告；评论经验跨多个中亚地点，不能归成塔什干全城网速、断电率或2026实测。"
+        },
+        {
+          "platform": "web",
+          "url": "https://gov.uz/en/mfa/news/view/53659",
+          "title": "On the entry into force of the Agreement between Uzbekistan and China on mutual visa exemption",
+          "published_at": "2025-05-13",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开乌外交部英文公告并读取全文",
+          "evidence": "乌外交部确认协定2025-06-01生效：每次不超过30天，任意180天累计不超过90天；超过30天须预先申请签证，工作、学习、媒体及其他需特别许可的活动不属免签。",
+          "limits": "协定公告比混有旧附注的签证总表更具体；免签不等于工作许可，也不适用于中方港澳地区访问安排。"
+        },
+        {
+          "platform": "web",
+          "url": "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm",
+          "title": "免签来乌问与答",
+          "published_at": "2025-05-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取问答中的适用护照、停留、排除目的、延期和住宿登记条款",
+          "evidence": "中国使馆确认普通护照适用单次30天、180天累计90天；入境日计第一天。需按规定办理住宿登记，更换住宿地也应重新办理；免签入境一般不能境内延期或改为工作、学习身份。",
+          "limits": "登记规则有工作日和住宿类型等细节，不能简单写成任意连续72小时；应由酒店或房东依当前规定办理并保留凭证。远程工作的具体归类未由本材料确认。"
+        },
+        {
+          "platform": "web",
+          "url": "https://gov.uz/en/mfa/pages/o-zbekiston-respublikasi-vizasi",
+          "title": "Visa of the Republic of Uzbekistan — general list",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取中国所在表格及页面附注；记录页面内冲突",
+          "evidence": "总表已把中国列入30日免签名单，但页面旧附注仍出现中国10日及续程机票条件，存在新旧内容并存。",
+          "limits": "不采用旧10日附注，也不把总表的概括性目的表述覆盖中国专项协定；现行结论由乌外交部协定公告及中国使馆问答交叉核对。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Tashkent October 2026 autumn digital nomad coworking"
+          ],
+          "result": "已读官方秋季文、WMO城市旧气候JSON和2026-10-08联合办公报道；没有2026-10城市天气或网络现场实测。",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据",
+          "notes": "优先检索2026与10月；历史气候和历史旅居经验均单列局限，不冒充2026-10实况。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Tashkent October coworking internet digital nomad"
+          ],
+          "result": "已读月住经验及近期中亚讨论；区分夏季实住、未出发计划与评论者的经历。",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链",
+          "notes": "主观体验只作反例；相对时间不转换成未经核实的精确发布日期，价格和网速不外推全城。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Tashkent October 2026",
+            "\"Tashkent\" \"October\" (domain: x.com)",
+            "https://x.com/search?q=Tashkent%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的相关原帖",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频",
+          "notes": "放宽年份后仍未获得合格原帖；搜索命中包含无关资料或账号加入月份，不能当作10月在地经历，也不能据此声称平台没有内容。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 塔什干 10月 2026",
+            "\"塔什干\" \"十月\" (domain: xiaohongshu.com)",
+            "https://www.xiaohongshu.com/search_result?keyword=%E5%A1%94%E4%BB%80%E5%B9%B2%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的相关原笔记",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频",
+          "notes": "未使用付费接口、账号登录或共享浏览器；未把搜索摘要写成已读笔记，也不能据此断定平台没有内容。"
+        }
+      ]
+    },
+    {
+      "slug": "samarkand",
+      "name_zh": "撒马尔罕",
+      "summary": "10月有适合古城步行的季节依据，历史月均温14.4°C，较适合把观光作为重点。对整周高强度视频会议，场地和住宿网络证据明显比景点证据弱，应先小住测试。",
+      "practical": [
+        "日本气象厅城市站常年表的10月月均14.4°C、降水17.1毫米；这是月平均，不能说每天或夜间都是14.4°C。本次未取得2026-10逐日实况。",
+        "有关酒店Wi-Fi的视频会议求助帖，后来作者又称酒店可用；评论还出现旧工位已关、其他场地推荐等变化。网络好坏需落到房间和时段，不能从景区热度推导办公稳定。",
+        "2026相对日期的联合办公问答只提供场所线索，没有当前运营商确认或实测。先核实营业、安静会议空间和可退款政策，再决定整周驻留。",
+        "若依赖连续通话，可先在塔什干验证基地，再把撒马尔罕作为短途候选；这是由办公证据差异得到的安排建议，并非本次核实过的列车行程。",
+        "中国普通护照单次免签30天且需留意住宿登记；游览入境条件与工作许可分别核实。"
+      ],
+      "entry_check": {
+        "country": "Uzbekistan / 乌兹别克斯坦",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "成立，但应显示单次30天及目的限制",
+        "effective_at": "2025-06-01",
+        "purpose": "符合协定的短期访问；工作、学习、媒体及其他需特别许可活动除外",
+        "stay_limit": {
+          "per_visit_days": 30,
+          "rolling_window_days": 180,
+          "cumulative_days": 90,
+          "note": "入境日计第一天；30天不是90天，不能用累计额度代替单次上限。"
+        },
+        "work_rights": "免签不授予工作权；工作、学习等须事先办相应签证。来源未明确境外远程办公的具体法律归类，不能因此宣传为已获数字游民工作许可。",
+        "practical_requirements": [
+          "超过规定的短暂免登记期限须办理住宿登记；酒店或房东应按规定办理，更换住址也需登记，保留凭证。",
+          "需停留超过30天或改变为工作/学习目的时，通常须提前办妥相应签证，不能依赖入境后延长免签。"
+        ],
+        "official_sources": [
+          "https://gov.uz/en/mfa/news/view/53659",
+          "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm"
+        ],
+        "conflicts": "乌外交部通用签证页混有旧中国10日条款；本次采用乌外交部中国协定专项公告与中国使馆问答的一致30/90/180规则。",
+        "limits": "住宿登记按使馆问答的工作日和住宿类型细则办理，未把别国旅客的登记豁免扩展至中国旅客。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://ds.data.jma.go.jp/gmd/tcc/tcc/products/climate/climatview/graph_mkhtml_nrm.php?e=7&k=0&m=9&n=38696&r=1&s=1&y=2026",
+          "title": "ClimatView — SAMARKAND monthly normals, Japan Meteorological Agency",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市站、表头与October常年值",
+          "evidence": "Samarkand站（39.63N、66.95E、海拔725米）的常年表：10月月平均温14.4°C、降水17.1毫米。",
+          "limits": "该子页未明确显示基准期，未假设1991—2020；常年值不是2026-10实况或昼夜温度。URL的年份参数不能把normals变成当月观测。"
+        },
+        {
+          "platform": "web",
+          "url": "https://uzbekistan.travel/en/i/travel-tips/",
+          "title": "Travel tips — Uzbekistan Travel",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取秋季和旅行建议正文",
+          "evidence": "官方旅游把秋季列为适合乌兹别克城市旅行的季节。",
+          "limits": "国家层面的季节建议，不能证明撒马尔罕本月每天晴天、空气质量或网络状况；未采用旧车次信息作为当前时刻表。"
+        },
+        {
+          "platform": "web",
+          "url": "https://uzbekistan.travel/en/i/samarkand/",
+          "title": "Samarkand — Uzbekistan Travel",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市、气候概述与主要古迹段落",
+          "evidence": "官方城市页面介绍Registan、Shah-i-Zinda等古迹和当地总体季节性，可支持以文化游览为主的停留定位。",
+          "limits": "城市推广材料不是工位、交通时刻或空气质量实测；未把页面关于清新空气的传说写成环境结论。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/Uzbekistan/comments/173t9oz/looking_for_a_caf%C3%A9_or_bar_with_good_wifi_in/",
+          "title": "Looking for a café or bar with good Wi-Fi in Samarkand",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖、作者后续及场地关闭/候选评论；未打开地图外链或实测",
+          "evidence": "原帖为视频会议寻找网络备选，后来作者称酒店Wi-Fi可用；评论中的场地有后来被报已关的变化，也有新候选建议。",
+          "limits": "历史10月帖混有后续年份评论，精确日期未逐条核定；旧测速、BM Cowork及其他场地均未现场/官方复验，不能当作2026营业保证。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/Uzbekistan/comments/1su90cv/are_there_coworking_centers_in_samarkand/",
+          "title": "Are there coworking centers in Samarkand?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及推荐评论；未按推荐联系、预订或打开地图",
+          "evidence": "求助者需要安静、适合一周工作的空间；评论提供HotSpot等线索并建议使用2GIS查找。",
+          "limits": "页面给相对日期，未确认精确发布日期；建议不是已验证的营业、价格、工位余量或网络表现。"
+        },
+        {
+          "platform": "web",
+          "url": "https://gov.uz/en/mfa/news/view/53659",
+          "title": "On the entry into force of the Agreement between Uzbekistan and China on mutual visa exemption",
+          "published_at": "2025-05-13",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开乌外交部英文公告并读取全文",
+          "evidence": "乌外交部确认协定2025-06-01生效：每次不超过30天，任意180天累计不超过90天；超过30天须预先申请签证，工作、学习、媒体及其他需特别许可的活动不属免签。",
+          "limits": "协定公告比混有旧附注的签证总表更具体；免签不等于工作许可，也不适用于中方港澳地区访问安排。"
+        },
+        {
+          "platform": "web",
+          "url": "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm",
+          "title": "免签来乌问与答",
+          "published_at": "2025-05-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取问答中的适用护照、停留、排除目的、延期和住宿登记条款",
+          "evidence": "中国使馆确认普通护照适用单次30天、180天累计90天；入境日计第一天。需按规定办理住宿登记，更换住宿地也应重新办理；免签入境一般不能境内延期或改为工作、学习身份。",
+          "limits": "登记规则有工作日和住宿类型等细节，不能简单写成任意连续72小时；应由酒店或房东依当前规定办理并保留凭证。远程工作的具体归类未由本材料确认。"
+        },
+        {
+          "platform": "web",
+          "url": "https://gov.uz/en/mfa/pages/o-zbekiston-respublikasi-vizasi",
+          "title": "Visa of the Republic of Uzbekistan — general list",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取中国所在表格及页面附注；记录页面内冲突",
+          "evidence": "总表已把中国列入30日免签名单，但页面旧附注仍出现中国10日及续程机票条件，存在新旧内容并存。",
+          "limits": "不采用旧10日附注，也不把总表的概括性目的表述覆盖中国专项协定；现行结论由乌外交部协定公告及中国使馆问答交叉核对。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Samarkand October 2026 autumn travel coworking remote work"
+          ],
+          "result": "已读JMA站点10月常年表、官方秋季及城市旅游正文；未获得2026-10可靠工位或房间网络实测。",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据",
+          "notes": "优先检索2026与10月；历史气候和历史旅居经验均单列局限，不冒充2026-10实况。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Samarkand October coworking internet remote work"
+          ],
+          "result": "已读历史10月Wi-Fi求助、后续评论和较新联合办公问答；没有把求助问题或场所推荐当作亲测报告。",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链",
+          "notes": "主观体验只作反例；相对时间不转换成未经核实的精确发布日期，价格和网速不外推全城。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Samarkand October 2026",
+            "\"Samarkand\" \"October\" (domain: x.com)",
+            "https://x.com/search?q=Samarkand%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的相关原帖",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频",
+          "notes": "放宽年份后仍未获得合格原帖；搜索命中包含无关资料或账号加入月份，不能当作10月在地经历，也不能据此声称平台没有内容。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 撒马尔罕 10月 2026",
+            "\"撒马尔罕\" \"十月\" (domain: xiaohongshu.com)",
+            "https://www.xiaohongshu.com/search_result?keyword=%E6%92%92%E9%A9%AC%E5%B0%94%E7%BD%95%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的相关原笔记",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频",
+          "notes": "未使用付费接口、账号登录或共享浏览器；未把搜索摘要写成已读笔记，也不能据此断定平台没有内容。"
+        }
+      ]
+    }
+  ]
+}

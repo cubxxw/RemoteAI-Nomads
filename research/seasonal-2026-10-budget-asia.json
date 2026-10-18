@@ -1,0 +1,570 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "cities": [
+    {
+      "slug": "pokhara",
+      "name_zh": "博卡拉",
+      "summary": "十月适合把工作日留在费瓦湖畔、把山景留给休息日。先验证房间上传速度和备用电源；秋季旅游宣传不能替代进出道路、山区步道的当日核查。",
+      "practical": [
+        "建议先短住湖畔步行生活圈，再比较 Khahare、Sedi 等周边区域；山坡景观房与平地日常便利是不同取舍，不要只按房租排序。",
+        "建议在自己开会的时段测试上传、视频会议和手机热点，并询问停电后路由器是否仍能工作；旅行者一次测速不代表所有房间稳定。",
+        "建议把抵达、返程和徒步分成独立安排，向交通运营方核对近期雨后道路。Gorkha、Rasuwa、Nuwakot 的灾情不能直接外推成费瓦湖畔停摆，也不能因为湖畔晴天就断言山区全线安全。",
+        "未取得2026年10月18日可订房源或工位实时报价，不引用旧帖的低价作为今日月租或最低生活门槛。"
+      ],
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://ntb.gov.np/en/the-beauty-of-pokhara-in-autumn",
+          "title": "The Beauty of Pokhara in Autumn — Nepal Tourism Board",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_article_body",
+          "evidence": [
+            "尼泊尔旅游局将9—11月列为博卡拉秋季，正文称十月通常比九月更晴朗、干燥，夜间转凉。",
+            "文章分别介绍湖畔散步与周边徒步，能支持秋季出行的季节背景。"
+          ],
+          "limits": "页面未见明确发布日期；属于旅游推广与一般季节说明，不是2026年逐日天气、交通通告、空气质量或办公网络实测。文中安全性宣传未直接当作路线安全结论。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.smartraveller.gov.au/destinations/asia/nepal",
+          "title": "Nepal Travel Advice & Safety — Australian Government Smartraveller",
+          "published_at": "2026-10-13",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_current_advisory_body",
+          "evidence": [
+            "打开页面标注更新于2026-10-13、截至2026-10-18仍有效；说明10月11日Gorkha的Budhi Gandaki河洪水可影响交通与基础设施。",
+            "对Rasuwa、Nuwakot部分受灾区域另有较高级别提醒，并指出季风通常结束后仍可能有洪水、滑坡和道路影响。"
+          ],
+          "limits": "这是国家及特定受灾区域的旅行建议，不是博卡拉城区、加德满都—博卡拉每段道路或某条徒步线已关闭的证明；未据此推荐具体交通工具或保证其安全。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/pokhara/comments/1wc7kqq/notes_for_nomads_planning_on_pokhara_awesome_spot/",
+          "title": "Notes for Nomads Planning on Pokhara — awesome spot, these details will make settling in faster",
+          "published_at": "2026-09-10",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "作者自述最近远程工作数周，区分湖畔的步行便利与山坡住宿的景观取舍，建议靠近湖边生活设施。",
+            "作者报告部分咖啡馆和手机热点可工作，并将移动数据当作停电或Wi-Fi故障时的备份。"
+          ],
+          "limits": "个人自报且附作者博客推广；未独立复测速度，未核实所有住宿、供电或运营商覆盖。发布日期采用检索的绝对日期，打开页面正文只显示相对时间。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/pokhara/comments/1wwwsj9/looking_for_advice/",
+          "title": "Looking for advice — October month-long remote-work stay in Pokhara",
+          "published_at": "2026-10-03",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "主帖明确计划十月停留约一个月、远程工作且预算紧；可见评论建议比较Khahare、Sedi等区域和湖畔社交便利。",
+            "评论提醒签月住前测试Wi-Fi和询问备用电源；另有评论提醒骑车证件与手续，表明山景与办公以外仍有实际摩擦。"
+          ],
+          "limits": "邻里建议与未经核验的相对便宜判断，不是可预订房源或统一价格样本；没有采用评论的月租折扣或路线推荐作为保证。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Pokhara October 2026 roads monsoon remote work",
+            "site:ntb.gov.np Pokhara autumn October weather trekking",
+            "site:dhm.gov.np 2026 October monsoon withdrawal Nepal",
+            "Nepal Pokhara roads October 2026 landslide government travel advisory"
+          ],
+          "result": "已核读旅游局秋季正文和2026年10月更新的政府旅行建议；未取得具体路段当日状态。",
+          "read_scope": "official_article_and_advisory_opened",
+          "notes": "季节常态、特定地区灾害与城市办公条件分别记录；不把徒步旺季等同于道路或房间网络保证。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Pokhara October 2026 roads",
+            "site:x.com Pokhara October 2026",
+            "site:x.com \"Pokhara\" \"October\""
+          ],
+          "result": "当前年份查询只出现无关平台资料，去掉年份后的同季精确词查询无结果；未获得可核读的相关原帖。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "不据此声称X上无人讨论；未登录、未使用付费接口，没有X原帖支撑本城结论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 博卡拉 2026 10月 旅居",
+            "site:xiaohongshu.com 博卡拉 10月 2026 旅居",
+            "site:xiaohongshu.com 博卡拉 10月 旅居"
+          ],
+          "result": "公开检索未命中可核读的博卡拉十月旅居笔记，只出现平台帮助或活动页。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有把平台活动页或搜索摘要当作旅居原帖；小红书一手材料仍是缺口。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com/r/digitalnomad Pokhara October",
+            "site:reddit.com Pokhara October 2026 remote work"
+          ],
+          "result": "已打开2026年9月远程工作经验帖和10月月住咨询帖，读到正文及可见评论。",
+          "read_scope": "post_body_and_visible_comments",
+          "notes": "近期用户经验与推广内容分开判断；未把自报测速和住宿价格当独立核验结果。"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu",
+      "name_zh": "成都",
+      "summary": "更适合围绕日常生活圈建立工作节奏；别把山里社群的低住宿价当作市区旅居的完整成本。十月应保留阴雨天的室内工作方案。",
+      "practical": [
+        "建议先按常去的工位、朋友和地铁站选住处，再看景点；郊外社群若依赖开车，交通时间和出行方式要一起算。",
+        "建议用一个完整工作日试坐咖啡馆或工位，核对插座、打电话规则和自己的实际工作网站；有Wi-Fi不代表工作服务可用。",
+        "建议选采光、通风及晾衣条件较明确的房间，留一套雨天步行能到的室内安排。这里的秋雨判断采用历史同季官方材料，不是2026年本周预报。",
+        "2026国庆假期10月7日已结束；截至10月18日不再按黄金周日程解释整个月，但并未查到足以证明当前房价已经回落的报价样本。"
+      ],
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xjctz/202510/t20251020_7399391.html",
+          "title": "成都双流：气象预警接上社区网格 基层治理有了“发令枪” — 中国气象局",
+          "published_at": "2025-10-20",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_article_body",
+          "evidence": [
+            "官方历史同季报道以十月华西秋雨和成都双流的预警响应为背景，可校正“十月一定持续晴朗”的印象。"
+          ],
+          "limits": "这是2025年基层气象治理报道，不是2026年月预测、每日降雨记录或市区空气质量数据；不能据此量化今年雨日数。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/travelchina/comments/1t40bh0/yesterday_i_visited_a_digital_nomad_community_on/",
+          "title": "Yesterday, I visited a digital nomad community on the outskirts of Chengdu",
+          "published_at": "2026-05-05",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments_text_not_images",
+          "evidence": [
+            "作者自述到山里社群需开车约一小时，无车不方便；社群将办公、住宿与食堂结合。",
+            "可见评论质疑远郊地点的性价比，并询问只买工位的可能；作者回复通勤并不现实，说明住宿与工位需整体比较。"
+          ],
+          "limits": "一次参观、自报价格和经营介绍，不是10月现价；没有核读配图或验证场地持续运营。未把技能换宿当作人人可获得的免费住房。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/Chengdu/comments/1f6ikfc/remote_workingcoworking_spotscoffee_shops/",
+          "title": "Remote working/co-working spots/coffee shops — r/Chengdu",
+          "published_at": "2024-09-01",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "求助者在寻找可工作且能连接所需服务的咖啡馆；评论强调成都很大，要先知道住在哪个片区。",
+            "评论列举连锁茶咖和共享办公作为线索，而不是提供每家门店的网络、安静程度和通话条件测评。"
+          ],
+          "limits": "2024年一般办公经验，并非同日探店；没有据此推荐某个门店持续可坐、可接视频或保证跨境服务可用。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568275.html",
+          "title": "国务院办公厅关于2026年部分节假日安排的通知 — 北京市政府转载",
+          "published_at": "2025-11-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_reprint_body",
+          "evidence": [
+            "正文确认2026年国庆节10月1日至7日放假调休；因此10月18日已经过该段假期。"
+          ],
+          "limits": "只支持日期判断，不能证明成都当日客流、工位空位或房价。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "成都 2026 10月 数字游民 旅居",
+            "site:cma.gov.cn 成都 十月 秋雨 气候",
+            "site:sc.cma.gov.cn 2026 10月 成都 秋雨",
+            "site:sc.weather.com.cn 2026 10月 秋雨 成都",
+            "成都 2026 10月 秋雨 四川 气象"
+          ],
+          "result": "核读2025年同季中国气象局报道及2026假期官方通知；没有取得足够可靠的2026成都十月城市气候总结。",
+          "read_scope": "official_historical_article_opened_current_city_seasonal_gap",
+          "notes": "排除第三方在月中就标成“整月历史统计”的页面，未将其当作完整十月实况。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Chengdu October 2026 coworking",
+            "site:x.com 成都 10月 2026",
+            "site:x.com \"Chengdu\" \"October\""
+          ],
+          "result": "未找到相关十月办公原帖；历史检索主要命中个人资料的Joined October，属于注册月份而非旅居经验。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "无关个人资料与平台条款均未纳入城市结论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 成都 10月 数字游民",
+            "site:xiaohongshu.com 成都 10月 2026 数字游民"
+          ],
+          "result": "未找到可核读的相关笔记，只见平台规则、活动或无关页面。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有小红书原文证据，不用聚合转述补成平台体验。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Chengdu October digital nomad internet",
+            "site:reddit.com Chengdu October coworking internet"
+          ],
+          "result": "实际打开郊外社群参观帖和办公地点咨询帖，读到正文、反对意见与通勤限制。",
+          "read_scope": "post_body_and_visible_comments",
+          "notes": "保留2026一般经验与2024旧帖的不同日期，不冒充2026十月入住测评。"
+        }
+      ]
+    },
+    {
+      "slug": "ubud",
+      "name_zh": "乌布",
+      "summary": "适合把住处与能步行抵达的工位配成一组。十月不能机械写成“雨季已经开始”：2026年BMKG区域预测提示雨季可能延后，短住验房和实际网络测试比季节口号更有用。",
+      "practical": [
+        "建议先订可调整的短住，检查空调除湿、通风、床品气味及雨天动线；当前材料不足以断言乌布十月普遍发霉，也不能凭别处的住宿投诉判断某间房。",
+        "建议步行试走住处到工位，雨天尽量不把每天骑车作为唯一方案；先核实电话间、安静区和夜间进入规则。",
+        "Outpost的运营页面可作为24小时办公与通话设施的询问起点，运营商写“高速网络”仍不能替代自己实际工作时段的视频会议测试。",
+        "2026季节预测与历史十月游客体验都显示地区、年份差异明显；不要把省域雨季预测当成乌布某天的天气，也没有证据证明转季必然带来低价月租。"
+      ],
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://www.bmkg.go.id/berita/utama/bmkg-el-nino-sangat-kuat-sedang-terjadi-musim-hujan-2026-2027-diprediksi-datang-lebih-lambat",
+          "title": "BMKG: El Niño Sangat Kuat sedang Terjadi, Musim Hujan 2026/2027 Diprediksi Datang Lebih Lambat",
+          "published_at": "2026-09-22",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_press_release_body",
+          "evidence": [
+            "BMKG发布2026/27雨季预测，指出全国多区域雨季开始时间较常年延后；正文将巴厘岛不同区域分别列入11月、12月进入雨季的范围。",
+            "该机构同时强调区域差异及必要时向当地BMKG询问更细分的气候信息。"
+          ],
+          "limits": "全国及区域级季节预测，不是乌布坐标的已发生降雨或逐日预报；本文没有据其确定乌布某个雨季起始日，更没有据此保证十月不下雨。"
+        },
+        {
+          "platform": "web",
+          "url": "https://destinationoutpost.co/cowork-in-ubud/",
+          "title": "Coworking Space in Ubud, Bali — Outpost",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_operator_page_body_and_faq",
+          "evidence": [
+            "运营页面列出乌布办公空间、会议室、私人办公室与视频通话间；FAQ称巴厘岛各点每天24小时开放，包含周末。"
+          ],
+          "limits": "经营方自述，页面未标明确发布日期；未实地访问或独立测速，也未验证某张日票的夜间权限、当日可订性、电话间空位和具体住宿房间网络。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/bali/comments/1gnfq5o/bali_in_3rd_week_of_october/",
+          "title": "Bali in 3rd week of october — r/bali",
+          "published_at": "2024-11-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "历史同季讨论里，有人报告十月只有短时阵雨，也有人提醒内陆与沿海差异、接近月底可能转湿；可见评论并不一致。",
+            "有人谈到乌布午后降雨、前后仍晴的另一季节经历，说明不能把巴厘岛各区或各月份的体验合并。"
+          ],
+          "limits": "2024年发表的游客讨论，含多年及不同月份回忆；主帖是计划咨询，不是2026年乌布实时入住记录。未采用其中酒店“优惠”说法证明今日价格。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/BaliTravelTips/comments/1qaw3lq/moldy_pillows_bloodstained_sheets_random_dirty/",
+          "title": "Moldy Pillows, Blood-stained Sheets & Random Dirty Underwear at 11.11 Bali Retreats",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments_text_not_images",
+          "evidence": [
+            "一名住客投诉某处巴厘岛住宿的霉枕头和清洁问题，可见评论谈到通风、空调除湿与住宿管理差异。"
+          ],
+          "limits": "搜索标注约2026年初，未核精确发帖日；仅是巴厘岛单处投诉，未确认位于乌布，未查看配图或核实医学说法。只作为验房提醒，不证明乌布十月普遍潮湿发霉，也未采纳文中的疾病因果或住院人数说法。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Ubud October 2026 rainy coworking",
+            "site:bmkg.go.id Bali 2026 2027 Oktober musim hujan",
+            "site:indonesia.travel Bali weather dry season October rainy season",
+            "Ubud coworking operator Outpost 24 7 wifi official"
+          ],
+          "result": "已打开2026年BMKG雨季预测及Outpost运营FAQ；当年气候背景并不支持十月已全面进入雨季的简单断言。",
+          "read_scope": "official_press_release_and_operator_faq_opened",
+          "notes": "区分区域预测、经营方服务说明和独立网络测量；不提供实时住房或工位价格。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Ubud October 2026 coworking rain",
+            "site:x.com Ubud October 2026 rain",
+            "site:x.com \"Ubud\" \"October\""
+          ],
+          "result": "未找到相关原帖；历史查询只命中2021年乌布文学节的平台宣传，不能作为十月旅居体验。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有把活动宣传当居民/远程工作者的房间或网络实测。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 乌布 2026 10月 旅居",
+            "site:xiaohongshu.com 乌布 10月 雨季 旅居",
+            "site:xiaohongshu.com 乌布 10月 旅居"
+          ],
+          "result": "未取得可核读的乌布十月笔记，只出现平台官方活动、帮助等无关结果。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "小红书同季房间、通勤和工位体验仍缺一手正文；不声称看过原帖图片或评论。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com/r/digitalnomad Ubud October rain coworking",
+            "site:reddit.com Ubud October rainy mould coworking",
+            "site:reddit.com Ubud mould room humidity October 2026",
+            "site:reddit.com \"Ubud\" \"mold\" \"accommodation\""
+          ],
+          "result": "读到历史十月天气讨论的正文与相互矛盾评论；另核读巴厘岛单处住宿投诉，但未把地点外推到乌布。",
+          "read_scope": "post_body_and_visible_comments_with_location_limits",
+          "notes": "没有取得2026十月乌布具体房间潮湿或工位网络的可独立核验样本；明确保留这个缺口。"
+        }
+      ]
+    },
+    {
+      "slug": "hangzhou",
+      "name_zh": "杭州",
+      "summary": "适合把湖边散步与稳定工作日分开安排。十月有转凉和降雨过程，住处靠近实际工位、地铁和日常配套，通常比只追求西湖景观更容易形成生活节奏。",
+      "practical": [
+        "建议先选一个能覆盖工位、吃饭和地铁的生活半径，再把西湖、茶山作为下班或周末安排；不把短途旅游帖直接换算成月住方案。",
+        "建议保留冷空气和降雨天的室内计划，准备可叠穿衣物。浙江月趋势预报只能给方向，出门仍需查杭州近期预报。",
+        "国庆假期已在10月7日结束，截至10月18日不再默认整个城市仍处于黄金周；热门景点周末是否拥挤、房价是否下降仍需另查。",
+        "未验证当月短租房、工位价格或可接国际会议的网络；居民帖中的租住经验不当作短租可订报价。"
+      ],
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://zj.weather.com.cn/qhbh/qhbhgb/09/4806831.shtml",
+          "title": "2026年10月气候趋势预测 — 浙江省气候中心/浙江天气网",
+          "published_at": "2026-09-29",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_climate_outlook_body",
+          "evidence": [
+            "正文为浙江省气候中心9月28日制作、9月29日发布的十月月趋势：强调冷暖转换、阶段性降水及仍需关注台风影响。",
+            "预测浙北降水总体接近常年或略偏少，但仍列有降水过程，不能用“秋高气爽”抹掉雨天。"
+          ],
+          "limits": "省域月趋势预测，不是杭州城区2026年十月已发生的完整记录或某天的准确预报；没有把全省台风可能性表述成杭州确定受灾。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/hangzhou/comments/1x1imqh/what_are_the_top_3_things_youd_like_to_know_about/",
+          "title": "What are the top 3 things you’d like to know about life here in China? Especially Hangzhou",
+          "published_at": "2026-10-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "作者自述在杭州住三年，评论实际关注打车、地铁、支付、语言和住房，而非只谈景点。",
+            "可见回复讨论叫车时核对号码、用支付应用乘地铁等日常操作，支持先建立生活动线的建议。"
+          ],
+          "limits": "作者兼有频道推广，评论中的租金、签证与资格说法未独立核验，因此未采用价格或法律结论。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/hangzhou/comments/1w8ai55/spending_15d_in_oct_tips_to_optimize_time/",
+          "title": "Spending 1.5d in Oct. tips to optimize time? — r/hangzhou",
+          "published_at": "2026-09-05",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_subset_of_visible_comments_search_cache_differs",
+          "evidence": [
+            "主帖是一晚湖边酒店的短途安排，不是低预算旅居；实际打开的可见评论询问是否处于黄金周，作者说明计划10月13日。"
+          ],
+          "limits": "检索索引包含更多茶山/秋季评论，但打开页面的可见评论较少且相对时间不同；未把索引里的整段评论说成在打开页读到，也没有按豪华酒店案例推导月预算。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568275.html",
+          "title": "国务院办公厅关于2026年部分节假日安排的通知 — 北京市政府转载",
+          "published_at": "2025-11-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_reprint_body",
+          "evidence": [
+            "官方正文确认国庆假期为2026年10月1日至7日，支持把10月18日与月初黄金周区分。"
+          ],
+          "limits": "不支持杭州当前酒店价格、景点客流或工作空间的实时推断。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "杭州 2026 10月 数字游民 旅居",
+            "site:hangzhou.gov.cn 2026 10月 桂花 秋季 天气",
+            "site:zj.cma.gov.cn 杭州 十月 气候 秋季",
+            "杭州 十月 秋季 气候 site:weather.com.cn",
+            "Hangzhou October climate site:worldweather.wmo.int"
+          ],
+          "result": "已核读2026年浙江十月气候趋势正文。杭州政府一篇历史赏秋页无法打开；WMO搜索有月表，但打开仅得动态页面外壳，未采用其数值。",
+          "read_scope": "current_official_outlook_opened_other_candidates_partial_or_blocked",
+          "notes": "明确区分月趋势、历史平均、实时天气与花期；没有验证2026年当天桂花盛开程度。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Hangzhou October 2026",
+            "site:x.com 杭州 10月 2026",
+            "site:x.com \"Hangzhou\" \"October\""
+          ],
+          "result": "未获得相关原帖；结果主要为账号注册月份或无关平台信息。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有把Joined October或个人主页当十月在杭体验。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 杭州 2026 10月 数字游民",
+            "site:xiaohongshu.com 杭州 10月 数字游民 旅居",
+            "site:xiaohongshu.com 杭州 10月 数字游民"
+          ],
+          "result": "公开检索仅得平台经营帮助、招商等无关页面，未拿到可核读的旅居笔记。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有原帖、图片或评论可作为本城一手证据。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Hangzhou October coworking digital nomad",
+            "site:reddit.com Hangzhou October digital nomad"
+          ],
+          "result": "已打开2026年10月居民讨论及9月发布的十月旅行咨询；区分居民经验和短途观光，注明搜索/打开内容不完全一致。",
+          "read_scope": "post_body_and_visible_comments_with_cache_boundary",
+          "notes": "未取得同口径的当前短租或会议工位报价，不用评论模糊金额填预算。"
+        }
+      ]
+    },
+    {
+      "slug": "shenzhen",
+      "name_zh": "深圳",
+      "summary": "更适合有硬件、创业或跨城协作需求的人。十月仍应按可能偏热安排空调与通勤，别把名义秋季当成凉爽保证，也别把租到工位等同于自然融入社群。",
+      "practical": [
+        "建议先确定工作对象在哪：华强北的硬件活动、南山的团队往来、跨港出行与单纯低预算居住是不同目标；不要把全市用一个平均房租或通勤时间概括。",
+        "建议试坐一天再买长期工位，核对通话条件、网络和近期活动；问清活动是否真的适合自己的行业，而不是只看场地照片。",
+        "建议保留空调、遮阳和雨天替代路线；深圳官方长期统计的平均入秋日在11月，不能因为日历十月就默认整天舒适。",
+        "若常往返香港，建议计算住处到车站、安检、出入境与等车的完整时间；列车运行时间不是门到门通勤。所有旧帖租金与交通分钟数均未当作当前保证。"
+      ],
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://weather.sz.gov.cn/qixiangfuwu/qihoufuwu/qihouguanceyupinggu/qihougaikuang/content/mpost_3573760.html",
+          "title": "深圳市气候概况及四季特征 — 深圳市气象局",
+          "published_at": "2026-09-03",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_climate_profile_body_and_table",
+          "evidence": [
+            "官方页面按1991—2020年资料划分气候学四季，给出的平均入秋时间为11月8日；十月不宜直接套用北方凉爽秋季印象。",
+            "正文称雨季通常九月中下旬结束，但9—10月仍有冷空气变化，部分年份还存在秋台风等影响。"
+          ],
+          "limits": "长期统计和气候背景，不是2026年已经入秋的判定，也不代表10月18日或未来某一天的实际温度、台风或空气质量。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.szft.gov.cn/ftxx/xwdt/ftdt/content/post_12972999.html",
+          "title": "全球创客扎堆华强北！深圳速度，让海外创意一周出海 — 福田政府在线",
+          "published_at": "2026-09-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_local_report_body",
+          "evidence": [
+            "近期地方政府报道实际介绍华强北TroubleMaker/智方舟的国际创客、固定工位、硬件打样与供应链协作。",
+            "可支持将深圳的硬件协作资源作为特定人群选择城市的理由，而不是笼统的“适合所有数字游民”。"
+          ],
+          "limits": "报道带有地方产业宣传属性；未验证可订日票、准入资格、当月活动、独立网络质量或每项服务费用。运营方Contact页本次未能打开。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/shenzhen/comments/1qvmo90/whats_a_nice_place_to_cowork_from_in_shenzhen/",
+          "title": "What's a nice place to cowork from in Shenzhen — r/shenzhen",
+          "published_at": "2026-02-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "可见评论列出WeWork、Chaihuo和TroubleMaker作为线索，原作者回复去过Chaihuo。",
+            "另一评论明确指出有的共享办公只是租桌子，未必形成想要的创业社群，构成宣传之外的反例。"
+          ],
+          "limits": "2026年初个人讨论，不是十月实测；未验证任何点位的现行价格、社群活跃度或开放时间。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/shenzhen/comments/1oiwavi/advice_wanted_3_month_move_to_shenzen/",
+          "title": "Advice Wanted: 3 Month Move to Shenzen — r/shenzhen",
+          "published_at": "2025-10-29",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "evidence": [
+            "历史同季讨论出现福田与深圳北周边的租住、预算和行业取舍，也有人反驳把深圳—香港列车分钟数等同于完整出行时间。",
+            "评论具体补充安检、提前到站和证件查验等步骤，适合用来提醒估算全程而非只看列车时长。"
+          ],
+          "limits": "个案与争论，不是当前时刻表、移民规则或房源报价；没有采纳评论的固定通勤时长、固定租金差比和中介收费比例。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568275.html",
+          "title": "国务院办公厅关于2026年部分节假日安排的通知 — 北京市政府转载",
+          "published_at": "2025-11-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_reprint_body",
+          "evidence": [
+            "2026年国庆假期为10月1日至7日，截至本次核读日已经结束。"
+          ],
+          "limits": "只能支持假期日期，不证明深圳当前房价、会展需求、港口客流或工位空余。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "深圳 2026 10月 旅居 天气 共享办公",
+            "site:weather.sz.gov.cn 十月 气候 秋季 台风",
+            "site:weather.sz.gov.cn 2026 10月 天气",
+            "TroubleMaker Shenzhen official coworking space Huaqiangbei"
+          ],
+          "result": "已核读2026年更新的官方气候概况及9月华强北创客报道；没有获得某房间或工位的即时报价和网络实测。",
+          "read_scope": "official_climate_profile_and_local_report_opened",
+          "notes": "气候学入秋与日历秋季分开；行业协作资源不外推成全城通用生活优势。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Shenzhen October 2026 coworking",
+            "site:x.com 深圳 10月 2026",
+            "site:x.com \"Shenzhen\" \"October\""
+          ],
+          "result": "未找到可核读的相关帖子；历史查询只返回带注册月份的个人资料。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "没有把账号资料、平台帮助页当十月当地体验。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 深圳 2026 10月 旅居",
+            "site:xiaohongshu.com 深圳 10月 数字游民",
+            "site:xiaohongshu.com 深圳 10月 旅居"
+          ],
+          "result": "公开搜索仅返回平台经营规则等无关页面，未获得可核读的相关笔记。",
+          "read_scope": "search_results_only_no_relevant_original_post",
+          "notes": "尚无小红书原帖正文、图片或评论证据；未使用私人登录态或付费接口补取。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Shenzhen October digital nomad internet",
+            "site:reddit.com Shenzhen October coworking remote work"
+          ],
+          "result": "已打开2026年办公咨询及2025年10月搬家讨论，读到工位社群和跨城通勤的反例。",
+          "read_scope": "post_body_and_visible_comments",
+          "notes": "没有把往年租金金额、推荐点位或某次过关时长写成2026年今日保证。"
+        }
+      ]
+    }
+  ]
+}

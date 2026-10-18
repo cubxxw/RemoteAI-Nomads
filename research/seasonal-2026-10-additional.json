@@ -1,0 +1,465 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "cities": [
+    {
+      "slug": "la-paz",
+      "name_zh": "拉巴斯",
+      "summary": "10月处在传统干季尾端与雨季前缘，拉巴斯可以省日常开销，但高海拔适应、交通缓冲和签证成本必须先算。它适合能留适应时间的人，不应因月参考低就推荐抵达当天满负荷工作。",
+      "practical": [
+        "CDC把拉巴斯列为约3650米高海拔城市；急性适应的前3—5天关键，睡眠也可能受影响。建议把抵达初期留作适应和轻工作缓冲；既往健康状况、上升速度不同，不能保证几天后人人可正常工作。",
+        "SENAMHI在1991—2020基准的10月表中把市中心平均日高/日低列为20.5/6.3°C，机场则为16.0/1.4°C。高处机场和市区不能混用，住宿位置及保暖都影响工作舒适度。",
+        "JMA的4058米La Paz/Alto站常年降水：7月7.5毫米、10月48.2毫米、12月108.3毫米；结合官方旅行提示通常11—3月多雨，可把10月理解为需要开始留雨天余量的干季尾端。不是2026-10逐日预报，也不能把机场8.6°C月均写成市区温度。",
+        "历史10月旅居帖显示，同是“便宜拉巴斯”，一对伴侣住处的月租和分摊方式也会引发争议；另一2026相对日期讨论有Sopocachi租房/网络好评，却未有统一实测。低参考金额不能保证单人带独立办公空间的同等体验。",
+        "英国官方旅行提示仍提醒燃油短缺和突发路障可能影响公交、跨城和机场道路。建议为移动及重要会议留余量；本次没有取得10月18日逐条道路的实时状态。",
+        "中国普通护照需签证，可申请旅游落地签；工作落地签已取消，工作应事先办理适用签证。签证费、往返交通与适应缓冲不应被低月参考掩盖。"
+      ],
+      "entry_check": {
+        "country": "Bolivia / 玻利维亚",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "不成立；旅游签证可提前申请或在符合条件的口岸申请落地签",
+        "purpose": "旅游/参观与工作分开办理",
+        "stay_limit": "本次已读的2024流程正文未完整重申旅游停留上限；以获批签证与入境批注为准，不自动承诺90天。",
+        "work_rights": "中国使馆2024-08-22明确：工作及临时工作落地签已取消，须在玻驻外机构事先办理，不得用旅游落地签赴玻务工。境外远程工作的具体归类本研究未确认。",
+        "practical_requirements": [
+          "官方旅游流程要求护照有效期6个月以上、申请表、往返行程、全程住宿订单或合规邀请、财产证明和照片；去黄热病疫区另有接种证明要求。",
+          "流程正文所列约96美元是历史金额，未核定2026-10现行收费；不能当本月准确报价。",
+          "领馆不建议中国公民陆路入境；普通护照不是无材料、无费用入境。"
+        ],
+        "official_sources": [
+          "https://santacruz.china-consulate.gov.cn/tzyj/202604/t20260422_11897788.htm",
+          "https://bo.china-embassy.gov.cn/lsfw/zhxx/202408/t20240823_11478370.htm",
+          "https://cancilleria.gob.bo/mre/2025/12/01/23577/"
+        ],
+        "conflicts": "领馆旅游流程URL位于2026路径，但正文日期为2024-07-19；其中旧工作落地签段落已被2024-08使馆通告更新。2025-12玻外交部八国免签公告不包含中国，不能外推。",
+        "limits": "官方旧文仍在线不等于本次已取得口岸个案批准；出发前应按具体护照、航线与活动核验。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://www.senamhi.gob.bo/meteorologia/boletines/tendencias/2023/11_BOLETIN_PREDICCION_NDE%202023-2024_LA%20PAZ.pdf",
+          "title": "SENAMHI BOL-PC-Nº11-2023 — Departamento de La Paz",
+          "published_at": "2023-11",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取PDF文字中的10月正常值/实测值表、站名与基准说明；图形截图失败",
+          "evidence": "官方2023年11月公报的10月回顾表区分市中心与El Alto：平均最高温正常值20.5与16.0°C；平均最低温正常值6.3与1.4°C，正文标基准1991—2020。",
+          "limits": "读取了PDF文字表格；截图复核请求返回403，未读取图中分布值。采用正常值，不把2023实测23.1°C当2026天气或常年值。"
+        },
+        {
+          "platform": "web",
+          "url": "https://ds.data.jma.go.jp/gmd/tcc/tcc/products/climate/climatview/graph_mkhtml_nrm.php?e=6&k=0&m=2&n=85201&r=0&s=1&y=2025",
+          "title": "JMA ClimatView — LA PAZ/ALTO monthly normals",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取站名、高度和全年月常年值表",
+          "evidence": "4058米机场站10月月均温8.6°C、常年降水48.2毫米，较7月降水明显增多，12月更多。",
+          "limits": "机场高处站不是拉巴斯市中心；子页未显示常年基准期，不推定为1991—2020，也不是2026-10实况。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+          "title": "High-Altitude Travel and Altitude Illness — CDC Yellow Book 2026",
+          "published_at": "2025-04-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取目的地海拔、适应、风险分层与睡眠段落",
+          "evidence": "拉巴斯约3650米；快速飞抵高海拔会增加高原病风险，前3—5天的适应和睡眠变化对行程安排重要。体能好不等于没有高反风险。",
+          "limits": "一般旅行医学依据，不是个体诊断或工作能力测试；本研究不提供药物方案，也不保证固定天数后恢复。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.gov.uk/foreign-travel-advice/bolivia/safety-and-security",
+          "title": "Bolivia travel advice — Safety and security, GOV.UK",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取道路交通、路障及天气风险段落",
+          "evidence": "通常11—3月为雨季，山区有滑坡与断路风险；道路提示另提燃油短缺、路障及机场交通可能受影响。",
+          "limits": "全国性持续旅行提示，不是2026-10-18每条道路或拉巴斯空气质量实测；没有把全国火灾、洪水写成本市当日灾情。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/ydfws8/obligatory_setup_shot_la_paz_bolivia/",
+          "title": "Obligatory setup shot — La Paz, Bolivia",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者居住、租金分摊及网络评论和价格争议；未查看原图",
+          "evidence": "10月检索命中的历史作者评论称与伴侣分摊月租，住处有厨房及够用Wi-Fi；其他评论对其价格提出异议。",
+          "limits": "索引日期为2022-10-25，正文只显示约四年前；旧玻币/美元价格不作2026报价。原帖图片未查看，工作环境只据文字评论。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1svte1k/digital_nomading_in_bolivia_for_1_3_months/",
+          "title": "Digital Nomading in Bolivia For 1–3 Months?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖性质及海拔、Sopocachi住宿/网络评论",
+          "evidence": "评论中一人说高海拔使部分访客提前离开，并明确自己未在当地远程工作；另一人称Sopocachi租住与网络体验不错。",
+          "limits": "主帖是看视频后的求助，并非已住报告；评论约六个月前，精确日期和亲历时段未核定，没有测速或可比较的租房清单。"
+        },
+        {
+          "platform": "web",
+          "url": "https://santacruz.china-consulate.gov.cn/tzyj/202604/t20260422_11897788.htm",
+          "title": "关于玻利维亚落地签有关政策和办理流程的通知",
+          "published_at": "2024-07-19",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取旅游流程、材料、费用日期及注意事项；工作部分与后续通告交叉核对",
+          "evidence": "中国普通护照需签证，旅游落地签需申请材料；正文要求全程住宿订单等，且不建议陆路入境。",
+          "limits": "正文实际日期为2024-07-19，不能因URL含202604认作2026新政；旧文工作落地签段落已被后续通告取消，历史收费未作当前报价。"
+        },
+        {
+          "platform": "web",
+          "url": "https://bo.china-embassy.gov.cn/lsfw/zhxx/202408/t20240823_11478370.htm",
+          "title": "关于玻利维亚取消办理落地工作签证的通告",
+          "published_at": "2024-08-22",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取通告全文",
+          "evidence": "2024-08-22通告明确取消口岸工作/临时工作落地签，旅游落地签不变，工作签证须事先办理。",
+          "limits": "未明确境外雇主远程工作的法律归类，不据此声称这种活动已经合法获批。"
+        },
+        {
+          "platform": "web",
+          "url": "https://cancilleria.gob.bo/mre/2025/12/01/23577/",
+          "title": "Bolivia elimina desde hoy restricciones políticas de visado a ocho países",
+          "published_at": "2025-12-01",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取新政目的、八国名单和渐进实施说明",
+          "evidence": "玻外交部2025-12-01列出转入免签组的八国，中国不在名单中。",
+          "limits": "只核对该次新政名单；不把针对其他国籍的开放扩展至中国普通护照。"
+        },
+        {
+          "platform": "web",
+          "url": "https://bo.china-embassy.gov.cn/tzggg/202606/t20260622_11950065.htm",
+          "title": "关于玻利维亚宣布实行国家紧急状态的安全提醒",
+          "published_at": "2026-06-20",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取紧急状态期限、起因及使馆提醒",
+          "evidence": "使馆2026-06-20记录封路抗议后宣布最多90天紧急状态，提醒关注局势和避开军警行动区域。",
+          "limits": "历史提醒，不声称10月仍在紧急状态；本轮未取得续期、解除或当天路况的完整核验。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "La Paz Bolivia October climate rainy season altitude official tourism",
+            "La Paz Bolivia October 2026 digital nomad coworking altitude",
+            "Bolivia Chinese ordinary passport visa official embassy 2026",
+            "site:cdc.gov yellow book La Paz Bolivia altitude acclimatization",
+            "site:lapaz.bo turismo octubre clima lluvias"
+          ],
+          "result": "已读SENAMHI文字正常值表、JMA高处站常年表、CDC及官方入境/交通正文；没有取得本月城市网速和租房实测。",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据",
+          "notes": "排除墨西哥La Paz同名结果；区分玻利维亚市中心、El Alto机场站及部门/全国资料。市政季节候选页读取超时、SENAMHI图截图403，不冒充已读图。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com La Paz Bolivia October altitude remote work"
+          ],
+          "result": "已读历史10月住宿工作评论及2026相对日期讨论，区分未工作评论者与正面租住体验。",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树",
+          "notes": "求助、出行计划、作者亲历和其他人建议分开记录；相对日期未强行换算为精确日，历史价格不作2026报价。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com \"La Paz\" \"October\" \"2026\" Bolivia",
+            "site:x.com \"La Paz\" \"October\" \"Bolivia\"",
+            "https://x.com/search?q=La%20Paz%20Bolivia%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的合格相关原帖",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容",
+          "notes": "命中空结果、无关条款或账号加入月份，不等于该平台没有内容；未用付费接口或共享浏览器。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 拉巴斯 10月 玻利维亚",
+            "site:xiaohongshu.com 拉巴斯 10月 玻利维亚 高反",
+            "https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%B7%B4%E6%96%AF%20%E7%8E%BB%E5%88%A9%E7%BB%B4%E4%BA%9A%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的合格相关原笔记",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频",
+          "notes": "检索返回的无关世界杯/商业文档未作为城市证据；没有把摘要写成已读笔记。"
+        }
+      ]
+    },
+    {
+      "slug": "hanoi",
+      "name_zh": "河内",
+      "summary": "10月是河内较适合步行的秋季窗口；若以省钱为优先，也要把安静房间与可用网络纳入预算。咖啡店数量不能保证办公条件，中部雨季不能拿来代表河内，宜先试住再订整月。",
+      "practical": [
+        "越南国家旅游局把河内9—11月列为较凉、较晴的季节，概述气温约25°C。它是季节建议，不是2026年10月每天无雨或实时温度保证；顺化、会安、岘港的雨季不能直接外推本市。",
+        "2026相对日期的居民求助直指Zoom会议与睡眠受鸣笛影响；评论也说远离主路仍可能有邻近施工。建议在实际工作和睡眠时段试房，核实朝向、门窗隔音及附近工程，而不是仅凭“安静街区”标签。",
+        "历史10月讨论对咖啡馆意见相反：有人嫌座椅和噪音，有人找到舒适安静地点。咖啡馆多不等于都适合整天会议；有连续通话时先确认场所规则与可用会议空间。",
+        "另一历史10月帖报告普通网络可流媒体和视频通话，却无法连接雇主VPN；其他评论不能确认根因。应在付款前用获公司允许的设备/网络测试真实工作系统，不能仅看下载测速。",
+        "低月参考不等于满足安静、独立桌面和稳定会议条件的房间报价；本次没有取得2026-10同口径房间、工位与网络实测套餐。",
+        "2026-10-12越南新试点仅限庆和省特定直航团体游，不适用于河内自由行。按护照和行程事先办理适用签证，入境许可也不是工作权结论。"
+      ],
+      "entry_check": {
+        "country": "Vietnam / 越南",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "不能把2026-10庆和省团队试点外推成河内自由行免签",
+        "purpose": "本轮核对短期旅游/电子签证信息，不确认远程工作许可",
+        "stay_limit": "官方旅游页所载电子签证政策上限90天、可多次入境；实际有效期、入境次数、口岸及可停留天数以获批签证为准。",
+        "work_rights": "旅游/电子签证信息不足以证明已取得远程工作或当地就业权；工作目的应另核实适用许可。",
+        "official_sources": [
+          "https://vietnam.travel/plan-your-trip/visa-requirements",
+          "https://vn.china-embassy.gov.cn/lsyw/202610/t20261014_12039922.htm"
+        ],
+        "exceptions": "2026-10-12至2027-12-31试点限两人以上、越南国际旅行社组织、≤30天、活动仅庆和省、中国大陆直飞金兰且同口岸出入境。",
+        "limits": "官方移民局evisa.gov.vn直接读取超时；采用已读国家旅游局电子签证说明，并用最新中国使馆正文限制试点范围。未采用旅游页未更新的完整免签国别名单来概括2026全部政策。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://vietnam.travel/things-to-do/weather-and-climate-vietnam",
+          "title": "Weather and climate in Vietnam — Vietnam National Authority of Tourism",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取Ha Noi专节，并对照中央越南分区标题；未把中部数值外推河内",
+          "evidence": "河内专节将9—11月描述为较凉、晴朗，季节气温概述约25°C；同文把中部城市另列，气候时段不同。",
+          "limits": "季节旅游概述不是当月观测、逐日天气、空气质量或2026灾害排除保证。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/hanoi/comments/1vbhu0f/where_to_find_a_quiet_condo/",
+          "title": "Where to find a Quiet Condo?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及安静街区、朝向和施工噪音相关评论",
+          "evidence": "作者希望为Zoom会议及睡眠避开鸣笛，评论提到即使不临主路仍有施工和巷道噪音；提供了按具体房间筛选的现实反例。",
+          "limits": "公开索引指向2026年7—8月，正文显示相对日期，未核定精确日；没有本轮房间测噪，也不采用“某区必安静”或无窗房建议作为住宿结论。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/VietNam/comments/17kb4f2/any_digi_nomads_in_hanoi/",
+          "title": "Any digi nomads in Hanoi?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及相反的咖啡馆/工位评论；未联系店家",
+          "evidence": "历史10月社群求助里，评论分别表示咖啡馆座椅/噪音不适合办公，以及老城区外有安静舒适店；联合办公仅作为候选被提及。",
+          "limits": "索引日期2023-10-31，正文仅相对日期；个体体验相反，未核定任何店2026营业、价格、空位或会议政策。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/VietNam/comments/17aixeo/urgent_digital_nomad_struggling_with_internet/",
+          "title": "URGENT: Digital nomad struggling with internet connectivity",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者主帖与不同根因解释，未运行任何网络测试",
+          "evidence": "历史10月作者称在河内多个Wi-Fi和本地SIM能视频通话，但不能连公司VPN；评论提出公司地域策略等不同解释。",
+          "limits": "索引日期2023-10-18，正文相对日期；根因未证实，不写成越南普遍封锁公司VPN或本月故障，也不推荐绕过雇主安全限制。"
+        },
+        {
+          "platform": "web",
+          "url": "https://vietnam.travel/plan-your-trip/visa-requirements",
+          "title": "Vietnam Visa Requirements — Vietnam National Authority of Tourism",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取e-visa规则及Noi Bai口岸段落",
+          "evidence": "官方旅游页说明自2023-08-15起，各国公民可申请最长90天、多次入境电子签，并列河内Noi Bai为适用机场之一。",
+          "limits": "不是申请获批证明；网页其他免签国别概述较旧，本研究未将其当作2026完整名单。官方移民局门户本轮超时。"
+        },
+        {
+          "platform": "web",
+          "url": "https://vn.china-embassy.gov.cn/lsyw/202610/t20261014_12039922.htm",
+          "title": "越南对中国公民赴庆和省旅游实施免签政策",
+          "published_at": "2026-10-14",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取试点日期、国籍/护照、团体、地域和航线条件全文",
+          "evidence": "最新使馆正文明确两人以上团体、特定直航和金兰机场出入境、活动限庆和省及≤30天。",
+          "limits": "不适用河内自由行，不能外推全国或工作许可。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Hanoi October weather climate official Vietnam tourism",
+            "Hanoi October 2026 digital nomad room noise coworking",
+            "Hanoi October 2026 noise construction coworking",
+            "site:vn.china-embassy.gov.cn 越南 签证 中国 普通护照 2026 电子"
+          ],
+          "result": "已读官方河内季节专节及2026-10最新限域免签正文；噪音政府投诉页仅壳、未取得正文，不列为噪音证据。",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据",
+          "notes": "从河内城市和越南北部分区取季节判断；不引用中部雨量、洪灾描述推断河内。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Hanoi October digital nomad noise internet"
+          ],
+          "result": "已读2026相对日期住房噪音求助和历史10月咖啡馆、VPN案例；本月施工图片帖未完成图像/视频核验，不作为现场结论。",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树",
+          "notes": "求助、出行计划、作者亲历和其他人建议分开记录；相对日期未强行换算为精确日，历史价格不作2026报价。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com Hanoi October 2026 coworking",
+            "site:x.com \"Hanoi\" \"October\" \"noise\"",
+            "https://x.com/search?q=Hanoi%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的合格相关原帖",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容",
+          "notes": "命中空结果、无关条款或账号加入月份，不等于该平台没有内容；未用付费接口或共享浏览器。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 河内 10月 办公 噪音",
+            "https://www.xiaohongshu.com/search_result?keyword=%E6%B2%B3%E5%86%85%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的合格相关原笔记",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频",
+          "notes": "检索返回的无关世界杯/商业文档未作为城市证据；没有把摘要写成已读笔记。"
+        }
+      ]
+    },
+    {
+      "slug": "las-palmas",
+      "name_zh": "拉斯帕尔马斯",
+      "summary": "10月仍适合把城市工作、海边步行与岛上活动结合，已有联合办公亲历和测速记录作底；但它们不是2026全城网络保证。长期月租与游客短租不能混算，同岛南北及海拔微气候也不能一概而论。",
+      "practical": [
+        "市旅游局的秋季正文支持温和户外季节。AEMET机场站1981—2010的10月月均23.1°C、月雨16毫米只能作为岛屿低海拔参考；该站位于Ingenio、海拔24米，不能直接代表市区每个街区或山地。",
+        "官方加那利旅游资料承认海拔和地形造成微气候；历史实住者也写到市区有云时岛南侧可能晴、山地较凉。安排跨岛内活动应按目的地查预报，不能套用“全岛永远晴暖”。",
+        "历史实住博客列出几个工位/咖啡馆的单点测速，说明有可工作的连接；没有本轮2026-10独立测速、晚高峰稳定性或大陆/公司系统延迟证据。按网速偏好可列候选，房间仍要用真实工作系统测试。",
+        "历史租房求助认为平台房源偏游客且价高，实住博客也区分平台短住和本地租住成本。不能拿需要长期合同的月租替代一两个月带家具房的实际总价，应核对押金、网络、能耗和可退条件。",
+        "城市Las Palmas de Gran Canaria位于大加那利岛，不是La Palma岛；同名混淆会直接影响抵达和会议安排。",
+        "中国大陆普通护照通常需适用申根签证；不能套用持欧盟护照游客的长住经验，旅游短住与工作/长期居留应分别核实。"
+      ],
+      "entry_check": {
+        "country": "Spain / 西班牙（加那利群岛）",
+        "passport": "中华人民共和国普通护照（中国大陆普通护照）",
+        "checked_at": "2026-10-18",
+        "visa_free_label": "不是中国大陆普通护照普遍免签目的地",
+        "purpose": "旅游短住与工作、长期居留须分别核实",
+        "stay_limit": "本轮确认中国列在申根需签证国别清单；具体签证有效期、可停留天数及长期居留条件应按获批许可核实，不从游客帖子推导。",
+        "work_rights": "旅游短住国别签证规则不能证明拥有远程工作许可；工作/长期居留应使用西班牙适用许可，未对个案资格作判断。",
+        "official_sources": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1806-20251230"
+        ],
+        "limits": "已读欧盟法规当前合并版本的Article 3和Annex I China；西班牙驻华/纽约领事页面读取403，未声称读完申请材料清单。港澳特区、欧盟或他国护照待遇不可套用。"
+      },
+      "sources": [
+        {
+          "platform": "web",
+          "url": "https://lpavisit.com/en/las-palmas-de-gran-canaria/weather/",
+          "title": "Weather — LPAVisit, official tourist site of Las Palmas de Gran Canaria",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市气候和Autumn专节",
+          "evidence": "市官方旅游页明确有秋季专节，描述温暖、温和并适合户外活动。",
+          "limits": "推广性季节介绍，没有本月逐日实况、海况或街区保证；未采用其“全球最佳”排名作为科学结论。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=C649I&lang=es",
+          "title": "Valores climatológicos normales: Gran Canaria Aeropuerto — AEMET",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取站点、基准期、图例和10月表格",
+          "evidence": "1981—2010机场站10月月均23.1°C、平均日高26.2°C、日低20.1°C、降水16毫米；页面明确站点在Ingenio、海拔24米。",
+          "limits": "机场不在拉斯帕尔马斯市区；常年统计不是2026-10预报、海温或岛屿各地微气候测量。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.hellocanaryislands.com/experiences/its-a-trend-spending-winter-on-the-canary-islands/",
+          "title": "It’s a trend: spending winter on the Canary Islands — Hello Canary Islands",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取地理、微气候及长住相关文字；未采用宣传性天气排名",
+          "evidence": "官方群岛旅游文章说明地形、海拔和微气候使海岸与高地体验不同，不能把群岛当作统一气候。",
+          "limits": "主要为冬季和全群岛推广，微气候事实仅作地域边界；未将其他岛高山雪景、宣传日照或全群岛均温当成本市10月实况。"
+        },
+        {
+          "platform": "web",
+          "url": "https://www.christhefreelancer.com/las-palmas-for-digital-nomads/",
+          "title": "Las Palmas Wrap-Up: One Month as Digital Nomads on the Island of Gran Canaria",
+          "published_at": "2017-06-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取测速文字表、住宿、通勤和微气候段落；未复测连接或查看视频",
+          "evidence": "作者一个月实住报告给出CoworkingC、Coco和Cafe Regina的单点测速，并区分平台31晚住宿与当地租住成本，也记录市区/南侧/山地天气差异。",
+          "limits": "文章标2017-06-23，测速表只列月日和时刻，属于历史单点；不是2026网络、工位营业或当前租金证明，未读取嵌入视频。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1943kmh/long_term_rentals_in_las_palmas_gran_canaria/",
+          "title": "Long term rentals in Las Palmas, Gran Canaria",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及租房平台建议；未打开平台或房源外链",
+          "evidence": "求助者希望住数月，认为已找到的平台房源偏游客、配泳池且价高；说明长期租住需求和平台短租产品不一样。",
+          "limits": "历史求助约三年前，未核定精确日；没有2026成交样本，不保证推荐平台或合住项目现仍可用。"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/pc5arq/leaping_to_canary_islands/",
+          "title": "Leaping to Canary Islands",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖计划、房东网络和同名机场提醒评论",
+          "evidence": "主帖计划10月在Las Palmas住2—3个月并担心网络；评论提醒先问具体房东线路，也有人提到Las Palmas与La Palma混淆。",
+          "limits": "2021历史出发计划，不是完成后的实住报告；不能采信其旅游签证可工作推论，也不把其他岛的网络好评当成本市实测。"
+        },
+        {
+          "platform": "web",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1806-20251230",
+          "title": "Regulation (EU) 2018/1806 — consolidated version 30 December 2025",
+          "published_at": "2025-12-30",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开法规当前合并版并读取Article 3、Annex I及China条目",
+          "evidence": "当前合并文本Article 3规定Annex I国籍需签证，Annex I明确列China。",
+          "limits": "只核对中国大陆普通护照一般需签证的国别规则，不用港澳特区例外、欧盟护照或旅游帖子推导工作与长居权。 published_at记录合并版本日期，并非2018年原始法规发布日期。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Las Palmas October climate microclimate official tourism",
+            "Las Palmas October 2026 digital nomad coworking rental internet",
+            "Las Palmas coworking internet speed test 2026 October",
+            "site:grancanaria.com Las Palmas climate October microclimates"
+          ],
+          "result": "已读市官方秋季正文、AEMET机场常年表、官方群岛微气候正文和历史实住测速表；没有本月可靠全城网络实测或短租成交样本。",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据",
+          "notes": "部分GranCanaria官网与Cabildo微气候页403；WOMEX本月活动候选页多次超时，只见索引/元信息，未纳入正文证据。排除混合LLM/聚合指南的无原始样本2026网速数字。"
+        },
+        {
+          "platform": "reddit",
+          "queries": [
+            "site:reddit.com Las Palmas October digital nomad rental internet",
+            "site:reddit.com Las Palmas \"2026\" \"rent\""
+          ],
+          "result": "已读长期租房产品差异及历史10月出发网络讨论；区分计划、评论建议、实际个人测速和全城均值。",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树",
+          "notes": "求助、出行计划、作者亲历和其他人建议分开记录；相对日期未强行换算为精确日，历史价格不作2026报价。"
+        },
+        {
+          "platform": "x",
+          "queries": [
+            "site:x.com \"Las Palmas\" \"October\" \"2026\" nomad",
+            "site:x.com \"Las Palmas\" \"October\" \"coworking\"",
+            "https://x.com/search?q=Las%20Palmas%20October%202026&src=typed_query&f=live"
+          ],
+          "result": "未取得可核读的合格相关原帖",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容",
+          "notes": "命中空结果、无关条款或账号加入月份，不等于该平台没有内容；未用付费接口或共享浏览器。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "queries": [
+            "site:xiaohongshu.com 拉斯帕尔马斯 10月 数字游民",
+            "https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E6%96%AF%E5%B8%95%E5%B0%94%E9%A9%AC%E6%96%AF%2010%E6%9C%88"
+          ],
+          "result": "未取得可核读的合格相关原笔记",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频",
+          "notes": "检索返回的无关世界杯/商业文档未作为城市证据；没有把摘要写成已读笔记。"
+        }
+      ]
+    }
+  ]
+}

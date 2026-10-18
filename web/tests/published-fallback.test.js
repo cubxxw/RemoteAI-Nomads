@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 import {publishedFallback} from '../src/published-fallback.js';
+import {parseState,rankCities,stateParams} from '../public/modules/ranking.js';
+import {UI_PRESETS} from '../public/modules/rank-controls.js';
 import worker from '../src/worker.js';
 const html='<!doctype html><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://nomads.example/cities/penang/"></head><main>公开城市资料</main>';
 function environment(){
@@ -26,6 +29,29 @@ test('missing or malformed fallback assets never pretend the live database worke
  for(const response of [new Response('missing',{status:404}),Response.json({version:9,paths:['/cities/penang/']}),new Response('damaged')]){
   assert.equal(await publishedFallback(request,{PREVIEW:'false',ASSETS:{async fetch(){return response.clone();}}}),null);
  }
+});
+test('all five seasonal links have the correct first paint, controls and noindex even when D1 is unavailable',async()=>{
+ const catalog=JSON.parse(await readFile(new URL('../public/published-pages/rankings.json',import.meta.url),'utf8'));
+ const env={PREVIEW:'false',SITE_ORIGIN:'https://nomads.example',ASSETS:{async fetch(request){
+  return new URL(request.url).pathname.endsWith('manifest.json')?Response.json({version:1,snapshot_date:'2026-10-18',paths:['/','/cities/']}):Response.json(catalog);
+ }}};
+ for(const key of ['default','budget','internet','visa','safe']){
+  const preset=UI_PRESETS[key],state={...parseState(new URL('https://nomads.example/?month=10&season=2026-10')),...preset};
+  const query=stateParams(state).toString(),expected=rankCities(catalog,state).slice(0,5).map(c=>c.slug);
+  for(const path of ['/','/cities/']){
+   const response=await publishedFallback(new Request('https://nomads.example'+path+'?'+query),env);
+   assert.equal(response.status,200);assert.equal(response.headers.get('X-Data-Mode'),'published-snapshot');
+   const body=await response.text(),rendered=[...body.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].slice(0,5).map(m=>m[1]);
+   assert.deepEqual(rendered,expected,key+' SSR');
+   assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
+   assert.match(body,/data-remove-filter="season"/);assert.match(body,/content="noindex,follow"/);
+   assert.doesNotMatch(body,/<p class="rank-season-note" id="rank-season-note" hidden/);
+   assert.equal(body.includes('<small>自定义分</small>'),!['default','visa'].includes(key));
+  }
+ }
+ const root=await publishedFallback(new Request('https://nomads.example/'),env),body=await root.text();
+ assert.match(body,/content="index,follow"/);assert.match(body,/<p class="rank-season-note" id="rank-season-note" hidden/);
+ const head=await publishedFallback(new Request('https://nomads.example/?month=10&season=2026-10',{method:'HEAD'}),env);assert.equal(await head.text(),'');
 });
 test('two published cities can still be compared for the requested month without indexing unreviewed combinations',async()=>{
  const city=slug=>({slug,name:slug,nameEn:slug,country:'Test',budget:1000,scores:{safety:8,cost:7,climate:6,life:7,internet:8,community:2},visa:{label:'需复核'},months:Array.from({length:12},(_,i)=>({month:i+1,meanC:20+i,rainMm:10,status:'recommended'}))});

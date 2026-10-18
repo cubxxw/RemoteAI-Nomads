@@ -1,4 +1,11 @@
 import { cityMatchesQuery } from "./country-search.js";
+// A dated editorial view; the underlying historical scores remain unchanged.
+export const SEASONAL_VIEW = {
+  id: '2026-10', month: 10, label: '10月出发建议', reviewedAt: '2026-10-18',
+  excludedCountries: ['JP', 'AF'],
+  note: '本期按已核读的赴日、阿富汗提醒及通行条件筛选；仅供大陆普通护照出发参考，不是全目录风险审查。',
+  methodology: 'https://github.com/cubxxw/RemoteAI-Nomads/blob/main/guides/seasonal-2026-10.md',
+};
 export const KEYS = [
   "safety",
   "cost",
@@ -30,12 +37,12 @@ export const PRESETS = {
   budget: {
     label: "省钱优先",
     weights: {
-      safety: 20,
-      cost: 55,
-      climate: 10,
-      life: 10,
-      internet: 5,
-      community: 5,
+      safety: 5,
+      cost: 80,
+      climate: 5,
+      life: 5,
+      internet: 4,
+      community: 1,
     },
   },
   winter: {
@@ -54,12 +61,12 @@ export const PRESETS = {
   safe: {
     label: "安全第一",
     weights: {
-      safety: 65,
-      cost: 10,
-      climate: 10,
-      life: 10,
-      internet: 5,
-      community: 5,
+      safety: 80,
+      cost: 5,
+      climate: 5,
+      life: 5,
+      internet: 4,
+      community: 1,
     },
   },
   visa: { label: "大陆护照免签", weights: DEFAULT_WEIGHTS, visa: "visa_free" },
@@ -104,6 +111,7 @@ export function parseState(url) {
     ].includes(p.get("visa"))
       ? p.get("visa")
       : "",
+    season: p.get("season") === SEASONAL_VIEW.id && m === SEASONAL_VIEW.month ? SEASONAL_VIEW.id : "",
     warm: p.get("warm") === "1",
     incomplete: p.get("incomplete") === "1",
     limit: [40, 80, 120, 160, 200, 240, 280, 320, 360].includes(lim) ? lim : 40,
@@ -114,6 +122,7 @@ export function stateParams(s) {
   if (s.q) p.set("q", s.q);
   if (s.region) p.set("region", s.region);
   if (s.month) p.set("month", String(s.month));
+  if (s.season === SEASONAL_VIEW.id && s.month === SEASONAL_VIEW.month) p.set("season", s.season);
   if (s.budget) p.set("budget", String(s.budget));
   if (s.visa) p.set("visa", s.visa);
   if (s.warm) p.set("warm", "1");
@@ -123,32 +132,40 @@ export function stateParams(s) {
   if (s.limit > 40) p.set("limit", String(s.limit));
   return p;
 }
-export function customScore(city, weights) {
+// A continuous editorial normalization of the same dated monthly USD reference.
+// $300 => 10, $600 => 7.5, $1,200 => 5, $2,400 => 2.5; not a market quote or floor.
+export function referenceCostScore(amount) {
+  return typeof amount === 'number' && Number.isFinite(amount) && amount > 0
+    ? clamp(10 - 2.5 * Math.log2(amount / 300), 0, 10) : null;
+}
+function scoreValue(city, weights) {
   const active = KEYS.filter((k) => weights[k] > 0);
   if (!active.length) return null;
+  const values = { ...city.scores };
+  // Preserve the imported Metric Score exactly. Personalized views use the amount
+  // rather than a coarse historical cost category that tied $450 and $1,000 cities.
+  if (!isDefault(weights) && weights.cost > 0) values.cost = referenceCostScore(city.budget);
   if (
     active.some(
       (k) =>
-        city.scores[k] === null ||
-        city.scores[k] === undefined ||
-        !Number.isFinite(city.scores[k]),
+        values[k] === null ||
+        values[k] === undefined ||
+        !Number.isFinite(values[k]),
     )
   )
     return null;
   if (isDefault(weights) && Number.isFinite(city.baseScore))
     return city.baseScore;
   const sum = active.reduce((n, k) => n + weights[k], 0);
-  return (
-    Math.round(
-      (active.reduce((n, k) => n + weights[k] * city.scores[k], 0) / sum) *
-        1.05 *
-        10,
-    ) / 10
-  );
+  return active.reduce((n, k) => n + weights[k] * values[k], 0) / sum * 1.05;
+}
+export function customScore(city, weights) {
+  const value = scoreValue(city, weights);
+  return value === null ? null : Math.round(value * 10) / 10;
 }
 export function rankCities(cities, state) {
   const query = state.q.normalize("NFKC").trim().toLocaleLowerCase();
-  const result = [];
+  const result = [], preciseScores = new Map();
   for (const city of cities) {
     if (
       query &&
@@ -156,6 +173,7 @@ export function rankCities(cities, state) {
     )
       continue;
     if (state.region && city.region !== state.region) continue;
+    if (state.season === SEASONAL_VIEW.id && state.month === SEASONAL_VIEW.month && (SEASONAL_VIEW.excludedCountries.includes(city.countryCode) || city.visa.code === "unavailable")) continue;
     if (state.budget && (city.budget === null || city.budget > state.budget))
       continue;
     if (state.visa && city.visa.code !== state.visa) continue;
@@ -165,13 +183,16 @@ export function rankCities(cities, state) {
       const t = city.months[(state.month || 1) - 1]?.meanC;
       if (t === null || t === undefined || t < 18 || t > 28) continue;
     }
-    const score = customScore(city, state.weights);
+    const precise = scoreValue(city, state.weights);
+    const score = precise === null ? null : Math.round(precise * 10) / 10;
     if (score === null && !state.incomplete) continue;
+    preciseScores.set(city.slug, precise);
     result.push({ ...city, score });
   }
   result.sort(
     (a, b) =>
-      (b.score ?? -1) - (a.score ?? -1) ||
+      (preciseScores.get(b.slug) ?? -1) - (preciseScores.get(a.slug) ?? -1) ||
+      (state.weights.cost > Math.max(...KEYS.filter(key => key !== 'cost').map(key => state.weights[key])) ? (a.budget ?? Infinity) - (b.budget ?? Infinity) : 0) ||
       (b.baseScore ?? -1) - (a.baseScore ?? -1) ||
       a.slug.localeCompare(b.slug, "en"),
   );
@@ -235,7 +256,7 @@ export function renderRow(c, state) {
  <div class="rank-metric internet-cell"><span class="metric-mobile-label">网络</span><strong title="旧资料网络评分；不是房间实测 Mbps">${n(c.scores.internet)}</strong>${bar(c.scores.internet)}</div>
  <div class="rank-season">${monthBand(c, state.month)}</div>
  <span class="rank-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span>
- <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${c.score === null ? "资料待补" : "指标分"}</small></div>
+ <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${c.score === null ? "资料待补" : isDefault(state.weights) ? "指标分" : "自定义分"}</small></div>
  <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false">＋</button>
  </article>`;
 }

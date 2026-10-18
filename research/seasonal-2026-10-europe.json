@@ -1,0 +1,314 @@
+{
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "scope": "大陆普通护照当季出发候选的补充研究；入境/工作资格另核，未修改原分数",
+  "methodology": {
+    "paid_api_calls": 0,
+    "shared_browser_used": false,
+    "date_boundary": "published_at=null表示已读页面没有可稳定核验的绝对发布日期；read_at不是来源更新日。",
+    "platform_boundary": "X与小红书完成定向搜索和入口访问尝试，未取得相关原帖，不称四平台证据齐全。",
+    "network_boundary": "没有实测任何房间Mbps；旧网络评分与运营方Wi-Fi宣传不能代替会议测试。"
+  },
+  "common_limits": [
+    "所有价格若出现均是单一服务的公开报价或个人经历，不能当城市最低预算；房内网络需试真实会议。",
+    "入境与合法远程工作的条件需按护照、工作关系及停留用途单独确认；不以观光入境资格代替工作许可。"
+  ],
+  "timezone_check": {
+    "method": "Node Intl.DateTimeFormat / IANA timezone rules; Beijing 09:00 examples",
+    "before": "2026-10-18T01:00:00Z",
+    "after": "2026-10-26T01:00:00Z",
+    "lisbon_local": [
+      "02:00",
+      "01:00"
+    ],
+    "malaga_munich_local": [
+      "03:00",
+      "02:00"
+    ],
+    "transition_date_inference": "2026-10-25 is October last Sunday under current EU rule"
+  },
+  "cities": [
+    {
+      "slug": "lisbon",
+      "name_zh": "里斯本",
+      "summary": "10月适合喜欢步行和城市社交的人，但进入更湿的秋季，住房与中国作息的代价要先算清。",
+      "practical": [
+        "IPMA市内站1991–2020常年10月均温19.1°C、日高均值22.8°C、日低均值15.3°C；温和不等于整月无雨。",
+        "先落实带桌椅的可取消短租，问近期房间测速与通话噪音；不能从热门社区印象推断住宿便宜。",
+        "若固定北京时间09:00开工，10月18日当地为02:00；10月25日回标准时后为01:00，适合欧洲团队不等于适合中国团队。"
+      ],
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.ipma.pt/bin/file.data/climate-normal/cn_91-20_LISBOA_GEOFISICO.pdf",
+          "title": "IPMA Lisboa / Instituto Geofísico 1991–2020 climate normals",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读官方3页PDF的月均/日高日低温、降水表及释义；未用图表像素估读。",
+          "evidence": "10月常年均温19.1°C、日高22.8°C、日低15.3°C，月雨量110.6mm，明显高于盛夏。",
+          "limits": "站点535、77米，版本标2024；常年值并非2026当月实况，不能代表每个街区与未来天气。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1wsnv0u/looking_for_advice_for_a_europe_trip_in_october/",
+          "title": "Looking for advice for a Europe trip in October",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "重试后打开原帖及关于短租、孤独和时区的可见评论。",
+          "evidence": "评论建议首程只选一地，确认真实桌椅和Wi-Fi；有人提醒南欧秋夜也会凉，并先核工作时区。",
+          "limits": "作者是首次旅居询问，不是已完成里斯本报告；评论含推广账号，不据此保证房源、气候或社区质量。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/Lisbon/comments/1ryvvhj/how_has_lisbon_changed_since_the_dawn_of_digital/",
+          "title": "How has Lisbon changed since the dawn of digital nomads?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖与关于住房、当地商铺和社区变化的选定评论。",
+          "evidence": "评论有本地人自述因住房/生活成本离开，也有关于改造、旅游与社会影响的分歧。",
+          "limits": "匿名个人观点，非因果调查或本月房价；不把所有住房问题归因于游民，不推断指定房型最低价。"
+        },
+        {
+          "platform": "official",
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "evidence": "欧盟按三月最后一个周日转夏令时、十月最后一个周日转回标准时。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Lisbon October 2026 official weather remote work housing"
+          ],
+          "result": "已读官方气候/本年日期/运营说明，来源逐条记录。",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。",
+          "notes": "常年值、实际运营限制和个人季节体验分别使用。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/digitalnomad Lisbon October 2026"
+          ],
+          "result": "已打开相关原帖及部分可见评论；当年材料不足的地方保留历史经验边界。",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。",
+          "notes": "房价、社区与天气均为有条件经验，不把赞数当真实性评分。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Lisbon October 2026 coworking",
+            "Lisbon October 2026 coworking [domains:x.com,twitter.com]",
+            "https://x.com/search?q=Lisbon%20October%202026%20nomad&src=typed_query&f=live"
+          ],
+          "result": "定向索引未给出可读相关原帖；公开搜索页返回Internal Error。",
+          "read_scope": "搜索摘要/访问失败，未读X原帖、图片、视频与评论。",
+          "notes": "无关账号页、平台政策文档和聚合材料未纳入证据，未调用付费接口。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 里斯本 2026 10月 旅居",
+            "里斯本 2026 10月 旅居 [domains:xiaohongshu.com,xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=里斯本 10月 旅居"
+          ],
+          "result": "定向索引主要为无关页面；公开搜索入口未能取回结果。",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。",
+          "notes": "未将转述、足球资料或平台帮助文档写成旅居体验。"
+        }
+      ]
+    },
+    {
+      "slug": "malaga",
+      "name_zh": "马拉加",
+      "summary": "10月温和，适合喜欢海边城市、能配合欧洲作息的人；夜里转凉且可能下雨，不能按夏季度假照片判断工作日。",
+      "practical": [
+        "AEMET机场站1981–2010常年10月均温19.5°C、日高24.1°C、日低15.0°C、月雨57mm；夜间需要薄外套。",
+        "先确定住处到可通话工位的路线；淡季海边度假区与市中心的营业情况不同，评论里的关门经历不能覆盖全城。",
+        "北京时间09:00对应10月18日当地03:00，10月25日后02:00；固定中国工时需接受凌晨开工。"
+      ],
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.aemet.es/en/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=6155A&k=and",
+          "title": "AEMET Standard climate values: Málaga Aeropuerto",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读6155A站完整气候表、1981–2010统计期及T/TM/Tm/R字段定义。",
+          "evidence": "10月常年均温19.5°C，日高均值24.1°C，日低15.0°C，月雨量57mm。",
+          "limits": "机场站而非房间或全市逐日预报；统计期与本站ERA5 2023–2025不同，不应直接覆写现有数据库值。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1w4x20l/m%C3%A1laga_and_valencia_for_remote_work_in_november/",
+          "title": "Málaga and Valencia for remote work in November?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖及关于两城工作日、气候、营业与社交的部分可见评论。",
+          "evidence": "经历过两城的评论意见不同：有人偏好瓦伦西亚城市生活，有人偏好马拉加气候；一位住城市附近的人提到淡季营业减少。",
+          "limits": "问题是计划2026年11月，经历也跨旧年份；不能冒充10月现地调查。有人断言游客远程工作违法，该法律评论未作为官方事实使用。"
+        },
+        {
+          "platform": "official",
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "evidence": "欧盟按三月最后一个周日转夏令时、十月最后一个周日转回标准时。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Malaga October 2026 official weather coworking housing"
+          ],
+          "result": "已读官方气候/本年日期/运营说明，来源逐条记录。",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。",
+          "notes": "常年值、实际运营限制和个人季节体验分别使用。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/digitalnomad Malaga October 2026"
+          ],
+          "result": "已打开相关原帖及部分可见评论；当年材料不足的地方保留历史经验边界。",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。",
+          "notes": "房价、社区与天气均为有条件经验，不把赞数当真实性评分。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Malaga October 2026 coworking",
+            "Malaga October 2026 coworking [domains:x.com,twitter.com]",
+            "https://x.com/search?q=Malaga October 2026 coworking&src=typed_query&f=live"
+          ],
+          "result": "定向索引未给出可读相关原帖；公开搜索页返回Internal Error。",
+          "read_scope": "搜索摘要/访问失败，未读X原帖、图片、视频与评论。",
+          "notes": "无关账号页、平台政策文档和聚合材料未纳入证据，未调用付费接口。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 马拉加 2026 10月 旅居",
+            "马拉加 2026 10月 旅居 [domains:xiaohongshu.com,xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=马拉加 10月 旅居"
+          ],
+          "result": "定向索引主要为无关页面；公开搜索入口未能取回结果。",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。",
+          "notes": "未将转述、足球资料或平台帮助文档写成旅居体验。"
+        }
+      ]
+    },
+    {
+      "slug": "munich",
+      "name_zh": "慕尼黑",
+      "summary": "10月中下旬适合接受凉秋、重视城市设施的人；啤酒节已结束，工作场所仍需逐家确认可用性。",
+      "practical": [
+        "官方2026啤酒节为9月19日至10月4日；10月18日不能宣传为“现在仍在啤酒节”，也不能把节庆拥挤延伸到整月。",
+        "WERK1日票列29欧未税，但同页有暂停日票和10月26日无日票的提示；先问可订，再安排工作日，不做随到随用承诺。",
+        "早晚渐凉、白天缩短，选择室内工作条件；北京时间09:00对应10月18日当地03:00，10月25日后02:00。"
+      ],
+      "sources": [
+        {
+          "platform": "official",
+          "url": "https://www.oktoberfest.de/en/information/barometer",
+          "title": "Oktoberfest 2026 official visitor barometer",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读慕尼黑市属官方节庆网站的本年日期与逐日拥挤表。",
+          "evidence": "2026年啤酒节为9月19日至10月4日，本次读取时已结束。",
+          "limits": "拥挤表仅适用节庆场地与所列日期，不是10月中下旬酒店价格或全城游客量。"
+        },
+        {
+          "platform": "official",
+          "url": "https://www.munich.travel/en/topics/urban-districts/ideas-autumn",
+          "title": "Simply Munich: 9 ideas for autumn",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读市官方旅游指南的秋季体感、早晚温差与室内活动建议正文；未看视频。",
+          "evidence": "官方指南明确秋季天气渐凉、白天缩短，建议室内博物馆等活动，早晚偏凉。",
+          "limits": "全年常设秋季指南，不是2026逐日预报；文中一般性啤酒节介绍必须服从本年具体日期。"
+        },
+        {
+          "platform": "operator",
+          "url": "https://en.werk1.com/coworking-munich-werk1/",
+          "title": "WERK1 Coworking Munich",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读票价、税费、入会流程、通话空间和日票可用性提示正文。",
+          "evidence": "日票29欧未税；入会需参观引导。网页同时出现日票暂停和周一10月26日不提供日票的提示。",
+          "limits": "可订链接与停售文案不完全一致；需直接问运营方当前状态，10/26提示未在句子标年。高速Wi-Fi是宣传而非本站Mbps实测。"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://www.reddit.com/r/Munich/comments/1vdaw0u/moving_to_munich_in_october/",
+          "title": "Moving to Munich in October",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖及住房、通勤、节庆日期与社交相关可见评论。",
+          "evidence": "讨论中有人把整月与啤酒节混同，后有不同日期回复；住房和是否需车的建议也有明显分歧。",
+          "limits": "个人搬家计划，不是游民完成报告；节庆日期以官方9/19–10/4校正。不能由单个抱怨推断全城交通失效或住房下限。"
+        },
+        {
+          "platform": "official",
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "evidence": "欧盟按三月最后一个周日转夏令时、十月最后一个周日转回标准时。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "queries": [
+            "Munich October 2026 official weather Oktoberfest coworking"
+          ],
+          "result": "已读官方气候/本年日期/运营说明，来源逐条记录。",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。",
+          "notes": "常年值、实际运营限制和个人季节体验分别使用。"
+        },
+        {
+          "platform": "Reddit",
+          "queries": [
+            "site:reddit.com/r/digitalnomad Munich October 2026"
+          ],
+          "result": "已打开相关原帖及部分可见评论；当年材料不足的地方保留历史经验边界。",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。",
+          "notes": "房价、社区与天气均为有条件经验，不把赞数当真实性评分。"
+        },
+        {
+          "platform": "X",
+          "queries": [
+            "site:x.com Munich October 2026 coworking",
+            "Munich October 2026 coworking [domains:x.com,twitter.com]",
+            "https://x.com/search?q=Munich October 2026 coworking&src=typed_query&f=live"
+          ],
+          "result": "定向索引未给出可读相关原帖；公开搜索页返回Internal Error。",
+          "read_scope": "搜索摘要/访问失败，未读X原帖、图片、视频与评论。",
+          "notes": "无关账号页、平台政策文档和聚合材料未纳入证据，未调用付费接口。"
+        },
+        {
+          "platform": "小红书",
+          "queries": [
+            "site:xiaohongshu.com 慕尼黑 2026 10月 旅居",
+            "慕尼黑 2026 10月 旅居 [domains:xiaohongshu.com,xhslink.com]",
+            "https://www.xiaohongshu.com/search_result?keyword=慕尼黑 10月 旅居"
+          ],
+          "result": "定向索引主要为无关页面；公开搜索入口未能取回结果。",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。",
+          "notes": "未将转述、足球资料或平台帮助文档写成旅居体验。"
+        }
+      ]
+    }
+  ]
+}

@@ -27,6 +27,17 @@
 .city-cover figcaption{position:absolute;right:8px;bottom:8px;padding:4px 8px;color:#fff;background:#182e25b8;font-size:13px;border-radius:3px;max-width:90%;overflow-wrap:anywhere}
 .city-cover figcaption a{display:block}
 .city-intro{font-size:16px;line-height:1.7;color:var(--ink);padding:24px 0;max-width:720px}
+.city-seasonal-note{padding:20px 0 24px;border-top:1px solid var(--line);max-width:800px}
+.city-seasonal-heading{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.city-seasonal-note .city-seasonal-heading h2{font-size:15px;font-weight:600;letter-spacing:0}
+.city-seasonal-heading>span,.city-seasonal-note small{font-size:12px;color:var(--ink-3,var(--muted))}
+.city-seasonal-note>p{font-size:16px;line-height:1.8}
+.city-seasonal-note details{margin-top:8px;font-size:13px;color:var(--ink-2)}
+.city-seasonal-note summary{cursor:pointer;min-height:44px;display:list-item;align-content:center;width:fit-content;color:var(--green)}
+.city-seasonal-note details p{margin-bottom:12px;max-width:68ch}
+.city-seasonal-note ul{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:12px}
+.city-seasonal-note li{display:flex;gap:12px;flex-wrap:wrap;overflow-wrap:anywhere}
+.city-seasonal-note a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
 .city-at-a-glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px 0 28px;gap:24px}
 .city-at-a-glance>a{display:flex;flex-direction:column;gap:4px;min-width:0}
 .city-at-a-glance>a>span{font-size:13px;color:var(--muted)}

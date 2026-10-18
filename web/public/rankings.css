@@ -2380,3 +2380,7 @@ footer > div:first-child > p {
 .month-mark>span{font-size:12px;line-height:14px}.month-band,.month-mark{height:36px}.cost-cell small,.rank-score small,.winner-label,.refined-comparison small,.ranking-subtitle{font-size:12px}
 @media(max-width:700px){#weights-toggle{min-height:44px;padding:8px 16px}.preset-row{padding:4px 0}.rank-season .month-band,.rank-season .month-mark{height:36px}.cost-cell small,.rank-score small,.rank-metric .metric-mobile-label,.month-mark>span{font-size:12px}.month-mark>span{line-height:14px}}
 .month-mark>span{color:var(--muted)}
+
+/* A dated editorial view is visible and removable; it never alters source scores. */
+.rank-season-note { margin: 0 0 12px; max-width: 100%; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
+.rank-season-note a { color: var(--green); white-space: nowrap; }

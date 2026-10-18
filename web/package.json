@@ -17,6 +17,7 @@
     "evals:semantics": "node evals/run-flash-semantics.mjs",
     "evals:dsh": "node evals/run.mjs",
     "data:bootstrap": "node scripts/bootstrap-public.mjs",
+    "seasonal:readme": "node scripts/update-seasonal-readme.mjs",
     "data:pages": "node scripts/build-public-pages.mjs",
     "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev"
   },

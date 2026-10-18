@@ -1,0 +1,1096 @@
+{
+  "version": 1,
+  "month": "2026-10",
+  "checked_at": "2026-10-18",
+  "source_boundary": "16城均做过web、Reddit、X和小红书定向检索；各条来源分别注明正文、部分评论或搜索文案的读取范围。季节依据有常年值及历史经验，本轮未核验统一口径现价、每间房网络或所有工位余量。",
+  "cities": [
+    {
+      "slug": "ubud",
+      "name": "乌布（巴厘岛）",
+      "name_zh": "乌布",
+      "summary": "稻田边可选固定工位；本年雨季预计偏晚，订房仍要验空调、夜间噪声和雨天通勤。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.bmkg.go.id/berita/utama/bmkg-el-nino-sangat-kuat-sedang-terjadi-musim-hujan-2026-2027-diprediksi-datang-lebih-lambat",
+          "title": "BMKG: El Niño Sangat Kuat sedang Terjadi, Musim Hujan 2026/2027 Diprediksi Datang Lebih Lambat",
+          "published_at": "2026-09-22",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_press_release_body",
+          "limits": "全国及区域级季节预测，不是乌布坐标的已发生降雨或逐日预报；本文没有据其确定乌布某个雨季起始日，更没有据此保证十月不下雨。",
+          "platform": "web"
+        },
+        {
+          "url": "https://destinationoutpost.co/cowork-in-ubud/",
+          "title": "Coworking Space in Ubud, Bali — Outpost",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_operator_page_body_and_faq",
+          "limits": "经营方自述，页面未标明确发布日期；未实地访问或独立测速，也未验证某张日票的夜间权限、当日可订性、电话间空位和具体住宿房间网络。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/bali/comments/1gnfq5o/bali_in_3rd_week_of_october/",
+          "title": "Bali in 3rd week of october — r/bali",
+          "published_at": "2024-11-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "limits": "2024年发表的游客讨论，含多年及不同月份回忆；主帖是计划咨询，不是2026年乌布实时入住记录。未采用其中酒店“优惠”说法证明今日价格。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.xiaohongshu.com/explore/6ad2722d000000000a026e6f",
+          "title": "近期住客的乌布房间体验",
+          "published_at": "2026-10-16T18:51:25Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_caption",
+          "limits": "仅为个人住宿经历，未核验商家回应；未读取图片、视频或评论，不能外推全城住宿。",
+          "platform": "xiaohongshu"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "official_press_release_and_operator_faq_opened"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "post_body_and_visible_comments_with_location_limits"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "search_results_only_no_relevant_original_post"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "read_scope": "已读原帖发布文字；未读图片、视频和评论。"
+        }
+      ]
+    },
+    {
+      "slug": "fethiye",
+      "name": "费特希耶",
+      "name_zh": "费特希耶",
+      "summary": "十月适合海岸散步与徒步；先订可用工位，肩季也可能拥挤，别预设房租会降。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://goturkiye.com/branding/press-releases/summer-continues-in-the-turkish-riviera-and-the-turkaegean",
+          "title": "Summer continues in the Turkish Riviera and the Turkaegean — GoTürkiye",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取10月开头及 Fethiye/Göcek/Ölüdeniz 段落",
+          "limits": "旅游推广文字，未标可核实的发布日期；不能推导2026-10实时海温、降雨、票价或全城客流。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.holdall.work/destinations/fethiye",
+          "title": "Fethiye, Turkey · holdall",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取到访年月、季节、工位和地点说明；未实测网速或向场地确认",
+          "limits": "历史个体体验。页面虽出现2026-10重述价格，但自己标低置信度且含汇率重算，本研究不采用它作为2026实时报价；也不采用其非官方签证/时区说法。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1oznq3j/turkey_as_digital_nomad_base_2026_and_beyond/",
+          "title": "Turkey as digital nomad base 2026 and beyond?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取涉及费特希耶、Ölüdeniz及10月底到访的评论；未读完全部评论树",
+          "limits": "评论相对日期未核定精确日；到访年份和消费清单未核实，不能当作2026物价、客流或治安统计。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。",
+          "platform": "web"
+        },
+        {
+          "url": "https://x.com/i/status/2094048979482796307",
+          "title": "费特希耶旅居宣传中的网络与消费说法",
+          "published_at": "2026-08-30T13:05:56Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_text",
+          "limits": "缺乏金额、测速条件与住宿样本，且不是十月经历；只用于说明宣传与具体工作条件需分开，不据此确认现价或全城网速。",
+          "platform": "x"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链"
+        },
+        {
+          "platform": "x",
+          "status": "body_read",
+          "read_scope": "已读8月旅居宣传文案；未采信价格或全城网速。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "hangzhou",
+      "name": "杭州",
+      "name_zh": "杭州",
+      "summary": "秋季适合湖边日常；先短住选片区，旧房状况与新区通勤要一起看，留好雨天工位。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://zj.weather.com.cn/qhbh/qhbhgb/09/4806831.shtml",
+          "title": "2026年10月气候趋势预测 — 浙江省气候中心/浙江天气网",
+          "published_at": "2026-09-29",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_climate_outlook_body",
+          "limits": "省域月趋势预测，不是杭州城区2026年十月已发生的完整记录或某天的准确预报；没有把全省台风可能性表述成杭州确定受灾。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/hangzhou/comments/1x1imqh/what_are_the_top_3_things_youd_like_to_know_about/",
+          "title": "What are the top 3 things you’d like to know about life here in China? Especially Hangzhou",
+          "published_at": "2026-10-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "limits": "作者兼有频道推广，评论中的租金、签证与资格说法未独立核验，因此未采用价格或法律结论。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.xiaohongshu.com/explore/6ac2ee05000000000b00405e",
+          "title": "旅居杭州两年的找房经验",
+          "published_at": "2026-10-05T00:23:33Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_caption",
+          "limits": "作者为退休旅居者，未提供本月可订报价或工作网络实测；未读取图片和评论。",
+          "platform": "xiaohongshu"
+        },
+        {
+          "url": "https://x.com/i/status/2109615079234883737",
+          "title": "青山湖十月景观记录",
+          "published_at": "2026-10-12T12:00:04Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_text",
+          "limits": "只读发布文案，未看视频；不能据此确认全市红叶进度或天气。",
+          "platform": "x"
+        },
+        {
+          "url": "https://x.com/i/status/2111468399700414675",
+          "title": "杭州桂花记录",
+          "published_at": "2026-10-17T14:44:30Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_text",
+          "limits": "仅单帖文案，未看视频；不能推定花期覆盖、持续时间或全城状况。",
+          "platform": "x"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "current_official_outlook_opened_other_candidates_partial_or_blocked"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "post_body_and_visible_comments_with_cache_boundary"
+        },
+        {
+          "platform": "x",
+          "status": "body_read",
+          "read_scope": "已读原帖发布文字；未读图片、视频和评论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "read_scope": "已读原帖发布文字；未读图片、视频和评论。"
+        }
+      ]
+    },
+    {
+      "slug": "shenzhen",
+      "name": "深圳",
+      "name_zh": "深圳",
+      "summary": "雨季通常已过，硬件协作资源多；十月仍常偏热，先试空调和工位社群。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://weather.sz.gov.cn/qixiangfuwu/qihoufuwu/qihouguanceyupinggu/qihougaikuang/content/mpost_3573760.html",
+          "title": "深圳市气候概况及四季特征 — 深圳市气象局",
+          "published_at": "2026-09-03",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_climate_profile_body_and_table",
+          "limits": "长期统计和气候背景，不是2026年已经入秋的判定，也不代表10月18日或未来某一天的实际温度、台风或空气质量。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.szft.gov.cn/ftxx/xwdt/ftdt/content/post_12972999.html",
+          "title": "全球创客扎堆华强北！深圳速度，让海外创意一周出海 — 福田政府在线",
+          "published_at": "2026-09-09",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_local_report_body",
+          "limits": "报道带有地方产业宣传属性；未验证可订日票、准入资格、当月活动、独立网络质量或每项服务费用。运营方Contact页本次未能打开。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/shenzhen/comments/1qvmo90/whats_a_nice_place_to_cowork_from_in_shenzhen/",
+          "title": "What's a nice place to cowork from in Shenzhen — r/shenzhen",
+          "published_at": "2026-02-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "limits": "2026年初个人讨论，不是十月实测；未验证任何点位的现行价格、社群活跃度或开放时间。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://x.com/i/status/2109904109503692970",
+          "title": "ShanHaiWoo十月深圳共创活动公告",
+          "published_at": "2026-10-13T07:08:34Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_text",
+          "limits": "奖学金截止10月15日，核读时已过；不能推荐继续申请或断言免费住宿仍可得。公告不等于参与者体验。",
+          "platform": "x"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "official_climate_profile_and_local_report_opened"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "post_body_and_visible_comments"
+        },
+        {
+          "platform": "x",
+          "status": "body_read",
+          "read_scope": "已读共创活动公告；奖学金申请已过期，未作为可报名推荐。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "仅检索文案，未取得原笔记全文、图片或评论。"
+        }
+      ]
+    },
+    {
+      "slug": "antalya",
+      "name": "安塔利亚",
+      "name_zh": "安塔利亚",
+      "summary": "十月海岸较夏天温和，适合步行；备好秋雨方案，短租和工位逐家确认。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?k=H&m=ANTALYA",
+          "title": "Antalya — Resmî İklim İstatistikleri, MGM",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取统计表 Ekim/10月列及表头",
+          "limits": "历史站点气候统计；当前子页没有清楚展示统计基准期，未推定为1991—2020，也不是2026天气预报。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1t8yc85/mediterranean_turkey/",
+          "title": "Mediterranean Turkey",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取有关安塔利亚、10月回访、租房和春秋的评论",
+          "limits": "页面只给相对日期，精确发布日期和消费口径未核定；评论中的住房法规说法未当作法律事实。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+          "title": "Visa Information For Foreigners — Türkiye MFA",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开官方总表并读取 China 条款及相邻说明",
+          "limits": "核对的是中国普通护照条款；不能从其他国家或公务护照条款推导中国普通护照待遇，也不能据此推导工作权。",
+          "platform": "web"
+        },
+        {
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "pokhara",
+      "name": "博卡拉",
+      "name_zh": "博卡拉",
+      "summary": "秋季适合湖畔散步；先测上传与备用电源，进出道路单独查，别把徒步条件当办公条件。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://ntb.gov.np/en/the-beauty-of-pokhara-in-autumn",
+          "title": "The Beauty of Pokhara in Autumn — Nepal Tourism Board",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "opened_article_body",
+          "limits": "页面未见明确发布日期；属于旅游推广与一般季节说明，不是2026年逐日天气、交通通告、空气质量或办公网络实测。文中安全性宣传未直接当作路线安全结论。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/destinations/asia/nepal",
+          "title": "Nepal Travel Advice & Safety — Australian Government Smartraveller",
+          "published_at": "2026-10-13",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_current_advisory_body",
+          "limits": "这是国家及特定受灾区域的旅行建议，不是博卡拉城区、加德满都—博卡拉每段道路或某条徒步线已关闭的证明；未据此推荐具体交通工具或保证其安全。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/pokhara/comments/1wc7kqq/notes_for_nomads_planning_on_pokhara_awesome_spot/",
+          "title": "Notes for Nomads Planning on Pokhara — awesome spot, these details will make settling in faster",
+          "published_at": "2026-09-10",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments",
+          "limits": "个人自报且附作者博客推广；未独立复测速度，未核实所有住宿、供电或运营商覆盖。发布日期采用检索的绝对日期，打开页面正文只显示相对时间。",
+          "platform": "reddit"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "official_article_and_advisory_opened"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "post_body_and_visible_comments"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "search_results_only_no_relevant_original_post"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "search_results_only_no_relevant_original_post"
+        }
+      ]
+    },
+    {
+      "slug": "la-paz",
+      "name": "拉巴斯",
+      "name_zh": "拉巴斯",
+      "summary": "干季尾端可安排城市散步；高海拔先留适应时间，住所保暖与机场交通别省略。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://ds.data.jma.go.jp/gmd/tcc/tcc/products/climate/climatview/graph_mkhtml_nrm.php?e=6&k=0&m=2&n=85201&r=0&s=1&y=2025",
+          "title": "JMA ClimatView — LA PAZ/ALTO monthly normals",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取站名、高度和全年月常年值表",
+          "limits": "机场高处站不是拉巴斯市中心；子页未显示常年基准期，不推定为1991—2020，也不是2026-10实况。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+          "title": "High-Altitude Travel and Altitude Illness — CDC Yellow Book 2026",
+          "published_at": "2025-04-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取目的地海拔、适应、风险分层与睡眠段落",
+          "limits": "一般旅行医学依据，不是个体诊断或工作能力测试；本研究不提供药物方案，也不保证固定天数后恢复。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.gov.uk/foreign-travel-advice/bolivia/safety-and-security",
+          "title": "Bolivia travel advice — Safety and security, GOV.UK",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取道路交通、路障及天气风险段落",
+          "limits": "全国性持续旅行提示，不是2026-10-18每条道路或拉巴斯空气质量实测；没有把全国火灾、洪水写成本市当日灾情。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/ydfws8/obligatory_setup_shot_la_paz_bolivia/",
+          "title": "Obligatory setup shot — La Paz, Bolivia",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者居住、租金分摊及网络评论和价格争议；未查看原图",
+          "limits": "索引日期为2022-10-25，正文只显示约四年前；旧玻币/美元价格不作2026报价。原帖图片未查看，工作环境只据文字评论。",
+          "platform": "reddit"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu",
+      "name": "成都",
+      "name_zh": "成都",
+      "summary": "国庆假期已过，适合按街区建立日常；秋雨留室内工位，远郊社群先算交通。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xjctz/202510/t20251020_7399391.html",
+          "title": "成都双流：气象预警接上社区网格 基层治理有了“发令枪” — 中国气象局",
+          "published_at": "2025-10-20",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_article_body",
+          "limits": "这是2025年基层气象治理报道，不是2026年月预测、每日降雨记录或市区空气质量数据；不能据此量化今年雨日数。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/travelchina/comments/1t40bh0/yesterday_i_visited_a_digital_nomad_community_on/",
+          "title": "Yesterday, I visited a digital nomad community on the outskirts of Chengdu",
+          "published_at": "2026-05-05",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_body_and_visible_comments_text_not_images",
+          "limits": "一次参观、自报价格和经营介绍，不是10月现价；没有核读配图或验证场地持续运营。未把技能换宿当作人人可获得的免费住房。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568275.html",
+          "title": "国务院办公厅关于2026年部分节假日安排的通知 — 北京市政府转载",
+          "published_at": "2025-11-04",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_official_reprint_body",
+          "limits": "只支持日期判断，不能证明成都当日客流、工位空位或房价。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.xiaohongshu.com/explore/6ad07891000000001400c800",
+          "title": "回成都旅居两个月的个人感受",
+          "published_at": "2026-10-15T06:54:09Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_caption",
+          "limits": "个人两个月生活经历，未提供当前房租或房间网络实测；未读取图片和评论。",
+          "platform": "xiaohongshu"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "official_historical_article_opened_current_city_seasonal_gap"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "post_body_and_visible_comments"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "search_results_only_no_relevant_original_post"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "body_read",
+          "read_scope": "已读原帖发布文字；未读图片、视频和评论。"
+        }
+      ]
+    },
+    {
+      "slug": "samarkand",
+      "name": "撒马尔罕",
+      "name_zh": "撒马尔罕",
+      "summary": "秋季适合古城步行；会议多的人先试住测速，旧帖推荐的工位可能已经变动。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://ds.data.jma.go.jp/gmd/tcc/tcc/products/climate/climatview/graph_mkhtml_nrm.php?e=7&k=0&m=9&n=38696&r=1&s=1&y=2026",
+          "title": "ClimatView — SAMARKAND monthly normals, Japan Meteorological Agency",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市站、表头与October常年值",
+          "limits": "该子页未明确显示基准期，未假设1991—2020；常年值不是2026-10实况或昼夜温度。URL的年份参数不能把normals变成当月观测。",
+          "platform": "web"
+        },
+        {
+          "url": "https://uzbekistan.travel/en/i/travel-tips/",
+          "title": "Travel tips — Uzbekistan Travel",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取秋季和旅行建议正文",
+          "limits": "国家层面的季节建议，不能证明撒马尔罕本月每天晴天、空气质量或网络状况；未采用旧车次信息作为当前时刻表。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/Uzbekistan/comments/173t9oz/looking_for_a_caf%C3%A9_or_bar_with_good_wifi_in/",
+          "title": "Looking for a café or bar with good Wi-Fi in Samarkand",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖、作者后续及场地关闭/候选评论；未打开地图外链或实测",
+          "limits": "历史10月帖混有后续年份评论，精确日期未逐条核定；旧测速、BM Cowork及其他场地均未现场/官方复验，不能当作2026营业保证。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm",
+          "title": "免签来乌问与答",
+          "published_at": "2025-05-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取问答中的适用护照、停留、排除目的、延期和住宿登记条款",
+          "limits": "登记规则有工作日和住宿类型等细节，不能简单写成任意连续72小时；应由酒店或房东依当前规定办理并保留凭证。远程工作的具体归类未由本材料确认。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "hanoi",
+      "name": "河内",
+      "name_zh": "河内",
+      "summary": "十月适合在街区步行；省钱也要留安静房间预算，会议时段试噪音和公司网络。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://vietnam.travel/things-to-do/weather-and-climate-vietnam",
+          "title": "Weather and climate in Vietnam — Vietnam National Authority of Tourism",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取Ha Noi专节，并对照中央越南分区标题；未把中部数值外推河内",
+          "limits": "季节旅游概述不是当月观测、逐日天气、空气质量或2026灾害排除保证。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/hanoi/comments/1vbhu0f/where_to_find_a_quiet_condo/",
+          "title": "Where to find a Quiet Condo?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及安静街区、朝向和施工噪音相关评论",
+          "limits": "公开索引指向2026年7—8月，正文显示相对日期，未核定精确日；没有本轮房间测噪，也不采用“某区必安静”或无窗房建议作为住宿结论。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.reddit.com/r/VietNam/comments/17aixeo/urgent_digital_nomad_struggling_with_internet/",
+          "title": "URGENT: Digital nomad struggling with internet connectivity",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者主帖与不同根因解释，未运行任何网络测试",
+          "limits": "索引日期2023-10-18，正文相对日期；根因未证实，不写成越南普遍封锁公司VPN或本月故障，也不推荐绕过雇主安全限制。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://vn.china-embassy.gov.cn/lsyw/202610/t20261014_12039922.htm",
+          "title": "越南对中国公民赴庆和省旅游实施免签政策",
+          "published_at": "2026-10-14",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取试点日期、国籍/护照、团体、地域和航线条件全文",
+          "limits": "不适用河内自由行，不能外推全国或工作许可。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "malaga",
+      "name": "马拉加",
+      "name_zh": "马拉加",
+      "summary": "十月海边气温温和；夜里加衣，先确认工位营业。若按北京时间9点开工，需凌晨在线。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.aemet.es/en/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=6155A&k=and",
+          "title": "AEMET Standard climate values: Málaga Aeropuerto",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读6155A站完整气候表、1981–2010统计期及T/TM/Tm/R字段定义。",
+          "limits": "机场站而非房间或全市逐日预报；统计期与本站ERA5 2023–2025不同，不应直接覆写现有数据库值。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1w4x20l/m%C3%A1laga_and_valencia_for_remote_work_in_november/",
+          "title": "Málaga and Valencia for remote work in November?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖及关于两城工作日、气候、营业与社交的部分可见评论。",
+          "limits": "问题是计划2026年11月，经历也跨旧年份；不能冒充10月现地调查。有人断言游客远程工作违法，该法律评论未作为官方事实使用。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "搜索摘要/访问失败，未读X原帖、图片、视频与评论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。"
+        }
+      ]
+    },
+    {
+      "slug": "lisbon",
+      "name": "里斯本",
+      "name_zh": "里斯本",
+      "summary": "秋季适合步行与社交；短租和桌椅先落实，雨天增多。若按北京时间9点开工，需凌晨在线。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.ipma.pt/bin/file.data/climate-normal/cn_91-20_LISBOA_GEOFISICO.pdf",
+          "title": "IPMA Lisboa / Instituto Geofísico 1991–2020 climate normals",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读官方3页PDF的月均/日高日低温、降水表及释义；未用图表像素估读。",
+          "limits": "站点535、77米，版本标2024；常年值并非2026当月实况，不能代表每个街区与未来天气。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1wsnv0u/looking_for_advice_for_a_europe_trip_in_october/",
+          "title": "Looking for advice for a Europe trip in October",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "重试后打开原帖及关于短租、孤独和时区的可见评论。",
+          "limits": "作者是首次旅居询问，不是已完成里斯本报告；评论含推广账号，不据此保证房源、气候或社区质量。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.reddit.com/r/Lisbon/comments/1ryvvhj/how_has_lisbon_changed_since_the_dawn_of_digital/",
+          "title": "How has Lisbon changed since the dawn of digital nomads?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读主帖与关于住房、当地商铺和社区变化的选定评论。",
+          "limits": "匿名个人观点，非因果调查或本月房价；不把所有住房问题归因于游民，不推断指定房型最低价。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "搜索摘要/访问失败，未读X原帖、图片、视频与评论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。"
+        }
+      ]
+    },
+    {
+      "slug": "las-palmas",
+      "name": "拉斯帕尔马斯（大加那利）",
+      "name_zh": "拉斯帕尔马斯",
+      "summary": "十月适合海边工作日；按具体房间测工作网络，游客短租与本地长租分开算。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://lpavisit.com/en/las-palmas-de-gran-canaria/weather/",
+          "title": "Weather — LPAVisit, official tourist site of Las Palmas de Gran Canaria",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市气候和Autumn专节",
+          "limits": "推广性季节介绍，没有本月逐日实况、海况或街区保证；未采用其“全球最佳”排名作为科学结论。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.christhefreelancer.com/las-palmas-for-digital-nomads/",
+          "title": "Las Palmas Wrap-Up: One Month as Digital Nomads on the Island of Gran Canaria",
+          "published_at": "2017-06-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取测速文字表、住宿、通勤和微气候段落；未复测连接或查看视频",
+          "limits": "文章标2017-06-23，测速表只列月日和时刻，属于历史单点；不是2026网络、工位营业或当前租金证明，未读取嵌入视频。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/1943kmh/long_term_rentals_in_las_palmas_gran_canaria/",
+          "title": "Long term rentals in Las Palmas, Gran Canaria",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及租房平台建议；未打开平台或房源外链",
+          "limits": "历史求助约三年前，未核定精确日；没有2026成交样本，不保证推荐平台或合住项目现仍可用。",
+          "platform": "reddit"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已读取sources所列官方/可靠季节正文和相关工作材料；搜索摘要不作为现行入境政策依据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取sources明确列出的文字主帖/评论；未查看图片、视频或全部评论树"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "已检索公开搜索索引，直接X搜索页返回403；未读原帖、回复或视听内容"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "已检索公开索引，直接平台搜索页工具不可访问；未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "izmir",
+      "name": "伊兹密尔",
+      "name_zh": "伊兹密尔",
+      "summary": "十月海湾温和、晚间转凉；按片区试网络和社群，提前核对公司设备的地域政策。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=IZMIR",
+          "title": "İzmir — Resmî İklim İstatistikleri, MGM",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取统计期间、表头及 Ekim/10月列",
+          "limits": "城市站历史统计不覆盖全省各海岸微气候，也不是2026-10实时天气或海温。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/16zohgq/any_digital_nomdas_in_izmir/",
+          "title": "Any digital nomads in Izmir?",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取主帖及相关语言/公司设备评论；未读完整评论树",
+          "limits": "索引指向2023-10，正文只显示相对日期，未核定精确日。公司锁机不是土耳其对所有设备的普遍政策，也未据此推荐绕过雇主控制。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://www.reddit.com/r/digitalnomad/comments/ylwzjn/1_month_1443_izmir_turkey/",
+          "title": "1 Month ($1,443) - Izmir, Turkey",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取作者主评论中的片区、费用及网络段落",
+          "limits": "约四年前个体报告，未核实精确入住月；旧美元费用、SIM套餐和两处网速不能当作2026全城价格或网速。未打开其外链表格、地图、房源。",
+          "platform": "reddit"
+        },
+        {
+          "url": "https://tr.china-embassy.gov.cn/sgxw/202601/t20260112_11811289.htm",
+          "title": "关于土耳其对持普通护照中国公民免签的温馨提示",
+          "published_at": "2026-01-12",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取使馆提醒全文相关条款",
+          "limits": "说明旅游和过境入境待遇；没有界定为境外雇主远程办公的具体法律归类，本研究不确认这种活动已获许可。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "tashkent",
+      "name": "塔什干",
+      "name_zh": "塔什干",
+      "summary": "秋季适合城市工作与周末出行；工位开放时段各异，先试日票，再确认住宿登记。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://uzbekistan.travel/en/i/travel-tips/",
+          "title": "Travel tips — Uzbekistan Travel",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取季节、旅行和交通相关正文",
+          "limits": "全国性季节建议，不是塔什干2026-10气象实况；页面所列车次频率和地铁时间未另作当前核验，未采用为实时交通承诺。",
+          "platform": "web"
+        },
+        {
+          "url": "https://worldweather.wmo.int/en/json/115_en.json",
+          "title": "WMO World Weather Information Service — Tashkent climatology",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取城市JSON中的提供机构、气候日期字段与10月条目",
+          "limits": "基准期字段空白，气候条目的提交日期为2001-05-14；这是较旧气候资料，不是2026预测、实测或月均温。普通HTML页只呈现壳，采用实际读取的JSON数据。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.spot.uz/ru/2026/10/08/coworking/",
+          "title": "Коворкинги в Ташкенте: сколько они стоят, где находятся и что предлагают — Spot",
+          "published_at": "2026-10-08",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取场地、价格及开放时段的主体列表",
+          "limits": "媒体整理不是本次现场或运营商确认；没有实测网速、噪音、会议保密性和空位，价格也可能随后变动。",
+          "platform": "web"
+        },
+        {
+          "url": "https://uz.china-embassy.gov.cn/lsfw/lszj/qz/202505/t20250523_11631126.htm",
+          "title": "免签来乌问与答",
+          "published_at": "2025-05-23",
+          "read_at": "2026-10-18",
+          "read_scope": "已打开并读取问答中的适用护照、停留、排除目的、延期和住宿登记条款",
+          "limits": "登记规则有工作日和住宿类型等细节，不能简单写成任意连续72小时；应由酒店或房东依当前规定办理并保留凭证。远程工作的具体归类未由本材料确认。",
+          "platform": "web"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "已打开下列 sources 中的官方季节/政策及相关正文；搜索结果本身不作为现行入境政策证据"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "已打开并读取 sources 中指定主帖或评论文字；没有读取完整评论树、图片或外链"
+        },
+        {
+          "platform": "x",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页返回403，未读原帖正文、回复、图片或视频"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "公开搜索索引已检索；直接平台搜索页工具不可访问，未读原笔记、评论、图片或视频"
+        }
+      ]
+    },
+    {
+      "slug": "munich",
+      "name": "慕尼黑",
+      "name_zh": "慕尼黑",
+      "summary": "节庆已结束，可安排凉秋城市生活；早晚添衣，工位日票须先问可用性。",
+      "read_at": "2026-10-18",
+      "checked_at": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.oktoberfest.de/en/information/barometer",
+          "title": "Oktoberfest 2026 official visitor barometer",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读慕尼黑市属官方节庆网站的本年日期与逐日拥挤表。",
+          "limits": "拥挤表仅适用节庆场地与所列日期，不是10月中下旬酒店价格或全城游客量。",
+          "platform": "web"
+        },
+        {
+          "url": "https://www.munich.travel/en/topics/urban-districts/ideas-autumn",
+          "title": "Simply Munich: 9 ideas for autumn",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读市官方旅游指南的秋季体感、早晚温差与室内活动建议正文；未看视频。",
+          "limits": "全年常设秋季指南，不是2026逐日预报；文中一般性啤酒节介绍必须服从本年具体日期。",
+          "platform": "web"
+        },
+        {
+          "url": "https://en.werk1.com/coworking-munich-werk1/",
+          "title": "WERK1 Coworking Munich",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读票价、税费、入会流程、通话空间和日票可用性提示正文。",
+          "limits": "可订链接与停售文案不完全一致；需直接问运营方当前状态，10/26提示未在句子标年。高速Wi-Fi是宣传而非本站Mbps实测。",
+          "platform": "web"
+        },
+        {
+          "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+          "title": "European Commission: Summertime",
+          "published_at": null,
+          "read_at": "2026-10-18",
+          "read_scope": "已读现行夏令时规则与西欧/中欧标准时说明正文。",
+          "limits": "2026年对应10月25日。下列北京时间换算由本机Intl时区规则计算，日期是推算结果，不冒充该网页原句。",
+          "platform": "web"
+        },
+        {
+          "url": "https://x.com/i/status/2111136648289296700",
+          "title": "十月慕尼黑单日天气感受",
+          "published_at": "2026-10-16T16:46:14Z",
+          "read_at": "2026-10-18",
+          "read_scope": "opened_post_text",
+          "limits": "仅个人单日感受，不能外推整月或夜间温度；未读取附图。",
+          "platform": "x"
+        }
+      ],
+      "platform_checks": [
+        {
+          "platform": "web",
+          "status": "body_read",
+          "read_scope": "公开正文或官方PDF文字；不是实地测速/房源可订核验。"
+        },
+        {
+          "platform": "reddit",
+          "status": "body_read",
+          "read_scope": "文字原帖/选定评论，未阅读所有评论或未展示的媒体。"
+        },
+        {
+          "platform": "x",
+          "status": "body_read",
+          "read_scope": "已读原帖发布文字；未读图片、视频和评论。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "status": "search_only",
+          "read_scope": "索引检索及访问失败，未读笔记正文/媒体/评论。"
+        }
+      ]
+    }
+  ]
+}
