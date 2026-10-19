@@ -2,7 +2,7 @@
   "version": 1,
   "origin": "https://nomads.cubxxw.com",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-19T03:11:18.990Z",
+  "generated_at": "2026-10-19T03:51:54.861Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
   "db_sha256": "20ec6976619cc1b019708fed540969a1a6e24c7ef5edfd3da68058cdd149b1e1",
@@ -18,7 +18,7 @@
     "comparisons": 2
   },
   "file_count": 620,
-  "bytes_excluding_manifest": 23475732,
+  "bytes_excluding_manifest": 23653904,
   "paths": [
     "/",
     "/cities/",

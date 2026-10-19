@@ -5,6 +5,12 @@ export function countryMatches(row, query, covered) {
 }
 
 export function initContentPage() {
+  const countryNavigation = document.querySelector('.country-navigation details');
+  if (countryNavigation) {
+    const narrow = matchMedia('(max-width:680px)');
+    countryNavigation.open = !narrow.matches;
+    narrow.addEventListener('change', () => {countryNavigation.open = !narrow.matches;});
+  }
   const directory = document.querySelector('[data-country-directory]');
   if (directory) {
     const input = directory.querySelector('[data-country-search]'), covered = directory.querySelector('[data-country-covered]');

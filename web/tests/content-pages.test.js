@@ -6,6 +6,17 @@ import { countryMatches } from '../public/modules/content-ui.js';
 const country = { id:'VN', name_zh:'越南', name_en:'Viet Nam', region:'亚洲', city_count:1 };
 const city = { slug:'da-nang', name_zh:'岘港', name_en:'Da Nang', country_name:'越南', region:'亚洲', summary:'工作日靠海边。', photo_url:'/images/city-da-nang.webp', budget_amount:790 };
 
+test('country pages keep country context and every city in a separate navigation sidebar', () => {
+  const html=renderCountryPage(country,[city,{...city,slug:'hanoi',name_zh:'河内'}],[],[],[],()=>'',()=> '待核验').body;
+  const nav=html.match(/<nav class="country-city-nav"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(nav);
+  assert.match(nav,/aria-current="page"/);
+  assert.match(nav,/href="\/countries\/vn\/"/);
+  assert.match(nav,/href="\/cities\/da-nang\/"/);
+  assert.match(nav,/href="\/cities\/hanoi\/"/);
+  assert.match(html,/国家与城市/);
+});
+
 test('single-city and empty-country pages render without requiring a card grid or city placeholder', () => {
   const page = renderCountryPage(country, [city], [], [], [], () => '', () => '待核验');
   assert.match(page.body,/href="\/cities\/da-nang\/"/);
