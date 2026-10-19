@@ -36,3 +36,11 @@
 检查本地文件和锚点链接，确认每个价格都有币种及服务范围；写入真实核读日。中文定稿按作者声音与去 AI 味白名单做最小检查，保留事实、限定词和引用。
 
 README每期保留一张十城主表，短评不超过25字，主表内同城只出现一次。国内推荐与需求分类另列，城市、数值和“更多”链接均由网页同一排序逻辑生成；国内缺评分的目的地只给资料入口。详细口径放[数据与方法](web/docs/data-and-methods.md)。在`web/`运行`npm run seasonal:readme`更新主表、国内推荐、需求分类与本期变化，提交前用`npm run seasonal:readme -- --check`检查；不填写未经实现或没有依据的新增、涨跌。
+
+## 网站文章发布
+
+Roamorrow 的完整城市文章任务包含上线；明确要求仅调研、草稿或暂缓发布时，以当次要求为准。先完成来源核读、预算与配图检查，再执行指定中文去 AI 味白名单复查。
+
+`web/data/article-catalog.json` 统一记录文章的城市归属与发布状态。多城文章填写全部 `citySlugs`；城市页、指南索引和站点地图从目录生成，每次新增或更新文章都同步构建，不手工维护重复列表。独立文章的批准源存放在 `web/content/city-guides/`，`publication.json` 中的指纹必须对应本次审阅文件。原始社交缓存与私有资料不放进公共资源。
+
+在 `web/` 运行 `npm run guides:build`、`npm run check`，再按[部署说明](web/docs/deployment.md)生成发布清单并部署。发布后在真实域名核验文章、城市关联、指南入口、图片与站点地图，并记录 Google Search Console 的实际提交状态。完整流程见本机 `nomads-city-guide` skill；提交站点地图与文章已收录分别报告。

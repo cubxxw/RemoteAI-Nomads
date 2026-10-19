@@ -1,3 +1,4 @@
+import {guideCardsHTML} from './article-catalog.js';
 import {travelAdvisory} from '../public/modules/recommendation-policy.js';
 import { countryAliases } from "../public/modules/country-search.js";
 import { esc, external, photo, money } from './render.js';
@@ -48,7 +49,7 @@ export function renderGuides(rows, slug, env) {
   }
   const first = rows[0];
   return { title: '出发前的数字游民指南', description: '从试住一周到一个工作月，安排适合自己的数字游民生活。', path: '/guides/', active: 'guides', indexable: true,
-    body: `${assets}<div class="container content-page guides-index">${intro('出发指南', '先过好第一个工作周。', '住宿、工作、开销。一件一件确认，再决定住多久。')}${first ? `<a class="guide-feature" href="/guides/${esc(first.slug)}/"><div class="guide-feature-photo"><img src="/images/city-chiang-mai.webp" alt="清迈城市实景" width="900" height="650" decoding="async" loading="eager"><span>清迈 · 城市实景</span></div><div class="guide-feature-copy"><span class="content-eyebrow">出发之前 · ${JSON.parse(first.body_json).length} 项清单</span><h2>${guideTitle(first.title)}</h2><p>${esc(first.summary)}</p><ol>${JSON.parse(first.body_json).map((_, i, arr) => `<li><span>0${i + 1}</span>${stepTitle(i, arr.length)}</li>`).join('')}</ol><span class="content-button">打开指南${arrow}</span></div></a>${rows.length > 1 ? `<div class="guide-more">${rows.slice(1).map(a => `<a href="/guides/${esc(a.slug)}/"><h2>${esc(a.title)}</h2><p>${esc(a.summary)}</p>${arrow}</a>`).join('')}</div>` : ''}` : '<div class="content-empty"><h2>新的指南还在整理。</h2><a href="/cities/" class="content-button secondary">先看看城市排行</a></div>'}</div>` };
+    body: `${assets}<div class="container content-page guides-index">${intro('出发指南', '先过好第一个工作周。', '住宿、工作、开销。一件一件确认，再决定住多久。')}${guideCardsHTML()}${first ? `<a class="guide-feature" href="/guides/${esc(first.slug)}/"><div class="guide-feature-photo"><img src="/images/city-chiang-mai.webp" alt="清迈城市实景" width="900" height="650" decoding="async" loading="eager"><span>清迈 · 城市实景</span></div><div class="guide-feature-copy"><span class="content-eyebrow">出发之前 · ${JSON.parse(first.body_json).length} 项清单</span><h2>${guideTitle(first.title)}</h2><p>${esc(first.summary)}</p><ol>${JSON.parse(first.body_json).map((_, i, arr) => `<li><span>0${i + 1}</span>${stepTitle(i, arr.length)}</li>`).join('')}</ol><span class="content-button">打开指南${arrow}</span></div></a>${rows.length > 1 ? `<div class="guide-more">${rows.slice(1).map(a => `<a href="/guides/${esc(a.slug)}/"><h2>${esc(a.title)}</h2><p>${esc(a.summary)}</p>${arrow}</a>`).join('')}</div>` : ''}` : '<div class="content-empty"><h2>新的指南还在整理。</h2><a href="/cities/" class="content-button secondary">先看看城市排行</a></div>'}</div>` };
 }
 
 export function renderCompareIndex(articles, cities) {

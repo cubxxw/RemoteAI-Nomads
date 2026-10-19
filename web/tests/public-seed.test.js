@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { bootstrapPublic, EMPTY_TABLES, PUBLIC_TABLES, publicSeedSql, publicSha256, validatePublicDatabase, validatePublicSeed } from '../scripts/bootstrap-public.mjs';
 import { buildPublicPages } from '../scripts/build-public-pages.mjs';
+import {publishedArticles} from '../src/article-catalog.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const seedPath = join(root, 'data/public-catalog.json.gz');
@@ -48,8 +49,9 @@ test('a fresh offline bootstrap rebuilds the public database and every fallback 
   } finally { database.close(); }
   assert.deepEqual((await readdir(temporary)).sort(), ['.data']);
   const pages = await buildPublicPages({ databasePath, publicationPath, outputDirectory: join(temporary, 'public/published-pages'), origin: 'https://demo.example.org' });
-  assert.equal(pages.file_count, 9 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages);
-  assert.equal(pages.paths.length, 8 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages);
+  const standaloneGuides=publishedArticles().filter(article=>article.assetPath);
+  assert.equal(pages.file_count, 9 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + standaloneGuides.length);
+  assert.equal(pages.paths.length, 8 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + standaloneGuides.length);
   assert.equal(pages.all_responses_status, 200);
   assert.equal(pages.private_notes_exported, 0);
   assert.equal(pages.origin, 'https://demo.example.org');
@@ -59,6 +61,17 @@ test('a fresh offline bootstrap rebuilds the public database and every fallback 
   const sitemap = await readFile(join(temporary, 'public/published-pages/sitemap.xml'), 'utf8');
   assert.ok(sitemap.includes('https://demo.example.org/cities/'));
   assert.ok(!sitemap.includes('https://nomads.cubxxw.com/'));
+  for(const article of standaloneGuides){
+    assert.ok(sitemap.includes('https://demo.example.org'+article.path));
+    const body=await readFile(join(temporary,'public/published-pages',article.path,'index.html'),'utf8');
+    assert.match(body,/<meta name="robots" content="index,follow">/);
+  }
+  const cm=await readFile(join(temporary,'public/published-pages/cities/chiang-mai/index.html'),'utf8');
+  const pg=await readFile(join(temporary,'public/published-pages/cities/penang/index.html'),'utf8');
+  assert.match(cm,/href="\/guides\/chiang-mai-monthly-budget\/"/);
+  assert.doesNotMatch(cm,/href="\/guides\/penang-monthly-budget\/"/);
+  assert.match(pg,/href="\/guides\/penang-monthly-budget\/"/);
+  assert.match(pg,/href="\/compare\/chiang-mai-vs-penang\/"/);
 }));
 
 test('the public SQL seed applies directly after the checked-in D1 migrations', async () => {
