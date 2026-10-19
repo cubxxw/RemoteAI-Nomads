@@ -1,248 +1,224 @@
-import { esc, money } from "./ranking.js";
-const NS = "http://www.w3.org/2000/svg";
+import {esc} from './ranking.js';
+import {countryGroups, countryHref, renderCountryPreview} from './country-map.js';
+
+const NS = 'http://www.w3.org/2000/svg';
 const element = (name, attrs = {}) => {
-  const e = document.createElementNS(NS, name);
-  for (const [key, val] of Object.entries(attrs)) e.setAttribute(key, val);
-  return e;
+  const node = document.createElementNS(NS, name);
+  for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, value);
+  return node;
 };
-export const project = (lat, lon) => [
-  ((lon + 180) / 360) * 1000,
-  ((85 - Math.max(-60, Math.min(85, lat))) / 145) * 480,
-];
+export const project = (lat, lon) => [((lon + 180) / 360) * 1000, ((85 - Math.max(-60, Math.min(85, lat))) / 145) * 480];
+const countryCode = city => city.countryId || city.countryCode;
+const located = city => Number.isFinite(city.lat) && Number.isFinite(city.lon);
+
 export class RankMap {
-  constructor({ stage, selection, onHover, onSelect }) {
-    this.stage = stage;
-    this.selection = selection;
-    this.onHover = onHover;
-    this.onSelect = onSelect;
+  constructor({stage, selection, catalog, initialCountry}) {
+    Object.assign(this, {stage, selection, catalog, initialCountry});
     this.cities = [];
     this.nodes = new Map();
+    this.lands = new Map();
     this.view = [0, 0, 1000, 480];
     this.active = null;
+    this.country = null;
     this.ready = false;
-    this.picker = document.createElement("div");
-    this.picker.className = "map-city-picker";
-    this.picker.innerHTML =
-      '<label class="sr-only" for="map-city-select">在地图中选择城市</label><select id="map-city-select"><option value="">选择城市，在地图中查看</option></select>';
+    this.picker = document.createElement('div');
+    this.picker.className = 'map-country-picker';
+    this.picker.innerHTML = '<label for="map-country-select">探索国家</label><select id="map-country-select"><option value="">选择国家或地区</option></select>';
     this.selection.before(this.picker);
-    this.picker.querySelector("select").addEventListener("change", (e) => {
-      if (e.target.value) this.onHover(e.target.value);
+    this.picker.querySelector('select').addEventListener('change', event => {
+      if (!event.target.value) {this.clear();this.reset();return;}
+      this.previewCountry(event.target.value);
+      this.frameCountry(event.target.value);
     });
     this.load();
   }
   async load() {
-    this.stage.setAttribute("aria-busy", "true");
+    this.stage.setAttribute('aria-busy', 'true');
     try {
-      const response = await fetch("/map/world.json");
-      if (!response.ok) throw new Error("Map request failed");
+      const response = await fetch('/map/world.json');
+      if (!response.ok) throw new Error('Map request failed');
       const world = await response.json();
-      if (!Array.isArray(world.paths)) throw new Error("Invalid map data");
-      this.svg = element("svg", {
-        viewBox: "0 0 1000 480",
-        class: "rank-map-svg",
-        role: "group",
-        "aria-label": "城市地图，可用方向键选择地图点",
-      });
-      const lands = element("g", { class: "map-land", "aria-hidden": "true" });
-      for (const d of world.paths) lands.append(element("path", { d }));
-      this.dots = element("g", { class: "map-dots" });
-      this.svg.append(lands, this.dots);
-      this.stage.replaceChildren(this.svg);
+      if (!Array.isArray(world.countries)) throw new Error('Invalid country map');
+      this.countries = world.countries;
+      this.svg = element('svg', {viewBox:'0 0 1000 480',class:'rank-map-svg',role:'group','aria-label':'国家地图，方向键切换国家，回车进入国家栏目'});
+      const land = element('g', {class:'map-land'});
+      this.lands.clear();
+      for (const d of world.land) land.append(element('path', {d,'aria-hidden':'true'}));
+      for (const country of world.countries) {
+        if (!country.paths.length) continue;
+        const link = element('a', {href:countryHref(country.code),'data-map-country':country.code,class:'map-country',tabindex:'-1','aria-label':country.name+'，进入国家栏目'});
+        for (const d of country.paths) link.append(element('path', {d}));
+        this.lands.set(country.code,link);
+        land.append(link);
+      }
+      this.dots = element('g', {class:'map-dots','aria-hidden':'true'});
+      this.svg.append(land,this.dots);
+      this.caption = document.createElement('div');
+      this.caption.className = 'map-country-caption';
+      this.caption.setAttribute('aria-hidden','true');
+      this.stage.replaceChildren(this.svg,this.caption);
       this.ready = true;
       this.update(this.cities);
       this.bind();
-      this.stage.setAttribute("aria-busy", "false");
     } catch {
-      this.stage.innerHTML =
-        '<div class="map-error" role="status"><strong>地图暂时没有加载成功</strong><p>排行与筛选仍可使用。</p><button type="button" class="quiet-button" id="retry-map">重新加载地图</button></div>';
-      this.stage
-        .querySelector("#retry-map")
-        .addEventListener("click", () => this.load());
-      this.stage.setAttribute("aria-busy", "false");
+      this.ready = false;
+      this.stage.innerHTML = '<div class="map-error" role="status"><strong>地图暂时没有加载成功</strong><p>可继续从国家目录浏览。</p><a href="/countries/">浏览国家目录</a><button type="button" class="quiet-button" id="retry-map">重新加载地图</button></div>';
+      this.stage.querySelector('#retry-map').addEventListener('click', () => this.load());
     }
+    this.stage.setAttribute('aria-busy', 'false');
   }
   bind() {
-    this.svg.addEventListener("pointerover", (e) => {
-      const point = e.target.closest("[data-map-city]");
-      if (point) this.onHover(point.dataset.mapCity);
+    const preview = event => {
+      const target = event.target.closest('[data-map-country]');
+      if (target) this.previewCountry(target.dataset.mapCountry,target.dataset.mapCity);
+    };
+    this.svg.addEventListener('pointerover', event => {
+      if (event.pointerType !== 'touch' && !this.dragStart) preview(event);
     });
-    this.svg.addEventListener("click", (e) => {
-      if (this.dragged) return;
-      const point = e.target.closest("[data-map-city]");
-      if (point) {
-        this.onSelect(point.dataset.mapCity, true);
-        return;
-      }
-      let nearest = null,
-        distance = 22;
-      for (const c of this.cities) {
-        const matrix = this.nodes.get(c.slug)?.getScreenCTM();
-        if (!matrix) continue;
-        const d = Math.hypot(matrix.e - e.clientX, matrix.f - e.clientY);
-        if (d < distance) {
-          distance = d;
-          nearest = c.slug;
-        }
-      }
-      if (nearest) this.onHover(nearest);
+    this.svg.addEventListener('focusin', preview);
+    this.svg.addEventListener('click', event => {
+      const target = event.target.closest('[data-map-country]');
+      if (this.dragged && event.detail) {event.preventDefault();return;}
+      if (!target) return;
+      if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+      // Touch previews first; the persistent sidebar link is the navigation action.
+      if (event.pointerType === 'touch' || (event.detail && (this.touch || matchMedia('(max-width:700px)').matches))) event.preventDefault();
+      this.previewCountry(target.dataset.mapCountry,target.dataset.mapCity);
     });
-    this.svg.addEventListener("focusin", (e) => {
-      const point = e.target.closest("[data-map-city]");
-      if (point) this.onHover(point.dataset.mapCity);
+    this.svg.addEventListener('keydown', event => {
+      if (!['ArrowRight','ArrowDown','ArrowLeft','ArrowUp',' '].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === ' ') return;
+      const codes = [...this.lands.keys()];
+      const index = codes.indexOf(this.country), step = ['ArrowRight','ArrowDown'].includes(event.key) ? 1 : -1;
+      const code = codes[(index+step+codes.length)%codes.length];
+      this.previewCountry(code);
+      this.frameCountry(code);
+      this.lands.get(code)?.focus({preventScroll:true});
     });
-    this.svg.addEventListener("keydown", (e) => {
-      const points = this.cities.filter(
-        (c) => c.lat !== null && c.lon !== null,
-      );
-      if (!points.length) return;
-      let index = points.findIndex((c) => c.slug === this.active);
-      if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) {
-        e.preventDefault();
-        index =
-          (index +
-            (["ArrowRight", "ArrowDown"].includes(e.key) ? 1 : -1) +
-            points.length) %
-          points.length;
-        this.onHover(points[index].slug);
-        this.nodes.get(points[index].slug)?.focus();
-      }
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        if (this.active) this.onSelect(this.active, true);
-      }
-    });
-    this.svg.addEventListener("pointerdown", (e) => {
+    this.svg.addEventListener('pointerdown', event => {
       this.dragged = false;
-      if (e.target.closest("[data-map-city]") || e.pointerType === "touch")
-        return;
-      this.dragStart = { x: e.clientX, y: e.clientY, view: [...this.view] };
-      this.svg.setPointerCapture(e.pointerId);
+      this.touch = event.pointerType === 'touch';
+      if (this.touch || event.button !== 0) return;
+      this.dragStart = {x:event.clientX,y:event.clientY,view:[...this.view]};
     });
-    this.svg.addEventListener("pointermove", (e) => {
+    this.svg.addEventListener('pointermove', event => {
       if (!this.dragStart) return;
-      const dx = e.clientX - this.dragStart.x,
-        dy = e.clientY - this.dragStart.y;
-      if (Math.abs(dx) + Math.abs(dy) > 5) this.dragged = true;
-      const rect = this.svg.getBoundingClientRect(),
-        scale = this.dragStart.view[2] / rect.width;
-      this.view = [
-        this.dragStart.view[0] - dx * scale,
-        this.dragStart.view[1] - dy * scale,
-        ...this.dragStart.view.slice(2),
-      ];
+      if (!event.buttons) {this.dragStart=null;return;}
+      const dx = event.clientX-this.dragStart.x, dy = event.clientY-this.dragStart.y;
+      if (!this.dragged && Math.abs(dx)+Math.abs(dy)<=5) return;
+      this.dragged = true;
+      this.svg.setPointerCapture(event.pointerId);
+      const scale = this.dragStart.view[2]/this.svg.getBoundingClientRect().width;
+      this.view = [this.dragStart.view[0]-dx*scale,this.dragStart.view[1]-dy*scale,...this.dragStart.view.slice(2)];
       this.applyView();
     });
-    this.svg.addEventListener("pointerup", () => {
-      this.dragStart = null;
-    });
-    this.svg.addEventListener("pointercancel", () => {
-      this.dragStart = null;
-    });
+    for (const type of ['pointerup','pointercancel','lostpointercapture']) this.svg.addEventListener(type,()=>{this.dragStart=null;});
+    window.addEventListener('pointerup',()=>{this.dragStart=null;});
   }
   update(cities) {
     this.cities = cities;
-    const picker = this.picker.querySelector("select");
-    picker.innerHTML =
-      '<option value="">选择城市，在地图中查看</option>' +
-      cities
-        .map(
-          (c) =>
-            `<option value="${esc(c.slug)}">${c.rank ? "#" + c.rank + " " : ""}${esc(c.name)} · ${esc(c.country)}</option>`,
-        )
-        .join("");
-    picker.value = this.active || "";
-    const mapped = cities.filter(
-      (c) => Number.isFinite(c.lat) && Number.isFinite(c.lon),
-    );
-    document.querySelector("#map-count").textContent =
-      `${mapped.length} 个位置${cities.length > mapped.length ? " · " + (cities.length - mapped.length) + " 个待补" : ""}`;
     if (!this.ready) return;
-    const focused = document.activeElement,
-      restoreFocus = this.dots.contains(focused);
-    const frag = document.createDocumentFragment();
-    for (const [index, c] of mapped.entries()) {
-      let point = this.nodes.get(c.slug);
+    this.groups = countryGroups(this.countries,this.catalog,cities);
+    const mapped = cities.filter(located), covered = new Set(cities.map(countryCode));
+    document.querySelector('#map-count').textContent = `${covered.size} 个国家与地区 · ${mapped.length} 个位置${cities.length>mapped.length?` · ${cities.length-mapped.length} 个待补`:''}`;
+    const picker = this.picker.querySelector('select');
+    const ordered = [...this.groups.values()].sort((a,b)=>(!!b.cities.length-!!a.cities.length)||a.name.localeCompare(b.name,'zh-CN'));
+    picker.innerHTML = '<option value="">选择国家或地区</option>' + [true,false].map(hasCities=>`<optgroup label="${hasCities?'已有城市资料':'城市资料待补'}">${ordered.filter(c=>!!c.cities.length===hasCities).map(c=>`<option value="${esc(c.code)}">${esc(c.name)}${c.cities.length?` · ${c.cities.length} 城`:''}</option>`).join('')}</optgroup>`).join('');
+    const fragment = document.createDocumentFragment();
+    for (const city of mapped) {
+      let point = this.nodes.get(city.slug);
       if (!point) {
-        const [x, y] = project(c.lat, c.lon);
-        point = element("g", {
-          "data-map-city": c.slug,
-          class: "map-city",
-          transform: `translate(${x.toFixed(2)},${y.toFixed(2)})`,
-          role: "button",
-          tabindex: index === 0 ? "0" : "-1",
-          "aria-label": c.name + "，" + c.country,
-        });
-        point.append(
-          element("circle", { r: 12, class: "map-hit" }),
-          element("circle", { r: 3.5, class: "map-dot" }),
-        );
-        this.nodes.set(c.slug, point);
+        const [x,y] = project(city.lat,city.lon);
+        point = element('a', {href:countryHref(countryCode(city)),'data-map-city':city.slug,'data-map-country':countryCode(city),class:'map-city',transform:`translate(${x.toFixed(2)},${y.toFixed(2)})`,tabindex:'-1'});
+        point.append(element('circle',{r:7,class:'map-hit'}),element('circle',{r:3,class:'map-dot'}));
+        this.nodes.set(city.slug,point);
       }
-      point.classList.toggle("is-active", c.slug === this.active);
-      point
-        .querySelector(".map-dot")
-        .setAttribute(
-          "r",
-          c.score === null ? "2.5" : String(2.5 + c.score / 5),
-        );
-      frag.append(point);
+      fragment.append(point);
     }
-    this.dots.replaceChildren(frag);
-    if (restoreFocus && focused.isConnected)
-      focused.focus({ preventScroll: true });
-    if (this.active && !cities.some((c) => c.slug === this.active)) {
-      this.active = null;
-      this.selection.innerHTML =
-        "<span>选择一座城市</span><p>悬停列表或点选地图，查看同一个地方。</p>";
+    this.dots.replaceChildren(fragment);
+    for (const [code,node] of this.lands) node.classList.toggle('has-cities',!!this.groups.get(code).visible.length);
+    const code = this.country || (this.groups.has(this.initialCountry) ? this.initialCountry : countryCode(cities[0] || this.catalog[0] || {}));
+    this.country = null;
+    if (this.groups.has(code)) this.previewCountry(code,this.active);
+    else this.clear();
+  }
+  previewCountry(code, slug = null) {
+    const group = this.groups?.get(code);
+    if (!group || (this.country === code && this.active === slug)) return;
+    const changed = this.country !== code;
+    this.country = code;
+    this.active = slug;
+    for (const [key,node] of this.lands) {
+      node.classList.toggle('is-active',key===code);
+      node.setAttribute('tabindex',key===code?'0':'-1');
     }
-    if (
-      mapped.length &&
-      !mapped.some(
-        (c) => this.nodes.get(c.slug)?.getAttribute("tabindex") === "0",
-      )
-    )
-      this.nodes.get(mapped[0].slug).setAttribute("tabindex", "0");
-    if (!cities.length)
-      this.selection.innerHTML =
-        "<span>没有符合条件的城市</span><p>清除筛选条件后，地图会重新显示位置。</p>";
+    if (!this.lands.has(code)) this.lands.values().next().value?.setAttribute('tabindex','0');
+    for (const [key,node] of this.nodes) {
+      node.classList.toggle('in-country',node.dataset.mapCountry===code);
+      node.classList.toggle('is-active',key===slug);
+    }
+    this.sizePoints();
+    this.svg.classList.add('has-country');
+    this.picker.querySelector('select').value = code;
+    const names = group.visible.slice(0,5).map(city=>city.name).join('、');
+    this.caption.innerHTML = `<strong>${esc(group.name)}</strong><span>${names?esc(names)+(group.visible.length>5?` 等 ${group.visible.length} 城`:''):'当前筛选没有匹配城市'}</span>`;
+    // Keep links and scroll stable when moving between city dots in one country.
+    if (changed) {
+      this.selection.innerHTML = renderCountryPreview(group,slug);
+      this.selection.scrollTop = 0;
+      this.announce(group);
+    } else {
+      for (const item of this.selection.querySelectorAll('li')) item.classList.toggle('is-active',item.querySelector('[data-map-locate]')?.dataset.mapLocate===slug);
+    }
+  }
+  announce(group) {
+    clearTimeout(this.announcement);
+    this.announcement = setTimeout(()=>{
+      const status = document.querySelector('#map-country-status');
+      if (status) status.textContent = `${group.name}，已收录 ${group.cities.length} 座城市，本次筛选 ${group.visible.length} 座。`;
+    },200);
   }
   highlight(slug) {
-    if (this.active) this.nodes.get(this.active)?.classList.remove("is-active");
-    this.active = slug;
-    const c = this.cities.find((c) => c.slug === slug);
-    if (!c) return;
-    this.picker.querySelector("select").value = slug;
-    const point = this.nodes.get(slug);
-    if (point) {
-      point.classList.add("is-active");
-      for (const n of this.nodes.values())
-        n.setAttribute("tabindex", n === point ? "0" : "-1");
-    }
-    this.selection.innerHTML = `<div class="map-selection-title"><strong>${esc(c.name)}</strong><span>${c.rank ? "#" + c.rank : "待补资料"}${c.score === null ? "" : " · " + c.score.toFixed(1)}</span></div><p>${esc(c.nameEn)} · ${esc(c.country)}${c.lat === null ? " · 位置待补" : ""}</p><div class="map-selection-stats"><span>${c.budget === null ? "预算待补" : "≈ " + money(c.budget) + " / 月"}</span><span>${esc(c.visa.label)} *</span></div><div class="map-selection-actions"><a href="/cities/${esc(c.slug)}/">查看城市详情</a><button type="button" data-map-locate="${esc(c.slug)}">在列表中定位</button></div>`;
+    const city = this.catalog.find(city=>city.slug===slug);
+    if (city) this.previewCountry(countryCode(city),slug);
   }
   clear() {
-    if (this.active) this.nodes.get(this.active)?.classList.remove("is-active");
+    this.country = null;
     this.active = null;
-    this.picker.querySelector("select").value = "";
-    this.selection.innerHTML =
-      "<span>选择一座城市</span><p>悬停列表或点选地图，查看同一个地方。</p>";
+    if (!this.ready) return;
+    this.svg.classList.remove('has-country');
+    for (const [index,node] of [...this.lands.values()].entries()) {node.classList.remove('is-active');node.setAttribute('tabindex',index===0?'0':'-1');}
+    for (const node of this.nodes.values()) node.classList.remove('is-active','in-country');
+    this.sizePoints();
+    this.picker.querySelector('select').value = '';
+    this.caption.innerHTML = '<strong>从国家，找到城市</strong><span>悬停预览，点击进入国家栏目</span>';
+    this.selection.innerHTML = '<strong>想去哪个国家？</strong><p>在地图上悬停，或从下方选择国家，查看已收录的城市。</p><a class="map-country-open" href="/countries/">浏览全部国家与地区 ↗</a>';
+  }
+  frameCountry(code) {
+    const cities = this.groups.get(code).cities.filter(located);
+    let bounds;
+    if (cities.length) {
+      const points = cities.map(city=>project(city.lat,city.lon)), xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
+      bounds = {x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};
+    } else bounds = this.lands.get(code)?.getBBox();
+    if (!bounds) return;
+    const width = Math.min(1000,Math.max(180,bounds.width*1.5,bounds.height/0.48*1.5)), height=width*0.48;
+    this.view = [Math.max(0,Math.min(1000-width,bounds.x+bounds.width/2-width/2)),Math.max(0,Math.min(480-height,bounds.y+bounds.height/2-height/2)),width,height];
+    this.applyView();
   }
   zoom(factor) {
-    const [x, y, w, h] = this.view,
-      nw = Math.max(125, Math.min(1000, w * factor)),
-      nh = nw * 0.48;
-    this.view = [x + (w - nw) / 2, y + (h - nh) / 2, nw, nh];
+    const [x,y,w,h] = this.view, width=Math.max(125,Math.min(1000,w*factor)),height=width*0.48;
+    this.view = [x+(w-width)/2,y+(h-height)/2,width,height];
     this.applyView();
   }
-  reset() {
-    this.view = [0, 0, 1000, 480];
-    this.applyView();
+  reset() {this.view=[0,0,1000,480];this.applyView();}
+  sizePoints() {
+    const scale=this.view[2]/1000;
+    for (const node of this.nodes.values()) {
+      node.querySelector('.map-dot').setAttribute('r',(node.classList.contains('in-country')?4:3)*scale);
+      node.querySelector('.map-hit').setAttribute('r',7*scale);
+    }
   }
-  applyView() {
-    if (this.svg)
-      this.svg.setAttribute(
-        "viewBox",
-        this.view.map((n) => n.toFixed(1)).join(" "),
-      );
-  }
+  applyView() {this.svg?.setAttribute('viewBox',this.view.map(n=>n.toFixed(1)).join(' '));this.sizePoints();}
 }

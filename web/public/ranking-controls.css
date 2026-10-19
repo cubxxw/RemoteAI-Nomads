@@ -124,17 +124,45 @@
 #ranking-root .ranking-empty p{font-size:15px;color:var(--ink-3,var(--muted));line-height:1.8;margin:0 auto 24px;max-width:420px}
 #ranking-root #toggle-map{display:inline-flex}
 #ranking-root .map-panel{display:none;position:static;min-width:0;margin:0}
-#ranking-root[data-map-open="true"] .map-panel{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,1fr);grid-template-rows:44px 198px 56px;grid-row:1;border:1px solid var(--line);border-radius:8px;overflow:hidden;width:100%;max-width:none;padding:0}
+#ranking-root[data-map-open="true"] .map-panel{display:grid;grid-template-columns:minmax(0,2fr) minmax(270px,1fr);grid-template-rows:48px 310px 56px;grid-row:1;border:1px solid var(--line);border-radius:12px;overflow:hidden;width:100%;max-width:none;padding:0}
 #ranking-root .map-heading{grid-column:1/-1;grid-row:1}
 #ranking-root .map-heading>span{margin-left:auto}
 #ranking-root .map-heading>.rank-icon-button{margin-right:-8px}
-#ranking-root .map-stage{grid-column:1;grid-row:2;min-height:0;height:198px}
+#ranking-root .map-stage{grid-column:1;grid-row:2;min-height:0;height:310px}
 #ranking-root .map-controls{grid-column:1;grid-row:3}
+#ranking-root .map-guidance{margin-right:auto;padding-left:16px;font-size:11px;color:var(--muted);align-self:center}
+#ranking-root .map-guidance>span:last-child{display:none}
 #ranking-root .map-controls button{display:flex;align-items:center;justify-content:center;font-size:13px}
-#ranking-root .map-city-picker{grid-column:2;grid-row:3;padding:6px 16px;border-left:1px solid var(--line)}
-#ranking-root .map-selection{grid-column:2;grid-row:2;border-left:1px solid var(--line);overflow-y:auto;min-height:0}
+#ranking-root .map-country-picker{grid-column:2;grid-row:3;padding:6px 16px;border-left:1px solid var(--line);display:flex;align-items:center;gap:10px;min-width:0}
+#ranking-root .map-country-picker label{font-size:12px;white-space:nowrap;color:var(--muted)}
+#ranking-root .map-country-picker select{min-width:0;width:100%;min-height:42px;border:0;border-radius:6px;background:var(--soft);font:inherit;font-size:13px;padding:8px;color:var(--ink)}
+#ranking-root .map-selection{grid-column:2;grid-row:2;border-left:1px solid var(--line);border-top:0;overflow-y:auto;min-height:0;padding:20px 20px 8px;scrollbar-width:thin}
 #ranking-root .map-selection p{font-size:14px;line-height:1.7}
 #ranking-root .map-attribution{display:none}
+#ranking-root .map-country-caption{position:absolute;top:16px;left:20px;max-width:calc(100% - 40px);pointer-events:none;background:var(--paper,#fafafa);padding:8px 12px;border-radius:6px;line-height:1.5}
+#ranking-root .map-country-caption strong{display:block;font-size:16px;font-weight:600}
+#ranking-root .map-country-caption span{display:block;margin-top:2px;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#ranking-root .map-land .map-country path{transition:fill .16s,stroke .16s;cursor:pointer}
+#ranking-root .map-land .map-country.has-cities path{fill:#dce6de}
+#ranking-root .map-land .map-country.is-active path{fill:#b6d7c3;stroke:var(--green);stroke-width:1.1}
+#ranking-root .map-country:focus-visible{outline:none}
+#ranking-root .map-land .map-country:focus-visible path{stroke:var(--ink);stroke-width:2}
+#ranking-root .rank-map-svg.has-country .map-dot{opacity:.38}
+#ranking-root .rank-map-svg .map-city.in-country .map-dot{opacity:1;fill:var(--green);stroke-width:1.5}
+#ranking-root .map-country-intro>p{margin:3px 0 6px;color:var(--muted);font-size:13px}
+#ranking-root .map-selection-title strong{font-size:22px;font-weight:550}
+#ranking-root .map-selection-title span{font-size:12px;white-space:nowrap;color:var(--muted)}
+#ranking-root .map-country-open{display:flex;justify-content:space-between;align-items:center;color:var(--green);min-height:40px;font-size:13px;font-weight:500}
+#ranking-root .map-city-list-heading{font-size:12px;color:var(--muted);padding:12px 0 6px;border-top:1px solid var(--line);margin-top:8px}
+#ranking-root .map-country-cities ul{margin:0;padding:0;list-style:none}
+#ranking-root .map-country-cities li{display:flex;align-items:center;border-radius:4px}
+#ranking-root .map-country-cities li>a{min-height:44px;display:flex;align-items:center;justify-content:space-between;flex:1;gap:12px;min-width:0;font-size:14px;padding:4px 0}
+#ranking-root .map-country-cities li>a>span{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+#ranking-root .map-country-cities small{color:var(--muted);font-size:11px}
+#ranking-root .map-country-cities li:hover>a,#ranking-root .map-country-cities li.is-active>a{color:var(--green)}
+#ranking-root .map-country-cities button{width:36px;min-height:44px;flex-shrink:0;background:none;border:0;color:var(--green);font-size:20px;cursor:pointer}
+#ranking-root .map-country-cities a:focus-visible,#ranking-root .map-country-open:focus-visible,#ranking-root .map-country-picker select:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){#ranking-root .map-land .map-country path{transition:none}}
 @media(max-width:1100px) and (min-width:701px){
   #ranking-root .ranking-toolbar{flex-wrap:wrap;gap:8px}
   #ranking-root .ranking-toolbar h1{font-size:28px}
@@ -226,8 +254,16 @@
   #ranking-root .map-heading{min-height:52px;flex:none}
   #ranking-root .map-stage{height:220px;flex:none}
   #ranking-root .map-controls{flex:none;min-height:44px}
-  #ranking-root .map-city-picker{border-left:0;flex:none;padding:8px 16px}
+  #ranking-root .map-country-picker{border-left:0;flex:none;padding:8px 16px;order:3}
   #ranking-root .map-selection{border-left:0;border-top:1px solid var(--line);flex:1;min-height:0}
+  #ranking-root .map-heading{order:0}
+  #ranking-root .map-stage{order:1;height:200px}
+  #ranking-root .map-controls{order:2}
+  #ranking-root .map-selection{order:4;padding:16px}
+  #ranking-root .map-country-caption{top:8px;left:12px;padding:5px 9px}
+  #ranking-root .map-country-caption strong{font-size:14px}
+  #ranking-root .map-country-caption span{font-size:11px}
+  #ranking-root .map-heading>span{font-size:10px}
 }
 @media(max-width:359px){
   #ranking-root .ranking-toolbar h1{font-size:26px}
@@ -262,5 +298,7 @@
  #ranking-root .rank-weights-preview strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;font-weight:500;color:var(--ink-1)}
  #ranking-root .rank-weights-preview li>span{font-size:12px;color:var(--ink-3)}
  #ranking-root .rank-weights-preview li>span.is-rising{color:var(--green)}
- #ranking-root #rank-search,#ranking-root .rank-filter-fields select,#ranking-root .map-city-picker select{font-size:16px}
+ #ranking-root #rank-search,#ranking-root .rank-filter-fields select,#ranking-root .map-country-picker select{font-size:16px}
 }
+
+@media(max-width:700px){#ranking-root .map-guidance{font-size:10px;padding-left:12px}#ranking-root .map-guidance>span:first-child{display:none}#ranking-root .map-guidance>span:last-child{display:inline}}

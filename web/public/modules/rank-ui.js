@@ -43,8 +43,8 @@ const notify = (message) =>
 const map = new RankMap({
   stage: document.querySelector("#map-stage"),
   selection: document.querySelector("#map-selection"),
-  onHover: (slug) => highlight(slug),
-  onSelect: (slug, focus) => locateFromMap(slug, focus),
+  catalog: data,
+  initialCountry: state.country,
 });
 const spring = "cubic-bezier(0.16, 1, 0.3, 1)";
 function animate(el, frames, options = {}) {

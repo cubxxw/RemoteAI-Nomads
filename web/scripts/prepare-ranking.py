@@ -83,15 +83,6 @@ if extra_path.exists():
 report={'cities':len(rows),'complete_scores':sum(x['complete'] for x in scores),'mapped':len(mapped),'unmapped':missing}
 (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False))
 
-# Render a local, dependency-free world map in an equirectangular projection.
-world=json.loads((OUT/'world.geojson').read_text());paths=[]
-for feature in world['features']:
- geom=feature['geometry'];polygons=geom['coordinates'] if geom['type']=='MultiPolygon' else [geom['coordinates']]
- pieces=[]
- for polygon in polygons:
-  for ring in polygon:
-   if max(p[1] for p in ring)<-60:continue
-   pts=[((lon+180)/360*1000,(85-max(-60,min(85,lat)))/145*480) for lon,lat,*_ in ring]
-   pieces.append('M'+'L'.join(f'{x:.1f},{y:.1f}' for x,y in pts)+'Z')
- if pieces:paths.append(' '.join(pieces))
-(ROOT/'public/map/world.json').write_text(json.dumps({'width':1000,'height':480,'paths':paths,'source':'Natural Earth 1:110m','license':'Public domain'},separators=(',',':')))
+# Keep country identities when rebuilding the map from the public catalog.
+import subprocess
+subprocess.run([sys.executable, str(ROOT/'scripts/build-country-map.py'), '--geojson', str(OUT/'world-map-units.geojson')], check=True)
