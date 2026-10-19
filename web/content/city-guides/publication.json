@@ -3,9 +3,9 @@
   "publication": {
     "approved": true,
     "approvedOn": "2026-10-20",
-    "authority": "User explicitly authorized production publication, removal of noindex, automatic city article links and sitemap updates."
+    "authority": "User explicitly authorized these Kuala Lumpur and Dali articles to publish directly after research, source and browser checks, with city links, sitemap and GSC submission."
   },
-  "sourceEdition": "seo-pilot-20261019",
+  "sourceEdition": "city-guides-20261020",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -19,6 +19,20 @@
       "sourceFile": "penang-monthly-budget.html",
       "sha256": "a2c4f2f042ade9fe4e42519946a8b6215f8b3cc2d5cce4d3f6872a0af4c9db0c",
       "source": "output/seo-pilot-20261019/penang-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "kuala-lumpur-monthly-budget",
+      "sourceFile": "kuala-lumpur-monthly-budget.html",
+      "sha256": "635f34621d86c691df7cb354f1fa7f1c326f631916afe4fab8316d0761267cc2",
+      "source": "output/seo-kl-dali-20261020/kuala-lumpur-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "dali-monthly-budget",
+      "sourceFile": "dali-monthly-budget.html",
+      "sha256": "9a5ae8f455dc68ba9db89ecb559c9261adde02b62f8b22d0d5255294fbeea45e",
+      "source": "output/seo-kl-dali-20261020/dali-monthly-budget.html",
       "approved": true
     }
   ],
@@ -86,12 +100,102 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "223f2c4b1367987732961fe3cdf25a71a3274a5d527d693be7e37f6ccc10e10a"
+      "sha256": "d486e584da3edb5cfd714855cad22ad546177b41081bb27a208f5282892e1763"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
       "sha256": "8c43c7123b76f3ec10b43dd5a1b0dde582269d80ca68e5908f6b0fb56cabe32e"
+    },
+    {
+      "source": "assets/og-kuala-lumpur-budget.jpg",
+      "destination": "images/og-kuala-lumpur-budget.jpg",
+      "sha256": "60b0c80cd4ccfe9d40e778b4b8a1801b23278edefa4074a9e9e7c14ba3afb84b"
+    },
+    {
+      "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
+      "destination": "images/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
+      "sha256": "04266521239669eba6ff27a5e5e05d0149a512e985308a3dc4219812263447b2"
+    },
+    {
+      "source": "assets/kuala-lumpur-bukit-bintang-junction.webp",
+      "destination": "images/kuala-lumpur-bukit-bintang-junction.webp",
+      "sha256": "d773689be46d36cba5cc495e49b83ff5a657dab09e775918ac4aba12245cf8ba"
+    },
+    {
+      "source": "assets/dali-ctg-erhai-roundtrip-60cny.webp",
+      "destination": "images/dali-ctg-erhai-roundtrip-60cny.webp",
+      "sha256": "88b2edae51c77c659b3bbffae897b7bb26c0bed88c20c3ce9f56b8c2bf9bd962"
+    },
+    {
+      "source": "assets/dali-dali-station-oldtown-express-5cny-context.webp",
+      "destination": "images/dali-dali-station-oldtown-express-5cny-context.webp",
+      "sha256": "2bed2d4e507dc1b6b5f93889e952143de4a7c86cf8d8626f2eec3e6dcefba77b"
+    },
+    {
+      "source": "assets/kuala-lumpur-colony-one-month-price.webp",
+      "destination": "images/kuala-lumpur-colony-one-month-price.webp",
+      "sha256": "81dcc41cf0b9d6705a4f90c85f68b91168b211a275196767d6d0a0b92e22770c"
+    },
+    {
+      "source": "assets/dali-xiaguan-xingsheng.webp",
+      "destination": "images/dali-xiaguan-xingsheng.webp",
+      "sha256": "71d9b33a59d5d1564685c0e813e4e05aa6dc032115c8e973b1c90a1e32e9c7a6"
+    },
+    {
+      "source": "assets/dali-kuangye-2024-month-price.webp",
+      "destination": "images/dali-kuangye-2024-month-price.webp",
+      "sha256": "1449a99cb0a33bfe85a33280710c42656d11ad36591fef41335a23fc8f0da10b"
+    },
+    {
+      "source": "assets/kuala-lumpur-rapid-bulanan-monthly.webp",
+      "destination": "images/kuala-lumpur-rapid-bulanan-monthly.webp",
+      "sha256": "fc3d1009cb67d7596339ad8f0f0d4ee4c881316247d3f3d992617797d437e661"
+    },
+    {
+      "source": "assets/dali-north-gate.webp",
+      "destination": "images/dali-north-gate.webp",
+      "sha256": "25fe8ad23d4ea66b964d611d6c6401ae3f321b7b33e09bf482835e78754f17a5"
+    },
+    {
+      "source": "assets/kuala-lumpur-komune-long-stay.webp",
+      "destination": "images/kuala-lumpur-komune-long-stay.webp",
+      "sha256": "6f17f0d0493a11419bb94d31b190397581c70997526f197e875245f02db51db6"
+    },
+    {
+      "source": "assets/dali-dali-airport-bus-official-25cny.webp",
+      "destination": "images/dali-dali-airport-bus-official-25cny.webp",
+      "sha256": "ac64a1d2cfd42b2f6f71ea7f2dedb86df7991b9c9e2391ebd82cb4f9c2382744"
+    },
+    {
+      "source": "assets/kuala-lumpur-worq-kl-price-table.webp",
+      "destination": "images/kuala-lumpur-worq-kl-price-table.webp",
+      "sha256": "15f6ee077f7086ca76f81f09947890a1e00de19a96f6cc1e5502d4b67475cb76"
+    },
+    {
+      "source": "assets/og-dali-budget.jpg",
+      "destination": "images/og-dali-budget.jpg",
+      "sha256": "75e8357fcf22983d7a05093a7edf494885998f4be1cf92feb53023a6498b0868"
+    },
+    {
+      "source": "assets/kuala-lumpur-novo-monthly-rates.webp",
+      "destination": "images/kuala-lumpur-novo-monthly-rates.webp",
+      "sha256": "5d12e428d47541994c52fef284b78741394a739a3584e38bff82d3959580cc2f"
+    },
+    {
+      "source": "assets/dali-yiyueju-night-and-month-rule.webp",
+      "destination": "images/dali-yiyueju-night-and-month-rule.webp",
+      "sha256": "ce5d6b370866b77fdc70e8a193c827eb726df697b1303549563a0b2d4816ef8b"
+    },
+    {
+      "source": "assets/kuala-lumpur-common-ground-monthly.webp",
+      "destination": "images/kuala-lumpur-common-ground-monthly.webp",
+      "sha256": "c0d7440b8012b69475e9547db1a4268bad696808774a28f1ee538f2cffb49960"
+    },
+    {
+      "source": "assets/dali-erhai-boat.webp",
+      "destination": "images/dali-erhai-boat.webp",
+      "sha256": "c85050179b0d73dcf9518a99dd54736c796777d0b200792ef80e7313e5e8bc2e"
     }
   ]
 }
