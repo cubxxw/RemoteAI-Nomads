@@ -1,3 +1,4 @@
+import {TRAVELER_FIELDS,estimateTravelerBudget} from './traveler-budget.js';
 export const numberOrNull = (value) => value === null || value === undefined || value === '' || !Number.isFinite(Number(value)) ? null : Number(value);
 
 export function planBudget({ rent, food, other, days }) {
@@ -56,6 +57,15 @@ export function cityPlanQuestion(plan) {
     const number = numberOrNull(value);
     return number === null || number < 0 ? '无效（需要确认）' : `${number} ${currency} / ${unit}`;
   };
+  if(plan.expenses){
+    return [
+      `请检查我去${plan.city || '这座城市'}的这份日常开销计划有没有漏项。`,
+      `出发月份：${Number.isInteger(month)&&month>=1&&month<=12?month+' 月':'待确认'}；停留：${Number.isInteger(days)&&days>=1&&days<=365?days+' 天':'待确认'}。`,
+      '下面包含本城价格样本推算的参考值与我调整的规划金额，不是成交报价或最低预算：',
+      ...plan.expenses.map(row=>`${row.label}：${amount(row.value,row.unit)}；${row.origin==='reference'?'价格样本推算的默认规划':row.origin==='edited'?'我调整的金额':'待补，尚未计入'}。`),
+      '月支出按30天折算。往返交通、押金、保险及签证费尚未单独核对，请指出缺项，勿把已知小计当作完整旅行总预算。',
+    ].join('\n');
+  }
   return [
     `我想去${plan.city || '这座城市'}，请根据我在城市页当前填写的条件，帮我核对季节、预算和远程工作安排。`,
     `出发月份：${Number.isInteger(month) && month >= 1 && month <= 12 ? month + ' 月' : '未填写（需要确认）'}；停留天数：${Number.isInteger(days) && days >= 1 && days <= 365 ? days + ' 天' : '未填写或无效（需要确认）'}。`,
@@ -96,37 +106,66 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       rent: root.querySelector('#budget-rent')?.value,
       food: root.querySelector('#budget-food')?.value,
       other: root.querySelector('#budget-other')?.value,
+      expenses:Object.entries(TRAVELER_FIELDS).map(([key,field])=>({label:field.label,unit:field.unit,value:root.querySelector('#budget-'+key)?.value??'',origin:root.querySelector('#budget-'+key)?.dataset.origin||'missing'})),
     });
   }));
   if (days && currency) {
-    const output = root.querySelector('[data-trip-total]'), feedback = root.querySelector('[data-trip-feedback]');
-    function updateBudget() {
-      const rate = data.budget.rates[currency.value];
-      const estimate = planBudget({ days: days.value, rent: root.querySelector('#budget-rent').value, food: root.querySelector('#budget-food').value, other: root.querySelector('#budget-other').value });
-      days.setAttribute('aria-invalid', String(!Number.isInteger(Number(days.value)) || Number(days.value) < 1 || Number(days.value) > 365));
-      root.querySelectorAll('[data-budget-input]').forEach(input => input.setAttribute('aria-invalid', String(input.value !== '' && Number(input.value) < 0)));
-      output.textContent = estimate.amount === null ? '—' : formatAmount(estimate.amount, currency.value);
-      feedback.textContent = estimate.error ? '天数应为 1–365，金额应不小于 0。' : estimate.amount === null ? '填入一项开销开始计算' : `${days.value} 天${estimate.missing.length ? ` · 未计入${estimate.missing.join('、')}` : ' · 已包含三项开销'}`;
-      root.querySelectorAll('[data-money-amount]').forEach(node => {
-        node.textContent = formatAmount(Number(node.dataset.moneyAmount) * (rate?.rate || 1), rate ? currency.value : data.budget.currency);
-      });
-      const fx = root.querySelector('[data-fx-note]');
-      if (fx) fx.textContent = currency.value === data.budget.currency ? '人民币展示，原币价格见来源' : rate ? `换算日期 ${rate.date || '未标明'} · 汇率仅供参考` : '该币种汇率待补充，显示来源币种';
+    const defaults=data.budget.defaults||{},keys=Object.keys(TRAVELER_FIELDS);
+    const inputs=Object.fromEntries(keys.map(key=>[key,root.querySelector('#budget-'+key)]));
+    // Keep canonical CNY values so switching currencies does not compound rounding.
+    const values=Object.fromEntries(keys.map(key=>[key,numberOrNull(inputs[key]?.value)]));
+    const rate=()=>data.budget.rates[currency.value]?.rate||1;
+    const output=root.querySelector('[data-trip-total]'),feedback=root.querySelector('[data-trip-feedback]');
+    const adjustment=root.querySelector('#budget-adjustment');
+    function openAdjustment(focusKey='rent') {
+      if(adjustment){adjustment.open=true;adjustment.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+      inputs[focusKey]?.focus({preventScroll:true});
     }
-    days.addEventListener('input', updateBudget);
-    root.querySelectorAll('[data-budget-input]').forEach(input => input.addEventListener('input', updateBudget));
-    let previousCurrency = currency.value;
-    currency.addEventListener('change', () => {
-      const from = data.budget.rates[previousCurrency]?.rate || 1, to = data.budget.rates[currency.value]?.rate || 1;
-      root.querySelectorAll('[data-budget-input]').forEach(input => { if (input.value !== '') input.value = String(Number((Number(input.value) / from * to).toFixed(2))); });
-      root.querySelectorAll('[data-input-currency]').forEach(node => { node.textContent = currency.value; });
-      previousCurrency = currency.value; updateBudget();
+    function updateBudget() {
+      const invalidFields=keys.filter(key=>inputs[key]?.validity.badInput||inputs[key]?.validity.stepMismatch);
+      const estimate=estimateTravelerBudget(values,days.value,invalidFields),display=estimate.amount===null?'—':formatAmount(estimate.amount*rate(),currency.value);
+      const invalidDays=!Number.isInteger(Number(days.value))||Number(days.value)<1||Number(days.value)>365;
+      days.setAttribute('aria-invalid',String(invalidDays));
+      keys.forEach(key=>inputs[key]?.setAttribute('aria-invalid',String(values[key]!==null&&values[key]<0||!!inputs[key]?.validity.badInput||!!inputs[key]?.validity.stepMismatch)));
+      if(output)output.textContent=display;
+      if(feedback)feedback.textContent=estimate.error?(invalidFields.length?invalidFields.map(key=>TRAVELER_FIELDS[key].label).join('、')+'金额未输入完整或小数位不正确，请修正后计算。':'天数应为1–365，金额应不小于0。'):`${days.value}天${estimate.missing.length?' · 未计入'+estimate.missing.join('、'):' · 已计入上面五项'}`;
+      root.querySelectorAll('[data-agent-open]').forEach(button=>{button.disabled=estimate.error;button.title=estimate.error?'先修正金额或停留天数，再检查预算':'把当前开销带入对话，检查未计入的项目';});
+      root.querySelectorAll('[data-trip-length]').forEach(node=>{node.textContent=invalidDays?'—':days.value;});
+      const total=root.querySelector('[data-overview-total]');if(total)total.textContent=display;
+      const summary=root.querySelector('[data-overview-feedback]');if(summary)summary.textContent=estimate.error?'先修正停留天数或金额':estimate.amount===null?'价格还不够，暂不估算总预算':`${days.value}天 · ${estimate.items.filter(row=>row.amount!==null).length}项已计入`;
+      const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金、保险和签证费用仍需核对。';
+      for(const key of keys){
+        const row=root.querySelector(`[data-traveler-row="${key}"]`);if(!row)continue;
+        const raw=values[key],invalidRow=invalidFields.includes(key)||raw!==null&&raw<0,known=raw!==null&&!invalidRow;
+        const itemTotal=known&&!invalidDays?raw*(TRAVELER_FIELDS[key].unit==='天'?Number(days.value):Number(days.value)/30):null;
+        const origin=inputs[key]?.dataset.origin||'missing';row.dataset.state=invalidRow?'invalid':known?origin:'missing';row.hidden=raw===null&&!invalidRow;
+        row.querySelector('[data-traveler-amount]').textContent=invalidRow?'请修正':invalidDays?'—':known?formatAmount(itemTotal*rate(),currency.value):'待补';
+        row.querySelector('[data-traveler-basis]').textContent=invalidRow?'金额未输入完整或格式不正确':known?(origin==='reference'?defaults[key]?.basis||'默认参考':`你填写的每${TRAVELER_FIELDS[key].unit}金额`):'本城价格待补，可填写自己的预算';
+        row.querySelector('[data-traveler-origin]').textContent=invalidRow?'尚不能计入':known?(origin==='reference'?'按价格样本估算':raw===0?'你设为0':'按你的金额估算'):'尚未计入';
+      }
+      root.querySelectorAll('[data-money-amount]').forEach(node=>{node.textContent=formatAmount(Number(node.dataset.moneyAmount)*rate(),currency.value);});
+      const fx=root.querySelector('[data-fx-note]'),reference=data.budget.rates[currency.value];
+      if(fx)fx.textContent=currency.value===data.budget.currency?'人民币展示，原币价格见来源':`换算日期 ${reference?.date||'未标明'} · 汇率仅供参考`;
+    }
+    days.addEventListener('input',updateBudget);
+    for(const key of keys)inputs[key]?.addEventListener('input',()=>{
+      const parsed=numberOrNull(inputs[key].value);values[key]=parsed===null?null:parsed/rate();
+      inputs[key].dataset.origin=parsed===null?'missing':'edited';updateBudget();
     });
-    root.querySelectorAll('[data-budget-fill]').forEach(button => button.addEventListener('click', () => {
-      const amount = Number(button.dataset.budgetFill) * (data.budget.rates[currency.value]?.rate || 1);
-      root.querySelector('#budget-rent').value = String(Math.round(amount)); updateBudget();
-      root.querySelector('[data-budget-chosen]').textContent = `已采用：${button.dataset.budgetLabel}`;
+    currency.addEventListener('change',()=>{
+      for(const key of keys)if(inputs[key])inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));
+      root.querySelectorAll('[data-input-currency]').forEach(node=>{node.textContent=currency.value;});updateBudget();
+    });
+    root.querySelectorAll('[data-open-budget-adjustment]').forEach(button=>button.addEventListener('click',()=>openAdjustment()));
+    root.querySelector('[data-reset-traveler]')?.addEventListener('click',()=>{
+      for(const key of keys){values[key]=defaults[key]?.amount??null;if(inputs[key]){inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));inputs[key].dataset.origin=values[key]===null?'missing':'reference';}}
+      const chosen=root.querySelector('[data-budget-chosen]');if(chosen)chosen.textContent='已恢复本城参考值；待补项目仍保留为空。';updateBudget();
+    });
+    root.querySelectorAll('[data-budget-fill]').forEach(button=>button.addEventListener('click',()=>{
+      values.rent=Number(button.dataset.budgetFill);inputs.rent.value=String(Number((values.rent*rate()).toFixed(2)));inputs.rent.dataset.origin='edited';
+      root.querySelector('[data-budget-chosen]').textContent=`已采用：${button.dataset.budgetLabel}`;openAdjustment();updateBudget();
     }));
+    updateBudget();
   }
   const date = root.querySelector('#meeting-date'), hour = root.querySelector('#meeting-hour');
   if (date && hour) {
