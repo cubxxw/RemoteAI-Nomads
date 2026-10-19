@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {packRankingData,unpackRankingData,KEYS,DEFAULT_WEIGHTS,validWeights,customScore,referenceCostScore,rankCities,parseState,stateParams,renderRow} from '../public/modules/ranking.js';
 const city=(id,metrics={})=>({slug:id,name:id,nameEn:id,country:'Thailand',countryCode:'TH',region:'亚洲',budget:1000,budgetBasis:'estimate',why:'A city',photo:null,baseScore:8.6,scores:{safety:9,cost:9,climate:4,life:9,internet:10,community:10,...metrics},visa:{code:'visa_free',label:'免签',detail:'legacy'},months:Array.from({length:12},(_,i)=>({month:i+1,status:i===0?'recommended':'unknown',meanC:22}))});
-test('default calculation preserves original Metric Score exactly',()=>{assert.equal(customScore(city('a'),DEFAULT_WEIGHTS),8.6);});
-test('custom score reflects weighted values, never original order',()=>{const a={...city('a',{cost:10}),budget:2400},b={...city('b',{cost:1}),budget:300};const s=parseState(new URL('http://test/'));s.weights={safety:0,cost:100,climate:0,life:0,internet:0,community:0};assert.deepEqual(rankCities([a,b],s).map(c=>c.slug),['b','a']);assert.equal(customScore(b,s.weights),10.5);});
+test('default calculation ignores the stored legacy total',()=>{const c=city('a');assert.equal(customScore({...c,baseScore:99},DEFAULT_WEIGHTS),customScore(c,DEFAULT_WEIGHTS));assert.ok(customScore(c,DEFAULT_WEIGHTS)<=10);});
+test('custom score reflects weighted values, never original order',()=>{const a={...city('a',{cost:10}),budget:2400},b={...city('b',{cost:1}),budget:300};const s=parseState(new URL('http://test/'));s.weights={safety:0,cost:100,climate:0,life:0,internet:0,community:0};assert.deepEqual(rankCities([a,b],s).map(c=>c.slug),['b','a']);assert.equal(customScore(b,s.weights),10);});
 test('missing required metric excludes city instead of making it zero',()=>{const c=city('missing',{safety:null});assert.equal(customScore(c,DEFAULT_WEIGHTS),null);const s=parseState(new URL('http://test/'));assert.equal(rankCities([c],s).length,0);s.incomplete=true;assert.equal(rankCities([c],s)[0].score,null);});
 test('zero-weight metric can be missing; community 0 is valid',()=>{const c=city('quiet',{climate:null,community:0});assert.ok(customScore(c,{...DEFAULT_WEIGHTS,climate:0})>0);});
 test('visa never changes score but filters the result',()=>{const a=city('a'),b={...city('b'),visa:{code:'visa_required',label:'需签证'}};assert.equal(customScore(a,DEFAULT_WEIGHTS),customScore(b,DEFAULT_WEIGHTS));const s=parseState(new URL('http://test/?visa=visa_free'));assert.equal(rankCities([a,b],s).length,1);});
@@ -22,7 +22,7 @@ test('the dated departure view excludes reviewed travel concerns without changin
  const regular=parseState(new URL('https://nomads.test/?month=10'));assert.equal(rankCities(data,regular).length,4);
  const selected=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
  assert.deepEqual(rankCities(data,selected).map(c=>c.slug),['base','munich']);
- assert.deepEqual(data,raw);assert.equal(customScore(japan,DEFAULT_WEIGHTS),8.6);
+ assert.deepEqual(data,raw);assert.equal(customScore(japan,DEFAULT_WEIGHTS),customScore(ordinary,DEFAULT_WEIGHTS));
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(selected))),selected);
 });
 test('dated advice cannot silently apply to another month or an unreviewed period',()=>{
@@ -39,7 +39,7 @@ test('personalized cost follows the reference amount continuously and missing am
  const expensive={...city('expensive',{safety:10,cost:10,climate:10,life:10,internet:10,community:10}),budget:1500};
  assert.ok(customScore(cheap,weights)>customScore(expensive,weights));
  assert.equal(customScore({...cheap,budget:null},weights),null);
- assert.equal(customScore({...cheap,budget:null},DEFAULT_WEIGHTS),cheap.baseScore);
+ assert.equal(customScore({...cheap,budget:null},DEFAULT_WEIGHTS),null);
 });
 test('rounding for display never falls back to the old Metric Score to order different custom values',()=>{
  const weights={safety:0,cost:100,climate:0,life:0,internet:0,community:0};
@@ -66,7 +66,7 @@ test('abroad excludes mainland and Hong Kong, Macao and Taiwan entries without l
 });
 
 test('stable preset links resolve shared weights and conditions while explicit filters override defaults',()=>{
- const budget=parseState(new URL('https://nomads.test/?preset=budget'));assert.equal(budget.weights.cost,50);assert.equal(budget.weights.safety,25);
+ const budget=parseState(new URL('https://nomads.test/?preset=budget'));assert.equal(budget.weights.cost,60);assert.equal(budget.weights.safety,20);
  const visa=parseState(new URL('https://nomads.test/?preset=visa'));assert.equal(visa.visa,'visa_free');
  const winter=parseState(new URL('https://nomads.test/?preset=winter'));assert.equal(winter.month,1);assert.equal(winter.warm,true);
  const override=parseState(new URL('https://nomads.test/?preset=winter&month=2&warm=0&w=0,100,0,0,0,0'));assert.equal(override.month,2);assert.equal(override.warm,false);assert.equal(override.weights.cost,100);

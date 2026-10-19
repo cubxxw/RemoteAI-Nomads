@@ -1,6 +1,7 @@
 import { renderCountryIndex, renderCountryPage, renderGuides, renderCompareIndex, renderAbout } from './content-pages.js';
 import { renderCityPage } from './city-page.js';
 import { readCityCosts } from './cost-data.js';
+import {mapTile} from './map-tiles.js';
 import {agentRoute} from './agent-gateway.js';
 import {publishedFallback} from './published-fallback.js';
 export { NomadAgent } from './flash-runtime.js';
@@ -174,6 +175,7 @@ export default {
         status: 405,
         headers: { Allow: "GET, HEAD" },
       });
+    if(url.pathname.startsWith('/map-tiles/'))return mapTile(request,env,ctx);
     try {
       const outageKey=env.SITE_ORIGIN+'|'+env.RELEASE_ID;
       if(env.PREVIEW==='false'&&publicReadOutage?.key===outageKey&&publicReadOutage.retryAt>Date.now()&&!['/healthz','/release.json','/robots.txt'].includes(url.pathname)){

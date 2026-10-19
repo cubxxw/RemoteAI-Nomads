@@ -9,3 +9,9 @@
 代码的 MIT 许可不覆盖外部数据。各条资料以 `sources` 记录的来源和许可为准；历史未统一口径的估算只用于提示，不能当最低成本或当日可订报价。城市照片另见 [署名记录](../CREDITS.md)。
 
 维护者只有在公开库通过审阅后，才运行 `node scripts/export-public-seed.mjs` 更新种子；禁止从私人开发库或原始 Notion 导出生成公开种子。更新后要在空工作区引导、重建全部页面并运行测试。
+
+## OpenStreetMap 场所快照
+
+`osm-community.json`保存同一5公里半径的共享办公和咖啡馆计数，`public/places/`保留逐城地点、来源标识和采集日期。`osm-coverage.json`列出本批覆盖与缺口。2026-10-19已采集314城；28城请求失败，8城缺少坐标，未补为零。访问网站不会自动批量采集。
+
+维护命令为`npm run places:sync`，已有快照默认跳过；可用`-- --slugs=xiamen --batch=1`仅补单城。上游错误保留原数据，429/406后至少等待30秒。地点数据来自[OpenStreetMap contributors](https://www.openstreetmap.org/copyright)，适用ODbL；咖啡馆标注不证明允许办公，地图漏标也不等于当地没有。

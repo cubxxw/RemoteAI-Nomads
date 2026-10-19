@@ -1,3 +1,5 @@
+import {scoreLabel} from './ranking.js';
+import {climateComfort} from './places.js';
 import {
   unpackRankingData,
   displayMonth,
@@ -124,18 +126,19 @@ function render(initial = false) {
       el.querySelector(".rank-score strong").textContent =
         c.score === null ? "—" : c.score.toFixed(1);
       const month = displayMonth(state),
-        temp = c.months[month - 1]?.meanC;
+        temp = climateComfort(c.months[month - 1]);
       el.querySelector(".climate-cell strong").textContent =
-        temp === null || temp === undefined ? "—" : Math.round(temp) + "°";
-      el.querySelector(".climate-cell small").textContent = month + "月均温";
+        temp === null || temp === undefined ? "—" : temp.toFixed(1);
+      el.querySelector(".climate-cell strong").title = month + "月舒适度 /10；按历史气温、高温与雨量估算";
+      el.querySelector(".climate-cell small").textContent = month + "月舒适度";
       el.querySelector(".climate-cell .metric-mobile-label").textContent =
-        month + "月均温";
+        month + "月舒适度";
       el.querySelectorAll(".month-mark").forEach((m, i) =>
         m.classList.toggle("chosen", state.month === i + 1),
       );
     }
     el.querySelector(".rank-score small").textContent =
-      c.score === null ? "未评分" : isDefault(state.weights) ? "指标分" : "自定义分";
+      scoreLabel(c,state);
     el.classList.toggle("is-active", c.slug === active);
     frag.append(el);
   }
@@ -202,7 +205,7 @@ function render(initial = false) {
     Math.min(40, Math.max(0, ranked.length - state.limit)) +
     " 座城市";
   document.querySelector(".ranking-columns span:nth-child(6)").textContent =
-    displayMonth(state) + "月均温";
+    displayMonth(state) + "月舒适度";
   map.update(ranked);
   if (active && ranked.some((c) => c.slug === active)) map.highlight(active);
   else if (active) {
@@ -312,7 +315,7 @@ function syncControls() {
     button.classList.toggle('selected',match);button.setAttribute('aria-pressed',String(match));
   });
   document.querySelector('#view-sort').textContent = viewLabel(state);
-  document.querySelector('.ranking-columns span:nth-last-child(2)').textContent = isDefault(state.weights) ? '指标分' : '自定义分';
+  document.querySelector('.ranking-columns span:nth-last-child(2)').textContent = isDefault(state.weights) ? '综合分' : '自定义分';
   document.querySelector('#weights-result').value = ranked.length + ' 座城市';
   document.querySelector('#ranking-result-count').textContent = ranked.length + ' 座城市' + (ranked.some(c => c.rank === null) ? ' · 含待补指标' : '');
   document.querySelector('#reset-ranking').hidden = !stateParams({...state,limit:40}).toString();

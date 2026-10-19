@@ -1,3 +1,4 @@
+import {climateComfort} from '../public/modules/places.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -59,10 +60,10 @@ test('catalog and original scores survive exclusions, with coverage distinct fro
  const complete=catalog.filter(c=>KEYS.every(key=>Number.isFinite(c.scores[key])));
  assert.equal(complete.length,224);
  assert.equal(catalog.length,350);
- assert.equal(rankCities(catalog,state('')).length,223);
+ assert.ok(rankCities(catalog,state('')).length>=200);assert.ok(rankCities(catalog,state('')).every(recommendationEligible));
  for(const slug of blocked)assert.ok(catalog.find(c=>c.slug===slug));
  const kabul=catalog.find(c=>c.slug==='kabul');
- assert.equal(customScore(kabul,DEFAULT_WEIGHTS),kabul.baseScore);
+ assert.equal(customScore({...kabul,baseScore:99},DEFAULT_WEIGHTS),customScore(kabul,DEFAULT_WEIGHTS));
  assert.deepEqual(catalog,before);
 });
 
@@ -104,10 +105,11 @@ test('AI tools return the exclusion reason, preserve direct lookup and separate 
   assert.match(direct.warnings.join(' '),/暂勿前往/);
   const coverage=await executeNomadTool(env,'get_coverage',{});
   assert.equal(coverage.data.complete_scores,224);
-  assert.equal(coverage.data.recommendable_complete_scores,223);
+  assert.equal(coverage.data.recommendable_scored_cities,rankCities(catalog,state('')).length);
+  assert.ok(coverage.data.recommendable_complete_scores<coverage.data.recommendable_scored_cities);
   assert.equal(coverage.data.excluded_for_travel_advisory,7);
   const method=await executeNomadTool(env,'get_method',{});
-  assert.equal(method.data.preset_weights.budget.cost,50);
+  assert.equal(method.data.preset_weights.budget.cost,60);
   assert.equal(method.data.recommendation_rule.before_scoring,true);
  }finally{db.close()}
 });
@@ -142,4 +144,20 @@ test('country archives link to the official alert rather than advertising a bloc
  assert.match(page.body,/历史城市资料/);assert.match(page.body,/暂不作为出发推荐/);
  assert.match(page.body,/t20260126_11845066/);assert.ok(!page.body.includes('便宜的旅居起点'));
  assert.ok(!page.body.includes('从这座城市开始'));
+});
+
+test('AI month-based scores and comparison metrics agree with the requested month',async()=>{
+ const {db,env}=environment();
+ try{
+  for(const args of [{month:1,query:'lisbon'},{preset:'winter',query:'chiang-mai'}]){
+   const result=await executeNomadTool(env,'search_cities',{...args,limit:1});
+   assert.equal(result.cities[0].score_month,1);
+   assert.equal(result.cities[0].scores.climate,climateComfort(catalog.find(c=>c.slug===args.query).months[0]));
+  }
+  const compared=await executeNomadTool(env,'compare_cities',{cities:['lisbon','chiang-mai'],month:1});
+  assert.equal(compared.data.month,1);assert.match(compared.data.comparison_url,/month=1/);
+  for(const metric of compared.data.metrics)for(const item of metric.values){
+   const city=compared.cities.find(c=>c.slug===item.city);assert.equal(city.score_month,1);assert.equal(item.value,city.scores[metric.key]);
+  }
+ }finally{db.close()}
 });

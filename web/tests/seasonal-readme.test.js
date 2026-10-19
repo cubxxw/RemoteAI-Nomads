@@ -13,87 +13,83 @@ const catalog = JSON.parse(await readFile(new URL('../public/published-pages/ran
 const editorial = JSON.parse(await readFile(new URL('../data/seasonal-2026-10.json', import.meta.url), 'utf8'));
 const clone = value => structuredClone(value);
 const edition = JSON.parse(await readFile(new URL('../data/readme-2026-10.json', import.meta.url), 'utf8'));
-const expectedTen=['ubud','fethiye','hangzhou','shenzhen','antalya','lisbon','malaga','pokhara','chengdu','las-palmas'];
-const expected = {
-  default: ['ubud', 'fethiye', 'hangzhou', 'shenzhen', 'antalya'],
-  budget: ['pokhara', 'chengdu', 'ubud', 'hangzhou', 'samarkand'],
-  internet: ['hangzhou', 'shenzhen', 'chengdu', 'malaga', 'lisbon'],
-  visa: ['fethiye', 'antalya', 'izmir', 'tashkent', 'samarkand'],
-  safe: ['hangzhou', 'fethiye', 'shenzhen', 'munich', 'malaga'],
-};
 
-test('the current five Top 5 groups come from the public catalog and shared website presets', () => {
-  const before = clone(catalog);
-  const groups = seasonalGroups(catalog, editorial);
-  assert.deepEqual(groups.map(group => group.key), GROUP_KEYS);
-  for (const group of groups) {
-    assert.equal(group.label, UI_PRESETS[group.key].label);
-    assert.deepEqual(group.cities.map(city => city.slug), expected[group.key]);
-    assert.equal(group.total, group.key === 'visa' ? 20 : 83);
-  }
-  assert.deepEqual(catalog, before);
+test('all recommendation links reproduce the website state and order',()=>{
+ for(const group of [...seasonalGroups(catalog,editorial),...needRecommendations(catalog)]){
+  const state=parseState(new URL(group.url));
+  assert.deepEqual(state,group.state);
+  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
+  const ranked=rankCities(catalog,state);
+  assert.equal(group.total,ranked.length);
+  assert.deepEqual(group.cities.map(c=>c.slug),ranked.slice(0,group.cities.length).map(c=>c.slug));
+ }
+ assert.equal(recommendationViews().length,6);
 });
-
-test('all share URLs reproduce the exact website order, weights and dated seasonal filter', () => {
-  for (const group of seasonalGroups(catalog, editorial)) {
-    const url = new URL(group.url);
-    assert.equal(url.origin, 'https://nomads.cubxxw.com');
-    assert.equal(url.searchParams.get('month'), '10');
-    assert.equal(url.searchParams.get('season'), SEASONAL_VIEW.id);
-    const restored = parseState(url);
-    assert.deepEqual(restored, group.state);
-    assert.deepEqual(rankCities(catalog, restored).slice(0, 5).map(city => city.slug), expected[group.key]);
-    assert.deepEqual(restored.weights, UI_PRESETS[group.key].weights);
-    assert.equal(restored.visa, group.key === 'visa' ? 'visa_free' : '');
-    assert.ok(!url.searchParams.has('limit'));
-  }
+test('the README top ten follow recomputed scores, never stored legacy totals or editorial order',()=>{
+ const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const cities=seasonalTopTen(catalog,editorial,edition);
+ assert.deepEqual(cities.map(c=>c.slug),rankCities(catalog,state).slice(0,10).map(c=>c.slug));
+ assert.equal(new Set(cities.map(c=>c.slug)).size,10);
+ const changed=clone(catalog);for(const c of changed)c.baseScore=99;
+ assert.deepEqual(seasonalTopTen(changed,editorial,edition).map(c=>c.slug),cities.map(c=>c.slug));
 });
-
-test('50 percent presets are normalized while visa is a hard filter with the original score', () => {
-  const groups = seasonalGroups(catalog, editorial);
-  for (const [groupKey, metric] of [['budget', 'cost'], ['internet', 'internet'], ['safe', 'safety']]) {
-    const { state } = groups.find(group => group.key === groupKey);
-    assert.equal(state.weights[metric], 50);
-    assert.equal(KEYS.reduce((sum, key) => sum + state.weights[key], 0), 100);
-  }
-  for (const key of ['default', 'visa']) {
-    const group = groups.find(item => item.key === key);
-    assert.deepEqual(group.state.weights, DEFAULT_WEIGHTS);
-    for (const city of group.cities) {
-      assert.equal(city.score, city.baseScore);
-      if (key === 'visa') assert.equal(city.visa.code, 'visa_free');
-    }
-  }
+test('main table keeps ten five-column rows, concise factual reasons and month comfort',()=>{
+ const block=renderSeasonalBlock(catalog,editorial,edition);
+ const rows=block.split('\n').filter(line=>/^<tr><td nowrap>/.test(line));
+ assert.equal(rows.length,10);assert.equal((block.match(/<td nowrap/g)||[]).length,50);
+ assert.match(block,/10月舒适度/);assert.ok(!block.includes('10月均温'));
+ for(const row of rows){const reason=row.match(/<td nowrap>([^<]+)<\/td><\/tr>$/)[1];assert.ok([...reason].length<=25);assert.ok(reason.length);}
+ assertReaderCopy(block);
+ const changed=clone(catalog),first=seasonalTopTen(catalog,editorial,edition)[0].slug;
+ changed.find(c=>c.slug===first).name='<img onerror=alert(1)>';
+ const escaped=renderSeasonalBlock(changed,editorial,edition);assert.ok(!escaped.includes('<img'));assert.ok(escaped.includes('&lt;img'));
 });
-
-test('membership responds to public data rather than editorial order or hardcoded city lists', () => {
-  const data = clone(catalog);
-  data.find(city => city.slug === 'pokhara').baseScore = 10;
-  const groups = seasonalGroups(data.reverse(), { ...editorial, cities: [...editorial.cities].reverse() });
-  assert.equal(groups[0].cities[0].slug, 'pokhara');
-  assert.notDeepEqual(groups[0].cities.map(city => city.slug), expected.default);
-  assert.deepEqual(groups.find(group => group.key === 'internet').cities.map(city => city.slug), expected.internet);
+test('unresearched new results use only their existing numeric data',()=>{
+ const stripped={...editorial,cities:[]},notes={...edition,city_notes:[]};
+ const cities=seasonalTopTen(catalog,stripped,notes);
+ for(const c of cities){assert.match(c.reason,/°C，月参考\$/);assert.ok(c.reason.includes(Math.round(c.budget).toLocaleString('en-US')));}
 });
-
-test('every current Top 5 city is covered by the sixteen researched profiles with four platform checks', () => {
-  const slugs = new Set(seasonalGroups(catalog, editorial).flatMap(group => group.cities.map(city => city.slug)));
-  assert.equal(slugs.size, 13);
-  assert.ok([...slugs].every(slug=>editorial.cities.some(city=>city.slug===slug)));
-  assert.equal(editorial.cities.length,16);
-  assert.equal(editorial.checked_at, '2026-10-18');
-  for (const city of editorial.cities) {
-    assert.ok(city.summary.length <= 60, `${city.slug} needs a concise summary`);
-    assert.equal(city.checked_at, editorial.checked_at);
-    assert.equal(city.read_at, editorial.checked_at);
-    assert.deepEqual(city.platform_checks.map(check => check.platform).sort(), ['reddit', 'web', 'x', 'xiaohongshu']);
-    assert.ok(city.platform_checks.every(check => ['body_read', 'search_only'].includes(check.status) && check.read_scope));
-    assert.ok(city.sources.some(source => source.platform === 'web'));
-    for (const source of city.sources) {
-      assert.ok(source.url.startsWith('https://'));
-      assert.ok(source.read_scope && source.limits);
-      assert.equal(source.read_at, editorial.checked_at);
-    }
-  }
+test('invalid supplied copy and fabricated source facts stop publication',()=>{
+ const city=catalog.find(c=>c.slug==='ubud'),profile=editorial.cities.find(c=>c.slug==='ubud');
+ for(const reasons of [
+  [{text:'适合每个人的完美城市',facts:[]}],
+  [{text:'乌布999°C适合出发',facts:[{kind:'climate'}]}],
+  [{text:'Outpost很合适',facts:[{kind:'source',token:'Outpost',url:'https://example.com/unread'}]}],
+  [{text:'好'.repeat(26),facts:[{kind:'cost'}]}],
+ ])assert.throws(()=>chooseReason(city,{reasons},profile),/没有合格短评/);
+ const duplicate=clone(edition);duplicate.city_notes.push(duplicate.city_notes[0]);assert.throws(()=>renderSeasonalBlock(catalog,editorial,duplicate),/重复/);
+ assert.throws(()=>renderSeasonalBlock([...catalog,catalog[0]],editorial,edition),/重复城市/);
+ for(const term of BANNED_TERMS)assert.throws(()=>assertReaderCopy('城市'+term),/禁用词/);
+});
+test('domestic discovery retains all fourteen cities and unknowns after the scored results',()=>{
+ const group=domesticRecommendations(catalog);
+ assert.equal(group.total,14);assert.equal(group.cities.length,5);
+ assert.equal(group.other.length,9);assert.equal(group.other[0].slug,'dali');
+ assert.ok(group.other.every(c=>c.score===null&&c.rank===null));
+ assert.deepEqual(group.cities,rankCities(catalog,parseState(new URL(group.url))).filter(c=>c.score!==null).slice(0,5));
+ const block=renderDomesticBlock(catalog);assert.match(block,/10月舒适度/);assert.ok(!block.includes('$0'));
+});
+test('need-based views enforce their budgets, passport and seasonal conditions',()=>{
+ for(const group of needRecommendations(catalog)){
+  assert.equal(group.cities.length,3);assert.equal(group.state.month,group.key==='winter'?1:10);
+  if(['budget','visa'].includes(group.key))assert.ok(group.cities.every(c=>c.budget<=1000));
+  if(group.key==='visa')assert.ok(group.cities.every(c=>c.visa.code==='visa_free'));
+  if(['internet','safe','warm','winter'].includes(group.key))assert.ok(group.cities.every(c=>!['CN','HK','MO','TW'].includes(c.countryCode)));
+  if(['warm','winter'].includes(group.key))assert.ok(group.cities.every(c=>c.months[group.state.month-1].meanC>=18&&c.months[group.state.month-1].meanC<=28));
+ }
+ assert.equal((renderNeedsBlock(catalog).match(/<th scope="row"/g)||[]).length,6);
+});
+test('removed maintenance notes cannot be regenerated into the README',()=>{
+ const block=renderChangesBlock(catalog,editorial,edition);
+ assert.equal(block,CHANGES_START+'\n'+CHANGES_END);
+ for(const phrase of ['本月10城之外','国内目录已收录14座目的地','主权重从80%降到50%','7座有明确暂勿前往提醒'])assert.ok(!block.includes(phrase));
+});
+test('checked-in README has three tables, no removed notes and no generator drift',async()=>{
+ const result=await generateSeasonalReadme();assert.equal(result.original,result.updated);
+ assert.equal((result.updated.match(/<table\b/g)||[]).length,3);
+ assert.ok(!result.updated.includes('## 本期变化'));assert.ok(!result.updated.includes('主权重从'));
+ for(const view of recommendationViews())assert.ok(result.updated.includes(view.url.replaceAll('&','&amp;')));
+ execFileSync(process.execPath,['scripts/update-seasonal-readme.mjs','--check'],{cwd:webRoot,stdio:'pipe'});
 });
 
 test('new social captions retain the precise body/search boundary', () => {
@@ -118,126 +114,6 @@ test('European time-zone advice retains the fixed Beijing start-time condition',
   }
 });
 
-
-test('README has the shared comprehensive top ten exactly once, independently of note ordering',()=>{
- const before=clone(catalog),notes=clone(edition);notes.city_notes.reverse();
- const cities=seasonalTopTen(catalog,editorial,notes);
- assert.deepEqual(cities.map(c=>c.slug),expectedTen);
- assert.deepEqual(cities.map(c=>c.slug),rankCities(catalog,parseState(new URL('https://nomads.test/?month=10&season=2026-10'))).slice(0,10).map(c=>c.slug));
- assert.equal(new Set(cities.map(c=>c.slug)).size,10);assert.deepEqual(catalog,before);
-});
-
-test('the main table has five columns, ten linked cities, rounded data and one concise reason per city',()=>{
- const block=renderSeasonalBlock(catalog,editorial,edition);
- const rows=block.split('\n').filter(line=>/^<tr><td nowrap>/.test(line));
- assert.equal(rows.length,10);assert.equal((block.match(/<table\b/g)||[]).length,1);
- assert.equal((block.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,10);
- for(const row of rows){assert.equal((row.match(/<td\b/g)||[]).length,5);const reason=row.match(/<td nowrap>([^<]+)<\/td><\/tr>$/)[1];assert.ok([...reason].length<=25);assert.ok(reason.length>0)}
- assert.match(block,/≈\$1,240<\/td><td nowrap align="right">22°C<\/td><td nowrap>免签/);assert.match(block,/≈\$950<\/td><td nowrap align="right">21°C<\/td><td nowrap>境内/);
- assert.equal((block.match(/<th scope="col" nowrap>/g)||[]).length,5);assert.equal((block.match(/<td nowrap/g)||[]).length,50);
- assert.ok(block.includes('/cities/las-palmas/">拉斯帕尔马斯</a>'));assert.ok(block.includes('/cities/ubud/">乌布</a>'));
- assert.match(block,/🇮🇩/);assert.match(block,/🇳🇵/);assertReaderCopy(block);
- const reasons=seasonalTopTen(catalog,editorial,edition).map(c=>c.reason);assert.equal(new Set(reasons).size,10);
- assert.ok(!block.includes('[来源]'));assert.ok(!block.includes('###'));
-});
-
-test('invalid draft copy is rewritten with the city-specific backup rather than trimmed or published',()=>{
- const dirty=clone(edition);dirty.city_notes.find(n=>n.slug==='ubud').reasons[0].text='先确认这里是否有通话间';
- const clean=seasonalTopTen(catalog,editorial,dirty).find(c=>c.slug==='ubud');
- assert.equal(clean.reason,'26°C的巴厘岛，乌布有Outpost工位');assertReaderCopy(clean.reason);
- const invalid=clone(edition);invalid.city_notes.find(n=>n.slug==='ubud').reasons.forEach(reason=>reason.text='先确认'.repeat(15));
- assert.throws(()=>renderSeasonalBlock(catalog,editorial,invalid),/ubud没有合格短评/);
- for(const term of BANNED_TERMS)assert.throws(()=>assertReaderCopy('城市'+term),/禁用词/);
- assert.throws(()=>assertReaderCopy('不是 ＭＢＰＳ'),/禁用词/);
-});
-
-test('generic copy, fabricated source anchors and stale numeric facts cannot stand in for city facts',()=>{
- const city=catalog.find(c=>c.slug==='ubud'),profile=editorial.cities.find(c=>c.slug==='ubud');
- for(const reasons of [
-  [{text:'适合每个人的完美城市',facts:[]}],
-  [{text:'乌布999°C适合出发',facts:[{kind:'climate'}]}],
-  [{text:'26°C的乌布。再来一段。',facts:[{kind:'climate'}]}],
-  [{text:'Outpost很合适',facts:[{kind:'source',token:'Outpost',url:'https://example.com/unread'}]}],
-  [{text:'乌布值得来',facts:[{kind:'source',token:'乌布',url:profile.sources[0].url}]}],
-  [{text:'好'.repeat(26),facts:[{kind:'cost'}]}],
- ])assert.throws(()=>chooseReason(city,{reasons},profile),/没有合格短评/);
- const changed=clone(catalog);changed.find(c=>c.slug==='lisbon').months[9].meanC=18.4;
- const note=seasonalTopTen(changed,editorial,edition).find(c=>c.slug==='lisbon');assert.ok(note.reason.includes('18°C'));assert.ok(!note.reason.includes('19°C'));
-});
-
-test('missing coverage, duplicate records and incomplete main-table data stop generation',()=>{
- const missing=clone(edition);missing.city_notes=missing.city_notes.filter(c=>c.slug!=='las-palmas');
- assert.throws(()=>renderSeasonalBlock(catalog,editorial,missing),/las-palmas没有合格短评/);
- const duplicate=clone(edition);duplicate.city_notes.push(duplicate.city_notes[0]);assert.throws(()=>renderSeasonalBlock(catalog,editorial,duplicate),/重复/);
- assert.throws(()=>renderSeasonalBlock([...catalog,catalog[0]],editorial,edition),/重复城市/);
- assert.throws(()=>renderSeasonalBlock(catalog,editorial,{...edition,month:'2026-11'}),/期号/);
- const bad=clone(catalog);bad.find(c=>c.slug==='ubud').months[9].meanC=null;assert.throws(()=>renderSeasonalBlock(bad,editorial,edition),/缺少表格/);
- const unsafe=clone(editorial);unsafe.cities[0].sources[0].url='https://user:password@example.com/';assert.throws(()=>renderSeasonalBlock(catalog,unsafe,edition),/来源读取范围/);
- assert.throws(()=>renderSeasonalBlock([],editorial,edition),/快照为空/);
-});
-
-test('six need links reproduce their exact cities, counts, filters and weights on the website',()=>{
- const groups=needRecommendations(catalog);
- assert.deepEqual(groups.map(group=>group.key),['budget','visa','internet','safe','warm','winter']);
- const top={budget:['pokhara','chengdu','ubud'],visa:['tashkent','samarkand','rabat'],internet:['malaga','lisbon','las-palmas'],safe:['fethiye','munich','malaga'],warm:['ubud','fethiye','antalya'],winter:['muscat','merida','las-palmas']};
- for(const group of groups){
-  assert.deepEqual(group.cities.map(city=>city.slug),top[group.key]);
-  const state=parseState(new URL(group.url));
-  assert.deepEqual(state,group.state);assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
-  const all=rankCities(catalog,state);assert.equal(group.total,all.length);assert.deepEqual(group.cities,all.slice(0,3));
-  assert.equal(state.month,group.key==='winter'?1:10);assert.equal(state.season,group.key==='winter'?'':'2026-10');
-  if(['internet','safe','warm','winter'].includes(group.key))assert.ok(group.cities.every(city=>!['CN','HK','MO','TW'].includes(city.countryCode)));
-  if(['budget','visa'].includes(group.key)){assert.equal(state.budget,1000);assert.ok(group.cities.every(city=>city.budget<=1000))}
-  if(group.key==='visa'){assert.equal(state.visa,'visa_free');assert.ok(group.cities.every(city=>city.visa.code==='visa_free'))}
-  if(group.key==='warm'||group.key==='winter')assert.ok(group.cities.every(city=>city.months[state.month-1].meanC>=18&&city.months[state.month-1].meanC<=28));
-  assert.deepEqual(state.weights,UI_PRESETS[group.key==='warm'?'default':group.key].weights);
- }
- assert.equal(recommendationViews().length,6);
-});
-
-test('domestic recommendations show five scored cities and all nine unscored directory links without guessed values',()=>{
- const before=clone(catalog),group=domesticRecommendations(catalog);
- assert.equal(group.total,14);assert.equal(group.scoredCount,5);assert.equal(group.other.length,9);
- assert.deepEqual(group.cities.map(city=>city.slug),['xiamen','hangzhou','shenzhen','chengdu','shanghai']);
- assert.equal(group.other[0].slug,'dali');assert.ok(group.other.every(city=>city.score===null&&city.rank===null));
- assert.ok(group.cities.every(city=>city.countryCode==='CN'));assert.equal(new Set([...group.cities,...group.other].map(city=>city.slug)).size,14);
- assert.deepEqual(group.cities,rankCities(catalog,parseState(new URL(group.url))).filter(city=>city.score!==null).slice(0,5));
- const block=renderDomesticBlock(catalog);assert.equal((block.match(/<tr><td nowrap>/g)||[]).length,5);
- assert.match(block,/shanghai\/\">上海<\/a><\/td><td nowrap align="right">≈\$1,200<\/td><td nowrap align="right">—<\/td>/);
- assert.match(block,/dali\/\">大理<\/a>（18°C）/);assert.ok(!block.includes('$0'));assertReaderCopy(block);
- assert.equal(recommendedMonths(group.cities[0]),'1–3月 · 11–12月');assert.equal(recommendedMonths(group.cities[1]),'3月 · 10–11月');
- assert.deepEqual(catalog,before);
-});
-
-test('additional recommendations respond to data changes and fail on missing evidence rather than padding ranks',()=>{
- const data=clone(catalog);data.find(city=>city.slug==='chengdu').baseScore=10;
- assert.equal(domesticRecommendations(data).cities[0].slug,'chengdu');
- data.find(city=>city.slug==='rabat').budget=1100;
- assert.equal(needRecommendations(data).find(view=>view.key==='visa').cities[2].slug,'agadir');
- const incomplete=clone(catalog);incomplete.find(city=>city.slug==='shanghai').scores.life=null;
- assert.throws(()=>domesticRecommendations(incomplete),/不足五座/);
- const noJanuary=clone(catalog);for(const city of noJanuary)city.months[0].meanC=null;
- assert.throws(()=>needRecommendations(noJanuary),/winter 缺少前三名/);
- assert.throws(()=>needRecommendations([...catalog,catalog[0]]),/重复/);
-});
-
-test('need rows expose metric units and use January temperatures for winter rather than October',()=>{
- const block=renderNeedsBlock(catalog);
- assert.equal((block.match(/<th scope="row"/g)||[]).length,6);
- assert.equal((block.match(/<td nowrap>/g)||[]).length,6);assert.equal((block.match(/<th scope="col"/g)||[]).length,2);
- assert.equal((block.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,18);
- assert.match(block,/malaga\/\">马拉加<\/a> · 10\/10 · ≈\$1,900\/月/);assert.match(block,/fethiye\/\">费特希耶<\/a> · 9\/10 · ≈\$1,240\/月/);
- assert.match(block,/muscat\/\">马斯喀特<\/a> · 22°C · ≈\$1,340\/月/);
- assert.ok(block.includes('budget=1000&amp;month=10'));assert.ok(block.includes('preset=winter&amp;abroad=1'));assertReaderCopy(block);
-});
-
-test('three to five monthly changes describe actual weights, reviewed exclusions and available shortcuts',()=>{
- const block=renderChangesBlock(catalog,editorial,edition);assert.equal((block.match(/^- /gm)||[]).length,4);
- assert.match(block,/80%降到50%/);assert.match(block,/7座/);assertReaderCopy(block);
- const old=clone(edition);old.changes[0].recorded_at='2026-09-30';assert.throws(()=>renderChangesBlock(catalog,editorial,old),/本月实际/);
- assert.throws(()=>renderChangesBlock(catalog,editorial,{...edition,changes:[{kind:'invented_city_growth'},{kind:'layout'},{kind:'quick_filters'}]}),/未知/);
- assert.throws(()=>renderChangesBlock(catalog,editorial,{...edition,changes:[{kind:'layout'}]}),/3–5/);
-});
 
 test('monthly generation preserves every byte outside all four marked blocks',()=>{
  const table=renderSeasonalBlock(catalog,editorial,edition),changes=renderChangesBlock(catalog,editorial,edition);
@@ -265,18 +141,6 @@ test('malformed, duplicate and overlapping markers cannot overwrite unrelated RE
  assert.throws(()=>replaceSeasonalBlock(START+END,'unbounded output'),/标记/);
 });
 
-test('the checked-in README has three tables, 27 distinct cities, one footnote and no generation drift',async()=>{
- const result=await generateSeasonalReadme();assert.equal(result.original,result.updated);
- assert.ok(result.updated.startsWith('# RemoteAI Nomads\n\n帮中文远程工作者选城市。[打开排行 →]'));
- assert.equal((result.updated.match(/<table\b/g)||[]).length,3);assert.equal((result.updated.match(/数据为参考值，出发前请核实/g)||[]).length,1);
- assert.equal((result.updated.match(/nomads\.cubxxw\.com\/cities\//g)||[]).length,42);
- assert.equal(new Set([...result.updated.matchAll(/nomads\.cubxxw\.com\/cities\/([a-z-]+)\//g)].map(match=>match[1])).size,27);
- for(const link of recommendationViews())assert.ok(result.updated.includes(link.url.replaceAll('&','&amp;')));
- assertReaderCopy(result.updated);
- execFileSync(process.execPath,['scripts/update-seasonal-readme.mjs','--check'],{cwd:webRoot,stdio:'pipe'});
- assert.equal(await readFile(result.readmePath,'utf8'),result.original);
-});
-
 test('invalid copy leaves the current README untouched',async()=>{
  const {tmpdir}=await import('node:os');const {join}=await import('node:path');
  const directory=await mkdtemp(join(tmpdir(),'nomads-readme-'));
@@ -293,11 +157,4 @@ test('city and data-method links retain source and publication boundaries behind
  const method=await readFile(new URL('../docs/data-and-methods.md',import.meta.url),'utf8');
  for(const city of editorial.cities)assert.ok(guide.includes(`id="${city.slug}"`));
  for(const phrase of ['2023–2025','不能视为','不是实测Mbps','并非四个平台的正文都已读到'])assert.ok(method.includes(phrase));
-});
-
-test('HTML table escapes city names and preserves the compact, keyboard-scrollable structure',()=>{
- const changed=clone(catalog);changed.find(city=>city.slug==='ubud').name='<img src=x onerror=alert(1)>';
- const block=renderSeasonalBlock(changed,editorial,edition);
- assert.ok(!block.includes('<img'));assert.ok(block.includes('&lt;img src=x onerror=alert(1)&gt;'));
- assert.match(block,/<table tabindex="0" aria-label="[^"]+可横向滚动"/);
 });

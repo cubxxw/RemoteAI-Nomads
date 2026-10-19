@@ -49,7 +49,7 @@ export function toggleQuickFilter(state, key, date = new Date()) {
   }
 }
 export function viewLabel(state) {
-  if (KEYS.every(key => state.weights[key] === DEFAULT_WEIGHTS[key])) return 'Metric Score';
+  if (KEYS.every(key => state.weights[key] === DEFAULT_WEIGHTS[key])) return '综合推荐';
   return [...KEYS].sort((a,b) => state.weights[b] - state.weights[a]).filter(key => state.weights[key] > 0).slice(0,3).map(key => LABELS[key]).join(' · ');
 }
 export function activeFilters(state) {
@@ -98,8 +98,8 @@ export function commandItems(data, query = '') {
     ...Object.entries(VISA_LABELS).map(([value,label]) => ({ kind: 'filter', key: 'visa', value, label, detail: '签证筛选 · 原资料待核验', keywords: '签证 护照 visa' })),
     ...['亚洲','欧洲','美洲','非洲','大洋洲'].map(value => ({ kind: 'filter', key: 'region', value, label: value, detail: '按地区筛选' })),
     ...Array.from({length:12}, (_,i) => ({ kind:'filter', key:'month', value:i+1, label: i+1+'月出发', detail: '有原推荐记录的城市' })),
-    { kind: 'weights', label: '调整排名权重', detail: '安全、花费、气候、生活、网络、社区', keywords: '排序 偏好 权重' },
-    { kind: 'reset', label: '重置当前视角', detail: '恢复 Metric Score，清除筛选', keywords:'清除 默认' },
+    { kind: 'weights', label: '调整排名权重', detail: '安全、花费、月份舒适度、生活、网络、游民氛围', keywords: '排序 偏好 权重' },
+    { kind: 'reset', label: '重置当前视角', detail: '恢复默认偏好，清除筛选', keywords:'清除 默认' },
   ];
   const matches = item => !needle || `${item.label} ${item.detail} ${item.keywords || ''}`.normalize('NFKC').toLocaleLowerCase().includes(needle);
   const cities = needle ? data.filter(c => cityMatchesQuery(c, needle)).slice(0,6).map(c => ({kind:'city',value:c.slug,label:c.name,detail:c.nameEn+' · '+c.country,photo:c.photo})) : [];

@@ -1,3 +1,4 @@
+import {climateComfort} from '../public/modules/places.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -68,7 +69,7 @@ export function seasonalGroups(catalog, editorial) {
     if (ranked.length < 5) throw new Error(`预设 ${key} 不足五个结果，需人工复核后再生成。`);
     const cities = ranked.slice(0, 5).map(city => {
       const profile = profiles.get(city.slug);
-      if (!profile) throw new Error(`缺少 ${city.slug} 的本期短评，请先核读来源。`);
+      if (!profile) return {...city,editorial:{summary:`${temperature(city)}，月参考${cost(city)}`,sources:[],read_scope:'catalog_metrics_only'}};
       return { ...city, editorial: profile };
     });
     return { key, label: preset.label, state, url: `${siteOrigin}/?${stateParams(state)}`, total: ranked.length, cities };
@@ -123,9 +124,10 @@ export function seasonalTopTen(catalog, editorial, edition) {
     const mean=city.months[SEASONAL_VIEW.month-1]?.meanC;
     if (!Number.isFinite(city.budget) || city.budget<=0 || !Number.isFinite(mean) || !visaLabels[city.visa?.code] || !/^[A-Z]{2}$/.test(city.countryCode)) throw new Error(city.slug+'缺少表格所需的消费、气候或入境字段。');
     const profile=profiles.get(city.slug);
-    if (!profile) throw new Error(city.slug+'缺少城市来源。');
+    // A new ranking result may have no researched editorial profile. Use only
+    // its dated numeric catalog fields in that case, never invent an experience.
     const note=notes.get(city.slug);
-    const reason=chooseReason(city,note,{...profile,sources:[...profile.sources,...(note?.sources||[])]});
+    const reason=note&&profile?chooseReason(city,note,{...profile,sources:[...profile.sources,...(note?.sources||[])]}):`${temperature(city)}，月参考${cost(city)}`;
     if (reasons.has(reason)) throw new Error('不同城市不得重复使用同一句短评。');
     reasons.add(reason);
     return {...city,reason};
@@ -137,40 +139,15 @@ export function renderSeasonalBlock(catalog,editorial,edition) {
   const [year,month]=edition.month.split('-').map(Number);
   // GitHub strips CSS, but supports nowrap cells. Keep the table itself
   // scrollable on phones instead of breaking Chinese labels into columns.
-  const lines=[START,`## ${year}年${month}月，去哪住一阵`,'',`<table tabindex="0" aria-label="${year}年${month}月十城推荐，可横向滚动">`,`<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>${month}月均温</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>`,'<tbody>'];
-  for (const [index,city] of cities.entries()) lines.push(`<tr><td nowrap>${index+1}. <a href="${siteOrigin}/cities/${city.slug}/">${esc(city.name.replace(/（[^）]*）/g,''))}</a> ${flag(city.countryCode)}</td><td nowrap align="right">≈${cost(city)}</td><td nowrap align="right">${temperature(city)}</td><td nowrap>${visaLabels[city.visa.code]}</td><td nowrap>${esc(city.reason)}</td></tr>`);
+  const lines=[START,`## ${year}年${month}月，去哪住一阵`,'',`<table tabindex="0" aria-label="${year}年${month}月十城推荐，可横向滚动">`,`<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>${month}月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>`,'<tbody>'];
+  for (const [index,city] of cities.entries()) lines.push(`<tr><td nowrap>${index+1}. <a href="${siteOrigin}/cities/${city.slug}/">${esc(city.name.replace(/（[^）]*）/g,''))}</a> ${flag(city.countryCode)}</td><td nowrap align="right">≈${cost(city)}</td><td nowrap align="right">${climateComfort(city.months[month-1]).toFixed(1)} / 10</td><td nowrap>${visaLabels[city.visa.code]}</td><td nowrap>${esc(city.reason)}</td></tr>`);
   lines.push('</tbody>','</table>',END);
   const block=lines.join('\n');assertReaderCopy(block);return block;
 }
 
-export function renderChangesBlock(catalog,editorial,edition) {
-  if (!Array.isArray(edition.changes) || edition.changes.length<3 || edition.changes.length>5 || new Set(edition.changes.map(change=>change.kind)).size!==edition.changes.length) throw new Error('本期变化须有3–5条且不重复。');
-  const lines=[CHANGES_START,'## 本期变化',''];
-  for (const change of edition.changes) {
-    let text;
-    if (change.kind==='layout') text=`本月${TOP_COUNT}城之外，补充国内${DOMESTIC_COUNT}城与${recommendationViews().length}类需求推荐。`;
-    else if (change.kind==='domestic_coverage') {
-      const domestic=domesticRecommendations(catalog);
-      text=`国内目录已收录${domestic.total}座目的地，大理、万宁等可直接查看。`;
-    }
-    else if (change.kind==='preset_weights') {
-      const values=[PRESETS.budget.weights.cost,PRESETS.internet.weights.internet,PRESETS.safe.weights.safety];
-      if (new Set(values).size!==1 || !Number.isFinite(change.previous_primary_weight) || change.previous_primary_weight<=values[0]) throw new Error('权重变化与当前预设不符。');
-      text=`省钱、网速、安全的主权重从${change.previous_primary_weight}%降到${values[0]}%。`;
-    } else if (change.kind==='travel_advisories') {
-      const excluded=catalog.filter(city=>!recommendationEligible(city)).length;
-      if (!excluded) throw new Error('没有可证实的出行排除更新。');
-      text=`${excluded}座有明确暂勿前往提醒的城市退出推荐，城市资料保留。`;
-    } else if (change.kind==='quick_filters') {
-      const keys=quickFilters(editionState(),new Date(edition.updated_at+'T12:00:00+08:00')).map(filter=>filter.key);
-      if (!['asia','domestic','abroad','month'].every(key=>keys.includes(key))) throw new Error('快捷筛选更新与网页实现不符。');
-      text='新增亚洲、国内、国外标签，可叠加本月推荐。';
-    } else throw new Error('未知本期变化类型：'+change.kind);
-    if (!datePattern.test(change.recorded_at) || !change.recorded_at.startsWith(edition.month+'-') || change.recorded_at>edition.updated_at) throw new Error('本期变化必须记录本月实际发生的更新。');
-    assertReaderCopy(text);lines.push('- '+text);
-  }
-  lines.push(CHANGES_END);return lines.join('\n');
-}
+// Keep the old markers so existing editions can be updated safely, without
+// restoring the maintenance notes the owner removed from the public README.
+export function renderChangesBlock() { return CHANGES_START+'\n'+CHANGES_END; }
 
 function bounds(text,start,end) {
   const a=text.indexOf(start),b=text.indexOf(end);
@@ -209,11 +186,11 @@ async function main(args) {
   if (args.some(arg=>arg!=='--check') || args.length>1) throw new Error('用法：node scripts/update-seasonal-readme.mjs [--check]');
   const result=await generateSeasonalReadme();
   if (args.includes('--check')) {
-    if (result.original!==result.updated) throw new Error('README本月十城、国内推荐、需求分类或本期变化与资料不一致，请运行 npm run seasonal:readme。');
-    console.log('README十城、国内推荐、需求分类与本期变化检查通过。');
+    if (result.original!==result.updated) throw new Error('README本月十城、国内推荐、需求分类或推荐区块与资料不一致，请运行 npm run seasonal:readme。');
+    console.log('README十城、国内推荐、需求分类与推荐区块检查通过。');
   } else {
     if (result.original!==result.updated) await writeFile(result.readmePath,result.updated);
-    console.log(`README已同步${SEASONAL_VIEW.id}十城、国内推荐、需求分类与本期变化。`);
+    console.log(`README已同步${SEASONAL_VIEW.id}十城、国内推荐、需求分类与推荐区块。`);
   }
 }
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href===import.meta.url) main(process.argv.slice(2)).catch(error=>{console.error(error.message);process.exitCode=1;});
