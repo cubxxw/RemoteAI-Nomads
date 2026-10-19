@@ -86,6 +86,7 @@ test('only an eligible city monthly asking rent can be adopted, while reviewed p
 test('SSR city guide keeps sources, scopes, unknowns, calendar and draft SEO readable', () => {
   const page=renderCityPage(city,{SITE_ORIGIN:'https://nomads.example/'},{date:'2026-10-18'});
   assert.match(page.body,/本城的分项价格待补充/);
+  assert.match(page.body,/暂无可带入的本城价格，填写自己的报价/);
   assert.match(page.body,/日本全国单身家庭月均支出/);
   assert.match(page.body,/不能当作测试城市的租房总预算/);
   assert.match(page.body,/未填项未计入/);
@@ -107,14 +108,18 @@ test('untrusted source text cannot break out of markup or embedded city data', (
 });
 
 
-test('budget entry precedes price samples and non-housing categories start collapsed', () => {
+test('consumer references and prefilled monthly overview precede the closed quote adjustment', () => {
   const rent={scope:'city',provider:'costcompass',category:'housing',field:'housing_1br_center',label:'1BR city-wide',amount:500,currency:'USD',period:'month',unit:'month',quality:'sample',quality_flags:['asking_rent'],conversion:{amount:3300,currency:'CNY'}};
   const observations=[rent,{...rent,category:'food',field:'food_rice_1kg',label:'Rice',period:'item',quality_flags:[]}];
   const html=renderCityPage({...city,costs:{...city.costs,observations}},{},{date:'2026-10-18'}).body;
-  assert.ok(html.indexOf('id="budget-rent"') < html.indexOf('data-budget-fill='));
+  assert.ok(html.indexOf('data-traveler-overview') < html.indexOf('id="budget-rent"'));
+  assert.ok(html.indexOf('data-budget-fill=') < html.indexOf('id="budget-rent"'));
+  assert.match(html,/<details id="budget-adjustment"[^>]*><summary/);
+  assert.ok(!/<details id="budget-adjustment"[^>]*\bopen/.test(html));
+  assert.match(html,/按我的报价调整/);assert.match(html,/id="budget-rent"[^>]*value="3300"/);
   assert.match(html, /<details class="city-disclosure city-price-category"><summary>日常食品/);
   assert.ok(!html.includes('class="city-disclosure city-price-category" open'));
-  assert.match(html,/下方的住房样本/);
+  assert.match(html,/已知开销小计/);assert.match(html,/待补/);
 });
 
 test('readable Beijing time differences account for DST, fractional offsets and date boundaries', () => {
