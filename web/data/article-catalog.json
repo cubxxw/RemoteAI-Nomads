@@ -28,6 +28,32 @@
       "assetPath": "/city-guides/penang-monthly-budget.html"
     },
     {
+      "slug": "kuala-lumpur-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/kuala-lumpur-monthly-budget/",
+      "title": "2026吉隆坡旅居一个月费用：舒适规划5,314 令吉（8,697 元）",
+      "summary": "2026吉隆坡旅居一个月费用，单人30晚舒适规划5,314 令吉（8,697 元）。三档预算、真实公开报价、计算器与地点地图，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-20",
+      "assetPath": "/city-guides/kuala-lumpur-monthly-budget.html"
+    },
+    {
+      "slug": "dali-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/dali-monthly-budget/",
+      "title": "2026大理旅居一个月费用：舒适规划5,700 元",
+      "summary": "2026大理旅居一个月费用，单人30晚舒适规划5,700 元。三档预算、真实公开报价、计算器与地点地图，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "dali"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-20",
+      "assetPath": "/city-guides/dali-monthly-budget.html"
+    },
+    {
       "slug": "chiang-mai-vs-penang",
       "kind": "comparison",
       "path": "/compare/chiang-mai-vs-penang/",

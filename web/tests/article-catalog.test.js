@@ -34,6 +34,8 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.deepEqual(slugList(articlesForCity('chiang-mai')), ['chiang-mai-monthly-budget', 'chiang-mai-vs-penang', 'chiang-mai-vs-da-nang']);
   assert.deepEqual(slugList(articlesForCity('penang')), ['penang-monthly-budget', 'chiang-mai-vs-penang']);
   assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang']);
+  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget']);
+  assert.deepEqual(slugList(articlesForCity('dali')), ['dali-monthly-budget']);
   assert.deepEqual(articlesForCity('chiang'), []);
   assert.deepEqual(articlesForCity('chiang-mai-extra'), []);
   assert.deepEqual(articleBySlug('first-month').citySlugs, []);
@@ -45,6 +47,8 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.deepEqual(articlePaths(), publishedArticles().map(article => article.path));
   assert.match(guideCardsHTML(), /chiang-mai-monthly-budget/);
   assert.match(guideCardsHTML(), /penang-monthly-budget/);
+  assert.match(guideCardsHTML(), /kuala-lumpur-monthly-budget/);
+  assert.match(guideCardsHTML(), /dali-monthly-budget/);
   assert.doesNotMatch(guideCardsHTML(), /first-month|chiang-mai-vs-/);
 });
 
@@ -82,14 +86,16 @@ test('article markup safely escapes titles and summaries in both public entry po
 test('guide package includes exactly public images and runtime, preserves copy and dates, and builds identically twice', async t => {
   const options = await sandbox(t);
   const first = await buildCityGuides(options);
-  assert.equal(first.pages.length, 2);
-  assert.equal(first.assets.length, 14);
+  const approved = JSON.parse(await readFile(join(SOURCES, 'publication.json'), 'utf8'));
+  const packaged = publishedArticles().filter(article => article.assetPath);
+  assert.equal(first.pages.length, packaged.length);
+  assert.equal(first.assets.length, approved.assets.length);
   assert.equal(first.rawEvidenceFilesCopied, 0);
-  assert.deepEqual(await filesUnder(options.outputDirectory), ['chiang-mai-monthly-budget.html', 'penang-monthly-budget.html']);
+  assert.deepEqual(await filesUnder(options.outputDirectory), packaged.map(article => article.slug + '.html').sort());
   const outputFiles = await filesUnder(options.assetDirectory);
   assert.deepEqual(outputFiles, first.assets.map(asset => asset.path.slice('/guide-assets/'.length)).sort());
-  assert.equal(outputFiles.filter(file => file.startsWith('images/')).length, 10);
-  assert.equal(outputFiles.filter(file => /images\/og-/.test(file)).length, 2);
+  assert.equal(outputFiles.filter(file => file.startsWith('images/')).length, approved.assets.filter(asset => asset.destination.startsWith('images/')).length);
+  assert.equal(outputFiles.filter(file => /images\/og-/.test(file)).length, packaged.length);
   assert.doesNotMatch(outputFiles.join('\n'), /evidence|tik.?hub|budget-data|source-facts|sources\.json|brief|\.json$/i);
   for (const article of publishedArticles().filter(article => article.assetPath)) {
     const html = await readFile(join(options.outputDirectory, article.slug + '.html'), 'utf8');
@@ -114,7 +120,10 @@ test('guide package includes exactly public images and runtime, preserves copy a
   const tools = await readFile(join(options.assetDirectory, 'guide-tools.mjs'), 'utf8');
   assert.match(tools, /from '\.\/budget-model\.mjs'/);
   await access(join(options.assetDirectory, 'budget-model.mjs'));
-  assert.deepEqual(first.pages.map(page => [page.checkedOn, page.fxDate]), [['2026-10-19', '2026-10-16'], ['2026-10-19', '2026-10-16']]);
+  for (const page of first.pages) {
+    const expected = /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16'];
+    assert.deepEqual([page.checkedOn, page.fxDate], expected);
+  }
   assert.deepEqual(await buildCityGuides(options), first);
 });
 
@@ -161,8 +170,8 @@ test('withdrawn guides and unrelated stale assets disappear from owned build dir
   await writeFile(join(options.assetDirectory, 'evidence/raw.json'), '{}');
   const articles = publishedArticles().map(article => article.slug === guide.slug ? {...article, status: 'draft'} : article);
   const result = await buildCityGuides({...options, articles});
-  assert.equal(result.pages.length, 1);
-  assert.deepEqual(await filesUnder(options.outputDirectory), ['penang-monthly-budget.html']);
+  assert.equal(result.pages.length, publishedArticles().filter(article => article.assetPath).length - 1);
+  assert.deepEqual(await filesUnder(options.outputDirectory), publishedArticles().filter(article => article.assetPath && article.slug !== guide.slug).map(article => article.slug + '.html').sort());
   assert.doesNotMatch((await filesUnder(options.assetDirectory)).join('\n'), /chiang-mai|evidence|raw/);
   const empty = await buildCityGuides({...options, articles: []});
   assert.equal(empty.pages.length, 0);

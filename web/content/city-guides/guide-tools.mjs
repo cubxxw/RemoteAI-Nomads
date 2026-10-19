@@ -138,7 +138,7 @@ if(source){
       L.geoJSON(route.geometry,{style:{color:'#647953',weight:3,dashArray:'5 7'}}).bindPopup(popup).addTo(groups.routes);
     }
     if(points.length>1)map.fitBounds(points,{padding:[25,25],maxZoom:14});
-    if(!tileErrors)status.textContent=`${points.length}个地点已有核实坐标；未核地点只保留在名单中。部分步行路线为缓存路由估时，非现场实测。`;
+    if(!tileErrors)status.textContent=`${points.length}个地点已有核实坐标；未核地点只保留在名单中。`+((page.facts.walkingRoutes||[]).some(route=>route.mode==='foot'&&route.geometry?.type==='LineString')?'步行路线为缓存路由估时，非现场实测。':'尚未取得可用步行路线，请自行核对出入口和通行条件。');
     document.querySelectorAll('[data-map-layer]').forEach(input=>input.addEventListener('change',()=>{const layer=groups[input.dataset.mapLayer];if(input.checked)layer.addTo(map);else map.removeLayer(layer);}));
     const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))map.invalidateSize();});observer.observe(document.querySelector('[data-city-map]'));
     window.addEventListener('resize',()=>map.invalidateSize(),{passive:true});

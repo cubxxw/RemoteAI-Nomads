@@ -127,7 +127,7 @@ D1普通迁移查询因账号日读取额度耗尽返回7500。本次先备份�
 
 ## 城市文章与站点地图
 
-城市文章使用 `data/article-catalog.json` 的明确 `citySlugs` 关联，不从标题猜城市。只显示 `published` 文章，多城比较在每个相关城市页展示。两篇独立预算指南通过 `src/city-guide-pages.js` 优先读取批准的静态产物，不依赖 D1；既有文章仍使用原来的读取方式。
+城市文章使用 `data/article-catalog.json` 的明确 `citySlugs` 关联，不从标题猜城市。只显示 `published` 文章，多城比较在每个相关城市页展示。已批准的独立预算指南通过 `src/city-guide-pages.js` 优先读取批准的静态产物，不依赖 D1；既有文章仍使用原来的读取方式。
 
 `npm run guides:build` 校验 `content/city-guides/publication.json` 的批准文件指纹，并白名单生成 `public/city-guides/` 与 `public/guide-assets/`。源稿可保留预览的 noindex，发布构建将正式页转为可索引 metadata；正文、核价日与汇率日保持原样。内部存储路径禁止索引，带预算参数的重复页面也保留 noindex，canonical 指向正式文章。
 
