@@ -193,7 +193,7 @@ export class RankMap {
     this.sizePoints();
     this.picker.querySelector('select').value = '';
     this.caption.innerHTML = '<strong>从国家，找到城市</strong><span>悬停预览，点击进入国家栏目</span>';
-    this.selection.innerHTML = '<strong>想去哪个国家？</strong><p>在地图上悬停，或从下方选择国家，查看已收录的城市。</p><a class="map-country-open" href="/countries/">浏览全部国家与地区 ↗</a>';
+    this.selection.innerHTML = '<strong>想去哪个国家？</strong><p>在地图上选择，或使用国家选择器，查看已收录的城市。</p><a class="map-country-open" href="/countries/">浏览全部国家与地区 ↗</a>';
   }
   frameCountry(code) {
     const cities = this.groups.get(code).cities.filter(located);
