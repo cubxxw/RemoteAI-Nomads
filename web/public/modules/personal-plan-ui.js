@@ -27,7 +27,11 @@ export function initPersonalComparison(cities,readMonth){
   });
   const comparison=personalPlanDifference(...summaries,month),status=panel.querySelector('[data-personal-difference]');
   status.textContent=comparison.difference===null?({unavailable:'保存两城的个人方案后，可以在这里继续对照。',missing:'仍有日常开销未填，先比较已知项目；暂不计算两城差额。',duration:'两份方案停留天数不同，暂不计算差额；可到城市页调整为同样天数。',month:'个人方案与当前对比月份不同，调整后再比较差额。'})[comparison.reason]:`同为${summaries[0].days}天，已知日常开销相差 ${money(Math.abs(comparison.difference))}。差额未含上方列出的其他旅行费用。`;
-  if(first){panel.open=summaries.some(summary=>summary&&(summary.edited>0||summary.ceiling!==null));first=false;}
+  if(first){
+   panel.open=summaries.some(summary=>summary&&(summary.edited>0||summary.ceiling!==null));first=false;
+   const readiness=document.querySelector('[data-personal-readiness]');if(readiness)readiness.hidden=true;
+   panel.removeAttribute('aria-busy');panel.inert=false;
+  }
  };
  addEventListener('pageshow',render);
  addEventListener('storage',event=>{if(event.key===null||event.key?.startsWith('nomads-city-plan-v1:'))render();});
