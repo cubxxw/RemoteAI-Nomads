@@ -15,6 +15,8 @@ import {
   validWeights,
   customScore,
   advantages,
+  scoringValues,
+  currentMonth,
 } from "../public/modules/ranking.js";
 const str = (description, maxLength = 160) => ({
   type: "string",
@@ -89,7 +91,7 @@ const specs = [
   [
     "compare_cities",
     "比较2至3座城市的数据库数值、原月份和局限；未知、持平与签证不判赢家。",
-    { cities: arr(str("城市slug或准确名称"), 3) },
+    { cities: arr(str("城市slug或准确名称"), 3),month:{type:'integer',minimum:1,maximum:12,description:'用于舒适度与综合分的月份；省略时使用本月'} },
     ["cities"],
   ],
   [
@@ -182,7 +184,7 @@ const specs = [
   ],
   [
     "get_method",
-    "读取原Metric Score与六项自定义公式、社区0、缺失与签证规则。",
+    "读取六项默认偏好、月份舒适度、OSM游民氛围与自定义公式；历史公式另列。",
     {},
     [],
   ],
@@ -304,9 +306,12 @@ const brief = (c) => ({
   rank: c.rank ?? null,
   budget_usd: c.budget,
   budget_basis: c.budgetBasis,
-  score: Object.hasOwn(c, "score") ? c.score : customScore(c, DEFAULT_WEIGHTS),
+  score: Object.hasOwn(c, "score") ? c.score : customScore(c, DEFAULT_WEIGHTS,c.scoreMonth||currentMonth()),
   legacy_raw_score: c.baseScore,
-  scores: c.scores,
+  scores: scoringValues(c,c.scoreMonth||currentMonth()),
+  score_month: c.scoreMonth||currentMonth(),
+  legacy_scores: c.scores,
+  community_places: c.communityPlaces,
   visa: c.visa,
   best_months: c.months
     .filter((m) => m.status === "recommended")
@@ -389,6 +394,7 @@ export async function executeNomadTool(env, name, args) {
     const minTemp = args.min_temp ?? (preset.warm ? 18 : undefined),
       maxTemp = args.max_temp ?? (preset.warm ? 28 : undefined);
     const selectedMonth = state.month;
+    state.scoringMonth = selectedMonth;
     const recommendedOnly = args.recommended_only ?? false;
     if (!recommendedOnly) state.month = null;
     const exactCountry = args.country ? await country(args.country) : null;
@@ -702,8 +708,9 @@ export async function executeNomadTool(env, name, args) {
             message: "比较需要不同城市；这些名称解析到了同一座城市：" + c.name,
           },
         };
-      selected.push(c);
-      await remember(c);
+      const measured={...c,scoreMonth:args.month||currentMonth()};
+      selected.push(measured);
+      await remember(measured);
     }
     if (selected.length < 2)
       return {
@@ -711,10 +718,11 @@ export async function executeNomadTool(env, name, args) {
       };
     dataOut = {
       cities,
+      month: selected[0].scoreMonth,
       metrics: KEYS.map((k) => ({
         key: k,
         label: LABELS[k],
-        values: selected.map((c) => ({ city: c.slug, value: c.scores[k] })),
+        values: selected.map((c) => ({ city: c.slug, value: scoringValues(c,c.scoreMonth)[k] })),
       })),
       budget_values: selected.map((c) => ({
         city: c.slug,
@@ -740,11 +748,11 @@ export async function executeNomadTool(env, name, args) {
               .map((c) => c.slug)
               .sort()
               .join("-vs-") +
-            "/"
+            "/"+(args.month?'?month='+args.month:'')
           : null,
     };
     warnings.push(
-      "成本口径不同，只能比较历史基准；环境含污染；缺失、持平和签证不评赢家。",
+      "成本口径不同，只能比较历史基准；舒适度使用对应月份的历史气候；氛围数量有漏标风险；缺失、持平和签证不评赢家。",
     );
   }
   if (name === "get_entry_rules") {
@@ -814,11 +822,15 @@ export async function executeNomadTool(env, name, args) {
   }
   if (name === "get_coverage") {
     const all = await data();
+    const scored=rankCities(all,parseState(new URL('http://local/')));
     dataOut = {
       countries: (await one(db, "SELECT count(*) n FROM countries")).n,
       cities: all.length,
       complete_scores: all.filter(c=>KEYS.every(key=>Number.isFinite(c.scores[key]))).length,
-      recommendable_complete_scores: rankCities(all, parseState(new URL("http://local/"))).length,
+      recommendable_scored_cities: scored.length,
+      recommendable_complete_scores: scored.filter(c=>KEYS.every(key=>Number.isFinite(scoringValues(c,c.scoreMonth)[key]))).length,
+      score_coverage_scope:'complete_scores为历史六项齐备记录；recommendable_scored_cities包含注明气候或生活待补的评分，recommendable_complete_scores只统计新指标齐备且可推荐的城市',
+      osm_places_cities: all.filter(c=>c.communityPlaces).length,
       excluded_for_travel_advisory: all.filter(c=>!recommendationEligible(c)).length,
       locations: all.filter((c) => c.lat !== null).length,
       climate_cities: all.filter((c) => c.months.some((m) => m.meanC !== null))
@@ -837,17 +849,18 @@ export async function executeNomadTool(env, name, args) {
       custom_cost_formula: '按历史月参考USD连续计分：clamp(10-2.5*log2(amount/300),0,10)，缺金额不推测便宜；不是现价或最低生活门槛',
       original_formula:
         "安全×0.3125+成本×0.25+环境×0.1875+生活×0.1875+网络×0.0625+社区很强0.5/有社区0.2/小众安静0",
-      custom_formula: "六项正权重加权均值×1.05，四舍五入一位小数",
-      range: [0, 10.5],
-      default_uses_stored_original: true,
+      custom_formula: "六项正权重加权均值，四舍五入一位小数",
+      range: [0, 10],
+      default_uses_stored_original: false,
+      community_formula: '同一5公里半径，7*min(log1p(coworking)/log(21),1)+3*min(log1p(cafes)/log(201),1)；OSM未采集时沿用旧社区分，数量仅反映场所密度',
       community_map: { 社区很强: 10, 有社区: 4, 小众安静: 0 },
       original_community_multiplier: 0.05,
       original_community_contribution: { 社区很强: 0.5, 有社区: 0.2, 小众安静: 0 },
       original_formula_numeric: "safety*0.3125+cost*0.25+climate*0.1875+life*0.1875+internet*0.0625+community*0.05",
       missing_rule:
-        "任一正权重指标为空时不生成分数，零权重项可空；社区0是有效数值",
+        "气候或生活项缺失时按其余有效权重计算；其他正权重项缺失时不评分；零权重项可空，社区0有效",
       visa_in_score: false,
-      climate_scope: "原Environment含污染；温度独立ERA5历史气候",
+      climate_scope: "所选月份ERA5历史气温、高温与雨量换算舒适度；无月份用当前月",
       internet_scope: "旧网络评分，不是房间Mbps",
     };
   if (name === "get_sources") addSources(args.source_ids);

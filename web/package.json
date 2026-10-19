@@ -19,7 +19,8 @@
     "data:bootstrap": "node scripts/bootstrap-public.mjs",
     "seasonal:readme": "node scripts/update-seasonal-readme.mjs",
     "data:pages": "node scripts/build-public-pages.mjs",
-    "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev"
+    "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev",
+    "places:sync": "node scripts/collect-places.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
@@ -27,7 +28,8 @@
   "dependencies": {
     "@cloudflare/containers": "0.3.7",
     "@deepseek-ai/dsh-sdk-client": "0.2.1-alpha.2",
-    "@deepseek-ai/dsh-sdk-minimal": "0.2.1-alpha.2"
+    "@deepseek-ai/dsh-sdk-minimal": "0.2.1-alpha.2",
+    "leaflet": "1.9.4"
   },
   "overrides": {
     "fflate": "0.8.3"

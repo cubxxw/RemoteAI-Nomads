@@ -55,3 +55,7 @@ venv/
 *.log
 *.tmp
 *.temp
+
+# Browser verification artifacts
+.playwright-cli/
+/output/

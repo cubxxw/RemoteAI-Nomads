@@ -39,7 +39,7 @@ test('network preset changes relative weights, and visa remains an entry filter'
   assert.deepEqual(UI_PRESETS.visa.weights,DEFAULT_WEIGHTS);assert.equal(UI_PRESETS.visa.visa,'visa_free');assert.match(UI_PRESETS.visa.note,/待核验/);
 });
 test('view summary names leading priorities while preserving the default metric name', () => {
-  const state = parseState(new URL('https://nomads.test/'));assert.equal(viewLabel(state),'Metric Score');
+  const state = parseState(new URL('https://nomads.test/'));assert.equal(viewLabel(state),'综合推荐');
   state.weights = UI_PRESETS.internet.weights;assert.equal(viewLabel(state).split(' · ')[0],'网络');
 });
 test('command search finds Chinese cities, visas and useful fallback actions', () => {
@@ -57,9 +57,9 @@ test('a saved dated view stays visible and removable without duplicate month pil
  selected.season='';assert.ok(activeFilters(selected).some(c=>c.key==='month'));
 });
 
-test('named numeric priorities actually dedicate fifty percent to their leading metric',()=>{
+test('named numeric priorities actually dedicate sixty percent to their leading metric',()=>{
  for(const [name,key] of [['budget','cost'],['internet','internet'],['safe','safety']]){
-  const weights=UI_PRESETS[name].weights,total=Object.values(weights).reduce((a,b)=>a+b,0);assert.equal(weights[key]/total,0.5);
+  const weights=UI_PRESETS[name].weights,total=Object.values(weights).reduce((a,b)=>a+b,0);assert.equal(weights[key]/total,0.6);
  }
 });
 
@@ -111,7 +111,7 @@ test('current-month shortcut composes with geography, follows Singapore month bo
 });
 test('abroad composes with Asia and month, switches cleanly from domestic and remains shareable',()=>{
  const state=parseState(new URL('https://nomads.test/?country=CN&month=10&w=5,80,5,5,4,1'));
- toggleQuickFilter(state,'abroad');assert.equal(state.abroad,true);assert.equal(state.country,'');assert.equal(state.month,10);assert.equal(state.weights.cost,50);
+ toggleQuickFilter(state,'abroad');assert.equal(state.abroad,true);assert.equal(state.country,'');assert.equal(state.month,10);assert.equal(state.weights.cost,60);
  toggleQuickFilter(state,'asia');assert.equal(state.abroad,true);assert.equal(state.region,'亚洲');
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
  const local=storage();savePreference(state,local);assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);

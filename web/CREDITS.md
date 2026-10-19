@@ -19,3 +19,7 @@ GeoNames： https://www.geonames.org/ ，城市数据 https://download.geonames.
 台湾与科索沃的SVG身份旗图以公共旗帜图形为基础，来自 https://github.com/hjnilsson/country-flags 的SVG目录。其余身份旗由系统emoji字体渲染。旗帜仅用于识别旅行目录，不表示旅行可达性或政治/法律判断。
 
 其余研究来源、数据日期与范围见各页面和docs/architecture.md。旧城市与签证资料仍为legacy，不能因迁入D1变成重新核验的事实。
+
+## 城市工作地图
+
+场所数据与底图由[OpenStreetMap contributors](https://www.openstreetmap.org/copyright)提供，适用ODbL。地点文件保留OSM标识和采集日期；共享办公和咖啡馆数量按5公里半径统计。Leaflet 1.9.4使用BSD 2-Clause许可，完整许可保存在`public/vendor/leaflet/LICENSE`。
