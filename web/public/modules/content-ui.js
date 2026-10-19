@@ -63,10 +63,17 @@ export function initContentPage() {
   if (guide) {
     const key = `nomads:guide:${guide.dataset.guide}`, checks = [...guide.querySelectorAll('[data-guide-check]')];
     try { const value = JSON.parse(localStorage.getItem(key) || '[]'); if (Array.isArray(value)) checks.forEach(check => { check.checked = value.includes(Number(check.dataset.guideCheck)); }); } catch {}
-    const update = () => { guide.querySelector('[data-guide-progress]').textContent = `${checks.filter(check => check.checked).length} / ${checks.length} 项完成`; try { localStorage.setItem(key, JSON.stringify(checks.filter(check => check.checked).map(check => Number(check.dataset.guideCheck)))); } catch {} };
+    const update = () => {
+      guide.querySelector('[data-guide-progress]').textContent = `${checks.filter(check => check.checked).length} / ${checks.length} 项完成`;
+      let saved = false;
+      try { localStorage.setItem(key, JSON.stringify(checks.filter(check => check.checked).map(check => Number(check.dataset.guideCheck)))); saved = true; } catch {}
+      guide.querySelector('[data-guide-storage]').textContent = saved ? '清单已保存在当前浏览器' : '本页可继续勾选；当前浏览器无法保存，刷新后可能丢失。';
+    };
     checks.forEach(check => check.addEventListener('change', update));
     guide.querySelector('[data-guide-clear]').addEventListener('click', () => { checks.forEach(check => { check.checked = false; }); update(); });
     update();
+    checks.forEach(check => { check.disabled = false; });
+    guide.querySelector('[data-guide-clear]').disabled = false;
   }
 }
 

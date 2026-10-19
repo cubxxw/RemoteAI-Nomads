@@ -113,3 +113,12 @@ test('legacy HTTP compatibility redirects to HTTPS without repeating the same UR
  const response=await worker.fetch(new Request('http://nomads.cubxxw.com/cities/chiang-mai/?month=11'),{SITE_ORIGIN:site,PREVIEW:'false',LEGACY_REDIRECT:'false'},context);
  assert.equal(response.status,308);assert.equal(response.headers.get('Location'),'https://nomads.cubxxw.com/cities/chiang-mai/?month=11');
 });
+
+
+test('lazy application modules resolve below the public mount', async () => {
+  const {readFile}=await import('node:fs/promises');
+  const source=await readFile(new URL('../public/app.js',import.meta.url),'utf8');
+  const modules=[...source.matchAll(/import\(['"]([^'"]+)['"]\)/g)].map(match=>match[1]);
+  assert.ok(modules.length>=3);
+  for(const path of modules) assert.ok(new URL(path,site+'/app.js').pathname.startsWith('/nomads/'),'mounted lazy module: '+path);
+});

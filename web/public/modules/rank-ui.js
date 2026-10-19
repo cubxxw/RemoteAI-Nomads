@@ -603,3 +603,6 @@ motion.addEventListener('change', () => {if (motion.matches) {document.querySele
 commit(true);
 render(true);
 if (!matchMedia('(max-width:700px)').matches) setMapOpen(true, false);
+document.querySelectorAll('[data-ranking-controls]').forEach(controls=>{controls.inert=false;controls.removeAttribute('aria-busy');});
+document.querySelectorAll('[data-ranking-wait-control]').forEach(control=>{control.disabled=false;});
+const readiness=document.querySelector('[data-ranking-readiness]');if(readiness)readiness.hidden=true;
