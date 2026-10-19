@@ -73,3 +73,25 @@ test('data reads run in a separate object invocation rather than sharing the lon
   const output=await (await agent.fetch(request('/answer',{question:'500元30天日上限？'}))).text();
   assert.equal(reads,1);assert.match(output,/event: answer/);assert.match(output,/event: done/);
 });
+
+test('a leased proxy stream stops its upstream when browser heartbeats disappear',async t=>{
+ t.mock.timers.enable({apis:['setTimeout','Date']});let wasAborted=false;
+ const agent=new NomadAgent(context(),{AGENT_BRIDGE_SECRET:'fixture-secret',DEEPSEEK_API_KEY:'fixture-key'},async(_url,{signal})=>new Promise((_,reject)=>signal.addEventListener('abort',()=>{wasAborted=true;reject(signal.reason);},{once:true})));
+ const req=request('/answer',{question:'Tokyo?'});req.headers.set('X-Nomads-Stream-Lease','1');
+ const response=await agent.fetch(req),output=response.text();
+ t.mock.timers.tick(44999);assert.equal(wasAborted,false);t.mock.timers.tick(2);
+ await new Promise(setImmediate);assert.equal(wasAborted,true);assert.match(await output,/event: cancelled/);assert.equal(agent.run.reaped,true);
+});
+
+test('only the same owner and active run can renew a stream lease',async t=>{
+ t.mock.timers.enable({apis:['setTimeout','Date']});let wasAborted=false;
+ const agent=new NomadAgent(context(),{AGENT_BRIDGE_SECRET:'fixture-secret',DEEPSEEK_API_KEY:'fixture-key'},async(_url,{signal})=>new Promise((_,reject)=>signal.addEventListener('abort',()=>{wasAborted=true;reject(signal.reason);},{once:true})));
+ const req=request('/answer',{question:'Tokyo?'});req.headers.set('X-Nomads-Stream-Lease','1');const response=await agent.fetch(req),output=response.text(),id=agent.run.id;
+ t.mock.timers.tick(30000);
+ assert.equal((await agent.fetch(request('/heartbeat',{run_id:id},other))).status,404);
+ assert.equal((await agent.fetch(request('/heartbeat',{run_id:crypto.randomUUID()}))).status,404);
+ assert.equal((await agent.fetch(request('/heartbeat',{run_id:id}))).status,200);
+ t.mock.timers.tick(20000);assert.equal(wasAborted,false);t.mock.timers.tick(25001);await new Promise(setImmediate);
+ assert.equal(wasAborted,true);assert.match(await output,/event: cancelled/);
+ assert.equal((await agent.fetch(request('/heartbeat',{run_id:id}))).status,404);
+});

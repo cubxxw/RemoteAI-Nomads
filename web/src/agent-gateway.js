@@ -48,13 +48,13 @@ export async function agentRoute(request, env) {
   const operator = !!env.AGENT_BRIDGE_SECRET && request.headers.get('Authorization') === 'Bearer ' + env.AGENT_BRIDGE_SECRET;
   const evaluation=operator&&!!env.NOMAD_AGENT&&/^\/evals\/[a-f0-9-]{36}$/.test(route);
   if (
-    !["/answer", "/status", "/cancel"].includes(route) &&
+    !["/answer", "/status", "/cancel", "/heartbeat"].includes(route) &&
     !/^\/runs\/[a-f0-9-]{36}$/.test(route) && !evaluation
   )
     return json({ error: "Not found" }, 404);
   if (
-    (["/answer", "/cancel"].includes(route) && request.method !== "POST") ||
-    (!["/answer", "/cancel"].includes(route) && request.method !== "GET")
+    (["/answer", "/cancel", "/heartbeat"].includes(route) && request.method !== "POST") ||
+    (!["/answer", "/cancel", "/heartbeat"].includes(route) && request.method !== "GET")
   )
     return json({ error: "Method not allowed" }, 405);
   if (env.PREVIEW === 'false' && env.PUBLIC_AGENT !== 'true' && !operator)
@@ -105,6 +105,7 @@ export async function agentRoute(request, env) {
         Authorization: "Bearer " + env.AGENT_BRIDGE_SECRET,
         "X-Nomads-Owner": owner,
         "X-Nomads-Network": network.address,
+        "X-Nomads-Stream-Lease": request.headers.get("X-Nomads-Stream-Lease")==="1"?"1":"0",
         "Content-Type": "application/json",
       },
       body,
