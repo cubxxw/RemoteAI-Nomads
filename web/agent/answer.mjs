@@ -96,6 +96,7 @@ export function parseAnswer(text, run) {
         region: a.region || "",
         budget: a.max_budget || null,
         month: a.month || null,
+        recommendedOnly:!!a.month&&a.recommended_only===true,
         visa: a.visa || "",
         warm: false,
       };

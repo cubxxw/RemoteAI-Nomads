@@ -17,6 +17,14 @@ const catalog=JSON.parse(await readFile(new URL('../public/published-pages/ranki
 const blocked=['kabul','tehran','damascus','tripoli','khartoum','mogadishu','bamako'];
 const state=query=>parseState(new URL('https://nomads.test/?'+query));
 const onlyCost={safety:0,cost:100,climate:0,life:0,internet:0,community:0};
+test('tool recommended_only uses the same explicit restriction as the website',async()=>{
+ const {db,env}=environment();
+ try{
+  const unrestricted=await executeNomadTool(env,'search_cities',{query:'ubud',month:11,recommended_only:false,incomplete:true,limit:10});
+  const restricted=await executeNomadTool(env,'search_cities',{query:'ubud',month:11,recommended_only:true,incomplete:true,limit:10});
+  assert.equal(unrestricted.data.matched,1);assert.equal(restricted.data.matched,0);
+ }finally{db.close()}
+});
 function environment(){
  const db=new DatabaseSync(new URL('../.data/release/published.sqlite',import.meta.url),{readOnly:true});
  const prepare=(sql,args=[])=>({bind(...values){return prepare(sql,values)},async all(){return {results:db.prepare(sql).all(...args)}},async first(){return db.prepare(sql).get(...args)||null}});

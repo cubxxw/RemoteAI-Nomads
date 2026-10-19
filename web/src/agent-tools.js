@@ -396,7 +396,7 @@ export async function executeNomadTool(env, name, args) {
     const selectedMonth = state.month;
     state.scoringMonth = selectedMonth;
     const recommendedOnly = args.recommended_only ?? false;
-    if (!recommendedOnly) state.month = null;
+    state.recommendedOnly=!!selectedMonth&&recommendedOnly;
     const exactCountry = args.country ? await country(args.country) : null;
     if (args.country && !exactCountry) return { error: {code:"COUNTRY_NOT_FOUND",message:"国家名称未匹配；可使用ISO2，如中国CN、日本JP。不会自动改成大洲。"} };
     const all = await data();

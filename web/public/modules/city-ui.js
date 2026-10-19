@@ -1,4 +1,5 @@
-import {TRAVELER_FIELDS,estimateTravelerBudget} from './traveler-budget.js';
+import {TRAVELER_FIELDS,estimateTravelerBudget,budgetBalance} from './traveler-budget.js';
+import {TRIP_MONTH_KEY,planMonth,readCityPlan,writeCityPlan,restoredValues,restoreQuote} from './trip-state.js';
 export const numberOrNull = (value) => value === null || value === undefined || value === '' || !Number.isFinite(Number(value)) ? null : Number(value);
 
 export function planBudget({ rent, food, other, days }) {
@@ -82,7 +83,14 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
   const data = JSON.parse(dataElement.textContent);
   root.dataset.ready = 'true';
   const monthSelect = root.querySelector('#city-month');
-  function updateMonth() {
+  const planStorage={getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)};
+  const slug=data.slug||location.pathname.split('/')[2],storedPlan=readCityPlan(planStorage,slug);
+  if(storedPlan?.meeting){root.querySelector('#meeting-date').value=storedPlan.meeting.date;root.querySelector('#meeting-hour').value=String(storedPlan.meeting.hour);}
+  let savedMonth;try{savedMonth=localStorage.getItem(TRIP_MONTH_KEY);}catch{}
+  monthSelect.value=String(planMonth(new URL(location.href),storedPlan?.month||savedMonth,monthSelect.value));
+  const initialMonth=Number(monthSelect.value);
+  let planDirty=Boolean(storedPlan),persistPlan=()=>{};
+  function updateMonth({writeURL=true}={}) {
     const values = monthValues(data, monthSelect.value);
     root.querySelector('[data-month-temperature]').textContent = climateText(values.mean, '°C');
     root.querySelector('[data-month-rain]').textContent = climateText(values.rain, ' mm');
@@ -92,10 +100,18 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
     root.querySelector('[data-month-note]').textContent = /继承|Notion/.test(values.note) ? '月份标签来自旧资料，可结合气温和降雨一起判断。' : values.note || '原资料没有给这个月份下结论。';
     root.querySelectorAll('[data-chart-month]').forEach(node => node.classList.toggle('is-current', Number(node.dataset.chartMonth) === values.month));
     root.querySelector('[data-selected-month]').textContent = `${values.month} 月`;
+    if(writeURL){const url=new URL(location.href);url.searchParams.set('month',String(values.month));history.replaceState(null,'',url);}
+    try{localStorage.setItem(TRIP_MONTH_KEY,String(values.month));}catch{}
+    document.dispatchEvent(new CustomEvent('nomads:journey-month',{detail:values.month}));
+    persistPlan();
   }
-  monthSelect.addEventListener('change', updateMonth);
+  monthSelect.addEventListener('change',()=>{planDirty=true;updateMonth();});
+  const restoreMonth=()=>{monthSelect.value=String(planMonth(new URL(location.href),null,initialMonth));updateMonth({writeURL:false});};
+  addEventListener('popstate',restoreMonth);
+  addEventListener('pageshow',restoreMonth);
   root.querySelectorAll('[data-month-step]').forEach(button => button.addEventListener('click', () => {
     monthSelect.value = String((Number(monthSelect.value) - 1 + Number(button.dataset.monthStep) + 12) % 12 + 1);
+    planDirty=true;
     updateMonth();
   }));
   const days = root.querySelector('#trip-days'), currency = root.querySelector('#trip-currency');
@@ -113,16 +129,39 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
     const defaults=data.budget.defaults||{},keys=Object.keys(TRAVELER_FIELDS);
     const inputs=Object.fromEntries(keys.map(key=>[key,root.querySelector('#budget-'+key)]));
     // Keep canonical CNY values so switching currencies does not compound rounding.
-    const values=Object.fromEntries(keys.map(key=>[key,numberOrNull(inputs[key]?.value)]));
+    const restored=restoredValues(defaults,storedPlan,data.budget.rates);
+    const values=Object.fromEntries(keys.map(key=>[key,restored[key].amount]));
+    const quotes=Object.fromEntries(keys.map(key=>[key,restored[key].quote||null]));
+    const cleared=Object.fromEntries(keys.map(key=>[key,restored[key].cleared===true]));
+    const staleFx=new Set(keys.filter(key=>restored[key].fxStale));
+    if(storedPlan){days.value=String(storedPlan.days);if(data.budget.rates[storedPlan.currency])currency.value=storedPlan.currency;}
     const rate=()=>data.budget.rates[currency.value]?.rate||1;
+    let previousCurrency=currency.value;
+    const ceilingInput=root.querySelector('#trip-ceiling'),ceilingRecord=storedPlan?.ceiling?restoreQuote(storedPlan.ceiling,data.budget.rates):null;
+    let ceilingAmount=ceilingRecord?.amount??null,ceilingQuote=ceilingRecord?.quote??null;
+    if(ceilingRecord?.fxStale)staleFx.add('ceiling');
+    if(ceilingInput)ceilingInput.value=ceilingAmount===null?'':String(Number((ceilingAmount*rate()).toFixed(2)));
+    const invalidInputs=()=>keys.filter(key=>inputs[key]&&!inputs[key].validity.valid);
+    for(const key of keys)if(inputs[key]){inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));inputs[key].dataset.origin=restored[key].origin;}
     const output=root.querySelector('[data-trip-total]'),feedback=root.querySelector('[data-trip-feedback]');
     const adjustment=root.querySelector('#budget-adjustment');
+    persistPlan=()=>{
+      if(!planDirty)return;
+      const status=root.querySelector('[data-plan-status]');
+      const invalid=invalidInputs();
+      if(estimateTravelerBudget(values,days.value,invalid).error||ceilingInput&&!ceilingInput.validity.valid){if(status)status.textContent='金额或天数尚未填写完整，修正后自动保存。';return;}
+      const date=root.querySelector('#meeting-date'),hour=root.querySelector('#meeting-hour');
+      if(!date.value||!date.validity.valid){if(status)status.textContent='会议日期尚未填写完整，修正后自动保存。';return;}
+      const saved=writeCityPlan(planStorage,slug,{version:1,month:Number(monthSelect.value),days:Number(days.value),currency:currency.value,...(ceilingAmount!==null?{ceiling:{amount:ceilingAmount,...(ceilingQuote?{quote:ceilingQuote}:{})}}:{}),meeting:{date:date.value,hour:Number(hour.value)},values:Object.fromEntries(keys.map(key=>[key,{amount:values[key],origin:inputs[key]?.dataset.origin||'missing',...(cleared[key]?{cleared:true}:{}),...(quotes[key]?{quote:quotes[key]}:{})}]))});
+      if(status)status.textContent=staleFx.size?'部分外币暂沿用上次人民币换算，原币报价已保留，汇率待补。':saved?'报价、月份和会议安排已保存在本机，离开后可继续。':'这份计划暂未保存，请检查输入或保留报价。';
+    };
     function openAdjustment(focusKey='rent') {
       if(adjustment){adjustment.open=true;adjustment.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
       inputs[focusKey]?.focus({preventScroll:true});
     }
     function updateBudget() {
-      const invalidFields=keys.filter(key=>inputs[key]?.validity.badInput||inputs[key]?.validity.stepMismatch);
+      const invalidFields=invalidInputs();
+      root.querySelectorAll('[data-input-currency]').forEach(node=>{node.textContent=currency.value;});
       const estimate=estimateTravelerBudget(values,days.value,invalidFields),display=estimate.amount===null?'—':formatAmount(estimate.amount*rate(),currency.value);
       const invalidDays=!Number.isInteger(Number(days.value))||Number(days.value)<1||Number(days.value)>365;
       days.setAttribute('aria-invalid',String(invalidDays));
@@ -134,35 +173,65 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       const total=root.querySelector('[data-overview-total]');if(total)total.textContent=display;
       const summary=root.querySelector('[data-overview-feedback]');if(summary)summary.textContent=estimate.error?'先修正停留天数或金额':estimate.amount===null?'价格还不够，暂不估算总预算':`${days.value}天 · ${estimate.items.filter(row=>row.amount!==null).length}项已计入`;
       const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金、保险和签证费用仍需核对。';
+      const capStatus=root.querySelector('#trip-ceiling-status');
+      const invalidCap=ceilingInput&&!ceilingInput.validity.valid,balance=budgetBalance(ceilingAmount,estimate.amount);
+      ceilingInput?.setAttribute('aria-invalid',String(invalidCap));
+      if(capStatus){
+        capStatus.dataset.over=String(balance.remaining!==null&&balance.remaining<0);
+        capStatus.textContent=invalidCap?'上限需不小于0、最多十亿，保留两位小数。':ceilingAmount===null?'填上限后，可看已知开销还剩多少空间。':balance.remaining===null?'先补充有效的开销，才能计算距上限的余额。':balance.remaining<0?'已知开销已超上限 '+formatAmount(-balance.remaining*rate(),currency.value)+'。':'距上限还余 '+formatAmount(balance.remaining*rate(),currency.value)+'，还要覆盖未计入项与往返交通等。';
+      }
+      const filled=keys.filter(key=>values[key]!==null).length,edited=keys.filter(key=>inputs[key]?.dataset.origin==='edited'&&values[key]!==null).length;
+      const summaryLabel=adjustment?.querySelector('summary small');
+      if(summaryLabel)summaryLabel.textContent=edited?`${filled}项已计入，其中${edited}项由你调整`:filled?`已带入${filled}项参考，其余可自行填写`:'暂无可带入的本城价格，填写自己的报价';
+      const overviewCaption=root.querySelector('[data-plan-basis]');if(overviewCaption)overviewCaption.textContent=edited?'按你调整的金额估算；参考值与未计入项分别标明。':'价格来自本城样本，未计入项单独列出。';
       for(const key of keys){
         const row=root.querySelector(`[data-traveler-row="${key}"]`);if(!row)continue;
         const raw=values[key],invalidRow=invalidFields.includes(key)||raw!==null&&raw<0,known=raw!==null&&!invalidRow;
         const itemTotal=known&&!invalidDays?raw*(TRAVELER_FIELDS[key].unit==='天'?Number(days.value):Number(days.value)/30):null;
         const origin=inputs[key]?.dataset.origin||'missing';row.dataset.state=invalidRow?'invalid':known?origin:'missing';row.hidden=raw===null&&!invalidRow;
         row.querySelector('[data-traveler-amount]').textContent=invalidRow?'请修正':invalidDays?'—':known?formatAmount(itemTotal*rate(),currency.value):'待补';
-        row.querySelector('[data-traveler-basis]').textContent=invalidRow?'金额未输入完整或格式不正确':known?(origin==='reference'?defaults[key]?.basis||'默认参考':`你填写的每${TRAVELER_FIELDS[key].unit}金额`):'本城价格待补，可填写自己的预算';
+        row.querySelector('[data-traveler-basis]').textContent=invalidRow?'金额未输入完整或格式不正确':known?(staleFx.has(key)?'汇率待补，暂沿用上次换算':origin==='reference'?defaults[key]?.basis||'默认参考':`你填写的每${TRAVELER_FIELDS[key].unit}金额`):'本城价格待补，可填写自己的预算';
         row.querySelector('[data-traveler-origin]').textContent=invalidRow?'尚不能计入':known?(origin==='reference'?'按价格样本估算':raw===0?'你设为0':'按你的金额估算'):'尚未计入';
       }
       root.querySelectorAll('[data-money-amount]').forEach(node=>{node.textContent=formatAmount(Number(node.dataset.moneyAmount)*rate(),currency.value);});
       const fx=root.querySelector('[data-fx-note]'),reference=data.budget.rates[currency.value];
       if(fx)fx.textContent=currency.value===data.budget.currency?'人民币展示，原币价格见来源':`换算日期 ${reference?.date||'未标明'} · 汇率仅供参考`;
+      persistPlan();
     }
-    days.addEventListener('input',updateBudget);
+    days.addEventListener('input',()=>{planDirty=true;updateBudget();});
     for(const key of keys)inputs[key]?.addEventListener('input',()=>{
+      planDirty=true;
+      if(!inputs[key].validity.valid){updateBudget();return;}
       const parsed=numberOrNull(inputs[key].value);values[key]=parsed===null?null:parsed/rate();
+      quotes[key]=parsed===null?null:{amount:parsed,currency:currency.value};cleared[key]=parsed===null;
+      staleFx.delete(key);
       inputs[key].dataset.origin=parsed===null?'missing':'edited';updateBudget();
     });
     currency.addEventListener('change',()=>{
+      planDirty=true;
+      if(invalidInputs().length||ceilingInput&&!ceilingInput.validity.valid){currency.value=previousCurrency;updateBudget();return;}
+      previousCurrency=currency.value;
       for(const key of keys)if(inputs[key])inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));
+      if(ceilingInput)ceilingInput.value=ceilingAmount===null?'':String(Number((ceilingAmount*rate()).toFixed(2)));
       root.querySelectorAll('[data-input-currency]').forEach(node=>{node.textContent=currency.value;});updateBudget();
+    });
+    ceilingInput?.addEventListener('input',()=>{
+      planDirty=true;
+      if(ceilingInput.validity.valid){const parsed=numberOrNull(ceilingInput.value);ceilingAmount=parsed===null?null:parsed/rate();ceilingQuote=parsed===null?null:{amount:parsed,currency:currency.value};staleFx.delete('ceiling');}
+      updateBudget();
     });
     root.querySelectorAll('[data-open-budget-adjustment]').forEach(button=>button.addEventListener('click',()=>openAdjustment()));
     root.querySelector('[data-reset-traveler]')?.addEventListener('click',()=>{
-      for(const key of keys){values[key]=defaults[key]?.amount??null;if(inputs[key]){inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));inputs[key].dataset.origin=values[key]===null?'missing':'reference';}}
+      planDirty=true;
+      staleFx.clear();
+      for(const key of keys){values[key]=defaults[key]?.amount??null;quotes[key]=null;cleared[key]=false;if(inputs[key]){inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));inputs[key].dataset.origin=values[key]===null?'missing':'reference';}}
       const chosen=root.querySelector('[data-budget-chosen]');if(chosen)chosen.textContent='已恢复本城参考值；待补项目仍保留为空。';updateBudget();
     });
     root.querySelectorAll('[data-budget-fill]').forEach(button=>button.addEventListener('click',()=>{
+      planDirty=true;
       values.rent=Number(button.dataset.budgetFill);inputs.rent.value=String(Number((values.rent*rate()).toFixed(2)));inputs.rent.dataset.origin='edited';
+      quotes.rent={amount:values.rent,currency:'CNY'};cleared.rent=false;
+      staleFx.delete('rent');
       root.querySelector('[data-budget-chosen]').textContent=`已采用：${button.dataset.budgetLabel}`;openAdjustment();updateBudget();
     }));
     updateBudget();
@@ -175,8 +244,10 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       root.querySelector('[data-meeting-date]').textContent = result ? `${result.date}${result.date !== date.value ? ' · 跨日' : ''}` : '请选择有效日期';
       root.querySelector('[data-time-difference]').textContent = timeDifference(date.value, data.timeZone, Number(hour.value));
       root.querySelector('[data-time-difference-date]').textContent = result ? `${date.value} · 换算会议时间` : '选择会议日期后换算';
+      persistPlan();
     }
-    date.addEventListener('change', updateMeeting); hour.addEventListener('change', updateMeeting);
+    date.addEventListener('change',()=>{planDirty=true;updateMeeting();}); hour.addEventListener('change',()=>{planDirty=true;updateMeeting();});
+    updateMeeting();
   }
   root.querySelectorAll('[data-city-anchor]').forEach(anchor => anchor.addEventListener('click', () => {
     root.querySelectorAll('[data-city-anchor]').forEach(a => a.removeAttribute('aria-current'));
@@ -198,6 +269,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
   addEventListener('scroll', scheduleSection, {passive:true});
   addEventListener('resize', scheduleSection);
   updateSection();
+  updateMonth();
 }
 
 if (typeof document !== 'undefined') initCityPage();

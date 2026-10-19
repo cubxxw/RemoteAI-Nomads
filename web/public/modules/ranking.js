@@ -1,6 +1,8 @@
+import {withPlanMonth} from './trip-state.js';
 import { cityMatchesQuery } from "./country-search.js";
 import {recommendationEligible} from './recommendation-policy.js';
-import {climateComfort,communityScore} from './places.js';
+import {climateComfort,communityScore,comparableMetric} from './places.js';
+import {referenceBudgetIn} from './budget-currency.js';
 // A dated editorial view; the underlying historical scores remain unchanged.
 export const SEASONAL_VIEW = {
   id: '2026-10', month: 10, label: '10月出发建议', reviewedAt: '2026-10-18',
@@ -110,8 +112,10 @@ export function parseState(url) {
       : "",
     country: /^[A-Z]{2}$/.test((p.get('country') || '').toUpperCase()) ? p.get('country').toUpperCase() : '',
     abroad: p.get('abroad') === '1',
-    budget: Number.isFinite(b) && b > 0 && b <= 100000 ? Math.round(b) : null,
+    budget: Number.isFinite(b) && b >= 0.01 && b <= 10000000 ? Math.round(b*100)/100 : null,
+    budgetCurrency:p.get('budgetCurrency')==='CNY'?'CNY':'USD',
     month: Number.isInteger(m) && m > 0 && m < 13 ? m : null,
+    recommendedOnly:p.get('recommendedOnly')==='1'&&Number.isInteger(m)&&m>=1&&m<=12,
     visa: !p.has('visa') ? preset.visa || '' : [
       "visa_free",
       "evisa",
@@ -137,6 +141,8 @@ export function stateParams(s) {
   if (s.month) p.set("month", String(s.month));
   if (s.season === SEASONAL_VIEW.id && s.month === SEASONAL_VIEW.month) p.set("season", s.season);
   if (s.budget) p.set("budget", String(s.budget));
+  if(s.budgetCurrency==='CNY')p.set('budgetCurrency','CNY');
+  if(s.recommendedOnly&&s.month)p.set('recommendedOnly','1');
   if (s.visa) p.set("visa", s.visa);
   if (s.warm) p.set("warm", "1");
   if (s.incomplete) p.set("incomplete", "1");
@@ -196,10 +202,10 @@ export function rankCities(cities, state) {
     if (state.country && city.countryCode !== state.country) continue;
     if (state.abroad && (!city.countryCode || ['CN','HK','MO','TW'].includes(city.countryCode))) continue;
     if (state.season === SEASONAL_VIEW.id && state.month === SEASONAL_VIEW.month && (SEASONAL_VIEW.excludedCountries.includes(city.countryCode) || city.visa.code === "unavailable")) continue;
-    if (state.budget && (city.budget === null || city.budget > state.budget))
+    if (state.budget && (city.budget === null || referenceBudgetIn(city.budget,state.budgetCurrency) > state.budget))
       continue;
     if (state.visa && city.visa.code !== state.visa) continue;
-    if (state.month && city.months[state.month - 1]?.status !== "recommended")
+    if (state.month && (state.recommendedOnly||state.season===SEASONAL_VIEW.id) && city.months[state.month - 1]?.status !== "recommended")
       continue;
     if (state.warm) {
       const t = city.months[(state.month || 1) - 1]?.meanC;
@@ -273,8 +279,8 @@ export function renderRow(c, state) {
     `<svg class="micro-bar" viewBox="0 0 40 3" aria-hidden="true"><rect width="40" height="3" class="bar-track"/><rect width="${v === null || v === undefined ? 0 : Math.min(40, v * 4)}" height="3" class="bar-value"/></svg>`;
   return `<article class="ranking-row" data-city="${esc(c.slug)}" data-score="${c.score ?? ""}" aria-label="${c.rank ? "第" + c.rank + "名，" : ""}${esc(c.name)}" tabindex="-1">
  <span class="rank-number" role="img" aria-label="${c.rank ? "第" + c.rank + "名" : "资料待补"}"><span class="rank-digit" aria-hidden="true">${c.rank ?? "—"}</span></span>
- <a class="rank-photo" href="/cities/${esc(c.slug)}/" tabindex="-1" aria-hidden="true">${c.photo ? `<img src="${esc(c.photo.endsWith(".webp") ? c.photo.replace(".webp", ".thumb.webp") : c.photo)}" alt="" width="48" height="48" loading="lazy">` : `<span>${esc(c.name.slice(0, 1))}</span>`}</a>
- <div class="rank-identity"><a class="rank-city-link" href="/cities/${esc(c.slug)}/"><strong>${esc(c.name)}</strong></a><span class="rank-english"><span class="rank-city-name-en">${esc(c.nameEn)}</span><span class="rank-country-separator" aria-hidden="true">·</span><a class="rank-country-link" href="/countries/${esc(c.countryCode.toLowerCase())}/" aria-label="查看${esc(c.country)}的城市"><span class="country-flag" role="img" aria-label="${esc(c.country)}旗帜">${["TW", "XK"].includes(c.countryCode) ? `<img src="/flags/${c.countryCode.toLowerCase()}.svg" alt="" width="16" height="12">` : flag(c.countryCode)}</span><span>${esc(c.country)}</span></a></span><p title="${esc(c.why)}">${esc(c.why)}</p><span class="mobile-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)} · 旧资料</span></div>
+ <a class="rank-photo" href="${esc(withPlanMonth('/cities/'+encodeURIComponent(c.slug)+'/',state.month))}" tabindex="-1" aria-hidden="true">${c.photo ? `<img src="${esc(c.photo.endsWith(".webp") ? c.photo.replace(".webp", ".thumb.webp") : c.photo)}" alt="" width="48" height="48" loading="lazy">` : `<span>${esc(c.name.slice(0, 1))}</span>`}</a>
+ <div class="rank-identity"><a class="rank-city-link" href="${esc(withPlanMonth('/cities/'+encodeURIComponent(c.slug)+'/',state.month))}"><strong>${esc(c.name)}</strong></a><span class="rank-english"><span class="rank-city-name-en">${esc(c.nameEn)}</span><span class="rank-country-separator" aria-hidden="true">·</span><a class="rank-country-link" href="${esc(withPlanMonth('/countries/'+c.countryCode.toLowerCase()+'/',state.month))}" aria-label="查看${esc(c.country)}的城市"><span class="country-flag" role="img" aria-label="${esc(c.country)}旗帜">${["TW", "XK"].includes(c.countryCode) ? `<img src="/flags/${c.countryCode.toLowerCase()}.svg" alt="" width="16" height="12">` : flag(c.countryCode)}</span><span>${esc(c.country)}</span></a></span><p title="${esc(c.why)}">${esc(c.why)}</p><span class="mobile-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)} · 旧资料</span></div>
  <div class="rank-metric cost-cell"><span class="metric-mobile-label">月花费</span><strong title="历史估算；${esc(c.budgetBasis)}">${c.budget === null ? "—" : "≈" + money(c.budget)}</strong><small>USD / 月</small></div>
  <div class="rank-metric safety-cell"><span class="metric-mobile-label">安全</span><strong>${n(c.scores.safety)}</strong>${bar(c.scores.safety)}</div>
  <div class="rank-metric climate-cell"><span class="metric-mobile-label">${month}月舒适度</span><strong title="${month}月舒适度 /10；按历史气温、高温与雨量估算；均温${Number.isFinite(mean)?Math.round(mean)+'°C':'待补'}">${n(comfort)}</strong><small>${month}月舒适度</small></div>
@@ -303,7 +309,7 @@ export function advantages(a, b,month=currentMonth()) {
   a={...a,scores:scoringValues(a,month)};b={...b,scores:scoringValues(b,month)};
   return KEYS.filter(
     (k) =>
-      a.scores[k] !== null && b.scores[k] !== null && a.scores[k] > b.scores[k],
+      comparableMetric(k,a,b) && a.scores[k] !== null && b.scores[k] !== null && a.scores[k] > b.scores[k],
   )
     .sort((x, y) => a.scores[y] - b.scores[y] - (a.scores[x] - b.scores[x]))
     .slice(0, 2)

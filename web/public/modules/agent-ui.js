@@ -1,4 +1,5 @@
 import {esc,money,parseState,KEYS,LABELS,DEFAULT_WEIGHTS} from './ranking.js';
+import {budgetSymbol} from './budget-currency.js';
 import {formatAgentAnswer} from './agent-format.js';
 import {parseAgentEvent} from './agent-sse.js';
 import {createConversation,openConversationStore} from './agent-store.js';
@@ -56,7 +57,8 @@ function describeContext(){
   if(c.city)parts.push(document.querySelector('.city-breadcrumbs [aria-current="page"]')?.textContent||'当前城市');
   if(c.country)parts.push(document.querySelector('main h1')?.textContent.trim()||c.country);
   if(c.cities)parts.push('当前两座城市');if(c.q)parts.push(c.q);if(c.region)parts.push(c.region);
-  if(c.budget)parts.push('≤'+money(c.budget));if(c.month)parts.push(c.month+'月');if(c.warm)parts.push('避寒');
+  if(c.budget)parts.push('≤'+budgetSymbol(c.budgetCurrency)+c.budget.toLocaleString('en-US'));if(c.month)parts.push(c.month+'月');if(c.warm)parts.push('避寒');
+  if(c.recommendedOnly||c.season)parts.push('原推荐月份');
   if(c.weights&&KEYS.some(k=>c.weights[k]!==DEFAULT_WEIGHTS[k])){const leader=KEYS.reduce((a,b)=>c.weights[a]>=c.weights[b]?a:b);parts.push(LABELS[leader]+'优先');}
   const text=!active?.useContext?'只参考你的问题':parts.join(' · ')||'问题中的新条件优先';
   $('agent-context-description').textContent=text;$('agent-context-description').title=text;

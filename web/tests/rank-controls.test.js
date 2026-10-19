@@ -116,7 +116,7 @@ test('abroad composes with Asia and month, switches cleanly from domestic and re
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
  const local=storage();savePreference(state,local);assert.deepEqual(restorePreference(new URL('https://nomads.test/'),local),state);
  assert.ok(commandItems([],'国外').some(item=>item.kind==='quick'&&item.value==='abroad'));
- assert.equal(additionalFilters(state,new Date('2026-10-18T00:00:00Z')).length,0);
+ assert.deepEqual(additionalFilters(state,new Date('2026-10-18T00:00:00Z')).map(f=>f.key),['month']);
  toggleQuickFilter(state,'abroad');assert.equal(state.abroad,false);assert.equal(state.region,'亚洲');
  toggleQuickFilter(state,'abroad');toggleQuickFilter(state,'domestic');assert.equal(state.country,'CN');assert.equal(state.abroad,false);
  toggleQuickFilter(state,'abroad');toggleQuickFilter(state,'global');assert.equal(state.abroad,false);assert.equal(state.region,'');assert.equal(state.country,'');

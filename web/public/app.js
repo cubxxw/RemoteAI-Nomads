@@ -1,5 +1,33 @@
 import {icon} from './modules/icons.js';
 import './modules/wechat-ui.js';
+import {TRIP_MONTH_KEY,withPlanMonth} from './modules/trip-state.js';
+
+function currentPlanMonth(){
+  const city=document.querySelector('#city-month'),comparison=document.querySelector('#comparison-month'),ranking=document.querySelector('#ranking-root');
+  if(city||comparison)return Number((city||comparison).value);
+  if(ranking?.hasAttribute('data-plan-month'))return Number(ranking.dataset.planMonth)||null;
+  const requested=Number(new URL(location.href).searchParams.get('month'));if(requested>=1&&requested<=12)return requested;
+  try{return Number(localStorage.getItem(TRIP_MONTH_KEY))||null;}catch{return null;}
+}
+function syncJourneyLinks(){
+  const month=currentPlanMonth();
+  for(const link of document.querySelectorAll('a[href]')){
+    const href=link.getAttribute('href');
+    // Ranking returns restore the entire saved view, including its weights.
+    // A month-only query would incorrectly turn that return into a new view.
+    if(/^\/cities\/(?:[?#]|$)/.test(href))continue;
+    if(/^\/(?:cities|countries|compare)\//.test(href)){
+      if(!month&&link.dataset.planLinked){const url=new URL(href,location.origin);url.searchParams.delete('month');link.setAttribute('href',url.pathname+url.search+url.hash);}
+      else link.setAttribute('href',withPlanMonth(href,month));
+      if(month)link.dataset.planLinked='true';
+    }
+  }
+}
+document.addEventListener('nomads:journey-month',event=>{
+  try{event.detail?localStorage.setItem(TRIP_MONTH_KEY,String(event.detail)):localStorage.removeItem(TRIP_MONTH_KEY);}catch{}
+  syncJourneyLinks();
+});
+document.addEventListener('nomads:links-updated',syncJourneyLinks);
 
 const safeRead = (key, fallback) => {
   try {
@@ -84,6 +112,7 @@ function update() {
         "/"
       : "/compare/";
   go.textContent = selected.length === 2 ? "查看对比" : "再选一座城市";
+  syncJourneyLinks();
   const clearCompanion = () => document.documentElement.style.setProperty('--companion-clearance', !tray.hidden && matchMedia('(max-width:700px)').matches ? (tray.getBoundingClientRect().height + 20) + 'px' : '0px');
   clearCompanion();
   if (!tray.dataset.companionObserved) { tray.dataset.companionObserved = 'true'; new ResizeObserver(clearCompanion).observe(tray); window.addEventListener('resize', clearCompanion); }

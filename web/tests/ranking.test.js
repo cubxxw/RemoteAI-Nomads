@@ -55,8 +55,8 @@ test('domestic scope uses country identity and survives a shared URL',()=>{
  assert.equal(stateParams(state).get('country'),'CN');
  assert.equal(parseState(new URL('https://nomads.test/?country=<script>')).country,'');
  const html=renderRow({...china,rank:1,score:8.6},state);
- assert.match(html,/class="rank-country-link" href="\/countries\/cn\/"/);
- assert.match(html,/class="rank-city-link" href="\/cities\/xiamen\/"/);
+ assert.match(html,/class="rank-country-link" href="\/countries\/cn\/\?month=1"/);
+ assert.match(html,/class="rank-city-link" href="\/cities\/xiamen\/\?month=1"/);
 });
 test('abroad excludes mainland and Hong Kong, Macao and Taiwan entries without losing the selected region',()=>{
  const catalog=['CN','HK','MO','TW','JP','TH','DE'].map(code=>({...city(code),countryCode:code,region:code==='DE'?'欧洲':'亚洲'}));

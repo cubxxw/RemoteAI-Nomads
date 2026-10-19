@@ -81,9 +81,9 @@ const aiLabel = (s) =>
 const visaHTML = (v) =>
   `<details class="evidence-detail"><summary>${esc(v.name)}<span>${esc(v.kind)}</span></summary><div><dl class="fact-list"><dt>停留与有效期</dt><dd>${esc(v.stay_text)}</dd><dt>财务要求</dt><dd>${esc(v.financial_rule)}</dd><dt>工作范围</dt><dd>${esc(v.work_scope)}</dd><dt>护照与领区</dt><dd>${esc(v.passport_scope)}</dd><dt>需要留意</dt><dd>${esc(v.restriction)}</dd><dt>证据状态</dt><dd>${esc(v.verification)} · 资料日期 ${esc(v.source_published_at || "未标明")}</dd></dl>${sourceLine(v.source_url, "查看官方说明", v.checked_at)}</div></details>`;
 
-async function cityPage(env, slug) {
+async function cityPage(env, slug, url) {
   const c = await cityData(env, slug);
-  return c ? renderCityPage(c, env) : null;
+  return c ? renderCityPage(c, env, {month:url?.searchParams.get('month')}) : null;
 }
 
 async function compareIndex(env) {
@@ -250,7 +250,7 @@ export default {
       else if (bits.length === 1 && bits[0] === "cities")
         page = await rankingPage(env, url);
       else if (bits.length === 2 && bits[0] === "cities")
-        page = await cityPage(env, bits[1]);
+        page = await cityPage(env, bits[1], url);
       else if (bits[0] === "compare" && bits.length === 1)
         page = await compareIndex(env);
       else if (bits[0] === "compare" && bits.length === 2)

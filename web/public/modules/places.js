@@ -13,6 +13,11 @@ export function communityScore(stats) {
  // Same 5 km radius everywhere. Coworking has more signal than generic cafés.
  return Math.round((7*clamp(Math.log1p(stats.coworking)/Math.log(21),0,1)+3*clamp(Math.log1p(stats.cafes)/Math.log(201),0,1))*10)/10;
 }
+export const comparableMetric=(key,a,b)=>key!=='community'||communityScore(a?.communityPlaces)!==null&&communityScore(b?.communityPlaces)!==null;
+export function communitySource(city){
+ if(communityScore(city?.communityPlaces)!==null)return {kind:'osm',label:'OSM 场所密度',date:city.communityPlaces.checkedAt||''};
+ return Number.isFinite(city?.scores?.community)?{kind:'legacy',label:'历史社区标签 · 地点待采集',date:''}:{kind:'missing',label:'氛围资料待补',date:''};
+}
 export function distanceM(a,b) {
  const rad=x=>x*Math.PI/180,dLat=rad(b.lat-a.lat),dLon=rad(b.lon-a.lon);
  const h=Math.sin(dLat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLon/2)**2;
