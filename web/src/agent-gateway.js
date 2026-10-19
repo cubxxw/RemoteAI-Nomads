@@ -2,6 +2,7 @@ import { executeNomadTool } from "./agent-tools.js";
 import { reservePublicAnswer } from './agent-admissions.js';
 import { validateFlashInput } from '../agent/flash-agent.mjs';
 import {siteLocation} from './site-path.js';
+import {proxyNetwork} from './proxy-network.js';
 const json = (value, status = 200, headers = {}) =>
   Response.json(value, {
     status,
@@ -60,6 +61,8 @@ export async function agentRoute(request, env) {
     return json({error:'旅行小秘书正在进行上线验收，城市排行和资料可以正常使用。'},503);
   if ((!env.NOMAD_AGENT && !env.AGENT_ORIGIN && !env.AGENT_SERVICE) || !env.AGENT_BRIDGE_SECRET)
     return json({ error: "助手服务尚未启动，排行和城市资料仍可使用。" }, 503);
+  const network=await proxyNetwork(request,env);
+  if(!network)return json({error:'无法验证这次助手连接，请稍后重试。',code:'INVALID_PROXY_NETWORK'},403);
   let cookie = request.headers
     .get("Cookie")
     ?.split(";")
@@ -93,7 +96,7 @@ export async function agentRoute(request, env) {
   }
   try {
     if (route === '/answer' && env.PUBLIC_AGENT === 'true') {
-      const accepted = await reservePublicAnswer(env, owner, request.headers.get('CF-Connecting-IP') || 'unknown');
+      const accepted = await reservePublicAnswer(env, owner, network.address);
       if (!accepted) return json({error:'助手当前使用较多，请稍后再试。你可以继续浏览城市资料。',code:'DAILY_OR_HOURLY_LIMIT'},429,{'Retry-After':'3600'});
     }
     const upstream = await (service ? service.fetch.bind(service) : fetch)(target.origin + route, {
@@ -101,7 +104,7 @@ export async function agentRoute(request, env) {
       headers: {
         Authorization: "Bearer " + env.AGENT_BRIDGE_SECRET,
         "X-Nomads-Owner": owner,
-        "X-Nomads-Network": request.headers.get("CF-Connecting-IP") || "local",
+        "X-Nomads-Network": network.address,
         "Content-Type": "application/json",
       },
       body,
@@ -113,6 +116,7 @@ export async function agentRoute(request, env) {
       "Cache-Control": "no-store",
       "X-Content-Type-Options": "nosniff",
     });
+    if(network.verified)headers.set('X-Nomads-Network-Verified','true');
     if (fresh)
       headers.set(
         "Set-Cookie",

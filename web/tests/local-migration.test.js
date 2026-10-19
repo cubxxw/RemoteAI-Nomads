@@ -9,11 +9,11 @@ function storage(values={}) {
 }
 
 test('local export includes Nomads records and preferences but excludes other apps and running locks',async()=>{
-  const local=storage({'nomads-saved':'["chiang-mai"]','nomads-agent-running-v1':'private-lock','other-app-token':'private-token'});
+  const local=storage({'nomads-saved':'["chiang-mai"]','nomads:guide:first-month':'[0,2]','nomads-agent-running-v1':'private-lock','other-app-token':'private-token'});
   const store=await openConversationStore({indexedDB:null}),thread=createConversation('清迈的下午');
   await store.put(thread);
   const backup=await exportLocalData(local,store);
-  assert.deepEqual(backup.local,{'nomads-saved':'["chiang-mai"]'});
+  assert.deepEqual(backup.local,{'nomads-saved':'["chiang-mai"]','nomads:guide:first-month':'[0,2]'});
   assert.equal(backup.conversations.length,1);
   assert.equal(backup.conversations[0].id,thread.id);
   assert.doesNotMatch(JSON.stringify(backup),/private-lock|private-token/);

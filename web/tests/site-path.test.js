@@ -101,6 +101,14 @@ test('legacy local-data export stays available after public URLs move',async()=>
   assert.equal(response.headers.get('Cache-Control'),'no-store');
 });
 
+test('legacy lazy modules and map data remain same-origin after the public-page redirect is enabled',async()=>{
+ const env={SITE_ORIGIN:site,PREVIEW:'false',LEGACY_REDIRECT:'true',ASSETS:{async fetch(request){return new Response(new URL(request.url).pathname);}}};
+ for(const path of ['/modules/agent-ui.js','/map/world.json','/places/chiang-mai.json']){
+  const response=await worker.fetch(new Request('https://nomads.cubxxw.com'+path),env,context);
+  assert.equal(response.status,200);assert.equal(await response.text(),path);
+ }
+});
+
 test('legacy HTTP compatibility redirects to HTTPS without repeating the same URL',async()=>{
  const response=await worker.fetch(new Request('http://nomads.cubxxw.com/cities/chiang-mai/?month=11'),{SITE_ORIGIN:site,PREVIEW:'false',LEGACY_REDIRECT:'false'},context);
  assert.equal(response.status,308);assert.equal(response.headers.get('Location'),'https://nomads.cubxxw.com/cities/chiang-mai/?month=11');

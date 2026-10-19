@@ -40,11 +40,12 @@ export async function mountedRequest(request, env, ctx, handler) {
   }
   const mounted = url.pathname === base || url.pathname.startsWith(base + '/');
   if (!mounted) {
-    if(['/local-data.js','/local-data.css','/modules/local-migration.js','/modules/agent-store.js'].includes(url.pathname)&&env.ASSETS)return env.ASSETS.fetch(request);
+    // Already-open legacy pages keep their same-origin lazy modules and maps.
+    if(staticPath(url.pathname)&&env.ASSETS)return env.ASSETS.fetch(request);
+    if(url.pathname.startsWith('/map-tiles/')||url.pathname==='/api/rankings')return handler(request,{...env,SITE_ORIGIN:url.origin.replace(/^http:/,'https:')},ctx);
     // Keep already-open legacy conversations usable; public navigation moves.
     if(url.pathname.startsWith('/api/agent/'))return handler(request,{...env,SITE_ORIGIN:url.origin.replace(/^http:/,'https:')},ctx);
     if (env.LEGACY_REDIRECT === 'true') return new Response(null,{status:308,headers:{Location:publicURL(url.pathname + url.search, env),'Cache-Control':'no-store'}});
-    if (staticPath(url.pathname) && env.ASSETS) return env.ASSETS.fetch(request);
     return handler(request, {...env, SITE_ORIGIN: env.PREVIEW==='false'?url.origin.replace(/^http:/,'https:'):url.origin}, ctx);
   }
   const internalURL = new URL(url);

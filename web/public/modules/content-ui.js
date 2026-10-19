@@ -1,4 +1,6 @@
 import { normalizeSearch, countryQueryCode } from "./country-search.js";
+import {sitePath} from './site-path.js';
+import {withPlanMonth,readJourneyMonth} from './trip-state.js';
 export function countryMatches(row, query, covered) {
   const needle = normalizeSearch(query), code = countryQueryCode(needle);
   return (!covered || Number(row.cities) > 0) && (!needle || ((code || /^[a-z]{2}$/.test(needle)) ? normalizeSearch(row.code) === normalizeSearch(code || needle) : normalizeSearch(row.search).includes(needle)));
@@ -41,7 +43,8 @@ export function initContentPage() {
     const params = new URL(location.href).searchParams;
     selects.forEach(select => { const requested = params.get(select.dataset.pairSelect); if (cities.some(c => c.slug === requested)) select.value = requested; });
     const update = () => {
-      selects.forEach(select => { const c = cities.find(c => c.slug === select.value), side = select.dataset.pairSelect, link = picker.querySelector(`[data-pair-city="${side}"]`); if (!c) return; const img = link.querySelector('img'); if (img && c.photo) { img.src = c.photo; img.alt = `${c.name}城市风景`; } link.href = `/cities/${encodeURIComponent(c.slug)}/`; picker.querySelector(`[data-pair-name="${side}"]`).textContent = c.name; });
+      const selectedMonth=Number(params.get('month'))||readJourneyMonth(globalThis.localStorage);
+      selects.forEach(select => { const c = cities.find(c => c.slug === select.value), side = select.dataset.pairSelect, link = picker.querySelector(`[data-pair-city="${side}"]`); if (!c) return; const img = link.querySelector('img'); if (img && c.photo) { img.src = sitePath(c.photo); img.alt = `${c.name}城市风景`; } link.href = withPlanMonth(`/cities/${encodeURIComponent(c.slug)}/`,selectedMonth); picker.querySelector(`[data-pair-name="${side}"]`).textContent = c.name; });
       const same = selects[0].value === selects[1].value;
       picker.querySelector('[data-pair-feedback]').textContent = same ? '两个位置选中了同一座城市，请换一个。' : '逐项比较，看看各自适合怎样的生活。';
       selects[1].setAttribute('aria-invalid', String(same));
@@ -68,4 +71,3 @@ export function initContentPage() {
 }
 
 if (typeof document !== 'undefined') initContentPage();
-import {sitePath} from './site-path.js';

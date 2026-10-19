@@ -26,6 +26,8 @@
 
 正式配置的 `SITE_ORIGIN` 必须为 `https://roamorrow.com/nomads`，`assets.run_worker_first` 必须为 `true`。切换后的 `LEGACY_REDIRECT=true` 启用旧站永久跳转；准备阶段可设为 `false`，同时保留两个入口以供验收。公开发布快照的原始来源仍保留旧域名，该字段用于校验已审核数据的身份，不代表当前网站入口。
 
+两个服务还需配置同一个服务器端 Secret：`NOMADS_PROXY_SECRET`。它只用于主站向 Worker 证明原始网络来源，保持原有每网络额度；不授予用户会话或运维权限。不要复用 `AGENT_BRIDGE_SECRET`，不要信任公开上游收到的原始 `X-Forwarded-For`，也不要把密钥或原始 IP 写进日志。已验证的代理助手响应带 `X-Nomads-Network-Verified: true`，不返回 IP 或签名。旧源直连仍按原 Cloudflare 网络标识限流。
+
 ## 公开数据
 
 `scripts/prepare-release.py --origin https://nomads.cubxxw.com` 从只读本地数据库生成独立发布快照。输出 `.data/release/` 被 Git 忽略，不会覆盖本地资料。

@@ -24,6 +24,7 @@
 - Trailing-slash redirects, external rewrites and canonical paths must not create loops.
 - Asset requests, dynamic links and map tiles must not escape into Roamorrow's root namespace.
 - Agent POST Origin checks, Cookie paths, SSE and cancellation must retain their contracts.
+- Authenticated original-network attribution must preserve per-network quotas across the Vercel-to-Cloudflare hop; unsigned forwarding headers remain untrusted.
 - Published fallback HTML and sitemap must use the new public base during D1 outages.
 - Legacy redirects must preserve filters and leave the local-record export page accessible.
 
@@ -53,6 +54,8 @@
 
 **Files in `getyak/roamorrow`:** `apps/web/next.config.ts`, `apps/web/src/app/robots.ts`, `apps/web/src/app/sitemap.ts`, shared navigation, route-specific tests.
 
+Additional reviewed files: `apps/web/src/middleware.ts`, `apps/web/src/lib/nomads-proxy.ts` and tests; Worker `web/src/proxy-network.js` and `web/tests/proxy-network.test.js`. Middleware authenticates only the network attribution on `/nomads/api/agent/:path*`, leaving request bodies and streams untouched.
+
 - [ ] Test that only `/nomads` paths are forwarded to the fixed upstream, query strings remain supported, and existing routes are untouched.
 - [ ] Add the external rewrite and trailing-slash compatibility setting using documented Next.js 15 APIs.
 - [ ] Expose Nomads in navigation and the main sitemap; add the Nomads sitemap to robots without indexing private endpoints.
@@ -63,6 +66,7 @@
 **Files:** private production config, public README/deployment docs, release manifest, local cutover evidence.
 
 - [ ] Record the pre-cutover Worker version and Vercel deployment; retain configuration copies locally with restrictive permissions.
+- [ ] Configure the same narrow `NOMADS_PROXY_SECRET` as server-only Secrets on the two existing services, through stdin without logging its value; prove verified attribution and rejection of tampering/expiry before cutover.
 - [ ] Publish compatible Worker with legacy redirects disabled and verify the old service.
 - [ ] Deploy/publish the main-site route and verify new public pages, API status, assets and normal Roamorrow pages in a real browser.
 - [ ] Review the whole change; fix material issues before enabling redirects.
