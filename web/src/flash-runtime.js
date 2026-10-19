@@ -38,7 +38,7 @@ export class NomadAgent {
       if(active(trace)){trace.status='failed';trace.runtime_reaped=true;trace.code='RUNTIME_INTERRUPTED';}
       return json(trace);
     }
-    if(!['/answer','/cancel','/tool'].includes(route)||request.method!=='POST')return json({error:'Not found'},404);
+    if(!['/answer','/cancel','/heartbeat','/tool'].includes(route)||request.method!=='POST')return json({error:'Not found'},404);
     const text=await request.text();if(text.length>24000)return json({error:'提问过长。'},413);
     let input;try{input=JSON.parse(text);}catch{return json({error:'无法读取提问。'},400);}
     if(route==='/tool'){
@@ -48,6 +48,11 @@ export class NomadAgent {
         return json(await executeNomadTool(scoped,input?.name,input?.args));
       }
       catch{return json({error:{code:'DATABASE_UNAVAILABLE',message:'资料暂时未能读取，请稍后重试。'}},503);}
+    }
+    if(route==='/heartbeat') {
+      const run=this.run;
+      if(!active(run)||!run.renewLease||run.id!==input?.run_id||run.owner!==owner)return json({error:'Not found'},404);
+      run.renewLease();return json({alive:true});
     }
     if(route==='/cancel') {
       const run=this.run;
@@ -71,7 +76,12 @@ export class NomadAgent {
       run.events.push({event,...data,at:Date.now()});
       if(!closed)try{writer.enqueue(encoder.encode('event: '+event+'\ndata: '+JSON.stringify(data)+'\n\n'));}catch{closed=true;if(active(run))run.controller.abort(new Error('CANCELLED'));}
     };
-    emit('start',{run_id:run.id,model:'deepseek-flash',read_only:true});
+    let leaseTimer;
+    if(request.headers.get('X-Nomads-Stream-Lease')==='1'){
+      run.renewLease=()=>{clearTimeout(leaseTimer);leaseTimer=setTimeout(()=>{if(active(run))run.controller.abort(new Error('CANCELLED'));},45000);};
+      run.renewLease();
+    }
+    emit('start',{run_id:run.id,model:'deepseek-flash',read_only:true,...(run.renewLease?{lease_ms:45000}:{})});
     this.task=(async()=>{
       let answer,failure;
       try{answer=await runFlashAgent(run,input,this.env,emit,{fetcher:this.fetcher,executeTool:(_env,name,args)=>this.readTool(run,name,args)});run.status='finalizing';}
@@ -80,6 +90,7 @@ export class NomadAgent {
         if(failure==='AGENT_RUNTIME_ERROR')console.error(JSON.stringify({run:run.id,code:failure,name:error.name,message:String(error.message).replaceAll(this.env.DEEPSEEK_API_KEY,'[redacted]').replaceAll(this.env.AGENT_BRIDGE_SECRET,'[redacted]').slice(0,240)}));
       }
       finally{
+        clearTimeout(leaseTimer);run.renewLease=null;
         run.ended=Date.now();run.status=failure?(failure==='CANCELLED'?'cancelled':'failed'):'completed';
         try{await this.ctx.storage.put('trace:'+run.id,{...publicFlashRun(run),owner});}catch{failure='TRACE_UNAVAILABLE';run.status='failed';}
         if(failure)emit(failure==='CANCELLED'?'cancelled':'error',{code:failure,runtime_reaped:!!run.reaped,message:failure==='CANCELLED'?'已停止，本次任务已关闭。':failures[failure]||'这次资料查询暂未完成。问题已保留，可以重试。'});

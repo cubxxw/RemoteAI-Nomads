@@ -1,6 +1,7 @@
 import {esc,money,parseState,KEYS,LABELS,DEFAULT_WEIGHTS} from './ranking.js';
 import {budgetSymbol} from './budget-currency.js';
 import {formatAgentAnswer} from './agent-format.js';
+import {runLiveness} from './agent-liveness.js';
 import {parseAgentEvent} from './agent-sse.js';
 import {createConversation,openConversationStore} from './agent-store.js';
 import {visibleAnswer,modelHistory,recoverInterrupted,localPath,conversationMarkdown} from './agent-conversation.js';
@@ -212,7 +213,7 @@ function saveActivity(run,event){
   Object.assign(item,{label:event.label,status:event.ok===undefined?'查询中':event.ok?'已完成':'未完成',...(event.ok!==undefined?{ok:event.ok}:{}),...(event.duration_ms!==undefined?{duration_ms:event.duration_ms}:{})});
 }
 async function confirmStop(run){
-  if(!run||run.stopping)return false;run.stopping=true;controls();run.phase='正在停止这次查询…';if(active?.id===run.thread.id)status(run.phase);run.controller.abort();
+  if(!run||run.stopping)return false;run.liveness?.stop();run.stopping=true;controls();run.phase='正在停止这次查询…';if(active?.id===run.thread.id)status(run.phase);run.controller.abort();
   let confirmed=false;
   try{
     if(!run.id){const response=await fetch(sitePath('/api/agent/status'));if(!response.ok)throw Error();const state=await response.json();const ownLease=read(leaseKey);if(state.active_runs?.length===1&&(run.accepted||(ownLease?.tabId===tabId&&ownLease.threadId===run.thread.id)))run.id=state.active_runs[0];if(!state.active_runs?.length)confirmed=true;}
@@ -223,7 +224,7 @@ async function confirmStop(run){
     }
     if(!confirmed)throw Error();
     if(run.message.status!=='completed'){run.message.status='cancelled';run.message.content='已停止。你可以调整计划后继续。';}
-    run.phase='本次任务已关闭。';await persist(run.thread);updateMessage(run);if(running===run)running=null;clearInterval(run.heartbeat);clearLease();controls();pet();
+    run.phase='本次任务已关闭。';await persist(run.thread);updateMessage(run);if(running===run)running=null;run.liveness?.stop();clearInterval(run.heartbeat);clearLease();controls();pet();
   }catch{run.needsConfirmation=true;run.phase='暂未确认停止，请再点一次停止。';if(active?.id===run.thread.id)status(run.phase);}
   finally{run.stopping=false;controls();}
   return confirmed;
@@ -237,15 +238,15 @@ async function ask(text,{thread=active,retry=null}={}){
   else{user={id:crypto.randomUUID(),role:'user',content:text,status:'completed',createdAt:Date.now()};message={id:crypto.randomUUID(),role:'assistant',questionId:user.id,content:'',status:'pending',createdAt:Date.now(),activity:[]};thread.messages.push(user,message);}
   if(thread.title==='新的旅行计划'||thread.messages.length===2)thread.title=Array.from(text.replace(/\s+/g,' ')).slice(0,28).join('');
   thread.draft='';if(active?.id===thread.id)question.value='';if(read(draftKey)?.id===thread.id)write(draftKey,null);
-  const run={thread,message,controller:new AbortController(),phase:'正在理解你的计划…',id:null,accepted:false,stopping:false,needsConfirmation:false};running=run;lease(run);run.heartbeat=setInterval(()=>lease(run),10000);pet();renderThread();status(run.phase);rememberActive();await persist(thread);
+  const run={thread,message,controller:new AbortController(),phase:'正在理解你的计划…',id:null,accepted:false,stopping:false,needsConfirmation:false};run.liveness=runLiveness(run);running=run;lease(run);run.heartbeat=setInterval(()=>lease(run),10000);pet();renderThread();status(run.phase);rememberActive();await persist(thread);
   let terminal=false,answered=false;
   try{
-    const response=await fetch(sitePath('/api/agent/answer'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text,context,history,previous_budget:previousBudget}),signal:run.controller.signal});
+    const response=await fetch(sitePath('/api/agent/answer'),{method:'POST',headers:{'Content-Type':'application/json','X-Nomads-Stream-Lease':'1'},body:JSON.stringify({question:text,context,history,previous_budget:previousBudget}),signal:run.controller.signal});
     if(!response.ok){const body=await response.json().catch(()=>({}));throw Error(body.error||'助手暂时不可用，问题已经保留。');}run.accepted=true;
     const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';
     while(true){const {done,value}=await reader.read();if(done)break;buffer=(buffer+decoder.decode(value,{stream:true})).replaceAll('\r\n','\n');let at;
       while((at=buffer.indexOf('\n\n'))>=0){const block=buffer.slice(0,at);buffer=buffer.slice(at+2);const parsed=parseAgentEvent(block);if(!parsed)continue;const {type,data}=parsed;
-        if(type==='start')run.id=data.run_id;
+        if(type==='start'){run.id=data.run_id;run.liveness.start(data.lease_ms);}
         if(type==='model'||type==='checking'){run.phase=data.label+'…';updateMessage(run);}
         if(type==='tool_start'||type==='tool_end'){saveActivity(run,data);run.phase=data.label+(type==='tool_end'?' · 已完成':'…');updateMessage(run);persist(thread);}
         if(type==='answer'){answered=true;message.result=visibleAnswer(data);message.content=data.answer;message.status='completed';if(data.budget_snapshot){thread.budget=structuredClone(data.budget_snapshot);thread.budgetSelection=null;}else if(data.budget_options?.length){thread.budget=null;thread.budgetSelection=null;}run.phase='回答好了，依据可以点开查看。';await persist(thread);updateMessage(run,{answer:true});if(!dialog.open||active?.id!==thread.id||historyMode)unread=true;pet();}
@@ -260,7 +261,7 @@ async function ask(text,{thread=active,retry=null}={}){
     if(run.accepted&&!terminal){if(!(await confirmStop(run))){message.status='interrupted';message.content='连接中断，正在确认上一任务已停止。';await persist(thread);updateMessage(run);return;}}
     if(message.status!=='completed'){message.status='failed';message.content=/[\u4e00-\u9fff]/.test(error.message)?error.message:'连接暂时中断，问题已保留，可以重试。';run.phase='这次未完成，问题已保留。';await persist(thread);updateMessage(run);}
   }finally{
-    if(running===run&&!run.stopping&&!run.needsConfirmation){running=null;clearInterval(run.heartbeat);clearLease();controls();pet();if(historyMode)renderHistory();}
+    if(running===run&&!run.stopping&&!run.needsConfirmation){running=null;run.liveness?.stop();clearInterval(run.heartbeat);clearLease();controls();pet();if(historyMode)renderHistory();}
   }
 }
 const ready=(async()=>{
@@ -305,8 +306,8 @@ function formEvents(){
   $('agent-export').addEventListener('click',()=>exportThread());$('agent-export-all').addEventListener('click',exportAll);$('agent-delete').addEventListener('click',deleteActive);
   $('agent-more-toggle').addEventListener('click',()=>{const menu=$('agent-more');menu.hidden=!menu.hidden;$('agent-more-toggle').setAttribute('aria-expanded',String(!menu.hidden));});
   dialog.addEventListener('click',e=>{const starter=e.target.closest('[data-agent-question]');if(starter)fillQuestion(starter.dataset.agentQuestion);if(e.target.closest('#agent-more button')){$('agent-more').hidden=true;$('agent-more-toggle').setAttribute('aria-expanded','false');}});
-  window.addEventListener('pagehide',()=>{if(active)rememberDraft();clearLease();if(running){running.suspended=true;running.controller.abort();}});
-  window.addEventListener('pageshow',async e=>{if(!e.persisted)return;await ready;if(running?.suspended){const run=running;clearInterval(run.heartbeat);running=null;if(recoverInterrupted(run.thread))await persist(run.thread);}else if(recoverInterrupted(active))await persist(active);renderThread({scrollToEnd:false});pet();});
+  window.addEventListener('pagehide',()=>{if(active)rememberDraft();clearLease();if(running){running.suspended=true;running.liveness.abandon();}});
+  window.addEventListener('pageshow',async e=>{if(!e.persisted)return;await ready;if(running?.suspended){const run=running;run.liveness?.stop();clearInterval(run.heartbeat);running=null;if(recoverInterrupted(run.thread))await persist(run.thread);}else if(recoverInterrupted(active))await persist(active);renderThread({scrollToEnd:false});pet();});
   window.addEventListener('popstate',describeContext);document.addEventListener('nomads:rows-updated',describeContext);
   window.addEventListener('storage',async e=>{if(e.key!==leaseKey||running||!active)return;if(!liveForeign()){const id=active.id;const fresh=await store.get(id);if(active.id===id&&fresh&&fresh.revision>active.revision){active=fresh;cache.set(active.id,active);renderThread({scrollToEnd:false});}}controls();});
   const tray=$('compare-tray');if(tray){new ResizeObserver(viewport).observe(tray);new MutationObserver(viewport).observe(tray,{attributes:true,attributeFilter:['hidden']});}
