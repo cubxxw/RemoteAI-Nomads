@@ -232,9 +232,12 @@ document.addEventListener("nomads:rows-updated", update);
 document.addEventListener("nomads:notice", (e) => notify(e.detail));
 update();
 if (document.querySelector("#ranking-root"))
-  import("/modules/rank-ui.js").catch(() =>
-    notify("实时排序暂时未载入，刷新页面可重试；当前排行与城市详情仍可浏览。"),
-  );
+  import("/modules/rank-ui.js").catch(error => {
+    console.error('Ranking initialization failed',error);
+    const shareButton=document.querySelector('#share-ranking');
+    if(shareButton){shareButton.disabled=true;shareButton.removeAttribute('aria-busy');shareButton.setAttribute('aria-label','分享暂不可用，请刷新重试');shareButton.title='分享暂不可用，请刷新重试';}
+    notify("实时排序暂时未载入，刷新页面可重试；当前排行与城市详情仍可浏览。");
+  });
 
 let agentModule;
 document.addEventListener('click',async event=>{
