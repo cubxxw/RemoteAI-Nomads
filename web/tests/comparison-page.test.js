@@ -4,6 +4,14 @@ import { comparisonBody, comparisonFit, compactMonths } from '../src/comparison-
 
 const city=(name,overrides={})=>({slug:name,name,nameEn:name,country:'测试地区',photo:'/images/city-test.webp',budget:1000,scores:{safety:8,cost:8,climate:8,life:8,internet:8,community:8},months:Array.from({length:12},(_,index)=>({month:index+1,status:'unknown',meanC:null,rainMm:null})),visa:{label:'待核验',detail:'旧资料'},...overrides});
 
+test('OSM density and an uncollected historical community label never receive a cross-source winner',()=>{
+  const a=city('chiang-mai',{communityPlaces:{coworking:14,cafes:948,checkedAt:'2026-10-19'}}),b=city('chiang-rai',{scores:{safety:8,cost:8,climate:8,life:8,internet:8,community:0}});
+  const html=comparisonBody(a,b,11),row=html.match(/data-comparison-metric="community"[\s\S]*?<\/tr>/)[0];
+  assert.doesNotMatch(row,/comparison-winner|winner-label/);
+  assert.match(row,/OSM/);assert.match(row,/历史社区标签/);assert.match(row,/地点待采集/);
+  assert.doesNotMatch(comparisonFit(a,b,11),/游民氛围/);
+});
+
 test('comparison preserves missing weather and prices instead of inventing zero or a winner',()=>{
   const html=comparisonBody(city('a',{budget:null}),city('b'),1);
   const budget=html.match(/data-comparison-metric="budget"[\s\S]*?<\/tr>/)[0];

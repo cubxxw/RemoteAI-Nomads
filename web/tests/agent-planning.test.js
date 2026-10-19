@@ -16,6 +16,11 @@ test('an exact country or contextual month query never becomes a broader ranking
  const parsed=parseAnswer(JSON.stringify({answer:'中国1月方案[E1]',city_slugs:[],evidence_ids:['E1'],suggested_filters:{q:'中国',month:1}}),run);
  assert.equal(parsed.ranking_url,null);
 });
+test('applying a tool search retains the explicit original-month restriction',()=>{
+ const run=setup();run.evidence.get('E1').result.data.filters={query:'ubud',month:11,recommended_only:true};
+ const parsed=parseAnswer(JSON.stringify({answer:'11月推荐记录[E1]',city_slugs:[],evidence_ids:['E1'],suggested_filters:{month:11}}),run);
+ assert.equal(new URL(parsed.ranking_url,'https://nomads.test').searchParams.get('recommendedOnly'),'1');
+});
 
 test('checker proof retains the dated exchange rate already read by get_costs', async()=>{
  const {compactProof}=await import('../agent/grounding.mjs');

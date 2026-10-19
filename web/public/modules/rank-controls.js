@@ -1,4 +1,6 @@
 import { cityMatchesQuery } from "./country-search.js";
+import {readJourneyMonth} from './trip-state.js';
+import {referenceBudgetIn,budgetSymbol} from './budget-currency.js';
 import { DEFAULT_WEIGHTS, KEYS, LABELS, PRESETS, SEASONAL_VIEW, currentMonth, parseState, stateParams } from './ranking.js';
 
 export const PREFERENCE_KEY = 'nomads-ranking-view-v1';
@@ -12,10 +14,19 @@ export const UI_PRESETS = {
 };
 export const VISA_LABELS = { visa_free: '大陆护照免签', evisa: '电子签', arrival: '落地签', visa_required: '需签证', domestic: '境内', permit: '通行证 / 签注' };
 export function applyRankingFilter(state, key, value) {
+  if(key==='recommendedOnly'&&!value)state.season='';
+  if(key==='budgetCurrency'){
+    if(!['USD','CNY'].includes(value))return;
+    if(state.budget&&value!==state.budgetCurrency){
+      const converted=value==='CNY'?referenceBudgetIn(state.budget,'CNY'):state.budget/referenceBudgetIn(1,'CNY');
+      if(converted>10000000)return;
+      state.budget=Math.round(converted*100)/100;
+    }
+  }
   state[key] = value;
   if (key === 'region' && value) state.country = '';
   if (key === 'month') {
-    if (!state.month) state.warm = false;
+    if (!state.month) {state.warm = false;state.recommendedOnly=false;}
     if (state.month !== SEASONAL_VIEW.month) state.season = '';
   }
 }
@@ -26,7 +37,7 @@ export function quickFilters(state, date = new Date()) {
     {key:'asia',label:'亚洲',selected:state.region==='亚洲'&&!state.country},
     {key:'domestic',label:'国内',selected:state.country==='CN'},
     {key:'abroad',label:'国外',selected:!!state.abroad},
-    {key:'month',label:'本月推荐',detail:month+'月',selected:state.month===month},
+    {key:'month',label:'本月推荐',detail:month+'月',selected:state.month===month&&state.recommendedOnly},
   ];
 }
 export function toggleQuickFilter(state, key, date = new Date()) {
@@ -45,6 +56,7 @@ export function toggleQuickFilter(state, key, date = new Date()) {
   }
   if (key==='month') {
     applyRankingFilter(state,'month',selected?null:currentMonth(date));
+    state.recommendedOnly=!selected;
     state.warm=false;
   }
 }
@@ -58,9 +70,10 @@ export function activeFilters(state) {
     state.region && { key: 'region', label: state.region },
     state.country && {key:'country',label:state.country==='CN'?'国内':'国家：'+state.country},
     state.abroad && {key:'abroad',label:'国外'},
-    state.budget && { key: 'budget', label: '月预算 ≤ $' + state.budget.toLocaleString('en-US') },
+    state.budget && { key: 'budget', label: '月参考 ≤ '+budgetSymbol(state.budgetCurrency) + state.budget.toLocaleString('en-US') },
     state.month && !state.season && { key: 'month', label: state.month + '月出发' },
     state.season === SEASONAL_VIEW.id && { key: 'season', label: SEASONAL_VIEW.label },
+    state.recommendedOnly&&!state.season&&{key:'recommendedOnly',label:'只看原推荐月份'},
     state.visa && { key: 'visa', label: VISA_LABELS[state.visa] || state.visa },
     state.warm && { key: 'warm', label: '历史均温 18–28°C' },
     state.incomplete && { key: 'incomplete', label: '含待补资料' },
@@ -71,16 +84,19 @@ export function additionalFilters(state,date=new Date()) {
     !(filter.key==='region'&&state.region==='亚洲'&&!state.country)&&
     !(filter.key==='country'&&state.country==='CN')&&
     filter.key!=='abroad'&&
-    !(filter.key==='month'&&state.month===currentMonth(date)));
+    !(['month','recommendedOnly'].includes(filter.key)&&state.month===currentMonth(date)&&state.recommendedOnly&&!state.season));
 }
 export function restorePreference(url, storage) {
   const current = parseState(url);
   if (url.search) return current;
+  let restored=current;
   try {
     const stored = JSON.parse(storage.getItem(PREFERENCE_KEY));
-    if (stored?.version !== 1 || typeof stored.query !== 'string' || stored.query.length > 2000) return current;
-    return parseState(new URL('/?' + stored.query, url.origin));
-  } catch { return current; }
+    if (stored?.version === 1 && typeof stored.query === 'string' && stored.query.length <= 2000) restored=parseState(new URL('/?' + stored.query, url.origin));
+  } catch {}
+  const journeyMonth=readJourneyMonth(storage);
+  if(journeyMonth)applyRankingFilter(restored,'month',journeyMonth);
+  return restored;
 }
 export function savePreference(state, storage) {
   try {
@@ -97,7 +113,7 @@ export function commandItems(data, query = '') {
     ...quickFilters(parseState(new URL('https://nomads.example/'))).map(filter=>({kind:'quick',value:filter.key,label:filter.label,detail:'快捷筛选'+(filter.detail?' · '+filter.detail:''),keywords:filter.key==='domestic'?'中国 境内 国内':filter.key==='abroad'?'境外 海外 国外':''})),
     ...Object.entries(VISA_LABELS).map(([value,label]) => ({ kind: 'filter', key: 'visa', value, label, detail: '签证筛选 · 原资料待核验', keywords: '签证 护照 visa' })),
     ...['亚洲','欧洲','美洲','非洲','大洋洲'].map(value => ({ kind: 'filter', key: 'region', value, label: value, detail: '按地区筛选' })),
-    ...Array.from({length:12}, (_,i) => ({ kind:'filter', key:'month', value:i+1, label: i+1+'月出发', detail: '有原推荐记录的城市' })),
+    ...Array.from({length:12}, (_,i) => ({ kind:'filter', key:'month', value:i+1, label: i+1+'月出发', detail: '按该月历史气候比较舒适度' })),
     { kind: 'weights', label: '调整排名权重', detail: '安全、花费、月份舒适度、生活、网络、游民氛围', keywords: '排序 偏好 权重' },
     { kind: 'reset', label: '重置当前视角', detail: '恢复默认偏好，清除筛选', keywords:'清除 默认' },
   ];

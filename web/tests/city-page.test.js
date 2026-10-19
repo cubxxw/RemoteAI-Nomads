@@ -14,6 +14,13 @@ const city = {
   costs:{observations:[{scope:'national',label:'消费支出',field:'total_consumption',category:'total',amount:173042,currency:'JPY',period:'month',unit:'month',household_size:1,conversion:{amount:7700,currency:'CNY'},observed_at:'2025-12-31'}],sources:[],fx:{USD:{rate:6.68,date:'2026-10-16'},JPY:{rate:0.0445,date:'2026-10-16'}},limitations:[]},
 };
 
+test('requested month is rendered before JavaScript and official resource checks appear in the city flow',()=>{
+  const thai=renderCityPage({...city,country_id:'TH'},{},{date:'2026-10-19',month:12}).body;
+  assert.match(thai,/option value="12" selected/);
+  assert.match(thai,/thaiembbeij.org\/th\/news\/updateofvisaexemption/);
+  assert.match(renderCityPage({...city,slug:'lisbon'},{},{date:'2026-10-19'}).body,/Second Home Mercado/);
+});
+
 test('user budget uses explicit inputs and reports omitted expenses', () => {
   assert.deepEqual(planBudget({rent:'',food:'',other:'',days:30}), {amount:null,error:false,missing:['房租','餐费','其他开销']});
   assert.deepEqual(planBudget({rent:'3000',food:'100',other:'600',days:15}), {amount:3300,error:false,missing:[]});

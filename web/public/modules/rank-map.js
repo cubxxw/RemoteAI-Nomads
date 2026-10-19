@@ -166,6 +166,7 @@ export class RankMap {
     // Keep links and scroll stable when moving between city dots in one country.
     if (changed) {
       this.selection.innerHTML = renderCountryPreview(group,slug);
+      document.dispatchEvent(new Event('nomads:links-updated'));
       this.selection.scrollTop = 0;
       this.announce(group);
     } else {

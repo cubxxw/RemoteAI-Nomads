@@ -1,3 +1,4 @@
+import {withPlanMonth} from './trip-state.js';
 import {scoreLabel} from './ranking.js';
 import {climateComfort} from './places.js';
 import {
@@ -85,7 +86,7 @@ function rankNumber(el, next) {
     { duration: 220 },
   );
 }
-function render(initial = false) {
+function render(initial = false,editingBudget=false) {
   const start = performance.now();
   ranked = rankCities(data, state);
   const sorted = performance.now();
@@ -207,11 +208,13 @@ function render(initial = false) {
   document.querySelector(".ranking-columns span:nth-child(6)").textContent =
     displayMonth(state) + "月舒适度";
   map.update(ranked);
+  root.dataset.planMonth=state.month||'';
+  document.dispatchEvent(new CustomEvent('nomads:journey-month',{detail:state.month}));
   if (active && ranked.some((c) => c.slug === active)) map.highlight(active);
   else if (active) {
     active = null;
   }
-  syncControls();
+  syncControls(editingBudget);
   document.dispatchEvent(new Event("nomads:rows-updated"));
   const end = performance.now();
   metrics.updates++;
@@ -288,7 +291,7 @@ function renderWeightPreview() {
   }
   if (!leading.length) { const item=document.createElement('li');item.textContent='当前条件下暂无可排序的城市';container.append(item); }
 }
-function syncControls() {
+function syncControls(editingBudget=false) {
   const seasonNote = document.querySelector('#rank-season-note');if (seasonNote) seasonNote.hidden = state.season !== SEASONAL_VIEW.id;
   for (const filter of quickFilters(state)) { const button=root.querySelector(`[data-quick-filter="${filter.key}"]`);button.classList.toggle('selected',filter.selected);button.setAttribute('aria-pressed',String(filter.selected));if(filter.detail)button.querySelector('span').textContent=filter.detail; }
   renderWeightPreview();
@@ -299,15 +302,16 @@ function syncControls() {
     document.querySelector('#output-' + key).value = state.weights[key];
   }
   if (!composing && document.activeElement !== search) search.value = state.q;
+  document.querySelector('#recommended-only').checked=state.recommendedOnly||state.season===SEASONAL_VIEW.id;
+  document.querySelector('#recommended-only').disabled=!state.month;
   document.querySelector('#include-incomplete').checked = state.incomplete || state.country==='CN';
   document.querySelector('#include-incomplete').disabled = state.country==='CN';
   document.querySelector('#incomplete-label').textContent = state.country==='CN' ? '国内视角保留未评分目的地' : '包含指标待补的城市';
   document.querySelectorAll('[data-filter-input]').forEach(input => {
+    if(editingBudget&&input.dataset.filterInput==='budget')return;
     const value = String(state[input.dataset.filterInput] ?? '');
-    if (value && ![...input.options].some(option => option.value === value)) {
-      const option = document.createElement('option');option.value = value;option.textContent = '≤ $' + Number(value).toLocaleString('en-US');input.append(option);
-    }
     input.value = value;
+    if(input.dataset.filterInput==='budget'){input.setAttribute('aria-invalid','false');document.querySelector('#ranking-budget-error').hidden=true;}
   });
   document.querySelectorAll('[data-preset]').forEach(button => {
     const preset = UI_PRESETS[button.dataset.preset];
@@ -414,7 +418,7 @@ root.addEventListener('click', event => {
   const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>toggleQuickFilter(state,quick.dataset.quickFilter));
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
-  if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' || key === 'abroad' ? false : ''); });
+  if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' || key === 'abroad' || key === 'recommendedOnly' ? false : ''); });
   if (event.target.closest('[data-reset-all],#reset-ranking')) resetAll();
   if (event.target.closest('#undo-ranking')) {
     clearTimeout(searchTimer);searchTimer = null;
@@ -426,13 +430,27 @@ root.addEventListener('click', event => {
   const locateButton = event.target.closest('[data-map-locate]');if (locateButton) locateFromMap(locateButton.dataset.mapLocate,true);
 });
 filterToggle.addEventListener('click', () => filterPopover.hidden ? openFilters() : closeFilters(true));
+let budgetGesture=false;
+const budgetInput=document.querySelector('#filter-budget');
+budgetInput.addEventListener('blur',()=>{budgetGesture=false;});
+budgetInput.addEventListener('input',()=>{
+  const invalid=!budgetInput.validity.valid;budgetInput.setAttribute('aria-invalid',String(invalid));document.querySelector('#ranking-budget-error').hidden=!invalid;
+  if(invalid)return;
+  finishSearch();if(!budgetGesture)checkpoint();
+  state.budget=budgetInput.value?Number(budgetInput.value):null;state.limit=40;
+  render(false,true);commit(budgetGesture);budgetGesture=true;
+});
 filterPopover.addEventListener('change', event => {
   const input = event.target.closest('[data-filter-input]');
-  if (input) change(() => { const key = input.dataset.filterInput;applyRankingFilter(state,key,key === 'month' || key === 'budget' ? (input.value ? Number(input.value) : null) : input.value); });
+  if (input) {
+    if(input.dataset.filterInput==='budget')return;
+    change(() => { const key = input.dataset.filterInput;applyRankingFilter(state,key,key === 'month' || key === 'budget' ? (input.value ? Number(input.value) : null) : input.value); });
+  }
   positionFilters();
 });
+document.querySelector('#recommended-only').addEventListener('change',event=>change(()=>{applyRankingFilter(state,'recommendedOnly',event.target.checked);}));
 document.querySelector('#include-incomplete').addEventListener('change', event => change(() => { state.incomplete = event.target.checked; }));
-document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',country:'',abroad:false,budget:null,month:null,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
+document.querySelector('#clear-filters').addEventListener('click', () => change(() => { Object.assign(state,{q:'',region:'',country:'',abroad:false,budget:null,budgetCurrency:'USD',month:null,recommendedOnly:false,visa:'',season:'',warm:false,incomplete:false});search.value = ''; }));
 document.querySelector('#reset-weights').addEventListener('click', () => {endWeightGesture();change(() => {state.weights = {...DEFAULT_WEIGHTS};});});
 document.addEventListener('pointerdown', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
 document.addEventListener('focusin', event => { if (!filterPopover.hidden && !filterPopover.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(); });
@@ -481,7 +499,7 @@ function openCommand(opener = document.activeElement) {
 }
 function executeCommand(index) {
   const item = commands[index];if (!item) return;
-  if (item.kind === 'city') { location.href = '/cities/' + encodeURIComponent(item.value) + '/';return; }
+  if (item.kind === 'city') { location.href = withPlanMonth('/cities/' + encodeURIComponent(item.value) + '/',state.month);return; }
   commandDialog.close();
   if (item.kind === 'preset') applyPreset(item.value);
   if (item.kind === 'quick') change(()=>toggleQuickFilter(state,item.value));
@@ -558,12 +576,17 @@ document.querySelector('#map-zoom-out').addEventListener('click', () => map.zoom
 document.querySelector('#map-reset').addEventListener('click', () => map.reset());
 document.querySelector('#share-ranking').addEventListener('click', async () => {
   finishSearch();const params = stateParams(state).toString(), value = location.origin + location.pathname + (params ? '?' + params : '');
-  try { await navigator.clipboard.writeText(value);notify('已复制当前视角，打开链接即可恢复。'); }
-  catch {
-    let dialog = document.querySelector('#share-dialog');
-    if (!dialog) {dialog = document.createElement('dialog');dialog.id = 'share-dialog';dialog.setAttribute('aria-labelledby','share-title');dialog.innerHTML = '<form method="dialog"><h2 id="share-title">分享当前视角</h2><label for="share-url">复制此链接</label><input id="share-url" readonly><p class="share-hint">选中链接后即可复制，打开后会恢复同一视角。</p><button class="button" value="close">完成</button></form>';document.body.append(dialog);}
-    dialog.querySelector('input').value = value;dialog.showModal();dialog.querySelector('input').select();
+  let copied=false;
+  try { await navigator.clipboard.writeText(value);copied=true; }catch{}
+  let dialog=document.querySelector('#share-dialog');
+  if(!dialog){
+    dialog=document.createElement('dialog');dialog.id='share-dialog';dialog.setAttribute('aria-labelledby','share-title');
+    dialog.innerHTML='<form method="dialog"><h2 id="share-title">分享当前视角</h2><label for="share-url">这个链接包含当前筛选和偏好</label><input id="share-url" readonly><p class="share-hint" role="status"></p><a id="share-open" target="_blank" rel="noopener noreferrer">打开这个视角 ↗</a><p class="share-hint">个人报价和会议安排留在本机，不会随链接发送。</p><button class="button" value="close">完成</button></form>';
+    dialog.addEventListener('close',()=>document.querySelector('#share-ranking').focus({preventScroll:true}));document.body.append(dialog);
   }
+  dialog.querySelector('input').value=value;dialog.querySelector('#share-open').href=value;
+  dialog.querySelector('[role="status"]').textContent=copied?'链接已复制，也可以选中上方链接手动复制。':'可以选中上方链接手动复制，或直接打开查看。';
+  dialog.showModal();dialog.querySelector('input').select();
 });
 motion.addEventListener('change', () => {if (motion.matches) {document.querySelectorAll('.ranking-row,.rank-digit,.old-digit').forEach(el => el.getAnimations().forEach(animation => animation.cancel()));document.querySelectorAll('.old-digit,.row-ghost').forEach(el => el.remove());}});
 commit(true);

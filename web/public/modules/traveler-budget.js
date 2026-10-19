@@ -7,6 +7,10 @@ export const TRAVELER_FIELDS={
  other:{label:'其他日常开销',missing:'其他日常开销',unit:'月'},
 };
 const number=value=>value===null||value===undefined||value===''||!Number.isFinite(Number(value))?null:Number(value);
+export function budgetBalance(ceiling,subtotal){
+ const cap=number(ceiling),known=number(subtotal),error=cap!==null&&cap<0;
+ return {remaining:error||cap===null||known===null?null:Math.round((cap-known)*100)/100,error};
+}
 export function travelerDefaults(items=[]) {
  const amount=row=>Number.isFinite(row.displayAmount)?row.displayAmount:row.currency==='CNY'&&Number.isFinite(row.amount)?row.amount:null;
  const valid=items.filter(row=>row.scope==='city'&&row.provider==='costcompass'&&row.quality!=='review'&&!row.quality_flags?.includes('rent_outlier_requires_review')&&amount(row)>0);
