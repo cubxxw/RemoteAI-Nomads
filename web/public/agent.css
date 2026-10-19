@@ -1,6 +1,6 @@
 /* One quiet character; the conversation grows from its corner of the page. */
 .companion-launcher{position:fixed;z-index:35;right:24px;bottom:calc(16px + env(safe-area-inset-bottom) + var(--companion-clearance,0px));display:flex;flex-direction:column;align-items:center;width:88px;min-height:94px;padding:0 4px 4px;border:0;background:transparent;color:var(--ink-1,#202323);cursor:pointer;touch-action:manipulation;isolation:isolate}
-.fox-art{display:block;width:100%;aspect-ratio:1;background:url('/images/companion-fox.webp') 0 0/200% 200% no-repeat;pointer-events:none}
+.fox-art{display:block;width:100%;aspect-ratio:1;background:url('images/companion-fox.webp') 0 0/200% 200% no-repeat;pointer-events:none}
 .fox-art[data-fox-pose="curious"]{background-position:100% 0}.fox-art[data-fox-pose="thinking"]{background-position:0 100%}.fox-art[data-fox-pose="content"]{background-position:100% 100%}
 .companion-launcher>.fox-art{width:80px;filter:drop-shadow(0 3px 3px #25372b12);transition:transform 200ms cubic-bezier(.16,1,.3,1)}
 .companion-label{font-size:11px;line-height:1.5;background:var(--surface,#fff);border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap;box-shadow:0 2px 5px #20232305}

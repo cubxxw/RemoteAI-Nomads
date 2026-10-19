@@ -16,7 +16,7 @@ export const CHANGES_END = '<!-- seasonal:changes:end -->';
 export const BANNED_TERMS = ['先确认','别预设','不能视为','仅供参考','核读','旧资料','旧评分','不是 Mbps','并非四个平台'];
 export const MAX_REASON_LENGTH = 25;
 export const TOP_COUNT = 10;
-const siteOrigin = 'https://nomads.cubxxw.com';
+const siteOrigin = 'https://roamorrow.com/nomads';
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const normalized = value => String(value).normalize('NFKC').replace(/\s/g,'').toLowerCase();

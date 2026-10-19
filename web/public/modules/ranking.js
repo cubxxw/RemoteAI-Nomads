@@ -1,4 +1,5 @@
 import {withPlanMonth} from './trip-state.js';
+import {mountMarkup} from './site-path.js';
 import { cityMatchesQuery } from "./country-search.js";
 import {recommendationEligible} from './recommendation-policy.js';
 import {climateComfort,communityScore,comparableMetric} from './places.js';
@@ -277,7 +278,7 @@ export function renderRow(c, state) {
   const n = (v) => (v === null || v === undefined ? "—" : Number(v).toFixed(1));
   const bar = (v) =>
     `<svg class="micro-bar" viewBox="0 0 40 3" aria-hidden="true"><rect width="40" height="3" class="bar-track"/><rect width="${v === null || v === undefined ? 0 : Math.min(40, v * 4)}" height="3" class="bar-value"/></svg>`;
-  return `<article class="ranking-row" data-city="${esc(c.slug)}" data-score="${c.score ?? ""}" aria-label="${c.rank ? "第" + c.rank + "名，" : ""}${esc(c.name)}" tabindex="-1">
+  return mountMarkup(`<article class="ranking-row" data-city="${esc(c.slug)}" data-score="${c.score ?? ""}" aria-label="${c.rank ? "第" + c.rank + "名，" : ""}${esc(c.name)}" tabindex="-1">
  <span class="rank-number" role="img" aria-label="${c.rank ? "第" + c.rank + "名" : "资料待补"}"><span class="rank-digit" aria-hidden="true">${c.rank ?? "—"}</span></span>
  <a class="rank-photo" href="${esc(withPlanMonth('/cities/'+encodeURIComponent(c.slug)+'/',state.month))}" tabindex="-1" aria-hidden="true">${c.photo ? `<img src="${esc(c.photo.endsWith(".webp") ? c.photo.replace(".webp", ".thumb.webp") : c.photo)}" alt="" width="48" height="48" loading="lazy">` : `<span>${esc(c.name.slice(0, 1))}</span>`}</a>
  <div class="rank-identity"><a class="rank-city-link" href="${esc(withPlanMonth('/cities/'+encodeURIComponent(c.slug)+'/',state.month))}"><strong>${esc(c.name)}</strong></a><span class="rank-english"><span class="rank-city-name-en">${esc(c.nameEn)}</span><span class="rank-country-separator" aria-hidden="true">·</span><a class="rank-country-link" href="${esc(withPlanMonth('/countries/'+c.countryCode.toLowerCase()+'/',state.month))}" aria-label="查看${esc(c.country)}的城市"><span class="country-flag" role="img" aria-label="${esc(c.country)}旗帜">${["TW", "XK"].includes(c.countryCode) ? `<img src="/flags/${c.countryCode.toLowerCase()}.svg" alt="" width="16" height="12">` : flag(c.countryCode)}</span><span>${esc(c.country)}</span></a></span><p title="${esc(c.why)}">${esc(c.why)}</p><span class="mobile-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)} · 旧资料</span></div>
@@ -289,7 +290,7 @@ export function renderRow(c, state) {
  <span class="rank-visa" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span>
  <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${scoreLabel(c,state)}</small></div>
  <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></button>
- </article>`;
+ </article>`);
 }
 export function unratedHeading(cities) {
   const count=cities.filter(c=>c.score===null).length;

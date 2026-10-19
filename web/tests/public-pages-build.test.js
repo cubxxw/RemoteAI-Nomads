@@ -82,8 +82,12 @@ test('fallback ranking preserves the public catalog and licensed photo attributi
 });
 
 // Reject malformed publish targets before reading any local release artifact.
-test('public page targets require a clean HTTPS origin', async () => {
-  for (const origin of ['http://demo.example.org', 'https://user:pass@demo.example.org', 'https://demo.example.org/path', 'https://demo.example.org?token=x', 'https://demo.example.org#fragment']) {
+test('public page targets require a clean HTTPS site URL and reject unsafe mount paths', async () => {
+  for (const origin of ['http://demo.example.org', 'https://user:pass@demo.example.org', 'https://demo.example.org/a%2Fb', 'https://demo.example.org?token=x', 'https://demo.example.org#fragment']) {
     await assert.rejects(buildPublicPages({origin}));
   }
+});
+
+test('a mounted publication target reaches the public artifact stage without rejecting its base path', async () => {
+  await assert.rejects(buildPublicPages({origin: 'https://demo.example.org/nomads', databasePath: '/missing-reviewed-fixture.sqlite', publicationPath: '/missing-reviewed-fixture.json'}), {code: 'ENOENT'});
 });

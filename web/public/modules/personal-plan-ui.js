@@ -22,7 +22,7 @@ export function initPersonalComparison(cities,readMonth){
     row.append(term,value);list.append(row);
    }
    const details=card.querySelector('details');details.hidden=!summary;
-   const link=card.querySelector('[data-personal-edit]');link.href=`/cities/${encodeURIComponent(cities[index].slug)}/?month=${month}#budget`;
+   const link=card.querySelector('[data-personal-edit]');link.href=sitePath(`/cities/${encodeURIComponent(cities[index].slug)}/?month=${month}#budget`);
    link.textContent=summary&&summary.month!==month?`按当前${month}月调整`:'调整这座城市的开销';
   });
   const comparison=personalPlanDifference(...summaries,month),status=panel.querySelector('[data-personal-difference]');
@@ -37,3 +37,4 @@ export function initPersonalComparison(cities,readMonth){
  addEventListener('storage',event=>{if(event.key===null||event.key?.startsWith('nomads-city-plan-v1:'))render();});
  return render;
 }
+import {sitePath} from './site-path.js';

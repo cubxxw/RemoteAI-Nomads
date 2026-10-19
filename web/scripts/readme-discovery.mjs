@@ -1,7 +1,7 @@
 import {climateComfort} from '../public/modules/places.js';
 import { KEYS, SEASONAL_VIEW, parseState, rankCities, esc } from '../public/modules/ranking.js';
 
-const origin = 'https://nomads.cubxxw.com';
+const origin = 'https://roamorrow.com/nomads';
 export const DOMESTIC_START = '<!-- seasonal:domestic:start -->';
 export const DOMESTIC_END = '<!-- seasonal:domestic:end -->';
 export const NEEDS_START = '<!-- seasonal:needs:start -->';

@@ -1,6 +1,6 @@
 # RemoteAI Nomads · 开发说明
 
-[正式网站](https://nomads.cubxxw.com/) · [给旅居者的项目首页](../README.md) · [部署与回退](docs/deployment.md)
+[正式网站](https://roamorrow.com/nomads/) · [给旅居者的项目首页](../README.md) · [部署与回退](docs/deployment.md)
 
 网站提供城市排行、地图、城市预算与双城对比。服务端生成可直接阅读的 HTML，浏览器负责即时重排和交互；人工在 Notion 写描述，业务数据保存在 D1。
 

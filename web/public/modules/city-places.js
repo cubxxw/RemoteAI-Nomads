@@ -27,11 +27,11 @@ if(root){
  async function load(){
   if(loading||loaded)return;loading=true;stage.setAttribute('aria-busy','true');status.textContent='正在载入地图与地点…';
   try{
-   await import('/vendor/leaflet/leaflet.js');L=window.L;
-   const response=await fetch('/places/'+encodeURIComponent(root.dataset.cityPlaces)+'.json');
+   await import(sitePath('/vendor/leaflet/leaflet.js'));L=window.L;
+   const response=await fetch(sitePath('/places/'+encodeURIComponent(root.dataset.cityPlaces)+'.json'));
    if(response.ok){const data=await response.json();places=Array.isArray(data.places)?data.places:[];}else if(response.status!==404)throw new Error('地点读取失败');
    stage.replaceChildren();map=L.map(stage,{scrollWheelZoom:false}).setView([Number(root.dataset.lat),Number(root.dataset.lon)],13);
-   L.tileLayer('/map-tiles/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map).on('tileerror',()=>{status.textContent='部分底图未载入，地点标记与列表仍可使用。';});
+   L.tileLayer(sitePath('/map-tiles/{z}/{x}/{y}.png'),{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map).on('tileerror',()=>{status.textContent='部分底图未载入，地点标记与列表仍可使用。';});
    map.zoomControl.setPosition('topright');group=L.layerGroup().addTo(map);loaded=true;render();stage.focus({preventScroll:true});
   }catch{
    if(map){map.remove();map=null;}stage.innerHTML='<button type="button" data-load-places>重新加载地图</button>';status.textContent='地图暂时未能载入，可重试或在 OpenStreetMap 打开。';
@@ -46,3 +46,4 @@ if(root){
   if(event.target.closest('[data-more-places]')){limit+=10;render();}
  });
 }
+import {sitePath} from './site-path.js';

@@ -4,6 +4,7 @@ import {formatAgentAnswer} from './agent-format.js';
 import {parseAgentEvent} from './agent-sse.js';
 import {createConversation,openConversationStore} from './agent-store.js';
 import {visibleAnswer,modelHistory,recoverInterrupted,localPath,conversationMarkdown} from './agent-conversation.js';
+import {sitePath,appPath} from './site-path.js';
 const $=id=>document.getElementById(id);
 const dialog=$('nomad-agent'),transcript=$('agent-transcript'),question=$('agent-question'),launcher=$('companion-launcher');
 const cache=new Map(),deleted=new Set(),conflicted=new Set();
@@ -49,7 +50,7 @@ async function persist(thread){
 }
 function currentContext(){
   if(!active?.useContext)return {};
-  const url=new URL(location.href),s=parseState(url),city=url.pathname.match(/^\/cities\/([^/]+)\/$/),pair=url.pathname.match(/^\/compare\/([^/]+)-vs-([^/]+)\/$/),country=url.pathname.match(/^\/countries\/([^/]+)\/$/);
+  const url=new URL(location.href),s=parseState(url),path=appPath(url.pathname),city=path.match(/^\/cities\/([^/]+)\/$/),pair=path.match(/^\/compare\/([^/]+)-vs-([^/]+)\/$/),country=path.match(/^\/countries\/([^/]+)\/$/);
   return {...s,source:'current page',...(city?{city:city[1]}:{}),...(pair?{cities:[pair[1],pair[2]]}:{}),...(country?{country:/^[a-z]{2}$/i.test(country[1])?country[1].toUpperCase():document.querySelector('main h1')?.textContent.trim()}: {})};
 }
 function describeContext(){
@@ -105,10 +106,10 @@ function renderAnswer(content,value,thread,message){
     content.append(choices);
   }
   const cities=(value.cities||[]).filter(c=>localPath(c.url));
-  if(cities.length){const cards=document.createElement('div');cards.className='agent-cities';cards.innerHTML=cities.map(c=>`<a class="agent-city" href="${esc(localPath(c.url))}">${localPath(c.photo)?`<img src="${esc(c.photo.endsWith('.webp')?c.photo.replace('.webp','.thumb.webp'):c.photo)}" width="56" height="48" alt="" loading="lazy">`:''}<div><strong>${esc(c.name)}<span>${esc(c.country)}</span></strong><span>查看预算、季节和远程工作条件</span></div><span aria-hidden="true">›</span></a>`).join('');content.append(cards);}
+  if(cities.length){const cards=document.createElement('div');cards.className='agent-cities';cards.innerHTML=cities.map(c=>`<a class="agent-city" href="${esc(localPath(c.url))}">${localPath(c.photo)?`<img src="${esc(sitePath(c.photo.endsWith('.webp')?c.photo.replace('.webp','.thumb.webp'):c.photo))}" width="56" height="48" alt="" loading="lazy">`:''}<div><strong>${esc(c.name)}<span>${esc(c.country)}</span></strong><span>查看预算、季节和远程工作条件</span></div><span aria-hidden="true">›</span></a>`).join('');content.append(cards);}
   const actions=document.createElement('div');actions.className='agent-result-actions';
-  if(localPath(value.ranking_url)){const button=document.createElement('button');button.type='button';button.textContent='应用到排行';button.addEventListener('click',()=>{const path=localPath(value.ranking_url);if(['/','/cities/'].includes(location.pathname)){history.pushState({nomads:true},'',path);window.dispatchEvent(new PopStateEvent('popstate'));close();}else location.href=path;});actions.append(button);}
-  if(cities.length>=2&&cities.slice(0,2).every(c=>/^[a-z0-9-]+$/.test(c.slug))){const pair=cities.slice(0,2),link=document.createElement('a');link.href='/compare/'+pair.map(c=>c.slug).sort().join('-vs-')+'/';link.textContent='对比'+pair.map(c=>c.name).join('与');actions.append(link);}
+  if(localPath(value.ranking_url)){const button=document.createElement('button');button.type='button';button.textContent='应用到排行';button.addEventListener('click',()=>{const path=localPath(value.ranking_url);if(['/','/cities/'].includes(appPath(location.pathname))){history.pushState({nomads:true},'',path);window.dispatchEvent(new PopStateEvent('popstate'));close();}else location.href=path;});actions.append(button);}
+  if(cities.length>=2&&cities.slice(0,2).every(c=>/^[a-z0-9-]+$/.test(c.slug))){const pair=cities.slice(0,2),link=document.createElement('a');link.href=sitePath('/compare/'+pair.map(c=>c.slug).sort().join('-vs-')+'/');link.textContent='对比'+pair.map(c=>c.name).join('与');actions.append(link);}
   if(actions.childElementCount)content.append(actions);
   if(value.evidence?.length){
     const details=document.createElement('details');details.className='agent-evidence';const summary=document.createElement('summary');summary.textContent=value.evidence.length+' 项依据与价格口径';details.append(summary);
@@ -214,10 +215,10 @@ async function confirmStop(run){
   if(!run||run.stopping)return false;run.stopping=true;controls();run.phase='正在停止这次查询…';if(active?.id===run.thread.id)status(run.phase);run.controller.abort();
   let confirmed=false;
   try{
-    if(!run.id){const response=await fetch('/api/agent/status');if(!response.ok)throw Error();const state=await response.json();const ownLease=read(leaseKey);if(state.active_runs?.length===1&&(run.accepted||(ownLease?.tabId===tabId&&ownLease.threadId===run.thread.id)))run.id=state.active_runs[0];if(!state.active_runs?.length)confirmed=true;}
+    if(!run.id){const response=await fetch(sitePath('/api/agent/status'));if(!response.ok)throw Error();const state=await response.json();const ownLease=read(leaseKey);if(state.active_runs?.length===1&&(run.accepted||(ownLease?.tabId===tabId&&ownLease.threadId===run.thread.id)))run.id=state.active_runs[0];if(!state.active_runs?.length)confirmed=true;}
     if(run.id){
-      const response=await fetch('/api/agent/cancel',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({run_id:run.id})});if(!response.ok)throw Error();let state=await response.json();
-      for(let i=0;i<10&&!state.runtime_reaped&&['running','stopping','finalizing'].includes(state.status);i++){await new Promise(r=>setTimeout(r,400));const poll=await fetch('/api/agent/runs/'+run.id);if(!poll.ok)throw Error();state=await poll.json();}
+      const response=await fetch(sitePath('/api/agent/cancel'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({run_id:run.id})});if(!response.ok)throw Error();let state=await response.json();
+      for(let i=0;i<10&&!state.runtime_reaped&&['running','stopping','finalizing'].includes(state.status);i++){await new Promise(r=>setTimeout(r,400));const poll=await fetch(sitePath('/api/agent/runs/'+run.id));if(!poll.ok)throw Error();state=await poll.json();}
       confirmed=state.runtime_reaped===true;
     }
     if(!confirmed)throw Error();
@@ -239,7 +240,7 @@ async function ask(text,{thread=active,retry=null}={}){
   const run={thread,message,controller:new AbortController(),phase:'正在理解你的计划…',id:null,accepted:false,stopping:false,needsConfirmation:false};running=run;lease(run);run.heartbeat=setInterval(()=>lease(run),10000);pet();renderThread();status(run.phase);rememberActive();await persist(thread);
   let terminal=false,answered=false;
   try{
-    const response=await fetch('/api/agent/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text,context,history,previous_budget:previousBudget}),signal:run.controller.signal});
+    const response=await fetch(sitePath('/api/agent/answer'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text,context,history,previous_budget:previousBudget}),signal:run.controller.signal});
     if(!response.ok){const body=await response.json().catch(()=>({}));throw Error(body.error||'助手暂时不可用，问题已经保留。');}run.accepted=true;
     const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';
     while(true){const {done,value}=await reader.read();if(done)break;buffer=(buffer+decoder.decode(value,{stream:true})).replaceAll('\r\n','\n');let at;

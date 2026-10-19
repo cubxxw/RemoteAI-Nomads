@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>迁移本机记录 · RemoteAI Nomads</title><link rel="stylesheet" href="../local-data.css"><script type="module" src="../local-data.js"></script></head>
+<body><main>
+<a href="https://roamorrow.com/nomads">返回旅居选城</a>
+<h1>把本机记录带到新地址</h1>
+<p>收藏、个人行程、选城偏好和小狐对话保存在各自域名的浏览器里。通过备份文件，可以把这些记录带到 Roamorrow 新地址。</p>
+<p>先在<a href="https://nomads.cubxxw.com/local-data/">旧地址</a>导出，再在<a href="https://roamorrow.com/nomads/local-data/">新地址</a>导入。整个过程在你的浏览器内完成，文件不会上传服务器。</p>
+<section aria-labelledby="export-title"><h2 id="export-title">导出这个地址的记录</h2><p id="current-site"></p><button id="export-local" type="button">导出本机记录</button></section>
+<section aria-labelledby="import-title"><h2 id="import-title">导入之前导出的文件</h2><p>保留这个地址已有的记录，跳过重复对话。也支持小狐原来的 JSON 对话导出文件。</p><label for="backup-file">选择 JSON 备份文件</label><input id="backup-file" type="file" accept="application/json,.json"><button id="import-local" type="button">导入所选文件</button></section>
+<p id="migration-status" role="status" aria-live="polite">请在保存过记录的同一浏览器中打开旧地址。</p>
+</main></body></html>

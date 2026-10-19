@@ -3,7 +3,7 @@
   "name": "remoteai-nomads-preview",
   "main": "src/worker.js",
   "compatibility_date": "2026-10-17",
-  "assets": {"directory": "./public", "binding": "ASSETS"},
+  "assets": {"directory": "./public", "binding": "ASSETS", "run_worker_first": true},
   "triggers": {"crons": ["15 2 * * *"]},
   "d1_databases": [{"binding":"DB","database_name":"remoteai-nomads","database_id":"00000000-0000-0000-0000-000000000001","migrations_dir":"migrations"}],
   "vars": {"PREVIEW":"true","SITE_ORIGIN":"http://127.0.0.1:8787"}

@@ -84,7 +84,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
   root.dataset.ready = 'true';
   const monthSelect = root.querySelector('#city-month');
   const planStorage={getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)};
-  const slug=data.slug||location.pathname.split('/')[2],storedPlan=readCityPlan(planStorage,slug);
+  const slug=data.slug||appPath(location.pathname).split('/')[2],storedPlan=readCityPlan(planStorage,slug);
   if(storedPlan?.meeting){root.querySelector('#meeting-date').value=storedPlan.meeting.date;root.querySelector('#meeting-hour').value=String(storedPlan.meeting.hour);}
   let savedMonth;try{savedMonth=localStorage.getItem(TRIP_MONTH_KEY);}catch{}
   monthSelect.value=String(planMonth(new URL(location.href),storedPlan?.month||savedMonth,monthSelect.value));
@@ -273,3 +273,4 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
 }
 
 if (typeof document !== 'undefined') initCityPage();
+import {appPath} from './site-path.js';

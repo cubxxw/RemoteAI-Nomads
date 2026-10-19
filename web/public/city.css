@@ -5,7 +5,7 @@
 .city-guide button,.city-guide input,.city-guide select{font:inherit;font-size:15px;min-height:44px;border-radius:8px}
 .city-guide button{touch-action:manipulation}
 .city-guide input,.city-guide select{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 12px;min-width:0;max-width:100%}
-.city-guide select{height:44px;-webkit-appearance:none;appearance:none;padding-right:32px;background-image:url('/icons/chevron-down.svg');background-repeat:no-repeat;background-position:right 10px center;background-size:12px}
+.city-guide select{height:44px;-webkit-appearance:none;appearance:none;padding-right:32px;background-image:url('icons/chevron-down.svg');background-repeat:no-repeat;background-position:right 10px center;background-size:12px}
 .city-guide input:disabled,.city-guide select:disabled{background:var(--green-soft,var(--soft));color:var(--muted)}
 .city-guide input::placeholder{color:var(--ink-3,var(--muted));font-size:13px}
 .city-guide input[aria-invalid=true]{border-color:#ad4d37}

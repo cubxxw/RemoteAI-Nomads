@@ -6,6 +6,19 @@ import {parseState,rankCities,stateParams} from '../public/modules/ranking.js';
 import {UI_PRESETS} from '../public/modules/rank-controls.js';
 import worker from '../src/worker.js';
 const html='<!doctype html><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://nomads.example/cities/penang/"></head><main>公开城市资料</main>';
+
+test('published HTML relocates canonical, assets and links to the configured mounted site during an outage', async () => {
+ const env={PREVIEW:'false',SITE_ORIGIN:'https://roamorrow.com/nomads',ASSETS:{async fetch(request){
+  if(new URL(request.url).pathname.endsWith('manifest.json'))return Response.json({version:1,origin:'https://nomads.example',paths:['/cities/penang/']});
+  return new Response('<html lang="zh-CN"><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://nomads.example/cities/penang/"><script src="/app.js"></script></head><a href="/cities/tokyo/">东京</a><a href="https://nomads.example.org/evidence">来源</a></html>',{headers:{'Content-Type':'text/html'}});
+ }}};
+ const response=await publishedFallback(new Request('https://roamorrow.com/cities/penang/'),env),body=await response.text();
+ assert.match(body,/href="https:\/\/roamorrow.com\/nomads\/cities\/penang\/"/);
+ assert.match(body,/data-nomads-base="\/nomads"/);
+ assert.match(body,/src="\/nomads\/app.js"/);
+ assert.match(body,/href="\/nomads\/cities\/tokyo\/"/);
+ assert.match(body,/href="https:\/\/nomads.example.org\/evidence"/);
+});
 function environment(){
  const paths=[];
  return {paths,env:{PREVIEW:'false',ASSETS:{async fetch(request){const p=new URL(request.url).pathname;paths.push(p);if(p==='/published-pages/manifest.json')return Response.json({version:1,snapshot_date:'2026-10-18',paths:['/cities/penang/','/api/rankings']});if(p==='/published-pages/rankings.json')return Response.json([{slug:'penang'}]);return new Response(html,{headers:{'Content-Type':'text/html','X-Robots-Tag':'noindex, nofollow'}});}}}};
@@ -13,7 +26,7 @@ function environment(){
 test('outage fallback serves only an exact pre-published path, with public security and canonical semantics',async()=>{
  const {env,paths}=environment(),response=await publishedFallback(new Request('https://nomads.example/cities/penang/'),env);
  assert.equal(response.status,200);assert.equal(response.headers.get('X-Data-Mode'),'published-snapshot');assert.equal(response.headers.get('X-Data-Snapshot'),'2026-10-18');assert.equal(response.headers.get('X-Robots-Tag'),null);assert.match(response.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);
- assert.match(await response.text(),/canonical/);assert.deepEqual(paths,['/published-pages/manifest.json','/published-pages/cities/penang/']);
+ assert.match(await response.text(),/href="https:\/\/nomads.example\/cities\/penang\/"/);assert.deepEqual(paths,['/published-pages/manifest.json','/published-pages/cities/penang/']);
  assert.equal(await publishedFallback(new Request('https://nomads.example/cities/unpublished/'),env),null);
  assert.equal(await publishedFallback(new Request('https://nomads.example/api/agent/status'),env),null);
  assert.equal(await publishedFallback(new Request('https://nomads.example/cities/penang/'),{...env,PREVIEW:'true'}),null);

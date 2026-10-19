@@ -133,6 +133,7 @@ function normalize(value) {
   ensureSize(result);
   return result;
 }
+export {normalize as normalizeConversation};
 function ensureSize(value) {
   if (new TextEncoder().encode(JSON.stringify(value)).byteLength > MAX_BYTES) throw failure("AGENT_STORE_RECORD_TOO_LARGE", "这段对话已超过 2 MB，尚未保存新内容。请先导出，再新建对话。");
 }

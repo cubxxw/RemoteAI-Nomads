@@ -63,7 +63,7 @@ const rankBoundary=rankRuntime.match(/^document\.querySelector\('#map-reset'\)\.
 assert.ok(rankBoundary,'locate the actual final rank binding/boot block');
 const rankBoot=rankRuntime.slice(rankBoundary.index+rankBoundary[0].length);
 const actualFunction=name=>{const match=rankRuntime.match(new RegExp('function '+name+'\\([^\\n]*\\) \\{[\\s\\S]*?\\n\\}'));assert.ok(match,'locate actual '+name);return match[0];};
-const actualRankRejection=appRuntime.match(/import\("\/modules\/rank-ui\.js"\)\.catch\((error => \{[\s\S]*?\n  \})\);/)?.[1];
+const actualRankRejection=appRuntime.match(/import\("\.\/modules\/rank-ui\.js"\)\.catch\((error => \{[\s\S]*?\n  \})\);/)?.[1];
 assert.ok(actualRankRejection,'locate actual ranking-import rejection callback');
 const savedPlan=()=>({version:1,month:11,days:30,currency:'CNY',ceiling:{amount:8000},values:{rent:{amount:3000,origin:'edited'},food:{amount:100,origin:'edited'},transport:{amount:400,origin:'reference'},mobile:{amount:100,origin:'edited'},other:{amount:500,origin:'edited'}}});
 function install(t,root,records,{readDenied=false,writeDenied=false,onRead=()=>{}}={}){
