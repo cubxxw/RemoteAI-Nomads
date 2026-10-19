@@ -9,6 +9,8 @@ import { syncCosts, syncFx } from './cost-sync.js';
 import { rankingPage, rankedComparison, loadRankings } from "./rank-pages.js";
 import { esc, external, shell } from "./render.js";
 import {mountedRequest, publicURL} from './site-path.js';
+import {cityGuideResponse} from './city-guide-pages.js';
+import {publishedArticles, articlePaths} from './article-catalog.js';
 
 const joined = `SELECT c.*, k.name_zh AS country_name FROM cities c JOIN countries k ON k.id=c.country_id`;
 let publicReadOutage=null;
@@ -177,6 +179,8 @@ const application = {
         headers: { Allow: "GET, HEAD" },
       });
     if(url.pathname.startsWith('/map-tiles/'))return mapTile(request,env,ctx);
+    const editorial = await cityGuideResponse(request, env);
+    if (editorial) return editorial;
     try {
       const outageKey=env.SITE_ORIGIN+'|'+env.RELEASE_ID;
       if(env.PREVIEW==='false'&&publicReadOutage?.key===outageKey&&publicReadOutage.retryAt>Date.now()&&!['/healthz','/release.json','/robots.txt'].includes(url.pathname)){
@@ -198,6 +202,7 @@ const application = {
         const links = [];
         if (env.PREVIEW === "false") {
           links.push("/", "/guides/", "/compare/", "/about/");
+          links.push(...articlePaths());
           for (const c of await list(
             env.DB,
             "SELECT slug FROM cities WHERE publication_status='published'",
@@ -216,7 +221,7 @@ const application = {
             );
         }
         return new Response(
-          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${links.map((l) => `<url><loc>${esc(publicURL(l, env))}</loc></url>`).join("")}</urlset>`,
+          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...new Set(links)].map((l) => {const modified=publishedArticles().find(a=>a.path===l)?.updatedAt;return `<url><loc>${esc(publicURL(l, env))}</loc>${modified ? `<lastmod>${esc(modified)}</lastmod>` : ''}</url>`;}).join("")}</urlset>`,
           { headers: { "Content-Type": "application/xml" } },
         );
       }

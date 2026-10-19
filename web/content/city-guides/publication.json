@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "publication": {
+    "approved": true,
+    "approvedOn": "2026-10-20",
+    "authority": "User explicitly authorized production publication, removal of noindex, automatic city article links and sitemap updates."
+  },
+  "sourceEdition": "seo-pilot-20261019",
+  "articles": [
+    {
+      "slug": "chiang-mai-monthly-budget",
+      "sourceFile": "chiang-mai-monthly-budget.html",
+      "sha256": "b8c5c56c36b11ccb572a801df7b4c4a29696f3bb55522e887e825fbccbc376d7",
+      "source": "output/seo-pilot-20261019/chiang-mai-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "penang-monthly-budget",
+      "sourceFile": "penang-monthly-budget.html",
+      "sha256": "a2c4f2f042ade9fe4e42519946a8b6215f8b3cc2d5cce4d3f6872a0af4c9db0c",
+      "source": "output/seo-pilot-20261019/penang-monthly-budget.html",
+      "approved": true
+    }
+  ],
+  "assets": [
+    {
+      "source": "assets/chiang-mai-akha-coffee.jpg",
+      "destination": "images/chiang-mai-akha-coffee.jpg",
+      "sha256": "6caf6fc651dbf77375100eb4a4da2ee3c4baa90fe9639e7ee462e6a920900ebc"
+    },
+    {
+      "source": "assets/chiang-mai-baannoi-season.jpg",
+      "destination": "images/chiang-mai-baannoi-season.jpg",
+      "sha256": "90692fedd27f0c1e9bf7644772e64f380b555a1f134e55f7713b69c12ef92ebe"
+    },
+    {
+      "source": "assets/chiang-mai-jida-monthly.jpg",
+      "destination": "images/chiang-mai-jida-monthly.jpg",
+      "sha256": "3b8def66dab076dfb9b59504e8239f647a0e89daae4b09be09a0b6b9731bad2d"
+    },
+    {
+      "source": "assets/chiang-mai-nimman-street.webp",
+      "destination": "images/chiang-mai-nimman-street.webp",
+      "sha256": "30e09d95be6ef6e5035766cdaecb77107b1f3754aeb77be3a7a88f26037d8d67"
+    },
+    {
+      "source": "assets/chiang-mai-realspace-pricing.jpg",
+      "destination": "images/chiang-mai-realspace-pricing.jpg",
+      "sha256": "fe880aba477dddc838267e689d668a482eae0583f62e0fa9e350d5c918312230"
+    },
+    {
+      "source": "assets/og-chiang-mai-budget.jpg",
+      "destination": "images/og-chiang-mai-budget.jpg",
+      "sha256": "50f7fa46fbb45b0c547d26b7b3884e5a0634d8201fdf36ce730faebf1795e1e5"
+    },
+    {
+      "source": "assets/og-penang-budget.jpg",
+      "destination": "images/og-penang-budget.jpg",
+      "sha256": "7132f26787eb5427f8f0d8dc70a4a2c7617d4c7bdb3d363daea53caf68250df7"
+    },
+    {
+      "source": "assets/penang-century-bay-monthly.jpg",
+      "destination": "images/penang-century-bay-monthly.jpg",
+      "sha256": "e5ae06905169d5c52fced5b2418c1c4d563929412af4aee61368109bc6b4f0e6"
+    },
+    {
+      "source": "assets/penang-city.webp",
+      "destination": "images/penang-city.webp",
+      "sha256": "a2b34a711caf8561fd3bc1e5ac192cabd45031a19da8616b7d0d70dc0b4380ac"
+    },
+    {
+      "source": "assets/penang-settlements-monthly.jpg",
+      "destination": "images/penang-settlements-monthly.jpg",
+      "sha256": "21f9d6a5fffab02855b6d49c60b94d04290e7bedc50101e9180a4db9796a9676"
+    },
+    {
+      "source": "preview.css",
+      "destination": "guide.css",
+      "sha256": "326a459868edf4c421087237e218718e239e2ac61b325b72b6fd9381d01c899b"
+    },
+    {
+      "source": "reader.js",
+      "destination": "reader.js",
+      "sha256": "b8a5a489af9514db4c9762be7c7c2edc9768756d26cddde832fc9f4fa04543c9"
+    },
+    {
+      "source": "guide-tools.mjs",
+      "destination": "guide-tools.mjs",
+      "sha256": "223f2c4b1367987732961fe3cdf25a71a3274a5d527d693be7e37f6ccc10e10a"
+    },
+    {
+      "source": "budget-model.mjs",
+      "destination": "budget-model.mjs",
+      "sha256": "8c43c7123b76f3ec10b43dd5a1b0dde582269d80ca68e5908f6b0fb56cabe32e"
+    }
+  ]
+}

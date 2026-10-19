@@ -7,6 +7,8 @@ import { mkdir, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/p
 import { dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import worker from '../src/worker.js';
+import {articlePaths, publishedArticles} from '../src/article-catalog.js';
+import {buildCityGuides} from './build-city-guides.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://nomads.cubxxw.com';
@@ -53,6 +55,7 @@ export async function buildPublicPages({
   outputDirectory = join(ROOT, 'public/published-pages'),
   origin = ORIGIN,
 } = {}) {
+  await buildCityGuides();
   const targetOrigin = new URL(origin);
   assert.equal(targetOrigin.protocol, 'https:', 'A public release needs an HTTPS site origin');
   assert.equal(targetOrigin.search + targetOrigin.hash, '', 'Site URL must not contain a query or fragment');
@@ -82,17 +85,24 @@ export async function buildPublicPages({
     for (const table of EXCLUDED_TABLES) assert.equal(database.prepare('SELECT count(*) n FROM "' + table + '"').get().n, 0, 'Excluded table is not empty: ' + table);
     assert.ok(articles.every(article => ['guide', 'comparison'].includes(article.kind)), 'Unknown editorial kind must not be published automatically');
 
-    const paths = [
+    const paths = [...new Set([
       '/', '/cities/', '/countries/', '/guides/', '/compare/', '/about/',
       ...cities.map(city => '/cities/' + encodeURIComponent(city.slug) + '/'),
       ...countries.map(country => '/countries/' + encodeURIComponent(country.id.toLowerCase()) + '/'),
       ...articles.map(article => '/' + (article.kind === 'comparison' ? 'compare' : 'guides') + '/' + encodeURIComponent(article.slug) + '/'),
+      ...articlePaths(),
       '/api/rankings', '/sitemap.xml',
-    ];
+    ])];
     assert.equal(new Set(paths).size, paths.length, 'Public path collision');
     const dbSha = sha256(databaseBytes);
     const env = {
       DB: readonlyAdapter(database), PREVIEW: 'false', SITE_ORIGIN: origin,
+      ASSETS: {async fetch(request) {
+        const file=resolve(ROOT,'public','.'+new URL(request.url).pathname);
+        if(!file.startsWith(join(ROOT,'public')+sep))return new Response('Not found',{status:404});
+        try{return new Response(await readFile(file),{headers:{'Content-Type':file.endsWith('.html')?'text/html; charset=utf-8':'application/octet-stream'}});}
+        catch(error){if(error.code==='ENOENT')return new Response('Not found',{status:404});throw error;}
+      }},
       // Used only to isolate the in-process catalog cache. It is not published.
       RELEASE_ID: 'public-snapshot-build-' + dbSha,
     };
@@ -135,7 +145,7 @@ export async function buildPublicPages({
       notion_page_identifiers_exported: 0,
       published_only: true,
       all_responses_status: 200,
-      counts: { cities: cities.length, countries: countries.length, guides: articles.filter(article => article.kind === 'guide').length, comparisons: articles.filter(article => article.kind === 'comparison').length },
+      counts: { cities: cities.length, countries: countries.length, guides: new Set([...articles.filter(article => article.kind === 'guide').map(a=>a.slug),...publishedArticles().filter(a=>a.kind!=='comparison').map(a=>a.slug)]).size, comparisons: articles.filter(article => article.kind === 'comparison').length },
       file_count: paths.length + 1,
       bytes_excluding_manifest: bytes,
       paths,

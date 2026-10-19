@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "slug": "chiang-mai-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/chiang-mai-monthly-budget/",
+      "title": "2026清迈旅居一个月费用：舒适方案28,900 泰铢（5,783 元）",
+      "summary": "2026清迈单人30晚舒适规划28,900 泰铢、5,783 元。三档预算、可分享计算器、住宿办公表、地图与署名经历，条件和核价日清楚列出。",
+      "citySlugs": [
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-20",
+      "assetPath": "/city-guides/chiang-mai-monthly-budget.html"
+    },
+    {
+      "slug": "penang-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/penang-monthly-budget/",
+      "title": "2026槟城旅居一个月费用：舒适方案6,720 令吉（11,009 元）",
+      "summary": "2026槟城单人30晚舒适规划6,720 令吉、11,009 元。三档预算、可分享计算器、住宿办公表、地图与署名经历，条件和核价日清楚列出。",
+      "citySlugs": [
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-20",
+      "assetPath": "/city-guides/penang-monthly-budget.html"
+    },
+    {
+      "slug": "chiang-mai-vs-penang",
+      "kind": "comparison",
+      "path": "/compare/chiang-mai-vs-penang/",
+      "title": "清迈 vs 槟城：数字游民逐项对比",
+      "summary": "并排比较清迈与槟城的预算、季节和工作条件。",
+      "citySlugs": [
+        "chiang-mai",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-19"
+    },
+    {
+      "slug": "chiang-mai-vs-da-nang",
+      "kind": "comparison",
+      "path": "/compare/chiang-mai-vs-da-nang/",
+      "title": "清迈 vs 岘港：数字游民逐项对比",
+      "summary": "并排比较清迈与岘港的预算、季节和工作条件。",
+      "citySlugs": [
+        "chiang-mai",
+        "da-nang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-19"
+    },
+    {
+      "slug": "first-month",
+      "kind": "guide",
+      "path": "/guides/first-month/",
+      "title": "第一站，先住一周，再决定一个月",
+      "summary": "用一个完整的工作周，检验这个地方是否适合你。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-17"
+    }
+  ]
+}

@@ -1,2 +1,5 @@
 /published-pages/*
   X-Robots-Tag: noindex, nofollow
+
+/city-guides/*
+  X-Robots-Tag: noindex, nofollow

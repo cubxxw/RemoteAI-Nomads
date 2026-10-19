@@ -22,6 +22,14 @@ export function relocatePublishedHTML(html, source, env) {
 const dynamicFiles = new Set(['/release.json', '/robots.txt', '/sitemap.xml']);
 export const staticPath = path => !path.startsWith('/api/') && !path.startsWith('/map-tiles/') && !dynamicFiles.has(path) && /\.[a-z0-9]+$/i.test(path);
 
+async function staticAsset(request, env) {
+  const asset = await env.ASSETS.fetch(request);
+  if (!new URL(request.url).pathname.startsWith('/city-guides/')) return asset;
+  const headers = new Headers(asset.headers);
+  headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return new Response(request.method === 'HEAD' ? null : asset.body, {status:asset.status, headers});
+}
+
 // Workers Assets normally precede the script. run_worker_first lets legacy URLs
 // redirect while the binding still serves the unmounted file paths explicitly.
 // https://developers.cloudflare.com/workers/static-assets/routing/worker-script/
@@ -35,13 +43,13 @@ export async function mountedRequest(request, env, ctx, handler) {
     return new Response(request.method==='HEAD'?null:asset.body,{status:asset.status,headers});
   }
   if (!base) {
-    if (staticPath(url.pathname) && env.ASSETS) return env.ASSETS.fetch(request);
+    if (staticPath(url.pathname) && env.ASSETS) return staticAsset(request,env);
     return handler(request, env, ctx);
   }
   const mounted = url.pathname === base || url.pathname.startsWith(base + '/');
   if (!mounted) {
     // Already-open legacy pages keep their same-origin lazy modules and maps.
-    if(staticPath(url.pathname)&&env.ASSETS)return env.ASSETS.fetch(request);
+    if(staticPath(url.pathname)&&env.ASSETS)return staticAsset(request,env);
     if(url.pathname.startsWith('/map-tiles/')||url.pathname==='/api/rankings')return handler(request,{...env,SITE_ORIGIN:url.origin.replace(/^http:/,'https:')},ctx);
     // Keep already-open legacy conversations usable; public navigation moves.
     if(url.pathname.startsWith('/api/agent/'))return handler(request,{...env,SITE_ORIGIN:url.origin.replace(/^http:/,'https:')},ctx);
@@ -53,7 +61,7 @@ export async function mountedRequest(request, env, ctx, handler) {
   internalURL.host = new URL(origin).host;
   internalURL.pathname = url.pathname.slice(base.length) || '/';
   const internal = new Request(internalURL, request);
-  if (staticPath(internalURL.pathname) && env.ASSETS) return env.ASSETS.fetch(internal);
+  if (staticPath(internalURL.pathname) && env.ASSETS) return staticAsset(internal,env);
   const response = await handler(internal, env, ctx);
   const location = response.headers.get('Location');
   if (!location) return response;

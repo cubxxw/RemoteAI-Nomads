@@ -7,6 +7,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { publicAssetPath, validatePublication, buildPublicPages } from '../scripts/build-public-pages.mjs';
+import {articlePaths as catalogPaths} from '../src/article-catalog.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = join(root, 'public/published-pages');
@@ -39,7 +40,7 @@ test('generated manifest and route set match exactly the reviewed published data
     const cityPaths = database.prepare("SELECT slug FROM cities WHERE publication_status='published'").all().map(city => '/cities/' + encodeURIComponent(city.slug) + '/');
     const countryPaths = database.prepare('SELECT id FROM countries').all().map(country => '/countries/' + encodeURIComponent(country.id.toLowerCase()) + '/');
     const articlePaths = database.prepare("SELECT slug,kind FROM editorial_pages WHERE status='published'").all().map(article => '/' + (article.kind === 'comparison' ? 'compare' : 'guides') + '/' + encodeURIComponent(article.slug) + '/');
-    const expected = ['/', '/cities/', '/countries/', '/guides/', '/compare/', '/about/', ...cityPaths, ...countryPaths, ...articlePaths, '/api/rankings', '/sitemap.xml'];
+    const expected = [...new Set(['/', '/cities/', '/countries/', '/guides/', '/compare/', '/about/', ...cityPaths, ...countryPaths, ...articlePaths, ...catalogPaths(), '/api/rankings', '/sitemap.xml'])];
     assert.equal(manifest.version, 1);
     assert.deepEqual(new Set(manifest.paths), new Set(expected));
     assert.equal(manifest.paths.length, expected.length);
