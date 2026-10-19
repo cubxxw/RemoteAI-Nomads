@@ -574,20 +574,30 @@ window.addEventListener('resize', () => {
 document.querySelector('#map-zoom-in').addEventListener('click', () => map.zoom(.7));
 document.querySelector('#map-zoom-out').addEventListener('click', () => map.zoom(1/.7));
 document.querySelector('#map-reset').addEventListener('click', () => map.reset());
-document.querySelector('#share-ranking').addEventListener('click', async () => {
-  finishSearch();const params = stateParams(state).toString(), value = location.origin + location.pathname + (params ? '?' + params : '');
-  let copied=false;
-  try { await navigator.clipboard.writeText(value);copied=true; }catch{}
+const shareButton = document.querySelector('#share-ranking');
+let shareSession = 0;
+shareButton.addEventListener('click', () => {
   let dialog=document.querySelector('#share-dialog');
+  if(dialog?.open)return;
+  finishSearch();const params = stateParams(state).toString(), value = location.origin + location.pathname + (params ? '?' + params : '');
   if(!dialog){
     dialog=document.createElement('dialog');dialog.id='share-dialog';dialog.setAttribute('aria-labelledby','share-title');
     dialog.innerHTML='<form method="dialog"><h2 id="share-title">分享当前视角</h2><label for="share-url">这个链接包含当前筛选和偏好</label><input id="share-url" readonly><p class="share-hint" role="status"></p><a id="share-open" target="_blank" rel="noopener noreferrer">打开这个视角 ↗</a><p class="share-hint">个人报价和会议安排留在本机，不会随链接发送。</p><button class="button" value="close">完成</button></form>';
-    dialog.addEventListener('close',()=>document.querySelector('#share-ranking').focus({preventScroll:true}));document.body.append(dialog);
+    dialog.addEventListener('close',()=>{if(dialog.open)return;shareSession++;shareButton.focus({preventScroll:true});});document.body.append(dialog);
   }
+  const session=++shareSession;
   dialog.querySelector('input').value=value;dialog.querySelector('#share-open').href=value;
-  dialog.querySelector('[role="status"]').textContent=copied?'链接已复制，也可以选中上方链接手动复制。':'可以选中上方链接手动复制，或直接打开查看。';
+  const status=dialog.querySelector('[role="status"]');
+  status.textContent='可以选中上方链接手动复制，或直接打开查看。';
   dialog.showModal();dialog.querySelector('input').select();
+  try{
+    Promise.resolve(navigator.clipboard.writeText(value)).then(()=>{
+      if(dialog.open&&session===shareSession&&dialog.querySelector('input').value===value)
+        status.textContent='链接已复制，也可以选中上方链接手动复制。';
+    },()=>{});
+  }catch{}
 });
+shareButton.disabled=false;shareButton.removeAttribute('aria-busy');shareButton.setAttribute('aria-label','分享当前视角');shareButton.title='分享当前视角';
 motion.addEventListener('change', () => {if (motion.matches) {document.querySelectorAll('.ranking-row,.rank-digit,.old-digit').forEach(el => el.getAnimations().forEach(animation => animation.cancel()));document.querySelectorAll('.old-digit,.row-ghost').forEach(el => el.remove());}});
 commit(true);
 render(true);

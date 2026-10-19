@@ -296,6 +296,7 @@
   @keyframes rank-sheet-enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 }
 #ranking-root .rank-weights-preview{display:none}
+#ranking-root .rank-icon-button:disabled{opacity:.45;cursor:default}
 @media(max-width:700px){
  #ranking-root .rank-weights-preview{display:block;flex-shrink:0;padding:0 0 16px;margin-bottom:12px;border-bottom:1px solid var(--line)}
  #ranking-root .rank-weights-preview>p{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--ink-3);margin-bottom:8px}
