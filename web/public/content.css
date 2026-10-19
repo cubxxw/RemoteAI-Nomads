@@ -119,7 +119,7 @@
 .compare-picker{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);gap:16px;max-width:960px;margin:0 auto}
 .compare-picker-city{min-width:0}
 .compare-picker-city>label{display:block;font-size:13px;color:var(--ink-3,var(--muted));margin-bottom:8px}
-.compare-picker-city select{font:inherit;font-size:16px;padding:12px 40px 12px 16px;height:48px;min-height:48px;width:100%;border:1px solid var(--line);border-radius:24px;background:var(--paper,#fafafa) url('/icons/chevron-down.svg') no-repeat right 14px center;background-size:12px;color:var(--ink-1,var(--ink));margin-bottom:20px;appearance:none;-webkit-appearance:none;line-height:1.5}
+.compare-picker-city select{font:inherit;font-size:16px;padding:12px 40px 12px 16px;height:48px;min-height:48px;width:100%;border:1px solid var(--line);border-radius:24px;background:var(--paper,#fafafa) url('icons/chevron-down.svg') no-repeat right 14px center;background-size:12px;color:var(--ink-1,var(--ink));margin-bottom:20px;appearance:none;-webkit-appearance:none;line-height:1.5}
 .compare-picker-city>a{display:block;aspect-ratio:1.75;position:relative;overflow:hidden;border-radius:8px;background:var(--soft)}
 .compare-picker-city img{width:100%;height:100%;object-fit:cover}
 .compare-picker-city>a>span{position:absolute;bottom:12px;left:12px;background:var(--paper,#fafafa);padding:4px 10px;border-radius:4px;font-size:15px}

@@ -1,5 +1,6 @@
 // Only presentation data belongs in local history. Server audit traces and
 // hidden model reasoning deliberately never enter a conversation record.
+import {sitePath} from './site-path.js';
 const answerFields=['answer','cities','evidence','ranking_url','followups','budget_snapshot','budget_options'];
 export function visibleAnswer(value){
   if(!value||typeof value.answer!=='string')throw Error('无效的回答');
@@ -23,7 +24,7 @@ export function recoverInterrupted(thread){
   return changed;
 }
 export function localPath(value){
-  return typeof value==='string'&&/^\/(?!\/)[^\s\\]*$/.test(value)?value:null;
+  return typeof value==='string'&&/^\/(?!\/)[^\s\\]*$/.test(value)?sitePath(value):null;
 }
 export function conversationMarkdown(thread){
   const lines=['# '+thread.title,'','导出自 RemoteAI Nomads · 本机对话记录',''];

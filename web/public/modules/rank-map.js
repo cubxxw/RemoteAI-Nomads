@@ -35,7 +35,7 @@ export class RankMap {
   async load() {
     this.stage.setAttribute('aria-busy', 'true');
     try {
-      const response = await fetch('/map/world.json');
+      const response = await fetch(sitePath('/map/world.json'));
       if (!response.ok) throw new Error('Map request failed');
       const world = await response.json();
       if (!Array.isArray(world.countries)) throw new Error('Invalid country map');
@@ -62,7 +62,7 @@ export class RankMap {
       this.bind();
     } catch {
       this.ready = false;
-      this.stage.innerHTML = '<div class="map-error" role="status"><strong>地图暂时没有加载成功</strong><p>可继续从国家目录浏览。</p><a href="/countries/">浏览国家目录</a><button type="button" class="quiet-button" id="retry-map">重新加载地图</button></div>';
+      this.stage.innerHTML = mountMarkup('<div class="map-error" role="status"><strong>地图暂时没有加载成功</strong><p>可继续从国家目录浏览。</p><a href="/countries/">浏览国家目录</a><button type="button" class="quiet-button" id="retry-map">重新加载地图</button></div>');
       this.stage.querySelector('#retry-map').addEventListener('click', () => this.load());
     }
     this.stage.setAttribute('aria-busy', 'false');
@@ -194,7 +194,7 @@ export class RankMap {
     this.sizePoints();
     this.picker.querySelector('select').value = '';
     this.caption.innerHTML = '<strong>从国家，找到城市</strong><span>悬停预览，点击进入国家栏目</span>';
-    this.selection.innerHTML = '<strong>想去哪个国家？</strong><p>在地图上选择，或使用国家选择器，查看已收录的城市。</p><a class="map-country-open" href="/countries/">浏览全部国家与地区 ↗</a>';
+    this.selection.innerHTML = mountMarkup('<strong>想去哪个国家？</strong><p>在地图上选择，或使用国家选择器，查看已收录的城市。</p><a class="map-country-open" href="/countries/">浏览全部国家与地区 ↗</a>');
   }
   frameCountry(code) {
     const cities = this.groups.get(code).cities.filter(located);
@@ -223,3 +223,4 @@ export class RankMap {
   }
   applyView() {this.svg?.setAttribute('viewBox',this.view.map(n=>n.toFixed(1)).join(' '));this.sizePoints();}
 }
+import {sitePath,mountMarkup} from './site-path.js';

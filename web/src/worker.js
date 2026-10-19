@@ -8,6 +8,7 @@ export { NomadAgent } from './flash-runtime.js';
 import { syncCosts, syncFx } from './cost-sync.js';
 import { rankingPage, rankedComparison, loadRankings } from "./rank-pages.js";
 import { esc, external, shell } from "./render.js";
+import {mountedRequest, publicURL} from './site-path.js';
 
 const joined = `SELECT c.*, k.name_zh AS country_name FROM cities c JOIN countries k ON k.id=c.country_id`;
 let publicReadOutage=null;
@@ -154,7 +155,7 @@ async function about(env) {
   return renderAbout(counts, env);
 }
 
-export default {
+const application = {
   async scheduled(controller, env, ctx) {
     // Default: daily FX. Full monthly cost sync needs a CPU-capable environment.
     const monthly = controller.cron === '15 2 15 * *';
@@ -215,7 +216,7 @@ export default {
             );
         }
         return new Response(
-          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${links.map((l) => `<url><loc>${esc(env.SITE_ORIGIN + l)}</loc></url>`).join("")}</urlset>`,
+          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${links.map((l) => `<url><loc>${esc(publicURL(l, env))}</loc></url>`).join("")}</urlset>`,
           { headers: { "Content-Type": "application/xml" } },
         );
       }
@@ -308,4 +309,9 @@ export default {
       });
     }
   },
+};
+
+export default {
+  scheduled: application.scheduled,
+  fetch(request, env, ctx) {return mountedRequest(request, env, ctx, application.fetch);},
 };

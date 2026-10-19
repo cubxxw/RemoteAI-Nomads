@@ -12,10 +12,11 @@ test('live origins accept explicit HTTPS sites and HTTP loopback, normalizing a 
   assert.equal(validateLiveOrigin('https://my-nomads.example/'), 'https://my-nomads.example');
   assert.equal(validateLiveOrigin('https://my-nomads.example:8443'), 'https://my-nomads.example:8443');
   for (const origin of ['http://localhost:8787', 'http://127.0.0.1:8787', 'http://[::1]:8787']) assert.equal(validateLiveOrigin(origin), origin);
+  assert.equal(validateLiveOrigin('https://roamorrow.com/nomads/'),'https://roamorrow.com/nomads');
 });
 
-test('credentials, non-root paths, query/hash, malformed URLs, and remote plaintext origins fail closed', () => {
-  for (const value of [undefined, '', 'https://', 'https://site.example/path/', 'https://site.example/foo/../', 'https://site.example/?', 'https://site.example/#', 'https://site.example/?key=fixture', 'https://site.example/#x', 'https://user:fixture-secret@site.example', 'https://@site.example', 'https://site.example\\path', ' https://site.example', 'http://site.example', 'http://localhost.example', 'file:///tmp/test', 'ftp://site.example']) {
+test('credentials, unsafe mount paths, query/hash, malformed URLs, and remote plaintext origins fail closed', () => {
+  for (const value of [undefined, '', 'https://', 'https://site.example/path%2Fa/', 'https://site.example/foo/../', 'https://site.example/?', 'https://site.example/#', 'https://site.example/?key=fixture', 'https://site.example/#x', 'https://user:fixture-secret@site.example', 'https://@site.example', 'https://site.example\\path', ' https://site.example', 'http://site.example', 'http://localhost.example', 'file:///tmp/test', 'ftp://site.example']) {
     assert.throws(() => validateLiveOrigin(value), error => error.code === 'INVALID_LIVE_TARGET' && !error.message.includes('fixture-secret'));
   }
 });
@@ -43,7 +44,7 @@ test('both CLI entrypoints reject missing or invalid targets before config/secre
       ['../evals/run-flash.mjs', ['--live']],
       ['../evals/run-flash.mjs', ['--url', 'http://remote.example']],
       ['../scripts/check-flash-live.mjs', []],
-      ['../scripts/check-flash-live.mjs', ['https://site.example/not-origin']],
+      ['../scripts/check-flash-live.mjs', ['https://site.example/a%2Fb']],
     ]) {
       await assert.rejects(execute(process.execPath, [fileURLToPath(new URL(file, import.meta.url)), ...args], { cwd: directory, env, timeout: 10000 }), error => {
         const output = String(error.stderr);

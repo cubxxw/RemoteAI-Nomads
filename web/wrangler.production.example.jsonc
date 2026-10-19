@@ -16,6 +16,7 @@
     }
   ],
   "assets": {
+    "run_worker_first": true,
     "directory": "./public",
     "binding": "ASSETS"
   },

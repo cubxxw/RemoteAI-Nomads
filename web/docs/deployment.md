@@ -1,6 +1,10 @@
 # 正式部署与维护
 
-当前网站：https://nomads.cubxxw.com 。网页、图片和远程 D1 已上线；原生 Flash 助手已开放试用，全量消费云端月更仍未启用。
+正式入口：https://roamorrow.com/nomads 。网页、图片和远程 D1 继续由独立的 Cloudflare Worker 提供，Roamorrow 主站只转发 `/nomads` 下的请求。原生 Flash 助手保持原有开放范围，全量消费云端月更仍未启用。
+
+旧域名 `nomads.cubxxw.com` 保留为 Worker 上游。切换后，旧公开页面逐项永久跳转到新目录并保留查询参数；已打开页面的助手接口继续兼容。`https://nomads.cubxxw.com/local-data/` 保留本机记录导出，新站的 `/nomads/local-data/` 支持导入；没有自动跨域同步，也不上传备份文件。
+
+下文 `/healthz`、`/release.json`、`/api/…` 等路径均相对于正式入口，例如健康地址为 `https://roamorrow.com/nomads/healthz`。设计、验收与回退顺序见仓库 `docs/superpowers/specs/2026-10-19-nomads-domain-design.md` 和相应实施计划。
 
 ## 首次配置
 
@@ -12,12 +16,15 @@
 | --- | --- |
 | Cloudflare 账号 | 维护者本机配置；源码仅提供示例 |
 | 网页 Worker | `remoteai-nomads` |
-| 自定义域名 | `nomads.cubxxw.com`，Cloudflare 自动管理 HTTPS |
+| Worker 上游域名 | `nomads.cubxxw.com`，Cloudflare 自动管理 HTTPS |
+| 正式入口 | `https://roamorrow.com/nomads`，Vercel 外部转发到 Worker 同名前缀 |
 | D1 | `remoteai-nomads-production` |
 | 正式配置 | `wrangler.production.jsonc` |
 | 助手运行时 | `NOMAD_AGENT` 原生对象，与网页共用 `wrangler.production.jsonc` |
 
-没有修改 cubxxw.com 主站，也没有使用其他网站的数据库。当前从维护者工作区直接发布。GitHub 自动执行公开数据重建、测试和打包，不持有部署密钥，也不会自动更新正式网站。
+没有使用其他网站的数据库。两个项目各自发布，Roamorrow 侧只持有路径转发和导航配置。游民项目从维护者工作区发布；GitHub 自动执行公开数据重建、测试和打包，不持有部署密钥，也不会自动更新 Worker。
+
+正式配置的 `SITE_ORIGIN` 必须为 `https://roamorrow.com/nomads`，`assets.run_worker_first` 必须为 `true`。切换后的 `LEGACY_REDIRECT=true` 启用旧站永久跳转；准备阶段可设为 `false`，同时保留两个入口以供验收。公开发布快照的原始来源仍保留旧域名，该字段用于校验已审核数据的身份，不代表当前网站入口。
 
 ## 公开数据
 
@@ -80,6 +87,8 @@ node scripts/check-flash-live.mjs --url https://你的部署域名
 `deploy/Dockerfile`、`deploy/wrangler.agent.example.jsonc` 与 `npm run agent` 保留用于本机 DSH 对照；它们不是当前正式 AI 后台。旧容器方案仍需对应套餐和授权，不是原生 Flash 助手的前置条件。不要运行旧 `--with-agent` / `--stage-agent` 参数替代原生发布参数。
 
 ## 备份与回退
+
+本次目录切换没有数据库结构或数据写入。回退先把 `LEGACY_REDIRECT` 设为 `false` 并重新发布，让旧公开入口恢复；随后按记录的部署 ID 恢复 Roamorrow 上一个 Vercel 部署。永久跳转使用 `Cache-Control: no-store`，避免早期切换结果长期留在浏览器缓存。不要为回退地址而恢复或初始化数据库。
 
 ```sh
 npx wrangler d1 export DB --remote --config wrangler.production.jsonc --output .data/deploy/production-backup.sql

@@ -1,4 +1,5 @@
 import {withPlanMonth} from './trip-state.js';
+import {sitePath} from './site-path.js';
 import {scoreLabel} from './ranking.js';
 import {climateComfort} from './places.js';
 import {
@@ -481,7 +482,7 @@ function renderCommands() {
   for (const [index,item] of commands.entries()) {
     const button = document.createElement(item.kind === 'city' ? 'a' : 'button');
     button.id = 'rank-command-' + index;button.className = 'rank-command-item';button.dataset.command = index;button.setAttribute('role','option');button.setAttribute('aria-selected',String(index === 0));button.tabIndex = -1;
-    if (item.kind === 'city') {button.href = '/cities/' + encodeURIComponent(item.value) + '/';if (item.photo) {const img = document.createElement('img');img.src = item.photo.replace('.webp','.thumb.webp');img.alt = '';img.width = 40;img.height = 40;button.append(img);}}
+    if (item.kind === 'city') {button.href = sitePath('/cities/' + encodeURIComponent(item.value) + '/');if (item.photo) {const img = document.createElement('img');img.src = sitePath(item.photo.replace('.webp','.thumb.webp'));img.alt = '';img.width = 40;img.height = 40;button.append(img);}}
     else button.type = 'button';
     const text = document.createElement('span'), label = document.createElement('strong'), detail = document.createElement('small');label.textContent = item.label;detail.textContent = item.detail;text.append(label,detail);button.append(text);
     const arrow = document.createElementNS('http://www.w3.org/2000/svg','svg');arrow.setAttribute('viewBox','0 0 20 20');arrow.setAttribute('aria-hidden','true');arrow.innerHTML = '<path d="M4 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';button.append(arrow);commandsList.append(button);

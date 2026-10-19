@@ -1,6 +1,7 @@
 import { executeNomadTool } from "./agent-tools.js";
 import { reservePublicAnswer } from './agent-admissions.js';
 import { validateFlashInput } from '../agent/flash-agent.mjs';
+import {siteLocation} from './site-path.js';
 const json = (value, status = 200, headers = {}) =>
   Response.json(value, {
     status,
@@ -118,7 +119,7 @@ export async function agentRoute(request, env) {
         cookieName +
           "=" +
           cookie +
-          "; Path=/api/agent/; HttpOnly; SameSite=Strict; Max-Age=86400" +
+          `; Path=${siteLocation(env).base}/api/agent/; HttpOnly; SameSite=Strict; Max-Age=86400` +
           (url.protocol === "https:" ? "; Secure" : ""),
       );
     return new Response(upstream.body, { status: upstream.status, headers });

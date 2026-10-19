@@ -1,6 +1,7 @@
 import {icon} from './modules/icons.js';
 import './modules/wechat-ui.js';
 import {TRIP_MONTH_KEY,withPlanMonth} from './modules/trip-state.js';
+import {sitePath,appPath} from './modules/site-path.js';
 
 function currentPlanMonth(){
   const city=document.querySelector('#city-month'),comparison=document.querySelector('#comparison-month'),ranking=document.querySelector('#ranking-root');
@@ -12,11 +13,11 @@ function currentPlanMonth(){
 function syncJourneyLinks(){
   const month=currentPlanMonth();
   for(const link of document.querySelectorAll('a[href]')){
-    const href=link.getAttribute('href');
+    const href=link.getAttribute('href'),path=appPath(href);
     // Ranking returns restore the entire saved view, including its weights.
     // A month-only query would incorrectly turn that return into a new view.
-    if(/^\/cities\/(?:[?#]|$)/.test(href))continue;
-    if(/^\/(?:cities|countries|compare)\//.test(href)){
+    if(/^\/cities\/(?:[?#]|$)/.test(path))continue;
+    if(/^\/(?:cities|countries|compare)\//.test(path)){
       if(!month&&link.dataset.planLinked){const url=new URL(href,location.origin);url.searchParams.delete('month');link.setAttribute('href',url.pathname+url.search+url.hash);}
       else link.setAttribute('href',withPlanMonth(href,month));
       if(month)link.dataset.planLinked='true';
@@ -102,7 +103,7 @@ function update() {
     list.append(b);
   });
   const go = document.querySelector("#compare-go");
-  go.href =
+  go.href = sitePath(
     selected.length === 2
       ? "/compare/" +
         selected
@@ -110,7 +111,7 @@ function update() {
           .sort()
           .join("-vs-") +
         "/"
-      : "/compare/";
+      : "/compare/");
   go.textContent = selected.length === 2 ? "查看对比" : "再选一座城市";
   syncJourneyLinks();
   const clearCompanion = () => document.documentElement.style.setProperty('--companion-clearance', !tray.hidden && matchMedia('(max-width:700px)').matches ? (tray.getBoundingClientRect().height + 20) + 'px' : '0px');
@@ -232,7 +233,7 @@ document.addEventListener("nomads:rows-updated", update);
 document.addEventListener("nomads:notice", (e) => notify(e.detail));
 update();
 if (document.querySelector("#ranking-root"))
-  import("/modules/rank-ui.js").catch(error => {
+  import("./modules/rank-ui.js").catch(error => {
     console.error('Ranking initialization failed',error);
     const shareButton=document.querySelector('#share-ranking');
     if(shareButton){shareButton.disabled=true;shareButton.removeAttribute('aria-busy');shareButton.setAttribute('aria-label','分享暂不可用，请刷新重试');shareButton.title='分享暂不可用，请刷新重试';}
@@ -243,6 +244,6 @@ let agentModule;
 document.addEventListener('click',async event=>{
  const button=event.target.closest('[data-open-agent],[data-agent-open]');
  if(!button)return;
- try{agentModule??=import('/modules/agent-ui.js');(await agentModule).open(button);}
+ try{agentModule??=import('./modules/agent-ui.js');(await agentModule).open(button);}
  catch{notify('小狐暂时没有载入，请刷新后重试。');}
 });

@@ -1,10 +1,12 @@
 import {TRAVELER_FIELDS,estimateTravelerBudget,budgetBalance} from './traveler-budget.js';
+import {sitePath} from './site-path.js';
 
 export const TRIP_MONTH_KEY='nomads-trip-month-v1';
 const month=value=>Number.isInteger(Number(value))&&Number(value)>=1&&Number(value)<=12?Number(value):null;
 export const readJourneyMonth=storage=>{try{return month(storage.getItem(TRIP_MONTH_KEY));}catch{return null;}};
 export const planMonth=(url,saved,fallback)=>month(url.searchParams.get('month'))??month(saved)??month(fallback)??new Date().getUTCMonth()+1;
 export function withPlanMonth(href,value){
+  href=sitePath(href);
   if(!href.startsWith('/')||href.startsWith('//')||!month(value))return href;
   const url=new URL(href,'https://nomads.invalid');url.searchParams.set('month',String(month(value)));
   return url.pathname+url.search+url.hash;

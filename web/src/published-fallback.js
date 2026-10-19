@@ -2,6 +2,7 @@ import {shell} from './render.js';
 import {comparisonBody,comparisonFit} from './comparison-page.js';
 import {displayMonth} from '../public/modules/ranking.js';
 import {rankingPageFromData} from './rank-pages.js';
+import {relocatePublishedHTML,publicURL} from './site-path.js';
 const security={
   'X-Content-Type-Options':'nosniff',
   'Referrer-Policy':'strict-origin-when-cross-origin',
@@ -47,8 +48,12 @@ export async function publishedFallback(request,env){
     headers.delete('X-Robots-Tag');headers.delete('ETag');headers.delete('Content-Length');headers.delete('Last-Modified');
     for(const [key,value] of Object.entries(security))headers.set(key,value);
     let body=asset.body;
-    if((headers.get('Content-Type')||'').includes('text/html')&&url.search){
-      body=(await asset.text()).replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">');
+    if((headers.get('Content-Type')||'').includes('text/html')){
+      body=relocatePublishedHTML(await asset.text(),manifest.origin||url.origin,{...env,SITE_ORIGIN:env.SITE_ORIGIN||url.origin});
+      if(url.search)body=body.replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">');
+      headers.delete('Content-Encoding');
+    } else if(url.pathname==='/sitemap.xml'&&manifest.origin&&env.SITE_ORIGIN){
+      body=(await asset.text()).split(manifest.origin).join(env.SITE_ORIGIN).replace(`<loc>${env.SITE_ORIGIN}/</loc>`,`<loc>${publicURL('/',env)}</loc>`);
       headers.delete('Content-Encoding');
     }
     return new Response(request.method==='HEAD'?null:body,{status:200,headers});

@@ -52,7 +52,7 @@ export function initContentPage() {
       if (selects[0].value === selects[1].value) { selects[1].focus(); return; }
       const month=Number(params.get('month'));
       const monthQuery=Number.isInteger(month)&&month>=1&&month<=12?'?month='+month:'';
-      location.assign('/compare/' + [selects[0].value, selects[1].value].sort().map(encodeURIComponent).join('-vs-') + '/' + monthQuery);
+      location.assign(sitePath('/compare/' + [selects[0].value, selects[1].value].sort().map(encodeURIComponent).join('-vs-') + '/' + monthQuery));
     });
     update();
   }
@@ -68,3 +68,4 @@ export function initContentPage() {
 }
 
 if (typeof document !== 'undefined') initContentPage();
+import {sitePath} from './site-path.js';

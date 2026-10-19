@@ -50,7 +50,7 @@
 #ranking-root .rank-budget-entry{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:8px}
 #ranking-root .rank-budget-entry input{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-height:44px;background:transparent;color:var(--ink);font-size:16px}
 #ranking-root .rank-month-field{grid-column:1/-1}
-#ranking-root .rank-filter-fields select,#ranking-root #map-city-select{width:100%;min-width:0;min-height:44px;height:44px;appearance:none;-webkit-appearance:none;padding:8px 32px 8px 12px;border:1px solid var(--line);border-radius:8px;background-color:transparent;background-image:url("/icons/chevron-down.svg");background-repeat:no-repeat;background-position:right 12px center;color:var(--ink-1,var(--ink));font-size:14px}
+#ranking-root .rank-filter-fields select,#ranking-root #map-city-select{width:100%;min-width:0;min-height:44px;height:44px;appearance:none;-webkit-appearance:none;padding:8px 32px 8px 12px;border:1px solid var(--line);border-radius:8px;background-color:transparent;background-image:url("icons/chevron-down.svg");background-repeat:no-repeat;background-position:right 12px center;color:var(--ink-1,var(--ink));font-size:14px}
 #ranking-root .rank-incomplete-toggle{display:flex;align-items:center;gap:8px;font-size:14px;min-height:44px;margin-top:12px;color:var(--ink-2,var(--muted))}
 #ranking-root .rank-incomplete-toggle input{width:18px;height:18px;accent-color:var(--green)}
 #ranking-root .rank-filter-note{font-size:12px;color:var(--ink-3,var(--muted));line-height:1.7;margin:8px 0}

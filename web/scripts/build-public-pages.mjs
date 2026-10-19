@@ -55,8 +55,10 @@ export async function buildPublicPages({
 } = {}) {
   const targetOrigin = new URL(origin);
   assert.equal(targetOrigin.protocol, 'https:', 'A public release needs an HTTPS site origin');
-  assert.equal(targetOrigin.origin, origin, 'Site origin must not contain a path, credentials, query, or fragment');
+  assert.equal(targetOrigin.search + targetOrigin.hash, '', 'Site URL must not contain a query or fragment');
   assert.equal(targetOrigin.username + targetOrigin.password, '', 'Site origin must not contain credentials');
+  assert.ok(targetOrigin.pathname === '/' || /^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(targetOrigin.pathname), 'Site mount must contain simple path segments');
+  assert.equal(targetOrigin.origin + (targetOrigin.pathname === '/' ? '' : targetOrigin.pathname), origin, 'Site URL must be normalized without a trailing slash');
   const [databaseBytes, publicationBytes, databaseStat] = await Promise.all([
     readFile(databasePath), readFile(publicationPath), stat(databasePath),
   ]);
