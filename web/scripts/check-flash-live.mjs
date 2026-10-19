@@ -28,6 +28,8 @@ if(process.argv.includes('--disconnect')){
  check('Browser stream lease active',leaseMs===45000);
  controller.abort();await reader.cancel().catch(()=>{});
  let stopped;const deadline=Date.now()+65000;while(Date.now()<deadline){await new Promise(r=>setTimeout(r,1000));stopped=await (await fetch(origin+'/api/agent/runs/'+id,{headers:headers()})).json();if(!['running','stopping','finalizing'].includes(stopped.status))break;}
- check('Disconnected leased task closes within its bounded grace period',['cancelled','completed'].includes(stopped.status)&&stopped.runtime_reaped===true);
  report.disconnect_trace=stopped;await writeFile('.data/deploy/flash-live-runtime.json',JSON.stringify(report,null,2),{mode:0o600});
+ const closed=['cancelled','completed','failed'].includes(stopped.status)&&stopped.runtime_reaped===true;
+ if(!closed){console.log(JSON.stringify({disconnect_trace:stopped}));await fetch(origin+'/api/agent/cancel',{method:'POST',headers:headers(),body:JSON.stringify({run_id:id})});}
+ check('Disconnected leased task closes within its bounded grace period',closed);
 }

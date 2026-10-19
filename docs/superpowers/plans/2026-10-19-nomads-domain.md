@@ -34,11 +34,11 @@
 
 **Interfaces:** Public mount functions normalize the configured site URL, strip the external prefix for internal routing, and create idempotent public paths. Browser code uses one shared helper for URLs and unmounted page-context matching.
 
-- [ ] Add tests for mounted home/deep links, API/static responses, canonical redirects, query preservation and hostile cross-origin POSTs; run and observe failures.
-- [ ] Implement mount handling before existing worker routes, preserving request bodies/signals and streaming responses.
-- [ ] Prefix server HTML and client-generated links, API paths, photos and map URLs; make CSS URLs relative.
-- [ ] Generate public snapshots against the new site base while retaining the reviewed source-publication identity.
-- [ ] Run focused tests, the full existing check suite and Wrangler dry build.
+- [x] Add tests for mounted home/deep links, API/static responses, canonical redirects, query preservation and hostile cross-origin POSTs; run and observe failures.
+- [x] Implement mount handling before existing worker routes, preserving request bodies/signals and streaming responses.
+- [x] Prefix server HTML and client-generated links, API paths, photos and map URLs; make CSS URLs relative.
+- [x] Generate public snapshots against the new site base while retaining the reviewed source-publication identity.
+- [x] Run focused tests, the full existing check suite and Wrangler dry build.
 
 ### Task 2: Local-record migration and operational links
 
@@ -46,9 +46,9 @@
 
 **Interfaces:** A versioned JSON backup contains an allowlisted set of Nomads browser preferences/plans and normalized conversation records. Import skips existing destination keys/records and excludes active-run locks and credentials.
 
-- [ ] Test export allowlist, import size/schema rejection, conflict preservation and visible conversation normalization.
-- [ ] Add export/import page operating entirely inside the browser; preserve an old-origin route after redirects activate.
-- [ ] Test the old-origin exception, noindex/no-store headers and mounted script loading.
+- [x] Test export allowlist, import size/schema rejection, conflict preservation and visible conversation normalization.
+- [x] Add export/import page operating entirely inside the browser; preserve an old-origin route after redirects activate.
+- [x] Test the old-origin exception, noindex/no-store headers and mounted script loading.
 
 ### Task 3: Roamorrow route and discoverability
 
@@ -56,21 +56,33 @@
 
 Additional reviewed files: `apps/web/src/middleware.ts`, `apps/web/src/lib/nomads-proxy.ts` and tests; Worker `web/src/proxy-network.js` and `web/tests/proxy-network.test.js`. Middleware authenticates only the network attribution on `/nomads/api/agent/:path*`, leaving request bodies and streams untouched.
 
-- [ ] Test that only `/nomads` paths are forwarded to the fixed upstream, query strings remain supported, and existing routes are untouched.
-- [ ] Add the external rewrite and trailing-slash compatibility setting using documented Next.js 15 APIs.
-- [ ] Expose Nomads in navigation and the main sitemap; add the Nomads sitemap to robots without indexing private endpoints.
-- [ ] Run focused web checks/build and inspect deployment preview before production promotion.
+- [x] Test that only `/nomads` paths are forwarded to the fixed upstream, query strings remain supported, and existing routes are untouched.
+- [x] Add the external rewrite and trailing-slash compatibility setting using documented Next.js 15 APIs.
+- [x] Expose Nomads in navigation and the main sitemap; add the Nomads sitemap to robots without indexing private endpoints.
+- [x] Run focused web checks/build and inspect deployment preview before production promotion.
 
 ### Task 4: Staged cutover and acceptance
 
 **Files:** private production config, public README/deployment docs, release manifest, local cutover evidence.
 
-- [ ] Record the pre-cutover Worker version and Vercel deployment; retain configuration copies locally with restrictive permissions.
-- [ ] Configure the same narrow `NOMADS_PROXY_SECRET` as server-only Secrets on the two existing services, through stdin without logging its value; prove verified attribution and rejection of tampering/expiry before cutover.
-- [ ] Publish compatible Worker with legacy redirects disabled and verify the old service.
-- [ ] Deploy/publish the main-site route and verify new public pages, API status, assets and normal Roamorrow pages in a real browser.
-- [ ] Review the whole change; fix material issues before enabling redirects.
-- [ ] Enable one-to-one permanent legacy redirects and update public links and deployment docs.
-- [ ] Verify production release identifiers, redirects, canonical/sitemap, local-record page and protected-file hashes. Record remaining provider or model gates explicitly.
+- [x] Record the pre-cutover Worker version and Vercel deployment; retain configuration copies locally with restrictive permissions.
+- [x] Configure the same narrow `NOMADS_PROXY_SECRET` as server-only Secrets on the two existing services, through stdin without logging its value; prove verified attribution and rejection of tampering/expiry before cutover.
+- [x] Publish compatible Worker with legacy redirects disabled and verify the old service.
+- [x] Deploy/publish the main-site route and verify new public pages, API status, assets and normal Roamorrow pages in a real browser.
+- [x] Review the whole change; fix material issues before enabling redirects.
+- [x] Enable one-to-one permanent legacy redirects and update public links and deployment docs.
+- [x] Verify production release identifiers, redirects, canonical/sitemap, local-record page and protected-file hashes. Record remaining provider or model gates explicitly.
 
 Rollback: turn off the legacy redirect flag first; restore the previous Vercel deployment if necessary. Revert the Worker only if its compatibility change causes a regression. Do not restore or reinitialize D1.
+
+
+## Production acceptance — 2026-10-19
+
+- Canonical entry is live at https://roamorrow.com/nomads. Legacy root, filtered home, city, comparison, guide and sitemap paths return 308 with preserved queries; final destinations return 200 and do not loop.
+- Final Worker release: `nomads-f4378db5f5829cab`; version `9d6d4713-844e-4ea5-9e4c-9b368bd237c9`. The existing D1 health query confirms 350 cities. No schema or data migration was performed.
+- Roamorrow main: `d7c5e4cb2f29cf43ade75e1405e2758b72cdee6a`; automatic production deployment `dpl_J4Ei2NE7XZ4qBsQ7EsWkMCvAvzsA` supersedes the equivalent validated/promoted candidate. Existing home, Chinese home, app and Lisbon pages remain 200.
+- Real browser acceptance covers search, month preservation, city detail, actual map data, changed comparison selection, complete sourced model answers and local conversation recovery. An old pre-cutover tab still loads its assistant lazily.
+- The proxy authenticates network attribution and retains the scoped HttpOnly agent cookie. Active cancel and cross-session isolation passed with real model requests. A follow-up browser lease addresses proxy disconnect buffering: the production trace confirms actual cancellation and upstream release at 45,000 ms; a connected multi-city answer completes and saves successfully.
+- Latest checks: 341 Nomads tests, 68 Roamorrow web tests, syntax/type checks and both production builds passed. Independent source review found no remaining blockers. The final cutover HTTP matrix passed 22 checks; full matrices, screenshots and release output are retained in the maintainer's private deployment evidence, outside public assets.
+- Original Roamorrow dirty files retain all 32 recorded hashes. The primary Nomads checkout advanced concurrently with #19 and further local evidence edits; these were not reverted or overwritten. Migration changes and the active private production configuration remain in the isolated migration checkout. Before future deployment from another checkout, sync current main and use the documented mounted production configuration.
+- Rollback remains the sequence above: disable `LEGACY_REDIRECT`, publish the Worker, then restore the recorded earlier Vercel deployment if needed. Keep the upstream domain and the existing D1/DO resources.
