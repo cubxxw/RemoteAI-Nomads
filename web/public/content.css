@@ -161,7 +161,8 @@
 .guide-progress-row small{font-size:13px;color:var(--green)}
 @media(max-width:680px){
  .guide-contents{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 8px;padding-bottom:16px}
- .guide-contents>a{grid-column:auto;grid-row:auto;gap:6px;min-height:44px;font-size:14px;white-space:nowrap}
+ .guide-contents>a{grid-column:auto;grid-row:auto;gap:6px;min-height:44px;font-size:14px;white-space:normal;align-items:flex-start;overflow-wrap:anywhere}
+ .guide-contents>a>span{flex:none;white-space:nowrap}
  .guide-progress-row{grid-column:1/-1;margin-top:8px;justify-content:space-between;border-top:1px solid var(--line);padding-top:4px}
  .guide-progress-row .content-text-button{padding:4px 0;min-height:44px}
  .content-search input,.compare-picker-city select{font-size:16px}
