@@ -1,0 +1,1110 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-21",
+  "fxDate": "2026-10-20",
+  "profiles": {
+    "chiang-mai": {
+      "config": {
+        "name": "清迈",
+        "nativeCurrency": "THB",
+        "checkedOn": "2026-10-21",
+        "defaultScenario": {
+          "tier": "comfort",
+          "nights": 30,
+          "season": "peak",
+          "work": "cowork",
+          "currency": "CNY"
+        },
+        "fx": {
+          "date": "2026-10-20",
+          "base": "CNY",
+          "rates": {
+            "CNY": 1,
+            "THB": 5.000393,
+            "MYR": 0.608014,
+            "VND": 3875.968992,
+            "USD": 0.149396,
+            "EUR": 0.133309
+          },
+          "source": {
+            "title": "ExchangeRate-API daily reference rates",
+            "url": "https://www.exchangerate-api.com",
+            "checkedOn": "2026-10-21"
+          }
+        },
+        "planNote": "三档金额用来安排预算，整间房由一人付款。实际房价、空房和附加费仍要按入住日期确认。",
+        "seasonLabels": {
+          "standard": "标准季（住房参照3–10月）",
+          "peak": "旺季（11–2月，房费待询）"
+        },
+        "tiers": {
+          "economy": {
+            "label": "省钱",
+            "note": "控制住房与生活预留；住房没有对应的已核可订房源。",
+            "housing": {
+              "standard": {
+                "amount": 10000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "房费预留10,000泰铢/30晚；没有对应的已核30晚房源或含费报价，不是Smith冲突价格的裁定。"
+              },
+              "peak": null,
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 4500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 1000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 800,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "activities",
+                "label": "周末活动",
+                "amount": 500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 700,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              }
+            ]
+          },
+          "comfort": {
+            "label": "舒适",
+            "note": "沿用独卫房月价参照、共享工位和生活预留。",
+            "housing": {
+              "standard": {
+                "amount": 12500,
+                "kind": "reference",
+                "sourceIds": [
+                  "CM-BAANNOI"
+                ],
+                "note": "BAANNOI Garden House一个月常规价12,500泰铢，11–2月例价15,000，水电和押金另计，指定日期仍须确认。"
+              },
+              "peak": {
+                "amount": 15000,
+                "kind": "reference",
+                "sourceIds": [
+                  "CM-BAANNOI"
+                ],
+                "note": "BAANNOI Garden House一个月常规价12,500泰铢，11–2月例价15,000，水电和押金另计，指定日期仍须确认。"
+              },
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 6000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 2000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 1200,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "activities",
+                "label": "周末活动",
+                "amount": 1500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 1200,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "utilities",
+                "label": "水电预留",
+                "amount": 1500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑为尚未取得的水电账单预留，不是商家已确认的固定收费。"
+              }
+            ]
+          },
+          "roomy": {
+            "label": "宽裕",
+            "note": "提高住房、交通和活动额度；不代表具体房型已报价。",
+            "housing": {
+              "standard": {
+                "amount": 20000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "房费预留20,000泰铢/30晚；没有对应的已核房型或30晚含费报价。"
+              },
+              "peak": null,
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 9000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 3500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 1800,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "activities",
+                "label": "周末活动",
+                "amount": 2500,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 1700,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              }
+            ]
+          }
+        },
+        "workPrices": {
+          "monthly": {
+            "amount": 4000,
+            "sourceIds": [
+              "CM-REALSPACE"
+            ],
+            "kind": "reference",
+            "label": "共享工位月票",
+            "billingNights": 30,
+            "note": "原页按月收费，这里每30晚按一张整月票预留，超过就多算一张；起算日和有效期仍需确认。RealSpace每日9:00–24:00；税费、月票起算日与会议空间条件待确认。"
+          },
+          "daily": {
+            "amount": 300,
+            "sourceIds": [
+              "CM-REALSPACE"
+            ],
+            "kind": "reference",
+            "label": "常规办公日票",
+            "visitsPer30Nights": 4,
+            "note": "偶尔办公按每30晚4天日票预留，不自动采用首日优惠或多日优惠。RealSpace每日9:00–24:00；税费、月票起算日与会议空间条件待确认。"
+          },
+          "room": {
+            "amount": 0,
+            "sourceIds": [],
+            "kind": "assumption",
+            "note": "只表示不额外购买共享办公票；房间桌椅、网络与通话条件需另核。"
+          }
+        },
+        "sources": {
+          "CM-JIDA": {
+            "id": "CM-JIDA",
+            "title": "Jida Apartment monthly rate",
+            "url": "https://sites.google.com/view/jida-apartment",
+            "checkedOn": "2026-10-19",
+            "note": "独立web全文核读房型3A/4A与文末包含项目；未访问所链Airbnb库存。"
+          },
+          "CM-REALSPACE": {
+            "id": "CM-REALSPACE",
+            "title": "RealSpace pricing",
+            "url": "https://realspacecm.com/",
+            "checkedOn": "2026-10-19",
+            "note": "独立web核读价格区与营业时间；未点击Stripe购买，不把客户评论当实测。"
+          },
+          "CM-BAANNOI": {
+            "id": "CM-BAANNOI",
+            "title": "BAANNOI Monthly stays",
+            "url": "https://www.baannoinornmuan.com/en/monthly-stay/",
+            "checkedOn": "2026-10-19",
+            "note": "独立web全文核读房型、月价表、旺季、水电押金与地址；上游浏览器也核读同页。"
+          },
+          "CM-SMITH-EN": {
+            "id": "CM-SMITH-EN",
+            "title": "Smith Residence English prices",
+            "url": "https://chiangmaiapartment.com/prices/",
+            "checkedOn": "2026-10-19",
+            "note": "上游web全文核读；本执行者直接web读取超时，使用上游原站核读记录。"
+          },
+          "CM-SMITH-ZH": {
+            "id": "CM-SMITH-ZH",
+            "title": "Smith Residence 中文客房价格",
+            "url": "https://www.chiangmaismithres.com/chinese/prices/",
+            "checkedOn": "2026-10-19",
+            "note": "上游真实浏览器读取价格表与末段条款，evidence/smith-monthly.txt；本执行者实际查看价格表局部截图。"
+          }
+        },
+        "excluded": [
+          "往返机票、跨城交通",
+          "签证及办理费用、保险与医疗",
+          "可退押金及信用卡预授权",
+          "购物、大额活动与个人消费",
+          "未确认的税费、超量水电、额外清洁及会议室费用",
+          "银行买卖价与换汇手续费"
+        ],
+        "deposit": {
+          "amount": null,
+          "note": "主预算住房押金未公开；未当作0，也不计入消费总额。"
+        },
+        "priceReferences": [
+          {
+            "id": "jida",
+            "label": "Jida 3A/4A独卫房",
+            "sourceIds": [
+              "CM-JIDA"
+            ],
+            "currency": "THB",
+            "monthly": 13000,
+            "validFrom": "2026-03",
+            "validThrough": "2026-10",
+            "minimumStay": "1 month",
+            "includes": [
+              "水电",
+              "网络",
+              "每周一次清洁",
+              "每周一次自助洗衣"
+            ],
+            "deposit": null,
+            "thirtyNightConfirmed": false,
+            "note": "另有30晚日价折扣12,600，属于不同计价口径，未作为预算报价。"
+          },
+          {
+            "id": "baannoi",
+            "label": "BAANNOI标准/Garden House",
+            "sourceIds": [
+              "CM-BAANNOI"
+            ],
+            "currency": "THB",
+            "monthlyStandard": 12500,
+            "monthlyPeak": 15000,
+            "standardMonths": "3–10月",
+            "peakMonths": "11–2月",
+            "minimumStay": "1 month",
+            "utilities": null,
+            "deposit": null,
+            "thirtyNightConfirmed": false,
+            "note": "水电与押金另计、早餐不含；不得只换住房数字就宣称完整旺季含费预算。"
+          },
+          {
+            "id": "smith",
+            "label": "Smith Superior价格冲突",
+            "sourceIds": [
+              "CM-SMITH-EN",
+              "CM-SMITH-ZH"
+            ],
+            "currency": "THB",
+            "monthlyEnglish": 9500,
+            "monthlyChinese": 8000,
+            "wifiEnglish": "称免费",
+            "wifiChineseMonthly": 400,
+            "electricityUnit": 8,
+            "waterMonthlyMinimum": 250,
+            "deposit": null,
+            "thirtyNightConfirmed": false,
+            "note": "语言页冲突未解决，未进入预算主住房。"
+          }
+        ]
+      },
+      "label": "清迈",
+      "nativeLabel": "泰铢",
+      "scenario": {
+        "tier": "comfort",
+        "nights": 30,
+        "season": "peak",
+        "work": "cowork",
+        "currency": "CNY"
+      },
+      "climate": [
+        {
+          "month": 1,
+          "meanC": 22.3,
+          "rainMm": 1.5
+        },
+        {
+          "month": 2,
+          "meanC": 25.3,
+          "rainMm": 4.3
+        },
+        {
+          "month": 3,
+          "meanC": 28.27,
+          "rainMm": 7.3
+        },
+        {
+          "month": 4,
+          "meanC": 31.2,
+          "rainMm": 7.83
+        },
+        {
+          "month": 5,
+          "meanC": 30.38,
+          "rainMm": 110.73
+        },
+        {
+          "month": 6,
+          "meanC": 29.5,
+          "rainMm": 100.6
+        },
+        {
+          "month": 7,
+          "meanC": 29.28,
+          "rainMm": 162.17
+        },
+        {
+          "month": 8,
+          "meanC": 28.41,
+          "rainMm": 208.77
+        },
+        {
+          "month": 9,
+          "meanC": 28.17,
+          "rainMm": 269.37
+        },
+        {
+          "month": 10,
+          "meanC": 27.61,
+          "rainMm": 158.93
+        },
+        {
+          "month": 11,
+          "meanC": 24.79,
+          "rainMm": 54.33
+        },
+        {
+          "month": 12,
+          "meanC": 23.58,
+          "rainMm": 3.43
+        }
+      ]
+    },
+    "penang": {
+      "config": {
+        "name": "槟城",
+        "nativeCurrency": "MYR",
+        "checkedOn": "2026-10-21",
+        "defaultScenario": {
+          "tier": "comfort",
+          "nights": 30,
+          "season": "standard",
+          "work": "cowork",
+          "currency": "CNY"
+        },
+        "fx": {
+          "date": "2026-10-20",
+          "base": "CNY",
+          "rates": {
+            "CNY": 1,
+            "THB": 5.000393,
+            "MYR": 0.608014,
+            "VND": 3875.968992,
+            "USD": 0.149396,
+            "EUR": 0.133309
+          },
+          "source": {
+            "title": "ExchangeRate-API daily reference rates",
+            "url": "https://www.exchangerate-api.com",
+            "checkedOn": "2026-10-21"
+          }
+        },
+        "planNote": "单人承担整间房；三档均含房费预留，没有取得对应房源完整单人30晚含费总价，不是统计均价或可订报价。",
+        "seasonLabels": {
+          "standard": "标准季（无季节价差承诺）",
+          "peak": "旺季（房费待询）"
+        },
+        "tiers": {
+          "economy": {
+            "label": "省钱",
+            "note": "按较低的住房与生活额度规划；住房未落实到已核30晚房源。",
+            "housing": {
+              "standard": {
+                "amount": 3000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "房费预留3,000令吉/30晚；没有对应的已核房源及含税总价。"
+              },
+              "peak": null,
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 1000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 300,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 250,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 250,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              }
+            ]
+          },
+          "comfort": {
+            "label": "舒适",
+            "note": "住房参照公开月租设预留，办公采用共享工位月票。",
+            "housing": {
+              "standard": {
+                "amount": 4000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [
+                  "PEN-CENTURY"
+                ],
+                "note": "房费预留4,000令吉/30晚，参照Century Bay公开月租；是否适用于单人30晚、最终税费及用电计费范围未确认。"
+              },
+              "peak": null,
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 1350,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 450,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 300,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 300,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "utilities",
+                "label": "水电预留",
+                "amount": 200,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑为尚未取得的水电账单预留，不是商家已确认的固定收费。"
+              }
+            ]
+          },
+          "roomy": {
+            "label": "宽裕",
+            "note": "增加住房与生活额度；对应房型与含费总价仍需询价。",
+            "housing": {
+              "standard": {
+                "amount": 6000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "房费预留6,000令吉/30晚；没有对应的已核房型与30晚含费报价。"
+              },
+              "peak": null,
+              "minimumStay": "月价参照要求最短一月；预算预留没有可订库存承诺。",
+              "peakNote": "此档没有已核旺季含费住房总价；不按倍率补价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 1950,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 750,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 450,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              },
+              {
+                "id": "buffer",
+                "label": "机动预留",
+                "amount": 450,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "编辑设定的30晚生活预留，不是消费统计或现场实测。"
+              }
+            ]
+          }
+        },
+        "workPrices": {
+          "monthly": {
+            "amount": 320,
+            "sourceIds": [
+              "PEN-SETTLEMENTS"
+            ],
+            "kind": "reference",
+            "label": "共享工位月票",
+            "billingNights": 30,
+            "note": "原页按月收费，这里每30晚按一张整月票预留，超过就多算一张；起算日和有效期仍需确认。Settlements月票24/7；日票限工作日9:00–17:00，套餐起算日、税费与押金待确认。"
+          },
+          "daily": {
+            "amount": 30,
+            "sourceIds": [
+              "PEN-SETTLEMENTS"
+            ],
+            "kind": "reference",
+            "label": "常规办公日票",
+            "visitsPer30Nights": 4,
+            "note": "偶尔办公按每30晚4天日票预留，不自动采用首日优惠或多日优惠。Settlements月票24/7；日票限工作日9:00–17:00，套餐起算日、税费与押金待确认。"
+          },
+          "room": {
+            "amount": 0,
+            "sourceIds": [],
+            "kind": "assumption",
+            "note": "只表示不额外购买共享办公票；房间桌椅、网络与通话条件需另核。"
+          }
+        },
+        "sources": {
+          "PEN-CENTURY": {
+            "id": "PEN-CENTURY",
+            "title": "Century Bay Private Residence rooms & FAQ",
+            "url": "https://www.centurybayprivateresidence.com/century-bay-private-residence",
+            "checkedOn": "2026-10-19",
+            "note": "独立web价格段和直接获取页面正文FAQ；未触发预订。"
+          },
+          "PEN-SETTLEMENTS": {
+            "id": "PEN-SETTLEMENTS",
+            "title": "Settlements Co-working",
+            "url": "https://settlements.work/coworking/",
+            "checkedOn": "2026-10-19",
+            "note": "独立web全文核读价格和access条款；未购买，未测速。"
+          },
+          "PEN-MASCO": {
+            "id": "PEN-MASCO",
+            "title": "MASCO coworking prices",
+            "url": "https://masco.my/",
+            "checkedOn": "2026-10-19",
+            "note": "独立web核读官网公开价格、地址与营业时间；没有购买。"
+          },
+          "PEN-CITADINES": {
+            "id": "PEN-CITADINES",
+            "title": "Citadines Tanjung Tokong Penang",
+            "url": "https://www.discoverasr.com/en/citadines/malaysia/citadines-tanjung-tokong-penang",
+            "checkedOn": "2026-10-19",
+            "note": "独立web全文核读集团页地址、押金、取消条款；未查询日期库存。"
+          },
+          "PEN-TANJUNGPOINT": {
+            "id": "PEN-TANJUNGPOINT",
+            "title": "Tanjung Point Long Stay Package",
+            "url": "https://www.tanjungpoint.com/offers.html",
+            "checkedOn": "2026-10-19",
+            "note": "独立web全文核读Long Stay Package段落与酒店地址；未查询外链订房引擎。"
+          }
+        },
+        "excluded": [
+          "往返机票、跨城交通",
+          "签证及办理费用、保险与医疗",
+          "可退押金及信用卡预授权",
+          "购物、大额活动与个人消费",
+          "未确认的税费、超量水电、额外清洁及会议室费用",
+          "银行买卖价与换汇手续费"
+        ],
+        "deposit": {
+          "amount": null,
+          "note": "未指定最终住房，因此总押金未知；Century Bay长住押金1,000令吉仅适用其自身且仍须确认，不能套到所有住房预留。"
+        },
+        "priceReferences": [
+          {
+            "id": "century-bay",
+            "label": "Century Bay Designer Studio",
+            "sourceIds": [
+              "PEN-CENTURY"
+            ],
+            "currency": "MYR",
+            "monthly": 4000,
+            "publishedUnits": 1,
+            "conditionalDeposit": 1000,
+            "minimumStay": null,
+            "taxes": null,
+            "thirtyNightConfirmed": false,
+            "note": "公开月租不等于已确认单人30晚含费总价；合理用电范围和超量计费须询价。"
+          },
+          {
+            "id": "citadines",
+            "label": "Citadines Tanjung Tokong",
+            "sourceIds": [
+              "PEN-CITADINES"
+            ],
+            "currency": "MYR",
+            "monthly": null,
+            "conditionalDeposit": 200,
+            "thirtyNightConfirmed": false,
+            "note": "有30晚及以上取消规则，不代表取得房价；200令吉仅为原页信用卡预授权说明。"
+          },
+          {
+            "id": "tanjung-point",
+            "label": "Tanjung Point长住询价",
+            "sourceIds": [
+              "PEN-TANJUNGPOINT"
+            ],
+            "currency": "MYR",
+            "nightlyFrom": 193,
+            "priceQualifier": "+",
+            "monthly": null,
+            "minimumStay": null,
+            "deposit": null,
+            "thirtyNightConfirmed": false,
+            "note": "禁止193×30当作月租或30晚含费总价。"
+          },
+          {
+            "id": "settlements",
+            "label": "Settlements办公",
+            "sourceIds": [
+              "PEN-SETTLEMENTS"
+            ],
+            "currency": "MYR",
+            "daily": 30,
+            "fiveDay": 110,
+            "monthlyHotdesk": 320,
+            "monthlyFixedDesk": 400,
+            "note": "多日票有效期未知，模型偶尔办公使用常规日票，不假定套餐随时适用。"
+          },
+          {
+            "id": "masco",
+            "label": "MASCO办公",
+            "sourceIds": [
+              "PEN-MASCO"
+            ],
+            "currency": "MYR",
+            "monthlyHotdesk": 400,
+            "tenDay": 250,
+            "note": "每日10:00–22:00；月票有效期、税费与押金待确认。"
+          }
+        ]
+      },
+      "label": "槟城",
+      "nativeLabel": "令吉",
+      "scenario": {
+        "tier": "comfort",
+        "nights": 30,
+        "season": "standard",
+        "work": "cowork",
+        "currency": "CNY"
+      },
+      "climate": [
+        {
+          "month": 1,
+          "meanC": 27.76,
+          "rainMm": 128.03
+        },
+        {
+          "month": 2,
+          "meanC": 28.22,
+          "rainMm": 102.5
+        },
+        {
+          "month": 3,
+          "meanC": 28.55,
+          "rainMm": 173.2
+        },
+        {
+          "month": 4,
+          "meanC": 28.77,
+          "rainMm": 243.97
+        },
+        {
+          "month": 5,
+          "meanC": 29.17,
+          "rainMm": 272.17
+        },
+        {
+          "month": 6,
+          "meanC": 28.8,
+          "rainMm": 167.17
+        },
+        {
+          "month": 7,
+          "meanC": 29.08,
+          "rainMm": 83.8
+        },
+        {
+          "month": 8,
+          "meanC": 28.2,
+          "rainMm": 296.7
+        },
+        {
+          "month": 9,
+          "meanC": 28.09,
+          "rainMm": 240.7
+        },
+        {
+          "month": 10,
+          "meanC": 27.98,
+          "rainMm": 347
+        },
+        {
+          "month": 11,
+          "meanC": 27.54,
+          "rainMm": 505.7
+        },
+        {
+          "month": 12,
+          "meanC": 28.08,
+          "rainMm": 182.53
+        }
+      ]
+    },
+    "da-nang": {
+      "config": {
+        "name": "岘港",
+        "nativeCurrency": "VND",
+        "checkedOn": "2026-10-21",
+        "defaultScenario": {
+          "tier": "comfort",
+          "nights": 30,
+          "season": "standard",
+          "work": "cowork",
+          "currency": "CNY"
+        },
+        "fx": {
+          "date": "2026-10-20",
+          "base": "CNY",
+          "rates": {
+            "CNY": 1,
+            "THB": 5.000393,
+            "MYR": 0.608014,
+            "VND": 3875.968992,
+            "USD": 0.149396,
+            "EUR": 0.133309
+          },
+          "source": {
+            "title": "ExchangeRate-API daily reference rates",
+            "url": "https://www.exchangerate-api.com",
+            "checkedOn": "2026-10-21"
+          }
+        },
+        "planNote": "整间一卧公寓由一人承担，房价按Green Residence公开月租起价预留，指定日期、税费和可订库存仍需问。",
+        "tiers": {
+          "comfort": {
+            "label": "舒适",
+            "housing": {
+              "standard": {
+                "amount": 15000000,
+                "kind": "reference",
+                "sourceIds": [
+                  "DN-GREEN"
+                ],
+                "note": "Green Residence Villa一个月起租，约15,000,000越盾/月起，网络和每周清洁包含，水电另计；一月押金另备。"
+              },
+              "peak": null,
+              "minimumStay": "一个月起租；按具体到离店日期确认。",
+              "peakNote": "没有覆盖节假日与旺季的完整报价。"
+            },
+            "living": [
+              {
+                "id": "food",
+                "label": "餐饮与饮料",
+                "amount": 4500000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "按本文住法设定的生活预留，可按个人习惯调整；不是消费均价。"
+              },
+              {
+                "id": "transport",
+                "label": "市内交通",
+                "amount": 1000000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "按本文住法设定的生活预留，可按个人习惯调整；不是消费均价。"
+              },
+              {
+                "id": "utilities",
+                "label": "水电预留",
+                "amount": 800000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "按本文住法设定的生活预留，可按个人习惯调整；不是消费均价。"
+              },
+              {
+                "id": "essentials",
+                "label": "手机、洗衣与日用品",
+                "amount": 700000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "按本文住法设定的生活预留，可按个人习惯调整；不是消费均价。"
+              },
+              {
+                "id": "buffer",
+                "label": "周末及机动预留",
+                "amount": 1000000,
+                "basis": "per-30-nights",
+                "kind": "allowance",
+                "sourceIds": [],
+                "note": "按本文住法设定的生活预留，可按个人习惯调整；不是消费均价。"
+              }
+            ]
+          }
+        },
+        "workPrices": {
+          "monthly": {
+            "amount": 2300000,
+            "kind": "reference",
+            "sourceIds": [
+              "DN-ENOSTA"
+            ],
+            "billingNights": 30,
+            "note": "Enosta官网月票起价2,300,000越盾，按所选票型确认；Co-working页列周一至五08:00–18:30、周六08:00–17:00，不能当24小时票。税费、押金和有效期另核。"
+          },
+          "daily": {
+            "amount": 110000,
+            "kind": "reference",
+            "sourceIds": [
+              "DN-ENOSTA"
+            ],
+            "note": "官网日票起价；不是夜间通行承诺。"
+          },
+          "room": {
+            "amount": 0,
+            "note": "只表示不买额外工位；房间网络和通话条件需现场测试。"
+          }
+        },
+        "sources": {
+          "DN-GREEN": {
+            "title": "Green Residence Villa monthly rental",
+            "url": "https://greenresidence.vn/villa/"
+          },
+          "DN-ENOSTA": {
+            "title": "Enosta current monthly workspace price",
+            "url": "https://enostaspace.com/co-working/"
+          }
+        },
+        "depositNote": "Green Residence要求到店时准备一月押金和首月房租；按本例至少另备15,000,000越盾，最终以房源合同为准。"
+      },
+      "label": "岘港",
+      "nativeLabel": "越盾",
+      "scenario": {
+        "tier": "comfort",
+        "nights": 30,
+        "season": "standard",
+        "work": "cowork",
+        "currency": "CNY"
+      },
+      "climate": [
+        {
+          "month": 1,
+          "status": "unknown",
+          "meanC": 21.95,
+          "highC": 23.6,
+          "rainMm": 164.87
+        },
+        {
+          "month": 2,
+          "status": "recommended",
+          "meanC": 23.23,
+          "highC": 25,
+          "rainMm": 114.83
+        },
+        {
+          "month": 3,
+          "status": "recommended",
+          "meanC": 24.53,
+          "highC": 26.64,
+          "rainMm": 96.33
+        },
+        {
+          "month": 4,
+          "status": "recommended",
+          "meanC": 27.6,
+          "highC": 30.25,
+          "rainMm": 21.57
+        },
+        {
+          "month": 5,
+          "status": "recommended",
+          "meanC": 29.21,
+          "highC": 31.91,
+          "rainMm": 94.9
+        },
+        {
+          "month": 6,
+          "status": "recommended",
+          "meanC": 30.48,
+          "highC": 33.51,
+          "rainMm": 166.13
+        },
+        {
+          "month": 7,
+          "status": "recommended",
+          "meanC": 30.16,
+          "highC": 32.97,
+          "rainMm": 125.2
+        },
+        {
+          "month": 8,
+          "status": "recommended",
+          "meanC": 30.5,
+          "highC": 33.69,
+          "rainMm": 152.07
+        },
+        {
+          "month": 9,
+          "status": "unknown",
+          "meanC": 28.84,
+          "highC": 31.27,
+          "rainMm": 337.77
+        },
+        {
+          "month": 10,
+          "status": "caution",
+          "meanC": 26.95,
+          "highC": 28.72,
+          "rainMm": 610.87
+        },
+        {
+          "month": 11,
+          "status": "caution",
+          "meanC": 25.33,
+          "highC": 26.85,
+          "rainMm": 483.1
+        },
+        {
+          "month": 12,
+          "status": "caution",
+          "meanC": 23.48,
+          "highC": 24.78,
+          "rainMm": 390.47
+        }
+      ]
+    }
+  }
+}

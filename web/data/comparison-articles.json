@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "publication": {
+    "approved": true,
+    "approvedOn": "2026-10-21",
+    "authority": "User requested two sourced comparison rewrites and direct publication with synchronized entrances and sitemap."
+  },
+  "sources": {
+    "CM-BAANNOI": {
+      "title": "BAANNOI：月租、季节与费用",
+      "url": "https://www.baannoinornmuan.com/en/monthly-stay/",
+      "checkedOn": "2026-10-21",
+      "note": "Garden House常规一月12,500泰铢，11–2月15,000；水电和押金另计，跨季须按日期确认。"
+    },
+    "CM-REALSPACE": {
+      "title": "RealSpace：票价与开放时间",
+      "url": "https://realspacecm.com/",
+      "checkedOn": "2026-10-21",
+      "note": "日票300泰铢、共享工位月票4,000；每日09:00至午夜。网络与会议空间须实际试用。"
+    },
+    "CM-JIDA": {
+      "title": "Jida：限定月份的月租",
+      "url": "https://sites.google.com/view/jida-apartment",
+      "checkedOn": "2026-10-19",
+      "note": "沿用2026-10-19原页记录：13,000泰铢/月，适用2026年3–10月；只解释原指南预算，不作为凉季房价。"
+    },
+    "CM-SMITH": {
+      "title": "Smith Residence：英文房价页",
+      "url": "https://chiangmaiapartment.com/prices/",
+      "checkedOn": "2026-10-21",
+      "note": "作为住宿候选入口，旧中英文页价格曾不一致，不用它推定本次房费。"
+    },
+    "PG-CENTURY": {
+      "title": "Century Bay：房型、月租与押金",
+      "url": "https://www.centurybayprivateresidence.com/century-bay-private-residence",
+      "checkedOn": "2026-10-21",
+      "note": "Designer Studio仅一套，官网月租4,000令吉。30晚日期、税费与用电计法须确认；页面长住押金1,000令吉不外推其他房源。"
+    },
+    "PG-SETTLEMENTS": {
+      "title": "Settlements：月票与短票条件",
+      "url": "https://settlements.work/coworking/",
+      "checkedOn": "2026-10-21",
+      "note": "共享月票320、固定工位400令吉；月票24/7，日票及5日票限工作日09:00–17:00。"
+    },
+    "PG-MASCO": {
+      "title": "MASCO：工位价目",
+      "url": "https://masco.my/",
+      "checkedOn": "2026-10-21",
+      "note": "Hot Desk 400令吉/月、10日票250；比较前确认有效期、营业时段和附加费。"
+    },
+    "DN-GREEN": {
+      "title": "Green Residence Villa：一个月起租",
+      "url": "https://greenresidence.vn/villa/",
+      "checkedOn": "2026-10-21",
+      "note": "约15,000,000越盾/月起，网络和每周清洁包含，水电另付；到店时支付首月房租和一月押金。指定日期与库存须确认。"
+    },
+    "DN-ENOSTA": {
+      "title": "Enosta：办公月票与营业时段",
+      "url": "https://enostaspace.com/co-working/",
+      "checkedOn": "2026-10-21",
+      "note": "官网月票2,300,000越盾起；周一至五08:00–18:30，周六08:00–17:00。主页另列公寓8,500,000/月起，房型和30晚条件未确认。"
+    },
+    "DN-COWORK": {
+      "title": "Coworking Danang：价格、通行和电话间",
+      "url": "https://coworkingdanang.com/",
+      "checkedOn": "2026-10-21",
+      "note": "网页文字列月票3m越盾，周/月票可24/7，首次须08:00–17:00设置进入方式；两个单人通话亭，不是多人会议室。具体票价与含费按日期再核。"
+    },
+    "TH-VISA": {
+      "title": "泰国领事馆：2026年9月15日起免签方案",
+      "url": "https://thaiconsulatela.thaiembassy.org/en/publicservice/visa-exemption-and-visa-on-arrival-to-thailand",
+      "checkedOn": "2026-10-21",
+      "note": "已查看官方原图，中国普通护照在双边30天一栏。旅游停留不自动等于远程工作许可。"
+    },
+    "MY-VISA": {
+      "title": "中国驻马使馆：中马互免签证问答",
+      "url": "https://my.china-embassy.gov.cn/eng/fwzc/lsyw/qz/202508/t20250801_11681401.htm",
+      "checkedOn": "2026-10-21",
+      "note": "适用普通护照等、有效期至少六个月；每次不超过30天，任意180天累计不超过90天，特定目的须另办手续。"
+    },
+    "VN-VISA": {
+      "title": "越南公安部：电子签证官方入口",
+      "url": "https://evisa.gov.vn/",
+      "checkedOn": "2026-10-21",
+      "note": "电子签证最长90天，可单次或多次；单次25美元，多次50美元。不由旅游入境资格推导工作许可。"
+    },
+    "NASA": {
+      "title": "NASA：2026年4月清迈烟霾观察",
+      "url": "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/",
+      "checkedOn": "2026-10-21",
+      "note": "2026-04-22卫星观测；说明泰北干季尤其3–4月烟霾风险，不能代替入住当天空气监测。"
+    },
+    "VN-WEATHER": {
+      "title": "越南国家旅游局：岘港目的地与天气",
+      "url": "https://vietnam.travel/places-to-go/south-central-coast-central-highlands/da-nang",
+      "checkedOn": "2026-10-21",
+      "note": "目的地页推荐3–5月；与同站城市指南对雨季起止的概括不同，本文以逐月历史数据、官方风险提示和日期预报一起判断。"
+    },
+    "ERA5": {
+      "title": "Open-Meteo 历史天气接口",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "checkedOn": "2026-10-21",
+      "note": "图表复用本站2023–2025年ERA5三年逐月汇总；不是长期气候常年值或未来天气预报。"
+    },
+    "FX": {
+      "title": "Rates By Exchange Rate API",
+      "url": "https://www.exchangerate-api.com",
+      "checkedOn": "2026-10-21",
+      "note": "2026-10-20日参考汇率统一换算三城；仅供预算，未计银行点差。"
+    },
+    "CM-STORY": {
+      "title": "无效字符：清迈30天花销记录",
+      "url": "https://www.xiaohongshu.com/explore/6a01d1690000000006020eff",
+      "checkedOn": "2026-10-19",
+      "note": "2026-05-11作者自报35,287泰铢，含13,650网球课；依据此前已读的原帖发布文案。图片、评论与付款凭证未核。"
+    },
+    "PG-STORY": {
+      "title": "Cola（穷游世界版）：槟城29晚花费",
+      "url": "https://www.xiaohongshu.com/explore/67caf26e000000002602d0ee",
+      "checkedOn": "2026-10-19",
+      "note": "2025-03-07作者自报多人分摊住宿约2,000元/人，含机票约7,200元/人。依据原帖发布文案；同行人数与原币费用未披露。"
+    },
+    "DN-STORY": {
+      "title": "strawberwies：提前退租与施工噪声",
+      "url": "https://www.reddit.com/r/DaNang/comments/1w7x9gw/breaking_apartment_lease/",
+      "checkedOn": "2026-10-21",
+      "note": "读取主帖和作者回复：月租15,500,000越盾、押金5,000,000，与家人入住后噪声加剧；退款结果与付款凭证未核，不作全城统计。"
+    },
+    "DN-RAIN-STORY": {
+      "title": "Reddit：不同住客对岘港雨季的感受",
+      "url": "https://www.reddit.com/r/DaNang/comments/1kq4dzn/is_the_rainy_season_in_da_nang_really_that_bad/",
+      "checkedOn": "2026-10-21",
+      "note": "引述saito200与throwback5971对雨季的相反感受，保留各自语境；不作天气统计或当季预报。"
+    }
+  },
+  "articles": [
+    {
+      "slug": "chiang-mai-vs-penang",
+      "citySlugs": [
+        "chiang-mai",
+        "penang"
+      ],
+      "title": "清迈和槟城住一个月，房租与通勤差在哪",
+      "searchTitle": "2026清迈vs槟城：独住月预算、租房位置与通勤怎么选",
+      "summary": "同样由一个人承担整间房、住30晚并买工位月票，清迈的庭院房与槟城岛南Studio花费差在哪，住处位置又会怎样改变工作日。",
+      "updatedAt": "2026-10-21",
+      "profileKeys": [
+        "chiang-mai",
+        "penang"
+      ],
+      "answer": "想把房租压低、工作和生活围绕几个街区展开，可以优先看清迈；更想住槟城，就把住处和工位放在同一个生活范围里找。下面用两个具体住法算账，房型和位置都摆出来。",
+      "budgetNote": "单人 · 30晚 · 整间房 · 工位月票。清迈用11–2月Garden House月价举例；槟城用Studio房费预留。水电单列预留，押金、机票、签证和保险另备；没有确认指定日期库存。",
+      "heroFigures": [
+        {
+          "src": "/guide-assets/images/chiang-mai-nimman-street.webp",
+          "alt": "宁曼路的街道与建筑",
+          "caption": "宁曼路街景；照片不代表文中房源门口，也不能证明步行通勤时间。",
+          "credit": "Setawut · CC BY 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nimmanhaeminda_Road_2025.jpg",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "kind": "photo",
+          "width": 960,
+          "height": 1233
+        },
+        {
+          "src": "/guide-assets/images/penang-city.webp",
+          "alt": "夜间的槟城乔治市",
+          "caption": "乔治市夜景。Century Bay位于岛南，不能把这张市区照片当成那套房源的周边。",
+          "credit": "HundenvonPenang · CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skyline_of_George_Town%2C_Penang_at_night_Nov2024-29-17.jpg",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "kind": "photo",
+          "width": 960,
+          "height": 540
+        }
+      ],
+      "sections": [
+        {
+          "id": "who",
+          "title": "你想过的是哪种工作日",
+          "paragraphs": [
+            "清迈这一例住Wat Ket的BAANNOI Garden House，约44平方米，带独卫和工作桌。你需要接受住处与工位分开，愿意把吃饭、工作和日常活动安排在自己熟悉的几条路上。宁曼、古城边和河东各有不同距离，城市不大也不等于每段路都适合走。",
+            "槟城这一例参考Sungai Nibong的Century Bay，而工位选的是乔治市的Settlements。两个地方都能各自成立，放在同一个工作日里却有跨区出行。若每天都进工位，找乔治市附近的住处通常比只盯着一套岛南月租更有用；新房价还得重新问。",
+            "如果你更需要整套公寓、想自己做饭，或者计划两人分摊住房，槟城这类房源可以继续找。但本篇全部按一人承担整间房计算，没有先把大公寓折成“人均便宜”。"
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "PG-CENTURY"
+          ]
+        },
+        {
+          "id": "budget",
+          "title": "同样独住30晚，这笔钱怎样拆",
+          "paragraphs": [
+            "本文的清迈方案为{{cm.total}}，槟城为{{pg.total}}，都包含一张月工位票和生活预留。它们是两个可调整的预算例子，房源档次、位置和含费条件仍有差别；不能把差额叫两座城市的平均生活成本差。",
+            "房费是主要差别。清迈按凉季庭院房15,000泰铢；槟城为Studio预留4,000令吉。先看自己是否要这样的房型，再决定表里的房费有没有参考价值。"
+          ],
+          "budgetTable": true,
+          "after": [
+            "水电预留分别为清迈1,500泰铢、槟城200令吉，都是编辑给出的额度，不是已经拿到的月账单。机动预留也按个人消费习惯调整。没有核清的税费、清洁费或超量收费，还要让住处单列。",
+            "清迈月预算指南中的28,900泰铢，住房采用Jida在2026年3–10月的13,000泰铢月价，含费条件也不同。本篇为讨论凉季，换用BAANNOI的15,000泰铢例价，并另留水电，所以金额变成32,400泰铢。不要把3–10月的价格直接拿去订12月。",
+            "槟城原月预算为6,720令吉；本篇把尚未确认的水电另留200令吉，合计6,920。下面列出的运营方报价可追溯，餐饮、交通和日用品则是规划额度，暂未对应到真实个人账单。"
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "PG-CENTURY",
+            "FX"
+          ]
+        },
+        {
+          "id": "rent",
+          "title": "月租写得便宜，租期和含费要一起看",
+          "paragraphs": [
+            "BAANNOI同一张表上有一个月、三个月、半年和一年的价格。Garden House一月常规价12,500泰铢，一年租约才是每月10,000；11–2月例价15,000。只住一个月，不能沿用一年租约的低价。跨11月或2月的日期要重新报价。",
+            "Century Bay写出的4,000令吉对应Designer Studio，且只有一套。这个价格没有证明你的日期有房，也没有替你确定全部税费和电费。问价时把入住和退房日期写在一起，要求按整间、整段日期报一个总额。",
+            "押金要放到抵达前准备的钱里，和消费预算分开。Century Bay长住说明列过1,000令吉；BAANNOI费用说明另列过标准房12,500泰铢押金，仍须确认现行合同及退还条件。两处的数字都不能套到其他住处。"
+          ],
+          "figures": [
+            {
+              "src": "/comparison-assets/cm-baannoi.webp",
+              "alt": "BAANNOI常规与凉季月租表",
+              "caption": "一月常规价12,500泰铢，11–2月例价15,000；水电和押金另付。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://www.baannoinornmuan.com/en/monthly-stay/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 1260,
+              "height": 1331
+            },
+            {
+              "src": "/comparison-assets/pg-century.webp",
+              "alt": "Century Bay公开月租",
+              "caption": "Designer Studio月租4,000令吉，仅一套；须按指定日期确认房型与含费。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://www.centurybayprivateresidence.com/century-bay-private-residence",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 1320,
+              "height": 220
+            }
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "PG-CENTURY"
+          ]
+        },
+        {
+          "id": "distance",
+          "title": "住在岛南，工位却在乔治市",
+          "paragraphs": [
+            "Century Bay、北侧Tanjung Tokong和乔治市，是槟城三个不同的生活范围。住岛南可能适合自己的日常目的，想天天去乔治市办公却要另外解决通勤。把房费省下来的部分，和交通费、雨天出门的麻烦一起算。",
+            "本站月住指南里，Century Bay到Settlements的一条缓存步行路线约12.7公里，估时约170分钟，没有做现场步行测试。这个距离已经足以提醒你：不要把它安排成每天走路上班的组合。实际叫车费和堵车时间仍得按你会出门的时段看。",
+            "清迈也要做同样的检查。喜欢Wat Ket的庭院，可以找附近能工作的地方，或把一部分工作日留在房间；如果目标是每天去宁曼，租房时就把那条路线算进去。住处照片和“清迈市区”四个字，都代替不了这一步。"
+          ]
+        },
+        {
+          "id": "work",
+          "title": "晚上开会，月票能不能用",
+          "paragraphs": [
+            "RealSpace的共享月票是4,000泰铢，日票300；官网写每日09:00至午夜。每月只去12天，单买日票是3,600；去14天则是4,200，才超过共享月票。按你实际会去的天数选，别把月票当成每天都必须使用的安排。",
+            "Settlements的共享月票320令吉，可24/7刷卡进出；30令吉日票和110令吉五日票，只覆盖工作日09:00–17:00。晚上开会，买到一张便宜短票没有解决你的问题。MASCO的Hot Desk公开为400令吉/月，也要核票期与使用时段。",
+            "槟城与北京时间相同，清迈慢一小时。北京时间20:00的会议，在清迈是19:00。把这个时间报给工位，问电话间、能否预约以及当天容量；运营方写“高速网络”，仍不能当成你将用的设备与房间已经测过。"
+          ],
+          "figures": [
+            {
+              "src": "/comparison-assets/cm-realspace.webp",
+              "alt": "RealSpace工位价目",
+              "caption": "RealSpace共享月票4,000泰铢；原页另列日票及其他票型。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://realspacecm.com/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 540,
+              "height": 761
+            },
+            {
+              "src": "/comparison-assets/pg-settlements.webp",
+              "alt": "Settlements月票和短票使用条件",
+              "caption": "月票320令吉与24/7通行写在同一页；短票只覆盖工作日日间。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://settlements.work/coworking/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 393,
+              "height": 433
+            },
+            {
+              "src": "/guide-assets/images/chiang-mai-akha-coffee.jpg",
+              "alt": "清迈Akha Ama的浓缩咖啡制作",
+              "caption": "Akha Ama La Fattoria的咖啡制作照，展示饮咖啡的场景；并非本文工位或Phrasingh分店现场。",
+              "credit": "Takeaway · CC BY-SA 4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akha_Ama_Chiang_Mai_naked_portafilter.jpg",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "kind": "photo",
+              "width": 960,
+              "height": 960
+            }
+          ],
+          "links": [
+            "CM-REALSPACE",
+            "PG-SETTLEMENTS",
+            "PG-MASCO"
+          ]
+        },
+        {
+          "id": "season",
+          "title": "凉季房价和烟霾，把清迈拆成不同月份看",
+          "paragraphs": [
+            "11–1月想找相对凉、少雨的工作日，清迈值得优先考虑，但这也是本例房价升到15,000泰铢的时期。不要只拿到便宜季的房价，却把凉季的天气一起想象进去。",
+            "2月起留意泰北烟霾，3–4月尤其需要单独做决定。NASA记录了2026年4月22日清迈周边的烟雾，并说明干季火情在3–4月突出。它是已发生的观察，不是下一年固定哪天开始、哪天结束的保证。",
+            "槟城全年偏热。本站2023–2025年ERA5样本里，1–2月雨量低于10–11月；10–11月月均约347–506毫米。雨量多不等于整月每天都下雨，但把住宿、吃饭和工位分散到不同片区，雨天会更费事。"
+          ],
+          "climate": true,
+          "links": [
+            "NASA",
+            "ERA5"
+          ]
+        },
+        {
+          "id": "stories",
+          "title": "别人的便宜月账，往往换了一种住法",
+          "paragraphs": [
+            "Cola（穷游世界版）在2025年的槟城记录中，29晚住宿人均约2,000元，含机票总支出约7,200元。房子是多人分摊的两室两卫，同行人数没有完整披露。这个案例说明分摊会改变花费，不能把它放进本文的单人整租一栏。",
+            "无效字符的清迈30天自报账单为35,287泰铢，其中13,650用于网球课；住宿7,500。作者仍不推荐自己住的Inkam Hotel，理由是房间老旧和噪声。总账高低和房间好不好，是两件都值得看的事。",
+            "以上依据已核读的作者发布文案整理，没有核付款凭证、附图或全部评论。它们用于理解不同住法和风险，不作为这次商家现价；本站也没有在这些房间实住。"
+          ],
+          "links": [
+            "PG-STORY",
+            "CM-STORY"
+          ]
+        },
+        {
+          "id": "entry",
+          "title": "30晚住宿，不一定落在30天停留里",
+          "paragraphs": [
+            "按当前官方说明，中国大陆普通护照短期旅行进入泰国的双边免签为30天；中马互免签证每次不超过30天，任意180天累计不超过90天，护照有效期等条件也要核对。",
+            "预算用30晚只是方便比较。到达日和离境日怎样计入停留，必须以实际获准截止日为准。需要远程工作或其他用途时，分别查符合本人情况的签证与许可，不能从旅游免签推导工作资格。"
+          ],
+          "links": [
+            "TH-VISA",
+            "MY-VISA"
+          ]
+        },
+        {
+          "id": "decision",
+          "title": "把最后的选择落到一张房费单上",
+          "paragraphs": [
+            "愿意住庭院房、能接受具体路线，且出发月份合适，可以拿清迈的房型继续问价。想住槟城，就先选生活范围：每天去乔治市办公的人，重点找能把住处和工位放近的组合；两人一起住或主要在房间工作，则按自己的方案重算。",
+            "向每家问同一组条件：哪天到、哪天走以及几个人独用整间房；水电网与清洁怎样收费，押金何时退；平常开会的时段能否使用工位。拿到两份同条件报价，表里的差额才更接近你自己的选择。"
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "PG-CENTURY"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "两个人住，能直接把总预算除以二吗？",
+          "房租可能分摊，餐饮、手机和工位通常按人增加。是否允许两人同住、房型加人费用及税费，也要重新确认；不能把整张个人预算表都除以二。"
+        ],
+        [
+          "清迈这次为什么不是28,900泰铢？",
+          "本篇按BAANNOI凉季15,000泰铢房费，并另留水电；原月预算指南参照Jida的3–10月报价。房源和含费条件不同，两个数都不是指定日期的可订订单。"
+        ],
+        [
+          "槟城月票便宜，是不是整月就便宜？",
+          "工位只是其中一项。本例大头在整间Studio房费，住处是否靠近工位也会改变交通安排。先按自己的房型和工作天数重算。"
+        ],
+        [
+          "三月还适合只因为房租低就选清迈吗？",
+          "三月要把空气监测和自己的耐受情况单独考虑。便宜房租不能保证户外活动或工作日舒适，行前与入住期间都看官方空气资料。"
+        ]
+      ],
+      "sourceIds": [
+        "CM-BAANNOI",
+        "CM-REALSPACE",
+        "CM-JIDA",
+        "PG-CENTURY",
+        "PG-SETTLEMENTS",
+        "PG-MASCO",
+        "TH-VISA",
+        "MY-VISA",
+        "NASA",
+        "ERA5",
+        "FX",
+        "CM-STORY",
+        "PG-STORY"
+      ]
+    },
+    {
+      "slug": "chiang-mai-vs-da-nang",
+      "citySlugs": [
+        "chiang-mai",
+        "da-nang"
+      ],
+      "title": "清迈还是岘港，冬天看雨，春天看空气",
+      "searchTitle": "2026清迈vs岘港：月住预算、烟霾季与雨季怎么选",
+      "summary": "用两个单人30晚住法比较房租、工位和日常开销，再看冬季降雨、春季烟霾和夜间会议，决定清迈与岘港哪一座更适合这次出发。",
+      "updatedAt": "2026-10-21",
+      "profileKeys": [
+        "chiang-mai",
+        "da-nang"
+      ],
+      "answer": "11–1月想多在户外活动，可以优先看清迈；打算3–4月出发，又不愿把泰北烟霾纳入行程，岘港值得继续看。岘港的海边生活也要看月份：年末雨多，不能靠一张晴天海景照决定整月安排。",
+      "budgetNote": "单人 · 30晚 · 整间房 · 工位月票。清迈用凉季Garden House例价；岘港用一卧公寓及日间工位起价。生活费为预留，押金、机票、签证、保险及未确认税费另算。",
+      "heroFigures": [
+        {
+          "src": "/guide-assets/images/chiang-mai-nimman-street.webp",
+          "alt": "宁曼路的街道与建筑",
+          "caption": "宁曼路街景；照片不代表文中房源门口，也不能证明步行通勤时间。",
+          "credit": "Setawut · CC BY 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nimmanhaeminda_Road_2025.jpg",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "kind": "photo",
+          "width": 960,
+          "height": 1233
+        },
+        {
+          "src": "/images/city-da-nang.webp",
+          "alt": "岘港龙桥与汉江日景",
+          "caption": "岘港龙桥与汉江，摄于2023年。这里不是美溪海滩或文中公寓门口。",
+          "credit": "Somerset999 · CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dragon_Bridge%2C_Da_Nang_during_day_-_20230819_%28cropped%29.jpg",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "kind": "photo",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "sections": [
+        {
+          "id": "months",
+          "title": "十二月和三月，会有不同的选法",
+          "paragraphs": [
+            "如果这次是11月、12月或1月，你希望工作后经常步行出门、周末多做户外活动，清迈的少雨凉季更值得优先询房。代价是房价进入另一档：本例庭院房的公开月价从常规12,500泰铢升到15,000。",
+            "岘港年末的海边不保证晴天。本站2023–2025年ERA5样本里，10月月均雨量约611毫米、11月约483、12月约390；四月则约22。三年样本不能预测你那30天，但已经说明“都是海边”没有解决季节问题。",
+            "到了3–4月，清迈要认真考虑烟霾。NASA的2026年观察指出，烟雾在干季尤其3–4月突出；岘港官方目的地页把3–5月列为较适合海边活动的时期。如果你去清迈的理由主要是户外日常，春季应把空气情况和换城预案一起考虑。"
+          ],
+          "climate": true,
+          "links": [
+            "NASA",
+            "VN-WEATHER",
+            "ERA5"
+          ]
+        },
+        {
+          "id": "air",
+          "title": "房间便宜，空气也不能省略",
+          "paragraphs": [
+            "清迈的烟霾不是远处山景变模糊那么简单。对每天要开窗、散步或户外运动的人，它会改变生活安排。订满一个月前，看当年官方空气监测；也问房间空调、窗户密闭和空气净化设备，不把某一家提供设备当成整座城都能保证。",
+            "岘港没有因此获得“全年空气好”的保证。这里只能说，泰北干季烟霾和中部海岸雨季是两种不同风险。你如果愿意接受冬季阴天、把工作安排在室内，岘港仍可以成立；如果海滩与晴天是主要目的，就别用最湿的月份给自己做期待。"
+          ],
+          "figures": [
+            {
+              "src": "/comparison-assets/chiang-mai-smoke-20260422.webp",
+              "alt": "2026年4月22日清迈及周边的卫星烟霾图",
+              "caption": "2026年4月22日的卫星影像。它说明当时发生过烟霾，不能当作今天的空气状况。",
+              "credit": "NASA Earth Observatory / Lauren Dauphin · MODIS",
+              "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/",
+              "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+              "kind": "photo",
+              "width": 1280,
+              "height": 1066
+            }
+          ],
+          "links": [
+            "NASA",
+            "VN-WEATHER"
+          ]
+        },
+        {
+          "id": "budget",
+          "title": "把两套独住方案放在同一张表里",
+          "paragraphs": [
+            "清迈本例为{{cm.total}}，岘港本例为{{dn.total}}，都按一个人住30晚、整间房和工位月票计算，人民币统一用2026-10-20参考汇率换算。这两份方案的总额接近，已经不足以支持简单地说哪座城市一定便宜。",
+            "清迈采用BAANNOI凉季Garden House月价15,000泰铢，加RealSpace共享月票4,000；岘港采用Green Residence一卧公寓月价约15,000,000越盾起，加Enosta日间工位月票2,300,000越盾起。起价、空房与税费仍要按自己的日期确认。"
+          ],
+          "budgetTable": true,
+          "after": [
+            "这里选的房源并不覆盖全城。岘港Enosta主页还列公寓8,500,000越盾/月起，但具体房型、租期、含费与空房没有核齐，不能直接拿低价替换成本例已说明的一卧公寓。选中另一间房，两城预算高低就可能变化。",
+            "生活费是可以改的规划额度，水电分别预留清迈1,500泰铢、岘港800,000越盾。共享办公是否每天都要去、吃饭和周末怎样安排，都由你自己的工作日决定，不能把表中金额当实付账单。"
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "CM-REALSPACE",
+            "DN-GREEN",
+            "DN-ENOSTA",
+            "FX"
+          ]
+        },
+        {
+          "id": "room",
+          "title": "想住海边，问的应是那一间房",
+          "paragraphs": [
+            "Green Residence Villa写明一个月起租，一卧公寓带厨房和洗衣机，网络与每周清洁包含，水电按使用另付。官网要求到店时准备一月押金和首月租金。按本例起价，只看消费预算以外，还得另备约15,000,000越盾押金；最终以实际房源为准。",
+            "“离海约500米”是运营方对地址的描述，不是本站实走，也没有证明你的窗户朝向、隔音或每天去工位的路线。问清具体楼层、房间朝向和附近是否施工，比只看酒店名和海景照片更有用。",
+            "清迈Garden House约44平方米，有独卫和桌子，位置在Wat Ket。它给的是另一种生活范围：庭院房与河东街区。不要看着宁曼照片，却默认自己订到的庭院房就在宁曼工位旁边。"
+          ],
+          "figures": [
+            {
+              "src": "/comparison-assets/dn-green.webp",
+              "alt": "Green Residence一个月起租与收费说明",
+              "caption": "约1,500万越盾/月起；网络、每周清洁包含，水电另计，押金一月。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://greenresidence.vn/villa/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 1280,
+              "height": 511
+            },
+            {
+              "src": "/comparison-assets/cm-baannoi.webp",
+              "alt": "BAANNOI常规与凉季月租表",
+              "caption": "一月常规价12,500泰铢，11–2月例价15,000；水电和押金另付。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://www.baannoinornmuan.com/en/monthly-stay/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 1260,
+              "height": 1331
+            }
+          ],
+          "links": [
+            "DN-GREEN",
+            "CM-BAANNOI"
+          ]
+        },
+        {
+          "id": "workspace",
+          "title": "下午能工作，晚上未必能开会",
+          "paragraphs": [
+            "Enosta是原Enouvo的新名字，找旧攻略时要注意。Co-working页写周一至五08:00–18:30，周六08:00–17:00，月票2,300,000越盾起。本文按这张日间票安排预算，没有把它写成24小时通行。",
+            "如果你常在晚上开会，可再问Coworking Danang。它的官网说明周票与月票可24/7进入，首次要在08:00–17:00设置门禁；两个通话亭为单人使用，没有多人会议室。具体票价、通话亭使用和空位要单独核对，不能把另一家的票价与它的通行条件拼到一起。",
+            "清迈RealSpace当前列每日09:00至午夜。清迈与岘港都比北京时间慢一小时，北京时间20:00的会议在当地是19:00：对Enosta已超出所列日间时段，对RealSpace仍在公开营业时间内。时段合适后，才轮到测试自己电脑的会议上传、延迟和通话声音。"
+          ],
+          "figures": [
+            {
+              "src": "/comparison-assets/dn-enosta.webp",
+              "alt": "Enosta办公与公寓起价",
+              "caption": "办公与公寓是分开的商品，不能把公寓起价理解成已含工位。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://enostaspace.com/co-working/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 1280,
+              "height": 1021
+            },
+            {
+              "src": "/comparison-assets/cm-realspace.webp",
+              "alt": "RealSpace工位价目",
+              "caption": "RealSpace共享月票4,000泰铢；原页另列日票及其他票型。",
+              "credit": "运营方原页截图 · 2026-10-21",
+              "sourceUrl": "https://realspacecm.com/",
+              "licenseUrl": null,
+              "kind": "quote",
+              "width": 540,
+              "height": 761
+            },
+            {
+              "src": "/guide-assets/images/chiang-mai-akha-coffee.jpg",
+              "alt": "清迈Akha Ama的浓缩咖啡制作",
+              "caption": "Akha Ama La Fattoria的咖啡制作照，展示饮咖啡的场景；并非本文工位或Phrasingh分店现场。",
+              "credit": "Takeaway · CC BY-SA 4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akha_Ama_Chiang_Mai_naked_portafilter.jpg",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "kind": "photo",
+              "width": 960,
+              "height": 960
+            }
+          ],
+          "links": [
+            "DN-ENOSTA",
+            "DN-COWORK",
+            "CM-REALSPACE"
+          ]
+        },
+        {
+          "id": "daily",
+          "title": "一边是河东庭院，一边是海岸街区",
+          "paragraphs": [
+            "住清迈Wat Ket，要把每天吃饭、洗衣和工位的路看清；如果自己的活动都在古城或宁曼，房费以外还要付出往返。住处有桌子并不等于已经适合整天开会，能不能用房间工作，短住时试过再决定。",
+            "在岘港，汉江两岸与美溪海滩也不能混成一个地点。龙桥照片说明城市景观，不说明你订的房源门口。出门去工位或买菜的路线、下雨有没有替代去处、晚上能否安静睡觉，都属于要问的具体条件。",
+            "想在咖啡馆用电脑，去之前问清能坐多久、是否方便通话。本文没有在这些门店测试插座、网速或久坐规则；连续视频会议应安排在已经确认可以通话的房间或工位。"
+          ]
+        },
+        {
+          "id": "people",
+          "title": "同一个雨季，有人难熬，也有人喜欢",
+          "paragraphs": [
+            "在讨论岘港雨季的Reddit帖里，saito200认为11–12月不值得来，主要是自己难以接受长时间见不到太阳；throwback5971则更喜欢凉一些的阴天，觉得避开几次风暴后仍能外出。两条都是个人感受，不是概率统计，也不保证下一次冬天会怎样。",
+            "strawberwies的另一篇退租帖子更接近订房会遇到的麻烦：作者与家人住在An Thuong教堂附近，已付月租15,500,000越盾和押金5,000,000，搬入后施工噪声加重，想提前搬走。退款结果没有核实，也没有核付款凭证；这条经历提醒的是看房时问施工、隔音和退租条件。",
+            "清迈也有类似取舍。无效字符记录的住宿虽然只花7,500泰铢，仍因老旧和噪声而不推荐。城市的生活想象和你实际住到的那一间房，需要分别判断。"
+          ],
+          "links": [
+            "DN-RAIN-STORY",
+            "DN-STORY",
+            "CM-STORY"
+          ]
+        },
+        {
+          "id": "visa",
+          "title": "签证和押金，都在月预算外再准备",
+          "paragraphs": [
+            "以中国大陆普通护照短期旅行为前提，泰国官方当前原图将中国列在双边免签30天一栏。越南电子签证官方系统列有效期最长90天，单次25美元、多次50美元；应按自己的护照、目的和实际批准条件申请。",
+            "预算用了30晚，移民允许的是具体入境和离境日期，二者不能直接等同。两城都不能因为能旅游入境，就推导成已经获得远程工作资格；有相应计划时，另查适用手续。",
+            "押金与签证费用从消费预算里分开，才知道出发前一共要备多少钱。特别是岘港本例写了一月押金，不能用约一个月生活费就认为已经覆盖入住资金。"
+          ],
+          "links": [
+            "TH-VISA",
+            "VN-VISA",
+            "DN-GREEN"
+          ]
+        },
+        {
+          "id": "choose",
+          "title": "按你这次最在意的两件事收窄",
+          "paragraphs": [
+            "11–1月，把少雨的户外日常放在前面，可优先询清迈的凉季房源；接受阴天和阵雨、主要在室内工作，也可继续看岘港，但按真实雨季安排预期。3–4月若对烟霾十分介意，就更有理由核岘港房态和当地天气。",
+            "工作条件再过一遍：晚间会议是否有地方接，工位票是否覆盖，房间是否安静。最后拿到两份覆盖完整日期的房价，把押金和另收费加进去。本文的数字足以开始问房，最后的决定仍应落在你会住的房间和月份上。"
+          ],
+          "links": [
+            "CM-BAANNOI",
+            "DN-GREEN",
+            "DN-ENOSTA"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "冬天住岘港，就一定每天都下雨吗？",
+          "不能这样保证。三年历史样本显示年末偏湿，住客对同一季节的感受也不同。用它决定是否接受雨天，再看出发时的预报与预警。"
+        ],
+        [
+          "三月去清迈，可以只在房间工作避开烟吗？",
+          "室内安排会改变暴露条件，但没有核实具体房间设备与空气情况，本文不能保证可行。要单独了解房间条件并跟踪官方监测，必要时保留换城方案。"
+        ],
+        [
+          "两城总预算接近，是不是住起来差不多？",
+          "金额接近只对应本文两套住法。清迈例子在Wat Ket，岘港是一卧服务公寓，票种与时段也不同；房间位置、季节和工作日仍要分别比较。"
+        ],
+        [
+          "岘港月票更便宜，为什么还要问夜间通行？",
+          "票价和时段属于同一个产品条件。本文Enosta日间月票不能套上Coworking Danang的24/7通行说明；夜间使用需确认你实际购买的那一张票。"
+        ]
+      ],
+      "sourceIds": [
+        "CM-BAANNOI",
+        "CM-REALSPACE",
+        "DN-GREEN",
+        "DN-ENOSTA",
+        "DN-COWORK",
+        "TH-VISA",
+        "VN-VISA",
+        "NASA",
+        "VN-WEATHER",
+        "ERA5",
+        "FX",
+        "DN-STORY",
+        "DN-RAIN-STORY",
+        "CM-STORY"
+      ]
+    }
+  ]
+}

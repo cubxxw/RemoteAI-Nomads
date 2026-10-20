@@ -39,7 +39,9 @@ export function createArticleCatalog(data) {
   // guides supplement that feature regardless of their underlying renderer.
   const guideCardsHTML = () => {
     const articles = published.filter(entry => entry.kind === 'guide' && entry.slug !== 'first-month');
-    return articles.length ? `<section class="guide-city-articles" aria-labelledby="guide-city-articles-title"><div class="content-section-heading"><h2 id="guide-city-articles-title">住一个月，先把账算清楚</h2></div><div class="city-article-list">${articles.map(cardHTML).join('')}</div></section>` : '';
+    const comparisons=published.filter(entry=>entry.kind==='comparison');
+    const comparisonCards=comparisons.length?`<section class="guide-city-articles" aria-labelledby="guide-comparison-title"><div class="content-section-heading"><h2 id="guide-comparison-title">两座城市，怎么选</h2></div><div class="city-article-list">${comparisons.map(cardHTML).join('')}</div></section>`:'';
+    return (articles.length ? `<section class="guide-city-articles" aria-labelledby="guide-city-articles-title"><div class="content-section-heading"><h2 id="guide-city-articles-title">住一个月，先把账算清楚</h2></div><div class="city-article-list">${articles.map(cardHTML).join('')}</div></section>` : '')+comparisonCards;
   };
   return Object.freeze({publishedArticles, articlesForCity, articleBySlug, articlePaths, relatedArticlesHTML, guideCardsHTML});
 }

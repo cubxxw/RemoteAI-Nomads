@@ -32,7 +32,7 @@ if(input){
         cell.querySelector('.winner-label')?.remove();if(winner){const badge=document.createElement('span');badge.className='winner-label';badge.textContent='高 '+diff.toFixed(1);cell.querySelector('.comparison-value').append(badge);}
       });
     }
-    document.querySelectorAll('.comparison-change').forEach(link=>{const url=new URL(link.href);url.searchParams.set('month',String(month));link.href=url.href;});
+    document.querySelectorAll('.comparison-change,.comparison-guide,.comparison-city-photo,.comparison-city-identity a,.comparison-source').forEach(link=>{const url=new URL(link.href);url.searchParams.set('month',String(month));link.href=url.href;});
     document.querySelector('#comparison-month-status').textContent=`已显示${month}月的两地历史气候。`;
     document.dispatchEvent(new CustomEvent('nomads:journey-month',{detail:month}));
   };
