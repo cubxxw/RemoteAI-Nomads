@@ -43,4 +43,6 @@ Roamorrow 的完整城市文章任务包含上线；明确要求仅调研、草�
 
 `web/data/article-catalog.json` 统一记录文章的城市归属与发布状态。多城文章填写全部 `citySlugs`；城市页、指南索引和站点地图从目录生成，每次新增或更新文章都同步构建，不手工维护重复列表。独立文章的批准源存放在 `web/content/city-guides/`，`publication.json` 中的指纹必须对应本次审阅文件。原始社交缓存与私有资料不放进公共资源。
 
+两城对比正文和来源保存在 `web/data/comparison-articles.json`，比较住法保存在 `web/data/comparison-budgets.json`，沿用月预算指南的计算模型。完整对比文章在正文后保留历史指标工具，首屏预算与旧指标分开说明。定稿复查后更新 `web/content/comparisons/publication.json` 的源文件与图片指纹；公共构建会检查这份批准记录，正常访问与数据库故障时使用同一正文和标题。
+
 在 `web/` 运行 `npm run guides:build`、`npm run check`，再按[部署说明](web/docs/deployment.md)生成发布清单并部署。发布后在真实域名核验文章、城市关联、指南入口、图片与站点地图，并记录 Google Search Console 的实际提交状态。完整流程见本机 `nomads-city-guide` skill；提交站点地图与文章已收录分别报告。

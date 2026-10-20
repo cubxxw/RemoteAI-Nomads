@@ -9,6 +9,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import worker from '../src/worker.js';
 import {articlePaths, publishedArticles} from '../src/article-catalog.js';
 import {buildCityGuides} from './build-city-guides.mjs';
+import {validateComparisonPublication} from './check-comparison-publication.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://nomads.cubxxw.com';
@@ -55,6 +56,7 @@ export async function buildPublicPages({
   outputDirectory = join(ROOT, 'public/published-pages'),
   origin = ORIGIN,
 } = {}) {
+  await validateComparisonPublication();
   await buildCityGuides();
   const targetOrigin = new URL(origin);
   assert.equal(targetOrigin.protocol, 'https:', 'A public release needs an HTTPS site origin');

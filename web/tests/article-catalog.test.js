@@ -49,7 +49,9 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.match(guideCardsHTML(), /penang-monthly-budget/);
   assert.match(guideCardsHTML(), /kuala-lumpur-monthly-budget/);
   assert.match(guideCardsHTML(), /dali-monthly-budget/);
-  assert.doesNotMatch(guideCardsHTML(), /first-month|chiang-mai-vs-/);
+  assert.doesNotMatch(guideCardsHTML(), /first-month/);
+  assert.match(guideCardsHTML(), /chiang-mai-vs-penang/);
+  assert.match(guideCardsHTML(), /chiang-mai-vs-da-nang/);
 });
 
 test('draft entries stay out of lookup, navigation, city links and guide cards', () => {

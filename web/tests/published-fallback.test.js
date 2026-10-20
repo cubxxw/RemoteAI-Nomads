@@ -21,8 +21,9 @@ test('reviewed comparisons preserve catalog metadata and mounted schema during a
   assert.deepEqual(page.about.map(c=>c.url),[origin+'/cities/chiang-mai/',origin+'/cities/penang/']);
   assert.equal(crumbs.itemListElement.at(-1).item,page.url);
   assert.match(body,query?/content="noindex,follow"/:/content="index,follow"/);
-  assert.match(body,/<h2 id="comparison-city-0"><a[^>]+>清迈<\/a><\/h2>/);
-  assert.match(body,/<h2 id="comparison-city-1"><a[^>]+>槟城<\/a><\/h2>/);
+  assert.match(body,/<h4 id="comparison-city-0"><a[^>]+>清迈<\/a><\/h4>/);
+  assert.match(body,/<h4 id="comparison-city-1"><a[^>]+>槟城<\/a><\/h4>/);
+  assert.equal(structured['@graph'].find(x=>x['@type']==='Article').headline,page.name);
   assert.doesNotMatch(body,/AggregateRating/);
  }
 });

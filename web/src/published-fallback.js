@@ -2,6 +2,7 @@ import {shell} from './render.js';
 import {comparisonBody} from './comparison-page.js';
 import {displayMonth} from '../public/modules/ranking.js';
 import {comparisonMetadata} from './comparison-metadata.js';
+import {comparisonArticle,renderComparisonArticle} from './comparison-article.js';
 import {rankingPageFromData} from './rank-pages.js';
 import {relocatePublishedHTML,publicURL} from './site-path.js';
 const security={
@@ -30,7 +31,8 @@ export async function publishedFallback(request,env){
       const [a,b]=pair.map(slug=>cities.find(c=>c.slug===slug));if(!a||!b)return null;
       const canonical=[...pair].sort().join('-vs-');if(canonical!==pair.join('-vs-'))return Response.redirect(url.origin+'/compare/'+canonical+'/'+url.search,308);
       const selected=Number(url.searchParams.get('month')),month=Number.isInteger(selected)&&selected>=1&&selected<=12?selected:displayMonth({});
-      const body=shell({env,...comparisonMetadata(a,b,{origin:env.SITE_ORIGIN||url.origin,month,indexable:!url.search&&manifest.paths.includes(url.pathname)}),body:comparisonBody(a,b,month)});
+      const article=comparisonArticle(canonical);
+      const body=shell({env,...comparisonMetadata(a,b,{origin:env.SITE_ORIGIN||url.origin,month,indexable:!url.search&&manifest.paths.includes(url.pathname)}),body:article?renderComparisonArticle(article,a,b,month):comparisonBody(a,b,month)});
       return new Response(request.method==='HEAD'?null:body,{headers:{...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, s-maxage=60','X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')}});
     }
     if(!manifest.paths.includes(url.pathname))return null;

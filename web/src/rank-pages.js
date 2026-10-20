@@ -19,6 +19,7 @@ import {
 import {RECOMMENDATION_POLICY_URL} from '../public/modules/recommendation-policy.js';
 import { comparisonBody } from "./comparison-page.js";
 import { comparisonMetadata } from './comparison-metadata.js';
+import { comparisonArticle,renderComparisonArticle } from './comparison-article.js';
 import { UI_PRESETS, VISA_LABELS, additionalFilters, viewLabel, quickFilters } from "../public/modules/rank-controls.js";
 
 const rows = async (db, sql, args = []) =>
@@ -143,7 +144,8 @@ export async function rankedComparison(env, key, url) {
   for (const city of [a,b]) { const credit=credits.find(row=>row.slug===city.slug);city.photoCredit=credit?.photo_credit;city.photoSource=credit?.photo_source; }
   const requestedMonth = Number(url?.searchParams.get('month'));
   const month = Number.isInteger(requestedMonth)&&requestedMonth>=1&&requestedMonth<=12 ? requestedMonth : displayMonth({});
-  const body = comparisonBody(a, b, month);
+  const article=comparisonArticle(key);
+  const body = article?renderComparisonArticle(article,a,b,month):comparisonBody(a,b,month);
   const editorial = await env.DB.prepare(
     "SELECT status FROM editorial_pages WHERE kind='comparison' AND slug=?",
   )
