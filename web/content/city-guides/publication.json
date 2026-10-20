@@ -3,36 +3,36 @@
   "publication": {
     "approved": true,
     "approvedOn": "2026-10-20",
-    "authority": "User explicitly requested a full language revision of all published articles and previously authorized publication of article updates."
+    "authority": "User explicitly requested city-specific titles for all four articles, synchronized search titles and city entrances, and direct publication."
   },
-  "sourceEdition": "copy-20261020",
+  "sourceEdition": "titles-20261020",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
       "sourceFile": "chiang-mai-monthly-budget.html",
-      "sha256": "767ba27af9a3eb7457471f1dd43d7fccab9d256d3d8ca0d87f4a10de9f73f37d",
-      "source": "output/copy-20261020/chiang-mai-monthly-budget.html",
+      "sha256": "038324853b14921f9583127e570c90da6d24bbb475f692b55789bf2c6a7e975b",
+      "source": "output/titles-20261020/chiang-mai-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "penang-monthly-budget",
       "sourceFile": "penang-monthly-budget.html",
-      "sha256": "61c0b24d23c0cadc8dbbc3891318db80b34aab3ceb3bb8b948d03ba4c092ee30",
-      "source": "output/copy-20261020/penang-monthly-budget.html",
+      "sha256": "8b4b5a122fbe057b69e2ae5e59acfaf858f96e26e4959aac90b6f85323143380",
+      "source": "output/titles-20261020/penang-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "ab68c6a2910106d8022092c78c683fc699bdafe65056a761ec8017b722b33dd7",
-      "source": "output/copy-20261020/kuala-lumpur-monthly-budget.html",
+      "sha256": "5aa31d8b235d67815ac70909aa6f3add80984ab43a2ee3681561a447baeb9eac",
+      "source": "output/titles-20261020/kuala-lumpur-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "dali-monthly-budget",
       "sourceFile": "dali-monthly-budget.html",
-      "sha256": "ecc82b79beaa7106e30c0687a23fe0fb58580cb7efc28b1da5914db857e28507",
-      "source": "output/copy-20261020/dali-monthly-budget.html",
+      "sha256": "8394e7b7d6f2399b9852a713fbc28d298271ebf755c7c1d01cc2f7e051a0a75c",
+      "source": "output/titles-20261020/dali-monthly-budget.html",
       "approved": true
     }
   ],
@@ -65,12 +65,12 @@
     {
       "source": "assets/og-chiang-mai-budget.jpg",
       "destination": "images/og-chiang-mai-budget.jpg",
-      "sha256": "4ff5017eb597611b8fcbe11b876672378282725a8785f5ac8f8fc164573b4fc2"
+      "sha256": "4f79675accbd201cd04f586b88849d0c9c58d8d04bb50a2486cb4b9ef8403e63"
     },
     {
       "source": "assets/og-penang-budget.jpg",
       "destination": "images/og-penang-budget.jpg",
-      "sha256": "d71f01853379f0dc2307070aeb9916d0c7d6cee617a1cf92e6d9290695561692"
+      "sha256": "0436ca514e71c63e5e9c8c08eb2af7055e06bbde24f05c970f8802e0a8539c15"
     },
     {
       "source": "assets/penang-century-bay-monthly.jpg",
@@ -110,7 +110,7 @@
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "e51261ec748380994ced848329ac1c940836db8fe09132840546ce5c2dfc2e1b"
+      "sha256": "58edd887fa4a5011912bb27ade4f55b6a1c862172252e516b527c5ae9b28c89f"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -175,7 +175,7 @@
     {
       "source": "assets/og-dali-budget.jpg",
       "destination": "images/og-dali-budget.jpg",
-      "sha256": "77b3f82c36f02f0f588533d0af125e7dc59bd94be2e9e1f7121cf17f7e723fe6"
+      "sha256": "cad195aeb3551b8dea74199ec62a77c35eb18a5d9b33767ab35a3e8ed164d508"
     },
     {
       "source": "assets/kuala-lumpur-novo-monthly-rates.webp",
