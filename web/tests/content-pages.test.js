@@ -1,10 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { renderCountryIndex, renderCountryPage, renderCompareIndex, renderAbout } from '../src/content-pages.js';
+import { renderCountryIndex, renderCountryPage, renderGuides, renderCompareIndex, renderAbout } from '../src/content-pages.js';
 import { countryMatches } from '../public/modules/content-ui.js';
 
 const country = { id:'VN', name_zh:'越南', name_en:'Viet Nam', region:'亚洲', city_count:1 };
 const city = { slug:'da-nang', name_zh:'岘港', name_en:'Da Nang', country_name:'越南', region:'亚洲', summary:'工作日靠海边。', photo_url:'/images/city-da-nang.webp', budget_amount:790 };
+
+test('reviewed first-week copy overrides old database text without changing publication status or checklist anchors', () => {
+  const stale = {slug:'first-month', title:'旧标题', summary:'旧摘要', body_json:'["旧正文"]', status:'published', updated_at:'2026-10-17'};
+  const page = renderGuides([stale], 'first-month', {SITE_ORIGIN:'https://nomads.test'});
+  assert.match(page.title, /5–7晚/);
+  assert.doesNotMatch(page.body, /旧标题|旧摘要|旧正文/);
+  assert.match(page.body, /备用电力/);
+  for (const step of [1,2,3]) assert.ok(page.body.includes(`id="guide-step-${step}"`));
+  assert.equal(page.indexable, true);
+  assert.equal(renderGuides([{...stale, status:'draft'}], 'first-month', {SITE_ORIGIN:'https://nomads.test'}).indexable, false);
+});
 
 test('country pages keep country context and every city in a separate navigation sidebar', () => {
   const html=renderCountryPage(country,[city,{...city,slug:'hanoi',name_zh:'河内'}],[],[],[],()=>'',()=> '待核验').body;

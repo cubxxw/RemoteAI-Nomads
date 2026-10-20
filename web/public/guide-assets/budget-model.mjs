@@ -151,7 +151,7 @@ export function calculateBudget(cityConfig, input = {}) {
     depositNative:priced(cityConfig.deposit?.amount) ? cents(cityConfig.deposit.amount) : null,
     depositNote:cityConfig.deposit?.note ?? '押金金额未知，未计入消费总额。',
     planLabel:tier.label ?? scenario.tier, planNote:tier.note ?? '',
-    totalKind:'planning-estimate', roundingNote:'各行换算后取整，合计按原币总额统一换算；逐行相加可能有舍入差。'};
+    totalKind:'planning-estimate', roundingNote:'各项换算后都取整，总额则先加原币、再统一换算，因此逐项相加可能有一点差额。'};
 }
 
 export function readScenario(search = '', cityConfig = {}) {

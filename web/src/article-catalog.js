@@ -22,7 +22,8 @@ export function createArticleCatalog(data) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.updatedAt) || Number.isNaN(Date.parse(entry.updatedAt))) throw new Error('Article update date is required: ' + entry.slug);
     if (!Array.isArray(entry.citySlugs) || !entry.citySlugs.every(slug => typeof slug === 'string' && slugPattern.test(slug)) || new Set(entry.citySlugs).size !== entry.citySlugs.length) throw new Error('Invalid article citySlugs: ' + entry.slug);
     if (entry.assetPath !== undefined && (entry.kind !== 'guide' || entry.assetPath !== '/city-guides/' + entry.slug + '.html')) throw new Error('Invalid article assetPath: ' + entry.slug);
-    return Object.freeze({...entry, citySlugs: Object.freeze([...entry.citySlugs])});
+    if (entry.bodyParagraphs !== undefined && (entry.kind !== 'guide' || !Array.isArray(entry.bodyParagraphs) || !entry.bodyParagraphs.length || !entry.bodyParagraphs.every(text => typeof text === 'string' && text.trim()))) throw new Error('Invalid article bodyParagraphs: ' + entry.slug);
+    return Object.freeze({...entry, citySlugs: Object.freeze([...entry.citySlugs]), ...(entry.bodyParagraphs ? {bodyParagraphs: Object.freeze([...entry.bodyParagraphs])} : {})});
   });
   const published = Object.freeze(entries.filter(entry => entry.status === 'published'));
   const publishedArticles = () => published;

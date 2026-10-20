@@ -18,6 +18,7 @@ import {
 
 import {RECOMMENDATION_POLICY_URL} from '../public/modules/recommendation-policy.js';
 import { comparisonBody, comparisonFit } from "./comparison-page.js";
+import { articleBySlug } from './article-catalog.js';
 import { UI_PRESETS, VISA_LABELS, additionalFilters, viewLabel, quickFilters } from "../public/modules/rank-controls.js";
 
 const rows = async (db, sql, args = []) =>
@@ -148,9 +149,10 @@ export async function rankedComparison(env, key, url) {
   )
     .bind(key)
     .first();
+  const copy = articleBySlug(key);
   return {
-    title: a.name + " vs " + b.name + "：数字游民逐项对比",
-    description: comparisonFit(a, b) + " " + comparisonFit(b, a),
+    title: copy?.title || a.name + " vs " + b.name + "：数字游民逐项对比",
+    description: copy?.summary || comparisonFit(a, b) + " " + comparisonFit(b, a),
     path: "/compare/" + key + "/",
     active: "compare",
     body,

@@ -56,7 +56,7 @@ if(source){
       card.setAttribute('aria-pressed',String(tier===scenario.tier));
       card.querySelector('[data-tier-display]').textContent=money(plan.totalDisplay,plan.currency);
       card.querySelector('[data-tier-native]').textContent=plan.totalNative===null?'已知 '+money(plan.knownSubtotalNative,plan.nativeCurrency):money(plan.totalNative,plan.nativeCurrency);
-      card.querySelector('.tier-hint').textContent=scenario.nights+'晚规划，点选计算';
+      card.querySelector('.tier-hint').textContent=scenario.nights+'晚预算 · 点选调整';
     }
     text('[data-answer-scope]',`单人 · ${scenario.nights}晚 · ${config.seasonLabels[scenario.season]} · 整间房由一人承担`);
     document.querySelector('[data-user-override-notice]').hidden=scenario.housingNative===undefined;
@@ -77,7 +77,7 @@ if(source){
   form.addEventListener('submit',event=>event.preventDefault());
   form.addEventListener('change',()=>{const raw=formValues();const normalized=normalizeScenario(raw,config);const invalid=String(raw.nights)!==String(normalized.nights)||(raw.housingNative!==undefined&&Number(raw.housingNative)!==normalized.housingNative);setScenario(normalized);text('[data-budget-status]',invalid?'输入超出有效范围，已按默认规则恢复；控件显示实际使用值。':'预算与链接已按当前参数更新。');});
   for(const button of document.querySelectorAll('[data-tier-choice]'))button.addEventListener('click',()=>{setScenario({...scenario,tier:button.dataset.tierChoice});text('[data-budget-status]','已选'+config.tiers[scenario.tier].label+'方案。');});
-  document.querySelector('[data-reset-budget]').addEventListener('click',()=>{setScenario(config.defaultScenario);text('[data-budget-status]','已恢复默认30晚舒适规划。');});
+  document.querySelector('[data-reset-budget]').addEventListener('click',()=>{setScenario(config.defaultScenario);text('[data-budget-status]','已恢复默认30晚舒适预算。');});
   window.addEventListener('popstate',()=>{scenario=readScenario(location.search,config);renderBudget();text('[data-budget-status]','已从链接恢复预算参数。');});
 
   async function copy(value,statusSelector,fallback){
@@ -181,7 +181,7 @@ if(source){
   document.querySelector('[data-download-consult]').addEventListener('click',()=>{if(!consultForm.reportValidity())return;updateConsultation();download(consultOutput.value,page.city+'-stay-inquiry.txt');text('[data-consult-status]','询价文字下载已发起；没有发送给住处。');});
 
   renderBudget();filterCafes();
-  if(invalidQueryNotice())text('[data-budget-status]','链接有无效参数，已按模型默认规则恢复；当前控件显示实际使用值。');
+  if(invalidQueryNotice())text('[data-budget-status]','链接有无效参数，已按默认设置恢复；当前控件显示实际使用值。');
   const observeMap=()=>{const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();initMap();}},{threshold:.05});observer.observe(document.querySelector('[data-city-map]'));};
   if(document.readyState==='complete')observeMap();else window.addEventListener('load',observeMap,{once:true});
 }

@@ -5,8 +5,8 @@
       "slug": "chiang-mai-monthly-budget",
       "kind": "guide",
       "path": "/guides/chiang-mai-monthly-budget/",
-      "title": "2026清迈旅居一个月费用：舒适方案28,900 泰铢（5,783 元）",
-      "summary": "2026清迈单人30晚舒适规划28,900 泰铢、5,783 元。三档预算、可分享计算器、住宿办公表、地图与署名经历，条件和核价日清楚列出。",
+      "title": "2026清迈旅居一个月费用：舒适预算28,900 泰铢（5,783 元）",
+      "summary": "一个人住清迈30晚，舒适预算28,900泰铢，约5,783元。古城边和河东住处怎么选、日票和月票差在哪，连同烟霾季与押金一起算。",
       "citySlugs": [
         "chiang-mai"
       ],
@@ -18,8 +18,8 @@
       "slug": "penang-monthly-budget",
       "kind": "guide",
       "path": "/guides/penang-monthly-budget/",
-      "title": "2026槟城旅居一个月费用：舒适方案6,720 令吉（11,009 元）",
-      "summary": "2026槟城单人30晚舒适规划6,720 令吉、11,009 元。三档预算、可分享计算器、住宿办公表、地图与署名经历，条件和核价日清楚列出。",
+      "title": "2026槟城旅居一个月费用：舒适预算6,720 令吉（11,009 元）",
+      "summary": "一个人住槟城30晚，舒适预算6,720令吉，约11,009元。比较乔治市、北侧和岛南住处，看清房费、工位及跨区交通，押金另备。",
       "citySlugs": [
         "penang"
       ],
@@ -31,8 +31,8 @@
       "slug": "kuala-lumpur-monthly-budget",
       "kind": "guide",
       "path": "/guides/kuala-lumpur-monthly-budget/",
-      "title": "2026吉隆坡旅居一个月费用：舒适规划5,314 令吉（8,697 元）",
-      "summary": "2026吉隆坡旅居一个月费用，单人30晚舒适规划5,314 令吉（8,697 元）。三档预算、真实公开报价、计算器与地点地图，保留房型、租期和未确认费用。",
+      "title": "2026吉隆坡旅居一个月费用：舒适预算5,314 令吉（8,697 元）",
+      "summary": "一个人住吉隆坡30晚，舒适预算5,314令吉，约8,697元，含日间工位月票。房租、水电和从公寓到车站的路线一起比较，押金另备。",
       "citySlugs": [
         "kuala-lumpur"
       ],
@@ -44,8 +44,8 @@
       "slug": "dali-monthly-budget",
       "kind": "guide",
       "path": "/guides/dali-monthly-budget/",
-      "title": "2026大理旅居一个月费用：舒适规划5,700 元",
-      "summary": "2026大理旅居一个月费用，单人30晚舒适规划5,700 元。三档预算、真实公开报价、计算器与地点地图，保留房型、租期和未确认费用。",
+      "title": "2026大理旅居一个月费用：舒适预算5,700 元",
+      "summary": "一个人在大理住30晚，按5,700元准备舒适预算。古城周边和村里怎么选，热水、买菜、取快递和交通花费都说清。",
       "citySlugs": [
         "dali"
       ],
@@ -57,37 +57,42 @@
       "slug": "chiang-mai-vs-penang",
       "kind": "comparison",
       "path": "/compare/chiang-mai-vs-penang/",
-      "title": "清迈 vs 槟城：数字游民逐项对比",
-      "summary": "并排比较清迈与槟城的预算、季节和工作条件。",
+      "title": "清迈和槟城：预算、天气与工作条件",
+      "summary": "选好出发月份，比较两城的生活预算和工作条件。历史价格的住房条件可能不同，订房时还要按自己的日期询价。",
       "citySlugs": [
         "chiang-mai",
         "penang"
       ],
       "status": "published",
-      "updatedAt": "2026-10-19"
+      "updatedAt": "2026-10-20"
     },
     {
       "slug": "chiang-mai-vs-da-nang",
       "kind": "comparison",
       "path": "/compare/chiang-mai-vs-da-nang/",
-      "title": "清迈 vs 岘港：数字游民逐项对比",
-      "summary": "并排比较清迈与岘港的预算、季节和工作条件。",
+      "title": "清迈和岘港：哪个月份去，住一个月花多少",
+      "summary": "按出发月份比较清迈和岘港的天气、生活预算与工作条件，再看自己是否想住海边。",
       "citySlugs": [
         "chiang-mai",
         "da-nang"
       ],
       "status": "published",
-      "updatedAt": "2026-10-19"
+      "updatedAt": "2026-10-20"
     },
     {
       "slug": "first-month",
       "kind": "guide",
       "path": "/guides/first-month/",
-      "title": "第一站，先住一周，再决定一个月",
-      "summary": "用一个完整的工作周，检验这个地方是否适合你。",
+      "title": "第一站的住宿，为什么只订5–7晚",
+      "summary": "一周里看看住处合不合适，试试会议，也记下每天的花费，再决定是否租一个月。",
       "citySlugs": [],
       "status": "published",
-      "updatedAt": "2026-10-17"
+      "updatedAt": "2026-10-20",
+      "bodyParagraphs": [
+        "订5–7晚可取消的住宿。抵达当天、熟悉街区和第一个工作日分开安排。",
+        "按平时开会的时段测试上传速度和延迟，听听周围噪音，也试一次手机热点。买张工位日票，问清电话间怎么用、晚上能否进门、有没有备用电力。",
+        "把房费之外的清洁费和水电记下来，押金、交通和工位也分别算。过完一个完整工作日，再和房东谈月租。"
+      ]
     }
   ]
 }
