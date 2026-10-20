@@ -17,8 +17,8 @@ import {
 } from "../public/modules/ranking.js";
 
 import {RECOMMENDATION_POLICY_URL} from '../public/modules/recommendation-policy.js';
-import { comparisonBody, comparisonFit } from "./comparison-page.js";
-import { articleBySlug } from './article-catalog.js';
+import { comparisonBody } from "./comparison-page.js";
+import { comparisonMetadata } from './comparison-metadata.js';
 import { UI_PRESETS, VISA_LABELS, additionalFilters, viewLabel, quickFilters } from "../public/modules/rank-controls.js";
 
 const rows = async (db, sql, args = []) =>
@@ -149,13 +149,8 @@ export async function rankedComparison(env, key, url) {
   )
     .bind(key)
     .first();
-  const copy = articleBySlug(key);
   return {
-    title: copy?.title || a.name + " vs " + b.name + "：数字游民逐项对比",
-    description: copy?.summary || comparisonFit(a, b) + " " + comparisonFit(b, a),
-    path: "/compare/" + key + "/",
-    active: "compare",
+    ...comparisonMetadata(a,b,{origin:env.SITE_ORIGIN||url?.origin||'http://127.0.0.1:8787',month,indexable:editorial?.status==='published'&&!url?.search}),
     body,
-    indexable: editorial?.status === "published",
   };
 }

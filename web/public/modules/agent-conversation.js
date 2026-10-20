@@ -27,7 +27,7 @@ export function localPath(value){
   return typeof value==='string'&&/^\/(?!\/)[^\s\\]*$/.test(value)?sitePath(value):null;
 }
 export function conversationMarkdown(thread){
-  const lines=['# '+thread.title,'','导出自 RemoteAI Nomads · 本机对话记录',''];
+  const lines=['# '+thread.title,'','导出自 Roamorrow Nomads · 本机对话记录',''];
   for(const message of thread.messages){
     lines.push('## '+(message.role==='user'?'你':'小狐'),'');
     lines.push(message.result?.answer||message.content||'','');

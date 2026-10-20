@@ -5,7 +5,27 @@ import {publishedFallback} from '../src/published-fallback.js';
 import {parseState,rankCities,stateParams} from '../public/modules/ranking.js';
 import {UI_PRESETS} from '../public/modules/rank-controls.js';
 import worker from '../src/worker.js';
+import {articleBySlug} from '../src/article-catalog.js';
 const html='<!doctype html><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://nomads.example/cities/penang/"></head><main>公开城市资料</main>';
+
+test('reviewed comparisons preserve catalog metadata and mounted schema during an outage, while month variants stay noindex',async()=>{
+ const catalog=JSON.parse(await readFile(new URL('../public/published-pages/rankings.json',import.meta.url),'utf8'));
+ const path='/compare/chiang-mai-vs-penang/',origin='https://roamorrow.com/nomads';
+ const env={PREVIEW:'false',SITE_ORIGIN:origin,ASSETS:{async fetch(r){return new URL(r.url).pathname.endsWith('manifest.json')?Response.json({version:1,paths:[path]}):Response.json(catalog);}}};
+ for(const query of ['', '?month=12']){
+  const response=await publishedFallback(new Request('https://roamorrow.com'+path+query),env),body=await response.text();
+  const structured=JSON.parse(body.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const page=structured['@graph'].find(x=>x['@type']==='WebPage'),crumbs=structured['@graph'].find(x=>x['@type']==='BreadcrumbList');
+  assert.equal(page.name,articleBySlug('chiang-mai-vs-penang').title);
+  assert.equal(page.url,origin+path);
+  assert.deepEqual(page.about.map(c=>c.url),[origin+'/cities/chiang-mai/',origin+'/cities/penang/']);
+  assert.equal(crumbs.itemListElement.at(-1).item,page.url);
+  assert.match(body,query?/content="noindex,follow"/:/content="index,follow"/);
+  assert.match(body,/<h2 id="comparison-city-0"><a[^>]+>清迈<\/a><\/h2>/);
+  assert.match(body,/<h2 id="comparison-city-1"><a[^>]+>槟城<\/a><\/h2>/);
+  assert.doesNotMatch(body,/AggregateRating/);
+ }
+});
 
 test('published HTML relocates canonical, assets and links to the configured mounted site during an outage', async () => {
  const env={PREVIEW:'false',SITE_ORIGIN:'https://roamorrow.com/nomads',ASSETS:{async fetch(request){
