@@ -5,8 +5,8 @@ if(source){
   const page=JSON.parse(source.textContent);
   const config=page.config;
   const form=document.querySelector('[data-budget-form]');
-  const currencies={THB:'泰铢',MYR:'令吉',CNY:'元',USD:'美元',EUR:'欧元'};
-  const money=(value,currency)=>formatMoney(value,currency).replace(/\b(THB|MYR|CNY|USD|EUR)\b/g,key=>currencies[key]);
+  const currencies={THB:'泰铢',MYR:'令吉',CNY:'元',USD:'美元',EUR:'欧元',NPR:'尼泊尔卢比'};
+  const money=(value,currency)=>formatMoney(value,currency).replace(/\b(THB|MYR|CNY|USD|EUR|NPR)\b/g,key=>currencies[key]);
   const text=(selector,value)=>{const node=document.querySelector(selector);if(node)node.textContent=value;};
   const safeLink=(url,label)=>{const a=document.createElement('a');try{const u=new URL(url,location.href);if(!['https:','http:'].includes(u.protocol))return document.createTextNode(label);a.href=u.href;}catch{return document.createTextNode(label);}a.textContent=label;return a;};
   let scenario=readScenario(location.search,config);
