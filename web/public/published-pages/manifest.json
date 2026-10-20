@@ -2,7 +2,7 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-20T10:40:47.436Z",
+  "generated_at": "2026-10-20T14:34:01.652Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
   "db_sha256": "20ec6976619cc1b019708fed540969a1a6e24c7ef5edfd3da68058cdd149b1e1",
@@ -14,11 +14,11 @@
   "counts": {
     "cities": 350,
     "countries": 258,
-    "guides": 5,
+    "guides": 6,
     "comparisons": 2
   },
-  "file_count": 624,
-  "bytes_excluding_manifest": 24635221,
+  "file_count": 625,
+  "bytes_excluding_manifest": 24730508,
   "paths": [
     "/",
     "/cities/",
@@ -641,6 +641,7 @@
     "/guides/penang-monthly-budget/",
     "/guides/kuala-lumpur-monthly-budget/",
     "/guides/dali-monthly-budget/",
+    "/guides/pokhara-monthly-budget/",
     "/api/rankings",
     "/sitemap.xml"
   ]

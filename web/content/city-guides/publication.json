@@ -34,6 +34,13 @@
       "sha256": "8394e7b7d6f2399b9852a713fbc28d298271ebf755c7c1d01cc2f7e051a0a75c",
       "source": "output/titles-20261020/dali-monthly-budget.html",
       "approved": true
+    },
+    {
+      "slug": "pokhara-monthly-budget",
+      "sourceFile": "pokhara-monthly-budget.html",
+      "sha256": "b287755326aea7aaf288b5c6e04ed68db53572f3914c32a7880c3675c56082a6",
+      "source": "output/seo-pokhara-20261020/pokhara-monthly-budget.html",
+      "approved": true
     }
   ],
   "assets": [
@@ -100,12 +107,12 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "6dcfe8dba3f402039c518f3ac63c8b5681bbec4a8602259a60a4d06d745175d8"
+      "sha256": "9c45d25b10e8dd283d44260099d2865ff125bbf7c9f18a8475f2e54faaa7da70"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "ea52275068fa4ae01ecdfeaed8b56f52b5babb8d5060bf854949cb7e169fad4a"
+      "sha256": "e4ce5afdd9feaedcd52b7c1e228e3039ed17e3763dd592932a9bccac15c7479c"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
@@ -196,6 +203,41 @@
       "source": "assets/dali-erhai-boat.webp",
       "destination": "images/dali-erhai-boat.webp",
       "sha256": "c85050179b0d73dcf9518a99dd54736c796777d0b200792ef80e7313e5e8bc2e"
+    },
+    {
+      "source": "assets/pokhara-coworking-pricing.webp",
+      "destination": "images/pokhara-coworking-pricing.webp",
+      "sha256": "b13eb28d60dad06a705a5b883166e3e13c3df1abe11a29b54f48090a5eae0c54"
+    },
+    {
+      "source": "assets/pokhara-eproperty-flat.webp",
+      "destination": "images/pokhara-eproperty-flat.webp",
+      "sha256": "19637d2e815fdced57033424e3578ec4c043fbdcfc2a3e1147bea885ae9bf91e"
+    },
+    {
+      "source": "assets/pokhara-lakeside-street.webp",
+      "destination": "images/pokhara-lakeside-street.webp",
+      "sha256": "1ab22acdfc1edc022e270f75e0c6f707837a14f633c21ee230f91999b9d053f9"
+    },
+    {
+      "source": "assets/pokhara-lodge-monthly.webp",
+      "destination": "images/pokhara-lodge-monthly.webp",
+      "sha256": "ccafb6906a772989f9630cce848252c3470524c2ab9f11d2d691e60a547302eb"
+    },
+    {
+      "source": "assets/pokhara-phewa-lake.webp",
+      "destination": "images/pokhara-phewa-lake.webp",
+      "sha256": "86fc4403e03b27747f8bc50d6780ff0bdcb064fc83411a4dcd6adc164fc0b5aa"
+    },
+    {
+      "source": "assets/pokhara-valley-view.webp",
+      "destination": "images/pokhara-valley-view.webp",
+      "sha256": "76736b834e709ee6f8ce3cf28c147db630b0f865b146d47eee5d146ef34993c7"
+    },
+    {
+      "source": "assets/og-pokhara-budget.jpg",
+      "destination": "images/og-pokhara-budget.jpg",
+      "sha256": "0521cae1167a9e752da5f02d180adf6676b1338be1c4b9f339d810cf2f1631de"
     }
   ]
 }

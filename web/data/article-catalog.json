@@ -54,6 +54,19 @@
       "assetPath": "/city-guides/dali-monthly-budget.html"
     },
     {
+      "slug": "pokhara-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/pokhara-monthly-budget/",
+      "title": "博卡拉住一个月，房租、工位和停电怎么安排",
+      "summary": "一个人住博卡拉30晚，舒适预算66,000尼泊尔卢比，约2,897元。湖畔和本地街区的房租差、一家共享办公的公开价目，加上签证延期与停电准备一起看，押金另备。",
+      "citySlugs": [
+        "pokhara"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-20",
+      "assetPath": "/city-guides/pokhara-monthly-budget.html"
+    },
+    {
       "slug": "chiang-mai-vs-penang",
       "kind": "comparison",
       "path": "/compare/chiang-mai-vs-penang/",

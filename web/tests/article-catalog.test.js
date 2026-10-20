@@ -121,7 +121,8 @@ test('guide package includes exactly public images and runtime, preserves copy a
   assert.match(tools, /from '\.\/budget-model\.mjs'/);
   await access(join(options.assetDirectory, 'budget-model.mjs'));
   for (const page of first.pages) {
-    const expected = /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16'];
+    const expected = page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
+      : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16'];
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
   }
   assert.deepEqual(await buildCityGuides(options), first);
