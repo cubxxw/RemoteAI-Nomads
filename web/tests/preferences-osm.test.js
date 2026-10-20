@@ -62,5 +62,5 @@ test('published OSM counters match their complete place files, radius, dates and
 test('city maps expose category controls, provenance and missing coordinates explicitly',()=>{
  const html=cityPlacesSection({slug:'chiang-mai',name_zh:'清迈'});
  for(const token of ['data-place-filter="coworking"','data-place-filter="cafe"','OpenStreetMap contributors','采集于','地图','place'])assert.ok(html.includes(token));
- assert.match(cityPlacesSection({slug:'unknown',name_zh:'未知'}),/坐标待补充/);
+ assert.match(cityPlacesSection({slug:'unknown',name_zh:'未知'}),/还没有这座城市的位置/);
 });

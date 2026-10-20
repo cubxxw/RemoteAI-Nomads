@@ -19,7 +19,7 @@ export function travelerDefaults(items=[]) {
  const meal=pick('restaurant_inexpensive','meal'),pass=pick('transport_monthly_pass','month'),ticket=pick('transport_oneway_ticket','trip'),mobile=pick('utilities_mobile_10gb','month');
  const entry=(row,basis,multiplier=1)=>({amount:row?Math.round(amount(row)*multiplier*100)/100:null,basis,source:row?{url:row.source_url||null,date:row.observed_at||row.sample_end||null,field:row.field,originalAmount:row.amount,originalCurrency:row.currency,provider:'CostCompass'}:null});
  return {
-  rent:entry(rent,rent?.field.endsWith('outside')?'一人整租一居室，中心区外月租样本':'一人整租一居室，月租挂牌样本'),
+  rent:entry(rent,rent?.field.endsWith('outside')?'一个人整租一居室，参考中心区外月租':'一个人整租一居室，参考挂牌月租'),
   food:entry(meal,'单人平价餐 × 每天 3 顿',3),
   transport:pass?entry(pass,'公共交通月票'):entry(ticket,'单程票 × 每天 2 次 × 30 天',60),
   mobile:entry(mobile,'10 GB 以上手机月套餐'),

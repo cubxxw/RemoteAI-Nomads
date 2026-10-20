@@ -47,7 +47,7 @@ export function monthValues(data, month) {
   };
 }
 
-export const seasonLabel = status => ({ recommended: '原资料推荐', caution: '留意季节', unknown: '月份未判定' })[status] || '月份未判定';
+export const seasonLabel = status => ({ recommended: '旧资料推荐', caution: '留意季节', unknown: '暂无月份建议' })[status] || '暂无月份建议';
 const climateText = (value, unit) => value === null ? '待补充' : `${Math.round(value)}${unit}`;
 
 export function cityPlanQuestion(plan) {
@@ -70,9 +70,9 @@ export function cityPlanQuestion(plan) {
   return [
     `我想去${plan.city || '这座城市'}，请根据我在城市页当前填写的条件，帮我核对季节、预算和远程工作安排。`,
     `出发月份：${Number.isInteger(month) && month >= 1 && month <= 12 ? month + ' 月' : '未填写（需要确认）'}；停留天数：${Number.isInteger(days) && days >= 1 && days <= 365 ? days + ' 天' : '未填写或无效（需要确认）'}。`,
-    '以下金额都是我的规划假设，不是已核实的报价或最低预算：',
+    '以下是我准备的预算，还不是确认的报价，也不代表最低生活费：',
     `月租：${amount(plan.rent, '月')}；餐费：${amount(plan.food, '天')}；其他开销：${amount(plan.other, '月')}。`,
-    '月支出按 30 天折算仅作规划估算，不是短租报价。请按这些假设讨论可行安排，并列出未填项和需要核实的内容。',
+    '月支出按30天分摊估算，短租报价还要另问。请按这些金额分析安排是否可行，也指出没填和需要确认的部分。',
   ].join('\n');
 }
 
@@ -97,7 +97,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
     const status = root.querySelector('[data-month-status]');
     status.textContent = seasonLabel(values.status);
     status.dataset.status = values.status;
-    root.querySelector('[data-month-note]').textContent = /继承|Notion/.test(values.note) ? '月份标签来自旧资料，可结合气温和降雨一起判断。' : values.note || '原资料没有给这个月份下结论。';
+    root.querySelector('[data-month-note]').textContent = /继承|Notion/.test(values.note) ? '月份建议来自旧资料，选日期时也看看对应的气温和降雨。' : values.note || '这个月份暂无建议，可以参考气温和雨量。';
     root.querySelectorAll('[data-chart-month]').forEach(node => node.classList.toggle('is-current', Number(node.dataset.chartMonth) === values.month));
     root.querySelector('[data-selected-month]').textContent = `${values.month} 月`;
     if(writeURL){const url=new URL(location.href);url.searchParams.set('month',String(values.month));history.replaceState(null,'',url);}
@@ -153,7 +153,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       const date=root.querySelector('#meeting-date'),hour=root.querySelector('#meeting-hour');
       if(!date.value||!date.validity.valid){if(status)status.textContent='会议日期尚未填写完整，修正后自动保存。';return;}
       const saved=writeCityPlan(planStorage,slug,{version:1,month:Number(monthSelect.value),days:Number(days.value),currency:currency.value,...(ceilingAmount!==null?{ceiling:{amount:ceilingAmount,...(ceilingQuote?{quote:ceilingQuote}:{})}}:{}),meeting:{date:date.value,hour:Number(hour.value)},values:Object.fromEntries(keys.map(key=>[key,{amount:values[key],origin:inputs[key]?.dataset.origin||'missing',...(cleared[key]?{cleared:true}:{}),...(quotes[key]?{quote:quotes[key]}:{})}]))});
-      if(status)status.textContent=staleFx.size?'部分外币暂沿用上次人民币换算，原币报价已保留，汇率待补。':saved?'报价、月份和会议安排已保存在本机，离开后可继续。':'这份计划暂未保存，请检查输入或保留报价。';
+      if(status)status.textContent=staleFx.size?'部分外币暂沿用上次人民币换算，原币报价已保留，汇率待补。':saved?'报价、月份和会议安排已保存在本机，离开后可继续。':'这次没能保存，请检查输入，或先记下报价。';
     };
     function openAdjustment(focusKey='rent') {
       if(adjustment){adjustment.open=true;adjustment.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
@@ -168,22 +168,22 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       keys.forEach(key=>inputs[key]?.setAttribute('aria-invalid',String(values[key]!==null&&values[key]<0||!!inputs[key]?.validity.badInput||!!inputs[key]?.validity.stepMismatch)));
       if(output)output.textContent=display;
       if(feedback)feedback.textContent=estimate.error?(invalidFields.length?invalidFields.map(key=>TRAVELER_FIELDS[key].label).join('、')+'金额未输入完整或小数位不正确，请修正后计算。':'天数应为1–365，金额应不小于0。'):`${days.value}天${estimate.missing.length?' · 未计入'+estimate.missing.join('、'):' · 已计入上面五项'}`;
-      root.querySelectorAll('[data-agent-open]').forEach(button=>{button.disabled=estimate.error;button.title=estimate.error?'先修正金额或停留天数，再检查预算':'把当前开销带入对话，检查未计入的项目';});
+      root.querySelectorAll('[data-agent-open]').forEach(button=>{button.disabled=estimate.error;button.title=estimate.error?'先修正金额或停留天数，再检查预算':'用当前填写的金额，看看还漏了哪些开销';});
       root.querySelectorAll('[data-trip-length]').forEach(node=>{node.textContent=invalidDays?'—':days.value;});
       const total=root.querySelector('[data-overview-total]');if(total)total.textContent=display;
-      const summary=root.querySelector('[data-overview-feedback]');if(summary)summary.textContent=estimate.error?'先修正停留天数或金额':estimate.amount===null?'价格还不够，暂不估算总预算':`${days.value}天 · ${estimate.items.filter(row=>row.amount!==null).length}项已计入`;
-      const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金、保险和签证费用仍需核对。';
+      const summary=root.querySelector('[data-overview-feedback]');if(summary)summary.textContent=estimate.error?'先修正停留天数或金额':estimate.amount===null?'填入开销后显示小计':`${days.value}天 · ${estimate.items.filter(row=>row.amount!==null).length}项已计入`;
+      const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金和保险另算；如需签证，费用也要确认。';
       const capStatus=root.querySelector('#trip-ceiling-status');
       const invalidCap=ceilingInput&&!ceilingInput.validity.valid,balance=budgetBalance(ceilingAmount,estimate.amount);
       ceilingInput?.setAttribute('aria-invalid',String(invalidCap));
       if(capStatus){
         capStatus.dataset.over=String(balance.remaining!==null&&balance.remaining<0);
-        capStatus.textContent=invalidCap?'上限需不小于0、最多十亿，保留两位小数。':ceilingAmount===null?'填上限后，可看已知开销还剩多少空间。':balance.remaining===null?'先补充有效的开销，才能计算距上限的余额。':balance.remaining<0?'已知开销已超上限 '+formatAmount(-balance.remaining*rate(),currency.value)+'。':'距上限还余 '+formatAmount(balance.remaining*rate(),currency.value)+'，还要覆盖未计入项与往返交通等。';
+        capStatus.textContent=invalidCap?'上限需不小于0、最多十亿，保留两位小数。':ceilingAmount===null?'填好总预算，看看目前这些开销还剩多少余量。':balance.remaining===null?'先补充有效的开销，才能计算距上限的余额。':balance.remaining<0?'已知开销已超上限 '+formatAmount(-balance.remaining*rate(),currency.value)+'。':'距上限还余 '+formatAmount(balance.remaining*rate(),currency.value)+'，还要覆盖未计入项与往返交通等。';
       }
       const filled=keys.filter(key=>values[key]!==null).length,edited=keys.filter(key=>inputs[key]?.dataset.origin==='edited'&&values[key]!==null).length;
       const summaryLabel=adjustment?.querySelector('summary small');
-      if(summaryLabel)summaryLabel.textContent=edited?`${filled}项已计入，其中${edited}项由你调整`:filled?`已带入${filled}项参考，其余可自行填写`:'暂无可带入的本城价格，填写自己的报价';
-      const overviewCaption=root.querySelector('[data-plan-basis]');if(overviewCaption)overviewCaption.textContent=edited?'按你调整的金额估算；参考值与未计入项分别标明。':'价格来自本城样本，未计入项单独列出。';
+      if(summaryLabel)summaryLabel.textContent=edited?`${filled}项已计入，其中${edited}项由你调整`:filled?`已带入${filled}项参考，其余可自行填写`:'没有适合自动填入的报价，可自行填写';
+      const overviewCaption=root.querySelector('[data-plan-basis]');if(overviewCaption)overviewCaption.textContent=edited?'按你填的金额估算；哪些是参考价、哪些还没算入，都分别标明。':'已带入当地参考价，还没算进去的费用列在下方。';
       for(const key of keys){
         const row=root.querySelector(`[data-traveler-row="${key}"]`);if(!row)continue;
         const raw=values[key],invalidRow=invalidFields.includes(key)||raw!==null&&raw<0,known=raw!==null&&!invalidRow;
