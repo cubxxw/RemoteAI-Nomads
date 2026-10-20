@@ -21,6 +21,17 @@ test('requested month is rendered before JavaScript and official resource checks
   assert.match(renderCityPage({...city,slug:'lisbon'},{},{date:'2026-10-19'}).body,/Second Home Mercado/);
 });
 
+test('domestic city entry copy asks about check-in documents without implying foreign work permits',()=>{
+  const page=renderCityPage({...city,country_id:'CN',entry:{label:'境内',evidence_level:'legacy',detail:'原记录标签，尚未逐项复核；停留条件与合法远程工作需分别确认。',source_url:'https://example.com/check-in',checked_at:'2026-10-18'}},{},{date:'2026-10-20'});
+  const entry=page.body.match(/<section class="city-section" id="entry"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(entry);
+  assert.match(entry,/证件|入住登记/);
+  assert.match(entry,/中国大陆居民/);
+  assert.doesNotMatch(entry,/远程工作许可|远程工作签证|能住多久/);
+  assert.match(entry,/https:\/\/example.com\/check-in/);
+  assert.match(entry,/2026-10-18/);
+});
+
 test('user budget uses explicit inputs and reports omitted expenses', () => {
   assert.deepEqual(planBudget({rent:'',food:'',other:'',days:30}), {amount:null,error:false,missing:['房租','餐费','其他开销']});
   assert.deepEqual(planBudget({rent:'3000',food:'100',other:'600',days:15}), {amount:3300,error:false,missing:[]});
@@ -86,14 +97,14 @@ test('only an eligible city monthly asking rent can be adopted, while reviewed p
   const fillAmounts=[...page.body.matchAll(/data-budget-fill="([^"]+)"/g)].map(match=>Number(match[1]));
   assert.deepEqual(fillAmounts,[2987.47]);
   assert.match(page.body,/样本待复核/);
-  assert.match(page.body,/规划估算，不是短租报价/);
+  assert.match(page.body,/估算.*实际短租报价要重新问/);
   assert.match(page.body,/id="budget-rent"[^>]*data-budget-input/);
 });
 
 test('SSR city guide keeps sources, scopes, unknowns, calendar and draft SEO readable', () => {
   const page=renderCityPage(city,{SITE_ORIGIN:'https://nomads.example/'},{date:'2026-10-18'});
-  assert.match(page.body,/本城的分项价格待补充/);
-  assert.match(page.body,/暂无可带入的本城价格，填写自己的报价/);
+  assert.match(page.body,/这座城市的分项价格还没收录/);
+  assert.match(page.body,/没有适合自动填入的报价，可自行填写/);
   assert.match(page.body,/日本全国单身家庭月均支出/);
   assert.match(page.body,/不能当作测试城市的租房总预算/);
   assert.match(page.body,/未填项未计入/);

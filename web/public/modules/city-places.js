@@ -9,7 +9,7 @@ if(root){
  const markers=new Map();
  function details(p){
   const website=safeWebsite(p.website);
-  return `<strong>${esc(label(p))}</strong><p>${p.kind==='coworking'?'共享办公':'咖啡馆'} · 距城市坐标 ${(p.distanceM/1000).toFixed(1)} km</p>${p.openingHours?`<p>营业时间标注：${esc(p.openingHours)}</p>`:''}<p>${p.laptop==='no'?'标注不允许使用电脑':p.laptop==='yes'?'标注可使用电脑':'能否办公待确认'}</p><a href="https://www.openstreetmap.org/${esc(p.id)}" target="_blank" rel="noopener noreferrer">查看地点 ↗</a>${website?` · <a href="${esc(website)}" target="_blank" rel="noopener noreferrer">官网 ↗</a>`:''}`;
+  return `<strong>${esc(label(p))}</strong><p>${p.kind==='coworking'?'共享办公':'咖啡馆'} · 距地图初始中心 ${(p.distanceM/1000).toFixed(1)} km</p>${p.openingHours?`<p>地图记录的营业时间：${esc(p.openingHours)}</p>`:''}<p>${p.laptop==='no'?'标注不允许使用电脑':p.laptop==='yes'?'标注可使用电脑':'能否带电脑办公还要问店家'}</p><a href="https://www.openstreetmap.org/${esc(p.id)}" target="_blank" rel="noopener noreferrer">查看地点 ↗</a>${website?` · <a href="${esc(website)}" target="_blank" rel="noopener noreferrer">官网 ↗</a>`:''}`;
  }
  function render(){
   const shown=places.filter(p=>filter==='all'||p.kind===filter);
@@ -22,7 +22,7 @@ if(root){
   }
   list.innerHTML=shown.slice(0,limit).map(p=>`<article class="place-list-item"><span class="place-dot ${p.kind}" aria-hidden="true"></span><div><strong>${esc(label(p))}</strong><small>${p.kind==='coworking'?'共享办公':'咖啡馆'} · ${(p.distanceM/1000).toFixed(1)} km</small></div><button type="button" data-show-place="${esc(p.id)}" aria-label="在地图定位${esc(label(p))}">定位</button><a href="https://www.openstreetmap.org/${esc(p.id)}" target="_blank" rel="noopener noreferrer" aria-label="查看${esc(label(p))}的地点资料">资料 ↗</a></article>`).join('');
   more.hidden=shown.length<=limit;
-  status.textContent=shown.length?`已标亮 ${shown.length} 处，列表显示 ${Math.min(limit,shown.length)} 处。`:'此分类暂无已采集地点；不代表当地没有。';
+  status.textContent=shown.length?`地图显示 ${shown.length} 处，列表先列 ${Math.min(limit,shown.length)} 处。`:'这个分类还没有收录地点，可以换个分类看看。';
  }
  async function load(){
   if(loading||loaded)return;loading=true;stage.setAttribute('aria-busy','true');status.textContent='正在载入地图与地点…';

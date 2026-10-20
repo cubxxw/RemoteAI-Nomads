@@ -15,6 +15,6 @@ test('a concrete Lisbon workspace has operator rules, phone-booth evidence, scop
   assert.match(html,/Second Home Mercado/);assert.match(html,/08:00–22:00/);
   assert.match(html,/电话间/);assert.match(html,/2026-10-19/);
   assert.match(html,/secondhome.io\/faqs\//);assert.match(html,/日票/);
-  assert.match(html,/空位|预约/);assert.match(html,/未实测/);
+  assert.match(html,/空位|预约/);assert.match(html,/没有在现场测试网速或会议质量/);
   assert.equal(workspaceResourceMarkup('chiang-rai'),'');
 });
