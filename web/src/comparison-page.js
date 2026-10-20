@@ -43,8 +43,8 @@ export function comparisonBody(a, b, month) {
       <tr class="comparison-months-row"><td>${months(a)}</td>${metricCell('原推荐月份')}<td>${months(b)}</td></tr>
       <tr class="comparison-entry-row"><td><strong>${esc(a.visa.label)}<sup>*</sup></strong></td>${metricCell('大陆护照')}<td><strong>${esc(b.visa.label)}<sup>*</sup></strong></td></tr>
       </tbody></table></div>
-      <p class="comparison-footnote"><span class="comparison-print-brand">RemoteAI Nomads · </span>花费为历史参考；安全、生活和网络为旧指标 / 10，网络非 Mbps。<br>气候按所选月份计算；氛围来源见各城标注。* 入境标签待复核，工作许可另查。</p>
-      <details class="comparison-evidence"><summary>口径与入境说明<span aria-hidden="true">⌄</span></summary><div><p>绿色标出较低的历史花费或同口径下较高的分数；持平、缺失或氛围来源不同时不标胜负。花费分按历史月预算计算，气候分按所选月份的气温和雨量计算。氛围分优先使用OSM场所密度；未采集时沿用历史社区标签，两者不能直接比较社群活跃程度。历史花费的住宿条件可能不同，不能当作当前房源报价或最低预算。气候为2023–2025年ERA5历史月平均，不是天气预报。</p><div class="comparison-entry-details">${[a,b].map(city=>`<section><h3>${esc(city.name)} · ${esc(city.visa.label)}</h3><p>${esc(city.visa.detail)}</p></section>`).join('')}</div><a href="/about/">查看数据方法与来源</a></div></details>
+      <p class="comparison-footnote"><span class="comparison-print-brand">Roamorrow · </span>花费为历史参考；安全、生活和网络为旧指标 / 10，网络非 Mbps。<br>气候按所选月份计算；氛围来源见各城标注。* 入境标签待复核，工作许可另查。</p>
+      <details class="comparison-evidence"><summary>这些数字怎么用<span aria-hidden="true">⌄</span></summary><div><p>绿色标出历史月花费更低、或按同样方法算出分数更高的一边。两边持平、缺资料或氛围来源不同时，不标高低。花费分依据历史月预算，气候分依据所选月份的气温和雨量。氛围分优先看OSM场所密度，未采集的城市沿用历史社区标签；这两类资料不能直接比较社群有多活跃。历史月花费的住宿条件可能不同，不能当作现价或最低生活费。气候用的是2023–2025年ERA5月平均，出行当天的天气仍要另查预报。</p><div class="comparison-entry-details">${[a,b].map(city=>`<section><h3>${esc(city.name)} · ${esc(city.visa.label)}</h3><p>${esc(city.visa.detail)}</p></section>`).join('')}</div><a href="/about/">查看数据方法与来源</a></div></details>
       </div>
     </div><p id="comparison-month-status" class="sr-only" role="status" aria-live="polite"></p>
     <script type="application/json" id="comparison-data">${data}</script><script type="module" src="/modules/compare-ui.js"></script></article>`;

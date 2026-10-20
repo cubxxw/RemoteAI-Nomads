@@ -3,36 +3,36 @@
   "publication": {
     "approved": true,
     "approvedOn": "2026-10-20",
-    "authority": "User explicitly authorized these Kuala Lumpur and Dali articles to publish directly after research, source and browser checks, with city links, sitemap and GSC submission."
+    "authority": "User explicitly requested a full language revision of all published articles and previously authorized publication of article updates."
   },
-  "sourceEdition": "city-guides-20261020",
+  "sourceEdition": "copy-20261020",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
       "sourceFile": "chiang-mai-monthly-budget.html",
-      "sha256": "b8c5c56c36b11ccb572a801df7b4c4a29696f3bb55522e887e825fbccbc376d7",
-      "source": "output/seo-pilot-20261019/chiang-mai-monthly-budget.html",
+      "sha256": "767ba27af9a3eb7457471f1dd43d7fccab9d256d3d8ca0d87f4a10de9f73f37d",
+      "source": "output/copy-20261020/chiang-mai-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "penang-monthly-budget",
       "sourceFile": "penang-monthly-budget.html",
-      "sha256": "a2c4f2f042ade9fe4e42519946a8b6215f8b3cc2d5cce4d3f6872a0af4c9db0c",
-      "source": "output/seo-pilot-20261019/penang-monthly-budget.html",
+      "sha256": "61c0b24d23c0cadc8dbbc3891318db80b34aab3ceb3bb8b948d03ba4c092ee30",
+      "source": "output/copy-20261020/penang-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "635f34621d86c691df7cb354f1fa7f1c326f631916afe4fab8316d0761267cc2",
-      "source": "output/seo-kl-dali-20261020/kuala-lumpur-monthly-budget.html",
+      "sha256": "ab68c6a2910106d8022092c78c683fc699bdafe65056a761ec8017b722b33dd7",
+      "source": "output/copy-20261020/kuala-lumpur-monthly-budget.html",
       "approved": true
     },
     {
       "slug": "dali-monthly-budget",
       "sourceFile": "dali-monthly-budget.html",
-      "sha256": "9a5ae8f455dc68ba9db89ecb559c9261adde02b62f8b22d0d5255294fbeea45e",
-      "source": "output/seo-kl-dali-20261020/dali-monthly-budget.html",
+      "sha256": "ecc82b79beaa7106e30c0687a23fe0fb58580cb7efc28b1da5914db857e28507",
+      "source": "output/copy-20261020/dali-monthly-budget.html",
       "approved": true
     }
   ],
@@ -65,12 +65,12 @@
     {
       "source": "assets/og-chiang-mai-budget.jpg",
       "destination": "images/og-chiang-mai-budget.jpg",
-      "sha256": "50f7fa46fbb45b0c547d26b7b3884e5a0634d8201fdf36ce730faebf1795e1e5"
+      "sha256": "4ff5017eb597611b8fcbe11b876672378282725a8785f5ac8f8fc164573b4fc2"
     },
     {
       "source": "assets/og-penang-budget.jpg",
       "destination": "images/og-penang-budget.jpg",
-      "sha256": "7132f26787eb5427f8f0d8dc70a4a2c7617d4c7bdb3d363daea53caf68250df7"
+      "sha256": "d71f01853379f0dc2307070aeb9916d0c7d6cee617a1cf92e6d9290695561692"
     },
     {
       "source": "assets/penang-century-bay-monthly.jpg",
@@ -100,17 +100,17 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "d486e584da3edb5cfd714855cad22ad546177b41081bb27a208f5282892e1763"
+      "sha256": "6dcfe8dba3f402039c518f3ac63c8b5681bbec4a8602259a60a4d06d745175d8"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "8c43c7123b76f3ec10b43dd5a1b0dde582269d80ca68e5908f6b0fb56cabe32e"
+      "sha256": "ea52275068fa4ae01ecdfeaed8b56f52b5babb8d5060bf854949cb7e169fad4a"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "60b0c80cd4ccfe9d40e778b4b8a1801b23278edefa4074a9e9e7c14ba3afb84b"
+      "sha256": "e51261ec748380994ced848329ac1c940836db8fe09132840546ce5c2dfc2e1b"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -175,7 +175,7 @@
     {
       "source": "assets/og-dali-budget.jpg",
       "destination": "images/og-dali-budget.jpg",
-      "sha256": "75e8357fcf22983d7a05093a7edf494885998f4be1cf92feb53023a6498b0868"
+      "sha256": "77b3f82c36f02f0f588533d0af125e7dc59bd94be2e9e1f7121cf17f7e723fe6"
     },
     {
       "source": "assets/kuala-lumpur-novo-monthly-rates.webp",
