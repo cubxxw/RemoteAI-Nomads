@@ -67,6 +67,136 @@
       "assetPath": "/city-guides/pokhara-monthly-budget.html"
     },
     {
+      "slug": "hanoi-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/hanoi-monthly-budget/",
+      "title": "河内住一个月，安静房间和越南盾预算怎么定",
+      "summary": "一个人住河内30晚，舒适预算26,000,000 VND，约6,731元。安静房间和越南盾预算怎么定三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "hanoi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/hanoi-monthly-budget.html"
+    },
+    {
+      "slug": "hangzhou-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/hangzhou-monthly-budget/",
+      "title": "杭州住一个月，西湖边和新区的房租怎么排",
+      "summary": "一个人住杭州30晚，舒适预算9,300 CNY，约9,300元。西湖边和新区的房租怎么排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "hangzhou"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/hangzhou-monthly-budget.html"
+    },
+    {
+      "slug": "chengdu-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/chengdu-monthly-budget/",
+      "title": "成都住一个月，街区日常和秋雨工位怎么安排",
+      "summary": "一个人住成都30晚，舒适预算7,700 CNY，约7,700元。街区日常和秋雨工位怎么安排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "chengdu"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/chengdu-monthly-budget.html"
+    },
+    {
+      "slug": "fethiye-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/fethiye-monthly-budget/",
+      "title": "费特希耶住一个月，海岸日常和里拉预算怎么定",
+      "summary": "一个人住费特希耶30晚，舒适预算36,000 TRY，约4,849元。海岸日常和里拉预算怎么定三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "fethiye"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/fethiye-monthly-budget.html"
+    },
+    {
+      "slug": "lisbon-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/lisbon-monthly-budget/",
+      "title": "里斯本住一个月，房租、工位和申根签怎么一起排",
+      "summary": "一个人住里斯本30晚，舒适预算2,420 EUR，约18,124元。房租、工位和申根签怎么一起排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "lisbon"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/lisbon-monthly-budget.html"
+    },
+    {
+      "slug": "plovdiv-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/plovdiv-monthly-budget/",
+      "title": "普罗夫迪夫住一个月，老城步行和欧元预算怎么定",
+      "summary": "一个人住普罗夫迪夫30晚，舒适预算1,220 EUR，约9,137元。老城步行和欧元预算怎么定三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "plovdiv"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/plovdiv-monthly-budget.html"
+    },
+    {
+      "slug": "malaga-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/malaga-monthly-budget/",
+      "title": "马拉加住一个月，海边社区和西班牙房租怎么排",
+      "summary": "一个人住马拉加30晚，舒适预算2,240 EUR，约16,776元。海边社区和西班牙房租怎么排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "malaga"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/malaga-monthly-budget.html"
+    },
+    {
+      "slug": "baku-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/baku-monthly-budget/",
+      "title": "巴库住一个月，海滨日常和马纳特预算怎么定",
+      "summary": "一个人住巴库30晚，舒适预算1,030 AZN，约4,054元。海滨日常和马纳特预算怎么定三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "baku"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/baku-monthly-budget.html"
+    },
+    {
+      "slug": "ubud-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/ubud-monthly-budget/",
+      "title": "乌布住一个月，稻田别墅和网络实测怎么安排",
+      "summary": "一个人住乌布30晚，舒适预算24,300,000 IDR，约9,023元。稻田别墅和网络实测怎么安排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "ubud"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/ubud-monthly-budget.html"
+    },
+    {
+      "slug": "madrid-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/madrid-monthly-budget/",
+      "title": "马德里住一个月，合租单间和整租一居怎么选",
+      "summary": "一个人住马德里30晚，舒适预算2,400 EUR，约17,975元。合租单间和整租一居怎么选三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "citySlugs": [
+        "madrid"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-21",
+      "assetPath": "/city-guides/madrid-monthly-budget.html"
+    },
+    {
       "slug": "chiang-mai-vs-penang",
       "kind": "comparison",
       "path": "/compare/chiang-mai-vs-penang/",

@@ -4,7 +4,7 @@ const OPTIONS = Object.freeze({
   tier: ['economy', 'comfort', 'roomy'],
   season: ['standard', 'peak'],
   work: ['room', 'occasional', 'cowork'],
-  currency: ['THB', 'MYR', 'CNY', 'USD', 'EUR', 'NPR']
+  currency: ['THB', 'MYR', 'CNY', 'USD', 'EUR', 'NPR', 'VND', 'TRY', 'AZN', 'IDR', 'BGN']
 });
 
 function validSelection(value, key) {

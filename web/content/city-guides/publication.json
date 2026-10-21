@@ -41,6 +41,76 @@
       "sha256": "b287755326aea7aaf288b5c6e04ed68db53572f3914c32a7880c3675c56082a6",
       "source": "output/seo-pokhara-20261020/pokhara-monthly-budget.html",
       "approved": true
+    },
+    {
+      "slug": "hanoi-monthly-budget",
+      "sourceFile": "hanoi-monthly-budget.html",
+      "sha256": "7b9560caca631bb243ba81d44bbe71146b71451051ec62ff1414d8975bca6500",
+      "source": "output/seo-batch1-20261021/hanoi-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "hangzhou-monthly-budget",
+      "sourceFile": "hangzhou-monthly-budget.html",
+      "sha256": "f2502dcd6767e5c46902226fdac5f88d2ce273f763b76674a3b63b557896cef9",
+      "source": "output/seo-batch1-20261021/hangzhou-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "chengdu-monthly-budget",
+      "sourceFile": "chengdu-monthly-budget.html",
+      "sha256": "d2d6db72b07b7ccb39e9819ed307f3256569f9a426f3dd7af67f9fb8fbf4b0c6",
+      "source": "output/seo-batch1-20261021/chengdu-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "fethiye-monthly-budget",
+      "sourceFile": "fethiye-monthly-budget.html",
+      "sha256": "2d1856436aacc1402b7732f0abfe7cbff01f26045dee43baf6430e50f1a35fe5",
+      "source": "output/seo-batch1-20261021/fethiye-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "lisbon-monthly-budget",
+      "sourceFile": "lisbon-monthly-budget.html",
+      "sha256": "049920475cdf3401fdc98df330f6bbc0ddc3402a452df478864971c8228bcc14",
+      "source": "output/seo-batch1-20261021/lisbon-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "plovdiv-monthly-budget",
+      "sourceFile": "plovdiv-monthly-budget.html",
+      "sha256": "512f46f59965cb6815962f8c9ef596593f4fd59c7e7142cc59951f42e60cbaea",
+      "source": "output/seo-batch1-20261021/plovdiv-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "malaga-monthly-budget",
+      "sourceFile": "malaga-monthly-budget.html",
+      "sha256": "ce7bc7afdec5799096ea08b21bdfbbbb8b1c72d2d09dc9584005ec1de17af366",
+      "source": "output/seo-batch1-20261021/malaga-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "baku-monthly-budget",
+      "sourceFile": "baku-monthly-budget.html",
+      "sha256": "c334b003bc1aae5c69d263300736b9209f1f4ffa6a11d0e7e53767960a6bb203",
+      "source": "output/seo-batch1-20261021/baku-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "ubud-monthly-budget",
+      "sourceFile": "ubud-monthly-budget.html",
+      "sha256": "5f4fa9e8ea40a8e98a2bb6a1ac6ed4372abfa78513989237206d1eea5fb6a58a",
+      "source": "output/seo-batch1-20261021/ubud-monthly-budget.html",
+      "approved": true
+    },
+    {
+      "slug": "madrid-monthly-budget",
+      "sourceFile": "madrid-monthly-budget.html",
+      "sha256": "3ef388a017f77a07b5b65d25aa01b4e8a1c598446381bfc2b9120c398c4e5a0d",
+      "source": "output/seo-batch1-20261021/madrid-monthly-budget.html",
+      "approved": true
     }
   ],
   "assets": [
@@ -107,12 +177,12 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "9c45d25b10e8dd283d44260099d2865ff125bbf7c9f18a8475f2e54faaa7da70"
+      "sha256": "8276afcc77b94dfd0b5a48e55a1926a263c5470167b91b8ae420d19b2583f021"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "e4ce5afdd9feaedcd52b7c1e228e3039ed17e3763dd592932a9bccac15c7479c"
+      "sha256": "5af8f55fd8c6bbbf6a56b1598d386f5b34e7de42e8ea01b654f312964eb09ea7"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
@@ -238,6 +308,106 @@
       "source": "assets/og-pokhara-budget.jpg",
       "destination": "images/og-pokhara-budget.jpg",
       "sha256": "0521cae1167a9e752da5f02d180adf6676b1338be1c4b9f339d810cf2f1631de"
+    },
+    {
+      "source": "assets/baku-flame-towers.webp",
+      "destination": "images/baku-flame-towers.webp",
+      "sha256": "9ebdaea42cec9b83c58a544c9862e259aa11242282a5119907f274efe5e7b05d"
+    },
+    {
+      "source": "assets/chengdu-panda.webp",
+      "destination": "images/chengdu-panda.webp",
+      "sha256": "51b16693d08dc5b79e123a7ee72239ba252e7b83a93d7abd8be68bf170dd4546"
+    },
+    {
+      "source": "assets/fethiye-oludeniz.webp",
+      "destination": "images/fethiye-oludeniz.webp",
+      "sha256": "a69186ef0f34c0e0328289fa276bb7cf0baaf63636fb5e2d0033f43b1acf98f0"
+    },
+    {
+      "source": "assets/hangzhou-west-lake.webp",
+      "destination": "images/hangzhou-west-lake.webp",
+      "sha256": "df2f7ef0308747edb38af608ff85bf1925aa4f6beea37e779636cd305e76cd95"
+    },
+    {
+      "source": "assets/hanoi-hoan-kiem.webp",
+      "destination": "images/hanoi-hoan-kiem.webp",
+      "sha256": "481c1f51844341cb0bb559eb3efd86598a2e802143307cc184e28fe42833e3c1"
+    },
+    {
+      "source": "assets/lisbon-tram.webp",
+      "destination": "images/lisbon-tram.webp",
+      "sha256": "e745c2aaf594bba63ff5ee2c09df3f2a1300da723ed5c7c335609f56ef6684ed"
+    },
+    {
+      "source": "assets/madrid-gran-via.webp",
+      "destination": "images/madrid-gran-via.webp",
+      "sha256": "daddb9ce6cdb69aecb1eae782881492e661285906149de679b6ac7aa840fca23"
+    },
+    {
+      "source": "assets/malaga-beach.webp",
+      "destination": "images/malaga-beach.webp",
+      "sha256": "1336c7d5f6c7740d5f2718b36dc390aacfda9ad124c8956ec548e8e8e86a8276"
+    },
+    {
+      "source": "assets/og-baku-budget.jpg",
+      "destination": "images/og-baku-budget.jpg",
+      "sha256": "d472edb641311ed1d43e3ee65b2cb1ff681a5dc77fcd61b1d088bb243e0939b4"
+    },
+    {
+      "source": "assets/og-chengdu-budget.jpg",
+      "destination": "images/og-chengdu-budget.jpg",
+      "sha256": "1931467988265b09c427c94b1e33bbb1097ca2e8e3687ea17ddad321c1ad24ba"
+    },
+    {
+      "source": "assets/og-fethiye-budget.jpg",
+      "destination": "images/og-fethiye-budget.jpg",
+      "sha256": "71a9087e0b554b6918f0357ea197b229ca29b83b64085be142f1602ca8fdadbe"
+    },
+    {
+      "source": "assets/og-hangzhou-budget.jpg",
+      "destination": "images/og-hangzhou-budget.jpg",
+      "sha256": "dcae0aa7836c63e1d36248672b37dd9fa37c599a8c68c712691f5b2548583fc2"
+    },
+    {
+      "source": "assets/og-hanoi-budget.jpg",
+      "destination": "images/og-hanoi-budget.jpg",
+      "sha256": "bfc057826007f03fe4ce5edf8850f89fe4327bf12b2b794ce140fec04e7ff78a"
+    },
+    {
+      "source": "assets/og-lisbon-budget.jpg",
+      "destination": "images/og-lisbon-budget.jpg",
+      "sha256": "c5bb2c0bd4f462c132c7cf44f15ce8f9562a4481bf9df22ecf06567183bcb664"
+    },
+    {
+      "source": "assets/og-madrid-budget.jpg",
+      "destination": "images/og-madrid-budget.jpg",
+      "sha256": "f76e592da1a8931c03af7fab35049903b8aac8c5d54caa0b13d904819e2a9a65"
+    },
+    {
+      "source": "assets/og-malaga-budget.jpg",
+      "destination": "images/og-malaga-budget.jpg",
+      "sha256": "de8cd738f87f4c5f7159d29b0580f720a63c91b071ab90d187cceb426a3566d3"
+    },
+    {
+      "source": "assets/og-plovdiv-budget.jpg",
+      "destination": "images/og-plovdiv-budget.jpg",
+      "sha256": "43ec8485b11d2b7138fead38c2adf0e4d0d96243bf41ad03fd232bafb33db79f"
+    },
+    {
+      "source": "assets/og-ubud-budget.jpg",
+      "destination": "images/og-ubud-budget.jpg",
+      "sha256": "22c51529ad5b2e5657985a913ebaee2514897b4efd98c3e6303f02dbd8b4401d"
+    },
+    {
+      "source": "assets/plovdiv-old-town.webp",
+      "destination": "images/plovdiv-old-town.webp",
+      "sha256": "59c50e9d5f5f12f3a8decb76572ef31d8b9c915af860787a172fb8b7a6592360"
+    },
+    {
+      "source": "assets/ubud-rice-terrace.webp",
+      "destination": "images/ubud-rice-terrace.webp",
+      "sha256": "aafc20243fb10d6ff1cf9b11d103a501574cde20339f46fa222b1d0bdc59bd46"
     }
   ]
 }

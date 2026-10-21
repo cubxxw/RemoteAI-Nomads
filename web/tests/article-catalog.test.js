@@ -40,7 +40,8 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.deepEqual(articlesForCity('chiang-mai-extra'), []);
   assert.deepEqual(articleBySlug('first-month').citySlugs, []);
   assert.equal(articleBySlug('missing'), null);
-  assert.equal(relatedArticlesHTML('lisbon'), '');
+  assert.equal(relatedArticlesHTML('osaka'), '');
+  assert.match(relatedArticlesHTML('lisbon'), /lisbon-monthly-budget/);
   assert.match(relatedArticlesHTML('chiang-mai'), /id="articles"/);
   assert.match(relatedArticlesHTML('penang'), /\/compare\/chiang-mai-vs-penang\//);
   assert.match(relatedArticlesHTML('da-nang'), /\/compare\/chiang-mai-vs-da-nang\//);
@@ -123,8 +124,21 @@ test('guide package includes exactly public images and runtime, preserves copy a
   assert.match(tools, /from '\.\/budget-model\.mjs'/);
   await access(join(options.assetDirectory, 'budget-model.mjs'));
   for (const page of first.pages) {
-    const expected = page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
-      : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16'];
+    const batch = {
+      'hanoi-monthly-budget': ['2026-10-21', '2026-10-21'],
+      'baku-monthly-budget': ['2026-10-21', '2026-10-21'],
+      'hangzhou-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'chengdu-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'fethiye-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'lisbon-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'plovdiv-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'malaga-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'ubud-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'madrid-monthly-budget': ['2026-10-21', '2026-10-20'],
+    };
+    const expected = batch[page.slug]
+      ?? (page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
+      : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16']);
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
   }
   assert.deepEqual(await buildCityGuides(options), first);
