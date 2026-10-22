@@ -2,11 +2,11 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-21T06:54:40.822Z",
+  "generated_at": "2026-10-22T14:28:18.018Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
-  "db_sha256": "20ec6976619cc1b019708fed540969a1a6e24c7ef5edfd3da68058cdd149b1e1",
-  "publication_sha256": "a14f67f11c26a402d4155ba2c2201797d0dd0dff8bb86b44d3933908a8e960d5",
+  "db_sha256": "706b3cd02971665e997fd22c9ea1bf45891aab8fbd2ca5e94ae61913e58b8138",
+  "publication_sha256": "238f4374ae3612f10b490b5b57fb1b995824bb11fd1c0e50824efac391e742d4",
   "private_notes_exported": 0,
   "notion_page_identifiers_exported": 0,
   "published_only": true,
@@ -14,11 +14,11 @@
   "counts": {
     "cities": 350,
     "countries": 258,
-    "guides": 16,
+    "guides": 20,
     "comparisons": 2
   },
-  "file_count": 635,
-  "bytes_excluding_manifest": 25379666,
+  "file_count": 639,
+  "bytes_excluding_manifest": 25471285,
   "paths": [
     "/",
     "/cities/",
@@ -652,6 +652,10 @@
     "/guides/baku-monthly-budget/",
     "/guides/ubud-monthly-budget/",
     "/guides/madrid-monthly-budget/",
+    "/guides/november-nomad-destinations/",
+    "/guides/monthly-budget-5000/",
+    "/guides/beijing-time-remote-work/",
+    "/guides/chinese-passport-long-stay/",
     "/api/rankings",
     "/sitemap.xml"
   ]

@@ -118,11 +118,16 @@ export async function buildCityGuides({
     const configText = /<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/.exec(input)?.[1];
     assert.ok(configText, 'Curated guide source data is required: ' + article.slug);
     const config = JSON.parse(configText);
-    assert.ok(config.config?.checkedOn && config.config.fx?.date && Object.keys(config.config.sources || {}).length, 'Guide source dates and source attribution are required: ' + article.slug);
+    // Topic guides carry source dates but never invent an FX date; budget
+    // guides keep the full checkedOn + fx + sources requirements.
+    const topicGuide = config.config?.kind === 'topic';
+    assert.equal(topicGuide, article.topic === true, 'Guide topic flag must match its source kind: ' + article.slug);
+    assert.ok(config.config?.checkedOn && Object.keys(config.config.sources || {}).length, 'Guide source dates and source attribution are required: ' + article.slug);
+    if (!topicGuide) assert.ok(config.config.fx?.date, 'Budget guide FX date is required: ' + article.slug);
     for (const sourceRecord of Object.values(config.config.sources)) assert.match(sourceRecord.url || '', /^https:\/\//, 'Guide source attribution must link to a public HTTPS source');
     for (const name of imageReferences(input).images) expectedAssets.set('assets/' + name, 'images/' + name);
     const html = publishGuideHTML(input, article);
-    pages.push({article, source, html, checkedOn: config.config.checkedOn, fxDate: config.config.fx.date});
+    pages.push({article, source, html, checkedOn: config.config.checkedOn, fxDate: config.config.fx?.date ?? null});
   }
   const destinations = new Set();
   for (const asset of manifest.assets) {

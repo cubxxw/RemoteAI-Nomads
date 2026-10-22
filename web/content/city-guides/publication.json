@@ -3,9 +3,14 @@
   "publication": {
     "approved": true,
     "approvedOn": "2026-10-20",
-    "authority": "User explicitly requested city-specific titles for all four articles, synchronized search titles and city entrances, and direct publication."
+    "authority": "User explicitly requested city-specific titles for all four articles, synchronized search titles and city entrances, and direct publication.",
+    "topicBatch": {
+      "approved": true,
+      "approvedOn": "2026-10-22",
+      "authority": "User explicitly authorized the four SEO topic guides per the 2026-10-22 implementation brief; parent reviewed the researched content and limitations before this batch."
+    }
   },
-  "sourceEdition": "titles-20261020",
+  "sourceEdition": "titles-20261020+topics-20261022",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -111,6 +116,38 @@
       "sha256": "3ef388a017f77a07b5b65d25aa01b4e8a1c598446381bfc2b9120c398c4e5a0d",
       "source": "output/seo-batch1-20261021/madrid-monthly-budget.html",
       "approved": true
+    },
+    {
+      "slug": "november-nomad-destinations",
+      "sourceFile": "november-nomad-destinations.html",
+      "sha256": "4e97a46e806bd895a78f3a078f71280242d43cd92c206f7f5178596f84ff0db8",
+      "source": "output/seo-topics-20261022/november-nomad-destinations.html",
+      "approved": true,
+      "approvedOn": "2026-10-22"
+    },
+    {
+      "slug": "monthly-budget-5000",
+      "sourceFile": "monthly-budget-5000.html",
+      "sha256": "1e0e4fc1897df42acee3c3312592e9f6aa48aa72874815ef4ec0463acfd54aa2",
+      "source": "output/seo-topics-20261022/monthly-budget-5000.html",
+      "approved": true,
+      "approvedOn": "2026-10-22"
+    },
+    {
+      "slug": "beijing-time-remote-work",
+      "sourceFile": "beijing-time-remote-work.html",
+      "sha256": "73121a65a2efa2699f68725fb74db36f8bdc38260a259128b99be1139748810a",
+      "source": "output/seo-topics-20261022/beijing-time-remote-work.html",
+      "approved": true,
+      "approvedOn": "2026-10-22"
+    },
+    {
+      "slug": "chinese-passport-long-stay",
+      "sourceFile": "chinese-passport-long-stay.html",
+      "sha256": "d2935fdb3d40ce03faa20e416f2f392735c6fa3fd12c571625a7ba50364c10c7",
+      "source": "output/seo-topics-20261022/chinese-passport-long-stay.html",
+      "approved": true,
+      "approvedOn": "2026-10-22"
     }
   ],
   "assets": [
@@ -167,12 +204,12 @@
     {
       "source": "preview.css",
       "destination": "guide.css",
-      "sha256": "326a459868edf4c421087237e218718e239e2ac61b325b72b6fd9381d01c899b"
+      "sha256": "db5c7509a87c61e4f5ddd1797bd5f85350606033d952270877842a2f29ce348c"
     },
     {
       "source": "reader.js",
       "destination": "reader.js",
-      "sha256": "b8a5a489af9514db4c9762be7c7c2edc9768756d26cddde832fc9f4fa04543c9"
+      "sha256": "40ad11048eb02a02510052ab851eb28526b1c8581c14448945ec43bd3f7f0e34"
     },
     {
       "source": "guide-tools.mjs",
@@ -408,6 +445,26 @@
       "source": "assets/ubud-rice-terrace.webp",
       "destination": "images/ubud-rice-terrace.webp",
       "sha256": "aafc20243fb10d6ff1cf9b11d103a501574cde20339f46fa222b1d0bdc59bd46"
+    },
+    {
+      "source": "assets/og-topic-november.webp",
+      "destination": "images/og-topic-november.webp",
+      "sha256": "481c1f51844341cb0bb559eb3efd86598a2e802143307cc184e28fe42833e3c1"
+    },
+    {
+      "source": "assets/og-topic-budget-5000.webp",
+      "destination": "images/og-topic-budget-5000.webp",
+      "sha256": "25fe8ad23d4ea66b964d611d6c6401ae3f321b7b33e09bf482835e78754f17a5"
+    },
+    {
+      "source": "assets/og-topic-beijing-time.webp",
+      "destination": "images/og-topic-beijing-time.webp",
+      "sha256": "e745c2aaf594bba63ff5ee2c09df3f2a1300da723ed5c7c335609f56ef6684ed"
+    },
+    {
+      "source": "assets/og-topic-passport.webp",
+      "destination": "images/og-topic-passport.webp",
+      "sha256": "04266521239669eba6ff27a5e5e05d0149a512e985308a3dc4219812263447b2"
     }
   ]
 }

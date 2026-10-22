@@ -309,3 +309,9 @@
 }
 
 @media(max-width:700px){#ranking-root .map-guidance{font-size:10px;padding-left:12px}#ranking-root .map-guidance>span:first-child{display:none}#ranking-root .map-guidance>span:last-child{display:inline}}
+
+/* Compact topical entry on the ranking homepage (topic guides, 2026-10-22). */
+#ranking-root .rank-topic-guides{display:flex;flex-wrap:wrap;align-items:center;gap:2px 16px;padding:6px 0 2px;font-size:13px}
+#ranking-root .rank-topic-guides strong{font-size:12px;color:var(--ink-3,var(--muted));font-weight:600}
+#ranking-root .rank-topic-guides a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;border-bottom:1px solid var(--line)}
+@media(max-width:800px){#ranking-root .rank-topic-guides{gap:0 12px;font-size:12px}}

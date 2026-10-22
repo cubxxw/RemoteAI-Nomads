@@ -236,6 +236,81 @@
         "按平时开会的时段测试上传速度和延迟，听听周围噪音，也试一次手机热点。买张工位日票，问清电话间怎么用、晚上能否进门、有没有备用电力。",
         "把房费之外的清洁费和水电记下来，押金、交通和工位也分别算。过完一个完整工作日，再和房东谈月租。"
       ]
+    },
+    {
+      "slug": "november-nomad-destinations",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/november-nomad-destinations/",
+      "title": "11月去哪旅居：先看清迈、河内和大理，再决定要不要去海边",
+      "summary": "2026年11月视角：先比较清迈、河内、大理的11月工作日，再看槟城和岘港的海边条件。三年历史气候记录、同一间房的旺季价差和各自的限制都写在正文里。",
+      "citySlugs": [
+        "chiang-mai",
+        "hanoi",
+        "dali",
+        "penang",
+        "da-nang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-22",
+      "assetPath": "/city-guides/november-nomad-destinations.html"
+    },
+    {
+      "slug": "monthly-budget-5000",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/monthly-budget-5000/",
+      "title": "月预算5000元能去哪旅居？先把房租、工位和押金分开算",
+      "summary": "5000元是一个人30晚的规划上限，不是全部旅费。把房租、工位、押金分开算，对照五座城市的既有月预算口径，看清差额要靠什么补回来。",
+      "citySlugs": [
+        "dali",
+        "pokhara",
+        "baku",
+        "hanoi",
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-22",
+      "assetPath": "/city-guides/monthly-budget-5000.html"
+    },
+    {
+      "slug": "beijing-time-remote-work",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/beijing-time-remote-work/",
+      "title": "按北京时间上班，去哪旅居不用熬夜？把9点到18点换算一次",
+      "summary": "把北京时间9点到18点换算成各地当地时间：东南亚、南亚、高加索和南欧在2026-11-16与2027-07-15分别几点上班。钟表换算不等于工作许可。",
+      "citySlugs": [
+        "dali",
+        "penang",
+        "kuala-lumpur",
+        "ubud",
+        "chiang-mai",
+        "hanoi",
+        "pokhara",
+        "baku",
+        "lisbon",
+        "madrid"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-22",
+      "assetPath": "/city-guides/beijing-time-remote-work.html"
+    },
+    {
+      "slug": "chinese-passport-long-stay",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/chinese-passport-long-stay/",
+      "title": "中国护照想在国外住久一点：免签、电子签和远程工作签证怎么选",
+      "summary": "中国普通护照的停留与工作选择：马来西亚免签、泰国DTV、马来西亚DE Rantau。先分清有效期、停留期、允许活动和延期，再按自己的日期订房。",
+      "citySlugs": [
+        "kuala-lumpur",
+        "penang",
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-22",
+      "assetPath": "/city-guides/chinese-passport-long-stay.html"
     }
   ]
 }
