@@ -4,13 +4,21 @@
   const links = Array.from(document.querySelectorAll('[data-chapter-link]'));
   const menu = document.querySelector('[data-mobile-chapters]');
   const button = menu?.querySelector('button');
+  const summary = menu?.querySelector('summary');
+  const nativeDetails = menu?.tagName === 'DETAILS';
   const panel = menu?.querySelector('[data-chapter-panel]');
   const currentLabel = menu?.querySelector('[data-current-chapter]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let queued = false;
 
   function setOpen(open, restoreFocus = false) {
-    if (!button || !panel) return;
+    if (!menu || !panel) return;
+    if (nativeDetails) {
+      menu.open = open;
+      if (restoreFocus) summary?.focus();
+      return;
+    }
+    if (!button) return;
     button.setAttribute('aria-expanded', String(open));
     panel.hidden = !open;
     menu.classList.toggle('is-open', open);
@@ -66,7 +74,11 @@
     if (event.relatedTarget && !menu.contains(event.relatedTarget)) setOpen(false);
   });
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && button?.getAttribute('aria-expanded') === 'true') setOpen(false, true);
+    const open = nativeDetails ? menu.open : button?.getAttribute('aria-expanded') === 'true';
+    if (event.key === 'Escape' && open) {
+      event.preventDefault();
+      setOpen(false, true);
+    }
   });
   document.addEventListener('click', event => {
     if (menu && !menu.contains(event.target)) setOpen(false);

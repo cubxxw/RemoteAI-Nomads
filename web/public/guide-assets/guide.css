@@ -21,3 +21,14 @@ a,button,summary{min-width:44px}button{min-height:44px}.evidence-shot>a{display:
 /* Desktop comparison tables fit the reading column; phones retain explicit horizontal scrolling. */
 @media(min-width:1000px){.data-table.wide{min-width:0;width:100%;table-layout:fixed}.data-table.wide th{white-space:normal}.data-table.wide th,.data-table.wide td{overflow-wrap:anywhere;word-break:normal}.data-table.wide th:nth-child(1){width:17%}.data-table.wide th:nth-child(2){width:25%}.data-table.wide th:nth-child(3){width:20%}.data-table.wide th:nth-child(4){width:14%}.data-table.wide th:nth-child(5){width:24%}}
 @media(max-width:999px){.table-scroll::before{content:'左右滑动可查看全部字段';position:sticky;left:0;display:block;padding:9px 12px;background:#f0f5e9;color:#5a7057;font-size:11px;line-height:1.7}}
+
+/* Topic guides: native <details> chapter menu so the contents work without JavaScript. */
+.mobile-chapters>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 0;font-size:13px;line-height:1.6;color:var(--ink);min-height:44px}.mobile-chapters>summary::-webkit-details-marker{display:none}.mobile-chapters[open] .chapter-toggle .open-label{display:none}.mobile-chapters[open] .chapter-toggle .close-label{display:inline}.mobile-chapters .topic-chapter-panel{position:static;box-shadow:none;border-bottom:0;padding:0 0 18px;max-height:min(65vh,420px);overflow-y:auto}
+
+/* Topic tables pair a destination with its conditions on small screens. */
+[data-guide-topic] .data-table{min-width:0;table-layout:fixed}
+[data-guide-topic] .data-table th{white-space:normal}
+[data-guide-topic] .data-table th:first-child{width:27%}
+[data-guide-topic] .data-table td{overflow-wrap:anywhere}
+
+[data-guide-topic] .table-scroll::before{display:none}

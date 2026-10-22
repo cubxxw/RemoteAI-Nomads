@@ -22,6 +22,7 @@ export function createArticleCatalog(data) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.updatedAt) || Number.isNaN(Date.parse(entry.updatedAt))) throw new Error('Article update date is required: ' + entry.slug);
     if (!Array.isArray(entry.citySlugs) || !entry.citySlugs.every(slug => typeof slug === 'string' && slugPattern.test(slug)) || new Set(entry.citySlugs).size !== entry.citySlugs.length) throw new Error('Invalid article citySlugs: ' + entry.slug);
     if (entry.assetPath !== undefined && (entry.kind !== 'guide' || entry.assetPath !== '/city-guides/' + entry.slug + '.html')) throw new Error('Invalid article assetPath: ' + entry.slug);
+    if (entry.topic !== undefined && (typeof entry.topic !== 'boolean' || entry.kind !== 'guide')) throw new Error('Invalid article topic flag: ' + entry.slug);
     if (entry.bodyParagraphs !== undefined && (entry.kind !== 'guide' || !Array.isArray(entry.bodyParagraphs) || !entry.bodyParagraphs.length || !entry.bodyParagraphs.every(text => typeof text === 'string' && text.trim()))) throw new Error('Invalid article bodyParagraphs: ' + entry.slug);
     return Object.freeze({...entry, citySlugs: Object.freeze([...entry.citySlugs]), ...(entry.bodyParagraphs ? {bodyParagraphs: Object.freeze([...entry.bodyParagraphs])} : {})});
   });
@@ -30,7 +31,7 @@ export function createArticleCatalog(data) {
   const articlesForCity = slug => published.filter(entry => entry.citySlugs.includes(slug));
   const articleBySlug = slug => published.find(entry => entry.slug === slug) || null;
   const articlePaths = () => published.map(entry => entry.path);
-  const cardHTML = entry => `<article class="city-article-card"><a href="${escapeHTML(entry.path)}"><h3>${escapeHTML(entry.title)}</h3></a><p>${escapeHTML(entry.summary)}</p><small>${entry.kind === 'comparison' ? '城市对比' : '旅居指南'} · <time datetime="${escapeHTML(entry.updatedAt)}">${escapeHTML(entry.updatedAt)}</time></small></article>`;
+  const cardHTML = entry => `<article class="city-article-card"><a href="${escapeHTML(entry.path)}"><h3>${escapeHTML(entry.title)}</h3></a><p>${escapeHTML(entry.summary)}</p><small>${entry.kind === 'comparison' ? '城市对比' : entry.topic ? '旅居专题' : '旅居指南'} · <time datetime="${escapeHTML(entry.updatedAt)}">${escapeHTML(entry.updatedAt)}</time></small></article>`;
   const relatedArticlesHTML = citySlug => {
     const articles = articlesForCity(citySlug);
     return articles.length ? `<section id="articles" class="city-articles city-section" aria-labelledby="city-articles-title"><div class="city-section-heading"><h2 id="city-articles-title">与这座城市有关的文章</h2></div><div class="city-article-list">${articles.map(cardHTML).join('')}</div></section>` : '';
@@ -38,10 +39,12 @@ export function createArticleCatalog(data) {
   // first-month already has its own feature in the guide index; other published
   // guides supplement that feature regardless of their underlying renderer.
   const guideCardsHTML = () => {
-    const articles = published.filter(entry => entry.kind === 'guide' && entry.slug !== 'first-month');
+    const topics = published.filter(entry => entry.kind === 'guide' && entry.topic === true);
+    const articles = published.filter(entry => entry.kind === 'guide' && !entry.topic && entry.slug !== 'first-month');
     const comparisons=published.filter(entry=>entry.kind==='comparison');
+    const topicCards=topics.length?`<section class="guide-city-articles" aria-labelledby="guide-topic-title"><div class="content-section-heading"><h2 id="guide-topic-title">先选月份、预算和工作时间</h2><span>四篇旅居专题</span></div><div class="city-article-list">${topics.map(cardHTML).join('')}</div></section>`:'';
     const comparisonCards=comparisons.length?`<section class="guide-city-articles" aria-labelledby="guide-comparison-title"><div class="content-section-heading"><h2 id="guide-comparison-title">两座城市，怎么选</h2></div><div class="city-article-list">${comparisons.map(cardHTML).join('')}</div></section>`:'';
-    return (articles.length ? `<section class="guide-city-articles" aria-labelledby="guide-city-articles-title"><div class="content-section-heading"><h2 id="guide-city-articles-title">住一个月，先把账算清楚</h2></div><div class="city-article-list">${articles.map(cardHTML).join('')}</div></section>` : '')+comparisonCards;
+    return topicCards+(articles.length ? `<section class="guide-city-articles" aria-labelledby="guide-city-articles-title"><div class="content-section-heading"><h2 id="guide-city-articles-title">住一个月，先把账算清楚</h2></div><div class="city-article-list">${articles.map(cardHTML).join('')}</div></section>` : '')+comparisonCards;
   };
   return Object.freeze({publishedArticles, articlesForCity, articleBySlug, articlePaths, relatedArticlesHTML, guideCardsHTML});
 }

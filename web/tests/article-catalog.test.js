@@ -31,11 +31,11 @@ async function sandbox(t, {copySources = false} = {}) {
 }
 
 test('published articles associate with exact cities and both sides of multi-city comparisons', () => {
-  assert.deepEqual(slugList(articlesForCity('chiang-mai')), ['chiang-mai-monthly-budget', 'chiang-mai-vs-penang', 'chiang-mai-vs-da-nang']);
-  assert.deepEqual(slugList(articlesForCity('penang')), ['penang-monthly-budget', 'chiang-mai-vs-penang']);
-  assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang']);
-  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget']);
-  assert.deepEqual(slugList(articlesForCity('dali')), ['dali-monthly-budget']);
+  assert.deepEqual(slugList(articlesForCity('chiang-mai')), ['chiang-mai-monthly-budget', 'chiang-mai-vs-penang', 'chiang-mai-vs-da-nang', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
+  assert.deepEqual(slugList(articlesForCity('penang')), ['penang-monthly-budget', 'chiang-mai-vs-penang', 'november-nomad-destinations', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
+  assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang', 'november-nomad-destinations']);
+  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
+  assert.deepEqual(slugList(articlesForCity('dali')), ['dali-monthly-budget', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work']);
   assert.deepEqual(articlesForCity('chiang'), []);
   assert.deepEqual(articlesForCity('chiang-mai-extra'), []);
   assert.deepEqual(articleBySlug('first-month').citySlugs, []);
@@ -53,6 +53,28 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.doesNotMatch(guideCardsHTML(), /first-month/);
   assert.match(guideCardsHTML(), /chiang-mai-vs-penang/);
   assert.match(guideCardsHTML(), /chiang-mai-vs-da-nang/);
+});
+
+test('topic articles render in their own labelled section instead of the monthly-budget list', () => {
+  const html = guideCardsHTML();
+  const topicSection = html.match(/<section class="guide-city-articles" aria-labelledby="guide-topic-title">([\s\S]*?)<\/section>/)?.[1];
+  const budgetSection = html.match(/<section class="guide-city-articles" aria-labelledby="guide-city-articles-title">([\s\S]*?)<\/section>/)?.[1];
+  assert.ok(topicSection && budgetSection, 'both guide sections must render');
+  assert.match(topicSection, /旅居专题/);
+  for (const slug of ['november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work', 'chinese-passport-long-stay']) assert.match(topicSection, new RegExp(slug));
+  assert.match(topicSection, /chinese-passport-long-stay\//);
+  assert.doesNotMatch(topicSection, /chiang-mai-monthly-budget/);
+  assert.doesNotMatch(budgetSection, /november-nomad-destinations|monthly-budget-5000|beijing-time-remote-work|chinese-passport-long-stay/);
+  assert.match(budgetSection, /chiang-mai-monthly-budget/);
+  assert.ok(html.indexOf('guide-topic-title') < html.indexOf('guide-city-articles-title'), 'topic section is a separate labelled entry on the guide index');
+});
+
+test('topic classification is a validated optional boolean on guide entries', () => {
+  const topic = {...guide, slug: 'topic-guide', path: '/guides/topic-guide/', assetPath: '/city-guides/topic-guide.html', topic: true};
+  assert.equal(registry([topic]).publishedArticles()[0].topic, true);
+  assert.throws(() => registry([{...topic, topic: 'yes'}]), /Invalid article topic flag/);
+  assert.throws(() => registry([{...topic, topic: 1}]), /Invalid article topic flag/);
+  assert.throws(() => registry([{...topic, slug: 'topic-compare', path: '/compare/topic-compare/', assetPath: undefined, kind: 'comparison', topic: true}]), /Invalid article topic flag/);
 });
 
 test('draft entries stay out of lookup, navigation, city links and guide cards', () => {
@@ -135,6 +157,10 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'malaga-monthly-budget': ['2026-10-21', '2026-10-20'],
       'ubud-monthly-budget': ['2026-10-21', '2026-10-20'],
       'madrid-monthly-budget': ['2026-10-21', '2026-10-20'],
+      'november-nomad-destinations': ['2026-10-22', null],
+      'monthly-budget-5000': ['2026-10-22', null],
+      'beijing-time-remote-work': ['2026-10-22', null],
+      'chinese-passport-long-stay': ['2026-10-22', null],
     };
     const expected = batch[page.slug]
       ?? (page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
@@ -142,6 +168,40 @@ test('guide package includes exactly public images and runtime, preserves copy a
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
   }
   assert.deepEqual(await buildCityGuides(options), first);
+});
+
+test('source topic classification must match its catalog before any output is published', async t => {
+  const options = await sandbox(t);
+  const articles = publishedArticles().map(article => article.slug === 'november-nomad-destinations' ? {...article, topic: false} : article);
+  await assert.rejects(buildCityGuides({...options, articles}), /Guide topic flag must match its source kind/);
+  await assert.rejects(access(options.outputDirectory));
+});
+
+test('topic guides need sources and checkedOn without an FX date, while budget guides keep the FX requirement', async t => {
+  const options = await sandbox(t, {copySources: true});
+  const manifestPath = join(options.sourceDirectory, 'publication.json');
+  const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+  const edit = async (slug, transform) => {
+    const path = join(options.sourceDirectory, slug + '.html');
+    const before = await readFile(path, 'utf8');
+    const after = transform(before);
+    assert.notEqual(after, before, 'fixture edit must change the topic source');
+    await writeFile(path, after);
+    const entry = manifest.articles.find(article => article.slug === slug);
+    entry.sha256 = sha256(await readFile(path));
+    await writeFile(manifestPath, JSON.stringify(manifest));
+  };
+  await edit('november-nomad-destinations', html => html.replace('"checkedOn":"2026-10-22"', '"checkedOn":null'));
+  await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
+  await edit('november-nomad-destinations', html => html.replace('"checkedOn":null', '"checkedOn":"2026-10-22"').replace('"sources":{', '"sourcesRenamed":{'));
+  await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
+  await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
+  const report = await buildCityGuides(options);
+  assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), ['beijing-time-remote-work', 'chinese-passport-long-stay', 'monthly-budget-5000', 'november-nomad-destinations']);
+  await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
+  await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);
+  await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":null', '"fx":{"date":"2026-10-16"'));
+  assert.equal((await buildCityGuides(options)).pages.find(page => page.slug === 'chiang-mai-monthly-budget').fxDate, '2026-10-16');
 });
 
 test('guide publication rejects missing provenance, approval and changed source bytes before writing outputs', async t => {
@@ -189,7 +249,8 @@ test('withdrawn guides and unrelated stale assets disappear from owned build dir
   const result = await buildCityGuides({...options, articles});
   assert.equal(result.pages.length, publishedArticles().filter(article => article.assetPath).length - 1);
   assert.deepEqual(await filesUnder(options.outputDirectory), publishedArticles().filter(article => article.assetPath && article.slug !== guide.slug).map(article => article.slug + '.html').sort());
-  assert.doesNotMatch((await filesUnder(options.assetDirectory)).join('\n'), /chiang-mai|evidence|raw/);
+  assert.doesNotMatch((await filesUnder(options.assetDirectory)).join('\n'), /chiang-mai-akha|chiang-mai-baannoi|chiang-mai-jida|chiang-mai-realspace|og-chiang-mai|evidence|raw/);
+  assert.match((await filesUnder(options.assetDirectory)).join('\n'), /chiang-mai-nimman-street/, 'a photo shared with a published topic page stays while that topic page still uses it');
   const empty = await buildCityGuides({...options, articles: []});
   assert.equal(empty.pages.length, 0);
   assert.deepEqual(await filesUnder(options.outputDirectory), []);
