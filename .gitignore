@@ -59,3 +59,7 @@ venv/
 # Browser verification artifacts
 .playwright-cli/
 /output/
+
+# Python guide validation
+__pycache__/
+*.py[cod]
