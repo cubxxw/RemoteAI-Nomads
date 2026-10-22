@@ -188,13 +188,31 @@ test('SSR ranking preference controls wait for saved-view restoration rather tha
   assert.ok(root.querySelectorAll('a').some(node=>node.href==='/about/'&&!node.blocked),'public method links must not be trapped inside a whole-page inert gate');
 });
 
-test('actual rank boot releases only controls after real saved-view commit, first render and desktop setup',t=>{
+test('actual rank boot releases controls after saved-view restoration without opening the map for a new visitor',t=>{
   const h=rankingFixture(t);h.runBoot();
-  assert.deepEqual(h.phases,['commit','render','desktop-map']);
+  assert.deepEqual(h.phases,['commit','render']);
   assert.equal(h.controls.every(c=>!c.blocked),true,'actual boot completion must release the preparing controls');
   assert.equal(h.context.state.q,'大理');assert.equal(h.context.state.month,11);
   assert.match(h.context.location.search,/q=%E5%A4%A7%E7%90%86/);
   assert.equal(h.root.querySelector('.rank-city-link').blocked,false);
+});
+
+test('an explicitly saved desktop map opens before ranking controls are released',t=>{
+  const h=rankingFixture(t);h.records.set('nomads-ranking-map-open-v1','true');h.runBoot();
+  assert.deepEqual(h.phases,['commit','render','desktop-map']);
+  assert.equal(h.controls.every(c=>!c.blocked),true);
+});
+
+test('a saved desktop map does not force a modal open on mobile',t=>{
+  const h=rankingFixture(t);h.records.set('nomads-ranking-map-open-v1','true');h.context.matchMedia=()=>({matches:true});h.runBoot();
+  assert.deepEqual(h.phases,['commit','render']);
+  assert.equal(h.controls.every(c=>!c.blocked),true);
+});
+
+test('unavailable map storage still releases the restored ranking controls',t=>{
+  const h=rankingFixture(t);h.context.preferenceStorage={getItem(){throw new Error('storage denied');},setItem(){throw new Error('storage denied');},removeItem(){throw new Error('storage denied');}};h.runBoot();
+  assert.deepEqual(h.phases,['commit','render']);
+  assert.equal(h.controls.every(c=>!c.blocked),true);
 });
 
 test('actual ranking import failure disables controls with clear feedback while leaving public rows and sources available',t=>{
