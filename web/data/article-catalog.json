@@ -63,7 +63,7 @@
         "pokhara"
       ],
       "status": "published",
-      "updatedAt": "2026-10-20",
+      "updatedAt": "2026-10-23",
       "assetPath": "/city-guides/pokhara-monthly-budget.html"
     },
     {
@@ -223,19 +223,23 @@
       "updatedAt": "2026-10-21"
     },
     {
-      "slug": "first-month",
-      "kind": "guide",
-      "path": "/guides/first-month/",
-      "title": "第一站的住宿，为什么只订5–7晚",
-      "summary": "一周里看看住处合不合适，试试会议，也记下每天的花费，再决定是否租一个月。",
-      "citySlugs": [],
-      "status": "published",
-      "updatedAt": "2026-10-20",
       "bodyParagraphs": [
         "订5–7晚可取消的住宿。抵达当天、熟悉街区和第一个工作日分开安排。",
         "按平时开会的时段测试上传速度和延迟，听听周围噪音，也试一次手机热点。买张工位日票，问清电话间怎么用、晚上能否进门、有没有备用电力。",
         "把房费之外的清洁费和水电记下来，押金、交通和工位也分别算。过完一个完整工作日，再和房东谈月租。"
-      ]
+      ],
+      "slug": "first-month",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/first-month/",
+      "title": "先住一周，再谈月租：试住到底值不值？",
+      "summary": "一周试住买到的是检查噪声、桌椅、网络和生活动线的机会。它也可能挤掉月租折扣。把七晚短住与随后整段租期放在一张账上，并写清换房条件，才能知道这笔试错费是否值得。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/first-month.html",
+      "seriesNumber": 6,
+      "seriesCategory": "start"
     },
     {
       "slug": "november-nomad-destinations",
@@ -253,7 +257,9 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-22",
-      "assetPath": "/city-guides/november-nomad-destinations.html"
+      "assetPath": "/city-guides/november-nomad-destinations.html",
+      "seriesNumber": 1,
+      "seriesCategory": "start"
     },
     {
       "slug": "monthly-budget-5000",
@@ -271,7 +277,9 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-22",
-      "assetPath": "/city-guides/monthly-budget-5000.html"
+      "assetPath": "/city-guides/monthly-budget-5000.html",
+      "seriesNumber": 2,
+      "seriesCategory": "start"
     },
     {
       "slug": "beijing-time-remote-work",
@@ -294,7 +302,9 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-22",
-      "assetPath": "/city-guides/beijing-time-remote-work.html"
+      "assetPath": "/city-guides/beijing-time-remote-work.html",
+      "seriesNumber": 3,
+      "seriesCategory": "start"
     },
     {
       "slug": "chinese-passport-long-stay",
@@ -310,7 +320,753 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-22",
-      "assetPath": "/city-guides/chinese-passport-long-stay.html"
+      "assetPath": "/city-guides/chinese-passport-long-stay.html",
+      "seriesNumber": 4,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "first-nomad-domestic-or-abroad",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/first-nomad-domestic-or-abroad/",
+      "title": "国内还是国外，第一次旅居从哪里开始？",
+      "summary": "第一次旅居先确认工作能否照常完成，再比较目的地。国内和国外的差异，常落在通信、支付、房东沟通和换房成本上。用一个普通周二测试两种住法，比先挑风景更容易选出能住满一个月的第一站。",
+      "citySlugs": [
+        "dali",
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/first-nomad-domestic-or-abroad.html",
+      "seriesNumber": 5,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "two-pots-of-money",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/two-pots-of-money/",
+      "title": "去外地住一个月，为什么要准备两笔钱？",
+      "summary": "月花费和出发时能动用的现金不是一回事。押金、预授权、试住重叠和返程备用金会暂时占钱。把生活账户与备用账户分开，按付款日期排账，才能避免预算看似够用，落地后却没有钱处理换房。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/two-pots-of-money.html",
+      "seriesNumber": 7,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "video-meeting-room-checklist",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/video-meeting-room-checklist/",
+      "title": "每天开视频会，什么样的房间才够用？",
+      "summary": "能开视频会的房间，需要安静、稳定上传、合适桌椅和出故障时的备选。高速Wi-Fi标签只是线索。看房时用自己的设备完成一次通话、共享屏幕和文件上传，再把通话空间与费用问清，比只看下载数字可靠。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/video-meeting-room-checklist.html",
+      "seriesNumber": 8,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "small-city-or-big-city-first",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/small-city-or-big-city-first/",
+      "title": "小城便宜，大城市方便：第一站怎么取舍？",
+      "summary": "第一站选小城还是大城市，要比较日常问题能否解决。把买菜、工作、就医与返程画成一周路线，给每次通勤加上时间和费用。便宜房租若换来每天跨区，也可能比住在配套集中处更贵。",
+      "citySlugs": [
+        "dali",
+        "chengdu"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/small-city-or-big-city-first.html",
+      "seriesNumber": 9,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "nomad-budget-checklist",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/nomad-budget-checklist/",
+      "title": "一份旅居预算表，应该算进哪些开销？",
+      "summary": "一份能用的预算表应同时记录消费、押金和付款日期。住房按人数、房型和实际夜数算，日常项目按住法估计；往返交通、手续和保险单列。未知价格保持待询，不把空白当零，也不把居民统计当短租套餐。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/nomad-budget-checklist.html",
+      "seriesNumber": 10,
+      "seriesCategory": "start"
+    },
+    {
+      "slug": "dali-budget-5000-allocation",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/dali-budget-5000-allocation/",
+      "title": "5000元在大理住一个月，钱该怎么分？",
+      "summary": "五千元可以作为大理三十晚的个人预算上限，但不能直接对应一套全包月租。沿用已核指南的住房和生活预留，省钱档为三千五百元、舒适档为五千七百元；先保住工作条件，再分配剩余额度，押金和往返另备。",
+      "citySlugs": [
+        "dali"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/dali-budget-5000-allocation.html",
+      "seriesNumber": 11,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "chiang-mai-winter-monthly-rent",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/chiang-mai-winter-monthly-rent/",
+      "title": "清迈入冬，月租会变多少？看同一房型的报价",
+      "summary": "清迈入冬租金变化要用同一运营方、同一房型比较。Baannoi本轮公开普通月租与11–2月价，可分别计算具体差额；Jida仍只列3–10月条件，不能向冬季外推。跨季入住、水电和押金仍应带准确日期询问。",
+      "citySlugs": [
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/chiang-mai-winter-monthly-rent.html",
+      "seriesNumber": 12,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "penang-south-island-rent-transport",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/penang-south-island-rent-transport/",
+      "title": "住槟城岛南，省下的租金够不够打车？",
+      "summary": "住槟城岛南是否省钱，要看工作和生活是否也在岛南。Century Bay的公开月价只是房源参照，不能证明比乔治市便宜。用实际房租差除以单次往返费用，再比较一个月的出行次数，才能判断交通会不会吃掉差额。",
+      "citySlugs": [
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/penang-south-island-rent-transport.html",
+      "seriesNumber": 13,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "kuala-lumpur-monthly-bill-extras",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/kuala-lumpur-monthly-bill-extras/",
+      "title": "吉隆坡月租账单：房费之外还有哪些开销？",
+      "summary": "吉隆坡月租起价之外，水电、押金、清洁、洗衣和工位都可能影响账单。以NOVO公开Studio为例，房费与可退资金占用要分开；带洗衣机房型的差价还要与实际洗衣频次比较，不能把起价乘天数当全包订单。",
+      "citySlugs": [
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/kuala-lumpur-monthly-bill-extras.html",
+      "seriesNumber": 14,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "hanoi-quiet-room-tay-ho-old-quarter",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/hanoi-quiet-room-tay-ho-old-quarter/",
+      "title": "河内找房：想住得安静，西湖和老城怎么选？",
+      "summary": "河内找安静住处，应比较具体街道、窗户朝向和楼内动线，而不是只选西湖或老城标签。西湖服务式公寓的公开月价区间涵盖不同房型；先问独立通话空间和实际房间，再把日常路线与含费总额一起比较。",
+      "citySlugs": [
+        "hanoi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/hanoi-quiet-room-tay-ho-old-quarter.html",
+      "seriesNumber": 15,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "pokhara-monthly-room-versus-flat",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/pokhara-monthly-room-versus-flat/",
+      "title": "博卡拉的月租报价，为什么有的只是一个房间？",
+      "summary": "博卡拉月租广告里的room、flat与1BHK不是同一种住法。旅馆客房可能用共用厨房，整租挂牌也可能按楼层计价。把独用与共用空间画清，再问水电、备电、清洁和最短租期，才能比较原币月价与真实可用条件。",
+      "citySlugs": [
+        "pokhara"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/pokhara-monthly-room-versus-flat.html",
+      "seriesNumber": 16,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "baku-old-city-or-metro-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/baku-old-city-or-metro-workday/",
+      "title": "巴库住老城还是地铁旁？两种工作日的安排",
+      "summary": "巴库住老城还是地铁旁，先看工作日是否需要频繁移动。两种位置都不能保证安静或低价。把上午开会、午间补给与晚间返程写成两条路线，再核房门到入口的真实步行条件，预算只用已注明的编辑预留。",
+      "citySlugs": [
+        "baku"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/baku-old-city-or-metro-workday.html",
+      "seriesNumber": 17,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "ubud-rice-field-room-rain-commute",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/ubud-rice-field-room-rain-commute/",
+      "title": "乌布的稻田房子很美，下雨后怎么去上班？",
+      "summary": "乌布稻田房应把房门到可通车道路的最后一段算进去。下雨后的步行、接送、鞋包收纳和备用办公，都可能改变住法。用居家与每日去工位两种工作日比较，房租和交通预留沿用原指南，不能将景观照片当路况证据。",
+      "citySlugs": [
+        "ubud"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/ubud-rice-field-room-rain-commute.html",
+      "seriesNumber": 18,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "chengdu-neighborhood-walk-or-metro",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/chengdu-neighborhood-walk-or-metro/",
+      "title": "成都旅居选街区：楼下的生活和地铁哪个更要紧？",
+      "summary": "成都选街区可以先决定每天步行解决哪些事，再看每周必须乘地铁去哪里。住在站旁不等于所有生活都便利。以居家办公的一周路线为例，比较食品补给、楼内噪声和跨区频次；住房编辑预留不能当短租成交价。",
+      "citySlugs": [
+        "chengdu"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/chengdu-neighborhood-walk-or-metro.html",
+      "seriesNumber": 19,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "hangzhou-west-lake-rent-premium",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/hangzhou-west-lake-rent-premium/",
+      "title": "在杭州短住，值得为西湖边多付房租吗？",
+      "summary": "是否为西湖边加房租，要看你会在普通工作日去几次，而不是只想象周末。将实际含费租金差除以预期使用次数，再与通勤和室内工作条件一起比较。杭州全市租金指数不等于湖边月租报价，照片也不能证明房间位置。",
+      "citySlugs": [
+        "hangzhou"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/hangzhou-west-lake-rent-premium.html",
+      "seriesNumber": 20,
+      "seriesCategory": "budget"
+    },
+    {
+      "slug": "december-chiang-mai-penang-xiamen",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/december-chiang-mai-penang-xiamen/",
+      "title": "12月去哪旅居？清迈、槟城和厦门各适合谁",
+      "summary": "12月想晒太阳，清迈、槟城和厦门并不是同一种选择。用三年气象样本、早间开会和房间条件比较：清迈要重问旺季房费，槟城要安排雨天出门，厦门要确认屋内保暖，再按自己的工作日缩小范围。",
+      "citySlugs": [
+        "chiang-mai",
+        "penang",
+        "xiamen"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/december-chiang-mai-penang-xiamen.html",
+      "seriesNumber": 21,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "january-warm-room-after-sunset",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/january-warm-room-after-sunset/",
+      "title": "1月避寒选城市，别只看白天的温度",
+      "summary": "1月避寒先定义你要的是午后能散步，还是早晚坐在房间里也舒服。对照清迈、大理、厦门和槟城的历史样本，分别检查桌位、被褥、制热与除湿，用一场早会和一晚热水测试，筛掉只在照片里温暖的住处。",
+      "citySlugs": [
+        "chiang-mai",
+        "dali",
+        "xiamen",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/january-warm-room-after-sunset.html",
+      "seriesNumber": 22,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "spring-festival-month-rental-fees",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/spring-festival-month-rental-fees/",
+      "title": "春节住一个月，订房时要问清哪些费用？",
+      "summary": "春节住一个月，先写明入住退房日期，再问节日期间是否仍按整月计价。重点查清保洁、能耗、访客、续住与退款，按一人整间房、同一租期逐项比价；现有月租参照和编辑预留，都不能直接当春节可订总价。",
+      "citySlugs": [
+        "dali",
+        "chiang-mai",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/spring-festival-month-rental-fees.html",
+      "seriesNumber": 23,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "chiang-mai-haze-moving-date",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/chiang-mai-haze-moving-date/",
+      "title": "清迈烟霾季快到了，什么时候换下一站？",
+      "summary": "清迈烟霾没有每年固定的开关日期。结合NASA的历史观察，把下一站准备提前到不可退款日期之前；日常同时看监测、房间过滤条件和换城成本，不用少雨月份或一张晴天照片证明空气适合长住。",
+      "citySlugs": [
+        "chiang-mai",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/chiang-mai-haze-moving-date.html",
+      "seriesNumber": 24,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "da-nang-rainy-season-seaside-room",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/da-nang-rainy-season-seaside-room/",
+      "title": "岘港雨季住一个月：海边的房子还合适吗？",
+      "summary": "岘港雨季的海景房，要按能否连续工作来筛选。用11–12月三年格点降雨样本解释看房重点，再把除湿、进水、叫车和改期条款放到同一张确认单；不凭淡季标签猜折扣，也不把附近海滩当每天可用的公共客厅。",
+      "citySlugs": [
+        "da-nang",
+        "hanoi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/da-nang-rainy-season-seaside-room.html",
+      "seriesNumber": 25,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "penang-three-years-rain-by-month",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/penang-three-years-rain-by-month/",
+      "title": "槟城到底哪几个月少雨？翻一翻三年的记录",
+      "summary": "槟城没有一个能保证全月晴天的月份。翻看2023–2025 ERA5格点样本，7月、2月、1月的月雨较少，11月较多；这是三年样本顺序。把它用来比较通勤和住房需求，再核对出发前天气，不把少雨直接等同于更适合自己。",
+      "citySlugs": [
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/penang-three-years-rain-by-month.html",
+      "seriesNumber": 26,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "dali-winter-sun-hot-water-heating",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/dali-winter-sun-hot-water-heating/",
+      "title": "大理冬天选房，阳光、热水和取暖怎么取舍？",
+      "summary": "大理冬天选房，先把阳光、热水和取暖拆开验。午后晒到太阳不证明早晚桌位舒服，写着24小时热水也要问供应方式与多人使用条件；用同一工作日测试，再按电价和设备估算费用，避免把住房预留误认成冬季含费报价。",
+      "citySlugs": [
+        "dali"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/dali-winter-sun-hot-water-heating.html",
+      "seriesNumber": 27,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "ubud-rainy-season-room-inspection",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/ubud-rainy-season-room-inspection/",
+      "title": "乌布雨季看房，照片里看不出的几个问题",
+      "summary": "乌布雨季看房先查入口、窗框、衣柜和通勤路线。三年降雨样本只能提示准备，不能证明一间房会不会潮湿；拿一次下午视频会演练门口等车、设备防水和备用办公，再分别确认住房水电、清洁和工位通话时数。",
+      "citySlugs": [
+        "ubud"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/ubud-rainy-season-room-inspection.html",
+      "seriesNumber": 28,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "fethiye-winter-daily-facilities",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/fethiye-winter-daily-facilities/",
+      "title": "费特希耶入冬以后，还有多少日常设施在营业？",
+      "summary": "费特希耶冬天不能用“全关了”或“全年照常”概括。本轮能读到Hipokampus不同会员的公开使用时段，仍未取得逐店冬季确认。按工位、买菜、交通和维修建立候选清单，向运营方核对具体日期，不虚报营业家数或停业比例。",
+      "citySlugs": [
+        "fethiye"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/fethiye-winter-daily-facilities.html",
+      "seriesNumber": 29,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "three-months-two-cities-rental-permission",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/three-months-two-cities-rental-permission/",
+      "title": "三个月换两座城，租期和签证怎么接上？",
+      "summary": "三个月换两座城，要把住宿晚数、实际停留许可和工位有效期分别排进日历。先确认个人入境与工作目的，再用完整入住退房日期询价；预留搬家日、两边押金占款与改期成本，不靠出境再入境或一张长期签证推定全程可行。",
+      "citySlugs": [
+        "chiang-mai",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/three-months-two-cities-rental-permission.html",
+      "seriesNumber": 30,
+      "seriesCategory": "season"
+    },
+    {
+      "slug": "chiang-mai-dali-winter-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/chiang-mai-dali-winter-workday/",
+      "title": "清迈和大理过冬，房租之外还有哪些差别？",
+      "summary": "清迈和大理过冬，先用同一个工作日比较：清迈北京时间早会要提前一小时准备，旺季房价另询；大理同城作息更直接，但桌位、热水与取暖需实证。房租、工位和押金保持原币与日期，不用不完整月价评哪城一定更便宜。",
+      "citySlugs": [
+        "chiang-mai",
+        "dali"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/chiang-mai-dali-winter-workday.html",
+      "seriesNumber": 41,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "hanoi-da-nang-november-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/hanoi-da-nang-november-workday/",
+      "title": "河内还是岘港，11月该选哪一座？",
+      "summary": "11月选河内还是岘港，先看雨天会怎样打断你的工作日。三年格点样本河内月雨45.87毫米、岘港483.10毫米，但不预测出发那周。两城房型、工位和通勤按同一人数租期询价，不把海景、低价和适合办公自动连在一起。",
+      "citySlugs": [
+        "hanoi",
+        "da-nang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/hanoi-da-nang-november-workday.html",
+      "seriesNumber": 42,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "penang-kuala-lumpur-one-working-day",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/penang-kuala-lumpur-one-working-day/",
+      "title": "槟城和吉隆坡长住，各过一天再比较",
+      "summary": "槟城和吉隆坡长住，先比较同样的一天：房内早会、午饭路线、下午工位与晚间回家。两城同北京时间，差别要落到街区和楼宇；用原指南的令吉住房预留和票价分别询价，不让海岛或大城市标签替你决定通勤成本。",
+      "citySlugs": [
+        "penang",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/penang-kuala-lumpur-one-working-day.html",
+      "seriesNumber": 43,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "pokhara-chiang-mai-low-budget-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/pokhara-chiang-mai-low-budget-workday/",
+      "title": "博卡拉和清迈，哪种住法更适合低预算远程工作？",
+      "summary": "博卡拉与清迈的低预算比较，要先统一租的是客房还是整套、在房内还是共享办公。博卡拉北京时间早会更早，清迈冬季房费另询；用各自原币预留和公开参照算已知部分，不拿个人低租金经历证明稳定可复制的最低生活费。",
+      "citySlugs": [
+        "pokhara",
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/pokhara-chiang-mai-low-budget-workday.html",
+      "seriesNumber": 44,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "lisbon-malaga-month-stay-tradeoffs",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/lisbon-malaga-month-stay-tradeoffs/",
+      "title": "里斯本还是马拉加：住一个月要做哪些取舍？",
+      "summary": "里斯本与马拉加住一个月，先把凌晨开工是否可接受说清，再比较住房、街道噪声、保暖和交通。两城住房数是编辑预留，工位原资料证据不同，不能据差额断言市场更便宜；换城也不让申根短停时钟重新开始，个人手续另核。",
+      "citySlugs": [
+        "lisbon",
+        "malaga"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/lisbon-malaga-month-stay-tradeoffs.html",
+      "seriesNumber": 45,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "malaysia-thirty-days-not-nights",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/malaysia-thirty-days-not-nights/",
+      "title": "马来西亚免签30天，为什么不能直接订30晚？",
+      "summary": "中国普通护照赴马短期免签的30天，从到达日开始计算，不能照着酒店的30晚套餐排离境。先核停留记录、既往入境和访问目的，再确定住房与机票，尤其别把中国境内的次日起算方法套到马来西亚。",
+      "citySlugs": [
+        "penang",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/malaysia-thirty-days-not-nights.html",
+      "seriesNumber": 31,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "thailand-dtv-before-applying",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/thailand-dtv-before-applying/",
+      "title": "泰国DTV：远程工作者申请前要弄清的几件事",
+      "summary": "DTV面向远程工作等特定类别，但不能把五年有效期读成连续住五年。先按所在地确定受理使领馆，再核材料、每次停留和延期条件；伦敦页的居留、资金与无犯罪证明要求，只能用于理解当地受理范围。",
+      "citySlugs": [
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/thailand-dtv-before-applying.html",
+      "seriesNumber": 32,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "de-rantau-employee-freelancer-documents",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/de-rantau-employee-freelancer-documents/",
+      "title": "马来西亚DE Rantau，雇员和自由职业者怎样准备材料？",
+      "summary": "DE Rantau雇员用劳动合同、工资单与入账记录解释雇佣关系；自由职业者用客户合同、近三个月发票与实收记录解释业务。本文分别核读MDEC两份官方材料表，区分必需与建议文件；总FAQ未读到的收入门槛和时限不补写。",
+      "citySlugs": [
+        "penang",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/de-rantau-employee-freelancer-documents.html",
+      "seriesNumber": 33,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "visa-validity-and-stay",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/visa-validity-and-stay/",
+      "title": "签证有效期和停留期，一张签证上为什么有两个日期？",
+      "summary": "签证有效期决定何时可以使用签证，获准停留决定这次什么时候离境；次数、护照有效期和居留手续又是其他条件。用泰国DTV与马来西亚免签作对照，先看字段与本次入境记录，再订连续住宿。",
+      "citySlugs": [
+        "chiang-mai",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/visa-validity-and-stay.html",
+      "seriesNumber": 34,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "tourist-visa-remote-work-rules",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/tourist-visa-remote-work-rules/",
+      "title": "拿旅游签证远程办公，官方规则去哪里查？",
+      "summary": "旅游签证、免签与远程工作许可不能混为一谈。查询时先写清自己的护照、所在地区、雇主和实际工作，再分别读移民机关、受理使领馆与税务机关原文。用马来西亚和泰国说明查找顺序，遇到官方资料缺失就保留待核。",
+      "citySlugs": [
+        "kuala-lumpur",
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/tourist-visa-remote-work-rules.html",
+      "seriesNumber": 35,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "company-approval-abroad",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/company-approval-abroad/",
+      "title": "公司同意远程办公，就能去国外上班了吗？",
+      "summary": "公司允许远程，可能只覆盖国内居家，并不自动涵盖跨国履职。出发前把具体国家、日期、工作内容、客户数据与保险分别确认，再核当地许可及税务；一封经理同意的消息，是内部安排的一部分，不能替代境外规则。",
+      "citySlugs": [
+        "penang",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/company-approval-abroad.html",
+      "seriesNumber": 36,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "visa-free-reentry-days",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/visa-free-reentry-days/",
+      "title": "免签快到期了，出境再回来能重新算天数吗？",
+      "summary": "离境一次不代表此前的停留记录消失，也不保证下一次免签入境获准。以中国普通护照赴马短访为例，既要看每次30日，也要核每180日累计限制和真实目的。行程需要官方按具体记录确认，不用短途往返设计保证续住。",
+      "citySlugs": [
+        "penang",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/visa-free-reentry-days.html",
+      "seriesNumber": 37,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "lisbon-madrid-beijing-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/lisbon-madrid-beijing-workday/",
+      "title": "住里斯本或马德里，按北京时间上班是什么作息？",
+      "summary": "2026年11月16日，北京9–18点对应里斯本1–10点、马德里2–11点；到2027年7月15日，两地又分别变成2–11点、3–12点。整班同步与只参加一个晚会差别很大，先排睡觉、买菜与住房，再决定欧洲是否适合这份工作。",
+      "citySlugs": [
+        "lisbon",
+        "madrid"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/lisbon-madrid-beijing-workday.html",
+      "seriesNumber": 38,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "beijing-nine-chiangmai-penang-pokhara",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/beijing-nine-chiangmai-penang-pokhara/",
+      "title": "北京早上9点的例会，在清迈、槟城和博卡拉分别几点？",
+      "summary": "在2026年11月16日，北京9点例会对应清迈8点、槟城9点、博卡拉6点45分；同日18点下班分别是17点、18点、15点45分。把提前准备、工位开门与通话空间也算进去，不能只按整点时差选择城市。",
+      "citySlugs": [
+        "chiang-mai",
+        "penang",
+        "pokhara"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/beijing-nine-chiangmai-penang-pokhara.html",
+      "seriesNumber": 39,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "calendar-daylight-saving",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/calendar-daylight-saving/",
+      "title": "旅居赶上夏令时切换，日历里的会议会不会变？",
+      "summary": "会议当地显示时间会随旅行地点、事件基准时区和夏令时规则变化。以2026年10月23日至26日为例，固定北京9点在里斯本由2点变1点；固定里斯本9点的会议，北京却由16点变17点。先核事件时区，再核整组重复会议。",
+      "citySlugs": [
+        "lisbon",
+        "madrid"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/calendar-daylight-saving.html",
+      "seriesNumber": 40,
+      "seriesCategory": "permission"
+    },
+    {
+      "slug": "coworking-day-pass-month-pass",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/coworking-day-pass-month-pass/",
+      "title": "共享办公日票和月票，去几天才值得买？",
+      "summary": "以清迈RealSpace公开常规日票300泰铢、共享月票4000泰铢为例，只比票面价格，第14个使用日开始月票较低。但开门时间、通话间、税费和可退条件可能改变选择；本站计算器按整张月票预留，不能把月票除以30当日票。",
+      "citySlugs": [
+        "chiang-mai"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/coworking-day-pass-month-pass.html",
+      "seriesNumber": 46,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "room-wifi-video-meetings",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/room-wifi-video-meetings/",
+      "title": "房东说Wi-Fi很快，视频会议为什么还会卡？",
+      "summary": "Wi-Fi标称下载快，不代表视频会议稳定。要在自己的房间、真实开会时段检查上传、延迟与持续通话，同时区分无线覆盖、共享拥堵和设备问题。官方会议要求可作排查依据，房东的截图和本文假设算例都不能替代现场测试。",
+      "citySlugs": [
+        "dali"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/room-wifi-video-meetings.html",
+      "seriesNumber": 47,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "cheap-monthly-rental-confirmation",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/cheap-monthly-rental-confirmation/",
+      "title": "看到一条便宜月租，怎样确认自己真的能租到？",
+      "summary": "便宜月租先核日期、房型与签约方，再问是否有库存、总价包含什么、押金如何退。月租广告、历史挂牌和编辑预算都不是指定日期的确认单。用一段假设看房对话，把付款前必须明确的项目收拢到一份书面报价。",
+      "citySlugs": [
+        "dali",
+        "pokhara"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/cheap-monthly-rental-confirmation.html",
+      "seriesNumber": 48,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "calculator-living-scenarios",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/calculator-living-scenarios/",
+      "title": "换个住法，预算差多少？用旅居计算器算一遍",
+      "summary": "本站城市月住指南的计算器可改档位、晚数、季节、工作方式、币种和整段房费。以大理30晚舒适档5700元编辑预留作基线，输入自己取得的房费后比较差额；工位或旺季缺价就保持待询，押金与机票另算，不能把演算当作订单。",
+      "citySlugs": [
+        "dali",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/calculator-living-scenarios.html",
+      "seriesNumber": 49,
+      "seriesCategory": "compare"
+    },
+    {
+      "slug": "which-nomad-data-to-trust",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/which-nomad-data-to-trust/",
+      "title": "选旅居城市，哪些数据能信，哪些得住过才知道？",
+      "summary": "政策、气象历史、公开价格、消费样本和个人体验回答的是不同问题。先核来源、日期、单位、适用人群与读取范围，再决定用它缩小城市范围还是必须实地验证。网络、安静和可订房源需落到具体房间，城市分数不能替代自己的工作日。",
+      "citySlugs": [
+        "dali",
+        "penang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-23",
+      "assetPath": "/city-guides/which-nomad-data-to-trust.html",
+      "seriesNumber": 50,
+      "seriesCategory": "compare"
     }
   ]
 }
