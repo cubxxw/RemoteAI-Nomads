@@ -24,8 +24,26 @@ test('unknown guide falls through and a missing registered artifact returns hone
 import {readFile} from 'node:fs/promises';
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {publishedArticles} from '../src/article-catalog.js';
 const SOURCES=resolve(dirname(fileURLToPath(import.meta.url)),'../content/city-guides');
 const topicSlugs=['november-nomad-destinations','monthly-budget-5000','beijing-time-remote-work','chinese-passport-long-stay'];
+test('all fifty series routes load the real approved HTML independently of D1',async()=>{
+ const articles=publishedArticles().filter(a=>a.seriesNumber);
+ assert.equal(articles.length,50);
+ const assetEnv={SITE_ORIGIN:'https://roamorrow.com/nomads',PREVIEW:'false',DB:{prepare(){throw Error('Series articles must not query D1');}},ASSETS:{async fetch(r){
+  const path=new URL(r.url).pathname;
+  const article=articles.find(a=>a.assetPath===path);assert.ok(article,'Unexpected asset '+path);
+  return new Response(await readFile(resolve(SOURCES,'../../public',path.slice(1)),'utf8'),{headers:{'Content-Type':'text/html'}});
+ }}};
+ for(const article of articles){
+  const response=await worker.fetch(new Request('https://roamorrow.com/nomads'+article.path),assetEnv,{waitUntil(){}});
+  assert.equal(response.status,200,article.slug);
+  assert.equal(response.headers.get('X-Robots-Tag'),'index, follow');
+  const body=await response.text();assert.ok(body.includes(article.title),article.slug);
+  assert.ok(body.includes('<link rel="canonical" href="https://roamorrow.com/nomads'+article.path+'">'));
+  assert.doesNotMatch(body,/noindex|\/Users\//);
+ }
+});
 const topicHTML=slug=>'<!doctype html><html lang="zh-CN"><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://roamorrow.com/nomads/guides/'+slug+'/"></head><main><h1>专题</h1></main></html>';
 const topicEnv=slug=>({SITE_ORIGIN:'https://roamorrow.com/nomads',PREVIEW:'false',DB:{prepare(){throw Error('Topic guide must not query D1');}},ASSETS:{async fetch(r){assert.equal(new URL(r.url).pathname,'/city-guides/'+slug+'.html');return new Response(topicHTML(slug),{headers:{'Content-Type':'text/html','X-Robots-Tag':'noindex'}});}}});
 test('topic guides render from approved artifacts without D1 and keep preview/query variants unindexable',async()=>{

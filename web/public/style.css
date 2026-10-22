@@ -24,3 +24,7 @@ footer{max-width:1244px;margin:65px auto 0;border-top:1px solid var(--line);padd
 .city-article-card p{margin:12px 0;color:#526552;font-size:14px;line-height:1.8}
 .city-article-card small{display:block;color:#657563;font-size:12px;line-height:1.6}
 @media(max-width:600px){.city-articles,.guide-city-articles{margin-block:20px 28px}.city-article-card{padding:18px}.city-article-list{grid-template-columns:1fr}}
+
+.guide-series-group{scroll-margin-top:24px;margin:32px 0}.guide-series-group>h3{font-size:18px;margin-bottom:16px}
+
+.city-article-more{margin-top:16px}.city-article-more>summary{cursor:pointer;padding:12px 0;min-height:44px}.city-article-more li{margin:10px 0}

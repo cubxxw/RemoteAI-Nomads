@@ -50,8 +50,13 @@ test('a fresh offline bootstrap rebuilds the public database and every fallback 
   assert.deepEqual((await readdir(temporary)).sort(), ['.data']);
   const pages = await buildPublicPages({ databasePath, publicationPath, outputDirectory: join(temporary, 'public/published-pages'), origin: 'https://demo.example.org' });
   const standaloneGuides=publishedArticles().filter(article=>article.assetPath);
-  assert.equal(pages.file_count, 9 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + standaloneGuides.length);
-  assert.equal(pages.paths.length, 8 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + standaloneGuides.length);
+  const editorialTable=seed.tables.find(table=>table.name==='editorial_pages');
+  const slugColumn=editorialTable.columns.indexOf('slug'),kindColumn=editorialTable.columns.indexOf('kind');
+  const seedPaths=new Set(editorialTable.rows.map(row=>'/' +(row[kindColumn]==='comparison'?'compare':'guides')+'/'+row[slugColumn]+'/'));
+  const additionalGuides=standaloneGuides.filter(article=>!seedPaths.has(article.path));
+  assert.equal(pages.paths.filter(path=>path==='/guides/first-month/').length,1,'Expanded first-month replaces its seeded path without duplication');
+  assert.equal(pages.file_count, 9 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + additionalGuides.length);
+  assert.equal(pages.paths.length, 8 + seed.publication.rows.cities + seed.publication.rows.countries + seed.publication.rows.editorial_pages + additionalGuides.length);
   assert.equal(pages.all_responses_status, 200);
   assert.equal(pages.private_notes_exported, 0);
   assert.equal(pages.origin, 'https://demo.example.org');
