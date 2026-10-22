@@ -8,9 +8,28 @@
       "approved": true,
       "approvedOn": "2026-10-22",
       "authority": "User explicitly authorized the four SEO topic guides per the 2026-10-22 implementation brief; parent reviewed the researched content and limitations before this batch."
+    },
+    "series50Batch": {
+      "approved": true,
+      "approvedOn": "2026-10-23",
+      "authority": "User explicitly requested completion of all fifty article subjects with multiple agents; parent integrated independent content and code review, preserving source limitations.",
+      "sourceFiles": [
+        {
+          "path": "content/editorial-50/start-budget.json",
+          "sha256": "c216ae536a8d9304c27659c134a7c6d67444158a9a3b28360b68f347e3ea1a18"
+        },
+        {
+          "path": "content/editorial-50/season-compare.json",
+          "sha256": "cdaeb7ab6992029302490d8035c2757298151a080bb817f96d75c8ac684d96e5"
+        },
+        {
+          "path": "content/editorial-50/permission-tools.json",
+          "sha256": "94a260536b8cfef6b3b91457f68f2ba95b6f5007f338446cd4590f9fd2c1be7d"
+        }
+      ]
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -43,8 +62,8 @@
     {
       "slug": "pokhara-monthly-budget",
       "sourceFile": "pokhara-monthly-budget.html",
-      "sha256": "b287755326aea7aaf288b5c6e04ed68db53572f3914c32a7880c3675c56082a6",
-      "source": "output/seo-pokhara-20261020/pokhara-monthly-budget.html",
+      "sha256": "cf83a33d48d146a9b1efe507d1be73c393a78f166bd018af2521d7c67cc4fb91",
+      "source": "research/2026-10-23-seo-50.md#historical-listing-correction",
       "approved": true
     },
     {
@@ -148,6 +167,328 @@
       "source": "output/seo-topics-20261022/chinese-passport-long-stay.html",
       "approved": true,
       "approvedOn": "2026-10-22"
+    },
+    {
+      "slug": "first-nomad-domestic-or-abroad",
+      "sourceFile": "first-nomad-domestic-or-abroad.html",
+      "sha256": "3f9a8d5ea245be25b7ebda6a2f9e1d0cd6bc5b38b8edb7da3e18ee9f6db0cd5e",
+      "source": "web/content/editorial-50/start-budget.json (article 5)",
+      "approved": true
+    },
+    {
+      "slug": "first-month",
+      "sourceFile": "first-month.html",
+      "sha256": "174e374ecebfb1986e6570bba56ca85c8da9fe4d00a99e83cc5aff846a97ec75",
+      "source": "web/content/editorial-50/start-budget.json (article 6)",
+      "approved": true
+    },
+    {
+      "slug": "two-pots-of-money",
+      "sourceFile": "two-pots-of-money.html",
+      "sha256": "0823c20937015804db6470909e565de7618b3711a65d4063b24f766fb0a64159",
+      "source": "web/content/editorial-50/start-budget.json (article 7)",
+      "approved": true
+    },
+    {
+      "slug": "video-meeting-room-checklist",
+      "sourceFile": "video-meeting-room-checklist.html",
+      "sha256": "dca4213b38f3432b4efea3665e14017c2e882cc07d810e26b1bb644e9b3bb1d5",
+      "source": "web/content/editorial-50/start-budget.json (article 8)",
+      "approved": true
+    },
+    {
+      "slug": "small-city-or-big-city-first",
+      "sourceFile": "small-city-or-big-city-first.html",
+      "sha256": "a69db834830774c41e0a12cfee4bd5ceca13e54396faf902ecfa7ca888dbc4b4",
+      "source": "web/content/editorial-50/start-budget.json (article 9)",
+      "approved": true
+    },
+    {
+      "slug": "nomad-budget-checklist",
+      "sourceFile": "nomad-budget-checklist.html",
+      "sha256": "11c19f84fd547d86c336020185e85e1324ab4f330ea700d1d9889a95cf1fa184",
+      "source": "web/content/editorial-50/start-budget.json (article 10)",
+      "approved": true
+    },
+    {
+      "slug": "dali-budget-5000-allocation",
+      "sourceFile": "dali-budget-5000-allocation.html",
+      "sha256": "f77e457ee9c43bb1315d912a54c51747410d79cc6ae9bb678b873261188780ee",
+      "source": "web/content/editorial-50/start-budget.json (article 11)",
+      "approved": true
+    },
+    {
+      "slug": "chiang-mai-winter-monthly-rent",
+      "sourceFile": "chiang-mai-winter-monthly-rent.html",
+      "sha256": "2a1d96fc1c9c704eea9d67ccafaabe65ce63cc392cf46b24aa329df4d04a4069",
+      "source": "web/content/editorial-50/start-budget.json (article 12)",
+      "approved": true
+    },
+    {
+      "slug": "penang-south-island-rent-transport",
+      "sourceFile": "penang-south-island-rent-transport.html",
+      "sha256": "1c70f3255abcd976af1cdd20c3d46066f0496d6501ff9f0f79b90543acf4da9c",
+      "source": "web/content/editorial-50/start-budget.json (article 13)",
+      "approved": true
+    },
+    {
+      "slug": "kuala-lumpur-monthly-bill-extras",
+      "sourceFile": "kuala-lumpur-monthly-bill-extras.html",
+      "sha256": "bdb742f27d9da64ff5e6d365f752384176dc9ffa21269b9815658f66b01fea73",
+      "source": "web/content/editorial-50/start-budget.json (article 14)",
+      "approved": true
+    },
+    {
+      "slug": "hanoi-quiet-room-tay-ho-old-quarter",
+      "sourceFile": "hanoi-quiet-room-tay-ho-old-quarter.html",
+      "sha256": "5968b3332f10a2084ecb5f4c7fbd15ed050c954cab6ec6786b1648d44bcfe22d",
+      "source": "web/content/editorial-50/start-budget.json (article 15)",
+      "approved": true
+    },
+    {
+      "slug": "pokhara-monthly-room-versus-flat",
+      "sourceFile": "pokhara-monthly-room-versus-flat.html",
+      "sha256": "d6baa9d7a3830ea6c7c9a3fa6f882cc1d02fb61f2f55623c10111576c48cc794",
+      "source": "web/content/editorial-50/start-budget.json (article 16)",
+      "approved": true
+    },
+    {
+      "slug": "baku-old-city-or-metro-workday",
+      "sourceFile": "baku-old-city-or-metro-workday.html",
+      "sha256": "8f9403b045b3dc3e337474aa96a9badaaa1b435e48e62a0edec323fdfc360531",
+      "source": "web/content/editorial-50/start-budget.json (article 17)",
+      "approved": true
+    },
+    {
+      "slug": "ubud-rice-field-room-rain-commute",
+      "sourceFile": "ubud-rice-field-room-rain-commute.html",
+      "sha256": "727d2ba7228f53a60c29b7b565295a511cc9fb17f666277b58737584f728420e",
+      "source": "web/content/editorial-50/start-budget.json (article 18)",
+      "approved": true
+    },
+    {
+      "slug": "chengdu-neighborhood-walk-or-metro",
+      "sourceFile": "chengdu-neighborhood-walk-or-metro.html",
+      "sha256": "96e29b01f13f540633ea0a5c1c12c73889f781452b9c6a8d7dac6703d4f510d8",
+      "source": "web/content/editorial-50/start-budget.json (article 19)",
+      "approved": true
+    },
+    {
+      "slug": "hangzhou-west-lake-rent-premium",
+      "sourceFile": "hangzhou-west-lake-rent-premium.html",
+      "sha256": "929e93fe420f2ad538256995df554d730b27c1b0e66d758127be5570fea0f9f2",
+      "source": "web/content/editorial-50/start-budget.json (article 20)",
+      "approved": true
+    },
+    {
+      "slug": "december-chiang-mai-penang-xiamen",
+      "sourceFile": "december-chiang-mai-penang-xiamen.html",
+      "sha256": "7188c132d4304aee427db53b46402e2631641859a67e336aa5fd7e5cbcf158f4",
+      "source": "web/content/editorial-50/season-compare.json (article 21)",
+      "approved": true
+    },
+    {
+      "slug": "january-warm-room-after-sunset",
+      "sourceFile": "january-warm-room-after-sunset.html",
+      "sha256": "4ac64273c596225e842eb9198fb48c2deeaa1c468630b6a3636454288eaf3717",
+      "source": "web/content/editorial-50/season-compare.json (article 22)",
+      "approved": true
+    },
+    {
+      "slug": "spring-festival-month-rental-fees",
+      "sourceFile": "spring-festival-month-rental-fees.html",
+      "sha256": "fb6a79e7f2eb604d3fa4a06900a0e9d45aae7bbd50631ed27904bcca5a19307e",
+      "source": "web/content/editorial-50/season-compare.json (article 23)",
+      "approved": true
+    },
+    {
+      "slug": "chiang-mai-haze-moving-date",
+      "sourceFile": "chiang-mai-haze-moving-date.html",
+      "sha256": "77634d71d5b6dd35f91989448b3385d2ef1131e785b8da11d6acf4595a3a0827",
+      "source": "web/content/editorial-50/season-compare.json (article 24)",
+      "approved": true
+    },
+    {
+      "slug": "da-nang-rainy-season-seaside-room",
+      "sourceFile": "da-nang-rainy-season-seaside-room.html",
+      "sha256": "da6c45d3f290ff26b8a1f03f62cccefa8197295bf1a0d7af44aa55e8bf7e2ae3",
+      "source": "web/content/editorial-50/season-compare.json (article 25)",
+      "approved": true
+    },
+    {
+      "slug": "penang-three-years-rain-by-month",
+      "sourceFile": "penang-three-years-rain-by-month.html",
+      "sha256": "ca2685e8c2f05a9125f54faf48d80a9bbff6b14a928a7b3e0f535741699ff307",
+      "source": "web/content/editorial-50/season-compare.json (article 26)",
+      "approved": true
+    },
+    {
+      "slug": "dali-winter-sun-hot-water-heating",
+      "sourceFile": "dali-winter-sun-hot-water-heating.html",
+      "sha256": "076fef435ebd814b53aeefa2d7d25e677dd34e4e10af15fc73e46bd2ac826bed",
+      "source": "web/content/editorial-50/season-compare.json (article 27)",
+      "approved": true
+    },
+    {
+      "slug": "ubud-rainy-season-room-inspection",
+      "sourceFile": "ubud-rainy-season-room-inspection.html",
+      "sha256": "4105499cc7d6f084985aac3a9e7989ec8d89fcd299ef41a272b1da03bcc7faa3",
+      "source": "web/content/editorial-50/season-compare.json (article 28)",
+      "approved": true
+    },
+    {
+      "slug": "fethiye-winter-daily-facilities",
+      "sourceFile": "fethiye-winter-daily-facilities.html",
+      "sha256": "604a430d1fa53dd51275e0f0a4b196d3ace690e414d702a0d954f2d868feacc4",
+      "source": "web/content/editorial-50/season-compare.json (article 29)",
+      "approved": true
+    },
+    {
+      "slug": "three-months-two-cities-rental-permission",
+      "sourceFile": "three-months-two-cities-rental-permission.html",
+      "sha256": "50bd79218aa600da5143ff63c6760d591228daed08907bbe8a014a96aa095dd6",
+      "source": "web/content/editorial-50/season-compare.json (article 30)",
+      "approved": true
+    },
+    {
+      "slug": "chiang-mai-dali-winter-workday",
+      "sourceFile": "chiang-mai-dali-winter-workday.html",
+      "sha256": "ac7c0f6b6b2acb91ea1f90dbd4bff81c0edfe53b1a585b85ccb43a76a5117c63",
+      "source": "web/content/editorial-50/season-compare.json (article 41)",
+      "approved": true
+    },
+    {
+      "slug": "hanoi-da-nang-november-workday",
+      "sourceFile": "hanoi-da-nang-november-workday.html",
+      "sha256": "1333153fa3eb2f9f092877578309e76a130d7ca2f3024afad8247d2da3d9dbda",
+      "source": "web/content/editorial-50/season-compare.json (article 42)",
+      "approved": true
+    },
+    {
+      "slug": "penang-kuala-lumpur-one-working-day",
+      "sourceFile": "penang-kuala-lumpur-one-working-day.html",
+      "sha256": "f72ef40b19efa9348db12a56b1931a3d4c1f8f5d53ebdf6a0434a8eb52d571a9",
+      "source": "web/content/editorial-50/season-compare.json (article 43)",
+      "approved": true
+    },
+    {
+      "slug": "pokhara-chiang-mai-low-budget-workday",
+      "sourceFile": "pokhara-chiang-mai-low-budget-workday.html",
+      "sha256": "bb4c566f77209872a746c56eb0a4f70b1282f16667f7f06afb39811d9038630c",
+      "source": "web/content/editorial-50/season-compare.json (article 44)",
+      "approved": true
+    },
+    {
+      "slug": "lisbon-malaga-month-stay-tradeoffs",
+      "sourceFile": "lisbon-malaga-month-stay-tradeoffs.html",
+      "sha256": "fea989083da22c271e8fa65ccb5e8b96986437bf404de1e0dcfd1a50deebcf74",
+      "source": "web/content/editorial-50/season-compare.json (article 45)",
+      "approved": true
+    },
+    {
+      "slug": "malaysia-thirty-days-not-nights",
+      "sourceFile": "malaysia-thirty-days-not-nights.html",
+      "sha256": "00c1beeec4fe502ff7ed9ac33afb62e352c7eac91fb285e91a07e190998aed05",
+      "source": "web/content/editorial-50/permission-tools.json (article 31)",
+      "approved": true
+    },
+    {
+      "slug": "thailand-dtv-before-applying",
+      "sourceFile": "thailand-dtv-before-applying.html",
+      "sha256": "c3292050974a0f47e6f610e2e87158515d6e69ed9c15a2007a9ebed0586039e3",
+      "source": "web/content/editorial-50/permission-tools.json (article 32)",
+      "approved": true
+    },
+    {
+      "slug": "de-rantau-employee-freelancer-documents",
+      "sourceFile": "de-rantau-employee-freelancer-documents.html",
+      "sha256": "6720ad16b5b44489ee66f7a735ac572072c7ab3c08b73d01dfdbd6abc9acc67a",
+      "source": "web/content/editorial-50/permission-tools.json (article 33)",
+      "approved": true
+    },
+    {
+      "slug": "visa-validity-and-stay",
+      "sourceFile": "visa-validity-and-stay.html",
+      "sha256": "36a743b40f2cb02b134bd392d86d74ecb595c9e373b3736350e323626446c5b6",
+      "source": "web/content/editorial-50/permission-tools.json (article 34)",
+      "approved": true
+    },
+    {
+      "slug": "tourist-visa-remote-work-rules",
+      "sourceFile": "tourist-visa-remote-work-rules.html",
+      "sha256": "4197f8cc972eefa4dca1e10d780bab7271288b9c1772d4d8a7a5ab06cea7c748",
+      "source": "web/content/editorial-50/permission-tools.json (article 35)",
+      "approved": true
+    },
+    {
+      "slug": "company-approval-abroad",
+      "sourceFile": "company-approval-abroad.html",
+      "sha256": "eb3ceaf2701b6deaef44779235dd99e1b0fada2ba58b59c968170a392a63537e",
+      "source": "web/content/editorial-50/permission-tools.json (article 36)",
+      "approved": true
+    },
+    {
+      "slug": "visa-free-reentry-days",
+      "sourceFile": "visa-free-reentry-days.html",
+      "sha256": "13c5c2326ab9c7bd334e33556ba8c519d15a20374455f05057944ad257d21602",
+      "source": "web/content/editorial-50/permission-tools.json (article 37)",
+      "approved": true
+    },
+    {
+      "slug": "lisbon-madrid-beijing-workday",
+      "sourceFile": "lisbon-madrid-beijing-workday.html",
+      "sha256": "9136f95dfcc56f4777b4feea0c1c85f79cbf1b17cead502aaffcf9a11365972a",
+      "source": "web/content/editorial-50/permission-tools.json (article 38)",
+      "approved": true
+    },
+    {
+      "slug": "beijing-nine-chiangmai-penang-pokhara",
+      "sourceFile": "beijing-nine-chiangmai-penang-pokhara.html",
+      "sha256": "29b6c90bdd6ed245502227884695cd56fadb23e1034d70b4416ee1cb4e84e330",
+      "source": "web/content/editorial-50/permission-tools.json (article 39)",
+      "approved": true
+    },
+    {
+      "slug": "calendar-daylight-saving",
+      "sourceFile": "calendar-daylight-saving.html",
+      "sha256": "72c215ed32057ff1d7126ed28752926c2013a17faeb1897b064fea71be21a558",
+      "source": "web/content/editorial-50/permission-tools.json (article 40)",
+      "approved": true
+    },
+    {
+      "slug": "coworking-day-pass-month-pass",
+      "sourceFile": "coworking-day-pass-month-pass.html",
+      "sha256": "1d0399a5188bc60eda46ed078d2f5ea27bece0c87f515348b0f743c0685c551e",
+      "source": "web/content/editorial-50/permission-tools.json (article 46)",
+      "approved": true
+    },
+    {
+      "slug": "room-wifi-video-meetings",
+      "sourceFile": "room-wifi-video-meetings.html",
+      "sha256": "8239a9a74e65ae8bd3fd1171b7bc386aed753ef343f012e431004ffc5de0e31f",
+      "source": "web/content/editorial-50/permission-tools.json (article 47)",
+      "approved": true
+    },
+    {
+      "slug": "cheap-monthly-rental-confirmation",
+      "sourceFile": "cheap-monthly-rental-confirmation.html",
+      "sha256": "57ede803529f2b8d73a7f26cc50607394b1e0e18518f0a72e1af0d3ce42bcc43",
+      "source": "web/content/editorial-50/permission-tools.json (article 48)",
+      "approved": true
+    },
+    {
+      "slug": "calculator-living-scenarios",
+      "sourceFile": "calculator-living-scenarios.html",
+      "sha256": "4bc4e4f0ac60c2d8e9af4e4dfed952c9f50ba2da3e3a62bea53bec1109151526",
+      "source": "web/content/editorial-50/permission-tools.json (article 49)",
+      "approved": true
+    },
+    {
+      "slug": "which-nomad-data-to-trust",
+      "sourceFile": "which-nomad-data-to-trust.html",
+      "sha256": "37983a178075d88d20af57e6af761f9cb24434821f508164b2814012ac7ad954",
+      "source": "web/content/editorial-50/permission-tools.json (article 50)",
+      "approved": true
     }
   ],
   "assets": [
@@ -465,6 +806,71 @@
       "source": "assets/og-topic-passport.webp",
       "destination": "images/og-topic-passport.webp",
       "sha256": "04266521239669eba6ff27a5e5e05d0149a512e985308a3dc4219812263447b2"
+    },
+    {
+      "source": "assets/og-editorial-baku-flame-towers.webp",
+      "destination": "images/og-editorial-baku-flame-towers.webp",
+      "sha256": "9ebdaea42cec9b83c58a544c9862e259aa11242282a5119907f274efe5e7b05d"
+    },
+    {
+      "source": "assets/og-editorial-chengdu-panda.webp",
+      "destination": "images/og-editorial-chengdu-panda.webp",
+      "sha256": "51b16693d08dc5b79e123a7ee72239ba252e7b83a93d7abd8be68bf170dd4546"
+    },
+    {
+      "source": "assets/og-editorial-chiang-mai-nimman-street.webp",
+      "destination": "images/og-editorial-chiang-mai-nimman-street.webp",
+      "sha256": "30e09d95be6ef6e5035766cdaecb77107b1f3754aeb77be3a7a88f26037d8d67"
+    },
+    {
+      "source": "assets/og-editorial-dali-north-gate.webp",
+      "destination": "images/og-editorial-dali-north-gate.webp",
+      "sha256": "25fe8ad23d4ea66b964d611d6c6401ae3f321b7b33e09bf482835e78754f17a5"
+    },
+    {
+      "source": "assets/og-editorial-fethiye-oludeniz.webp",
+      "destination": "images/og-editorial-fethiye-oludeniz.webp",
+      "sha256": "a69186ef0f34c0e0328289fa276bb7cf0baaf63636fb5e2d0033f43b1acf98f0"
+    },
+    {
+      "source": "assets/og-editorial-hangzhou-west-lake.webp",
+      "destination": "images/og-editorial-hangzhou-west-lake.webp",
+      "sha256": "df2f7ef0308747edb38af608ff85bf1925aa4f6beea37e779636cd305e76cd95"
+    },
+    {
+      "source": "assets/og-editorial-hanoi-hoan-kiem.webp",
+      "destination": "images/og-editorial-hanoi-hoan-kiem.webp",
+      "sha256": "481c1f51844341cb0bb559eb3efd86598a2e802143307cc184e28fe42833e3c1"
+    },
+    {
+      "source": "assets/og-editorial-kuala-lumpur-bukit-bintang-junction.webp",
+      "destination": "images/og-editorial-kuala-lumpur-bukit-bintang-junction.webp",
+      "sha256": "d773689be46d36cba5cc495e49b83ff5a657dab09e775918ac4aba12245cf8ba"
+    },
+    {
+      "source": "assets/og-editorial-lisbon-tram.webp",
+      "destination": "images/og-editorial-lisbon-tram.webp",
+      "sha256": "e745c2aaf594bba63ff5ee2c09df3f2a1300da723ed5c7c335609f56ef6684ed"
+    },
+    {
+      "source": "assets/og-editorial-madrid-gran-via.webp",
+      "destination": "images/og-editorial-madrid-gran-via.webp",
+      "sha256": "daddb9ce6cdb69aecb1eae782881492e661285906149de679b6ac7aa840fca23"
+    },
+    {
+      "source": "assets/og-editorial-penang-city.webp",
+      "destination": "images/og-editorial-penang-city.webp",
+      "sha256": "a2b34a711caf8561fd3bc1e5ac192cabd45031a19da8616b7d0d70dc0b4380ac"
+    },
+    {
+      "source": "assets/og-editorial-pokhara-phewa-lake.webp",
+      "destination": "images/og-editorial-pokhara-phewa-lake.webp",
+      "sha256": "86fc4403e03b27747f8bc50d6780ff0bdcb064fc83411a4dcd6adc164fc0b5aa"
+    },
+    {
+      "source": "assets/og-editorial-ubud-rice-terrace.webp",
+      "destination": "images/og-editorial-ubud-rice-terrace.webp",
+      "sha256": "aafc20243fb10d6ff1cf9b11d103a501574cde20339f46fa222b1d0bdc59bd46"
     }
   ]
 }

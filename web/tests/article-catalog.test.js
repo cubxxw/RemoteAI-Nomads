@@ -13,7 +13,7 @@ const SOURCES = join(ROOT, 'content/city-guides');
 const guide = publishedArticles().find(article => article.assetPath);
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const registry = entries => createArticleCatalog({schemaVersion: 1, entries});
-const slugList = articles => articles.map(article => article.slug);
+const slugList = articles => articles.filter(article => !article.seriesNumber || article.seriesNumber <= 4).map(article => article.slug);
 const inlineData = html => html.match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)?.[1];
 const visibleBody = html => html.slice(html.indexOf('<body')).replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '');
 
@@ -50,7 +50,7 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.match(guideCardsHTML(), /penang-monthly-budget/);
   assert.match(guideCardsHTML(), /kuala-lumpur-monthly-budget/);
   assert.match(guideCardsHTML(), /dali-monthly-budget/);
-  assert.doesNotMatch(guideCardsHTML(), /first-month/);
+  assert.match(guideCardsHTML(), /first-month/);
   assert.match(guideCardsHTML(), /chiang-mai-vs-penang/);
   assert.match(guideCardsHTML(), /chiang-mai-vs-da-nang/);
 });
@@ -120,7 +120,7 @@ test('guide package includes exactly public images and runtime, preserves copy a
   const outputFiles = await filesUnder(options.assetDirectory);
   assert.deepEqual(outputFiles, first.assets.map(asset => asset.path.slice('/guide-assets/'.length)).sort());
   assert.equal(outputFiles.filter(file => file.startsWith('images/')).length, approved.assets.filter(asset => asset.destination.startsWith('images/')).length);
-  assert.equal(outputFiles.filter(file => /images\/og-/.test(file)).length, packaged.length);
+  assert.equal(outputFiles.filter(file => /images\/og-/.test(file)).length, approved.assets.filter(asset => /images\/og-/.test(asset.destination)).length, 'Approved sharing photos may be reused across articles');
   assert.doesNotMatch(outputFiles.join('\n'), /evidence|tik.?hub|budget-data|source-facts|sources\.json|brief|\.json$/i);
   for (const article of publishedArticles().filter(article => article.assetPath)) {
     const html = await readFile(join(options.outputDirectory, article.slug + '.html'), 'utf8');
@@ -162,7 +162,7 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'beijing-time-remote-work': ['2026-10-22', null],
       'chinese-passport-long-stay': ['2026-10-22', null],
     };
-    const expected = batch[page.slug]
+    const expected = (articleBySlug(page.slug).seriesNumber > 4 ? ['2026-10-23', null] : batch[page.slug])
       ?? (page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
       : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16']);
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
@@ -197,7 +197,8 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), ['beijing-time-remote-work', 'chinese-passport-long-stay', 'monthly-budget-5000', 'november-nomad-destinations']);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 50);
+  assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":null', '"fx":{"date":"2026-10-16"'));

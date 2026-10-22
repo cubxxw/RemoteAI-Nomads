@@ -9,7 +9,7 @@ const city = { slug:'da-nang', name_zh:'岘港', name_en:'Da Nang', country_name
 test('reviewed first-week copy overrides old database text without changing publication status or checklist anchors', () => {
   const stale = {slug:'first-month', title:'旧标题', summary:'旧摘要', body_json:'["旧正文"]', status:'published', updated_at:'2026-10-17'};
   const page = renderGuides([stale], 'first-month', {SITE_ORIGIN:'https://nomads.test'});
-  assert.match(page.title, /5–7晚/);
+  assert.match(page.title, /先住一周/);
   assert.doesNotMatch(page.body, /旧标题|旧摘要|旧正文/);
   assert.match(page.body, /备用电力/);
   for (const step of [1,2,3]) assert.ok(page.body.includes(`id="guide-step-${step}"`));
