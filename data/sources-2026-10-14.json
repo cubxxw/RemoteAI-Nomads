@@ -298,7 +298,8 @@
       "author": "calmaro737",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "家庭选址需求；海滩与市区日常不应混用，评论细节沿用10月7日账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1qg6doj",
@@ -320,7 +321,8 @@
       "author": "CGisLifee",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "远程桌面延迟需求；正文中的避税推断不采用；评论经验沿用旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1n0yygi",
@@ -331,7 +333,8 @@
       "author": "John-Travel-8490",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "老挝/Sri Lanka工作提问；停电和酒店网络评论沿用旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1uo51f9",
@@ -342,7 +345,8 @@
       "author": "Prudent-Question2294",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "本地人询问停电与发电机；评论设施建议沿用旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1vhwax8",
@@ -353,7 +357,8 @@
       "author": "SleepyBean030",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "8小时工作与会议需求；长期居民/短住住客分歧见10月7日已读评论。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-yeru57",
@@ -375,7 +380,8 @@
       "author": "MichaelJDigitalNomad",
       "read_scope": "API详情成功，但主帖正文为空；本轮未重新读取作者评论长文；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "本次主帖正文为空；原作者长文在评论，不能把批量详情成功当作重新精读。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1ubnvpi",
@@ -386,7 +392,8 @@
       "author": "verobytes",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "Tirana住一周仍没找到工作同伴，社交不自动发生；评论反例沿用旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1s1vdmq",
@@ -397,7 +404,8 @@
       "author": "justSomeGuy5965",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "居住成本提问，旧账本评论有不同租期口径，不能给统一总预算。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1pactei",
@@ -408,7 +416,8 @@
       "author": "VibeVector",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "Las Palmas社交提问；既有长住回复见10月7日账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1qnfn6a",
@@ -419,7 +428,8 @@
       "author": "ZealousidealWear8366",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "Madeira两周感到社区冷清的自报；不同体验与后续回复见旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1s6urwm",
@@ -430,7 +440,8 @@
       "author": "verobytes",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "Taghazout长住办公提问；咖啡馆限制来自旧账本已读评论。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-123owjv",
@@ -452,7 +463,8 @@
       "author": "felbarboza",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "2024年南美城市旅居报告，主帖不含可比旅行活动开销；旧价格与主观评分不作现价。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1i04jfi",
@@ -485,7 +497,8 @@
       "author": "tramapoline1983",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "高频会议者询Cusco/Arequipa网络；旧账本明确回复仅指Cusco，不能移植。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1uiyzsn",
@@ -496,7 +509,8 @@
       "author": "FoxxyFrost",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "Cuenca专注生活问题；居民体验、噪音和高原分歧见旧账本。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "R-1gdhzzk",
@@ -518,7 +532,8 @@
       "author": "Moderately-Spiced",
       "read_scope": "API取回正文，核读旅居相关段落；未看图片或视频；评论判断沿用2026-10-07来源账本，本轮不称已重读",
       "editorial_summary": "2025年Buenos Aires餐费与短租上涨自报；币种与长期居民反例分别保留。",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "comments_reviewed_on": "2026-10-07"
     },
     {
       "id": "X-2102054171465981996",
@@ -1408,7 +1423,7 @@
       "retrieved_on": "2026-10-14",
       "author": "itsjesslau",
       "read_scope": "API发布文案＋登录态可见评论，币种追问及展开回复；未转录口播/视频内账单",
-      "editorial_summary": "2023年12月长住体验，作者说住房多付；旧年内容不作2026价格，币种追问未充分解决。",
+      "editorial_summary": "旧长住体验，体验月份待核；作者说住房多付；旧年内容不作2026价格，币种追问未充分解决。",
       "use": "counterexample_only"
     },
     {
@@ -1519,7 +1534,9 @@
       "author": null,
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "泰北10月14日预报与10月5–6日洪水周报；不采用同页2022年月度段",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "review_after": "2026-10-15",
+      "review_reason": "短期天气/灾害的现状引用需重新核实，历史事件本身不因过期为假"
     },
     {
       "id": "O02",
@@ -1530,7 +1547,9 @@
       "author": null,
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "10月9日山茶半岛暂停观光报道，新闻正文关键段",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "review_after": "2026-10-15",
+      "review_reason": "短期天气/灾害的现状引用需重新核实，历史事件本身不因过期为假"
     },
     {
       "id": "O03",
@@ -1541,7 +1560,9 @@
       "author": null,
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "10月9日越南中部洪水报道，关键段",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "review_after": "2026-10-15",
+      "review_reason": "短期天气/灾害的现状引用需重新核实，历史事件本身不因过期为假"
     },
     {
       "id": "O04",
@@ -1563,7 +1584,9 @@
       "author": null,
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "2026–27季节公告，11月1日–4月30日；不采用商户精选评论为独立验证",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "review_after": "2026-10-31",
+      "review_reason": "11月1日营业季前需核实当前公告"
     },
     {
       "id": "O06",
@@ -1816,7 +1839,9 @@
       "author": null,
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "巴西协议全文在10月7日核读，30日不可延长、措施至2026年底；未于本轮重新读取",
-      "use": "used_with_limits"
+      "use": "used_with_limits",
+      "review_after": "2026-12-31",
+      "review_reason": "有效期结束需核实新措施"
     },
     {
       "id": "Q01",
