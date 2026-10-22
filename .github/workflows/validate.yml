@@ -1,0 +1,109 @@
+name: Validate guide
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Monday 01:17 UTC (09:17 in China and Singapore).
+    - cron: '17 1 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: guide-${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Show Python version
+        run: python3 --version
+      - name: Run regression tests
+        id: tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate destination and source data
+        id: data
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: python3 scripts/check_data.py | tee "$RUNNER_TEMP/guide-data.txt"
+      - name: Validate local documentation links
+        id: links
+        if: ${{ !cancelled() }}
+        # Website documentation is maintained by the web project's own checks.
+        run: python3 scripts/check_links.py --exclude web
+      - name: Validate reader routes and city cards
+        id: reading
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: python3 scripts/check_reading.py --guide guides/destination-notes.md | tee "$RUNNER_TEMP/guide-reading.txt"
+      - name: Check whitespace
+        id: whitespace
+        if: ${{ !cancelled() }}
+        run: python3 scripts/check_workflow.py
+      - name: Summarize checks and manual review reminders
+        if: always()
+        env:
+          TEST_RESULT: ${{ steps.tests.outcome }}
+          DATA_RESULT: ${{ steps.data.outcome }}
+          LINK_RESULT: ${{ steps.links.outcome }}
+          READING_RESULT: ${{ steps.reading.outcome }}
+          WHITESPACE_RESULT: ${{ steps.whitespace.outcome }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          checks = (
+              ("CLI regression tests", "TEST_RESULT"),
+              ("Destination data and price provenance", "DATA_RESULT"),
+              ("Local Markdown links", "LINK_RESULT"),
+              ("Reader routes and city-card structure", "READING_RESULT"),
+              ("Whitespace", "WHITESPACE_RESULT"),
+          )
+          warnings, reading = [], []
+          for name in ("guide-data.txt", "guide-reading.txt"):
+              path = Path(os.environ["RUNNER_TEMP"]) / name
+              if path.is_file():
+                  lines = path.read_text(encoding="utf-8").splitlines()
+                  warnings.extend(line for line in lines if line.startswith("WARNING "))
+                  if name == "guide-reading.txt":
+                      reading = [line for line in lines if line.startswith("Checked ")]
+
+          # Warnings request human review; they do not change the job exit status.
+          for warning in warnings:
+              escaped = warning.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+              print(f"::notice title=Guide manual review reminder::{escaped}")
+
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+              summary.write("## Guide validation\n\n| Check | Result |\n|---|---|\n")
+              for label, variable in checks:
+                  summary.write(f"| {label} | {os.environ.get(variable) or 'not run'} |\n")
+              summary.write("\n" + "\n".join(reading) + "\n\n")
+              summary.write("These are offline structure checks, not a readability score. "
+                            "They do not verify external facts, current availability, or desktop/390px layout. "
+                            "Use research/reading-quality-rubric.md and the PR checklist for manual review.\n\n")
+              summary.write(f"### Manual review reminders ({len(warnings)})\n\n")
+              if warnings:
+                  summary.write("Review dates and wording reminders are nonblocking; retain historical evidence.\n\n")
+                  for warning in warnings:
+                      summary.write("- " + warning.replace("<", "&lt;").replace(">", "&gt;") + "\n")
+              else:
+                  summary.write("No automated reminders were emitted. Manual review is still required.\n")
+          PY

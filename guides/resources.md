@@ -1,8 +1,12 @@
 # 工作与生活资源
 
-[返回首页](../README.md) · [预算与网络检查](choose-a-base.md)
+[返回首页](../README.md) · [预算与时差](destination-notes.md#budget-and-work) · [比较与询问模板](choose-a-base.md) · [第一周清单](first-week-checklist.md) · [入境与工作](entry-and-work.md)
 
-按任务找入口。平台是否支持你的居住地、账户类型或职业，要在注册与支付前核对；本页不按五星排序，也不把旧费率写成当前承诺。
+已有候选城市时，从[住房与工位](#stay-and-work)找实际日期的报价，再做[比较与询问](choose-a-base.md)、走[第一周清单](first-week-checklist.md)。还没选城市，先回[首页筛候选](destination-notes.md#destinations)。
+
+平台是否支持你的居住地、账户类型或职业，要在注册与支付前核对；本页不按五星排序，也不把旧费率写成当前承诺。
+
+[找工作](#remote-work) · [住房与工位](#stay-and-work) · [收款](#money-and-cover) · [保险与医保](#保险与国内医保) · [装备](#一套能维持工作的小装备) · [真实经验](#继续看真实经验)
 
 <a id="remote-work"></a>
 
@@ -23,7 +27,9 @@
 
 [Booking](https://www.booking.com/)、[Airbnb](https://www.airbnb.com/)可比较实际日期的短住与月住报价。另查房东近期评价、平台最终账单和取消条款；不要只比较搜索列表里的最低起价。
 
-先看[目的地页](destination-notes.md#destinations)里的具体办公入口，再选择通勤方便的住宿。社区规模与活动随季节变，运营方名单不能证明每天有人一起工作。
+海外候选先看[目的地页](destination-notes.md#destinations)里的具体办公入口；国内候选可从[国内社区名录](china-communities.md)找待核线索，再选择通勤方便的住宿。社区规模与活动随季节变，运营方名单不能证明每天有人一起工作。
+
+找到候选后，用[房东与工位询问模板](choose-a-base.md#发给房东与工位的询问模板)核报价、房间网络和通话权限，再按[第一周清单](first-week-checklist.md)试住；回复中的承诺与自己的实测结果分别记录。
 
 [The Wired Nomad](https://thewirednomad.com/)用于发现带网络资料的住房；[r/digitalnomad](https://www.reddit.com/r/digitalnomad/)用于搜同季节、同工作类型的体验。两者都需要进一步核对，不能代替房间通话测试。
 
@@ -55,6 +61,8 @@
 
 ## 继续看真实经验
 
-作者[旅居专栏](https://cubxxw.com/zh/travel/)与[Polarsteps](https://www.polarsteps.com/cubxxw)保留一手记录。社区原帖及反例见[本轮来源账本](../research/sources-2026-10.md)。
+作者[旅居专栏](https://cubxxw.com/zh/travel/)与[Polarsteps](https://www.polarsteps.com/cubxxw)保留一手记录。社区原帖及反例见[2026 年 10 月 7 日来源账本](../research/sources-2026-10.md)。
 
 旧指南的阅读线索保留《Remote: Office Not Required》与《Company of One》，可用于思考工作安排；书中观点不代替目的地近期条件。
+
+发现链接、价格或适用条件有变化，可按[贡献说明](../CONTRIBUTING.md)提交纠错；来源的实际读取范围见[核读账本](../research/2026-10-14-source-ledger.md)。

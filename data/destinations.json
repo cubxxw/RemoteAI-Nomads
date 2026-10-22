@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_on": "2026-10-14",
+  "schema_version": 2,
+  "updated_on": "2026-10-22",
   "recommendations_are": "带条件的编辑建议，不是现场验证或全球排名",
   "destinations": [
     {
@@ -9,10 +9,10 @@
       "country": "泰国",
       "timezone": "Asia/Bangkok",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "10月下旬先试住，11–12月优先",
+      "seasonal_choice": "10月下旬先试住，11–12月优先；天气与洪水影响出发前复核",
       "areas_to_compare": "Nimman / Santitham / Old City",
       "good_fit": "咖啡馆与持续停留的工作同伴",
-      "caveats": "洪水影响、航线噪音、年初空气污染、旺季工位",
+      "caveats": "10月14日核读的洪水材料仅作历史风险提示，当前影响需出发前复核；航线噪音、年初空气污染、旺季工位",
       "source_ids": [
         "R-1w597j6",
         "T-DVFeEs0Ex1v",
@@ -26,7 +26,9 @@
           "amount": 420,
           "currency": "USD",
           "period": "30晚折算",
+          "source_id": "R-1w597j6",
           "source_date": "2026-09-02",
+          "source_date_kind": "published_on",
           "scope": "老城酒店房间，原价14/晚；非现价",
           "not_a_city_average": true
         }
@@ -53,7 +55,9 @@
           "amount": 700,
           "currency": "USD",
           "period": "月",
+          "source_id": "X-2101566345322078215",
           "source_date": "2026-09-20",
+          "source_date_kind": "published_on",
           "scope": "作者公寓支出，租期未知",
           "not_a_city_average": true
         }
@@ -81,7 +85,9 @@
           "amount": 6900,
           "currency": "THB",
           "period": "月",
+          "source_id": "O06",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "仅办公会员，不含房",
           "not_a_city_average": true
         }
@@ -109,7 +115,9 @@
           "amount": 1900000,
           "currency": "VND",
           "period": "月起",
+          "source_id": "O15",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Toong Phan Boi Chau工位，不含房",
           "not_a_city_average": true
         }
@@ -121,10 +129,10 @@
       "country": "越南",
       "timezone": "Asia/Ho_Chi_Minh",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "10月降级，后续优先比较春季",
+      "seasonal_choice": "按10月14日材料，10月降级；后续优先比较春季，出发前复核天气",
       "areas_to_compare": "Mỹ An / An Thượng / 河边住宅",
       "good_fit": "海滩与开发者咖啡馆",
-      "caveats": "本月积水/滑坡、施工、霉味、短租质量",
+      "caveats": "10月14日核读的积水/滑坡报道仅作历史风险提示，当前影响需出发前复核；施工、霉味、短租质量",
       "source_ids": [
         "R-1kic8aj",
         "X-2017205056857395496",
@@ -138,7 +146,9 @@
           "amount": 800,
           "currency": "USD",
           "period": "月",
+          "source_id": "R-1kic8aj",
           "source_date": "2025-05-09",
+          "source_date_kind": "published_on",
           "scope": "My An37层基础一居室旧短租",
           "not_a_city_average": true
         }
@@ -182,7 +192,9 @@
           "amount": 500,
           "currency": "USD",
           "period": "月下沿",
+          "source_id": "X-2102054171465981996",
           "source_date": "2026-09-21",
+          "source_date_kind": "published_on",
           "scope": "作者一居室范围500–700；租期未知",
           "not_a_city_average": true
         }
@@ -209,7 +221,9 @@
           "amount": 320,
           "currency": "MYR",
           "period": "月",
+          "source_id": "O07",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Settlements共享工位，不含房",
           "not_a_city_average": true
         }
@@ -235,7 +249,9 @@
           "amount": 350,
           "currency": "MYR",
           "period": "月",
+          "source_id": "O26",
           "source_date": "2026-10-07",
+          "source_date_kind": "checked_on",
           "scope": "LinQ-uP工位；旧一轮核价",
           "not_a_city_average": true
         }
@@ -279,7 +295,9 @@
           "amount": 300,
           "currency": "USD",
           "period": "月",
+          "source_id": "X-2101566345322078215",
           "source_date": "2026-09-20",
+          "source_date_kind": "published_on",
           "scope": "一居bungalow含厨房，熟客优惠；不是公开房价",
           "not_a_city_average": true
         }
@@ -341,7 +359,9 @@
           "amount": 7500,
           "currency": "PHP",
           "period": "月",
+          "source_id": "O14",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Coco Space工位，不含住宿",
           "not_a_city_average": true
         }
@@ -369,7 +389,9 @@
           "amount": 150,
           "currency": "EUR",
           "period": "月",
+          "source_id": "O08",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Soppa flex工位，不含房；175固定24h",
           "not_a_city_average": true
         }
@@ -397,7 +419,9 @@
           "amount": 0,
           "currency": "EUR",
           "period": "白天工位",
+          "source_id": "O10",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "官方Ponta do Sol09–18；不含房",
           "not_a_city_average": true
         }
@@ -426,7 +450,9 @@
           "amount": 29.5,
           "currency": "EUR",
           "period": "日，住满月条件",
+          "source_id": "O09",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "SunDesk Budget起价，含房/早餐/办公，不含午晚餐",
           "not_a_city_average": true
         }
@@ -452,7 +478,9 @@
           "amount": 96,
           "currency": "EUR",
           "period": "月",
+          "source_id": "O11",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Cat and Mouse开放工位含VAT；固定162",
           "not_a_city_average": true
         }
@@ -531,7 +559,9 @@
           "amount": 150,
           "currency": "EUR",
           "period": "月",
+          "source_id": "O27",
           "source_date": "2026-10-07",
+          "source_date_kind": "checked_on",
           "scope": "Coolab共享工位；固定180公布24h",
           "not_a_city_average": true
         }
@@ -560,7 +590,9 @@
           "amount": 400,
           "currency": "BRL",
           "period": "月",
+          "source_id": "O12",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Impact Hub flex工位；unlimited725，不含房",
           "not_a_city_average": true
         }
@@ -586,7 +618,9 @@
           "amount": 2500,
           "currency": "MXN",
           "period": "月",
+          "source_id": "O13",
           "source_date": "2026-10-14",
+          "source_date_kind": "checked_on",
           "scope": "Gubixi工位，不含房",
           "not_a_city_average": true
         }
@@ -648,7 +682,9 @@
           "amount": 1050,
           "currency": "USD",
           "period": "月",
+          "source_id": "R-1peh2dn",
           "source_date": "2025-12-05",
+          "source_date_kind": "published_on",
           "scope": "Palermo一居室Airbnb旧个案",
           "not_a_city_average": true
         }

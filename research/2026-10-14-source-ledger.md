@@ -1,6 +1,8 @@
 # 2026-10-14 社交来源与核读账本
 
-[返回首页](../README.md) · [结构化来源](../data/sources-2026-10-14.json) · [城市数据](../data/destinations.json)
+> 2026-10-23 整合说明：本账本保留原采集与编辑记录；其中“首页／README”的城市卡现位于[目的地笔记](../guides/destination-notes.md)。项目首页已承接网站入口与生成的季节推荐，本次路径迁移不刷新来源日期。
+
+[旅居指南](../guides/destination-notes.md) · [项目首页](../README.md) · [结构化来源](../data/sources-2026-10-14.json) · [城市数据](../data/destinations.json)
 
 本轮取回 47 篇 Reddit 详情（46 篇含正文，Sarajevo 一篇主帖为空），38 条 X 发布文字，40 条 Threads 记录（含一条登录态补读），12 条 Instagram Reel 发布文案。**数量是采集覆盖，不能理解为同样多的真实体验或全部评论精读。**
 
@@ -169,7 +171,7 @@ Reddit 核读与问题有关的正文；清迈长报告选读住房、工位、�
 |---|---|---|---|
 | [I-DdUA8SKiVXU](https://www.instagram.com/p/DdUA8SKiVXU/) | 2026-09-18T14:46:27+00:00 | API完整发布文案，未转录Reel口播、未完整观看视频，未读评论 | GBP685是工资情景预算，未证明亲历、租期或现实住房库存，不作月成本基准。 |
 | [I-DHnguYEqwQc](https://www.instagram.com/p/DHnguYEqwQc/) | 2025-03-25T09:31:13+00:00 | API完整发布文案，未转录Reel口播、未完整观看视频，未读评论 | 宣传或一般攻略线索，未用为实际入住、当前价格或合法工作证明。 |
-| [I-CnXDrXOKvdA](https://www.instagram.com/p/CnXDrXOKvdA/) | 2023-01-13T15:25:59+00:00 | API发布文案＋登录态可见评论，币种追问及展开回复；未转录口播/视频内账单 | 2023年12月长住体验，作者说住房多付；旧年内容不作2026价格，币种追问未充分解决。 |
+| [I-CnXDrXOKvdA](https://www.instagram.com/p/CnXDrXOKvdA/) | 2023-01-13T15:25:59+00:00 | API发布文案＋登录态可见评论，币种追问及展开回复；未转录口播/视频内账单 | 旧年长住体验，月份待核；作者说住房多付；旧年内容不作2026价格，币种追问未充分解决。 |
 | [I-DUxWXCJjuvu](https://www.instagram.com/p/DUxWXCJjuvu/) | 2026-02-15T08:01:12+00:00 | API完整发布文案，未转录Reel口播、未完整观看视频，未读评论 | THB3000廉租宣传未说明租期/房型使用条件，不作当前可预订月租。 |
 | [I-DblY_zrSKNV](https://www.instagram.com/p/DblY_zrSKNV/) | 2026-08-03T16:14:10+00:00 | API完整发布文案，未转录Reel口播、未完整观看视频，未读评论 | 税务/许可推广未核法，混入居留与签证税率推断，排除。 |
 | [I-DFbA_CGyFBI](https://www.instagram.com/p/DFbA_CGyFBI/) | 2025-01-29T20:02:41+00:00 | API完整发布文案，未转录Reel口播、未完整观看视频，未读评论 | 宣传或一般攻略线索，未用为实际入住、当前价格或合法工作证明。 |

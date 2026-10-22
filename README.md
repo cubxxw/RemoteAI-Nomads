@@ -66,6 +66,8 @@
 
 数据为参考值，出发前请核实。[数据与方法](web/docs/data-and-methods.md)。
 
+[目的地笔记与工作条件](guides/destination-notes.md) · [两城比较与询问模板](guides/choose-a-base.md) · [第一周试住清单](guides/first-week-checklist.md)
+
 ## 想改进它，或自己运行
 
 发现价格失效、城市信息有误，欢迎[提一个问题](https://github.com/cubxxw/RemoteAI-Nomads/issues/new)；请带上日期和公开来源。[如何补充经验](CONTRIBUTING.md)。
