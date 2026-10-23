@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-23",
+  "tool": "built-in OpenAI imagegen",
+  "kind": "fictional photorealistic scene",
+  "label": "AI 场景创作",
+  "notice": "These are AI-generated fictional scenes. They are not photographs of any real city, cafe or place, and must never be presented as evidence of a real location. Every usage carries the visible label 「AI 场景创作」 and fictional-scene alt text.",
+  "assets": [
+    {
+      "id": "work-by-the-lake",
+      "role": "homepage hero scene",
+      "scene": "A fictional mountain-lake terrace in morning light, with an open laptop, mug and notebook on a wooden desk at the right; no specific real location.",
+      "alt": "AI 生成的虚构场景：山湖露台右侧的木桌、电脑与远山，不是任何真实地点",
+      "sources": {
+        "large": {
+          "path": "/images/editorial/work-by-the-lake.webp",
+          "width": 1440,
+          "height": 960
+        },
+        "small": {
+          "path": "/images/editorial/work-by-the-lake-small.webp",
+          "width": 720,
+          "height": 480
+        }
+      }
+    },
+    {
+      "id": "coastal-workday",
+      "role": "homepage topic scene: seasonal departure topics",
+      "scene": "A fictional airy coastal cafe with a large open timber-framed window, a closed laptop and glass on a communal table, and the sea outside; no specific real location.",
+      "alt": "AI 生成的虚构场景：海边咖啡馆的敞窗、桌面与海面，不是任何真实地点",
+      "sources": {
+        "large": {
+          "path": "/images/editorial/coastal-workday.webp",
+          "width": 1440,
+          "height": 960
+        },
+        "small": {
+          "path": "/images/editorial/coastal-workday-small.webp",
+          "width": 720,
+          "height": 480
+        }
+      }
+    },
+    {
+      "id": "neighborhood-cafe",
+      "role": "homepage topic scene: work-time and budget topics; guide-index category cover for articles without a named city",
+      "scene": "A fictional leafy walkable neighborhood seen through a cafe opening, with an espresso cup and notebook in the foreground; no laptop and no specific real location.",
+      "alt": "AI 生成的虚构场景：街区咖啡馆窗边的纸质笔记本与咖啡，不是任何真实地点",
+      "sources": {
+        "large": {
+          "path": "/images/editorial/neighborhood-cafe.webp",
+          "width": 1440,
+          "height": 960
+        },
+        "small": {
+          "path": "/images/editorial/neighborhood-cafe-small.webp",
+          "width": 720,
+          "height": 480
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import {sitePath,appPath} from '../public/modules/site-path.js';
+import {sitePath,appPath,mountSrcset} from '../public/modules/site-path.js';
 
 export function siteLocation(env) {
   const url = new URL(env.SITE_ORIGIN || 'http://127.0.0.1:8787');
@@ -16,6 +16,10 @@ export function relocatePublishedHTML(html, source, env) {
   const belongs=(value,site)=>value===site||['/','?','#'].some(separator=>value.startsWith(site+separator));
   html=html.replace(/https?:\/\/[^"'<>\s]+/g,value=>belongs(value,newSite)?value:belongs(value,oldSite)?newSite+value.slice(oldSite.length):value);
   html=html.replace(/\b(href|src|action|poster)=(['"])(\/[^'"]*)\2/g,(match,key,quote,value)=>`${key}=${quote}${sitePath(appPath(value,oldBase),base)}${quote}`);
+  html=html.replace(/\b(srcset|imagesrcset)=(['"])([^'"]*)\2/g,(match,key,quote,value)=>{
+    const normalized=value.split(',').map(candidate=>candidate.trim().replace(/^(\/\S*)/,url=>appPath(url,oldBase))).join(', ');
+    return `${key}=${quote}${mountSrcset(normalized,base)}${quote}`;
+  });
   return html.replace(/<html\b([^>]*)>/i,(match,attributes)=>`<html${/data-nomads-base=/.test(attributes)?attributes.replace(/data-nomads-base="[^"]*"/,`data-nomads-base="${base}"`):attributes+` data-nomads-base="${base}"`}>`);
 }
 

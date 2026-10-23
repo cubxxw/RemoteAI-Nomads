@@ -2,13 +2,13 @@
 :root {
   --container: 1200px;
   --gutter: clamp(16px, 4vw, 48px);
-  --paper: #fafafa;
+  --paper: #fbfbf8;
   --surface: #fff;
-  --ink-1: #202323;
-  --ink-2: #626767;
-  --ink-3: #696f6f;
-  --green: #237a57;
-  --green-soft: #eef3f0;
+  --ink-1: #21282a;
+  --ink-2: #5b6462;
+  --ink-3: #6d7674;
+  --green: #174c38;
+  --green-soft: #edf2ec;
   --ink: var(--ink-1);
   --muted: var(--ink-2);
   --soft: var(--green-soft);
