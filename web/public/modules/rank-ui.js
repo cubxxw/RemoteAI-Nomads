@@ -512,9 +512,12 @@ document.addEventListener('keydown', event => {
   if ((event.key.toLowerCase() === 'j' || event.key.toLowerCase() === 'k') && ranked.length) {
     event.preventDefault();const current = ranked.findIndex(city => city.slug === active), direction = event.key.toLowerCase() === 'j' ? 1 : -1, next = current < 0 ? (direction === 1 ? 0 : ranked.length-1) : Math.max(0,Math.min(ranked.length-1,current+direction));locate(ranked[next].slug,true);
   }
-  if (event.key === 'Escape') {if (!filterPopover.hidden) {closeFilters(true);return;}if (mapPanel.open) {setMapOpen(false);return;}if (active) pool.get(active)?.classList.remove('is-active');active = null;map.clear();document.querySelectorAll('details[open]').forEach(details => details.open = false);}
+  if (event.key === 'Escape') {if (!filterPopover.hidden) {closeFilters(true);return;}if (mapPanel.open) {setMapOpen(false, true, true);return;}if (active) pool.get(active)?.classList.remove('is-active');active = null;map.clear();document.querySelectorAll('details[open]').forEach(details => details.open = false);}
 });
-function setMapOpen(open, restore = true) {
+function setMapOpen(open, restore = true, remember = false) {
+  if (remember) {
+    try { preferenceStorage.setItem('nomads-ranking-map-open-v1', String(open)); } catch {}
+  }
   restoreMapFocus = restore;
   if (open) {
     const focused = document.activeElement;
@@ -536,8 +539,11 @@ function locateFromMap(slug, focus) {
   if (mapPanel.open && mapIsModal) setMapOpen(false,false);
   locate(slug,focus);
 }
-mapToggle.addEventListener('click', () => { const open = !mapPanel.open; rememberMap(open); setMapOpen(open); });
-mapPanel.querySelector('[data-close-map]').addEventListener('click', () => { rememberMap(false); setMapOpen(false); });
+mapToggle.addEventListener('click', () => setMapOpen(!mapPanel.open, true, true));
+mapPanel.querySelector('[data-close-map]').addEventListener('click', () => setMapOpen(false, true, true));
+mapPanel.addEventListener('cancel', () => {
+  try { preferenceStorage.setItem('nomads-ranking-map-open-v1', 'false'); } catch {}
+});
 mapPanel.addEventListener('close', () => {
   if (mapPanel.open) return;
   root.dataset.mapOpen = 'false';mapToggle.setAttribute('aria-expanded','false');mapToggle.setAttribute('aria-label','显示地图');mapToggle.title = '显示地图';
@@ -546,17 +552,13 @@ mapPanel.addEventListener('close', () => {
 mapPanel.addEventListener('click', event => {
   if (event.target !== mapPanel || !mapIsModal) return;
   const r = mapPanel.getBoundingClientRect();
-  if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) setMapOpen(false);
+  if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) setMapOpen(false, true, true);
 });
 window.addEventListener('resize', () => {
   const mobile = matchMedia('(max-width:700px)').matches;
   if (mapPanel.open && mobile !== mapIsModal) {mapPanel.close();mapIsModal = mobile;setMapOpen(true);}
 });
 document.querySelector('#map-zoom-in').addEventListener('click', () => map.zoom(.7));
-// Explicit map actions persist a real preference; a first visit never opens
-// the map by itself. Boot below re-reads that preference for desktop setup.
-const MAP_PREFERENCE_KEY = 'nomads-map-visible-v1';
-function rememberMap(open) { try { open ? preferenceStorage.setItem(MAP_PREFERENCE_KEY, '1') : preferenceStorage.removeItem(MAP_PREFERENCE_KEY); } catch {} }
 document.querySelector('#map-zoom-out').addEventListener('click', () => map.zoom(1/.7));
 document.querySelector('#map-reset').addEventListener('click', () => map.reset());
 const shareButton = document.querySelector('#share-ranking');
@@ -586,8 +588,9 @@ shareButton.disabled=false;shareButton.removeAttribute('aria-busy');shareButton.
 motion.addEventListener('change', () => {if (motion.matches) {document.querySelectorAll('.ranking-row,.rank-digit,.old-digit').forEach(el => el.getAnimations().forEach(animation => animation.cancel()));document.querySelectorAll('.old-digit').forEach(el => el.remove());}});
 commit(true);
 render(true);
-let mapPreference = false; try { mapPreference = preferenceStorage.getItem('nomads-map-visible-v1') === '1'; } catch {}
-if (!matchMedia('(max-width:700px)').matches) setMapOpen(mapPreference, false);
+try {
+  if (!matchMedia('(max-width:700px)').matches && preferenceStorage.getItem('nomads-ranking-map-open-v1') === 'true') setMapOpen(true, false);
+} catch {}
 document.querySelectorAll('[data-ranking-controls]').forEach(controls=>{controls.inert=false;controls.removeAttribute('aria-busy');});
 document.querySelectorAll('[data-ranking-wait-control]').forEach(control=>{control.disabled=false;});
 const readiness=document.querySelector('[data-ranking-readiness]');if(readiness)readiness.hidden=true;
