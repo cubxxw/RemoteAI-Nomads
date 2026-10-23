@@ -103,8 +103,7 @@ function render(initial = false,editingBudget=false) {
   for (const el of current)
     for (const animation of el.getAnimations({ subtree: true }))
       animation.cancel();
-  const visible = ranked.slice(0, state.limit),
-    nextSet = new Set(visible.map((c) => c.slug));
+  const visible = ranked.slice(0, state.limit);
   const frag = document.createDocumentFragment();
   let unratedInserted=false;
   for (const c of visible) {
@@ -144,31 +143,8 @@ function render(initial = false,editingBudget=false) {
     el.classList.toggle("is-active", c.slug === active);
     frag.append(el);
   }
-  if (!initial && !motion.matches)
-    for (const el of current) {
-      const r = before.get(el.dataset.city);
-      if (
-        nextSet.has(el.dataset.city) ||
-        !r ||
-        r.bottom < 0 ||
-        r.top > innerHeight
-      )
-        continue;
-      const ghost = el.cloneNode(true);
-      ghost.classList.add("row-ghost");
-      ghost.setAttribute("aria-hidden", "true");
-      ghost.querySelectorAll("a,button").forEach((e) => (e.tabIndex = -1));
-      Object.assign(ghost.style, {
-        top: r.top + "px",
-        left: r.left + "px",
-        width: r.width + "px",
-        height: r.height + "px",
-      });
-      document.body.append(ghost);
-      animate(ghost, [{ opacity: 0.7 }, { opacity: 0 }], { duration: 150 })
-        ?.finished.then(() => ghost.remove())
-        .catch(() => ghost.remove());
-    }
+  // Removed cards leave immediately. Cloning them under body would lose the
+  // #ranking-list card styles; retained cards still animate on both axes below.
   list.replaceChildren(frag);
   if (restoreFocus && focused.isConnected)
     focused.focus({ preventScroll: true });
@@ -178,11 +154,12 @@ function render(initial = false,editingBudget=false) {
         now = el.getBoundingClientRect();
       if (now.bottom < 0 || now.top > innerHeight + 100) continue;
       if (old) {
-        const delta = old.top - now.top;
-        if (Math.abs(delta) > 1)
+        // Cards reflow on both axes in the image grid; FLIP must carry x and y.
+        const dy = old.top - now.top, dx = old.left - now.left;
+        if (Math.abs(dy) > 1 || Math.abs(dx) > 1)
           animate(el, [
-            { transform: `translateY(${delta}px)` },
-            { transform: "translateY(0)" },
+            { transform: `translate(${dx}px, ${dy}px)` },
+            { transform: "translate(0, 0)" },
           ]);
       } else animate(el, [{ opacity: 0 }, { opacity: 1 }], { duration: 180 });
     }
@@ -293,6 +270,9 @@ function renderWeightPreview() {
   if (!leading.length) { const item=document.createElement('li');item.textContent='当前条件下暂无可排序的城市';container.append(item); }
 }
 function syncControls(editingBudget=false) {
+  // A carried condition compresses the editorial hero so results move up.
+  const hero = root.querySelector('[data-hero]');
+  if (hero) hero.dataset.compact = String(!!stateParams({...state,limit:40}).toString());
   const seasonNote = document.querySelector('#rank-season-note');if (seasonNote) seasonNote.hidden = state.season !== SEASONAL_VIEW.id;
   for (const filter of quickFilters(state)) { const button=root.querySelector(`[data-quick-filter="${filter.key}"]`);button.classList.toggle('selected',filter.selected);button.setAttribute('aria-pressed',String(filter.selected));if(filter.detail)button.querySelector('span').textContent=filter.detail; }
   renderWeightPreview();
@@ -605,7 +585,7 @@ shareButton.addEventListener('click', () => {
   }catch{}
 });
 shareButton.disabled=false;shareButton.removeAttribute('aria-busy');shareButton.setAttribute('aria-label','分享当前视角');shareButton.title='分享当前视角';
-motion.addEventListener('change', () => {if (motion.matches) {document.querySelectorAll('.ranking-row,.rank-digit,.old-digit').forEach(el => el.getAnimations().forEach(animation => animation.cancel()));document.querySelectorAll('.old-digit,.row-ghost').forEach(el => el.remove());}});
+motion.addEventListener('change', () => {if (motion.matches) {document.querySelectorAll('.ranking-row,.rank-digit,.old-digit').forEach(el => el.getAnimations().forEach(animation => animation.cancel()));document.querySelectorAll('.old-digit').forEach(el => el.remove());}});
 commit(true);
 render(true);
 try {

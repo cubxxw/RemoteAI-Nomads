@@ -1,5 +1,6 @@
 import {icon} from './modules/icons.js';
 import './modules/wechat-ui.js';
+import {installPhotoFallback} from './modules/photo-fallback.js';
 import {TRIP_MONTH_KEY,withPlanMonth} from './modules/trip-state.js';
 import {sitePath,appPath} from './modules/site-path.js';
 
@@ -217,18 +218,7 @@ navigation?.addEventListener('click', event => {
   if (event.target.closest('a')) closeNavigation();
 });
 mobileNavigation.addEventListener('change', () => closeNavigation());
-document.addEventListener(
-  "error",
-  (e) => {
-    if (e.target?.tagName === "IMG") {
-      const placeholder = document.createElement("div");
-      placeholder.className = "photo-placeholder";
-      placeholder.textContent = "图片暂不可用";
-      e.target.replaceWith(placeholder);
-    }
-  },
-  true,
-);
+installPhotoFallback(document);
 document.addEventListener("nomads:rows-updated", update);
 document.addEventListener("nomads:notice", (e) => notify(e.detail));
 update();

@@ -1,0 +1,50 @@
+/* Runtime alignment for the standalone approved guides (design refresh 2026-10-23).
+   Injected at request time by city-guide-pages.js; approved article HTML and
+   publication fingerprints stay byte-identical. Keep this layer small and
+   additive so the reviewed guide.css continues to own the reading layout. */
+
+.guide-runtime-cover {
+  margin: 20px 0 28px;
+}
+.guide-runtime-cover img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #eef3ec;
+}
+.guide-runtime-cover figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #626767;
+}
+.guide-runtime-cover figcaption a {
+  color: #174c38;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .guide-runtime-cover img {
+    max-height: 240px;
+    border-radius: 8px;
+  }
+}
+
+@media print {
+  .guide-runtime-cover img {
+    max-height: 180px;
+  }
+}
+
+/* Same fallback contract as the shared shell, scoped to standalone guides. */
+.photo-placeholder { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:8px; min-height:180px; padding:24px; background:#edf2ec; color:#5b6462; border-radius:10px; text-align:center; }
+.photo-placeholder span { color:#21282a; font-size:18px; }
+.photo-placeholder small { font-size:13px; }

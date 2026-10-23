@@ -18,7 +18,7 @@ export function filters(url){
 export function link(url,label,cls=''){return `<a class="${cls}" href="${esc(url)}">${esc(label)}</a>`;}
 export function external(url,label){return /^https?:\/\//.test(url||'')?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:esc(label);}
 export const monthsText=rows=>{const m=rows.filter(x=>x.suitability==='recommended').map(x=>x.month);return m.length?m.join('、')+' 月':'月份待核验';};
-export function photo(c,cls='',loading='lazy'){return c.photo_url?`<img class="${cls}" src="${esc(c.photo_url)}" alt="${esc(c.name_zh)}城市风景" loading="${loading}" decoding="async" width="900" height="650">`:`<div class="photo-placeholder ${cls}"><span>${esc(c.name_en)}</span><small>城市资料</small></div>`;}
+export function photo(c,cls='',loading='lazy'){return c.photo_url?`<img class="${cls}" src="${esc(c.photo_url)}" alt="${esc(c.name_zh)}城市风景" loading="${loading}" decoding="async" width="960" height="641" data-photo-label="${esc(c.name_zh)}">`:`<div class="photo-placeholder ${cls}"><span>${esc(c.name_en)}</span><small>城市资料</small></div>`;}
 export function card(c){return `<article class="city-card">
  <div class="card-photo"><a href="/cities/${esc(c.slug)}/" aria-label="了解${esc(c.name_zh)}">${photo(c)}</a><button class="save" data-save="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="收藏${esc(c.name_zh)}" aria-pressed="false">${icon('heart')}</button></div>
  <div class="card-place"><div><h3><a href="/cities/${esc(c.slug)}/">${esc(c.name_zh)}</a></h3><span>${esc(c.name_en)} · ${esc(c.country_name)}</span></div><span class="region-label">${esc(c.region)}</span></div>
@@ -46,5 +46,5 @@ export function shell({title,description,body,path='/',env={},indexable=false,js
   <div class="wechat-account"><label for="wechat-id">微信号<input id="wechat-id" type="text" value="cubxxwAI" readonly spellcheck="false" autocomplete="off" aria-describedby="wechat-feedback"></label><button type="button" id="wechat-copy" aria-label="复制微信号">${icon('copy')}<span>复制</span></button></div>
   <p id="wechat-feedback" class="wechat-feedback" role="status" aria-live="polite" aria-atomic="true">复制后，在微信中搜索添加。</p>
  </dialog>
- ${agentMarkup()}<aside id="compare-tray" class="compare-tray" aria-label="已选城市" hidden><div class="compare-tray-status"><strong>城市对比</strong><span id="compare-count" aria-live="polite"></span></div><div id="compare-selected"></div><a id="compare-go" class="button" href="/compare/">查看对比</a><button id="compare-clear" class="text-button" aria-label="清空对比城市">清空</button></aside><div id="toast" class="toast" role="status" aria-live="polite"></div></body></html>`,base);
+ ${agentMarkup()}<aside id="compare-tray" class="compare-tray" aria-label="已选城市" hidden><div class="compare-tray-status"><strong>城市对比</strong><span id="compare-count" aria-live="polite"></span></div><div id="compare-selected"></div><a id="compare-go" class="button" href="/compare/">查看对比</a><button id="compare-clear" class="text-button" aria-label="清空对比城市">清空</button></aside><div id="toast" class="toast" role="status" aria-live="polite"></div><link rel="stylesheet" href="/editorial.css"></body></html>`,base);
 }
