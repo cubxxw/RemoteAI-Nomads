@@ -137,7 +137,7 @@ export function renderCityPage(c, env = {}, options = {}) {
   return {
     title: travelAdvisory(c) ? `${c.name_zh}城市资料与出行提醒` : `${c.name_zh}数字游民指南：预算、月份与远程工作`,
     description: searchDescription(c, today),
-    body, path: `/cities/${c.slug}/`, indexable: c.publication_status === 'published',
+    body, share:{kind:'city',city:{slug:c.slug,name:c.name_zh,nameEn:c.name_en,country:c.country_name,countryCode:c.country_id,budget:c.budget_amount,budgetCurrency:c.budget_currency||'USD',budgetCheckedAt:c.budget_checked_at,checkedAt:c.checked_at,photo:c.photo_url,photoCredit:c.photo_credit,photoSource:c.photo_source,why:travelAdvisory(c)?.reason||cityText(c.summary),visa:c.entry?{label:c.entry.label,detail:c.entry.detail}:null,months:Array.from({length:12},(_,i)=>({month:i+1,meanC:c.climate?.find(row=>Number(row.month)===i+1)?.mean_c??null}))}}, path: `/cities/${c.slug}/`, indexable: c.publication_status === 'published',
     jsonld: { '@context': 'https://schema.org', '@type': 'Place', name: c.name_zh, alternateName: c.name_en, url: `${(env.SITE_ORIGIN || 'http://127.0.0.1:8787').replace(/\/$/, '')}/cities/${c.slug}/` },
   };
 }

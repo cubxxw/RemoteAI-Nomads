@@ -1,0 +1,14 @@
+import {shareEvidence} from './share-evidence.mjs';
+import {readFile,mkdir,writeFile,stat} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';import {fileURLToPath} from 'node:url';
+import {shareFixtures} from './share-fixtures.mjs';import {gradeShareRelease} from './share-grade.mjs';import {SHARE_FORMATS,shareText} from '../public/modules/share-model.js';import {prepareShareLayout} from '../public/modules/share-render.js';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..'),out=resolve(root,'.data/share-eval');await mkdir(out,{recursive:true});
+const catalog=JSON.parse(await readFile(resolve(root,'public/published-pages/rankings.json'),'utf8')),fixtures=shareFixtures(catalog);
+// This is a conservative synthetic metric for overflow regressions. Actual font/pixel proof belongs to the browser run.
+const ctx={font:'',measureText(value){const size=Number(this.font.match(/(\d+)px/)?.[1]||36);return {width:[...value].reduce((sum,char)=>sum+(char.charCodeAt(0)>255?size:size*.62),0)};}};
+const results=[];for(const fixture of fixtures)for(const format of SHARE_FORMATS){try{const {layout,textOnly}=prepareShareLayout(ctx,fixture.card,format,{photo:fixture.card.photos.length>0}),overflow=layout.pages.some(page=>page.blocks.some(block=>block.y<0||block.y+block.height>format.height));if(overflow)throw Error('text crosses output bounds');if(/private-test-quote|personalQuote=|meeting=/.test(shareText(fixture.card)))throw Error('private sentinel leaked');results.push({case:fixture.id,format:format.id,passed:true,pages:layout.pages.length,textOnly});}catch(error){results.push({case:fixture.id,format:format.id,passed:false,error:error.message});}}
+let review={};const reviewArg=process.argv.find(value=>value.startsWith('--review='));if(reviewArg){const path=resolve(reviewArg.slice(9));review=JSON.parse(await readFile(path,'utf8'));for(const row of Object.values(review.dimensions||{}))for(const evidence of row.evidence||[])await stat(resolve(dirname(path),evidence.artifact));}
+const grade=gradeShareRelease(review),report={schemaVersion:1,...await shareEvidence(root),createdAt:new Date().toISOString(),evidenceKind:'automated-content-and-synthetic-layout',fixtures:fixtures.length,checks:results.length,passed:results.filter(row=>row.passed).length,failed:results.filter(row=>!row.passed),results,release:grade,limitations:['Synthetic measurement is not actual image, browser or taste proof.','Real target-user and platform evidence must be supplied separately.']};
+await writeFile(resolve(out,'results.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify({fixtures:report.fixtures,checks:report.checks,passed:report.passed,failed:report.failed,release:grade,report:resolve(out,'results.json')},null,2));
+if(report.failed.length||process.argv.includes('--release')&&!grade.passed)process.exitCode=1;

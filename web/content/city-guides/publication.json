@@ -60,7 +60,7 @@
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "ed0223e20def3326d6e3bd321c74bef9ef8a1605e476ee37056b76c02d43a5a7",
+      "sha256": "d74759ca8ea07d8fbfacc57ae16aafb4c7288138052ccd1539c656355de94fe8",
       "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
@@ -88,7 +88,7 @@
     {
       "slug": "hangzhou-monthly-budget",
       "sourceFile": "hangzhou-monthly-budget.html",
-      "sha256": "238a56be4b889b27d2f6d88b1b4557c788a594dbf2eac2bbbaf602df17b21900",
+      "sha256": "b9fe02f8f2fd6d21135a3b4cecac5cd4a0996c03e167a8179e8281cd3d1705ef",
       "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
@@ -506,14 +506,14 @@
       "slug": "da-nang-monthly-budget",
       "sourceFile": "da-nang-monthly-budget.html",
       "approved": true,
-      "sha256": "b898dd4091c60a33be5dc2b23573c5ea33e41c5dc62fd16225f5985885a9a735",
+      "sha256": "def5088c50ed98e54c6473bb45f7601b4291c5cecc41eacd01e77025564ca1f2",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "xiamen-monthly-budget",
       "sourceFile": "xiamen-monthly-budget.html",
       "approved": true,
-      "sha256": "7bdff6308552c02f782638029d1130a9c6bece867d7765419aa1e578317ace44",
+      "sha256": "ec0609b6d426097b532412737589a67d0aeb0cadc34010a974f15b37791623aa",
       "source": "research/2026-10-26-five-articles.md"
     },
     {

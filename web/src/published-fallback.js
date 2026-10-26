@@ -10,7 +10,7 @@ const security={
   'X-Content-Type-Options':'nosniff',
   'Referrer-Policy':'strict-origin-when-cross-origin',
   'Strict-Transport-Security':'max-age=15552000',
-  'Content-Security-Policy':"default-src 'self'; img-src 'self' https://images.unsplash.com https://*.wikimedia.org; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+  'Content-Security-Policy':"default-src 'self'; img-src 'self' blob: https://images.unsplash.com https://*.wikimedia.org; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
 };
 
 // This is a pre-published public read model, never an alternate model service.
@@ -57,6 +57,8 @@ export async function publishedFallback(request,env){
     let body=asset.body;
     if((headers.get('Content-Type')||'').includes('text/html')){
       body=relocatePublishedHTML(await asset.text(),manifest.origin||url.origin,{...env,SITE_ORIGIN:env.SITE_ORIGIN||url.origin});
+      if(!/property=["']og:image["']/.test(body)){const image=publicURL('/images/share-default.png',env);body=body.replace(/<\/head>/i,()=>`<meta property="og:image" content="${image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Roamorrow Nomads 城市与出发资料"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${image}"></head>`);}
+
       if(url.search){
         body=body.replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">');
         headers.set('X-Robots-Tag','noindex, follow');

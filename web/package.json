@@ -22,7 +22,10 @@
     "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev",
     "places:sync": "node scripts/collect-places.mjs",
     "guides:build": "node scripts/build-city-guides.mjs",
-    "guides:check": "node --test tests/article-catalog.test.js tests/city-guide-pages.test.js"
+    "guides:check": "node --test tests/article-catalog.test.js tests/city-guide-pages.test.js",
+    "evals:share": "node evals/run-share.mjs",
+    "evals:share:release": "node evals/run-share.mjs --release",
+    "evals:share:browser": "node evals/share-preview-server.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
