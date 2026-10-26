@@ -2,10 +2,10 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-26T13:03:05.798Z",
+  "generated_at": "2026-10-26T14:42:05.235Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
-  "db_sha256": "706b3cd02971665e997fd22c9ea1bf45891aab8fbd2ca5e94ae61913e58b8138",
+  "db_sha256": "6efd41441da5699f6ade6ec43019571ea446da854b862cb9248730d90ed97c98",
   "publication_sha256": "238f4374ae3612f10b490b5b57fb1b995824bb11fd1c0e50824efac391e742d4",
   "private_notes_exported": 0,
   "notion_page_identifiers_exported": 0,
@@ -14,11 +14,11 @@
   "counts": {
     "cities": 350,
     "countries": 258,
-    "guides": 65,
+    "guides": 68,
     "comparisons": 2
   },
-  "file_count": 686,
-  "bytes_excluding_manifest": 26529922,
+  "file_count": 689,
+  "bytes_excluding_manifest": 26630582,
   "paths": [
     "/",
     "/cities/",
@@ -703,6 +703,9 @@
     "/guides/cheap-monthly-rental-confirmation/",
     "/guides/calculator-living-scenarios/",
     "/guides/which-nomad-data-to-trust/",
+    "/guides/da-nang-monthly-budget/",
+    "/guides/xiamen-monthly-budget/",
+    "/guides/japan-digital-nomad-chinese-passport/",
     "/api/rankings",
     "/sitemap.xml"
   ]

@@ -31,13 +31,13 @@
       "slug": "kuala-lumpur-monthly-budget",
       "kind": "guide",
       "path": "/guides/kuala-lumpur-monthly-budget/",
-      "title": "吉隆坡住一个月，预算、租房和办公怎么安排",
-      "summary": "一个人住吉隆坡30晚，舒适预算5,314令吉，约8,697元，含日间工位月票。房租、水电和从公寓到车站的路线一起比较，押金另备。",
+      "title": "吉隆坡住一个月，公寓位置和工位时间怎么选",
+      "summary": "单人住吉隆坡30晚，舒适规划5,314令吉，含日间工位月票，押金另备。比较Jalan Ampang、KLCC和Cheras，弄清月租水电、工位时段与实际停留日期。",
       "citySlugs": [
         "kuala-lumpur"
       ],
       "status": "published",
-      "updatedAt": "2026-10-20",
+      "updatedAt": "2026-10-26",
       "assetPath": "/city-guides/kuala-lumpur-monthly-budget.html"
     },
     {
@@ -83,13 +83,13 @@
       "slug": "hangzhou-monthly-budget",
       "kind": "guide",
       "path": "/guides/hangzhou-monthly-budget/",
-      "title": "杭州住一个月，西湖边和新区的房租怎么排",
-      "summary": "一个人住杭州30晚，舒适预算9,300 CNY，约9,300元。西湖边和新区的房租怎么排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "title": "杭州住一个月，湖边生活和工位怎么安排",
+      "summary": "单人住杭州30晚，舒适规划9,300元，默认房间办公。比较景芳公寓、武林短租与湖滨、黄龙工位，弄清一个月租期、服务费和房间条件，押金另备。",
       "citySlugs": [
         "hangzhou"
       ],
       "status": "published",
-      "updatedAt": "2026-10-21",
+      "updatedAt": "2026-10-26",
       "assetPath": "/city-guides/hangzhou-monthly-budget.html"
     },
     {
@@ -1067,6 +1067,48 @@
       "assetPath": "/city-guides/which-nomad-data-to-trust.html",
       "seriesNumber": 50,
       "seriesCategory": "compare"
+    },
+    {
+      "slug": "da-nang-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/da-nang-monthly-budget/",
+      "title": "岘港住一个月，海边房间和雨天工位怎么安排",
+      "summary": "单人住岘港30晚，舒适规划2,740万越南盾，含工位月票，押金另备。比较美安与海洲住法，核对公寓水电、三家运营方价格和11月雨天安排。",
+      "citySlugs": [
+        "da-nang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/da-nang-monthly-budget.html"
+    },
+    {
+      "slug": "xiamen-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/xiamen-monthly-budget/",
+      "title": "厦门住一个月，岛内和集美的房间怎么选",
+      "summary": "单人住厦门30晚，舒适规划7,500元，默认房间办公，押金另备。对照湖里一房与集美Loft，比较面积、短租条件、工位日票和冬季住法。",
+      "citySlugs": [
+        "xiamen"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/xiamen-monthly-budget.html"
+    },
+    {
+      "slug": "japan-digital-nomad-chinese-passport",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/japan-digital-nomad-chinese-passport/",
+      "title": "中国大陆护照能申请日本数字游民签证吗？",
+      "summary": "截至2026年10月26日，持中国大陆普通护照的申请人不在日本数字游民主申请人适用名单中。先核对护照资格，再看年收入、医疗保险与六个月停留条件。",
+      "citySlugs": [
+        "tokyo",
+        "osaka",
+        "fukuoka"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/japan-digital-nomad-chinese-passport.html"
     }
   ]
 }
