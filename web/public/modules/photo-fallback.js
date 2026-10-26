@@ -10,16 +10,16 @@ export function photoFallbackLabel(img) {
 
 export function photoFallbackNode(img, doc) {
   const label = photoFallbackLabel(img);
-  const scene = img?.getAttribute?.('data-ai-scene') === '1';
+  const scene = img?.getAttribute?.('data-editorial-scene') === '1';
   const node = doc.createElement('div');
   node.setAttribute('class', 'photo-placeholder');
   node.setAttribute('role', 'img');
-  node.setAttribute('aria-label', label ? `${label}（${scene ? 'AI 场景图' : '城市图像'}待补）` : '图片暂不可用');
+  node.setAttribute('aria-label', label ? `${label}（${scene ? '场景图片' : '城市图像'}待补）` : '图片暂不可用');
   node.setAttribute('data-photo-fallback', '1');
   const name = doc.createElement('span');
   name.textContent = label || '图片';
   const note = doc.createElement('small');
-  note.textContent = scene ? 'AI 场景图待补' : label ? '城市图像待补' : '图片暂不可用';
+  note.textContent = scene ? '场景图片待补' : label ? '城市图像待补' : '图片暂不可用';
   node.append(name, note);
   return node;
 }

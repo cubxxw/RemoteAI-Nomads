@@ -598,7 +598,7 @@
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "58edd887fa4a5011912bb27ade4f55b6a1c862172252e516b527c5ae9b28c89f"
+      "sha256": "6b0f16d32a8d2095c614f0e8f282c38c8d5da095936d88c9f3871e8d6c098f18"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -778,7 +778,7 @@
     {
       "source": "assets/og-hangzhou-budget.jpg",
       "destination": "images/og-hangzhou-budget.jpg",
-      "sha256": "dcae0aa7836c63e1d36248672b37dd9fa37c599a8c68c712691f5b2548583fc2"
+      "sha256": "9f7cb58cbe4125cbd688be12c05bd0b4472e40f2cd1722b0b3a680312d3a3419"
     },
     {
       "source": "assets/og-hanoi-budget.jpg",
