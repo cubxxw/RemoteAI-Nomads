@@ -145,6 +145,24 @@ const CITY_COVERS = Object.freeze(
     "photo_url": "/images/city-tbilisi.webp",
     "photo_credit": "Alexey Komarov / CC BY-SA 4.0",
     "photo_source": "https://commons.wikimedia.org/wiki/File:View_of_Tbilisi_from_Tabori_Church_2023-10-08-2.jpg"
+  },
+  "canggu": {
+    "name_zh": "苍古",
+    "photo_url": "/images/city-canggu.webp",
+    "photo_credit": "Schweigeblick / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Beach_Club_Canggu.jpg"
+  },
+  "ho-chi-minh-city": {
+    "name_zh": "胡志明市",
+    "photo_url": "/images/city-ho-chi-minh-city.webp",
+    "photo_credit": "Steffen Schmitz (more photos) / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg"
+  },
+  "seoul": {
+    "name_zh": "首尔",
+    "photo_url": "/images/city-seoul.webp",
+    "photo_credit": "Eunmi Park / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg"
   }
 }
 );

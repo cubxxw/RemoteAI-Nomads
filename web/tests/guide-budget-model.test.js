@@ -5,7 +5,7 @@ import {calculateBudget,readScenario,writeScenario,formatMoney} from '../content
 const configFor = slug => JSON.parse(readFileSync(new URL('../content/city-guides/'+slug+'-monthly-budget.html',import.meta.url),'utf8').match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)[1]).config;
 
 test('native currency additions retain their labels, shared scenarios and unavailable conversions',()=>{
- for(const currency of ['AED','NZD','GEL']){
+ for(const currency of ['AED','NZD','GEL','KRW']){
  const c=structuredClone(configFor('dali'));
  // Synthetic amounts exercise currency handling independently of editorial price data.
  c.nativeCurrency=currency; c.defaultScenario.currency=currency;

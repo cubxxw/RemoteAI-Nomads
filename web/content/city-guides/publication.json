@@ -51,9 +51,15 @@
       "approvedOn": "2026-10-27",
       "authority": "Continuing the user-authorized autonomous researched article publication until 11:00 Asia/Singapore; independent source/integration review and final Chinese whitelist pass completed.",
       "reviewRecord": "research/2026-10-27-articles-batch2.md"
+    },
+    "continuousBatch3": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch3.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -604,6 +610,41 @@
       "approved": true,
       "sha256": "598f36dde39d10a04139ac904daec38d4e6ba14111ee27231283c18af9e371f2",
       "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "canggu-monthly-budget",
+      "sourceFile": "canggu-monthly-budget.html",
+      "sha256": "11af9a173c6daae830ecf73e23c5f573feef2dd73cbc6950f204bedf60e805a3",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "ho-chi-minh-city-monthly-budget",
+      "sourceFile": "ho-chi-minh-city-monthly-budget.html",
+      "sha256": "1a25975667df8241897f34e55239a8fdc5704fba8c6d9a55e48c6a8d0cec6d06",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "seoul-monthly-budget",
+      "sourceFile": "seoul-monthly-budget.html",
+      "sha256": "bac3f71e34b5253930bf0b8c7b69db198c400993bb9e8b94f2ac55959a3d742c",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "korea-workation-f1d-2026",
+      "sourceFile": "korea-workation-f1d-2026.html",
+      "sha256": "2ea506be308d2f58098f89587fd5c342949c54dd5102a5ceec81d7094e8e376d",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "seoul-climate-card-short-stay-2026",
+      "sourceFile": "seoul-climate-card-short-stay-2026.html",
+      "sha256": "150b258ce3c1123946da39fca45d22d04c4eca89ff1ff8f2d6279db634d78716",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
     }
   ],
   "assets": [
@@ -666,16 +707,6 @@
       "source": "reader.js",
       "destination": "reader.js",
       "sha256": "40ad11048eb02a02510052ab851eb28526b1c8581c14448945ec43bd3f7f0e34"
-    },
-    {
-      "source": "guide-tools.mjs",
-      "destination": "guide-tools.mjs",
-      "sha256": "4b4235be790b6bd5b8d3ed9f1a3cc52afed7c4c89566a8be2ed4f90ded253c2e"
-    },
-    {
-      "source": "budget-model.mjs",
-      "destination": "budget-model.mjs",
-      "sha256": "3edec0f2280094ab9ae40e015bbacd1b54d93483331a30d23b3967ec115178b8"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
@@ -1116,6 +1147,66 @@
       "source": "assets/og-editorial-auckland-hop-cap-airport-transport.jpeg",
       "destination": "images/og-editorial-auckland-hop-cap-airport-transport.jpeg",
       "sha256": "e6bca289a18fd60aa45c09087bd1b51f872282bcc2c09279c1133e2f03e3c7c1"
+    },
+    {
+      "source": "assets/editorial-canggu.webp",
+      "sha256": "2f8a2683c4b388e627b6e80e4f1cb3dce5ae10b2c6ce9e2689705a07c1ca8f3b",
+      "destination": "images/editorial-canggu.webp"
+    },
+    {
+      "source": "assets/editorial-ho-chi-minh-city.webp",
+      "sha256": "9a0e0e5a16f25dfa663b345e02bd7e0a534a88e87d9ebe584dcb8439750ed6a8",
+      "destination": "images/editorial-ho-chi-minh-city.webp"
+    },
+    {
+      "source": "assets/editorial-seoul.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/editorial-seoul.webp"
+    },
+    {
+      "source": "assets/korea-workation-f1d-2026.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/korea-workation-f1d-2026.webp"
+    },
+    {
+      "source": "assets/seoul-climate-card-short-stay-2026.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/seoul-climate-card-short-stay-2026.webp"
+    },
+    {
+      "source": "assets/og-editorial-canggu-monthly-budget.jpeg",
+      "sha256": "12c75dfd97c87976906324ea6848454478eb194e8da1307e5882dd2bcb843130",
+      "destination": "images/og-editorial-canggu-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-ho-chi-minh-city-monthly-budget.jpeg",
+      "sha256": "3cd84ff4dc10d2283e8ee42c308005af388b4907aac7d8f2a18e3944a065fe8d",
+      "destination": "images/og-editorial-ho-chi-minh-city-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-seoul-monthly-budget.jpeg",
+      "sha256": "93ab05bb31efc4dc71c0e7cd96f4fa8e40bacfd59e38b6fc7e2cba77ddbb515c",
+      "destination": "images/og-editorial-seoul-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-korea-workation-f1d-2026.jpeg",
+      "sha256": "120a60fa782747222b884efc274300e92e9483a3175d7edeefb7a7ebf54374a0",
+      "destination": "images/og-editorial-korea-workation-f1d-2026.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-seoul-climate-card-short-stay-2026.jpeg",
+      "sha256": "f037ebf201b84eac1dbfe18b32799523ef2f0b49cf7c218c32d3cadbb1adb82a",
+      "destination": "images/og-editorial-seoul-climate-card-short-stay-2026.jpeg"
+    },
+    {
+      "source": "budget-model.mjs",
+      "destination": "budget-model.mjs",
+      "sha256": "aab48ee9d3b41989526dd1e786172368d7fcbeadd6f4c6f5a5d11ac9e36a4b8a"
+    },
+    {
+      "source": "guide-tools.mjs",
+      "destination": "guide-tools.mjs",
+      "sha256": "39ba73259bc5bd57f7a78e897179b9198f3f73a7396134ec58961a7595e900a0"
     }
   ]
 }

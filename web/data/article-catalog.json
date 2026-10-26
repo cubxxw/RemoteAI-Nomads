@@ -1245,6 +1245,73 @@
       "status": "published",
       "updatedAt": "2026-10-27",
       "assetPath": "/city-guides/auckland-hop-cap-airport-transport.html"
+    },
+    {
+      "slug": "canggu-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/canggu-monthly-budget/",
+      "title": "苍古住一个月，选独立客房还是住工套餐",
+      "summary": "单人独占房间住30晚，预留1,650万／2,700万／4,000万印尼盾，默认房间办公。比较Matra月房、Cove独立客房与住工套餐，核对全时票、通话额度和雨天安排。",
+      "citySlugs": [
+        "canggu"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/canggu-monthly-budget.html"
+    },
+    {
+      "slug": "ho-chi-minh-city-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/ho-chi-minh-city-monthly-budget/",
+      "title": "胡志明市住一个月，公寓电费与跨区上班怎么安排？",
+      "summary": "单人承担整间服务公寓30晚，三档编辑预留5,000万、6,500万和8,800万越南盾。核对公寓电费额度、10天与全天工位票，以及第1郡、第3郡和Thảo Điền的工作日选择。",
+      "citySlugs": [
+        "ho-chi-minh-city"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/ho-chi-minh-city-monthly-budget.html"
+    },
+    {
+      "slug": "seoul-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/seoul-monthly-budget/",
+      "title": "首尔冬天住一个月，选独立厨房还是共居公区",
+      "summary": "按单人整间30晚、房内办公，编辑预留370万—730万韩元。比较江南带厨房公寓与新设洞共居，核对冬季房间、日票时段和2026年正式F-1-D门槛。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/seoul-monthly-budget.html"
+    },
+    {
+      "slug": "korea-workation-f1d-2026",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/korea-workation-f1d-2026/",
+      "title": "韩国F-1-D转正式后，收入门槛要看年龄、住址和家属",
+      "summary": "2026年6月30日起，韩国F-1-D正式制度按年龄和居住地区区分收入条件，携家属另有规则。用官方GNI示例解释年收入与月预算的区别，并列出保险、年限和申请入口。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/korea-workation-f1d-2026.html"
+    },
+    {
+      "slug": "seoul-climate-card-short-stay-2026",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/seoul-climate-card-short-stay-2026/",
+      "title": "首尔旧月卡停充后，短住该怎么买交通票",
+      "summary": "旧30天预付卡已停止充值，新Climate Pass按居民登记与月度消费返款。短访可用的1至7日票怎样起算、哪些车不能坐，以及三天和四个周末的费用演算。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/seoul-climate-card-short-stay-2026.html"
     }
   ]
 }
