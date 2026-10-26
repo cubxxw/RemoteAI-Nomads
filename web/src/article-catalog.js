@@ -39,7 +39,7 @@ export function createArticleCatalog(data) {
   const articlePaths = () => published.map(entry => entry.path);
   const cardHTML = (entry, cover = '') => `<article class="city-article-card">${cover}<a href="${escapeHTML(entry.path)}"><h3>${escapeHTML(entry.title)}</h3></a><p>${escapeHTML(entry.summary)}</p><small>${entry.kind === 'comparison' ? '城市对比' : entry.topic ? '旅居专题' : '旅居指南'} · <time datetime="${escapeHTML(entry.updatedAt)}">${escapeHTML(entry.updatedAt)}</time></small></article>`;
   // Text-only guide cards get a deterministic visual cover: the entry's own
-  // named-city photo with attribution, or a labelled AI scene. Presentation
+  // named-city photo with attribution, or an editorial illustration. Presentation
   // only — registry paths, statuses and publication rules are unchanged.
   const coverCardHTML = entry => cardHTML(entry, articleCoverHTML(entry));
   const relatedArticlesHTML = citySlug => {
