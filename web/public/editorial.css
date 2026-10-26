@@ -528,3 +528,9 @@ figcaption { font-size: 12px; color: var(--ink-3); }
 @media print {
   .rank-hero-scene, .rank-scene-topics, .rank-compare { display: none !important; }
 }
+
+/* Keep the full navigation readable on compact desktop widths. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .site-header .site-navigation { gap: 18px; font-size: 13px; }
+  .site-header .site-navigation .nav-source span { display: none; }
+}
