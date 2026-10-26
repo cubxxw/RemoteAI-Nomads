@@ -1,0 +1,7 @@
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+dist/
+public/data/
+public/skills/
