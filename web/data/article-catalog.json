@@ -1177,6 +1177,74 @@
       "status": "published",
       "updatedAt": "2026-10-27",
       "assetPath": "/city-guides/abu-dhabi-monthly-budget.html"
+    },
+    {
+      "slug": "auckland-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/auckland-monthly-budget/",
+      "title": "奥克兰住一个月，北京时间上班要安排到晚上十一点",
+      "summary": "单人住奥克兰30晚，舒适档编辑预留7,450纽币，默认房间工作。北京9—18点对应当地14—23点，比较独卫周租房与整套公寓询价，也看工位门禁与HOP交通封顶。",
+      "citySlugs": [
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/auckland-monthly-budget.html"
+    },
+    {
+      "slug": "wellington-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/wellington-monthly-budget/",
+      "title": "惠灵顿住一个月，周租房的网络和晚班工位怎么选",
+      "summary": "单人整间房30晚，默认房间工作，三档编辑预留4700、6900和9500纽币。比较Willis街Studio的周租与计量网络、两家市中心工位的夜间门禁，再安排公交和周末采购。",
+      "citySlugs": [
+        "wellington"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/wellington-monthly-budget.html"
+    },
+    {
+      "slug": "tbilisi-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/tbilisi-monthly-budget/",
+      "title": "第比利斯住一个月，住维拉还是Fabrika附近",
+      "summary": "单人整间住30晚，舒适规划5,500拉里，默认房间办公。比较维拉Stamba与Fabrika附近住法，核对冬季供暖、工位进入时段，以及中国普通护照30日、保险和远程工作条件。",
+      "citySlugs": [
+        "tbilisi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/tbilisi-monthly-budget.html"
+    },
+    {
+      "slug": "new-zealand-weekly-rent-thirty-nights",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/new-zealand-weekly-rent-thirty-nights/",
+      "title": "新西兰租房按周报价，住30晚的钱怎么算？",
+      "summary": "用惠灵顿Capital与奥克兰Studio 41的公开周租，分清四周28晚、30晚入住和最低合同。房费按实际日期询价，押金单独备，网络与共用厨房条件也一起看。",
+      "citySlugs": [
+        "wellington",
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/new-zealand-weekly-rent-thirty-nights.html"
+    },
+    {
+      "slug": "auckland-hop-cap-airport-transport",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/auckland-hop-cap-airport-transport/",
+      "title": "奥克兰坐车，一周封顶和机场交通怎么一起算？",
+      "summary": "用三区通勤和集中一天出行比较HOP周封顶与银行卡日封顶，分清Puhinui机场公交、内港渡轮和私营SkyDrive。30晚按实际7天区间演算，不把50纽币当全线路周票。",
+      "citySlugs": [
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/auckland-hop-cap-airport-transport.html"
     }
   ]
 }

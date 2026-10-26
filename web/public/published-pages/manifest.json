@@ -2,7 +2,7 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-26T18:48:21.121Z",
+  "generated_at": "2026-10-26T21:04:50.560Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
   "db_sha256": "6efd41441da5699f6ade6ec43019571ea446da854b862cb9248730d90ed97c98",
@@ -14,11 +14,11 @@
   "counts": {
     "cities": 350,
     "countries": 258,
-    "guides": 73,
+    "guides": 78,
     "comparisons": 2
   },
-  "file_count": 694,
-  "bytes_excluding_manifest": 28379104,
+  "file_count": 699,
+  "bytes_excluding_manifest": 28608447,
   "paths": [
     "/",
     "/cities/",
@@ -711,6 +711,11 @@
     "/guides/kunming-monthly-budget/",
     "/guides/bangkok-monthly-budget/",
     "/guides/abu-dhabi-monthly-budget/",
+    "/guides/auckland-monthly-budget/",
+    "/guides/wellington-monthly-budget/",
+    "/guides/tbilisi-monthly-budget/",
+    "/guides/new-zealand-weekly-rent-thirty-nights/",
+    "/guides/auckland-hop-cap-airport-transport/",
     "/api/rankings",
     "/sitemap.xml"
   ]

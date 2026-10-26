@@ -4,19 +4,21 @@ import {readFileSync} from 'node:fs';
 import {calculateBudget,readScenario,writeScenario,formatMoney} from '../content/city-guides/budget-model.mjs';
 const configFor = slug => JSON.parse(readFileSync(new URL('../content/city-guides/'+slug+'-monthly-budget.html',import.meta.url),'utf8').match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)[1]).config;
 
-test('AED budgets retain their currency in shared scenarios, native totals and unavailable conversions',()=>{
+test('native currency additions retain their labels, shared scenarios and unavailable conversions',()=>{
+ for(const currency of ['AED','NZD','GEL']){
  const c=structuredClone(configFor('dali'));
  // Synthetic amounts exercise currency handling independently of editorial price data.
- c.nativeCurrency='AED'; c.defaultScenario.currency='AED';
- c.fx={base:'AED',rates:{CNY:2},date:'2026-10-26'};
+ c.nativeCurrency=currency; c.defaultScenario.currency=currency;
+ c.fx={base:currency,rates:{CNY:2},date:'2026-10-26'};
  const native=calculateBudget(c);
- assert.equal(native.currency,'AED');
+ assert.equal(native.currency,currency);
  assert.equal(native.totalDisplay,native.totalNative);
- assert.equal(formatMoney(1250,'AED'),'1,250 AED');
- assert.equal(readScenario(writeScenario({...c.defaultScenario,housingNative:0}),c).currency,'AED');
+ assert.equal(formatMoney(1250,currency),'1,250 '+currency);
+ assert.equal(readScenario(writeScenario({...c.defaultScenario,housingNative:0}),c).currency,currency);
  assert.equal(calculateBudget(c,{currency:'CNY'}).totalDisplay,native.totalNative*2);
  const noFx=calculateBudget(c,{currency:'USD'});
  assert.equal(noFx.totalNative,native.totalNative); assert.equal(noFx.totalDisplay,null);
+ }
 });
 
 test('new city plans keep whole work passes and block unknown monthly contracts',()=>{
