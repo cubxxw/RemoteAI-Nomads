@@ -48,7 +48,7 @@ license: MIT
 
 ## 没有连接 MCP 时
 
-宿主能执行 Node.js 20+ 时，可用包内的 `scripts/query.mjs` 访问同一公开JSON接口，无额外依赖。默认地址是拟定的公开服务地址；开发或自托管时设置 `NOMADS_API_URL`，例如本地 `http://127.0.0.1:8795/api/query`。
+宿主能执行 Node.js 20+ 时，可用包内的 `scripts/query.mjs` 访问同一公开JSON接口，无额外依赖。默认使用已部署的 `https://mcp.roamorrow.com/api/query`；开发或自托管时设置 `NOMADS_API_URL`，例如本地 `http://127.0.0.1:8795/api/query`。
 
 把参数JSON通过标准输入交给脚本；也可在不含敏感信息的短示例中用第三个参数。调用格式：
 
