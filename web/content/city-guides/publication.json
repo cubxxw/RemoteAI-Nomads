@@ -27,9 +27,21 @@
           "sha256": "94a260536b8cfef6b3b91457f68f2ba95b6f5007f338446cd4590f9fd2c1be7d"
         }
       ]
+    },
+    "fiveArticleBatch": {
+      "approved": true,
+      "approvedOn": "2026-10-26",
+      "authority": "User explicitly approved two article updates and three new researched articles, sequential writing, removal of redundant material, final whitelist language review, and publication under the established Roamorrow article workflow.",
+      "reviewRecord": "research/2026-10-26-five-articles.md",
+      "relatedTitleSync": [
+        "hangzhou-west-lake-rent-premium",
+        "video-meeting-room-checklist",
+        "penang-kuala-lumpur-one-working-day",
+        "kuala-lumpur-monthly-bill-extras"
+      ]
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -48,8 +60,8 @@
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "5aa31d8b235d67815ac70909aa6f3add80984ab43a2ee3681561a447baeb9eac",
-      "source": "output/titles-20261020/kuala-lumpur-monthly-budget.html",
+      "sha256": "d74759ca8ea07d8fbfacc57ae16aafb4c7288138052ccd1539c656355de94fe8",
+      "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
     {
@@ -76,8 +88,8 @@
     {
       "slug": "hangzhou-monthly-budget",
       "sourceFile": "hangzhou-monthly-budget.html",
-      "sha256": "f2502dcd6767e5c46902226fdac5f88d2ce273f763b76674a3b63b557896cef9",
-      "source": "output/seo-batch1-20261021/hangzhou-monthly-budget.html",
+      "sha256": "b9fe02f8f2fd6d21135a3b4cecac5cd4a0996c03e167a8179e8281cd3d1705ef",
+      "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
     {
@@ -192,7 +204,7 @@
     {
       "slug": "video-meeting-room-checklist",
       "sourceFile": "video-meeting-room-checklist.html",
-      "sha256": "dca4213b38f3432b4efea3665e14017c2e882cc07d810e26b1bb644e9b3bb1d5",
+      "sha256": "b34f5c39752cb1cd8ad3296204dacd62896c263b313c2394e81d625f4f0c1ecb",
       "source": "web/content/editorial-50/start-budget.json (article 8)",
       "approved": true
     },
@@ -234,7 +246,7 @@
     {
       "slug": "kuala-lumpur-monthly-bill-extras",
       "sourceFile": "kuala-lumpur-monthly-bill-extras.html",
-      "sha256": "bdb742f27d9da64ff5e6d365f752384176dc9ffa21269b9815658f66b01fea73",
+      "sha256": "bc60a59f1be5addd9b1af696a2a5231c7a40a3be0a33f3c4d0ae54fbe17db3f5",
       "source": "web/content/editorial-50/start-budget.json (article 14)",
       "approved": true
     },
@@ -276,7 +288,7 @@
     {
       "slug": "hangzhou-west-lake-rent-premium",
       "sourceFile": "hangzhou-west-lake-rent-premium.html",
-      "sha256": "929e93fe420f2ad538256995df554d730b27c1b0e66d758127be5570fea0f9f2",
+      "sha256": "40455cada4ca012daea923198ec8f08570a0d01fbef2fe9d99879eb232f76a60",
       "source": "web/content/editorial-50/start-budget.json (article 20)",
       "approved": true
     },
@@ -367,7 +379,7 @@
     {
       "slug": "penang-kuala-lumpur-one-working-day",
       "sourceFile": "penang-kuala-lumpur-one-working-day.html",
-      "sha256": "f72ef40b19efa9348db12a56b1931a3d4c1f8f5d53ebdf6a0434a8eb52d571a9",
+      "sha256": "cde90d528b9072427d24877a8f2c4de934547302c1b1ce4474cef713e1f6a970",
       "source": "web/content/editorial-50/season-compare.json (article 43)",
       "approved": true
     },
@@ -489,6 +501,27 @@
       "sha256": "37983a178075d88d20af57e6af761f9cb24434821f508164b2814012ac7ad954",
       "source": "web/content/editorial-50/permission-tools.json (article 50)",
       "approved": true
+    },
+    {
+      "slug": "da-nang-monthly-budget",
+      "sourceFile": "da-nang-monthly-budget.html",
+      "approved": true,
+      "sha256": "def5088c50ed98e54c6473bb45f7601b4291c5cecc41eacd01e77025564ca1f2",
+      "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "xiamen-monthly-budget",
+      "sourceFile": "xiamen-monthly-budget.html",
+      "approved": true,
+      "sha256": "ec0609b6d426097b532412737589a67d0aeb0cadc34010a974f15b37791623aa",
+      "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "japan-digital-nomad-chinese-passport",
+      "sourceFile": "japan-digital-nomad-chinese-passport.html",
+      "approved": true,
+      "sha256": "985397f790e29f3a94bb9acf29ee0743db2a7445abf52039660b7ae799f3de59",
+      "source": "research/2026-10-26-five-articles.md"
     }
   ],
   "assets": [
@@ -565,7 +598,7 @@
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "58edd887fa4a5011912bb27ade4f55b6a1c862172252e516b527c5ae9b28c89f"
+      "sha256": "6b0f16d32a8d2095c614f0e8f282c38c8d5da095936d88c9f3871e8d6c098f18"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -745,7 +778,7 @@
     {
       "source": "assets/og-hangzhou-budget.jpg",
       "destination": "images/og-hangzhou-budget.jpg",
-      "sha256": "dcae0aa7836c63e1d36248672b37dd9fa37c599a8c68c712691f5b2548583fc2"
+      "sha256": "9f7cb58cbe4125cbd688be12c05bd0b4472e40f2cd1722b0b3a680312d3a3419"
     },
     {
       "source": "assets/og-hanoi-budget.jpg",
@@ -871,6 +904,36 @@
       "source": "assets/og-editorial-ubud-rice-terrace.webp",
       "destination": "images/og-editorial-ubud-rice-terrace.webp",
       "sha256": "aafc20243fb10d6ff1cf9b11d103a501574cde20339f46fa222b1d0bdc59bd46"
+    },
+    {
+      "source": "assets/editorial-da-nang.webp",
+      "destination": "images/editorial-da-nang.webp",
+      "sha256": "e46ec5c7d650612993309e1d5788dd7ee75af0cc0da38da29b8d049a646aab24"
+    },
+    {
+      "source": "assets/editorial-xiamen.webp",
+      "destination": "images/editorial-xiamen.webp",
+      "sha256": "2b84bee8a618742f05986750966ed3e8be2d25d77b9462482f171ff06f7b1a5e"
+    },
+    {
+      "source": "assets/osaka-city.webp",
+      "destination": "images/osaka-city.webp",
+      "sha256": "f822821a0ec6c16f26a80655c65a87799e87668bbe10d354468c8b1a7dba0c53"
+    },
+    {
+      "source": "assets/og-editorial-da-nang.webp",
+      "destination": "images/og-editorial-da-nang.webp",
+      "sha256": "b41e8b7705895d9a6c6bd2afeeb72c7b2a944272f7453c2f966b7bd0732b2b69"
+    },
+    {
+      "source": "assets/og-editorial-xiamen.webp",
+      "destination": "images/og-editorial-xiamen.webp",
+      "sha256": "38e846ab8330eb79f978c17b3895c6ea1d4ca1fac12d8ca75dfa1a3963a38b96"
+    },
+    {
+      "source": "assets/og-editorial-osaka-city.webp",
+      "destination": "images/og-editorial-osaka-city.webp",
+      "sha256": "a2e6b7e7b5b1652034f1d3687468a75e0fc1562e958b97d7541dde10b510aafe"
     }
   ]
 }
