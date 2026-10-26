@@ -209,6 +209,18 @@ test('guide covers use the article city photo with attribution, or an illustrati
   assert.ok(index.length > 60);
 });
 
+test('new city articles select their own existing photo rather than the generic scene fallback', async () => {
+  const photos=JSON.parse(await readFile(join(root,'scripts/photos.json'),'utf8'));
+  for (const [slug,city] of [['kunming-monthly-budget','kunming'],['bangkok-monthly-budget','bangkok'],['abu-dhabi-monthly-budget','abu-dhabi'],['new-zealand-visitor-remote-work','auckland']]) {
+    const article=publishedArticles().find(a=>a.slug===slug), cover=articleCover(article);
+    assert.equal(cover.kind,'city',slug);
+    assert.equal(cover.photo_url,`/images/city-${city}.webp`);
+    assert.equal(cover.photo_source,photos[city].source);
+    assert.equal(cover.photo_credit,photos[city].credit);
+    assert.ok(cover.photo_credit && cover.photo_source.startsWith('https://commons.wikimedia.org/'));
+  }
+});
+
 test('budget guides get a runtime city hero with credit while approved topic HTML stays as published', () => {
   const budget = publishedArticles().find(a => a.slug === 'chiang-mai-monthly-budget');
   const topic = publishedArticles().find(a => a.slug === 'november-nomad-destinations');
