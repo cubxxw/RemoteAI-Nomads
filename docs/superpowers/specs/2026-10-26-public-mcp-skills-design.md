@@ -63,7 +63,7 @@ flowchart TD
 
 这是目标结构。现有网站的 D1 与 HTML 回退机制继续工作，不以重写网站作为发布 MCP 的前提。MCP 独立部署，代码仍放在当前仓库，复用现有数据与计算模块。
 
-建议公开地址为 `https://mcp.roamorrow.com/mcp`，集成说明放在主站 `/nomads/developers/`。这两个地址都是拟定地址，目前未部署。独立 Worker 不绑定网站的业务数据库，不载入站内对话运行时或模型密钥。Workers 的账号级额度仍可能共享，独立部署不等于所有费用和额度都隔离。
+公开地址 `https://mcp.roamorrow.com/mcp` 已于2026-10-26部署。主站 `/nomads/developers/` 集成说明页仍为后续项，当前说明见 `mcp/README.md`。独立 Worker 不绑定网站的业务数据库，不载入站内对话运行时或模型密钥。Workers 的账号级额度仍可能共享，独立部署不等于所有费用和额度都隔离。
 
 ## MCP 首版工具
 

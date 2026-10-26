@@ -2,7 +2,7 @@
 
 无需登录的只读资料服务。一次主查询合并国家背景、候选城市、消费样本、历史气候和来源。站内数据库与对话运行时不参与公共请求。
 
-当前为实现版本，尚未部署公共地址。MCP 接入地址在本地是 `http://127.0.0.1:8795/mcp`；拟定正式地址为 `https://mcp.roamorrow.com/mcp`，上线验收后再使用。
+正式接入地址为 `https://mcp.roamorrow.com/mcp`，无需账户或密钥。本地开发地址是 `http://127.0.0.1:8795/mcp`。
 
 ## 本地运行
 
@@ -62,6 +62,8 @@ npm run dev
 
 `npm run package:skill` 生成 `public/skills/roamorrow-nomad-planner.zip`。安装包只有 Skill、必要参考、无依赖的查询脚本和许可文件。没有连接 MCP 时，脚本使用同一JSON接口；本地测试设置 `NOMADS_API_URL=http://127.0.0.1:8795/api/query`。
 
+[下载正式 Skill 安装包](https://mcp.roamorrow.com/skills/roamorrow-nomad-planner.zip)。下载后解压，将完整目录放入客户端支持的 Skill 位置。
+
 ## 数据与限制
 
 `npm run data` 只读取检查散列和隐私边界均通过的公开种子。导出字段使用白名单；不读取私人开发库、Notion映射或本机凭据。公开清单位于 `/data/manifest.json`，对应的JSON文件带稳定版本地址。来源只导出元数据和已审核公开事实，没有复制源网页全文或照片。
@@ -78,7 +80,7 @@ npm run dev
 
 完成检查并核对当前账户后，从 `mcp/` 运行 `npx wrangler deploy`。当前配置没有网站D1、Durable Object、模型密钥或OAuth绑定。独立Worker仍可能共用账号级额度，本地通过不等于免费CPU额度下的生产性能已验证。
 
-域名绑定和正式接入地址需在部署后核验。客户端无登录需求；维护者仍需自己的 Cloudflare 部署权限。已记录的兼容日期与锁定依赖可在本地运行，不跟随未经验证的最新包。
+正式域名已绑定并完成免登录查询验收，见[线上发布记录](docs/deployment-2026-10-26.md)。配置只绑定 `mcp.roamorrow.com`，不启用额外的workers.dev入口。维护者部署时需要选择该域名所属账户；可通过 `CLOUDFLARE_ACCOUNT_ID` 指定，不在仓库保存账户凭据。
 
 桌面客户端可省略Origin；浏览器接入默认允许本站和localhost。其他可信浏览器来源通过 `ALLOWED_ORIGIN_HOSTS` 显式配置主机名，不根据请求自己声明的主机名自动放行。
 

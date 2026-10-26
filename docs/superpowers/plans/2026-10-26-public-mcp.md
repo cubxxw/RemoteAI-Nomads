@@ -43,7 +43,7 @@ Currency and household units; missing climate vs zero; non-CN passport applicabi
 - [x] Write one concise Skill, one task-specific reference and a dependency-free fallback helper only if useful.
 - [x] Validate the skill and demonstrate country/season/budget/context-change flows against the real local data.
 - [x] Add installation and source-boundary documentation; run full checks and independent review.
-- [ ] Commit/push a separate branch and create a draft PR; distinguish tested implementation from deployment.
+- [x] Commit/push a separate branch and create a draft PR; distinguish tested implementation from deployment.
 
 ## Execution record
 
@@ -57,6 +57,8 @@ Task 3: portable Skill validated; five synthetic requests needed16 calls before 
 Ruling: root data tests include a reviewed Anji area relationship with no observations; fixtures must distinguish that from Dali's actual regional samples. A zero-rain case uses a labelled test fixture because the selected real monthly sample has no exact zero.
 Final review: independent read-only review found two important constraint-handling issues. Both were reproduced and fixed with RED→GREEN regressions: city context honors its filters, and country cost references honor scope/category.
 Final: Ruling: timezone-data absence is treated as an important correction rather than deferred polish, because mislabelling it as invalid user input causes futile retries. TIMEZONE_MISSING regression RED→GREEN.
-No production deployment or app-specific UI compatibility claimed. Draft PR and remote checks pending.
+Implementation delivered in PR #39, merged at b47443be with all remote checks passing. Production was subsequently authorized and deployed to https://mcp.roamorrow.com/mcp; actual app-specific UI compatibility is not claimed.
 
 Final verification: 25 MCP tests passed without failures/skips; real HTTP workerd smoke passed with both official client generations. Skill structure and four-file archive validated. Original Web401 and Python100 passed; source/link/workflow checks passed with the three pre-existing weather review notices retained.
+
+Production verification: both official client generations passed against the real HTTPS endpoint. Four JSON regression probes passed; health reports350 cities; downloaded Skill SHA/CRC matched and its default-endpoint query passed. Deployment evidence: mcp/docs/deployment-2026-10-26.md. Runtime version3a6369a8-e00b-486e-8cc6-19d1642d623e.
