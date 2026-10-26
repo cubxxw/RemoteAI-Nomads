@@ -10,6 +10,7 @@ import { rankingPage, rankedComparison, loadRankings } from "./rank-pages.js";
 import { esc, external, shell } from "./render.js";
 import {mountedRequest, publicURL} from './site-path.js';
 import {cityGuideResponse} from './city-guide-pages.js';
+import {destinationDirectoryPage} from './destination-directory.js';
 import {publishedArticles, articlePaths} from './article-catalog.js';
 
 const joined = `SELECT c.*, k.name_zh AS country_name FROM cities c JOIN countries k ON k.id=c.country_id`;
@@ -201,7 +202,7 @@ const application = {
       if (url.pathname === "/sitemap.xml") {
         const links = [];
         if (env.PREVIEW === "false") {
-          links.push("/", "/guides/", "/compare/", "/about/");
+          links.push("/", "/destinations/", "/guides/", "/compare/", "/about/");
           links.push(...articlePaths());
           for (const c of await list(
             env.DB,
@@ -253,6 +254,8 @@ const application = {
         .filter(Boolean)
         .map(decodeURIComponent);
       if (!bits.length) page = await rankingPage(env, url);
+      else if (bits.length === 1 && bits[0] === "destinations")
+        page = destinationDirectoryPage(await loadRankings(env), env);
       else if (bits.length === 1 && bits[0] === "cities")
         page = await rankingPage(env, url);
       else if (bits.length === 2 && bits[0] === "cities")
@@ -279,12 +282,16 @@ const application = {
           body: '<div class="empty"><h1>这一页，还没写到。</h1><p>可以从城市目录重新找起。</p><a class="button" href="/cities/">回到城市目录</a></div>',
         };
       }
+      // Query state is shareable, but only the clean public page is indexable.
+      // Keep city pages consistent with ranking, guide and outage responses.
+      const indexable = env.PREVIEW === 'false' && page.indexable && !url.search;
       const response = new Response(
-        request.method === "HEAD" ? null : shell({ ...page, env }),
+        request.method === "HEAD" ? null : shell({ ...page, indexable, env }),
         {
           status,
           headers: {
             "Content-Type": "text/html; charset=utf-8",
+            "X-Robots-Tag": indexable ? 'index, follow' : 'noindex, follow',
             "Cache-Control":
               cacheable && status === 200
                 ? "public, max-age=0, s-maxage=300"

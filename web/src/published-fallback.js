@@ -4,6 +4,7 @@ import {displayMonth} from '../public/modules/ranking.js';
 import {comparisonMetadata} from './comparison-metadata.js';
 import {comparisonArticle,renderComparisonArticle} from './comparison-article.js';
 import {rankingPageFromData} from './rank-pages.js';
+import {destinationDirectoryPage} from './destination-directory.js';
 import {relocatePublishedHTML,publicURL} from './site-path.js';
 const security={
   'X-Content-Type-Options':'nosniff',
@@ -24,6 +25,7 @@ export async function publishedFallback(request,env){
     if(!manifestResponse.ok)return null;
     const manifest=await manifestResponse.json();
     if(manifest.version!==1||!Array.isArray(manifest.paths))return null;
+    const htmlHeaders={...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':url.search?'no-store':'public, max-age=0, s-maxage=60',...(url.search?{'X-Robots-Tag':'noindex, follow'}:{}),'X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')};
     const pair=url.pathname.match(/^\/compare\/([a-z0-9-]+)\/$/)?.[1]?.split('-vs-');
     if(pair?.length===2&&pair[0]!==pair[1]){
       const rankResponse=await env.ASSETS.fetch(new Request(new URL('/published-pages/rankings.json',url),{method:'GET'}));
@@ -33,15 +35,17 @@ export async function publishedFallback(request,env){
       const selected=Number(url.searchParams.get('month')),month=Number.isInteger(selected)&&selected>=1&&selected<=12?selected:displayMonth({});
       const article=comparisonArticle(canonical);
       const body=shell({env,...comparisonMetadata(a,b,{origin:env.SITE_ORIGIN||url.origin,month,indexable:!url.search&&manifest.paths.includes(url.pathname)}),body:article?renderComparisonArticle(article,a,b,month):comparisonBody(a,b,month)});
-      return new Response(request.method==='HEAD'?null:body,{headers:{...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, s-maxage=60','X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')}});
+      return new Response(request.method==='HEAD'?null:body,{headers:htmlHeaders});
     }
     if(!manifest.paths.includes(url.pathname))return null;
-    if(url.pathname==='/'||url.pathname==='/cities/'){
+    if(url.pathname==='/'||url.pathname==='/cities/'||url.pathname==='/destinations/'){
       const ranking=await env.ASSETS.fetch(new Request(new URL('/published-pages/rankings.json',url),{method:'GET'}));
       if(!ranking.ok)return null;
-      const page=rankingPageFromData(await ranking.json(),url);
+      const data=await ranking.json();
+      const page=url.pathname==='/destinations/'?destinationDirectoryPage(data,env):rankingPageFromData(data,url);
+      if(url.search)page.indexable=false;
       const body=shell({env,...page});
-      return new Response(request.method==='HEAD'?null:body,{headers:{...security,'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, s-maxage=60','X-Data-Mode':'published-snapshot','X-Data-Snapshot':String(manifest.snapshot_date||'published')}});
+      return new Response(request.method==='HEAD'?null:body,{headers:htmlHeaders});
     }
     const path=url.pathname==='/api/rankings'?'/published-pages/rankings.json':url.pathname==='/sitemap.xml'?'/published-pages/sitemap.xml':'/published-pages'+url.pathname;
     const asset=await env.ASSETS.fetch(new Request(new URL(path,url),{method:'GET'}));
@@ -53,7 +57,11 @@ export async function publishedFallback(request,env){
     let body=asset.body;
     if((headers.get('Content-Type')||'').includes('text/html')){
       body=relocatePublishedHTML(await asset.text(),manifest.origin||url.origin,{...env,SITE_ORIGIN:env.SITE_ORIGIN||url.origin});
-      if(url.search)body=body.replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">');
+      if(url.search){
+        body=body.replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">');
+        headers.set('X-Robots-Tag','noindex, follow');
+        headers.set('Cache-Control','no-store');
+      }
       headers.delete('Content-Encoding');
     } else if(url.pathname==='/sitemap.xml'&&manifest.origin&&env.SITE_ORIGIN){
       body=(await asset.text()).split(manifest.origin).join(env.SITE_ORIGIN).replace(`<loc>${env.SITE_ORIGIN}/</loc>`,`<loc>${publicURL('/',env)}</loc>`);
