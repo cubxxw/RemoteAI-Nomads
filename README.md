@@ -88,4 +88,6 @@ npm run demo
 
 [开发与本地运行](web/README.md) · [设计约定](web/design.md) · [部署与回退](web/docs/deployment.md) · [测试与已知边界](web/docs/verification.md)
 
+从网站导航的 [Agent 接入](https://roamorrow.com/nomads/developers/)开始，可以复制服务地址、选择客户端配置、下载 Skill，并试用选城问题示例。接口细节见[公开 MCP 与旅居规划 Skill](mcp/README.md)。
+
 代码采用 [MIT 许可](LICENSE)。照片与外部数据遵循各自许可，代码许可不覆盖它们。

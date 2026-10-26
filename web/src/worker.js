@@ -1,3 +1,4 @@
+import {agentConnectPage} from './agent-connect.js';
 import { renderCountryIndex, renderCountryPage, renderGuides, renderCompareIndex, renderAbout } from './content-pages.js';
 import { renderCityPage } from './city-page.js';
 import { readCityCosts } from './cost-data.js';
@@ -202,7 +203,7 @@ const application = {
       if (url.pathname === "/sitemap.xml") {
         const links = [];
         if (env.PREVIEW === "false") {
-          links.push("/", "/destinations/", "/guides/", "/compare/", "/about/");
+          links.push("/", "/destinations/", "/guides/", "/compare/", "/about/", "/developers/");
           links.push(...articlePaths());
           for (const c of await list(
             env.DB,
@@ -254,6 +255,8 @@ const application = {
         .filter(Boolean)
         .map(decodeURIComponent);
       if (!bits.length) page = await rankingPage(env, url);
+      else if (bits.length === 1 && bits[0] === "developers")
+        page = agentConnectPage();
       else if (bits.length === 1 && bits[0] === "destinations")
         page = destinationDirectoryPage(await loadRankings(env), env);
       else if (bits.length === 1 && bits[0] === "cities")
