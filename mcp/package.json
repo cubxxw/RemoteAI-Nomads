@@ -22,6 +22,6 @@
   "devDependencies": {
     "@modelcontextprotocol/client": "2.4.0",
     "@modelcontextprotocol/sdk": "1.29.0",
-    "wrangler": "4.151.1"
+    "wrangler": "4.153.0"
   }
 }
