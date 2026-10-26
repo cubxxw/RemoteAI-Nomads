@@ -10,6 +10,10 @@ GeoNames： https://www.geonames.org/ ，城市数据 https://download.geonames.
 
 城市照片：每个文件的作者、原图和许可记录见scripts/photos.json，城市详情显示署名与原图链接。只使用已取得许可说明的真实图像。全图缩放并编码为WebP，另生成128px裁切缩略图；原图版权与许可证继续适用。
 
+分享图片：使用上述真实照片和确定性排版，保留作者、原图与许可。默认链接图 `public/images/share-default.png` 使用清迈照片 Nawit science / CC BY-SA 4.0；原图、裁切方式、尺寸与文件指纹见 `data/share-images.json`，不采用生成式重绘。照片的原许可继续适用，不因排版代码采用 MIT 而改变。
+
+分享导出使用本地 qrcode-generator 2.0.4 与 fflate 0.8.3，均为 MIT。原始授权文件和来源说明分别位于 `public/vendor/qrcode/` 与 `public/vendor/fflate/`；仅在相关分享动作时加载，不请求外部图片处理服务。
+
 城市消费：采用[CostCompass开放单项数据](https://costcompass.net/data)，CC BY 4.0。每条价格保留对应城市页面链接、观察日期、单位与采集来源；加工为城市身份匹配、字段中文显示与有日期的汇率换算，不使用其非开放月总价。
 
 日本消费：出典为[e-Stat家计调查2025年单身家庭第1表](https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040409815&fileKind=0)，总务省统计局。加工为公开Excel解析、类别中文显示与格式转换；范围仍为全国居民单身家庭，未变成城市租金或游民消费。

@@ -1,0 +1,1058 @@
+{
+  "decoder": "Apple Vision VNDetectBarcodesRequest, independent of encoder",
+  "checked": 175,
+  "matched": 175,
+  "failed": [],
+  "records": [
+    {
+      "file": "city-chiang-mai-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
+      ]
+    },
+    {
+      "file": "city-chiang-mai-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
+      ]
+    },
+    {
+      "file": "city-chiang-mai-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
+      ]
+    },
+    {
+      "file": "city-chiang-mai-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
+      ]
+    },
+    {
+      "file": "city-chiang-mai-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
+      ]
+    },
+    {
+      "file": "city-penang-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/penang/?month=11"
+      ]
+    },
+    {
+      "file": "city-penang-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/penang/?month=11"
+      ]
+    },
+    {
+      "file": "city-penang-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/penang/?month=11"
+      ]
+    },
+    {
+      "file": "city-penang-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/penang/?month=11"
+      ]
+    },
+    {
+      "file": "city-penang-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/penang/?month=11"
+      ]
+    },
+    {
+      "file": "city-lisbon-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/lisbon/?month=11"
+      ]
+    },
+    {
+      "file": "city-lisbon-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/lisbon/?month=11"
+      ]
+    },
+    {
+      "file": "city-lisbon-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/lisbon/?month=11"
+      ]
+    },
+    {
+      "file": "city-lisbon-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/lisbon/?month=11"
+      ]
+    },
+    {
+      "file": "city-lisbon-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/lisbon/?month=11"
+      ]
+    },
+    {
+      "file": "city-plovdiv-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "city-plovdiv-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "city-plovdiv-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "city-plovdiv-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "city-plovdiv-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "city-hanoi-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/hanoi/?month=11"
+      ]
+    },
+    {
+      "file": "city-hanoi-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/hanoi/?month=11"
+      ]
+    },
+    {
+      "file": "city-hanoi-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/hanoi/?month=11"
+      ]
+    },
+    {
+      "file": "city-hanoi-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/hanoi/?month=11"
+      ]
+    },
+    {
+      "file": "city-hanoi-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/hanoi/?month=11"
+      ]
+    },
+    {
+      "file": "city-dali-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/dali/?month=11"
+      ]
+    },
+    {
+      "file": "city-dali-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/dali/?month=11"
+      ]
+    },
+    {
+      "file": "city-dali-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/dali/?month=11"
+      ]
+    },
+    {
+      "file": "city-dali-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/dali/?month=11"
+      ]
+    },
+    {
+      "file": "city-dali-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/dali/?month=11"
+      ]
+    },
+    {
+      "file": "city-baku-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/baku/?month=11"
+      ]
+    },
+    {
+      "file": "city-baku-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/baku/?month=11"
+      ]
+    },
+    {
+      "file": "city-baku-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/baku/?month=11"
+      ]
+    },
+    {
+      "file": "city-baku-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/baku/?month=11"
+      ]
+    },
+    {
+      "file": "city-baku-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/baku/?month=11"
+      ]
+    },
+    {
+      "file": "city-ubud-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/ubud/?month=11"
+      ]
+    },
+    {
+      "file": "city-ubud-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/ubud/?month=11"
+      ]
+    },
+    {
+      "file": "city-ubud-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/ubud/?month=11"
+      ]
+    },
+    {
+      "file": "city-ubud-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/ubud/?month=11"
+      ]
+    },
+    {
+      "file": "city-ubud-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/ubud/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-default-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-default-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-default-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-default-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-default-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11"
+      ]
+    },
+    {
+      "file": "ranking-cny-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
+      ]
+    },
+    {
+      "file": "ranking-cny-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
+      ]
+    },
+    {
+      "file": "ranking-cny-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
+      ]
+    },
+    {
+      "file": "ranking-cny-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
+      ]
+    },
+    {
+      "file": "ranking-cny-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
+      ]
+    },
+    {
+      "file": "ranking-empty-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
+      ]
+    },
+    {
+      "file": "ranking-empty-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
+      ]
+    },
+    {
+      "file": "ranking-empty-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
+      ]
+    },
+    {
+      "file": "ranking-empty-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
+      ]
+    },
+    {
+      "file": "ranking-empty-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
+      ]
+    },
+    {
+      "file": "ranking-all-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
+      ]
+    },
+    {
+      "file": "ranking-all-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
+      ]
+    },
+    {
+      "file": "ranking-all-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
+      ]
+    },
+    {
+      "file": "ranking-all-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
+      ]
+    },
+    {
+      "file": "ranking-all-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
+      ]
+    },
+    {
+      "file": "ranking-custom-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
+      ]
+    },
+    {
+      "file": "ranking-custom-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
+      ]
+    },
+    {
+      "file": "ranking-custom-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
+      ]
+    },
+    {
+      "file": "ranking-custom-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
+      ]
+    },
+    {
+      "file": "ranking-custom-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
+      ]
+    },
+    {
+      "file": "comparison-0-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-0-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-0-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-0-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-0-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-1-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-1-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-1-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-1-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-1-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-2-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-2-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-2-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-2-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
+      ]
+    },
+    {
+      "file": "comparison-2-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
+      ]
+    },
+    {
+      "file": "guide-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "guide-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "guide-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "guide-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "guide-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "topic-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "topic-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "topic-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "topic-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "topic-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "no-photo-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "no-photo-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "no-photo-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "no-photo-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "no-photo-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "checklist-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "checklist-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "checklist-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "checklist-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "checklist-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "directory-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "directory-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "directory-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "directory-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "directory-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "method-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "method-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "method-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "method-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "method-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "mixed-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "mixed-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "mixed-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "mixed-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "mixed-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "long-title-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "long-title-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "long-title-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "long-title-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "long-title-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "missing-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "missing-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "missing-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "missing-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "missing-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "private-plan-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "private-plan-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "private-plan-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "private-plan-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "private-plan-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "zero-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "zero-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "zero-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "zero-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "zero-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "caveat-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "caveat-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "caveat-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "caveat-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "caveat-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "source-dates-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "source-dates-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "source-dates-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "source-dates-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "source-dates-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "unicode-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "unicode-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "unicode-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "unicode-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "unicode-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/"
+      ]
+    },
+    {
+      "file": "holdout-varna-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/varna/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-varna-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/varna/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-varna-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/varna/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-varna-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/varna/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-varna-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/varna/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-brno-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/brno/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-brno-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/brno/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-brno-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/brno/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-brno-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/brno/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-brno-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/brno/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-long-link-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
+      ]
+    },
+    {
+      "file": "holdout-long-link-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
+      ]
+    },
+    {
+      "file": "holdout-long-link-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
+      ]
+    },
+    {
+      "file": "holdout-long-link-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
+      ]
+    },
+    {
+      "file": "holdout-long-link-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
+      ]
+    },
+    {
+      "file": "holdout-advisory-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-advisory-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-advisory-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-advisory-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-advisory-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "holdout-budget-peak-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
+      ]
+    },
+    {
+      "file": "holdout-budget-peak-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
+      ]
+    },
+    {
+      "file": "holdout-budget-peak-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
+      ]
+    },
+    {
+      "file": "holdout-budget-peak-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
+      ]
+    },
+    {
+      "file": "holdout-budget-peak-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
+      ]
+    }
+  ]
+}
