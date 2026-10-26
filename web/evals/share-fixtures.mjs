@@ -1,4 +1,4 @@
-import {createShare,cityShare,comparisonShare,rankingShare} from '../public/modules/share-model.js';
+import {createShare,cityShare,comparisonShare,rankingShare,personalShare} from '../public/modules/share-model.js';
 import {parseState,rankCities} from '../public/modules/ranking.js';
 import {readFileSync} from 'node:fs';
 import {guideShare} from '../public/modules/share-guide-model.js';
@@ -30,6 +30,9 @@ export function shareFixtures(catalog){
  for(const slug of ['varna','brno']){const c=city(slug);if(c)add('holdout-'+slug,cityShare(c,11,origin+'/cities/'+slug+'/'));}
  const longState=parseState(new URL(origin+'/?q='+encodeURIComponent('清迈'.repeat(50))));longState.month=11;add('holdout-long-link',rankingShare([],longState,origin+'/',11));
  add('holdout-advisory',comparisonShare([city('kabul'),city('chiang-mai')],11,origin+'/compare/chiang-mai-vs-kabul/'));
+ add('personal-city-advisory',personalShare(cityShare(city('kabul'),11,origin+'/cities/kabul/'),{summary:'我的方案',facts:[{label:'已知开销小计',value:'CNY 6,000'}],caveats:['机票与押金另计。']}));
+ add('personal-comparison-advisory',personalShare(comparisonShare([city('kabul'),city('chiang-mai')],11,origin+'/compare/chiang-mai-vs-kabul/'),{summary:'我的方案',facts:[{label:'已知开销小计',value:'CNY 6,000'}],caveats:['机票与押金另计。']}));
+
  const guideHTML=readFileSync(new URL('../content/city-guides/chiang-mai-monthly-budget.html',import.meta.url),'utf8'),guide=JSON.parse(guideHTML.match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)[1]);
  add('holdout-budget-peak',guideShare(guide,{title:'清迈住31晚，旺季先问总价',summary:'按文章公开选项重算，未包含个人房租。'},origin+'/guides/chiang-mai-monthly-budget/?nights=31&season=peak&currency=CNY&housing=9876543'));
  return cards;

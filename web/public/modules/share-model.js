@@ -36,18 +36,19 @@ export function createShare(input){
  const source=row=>({title:text(row.title,200),url:row.url?safeURL(row.url).href:null,date:text(row.date,80)});
  const result={kind:text(input.kind||'page',30),title:text(input.title,200),subtitle:text(input.subtitle,300),summary:text(input.summary,1200),body:text(input.body,24000),url:input.url?safeURL(input.url).href:null,
   facts:(input.facts||[]).map(fact),items:(input.items||[]).map(row=>({title:text(row.title,200),detail:text(row.detail,600)})),
-  caveats:(input.caveats||[]).map(value=>text(value,1000)),captionNotes:(input.captionNotes||[]).map(value=>text(value,1000)),sources:(input.sources||[]).map(source),
+  caveats:(input.caveats||[]).map(value=>text(value,1000)),advisories:(input.advisories||[]).map(value=>text(value,1000)),captionNotes:(input.captionNotes||[]).map(value=>text(value,1000)),sources:(input.sources||[]).map(source),
   photos:(input.photos||[]).filter(row=>row.credit&&row.source&&/^\/(?!\/)/.test(row.url||'')).map(row=>({url:text(row.url,1000),credit:text(row.credit,4000),source:safeURL(row.source).href,label:text(row.label,200)})),
   private:input.private===true,essentialCaveat:text(input.essentialCaveat,400),linkNote:text(input.linkNote,500)};
  if(!result.title)throw Error('分享内容还没有标题。');return freeze(result);
 }
 export const amountText=(value,currency='USD')=>value===null||value===undefined||value===''?'待补充':new Intl.NumberFormat('zh-CN',{style:'currency',currency,maximumFractionDigits:0}).format(value);
+export function personalShare(card,changes){return createShare({...card,...changes,private:true,advisories:card.advisories});}
 export function cityShare(city,month,inputURL){
  const weather=city.months?.find(row=>Number(row.month)===month),advisory=travelAdvisory(city);
  return createShare({kind:'city',title:city.name,subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
   facts:[{label:'历史月参考',value:amountText(city.budget,city.budgetCurrency||'USD'),note:city.budgetCheckedAt?'核对 '+city.budgetCheckedAt:'资料日期待核对'},{label:month+'月历史均温',value:weather?.meanC===null||weather?.meanC===undefined?'待补充':Math.round(weather.meanC)+'°C',note:'2023–2025 年气候参考'}],
   photos:[{url:city.photo,credit:city.photoCredit,source:city.photoSource,label:city.name}],
-  caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价；气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核；工作许可另查。']:[])],
+  advisories:advisory?[advisory.reason]:[],caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价；气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核；工作许可另查。']:[])],
   sources:[{title:'城市资料与来源',url:shareURL(inputURL,{kind:'city',month}),date:city.checkedAt||''}]});
 }
 export function rankingShare(cities,state,inputURL,actualMonth=displayMonth(state)){
@@ -61,11 +62,11 @@ export function rankingShare(cities,state,inputURL,actualMonth=displayMonth(stat
   caveats:['排行按当前偏好计算，图中最多三城；全部条件与权重随链接保留。','花费为历史参考，入境标签待复核；个人报价和会议未包含。'],captionNotes:['排名权重：'+sortedWeights.map(([key,value])=>LABELS[key]+value).join('、')],sources:[{title:'排行与资料口径',url:url.origin+url.pathname.replace(/\/cities\/?$/,'/').replace(/\/?$/,'/')+'about/',date:''},...cities.slice(0,3).map(city=>({title:city.name+'历史月参考',date:city.budgetCheckedAt||'日期待核对'}))]});
 }
 export function shareText(card){
- return [card.title,card.subtitle,card.summary,card.body,...card.facts.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...card.items.map(row=>[row.title,row.detail].filter(Boolean).join('：')),...card.caveats,...card.captionNotes,...card.sources.map(row=>[row.title,row.date,row.url].filter(Boolean).join(' ')),...card.photos.map(row=>'照片：'+row.credit+' '+row.source),card.linkNote,card.url].filter(Boolean).join('\n\n');
+ return [card.title,card.subtitle,card.summary,card.body,...card.facts.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...card.items.map(row=>[row.title,row.detail].filter(Boolean).join('：')),...new Set([...(card.advisories||[]),...card.caveats]),...card.captionNotes,...card.sources.map(row=>[row.title,row.date,row.url].filter(Boolean).join(' ')),...card.photos.map(row=>'照片：'+row.credit+' '+row.source),card.linkNote,card.url].filter(Boolean).join('\n\n');
 }
 export function comparisonShare(cities,month,inputURL){
  const warnings=cities.map(city=>travelAdvisory(city)).filter(Boolean);
  return createShare({kind:'comparison',title:cities.map(city=>city.name).join(' 与 '),subtitle:month+'月 / 两城之间',url:shareURL(inputURL,{kind:'comparison',month}),
   summary:'把住一个月的参考，放在一起看。',items:cities.map(city=>{const weather=city.months?.find(row=>Number(row.month)===month);return {title:city.name,detail:'历史月参考 '+amountText(city.budget,city.budgetCurrency||'USD')+'；'+month+'月历史均温 '+(weather?.meanC==null?'待补充':Math.round(weather.meanC)+'°C')};}),
-  caveats:[...warnings.map(warning=>warning.reason),'花费为历史参考，住宿条件未必相同；气候不是天气预报。','入境标签待复核，工作许可另查；不含个人报价。'],essentialCaveat:warnings.map(warning=>warning.reason).join(' '),sources:[...warnings.map(warning=>({title:'官方出行提醒',url:warning.url})),...cities.map(city=>({title:city.name+'资料',url:new URL('../..',inputURL).origin+new URL(inputURL).pathname.split('/compare/')[0]+'/cities/'+city.slug+'/',date:city.budgetCheckedAt||city.checkedAt||''}))]});
+  advisories:warnings.map(warning=>warning.reason),caveats:[...warnings.map(warning=>warning.reason),'花费为历史参考，住宿条件未必相同；气候不是天气预报。','入境标签待复核，工作许可另查；不含个人报价。'],essentialCaveat:warnings.map(warning=>warning.reason).join(' '),sources:[...warnings.map(warning=>({title:'官方出行提醒',url:warning.url})),...cities.map(city=>({title:city.name+'资料',url:new URL('../..',inputURL).origin+new URL(inputURL).pathname.split('/compare/')[0]+'/cities/'+city.slug+'/',date:city.budgetCheckedAt||city.checkedAt||''}))]});
 }

@@ -53,3 +53,9 @@ test('real-world long photo credits cannot block link and text sharing',()=>{
 test('ranking alias uses the mount root for its method source',()=>{
  const state={month:11,weights:{safety:30,cost:25,climate:15,life:5,internet:10,community:15},limit:40};assert.equal(model.rankingShare([],state,'https://roamorrow.com/nomads/cities/',11).sources[0].url,'https://roamorrow.com/nomads/about/');
 });
+test('personal city and comparison shares retain official travel advisories',async()=>{
+ const {layoutShare}=await import('../public/modules/share-render.js');const afghan={...fixture,name:'喀布尔',slug:'kabul',countryCode:'AF'};
+ const cards=[model.cityShare(afghan,11,'https://roamorrow.com/nomads/cities/kabul/'),model.comparisonShare([afghan,fixture],11,'https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/')];
+ const ctx={font:'',measureText(value){return {width:[...value].length*Number(this.font.match(/(\d+)px/)?.[1]||24)*.65};}};
+ for(const card of cards){const personal=model.personalShare(card,{summary:'我的方案',facts:[{label:'已知开销小计',value:'CNY 6,000'}],caveats:['机票与押金另计。']});assert.match(model.shareText(personal),/暂勿前往/);for(const format of model.SHARE_FORMATS)assert.match(layoutShare(ctx,personal,format).pages.flatMap(page=>page.blocks).map(block=>block.text||'').join(''),/暂勿前往/);}
+});
