@@ -45,9 +45,15 @@
       "approvedOn": "2026-10-27",
       "authority": "User explicitly requested continuous autonomous researched writing and publication at the prior batch scale until 11:00 Asia/Singapore; content integrated independent source review and final whitelist language review.",
       "reviewRecord": "research/2026-10-27-articles-batch1.md"
+    },
+    "continuousBatch2": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched article publication until 11:00 Asia/Singapore; independent source/integration review and final Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch2.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -563,6 +569,41 @@
       "approved": true,
       "sha256": "81294ae6174554c2482d5f6e00210011e4b874acfe8b6bad86003c7cb201600a",
       "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "auckland-monthly-budget",
+      "sourceFile": "auckland-monthly-budget.html",
+      "approved": true,
+      "sha256": "3ca819f510cce5ec063a19074969e0aa287db3bb9e78d0246d2aadc866c8fe27",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "wellington-monthly-budget",
+      "sourceFile": "wellington-monthly-budget.html",
+      "approved": true,
+      "sha256": "d488a216f38a7dcfafcf50b7872d08e3ddd68740cfdccdd84aa0f2eca9ffe8a6",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "tbilisi-monthly-budget",
+      "sourceFile": "tbilisi-monthly-budget.html",
+      "approved": true,
+      "sha256": "c2532839d4325f4ce3c3508578792496fa7446dd0460b7f911a797264ebe2ba0",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "new-zealand-weekly-rent-thirty-nights",
+      "sourceFile": "new-zealand-weekly-rent-thirty-nights.html",
+      "approved": true,
+      "sha256": "37ba2dcb98cbe7c8c9c9c73a71bfb6e4d87945e9f9c60071e59ef462211d54a7",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "auckland-hop-cap-airport-transport",
+      "sourceFile": "auckland-hop-cap-airport-transport.html",
+      "approved": true,
+      "sha256": "a513810ec92b9f1183f799d7fa44b8b7142e3699e209df440694b87fa2315342",
+      "source": "research/2026-10-27-articles-batch2.md"
     }
   ],
   "assets": [
@@ -619,7 +660,7 @@
     {
       "source": "preview.css",
       "destination": "guide.css",
-      "sha256": "db5c7509a87c61e4f5ddd1797bd5f85350606033d952270877842a2f29ce348c"
+      "sha256": "b3b9723f1c3afa94b667c709965d7da6394b33f88721f40f9e3417d4877d9f6f"
     },
     {
       "source": "reader.js",
@@ -629,12 +670,12 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "8c6bfd57312fd715185da756090269f9b731ff80b0f2fc36f63c141a18bffac1"
+      "sha256": "4b4235be790b6bd5b8d3ed9f1a3cc52afed7c4c89566a8be2ed4f90ded253c2e"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "3aa87bb550987ad5184f8b68c860c525e19e7c5976ec31254c97fd8cc911b4ea"
+      "sha256": "3edec0f2280094ab9ae40e015bbacd1b54d93483331a30d23b3967ec115178b8"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
@@ -1025,6 +1066,56 @@
       "source": "assets/og-editorial-new-zealand-visitor-remote-work.jpeg",
       "destination": "images/og-editorial-new-zealand-visitor-remote-work.jpeg",
       "sha256": "80d786f97f38b98ce831c16fa22de375fe86a2caaa0454c4e49b5fa11cb1b590"
+    },
+    {
+      "source": "assets/editorial-auckland.webp",
+      "destination": "images/editorial-auckland.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/editorial-wellington.webp",
+      "destination": "images/editorial-wellington.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/editorial-tbilisi.webp",
+      "destination": "images/editorial-tbilisi.webp",
+      "sha256": "0af908aa7c04fb65b42ac9ecaf6bae947958b0055878bf9e5ed2646153e008e4"
+    },
+    {
+      "source": "assets/new-zealand-weekly-rent-thirty-nights.webp",
+      "destination": "images/new-zealand-weekly-rent-thirty-nights.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/auckland-hop-cap-airport-transport.webp",
+      "destination": "images/auckland-hop-cap-airport-transport.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/og-editorial-auckland-monthly-budget.jpeg",
+      "destination": "images/og-editorial-auckland-monthly-budget.jpeg",
+      "sha256": "e55fa145c26fb494238e1730066bcb08da02b3b8333c65ad696203d04226fdc9"
+    },
+    {
+      "source": "assets/og-editorial-wellington-monthly-budget.jpeg",
+      "destination": "images/og-editorial-wellington-monthly-budget.jpeg",
+      "sha256": "8bd888d390cfab5d14390efc8b64dc3dc3f8b2d40a4f4d49c65668be23784a64"
+    },
+    {
+      "source": "assets/og-editorial-tbilisi-monthly-budget.jpeg",
+      "destination": "images/og-editorial-tbilisi-monthly-budget.jpeg",
+      "sha256": "509760469352da5b7c63c85f33433f0a2115fcdfa04285f2969d81a33633ed14"
+    },
+    {
+      "source": "assets/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
+      "destination": "images/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
+      "sha256": "ea3e5d8d647102d41d238ff09ba185356f961bdea6103b0b848e01e62e635292"
+    },
+    {
+      "source": "assets/og-editorial-auckland-hop-cap-airport-transport.jpeg",
+      "destination": "images/og-editorial-auckland-hop-cap-airport-transport.jpeg",
+      "sha256": "e6bca289a18fd60aa45c09087bd1b51f872282bcc2c09279c1133e2f03e3c7c1"
     }
   ]
 }

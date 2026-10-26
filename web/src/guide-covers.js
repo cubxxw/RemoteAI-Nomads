@@ -133,6 +133,18 @@ const CITY_COVERS = Object.freeze(
     "photo_url": "/images/city-xiamen.webp",
     "photo_credit": "Windmemories / CC BY-SA 4.0",
     "photo_source": "https://commons.wikimedia.org/wiki/File:20121031_Xiamen_University_01.jpg"
+  },
+  "wellington": {
+    "name_zh": "惠灵顿",
+    "photo_url": "/images/city-wellington.webp",
+    "photo_credit": "russellstreet / CC BY-SA 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Seddon_Statue_in_Parliament_Grounds.jpg"
+  },
+  "tbilisi": {
+    "name_zh": "第比利斯",
+    "photo_url": "/images/city-tbilisi.webp",
+    "photo_credit": "Alexey Komarov / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:View_of_Tbilisi_from_Tabori_Church_2023-10-08-2.jpg"
   }
 }
 );
