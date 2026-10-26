@@ -88,4 +88,6 @@ npm run demo
 
 [开发与本地运行](web/README.md) · [设计约定](web/design.md) · [部署与回退](web/docs/deployment.md) · [测试与已知边界](web/docs/verification.md)
 
+开发者可通过[公开MCP与旅居规划Skill](mcp/README.md)复用可核对的公开资料。当前提供本地运行与安装包，正式服务地址待部署验收。
+
 代码采用 [MIT 许可](LICENSE)。照片与外部数据遵循各自许可，代码许可不覆盖它们。
