@@ -34,7 +34,7 @@ test('published articles associate with exact cities and both sides of multi-cit
   assert.deepEqual(slugList(articlesForCity('chiang-mai')), ['chiang-mai-monthly-budget', 'chiang-mai-vs-penang', 'chiang-mai-vs-da-nang', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
   assert.deepEqual(slugList(articlesForCity('penang')), ['penang-monthly-budget', 'chiang-mai-vs-penang', 'november-nomad-destinations', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
   assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang', 'november-nomad-destinations', 'da-nang-monthly-budget']);
-  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
+  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget', 'beijing-time-remote-work', 'chinese-passport-long-stay', 'two-person-monthly-budget']);
   assert.deepEqual(slugList(articlesForCity('dali')), ['dali-monthly-budget', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work']);
   assert.deepEqual(articlesForCity('chiang'), []);
   assert.deepEqual(articlesForCity('chiang-mai-extra'), []);
@@ -153,6 +153,11 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'da-nang-monthly-budget': ['2026-10-26', '2026-10-21'],
       'xiamen-monthly-budget': ['2026-10-26', '2026-10-20'],
       'japan-digital-nomad-chinese-passport': ['2026-10-26', null],
+      'kunming-monthly-budget': ['2026-10-27', '2026-10-26'],
+      'bangkok-monthly-budget': ['2026-10-27', '2026-10-26'],
+      'abu-dhabi-monthly-budget': ['2026-10-27', '2026-10-26'],
+      'two-person-monthly-budget': ['2026-10-27', null],
+      'new-zealand-visitor-remote-work': ['2026-10-27', null],
       'chengdu-monthly-budget': ['2026-10-21', '2026-10-20'],
       'fethiye-monthly-budget': ['2026-10-21', '2026-10-20'],
       'lisbon-monthly-budget': ['2026-10-21', '2026-10-20'],
@@ -200,7 +205,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 51);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 53);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);

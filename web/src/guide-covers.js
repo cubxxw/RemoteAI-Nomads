@@ -8,6 +8,30 @@ import {editorialScene, sceneImage} from './editorial-scenes.js';
 // metadata; nothing here invents a location. See web/docs/design-refresh-2026-10-23.md.
 const CITY_COVERS = Object.freeze(
 {
+  "abu-dhabi": {
+    "name_zh": "阿布扎比",
+    "photo_url": "/images/city-abu-dhabi.webp",
+    "photo_credit": "Wadiia / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Abu_dhabi_skylines_2014.jpg"
+  },
+  "auckland": {
+    "name_zh": "奥克兰",
+    "photo_url": "/images/city-auckland.webp",
+    "photo_credit": "elpinto007 / CC BY-SA 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Auckland_skyline_-_May_2024_%282%29.jpg"
+  },
+  "bangkok": {
+    "name_zh": "曼谷",
+    "photo_url": "/images/city-bangkok.webp",
+    "photo_credit": "Ninara from Helsinki, Finland / CC BY 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_%2833536795515%29.jpg"
+  },
+  "kunming": {
+    "name_zh": "昆明",
+    "photo_url": "/images/city-kunming.webp",
+    "photo_credit": "瑞丽江的河水 / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:%E4%BA%94%E5%8D%8E%E5%8C%BA%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2025-05-16_04.jpg"
+  },
   "baku": {
     "name_zh": "巴库",
     "photo_url": "/images/city-baku.webp",

@@ -1109,6 +1109,74 @@
       "status": "published",
       "updatedAt": "2026-10-26",
       "assetPath": "/city-guides/japan-digital-nomad-chinese-passport.html"
+    },
+    {
+      "slug": "two-person-monthly-budget",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/two-person-monthly-budget/",
+      "title": "两个人住一个月，房租能平摊，哪些费用要重算？",
+      "summary": "用吉隆坡NOVO公寓与WORQ工位的公开价格演算双人月住：房费按整间确认，工位按人计算，押金单独准备。3300令吉只是一间Studio和两张月票的条件性小计，生活费及未确认收费另算。",
+      "citySlugs": [
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/two-person-monthly-budget.html"
+    },
+    {
+      "slug": "new-zealand-visitor-remote-work",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/new-zealand-visitor-remote-work/",
+      "title": "去新西兰边旅行边远程工作，雇主和客户要在哪里？",
+      "summary": "新西兰允许符合条件的访客为境外雇主或客户远程工作，但本地雇佣、换宿和需要在新西兰现场完成的活动有不同要求。按2026年10月现行官方说明，核对中国护照入境路径、实际停留期限与税务条件。",
+      "citySlugs": [
+        "auckland",
+        "wellington"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/new-zealand-visitor-remote-work.html"
+    },
+    {
+      "slug": "kunming-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/kunming-monthly-budget/",
+      "title": "昆明住一个月，翠湖周边、大观路和环南怎么选",
+      "summary": "单人在昆明住30晚，三档编辑预留4,800、7,000和10,500元，默认房间办公，押金另备。对照翠湖周边、大观路与环南房源，确认短租合同、冬季采光制热和工位使用条件。",
+      "citySlugs": [
+        "kunming"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/kunming-monthly-budget.html"
+    },
+    {
+      "slug": "bangkok-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/bangkok-monthly-budget/",
+      "title": "曼谷住一个月，房租要和工位、跨区交通一起算",
+      "summary": "单人承担整间房住30晚，按同一张工位月票比较38,850、52,000和71,350泰铢三档规划。看拉差达39平方米公寓、施工与月期条件，区分Thonglor和Ekkamai工位时段，再核中国护照停留与远程工作安排。",
+      "citySlugs": [
+        "bangkok"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/bangkok-monthly-budget.html"
+    },
+    {
+      "slug": "abu-dhabi-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/abu-dhabi-monthly-budget/",
+      "title": "阿布扎比住一个月，清晨开会和短租房间怎么选",
+      "summary": "单人住阿布扎比30晚，舒适规划20,350迪拉姆，默认房间办公。比较Studio与一卧酒店公寓的月价、凌晨五点早会和日票门禁，住房与工位押金另备。",
+      "citySlugs": [
+        "abu-dhabi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/abu-dhabi-monthly-budget.html"
     }
   ]
 }

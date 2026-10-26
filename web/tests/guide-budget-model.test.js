@@ -1,8 +1,42 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {calculateBudget,readScenario,writeScenario} from '../content/city-guides/budget-model.mjs';
+import {calculateBudget,readScenario,writeScenario,formatMoney} from '../content/city-guides/budget-model.mjs';
 const configFor = slug => JSON.parse(readFileSync(new URL('../content/city-guides/'+slug+'-monthly-budget.html',import.meta.url),'utf8').match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)[1]).config;
+
+test('AED budgets retain their currency in shared scenarios, native totals and unavailable conversions',()=>{
+ const c=structuredClone(configFor('dali'));
+ // Synthetic amounts exercise currency handling independently of editorial price data.
+ c.nativeCurrency='AED'; c.defaultScenario.currency='AED';
+ c.fx={base:'AED',rates:{CNY:2},date:'2026-10-26'};
+ const native=calculateBudget(c);
+ assert.equal(native.currency,'AED');
+ assert.equal(native.totalDisplay,native.totalNative);
+ assert.equal(formatMoney(1250,'AED'),'1,250 AED');
+ assert.equal(readScenario(writeScenario({...c.defaultScenario,housingNative:0}),c).currency,'AED');
+ assert.equal(calculateBudget(c,{currency:'CNY'}).totalDisplay,native.totalNative*2);
+ const noFx=calculateBudget(c,{currency:'USD'});
+ assert.equal(noFx.totalNative,native.totalNative); assert.equal(noFx.totalDisplay,null);
+});
+
+test('new city plans keep whole work passes and block unknown monthly contracts',()=>{
+ const bangkok=configFor('bangkok');
+ assert.equal(calculateBudget(bangkok).totalNative,52000);
+ assert.equal(calculateBudget(bangkok,{work:'occasional'}).items.find(i=>i.id==='work').amountNative,1682.04);
+ assert.equal(calculateBudget(bangkok,{nights:31}).items.find(i=>i.id==='work').amountNative,10700);
+ for(const [slug,total] of [['kunming',7000],['abu-dhabi',20350]]){
+  const c=configFor(slug),room=calculateBudget(c),monthly=calculateBudget(c,{work:'cowork'});
+  assert.equal(room.totalNative,total);
+  assert.equal(monthly.totalNative,null); assert.equal(monthly.knownSubtotalNative,total);
+  assert.ok(monthly.missing.includes('work'));
+ }
+ for(const slug of ['kunming','bangkok','abu-dhabi']){
+  const html=readFileSync(new URL('../content/city-guides/'+slug+'-monthly-budget.html',import.meta.url),'utf8');
+  const page=JSON.parse(html.match(/<script type="application\/json" id="guide-config">([\s\S]*?)<\/script>/)[1]);
+  assert.deepEqual(page.defaultResult,calculateBudget(page.config));
+  assert.equal(calculateBudget(page.config,{season:'peak'}).totalNative,null);
+ }
+});
 
 test('Kuala Lumpur reserves the whole room, utilities and the taxed daytime coworking pass',()=>{
  const c=configFor('kuala-lumpur');

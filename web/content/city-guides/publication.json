@@ -39,9 +39,15 @@
         "penang-kuala-lumpur-one-working-day",
         "kuala-lumpur-monthly-bill-extras"
       ]
+    },
+    "continuousBatch1": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User explicitly requested continuous autonomous researched writing and publication at the prior batch scale until 11:00 Asia/Singapore; content integrated independent source review and final whitelist language review.",
+      "reviewRecord": "research/2026-10-27-articles-batch1.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -522,6 +528,41 @@
       "approved": true,
       "sha256": "985397f790e29f3a94bb9acf29ee0743db2a7445abf52039660b7ae799f3de59",
       "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "kunming-monthly-budget",
+      "sourceFile": "kunming-monthly-budget.html",
+      "approved": true,
+      "sha256": "be5f98fc3b27c841515b3dd00988b9fe0d5bb838afd05c313aedb4d2578da612",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "bangkok-monthly-budget",
+      "sourceFile": "bangkok-monthly-budget.html",
+      "approved": true,
+      "sha256": "64cfc2a02a35dcaf422dca5d2c854fb96136009d3ac6b78081f388478eb0c12d",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "abu-dhabi-monthly-budget",
+      "sourceFile": "abu-dhabi-monthly-budget.html",
+      "approved": true,
+      "sha256": "635c46dc975a821212e92e674bb789495a64a4c3f97a92adecd5cd363f3b00b2",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "two-person-monthly-budget",
+      "sourceFile": "two-person-monthly-budget.html",
+      "approved": true,
+      "sha256": "78f95f9dfb098b3a7ee3d017bfe4b34473161f23e74c9b1c60f3a57c5d5fda8e",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "new-zealand-visitor-remote-work",
+      "sourceFile": "new-zealand-visitor-remote-work.html",
+      "approved": true,
+      "sha256": "81294ae6174554c2482d5f6e00210011e4b874acfe8b6bad86003c7cb201600a",
+      "source": "research/2026-10-27-articles-batch1.md"
     }
   ],
   "assets": [
@@ -588,12 +629,12 @@
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "8276afcc77b94dfd0b5a48e55a1926a263c5470167b91b8ae420d19b2583f021"
+      "sha256": "8c6bfd57312fd715185da756090269f9b731ff80b0f2fc36f63c141a18bffac1"
     },
     {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "5af8f55fd8c6bbbf6a56b1598d386f5b34e7de42e8ea01b654f312964eb09ea7"
+      "sha256": "3aa87bb550987ad5184f8b68c860c525e19e7c5976ec31254c97fd8cc911b4ea"
     },
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
@@ -934,6 +975,56 @@
       "source": "assets/og-editorial-osaka-city.webp",
       "destination": "images/og-editorial-osaka-city.webp",
       "sha256": "a2e6b7e7b5b1652034f1d3687468a75e0fc1562e958b97d7541dde10b510aafe"
+    },
+    {
+      "source": "assets/editorial-kunming.webp",
+      "destination": "images/editorial-kunming.webp",
+      "sha256": "0522323e8c1c0f21338fc50422956912713992d619b5ab343f30c5f326b94008"
+    },
+    {
+      "source": "assets/editorial-bangkok.webp",
+      "destination": "images/editorial-bangkok.webp",
+      "sha256": "d4ce76398641e871c46570bf15ccdce73adb0052435c093507a1e60c71c287e6"
+    },
+    {
+      "source": "assets/editorial-abu-dhabi.webp",
+      "destination": "images/editorial-abu-dhabi.webp",
+      "sha256": "00e1fe71166df0d53240262dec7872efdfc9b7d9e1727a4daa4f960f65681811"
+    },
+    {
+      "source": "assets/two-person-monthly-budget.webp",
+      "destination": "images/two-person-monthly-budget.webp",
+      "sha256": "d773689be46d36cba5cc495e49b83ff5a657dab09e775918ac4aba12245cf8ba"
+    },
+    {
+      "source": "assets/new-zealand-visitor-remote-work.webp",
+      "destination": "images/new-zealand-visitor-remote-work.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/og-editorial-kunming-monthly-budget.jpeg",
+      "destination": "images/og-editorial-kunming-monthly-budget.jpeg",
+      "sha256": "d3c7b2748fe07585919c08e632883925ca52c6e2ade03113c945f7f26173d6c4"
+    },
+    {
+      "source": "assets/og-editorial-bangkok-monthly-budget.jpeg",
+      "destination": "images/og-editorial-bangkok-monthly-budget.jpeg",
+      "sha256": "4f2f442b369f71d0ede6503d2f6219ec776ac9a823742eac9857ed923d0f3308"
+    },
+    {
+      "source": "assets/og-editorial-abu-dhabi-monthly-budget.jpeg",
+      "destination": "images/og-editorial-abu-dhabi-monthly-budget.jpeg",
+      "sha256": "add7ee18c5e05f3045a8fc6ef15f5af3b2fcb7636e53748b08c34d13a4dd61d8"
+    },
+    {
+      "source": "assets/og-editorial-two-person-monthly-budget.jpeg",
+      "destination": "images/og-editorial-two-person-monthly-budget.jpeg",
+      "sha256": "0851b5fe1f156d1200635fd27f88c95da838a084e28712dc4f679d28b1ce67ed"
+    },
+    {
+      "source": "assets/og-editorial-new-zealand-visitor-remote-work.jpeg",
+      "destination": "images/og-editorial-new-zealand-visitor-remote-work.jpeg",
+      "sha256": "80d786f97f38b98ce831c16fa22de375fe86a2caaa0454c4e49b5fa11cb1b590"
     }
   ]
 }
