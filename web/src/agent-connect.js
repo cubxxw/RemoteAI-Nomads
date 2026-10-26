@@ -60,4 +60,3 @@ export function agentConnectPage() {
 </div><script type="module" src="/modules/agent-connect.js"></script>`,
   };
 }
-
