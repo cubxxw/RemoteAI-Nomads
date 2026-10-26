@@ -1,7 +1,7 @@
 {
-  "decoder": "Apple Vision VNDetectBarcodesRequest, independent of encoder",
-  "checked": 175,
-  "matched": 175,
+  "decoder": "Apple Vision VNDetectBarcodesRequest",
+  "checked": 185,
+  "matched": 185,
   "failed": [],
   "records": [
     {
@@ -1020,6 +1020,66 @@
     },
     {
       "file": "holdout-advisory-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-city-advisory-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-city-advisory-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-city-advisory-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-city-advisory-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-city-advisory-story-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/cities/kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-comparison-advisory-portrait-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-comparison-advisory-square-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-comparison-advisory-feed-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-comparison-advisory-landscape-1.png",
+      "qr": [
+        "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+      ]
+    },
+    {
+      "file": "personal-comparison-advisory-story-1.png",
       "qr": [
         "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
       ]

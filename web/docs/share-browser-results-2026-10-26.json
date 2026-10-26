@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "sourceRevision": "2a55dd80650284a705294850480cf6d1b0e56fdc",
-  "sourceFingerprint": "2632269e8bac6485578d40133eda6e5df824c7754f145e883914f42cf2071b9f",
+  "sourceRevision": "641a12373cf75996cdced6f9a1eaf00af2183ae3",
+  "sourceFingerprint": "094290db970cc67c808869950b82e08d40261abd13f9bbee83914c5f3804912e",
   "sourceFiles": [
     "public/modules/share-model.js",
     "public/modules/share-render.js",
@@ -14,12 +14,12 @@
   ],
   "evidenceKind": "actual-browser-export",
   "engine": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-  "createdAt": "2026-10-26T13:36:02.608Z",
-  "elapsedMs": 4740.199999988079,
-  "p95Ms": 40,
-  "cases": 37,
-  "checks": 185,
-  "passed": 185,
+  "createdAt": "2026-10-26T14:35:56.688Z",
+  "elapsedMs": 15910.699999988079,
+  "p95Ms": 185.69999998807907,
+  "cases": 39,
+  "checks": 195,
+  "passed": 195,
   "failed": [],
   "results": [
     {
@@ -31,10 +31,10 @@
           "name": "city-chiang-mai-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 729824
+          "bytes": 716772
         }
       ],
-      "elapsedMs": 83.69999998807907,
+      "elapsedMs": 1139.2000000476837,
       "qrURL": "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
     },
     {
@@ -46,10 +46,10 @@
           "name": "city-chiang-mai-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 570097
+          "bytes": 603081
         }
       ],
-      "elapsedMs": 29.69999998807907,
+      "elapsedMs": 160.0999999642372,
       "qrURL": "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
     },
     {
@@ -61,10 +61,10 @@
           "name": "city-chiang-mai-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 726990
+          "bytes": 714059
         }
       ],
-      "elapsedMs": 32,
+      "elapsedMs": 123,
       "qrURL": "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
     },
     {
@@ -76,10 +76,10 @@
           "name": "city-chiang-mai-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 305631
+          "bytes": 294367
         }
       ],
-      "elapsedMs": 24.80000001192093,
+      "elapsedMs": 143.9000000357628,
       "qrURL": "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
     },
     {
@@ -91,10 +91,10 @@
           "name": "city-chiang-mai-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 741615
+          "bytes": 728447
         }
       ],
-      "elapsedMs": 36.59999996423721,
+      "elapsedMs": 282.9000000357628,
       "qrURL": "https://roamorrow.com/nomads/cities/chiang-mai/?month=11"
     },
     {
@@ -106,10 +106,10 @@
           "name": "city-penang-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 922336
+          "bytes": 908688
         }
       ],
-      "elapsedMs": 37.80000001192093,
+      "elapsedMs": 147.70000004768372,
       "qrURL": "https://roamorrow.com/nomads/cities/penang/?month=11"
     },
     {
@@ -121,10 +121,10 @@
           "name": "city-penang-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 695634
+          "bytes": 755282
         }
       ],
-      "elapsedMs": 37.39999997615814,
+      "elapsedMs": 128.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/penang/?month=11"
     },
     {
@@ -136,10 +136,10 @@
           "name": "city-penang-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 919788
+          "bytes": 906213
         }
       ],
-      "elapsedMs": 29.80000001192093,
+      "elapsedMs": 100.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/penang/?month=11"
     },
     {
@@ -151,10 +151,10 @@
           "name": "city-penang-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 363406
+          "bytes": 352318
         }
       ],
-      "elapsedMs": 23,
+      "elapsedMs": 91.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/cities/penang/?month=11"
     },
     {
@@ -166,10 +166,10 @@
           "name": "city-penang-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 935775
+          "bytes": 922306
         }
       ],
-      "elapsedMs": 33.30000001192093,
+      "elapsedMs": 94.70000004768372,
       "qrURL": "https://roamorrow.com/nomads/cities/penang/?month=11"
     },
     {
@@ -181,10 +181,10 @@
           "name": "city-lisbon-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 964333
+          "bytes": 952258
         }
       ],
-      "elapsedMs": 47.700000047683716,
+      "elapsedMs": 105.59999996423721,
       "qrURL": "https://roamorrow.com/nomads/cities/lisbon/?month=11"
     },
     {
@@ -196,10 +196,10 @@
           "name": "city-lisbon-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 755424
+          "bytes": 801365
         }
       ],
-      "elapsedMs": 32.60000002384186,
+      "elapsedMs": 217.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/lisbon/?month=11"
     },
     {
@@ -211,10 +211,10 @@
           "name": "city-lisbon-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 962090
+          "bytes": 949597
         }
       ],
-      "elapsedMs": 51.799999952316284,
+      "elapsedMs": 196.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/lisbon/?month=11"
     },
     {
@@ -226,10 +226,10 @@
           "name": "city-lisbon-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 366997
+          "bytes": 358872
         }
       ],
-      "elapsedMs": 39.10000002384186,
+      "elapsedMs": 135.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/lisbon/?month=11"
     },
     {
@@ -241,10 +241,10 @@
           "name": "city-lisbon-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 979319
+          "bytes": 966733
         }
       ],
-      "elapsedMs": 46.69999998807907,
+      "elapsedMs": 123.5,
       "qrURL": "https://roamorrow.com/nomads/cities/lisbon/?month=11"
     },
     {
@@ -256,10 +256,10 @@
           "name": "city-plovdiv-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 789408
+          "bytes": 775693
         }
       ],
-      "elapsedMs": 23.19999998807907,
+      "elapsedMs": 144.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
     },
     {
@@ -271,10 +271,10 @@
           "name": "city-plovdiv-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 595258
+          "bytes": 635807
         }
       ],
-      "elapsedMs": 20.30000001192093,
+      "elapsedMs": 183.60000002384186,
       "qrURL": "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
     },
     {
@@ -286,10 +286,10 @@
           "name": "city-plovdiv-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 786628
+          "bytes": 772914
         }
       ],
-      "elapsedMs": 28,
+      "elapsedMs": 114,
       "qrURL": "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
     },
     {
@@ -301,10 +301,10 @@
           "name": "city-plovdiv-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 342373
+          "bytes": 331779
         }
       ],
-      "elapsedMs": 22.100000023841858,
+      "elapsedMs": 64.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
     },
     {
@@ -316,10 +316,10 @@
           "name": "city-plovdiv-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 801245
+          "bytes": 787308
         }
       ],
-      "elapsedMs": 28.899999976158142,
+      "elapsedMs": 206.5,
       "qrURL": "https://roamorrow.com/nomads/cities/plovdiv/?month=11"
     },
     {
@@ -331,10 +331,10 @@
           "name": "city-hanoi-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 808018
+          "bytes": 795448
         }
       ],
-      "elapsedMs": 43.89999997615814,
+      "elapsedMs": 185.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/hanoi/?month=11"
     },
     {
@@ -346,10 +346,10 @@
           "name": "city-hanoi-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 598680
+          "bytes": 646153
         }
       ],
-      "elapsedMs": 35,
+      "elapsedMs": 147.29999995231628,
       "qrURL": "https://roamorrow.com/nomads/cities/hanoi/?month=11"
     },
     {
@@ -361,10 +361,10 @@
           "name": "city-hanoi-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 805210
+          "bytes": 792674
         }
       ],
-      "elapsedMs": 32.5,
+      "elapsedMs": 100,
       "qrURL": "https://roamorrow.com/nomads/cities/hanoi/?month=11"
     },
     {
@@ -376,10 +376,10 @@
           "name": "city-hanoi-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 331403
+          "bytes": 321923
         }
       ],
-      "elapsedMs": 21.899999976158142,
+      "elapsedMs": 109.60000002384186,
       "qrURL": "https://roamorrow.com/nomads/cities/hanoi/?month=11"
     },
     {
@@ -391,10 +391,10 @@
           "name": "city-hanoi-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 819821
+          "bytes": 807209
         }
       ],
-      "elapsedMs": 31.80000001192093,
+      "elapsedMs": 178.60000002384186,
       "qrURL": "https://roamorrow.com/nomads/cities/hanoi/?month=11"
     },
     {
@@ -406,10 +406,10 @@
           "name": "city-dali-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 584889
+          "bytes": 571024
         }
       ],
-      "elapsedMs": 29.799999952316284,
+      "elapsedMs": 171.5,
       "qrURL": "https://roamorrow.com/nomads/cities/dali/?month=11"
     },
     {
@@ -421,10 +421,10 @@
           "name": "city-dali-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 342825
+          "bytes": 371189
         }
       ],
-      "elapsedMs": 22.80000001192093,
+      "elapsedMs": 86.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/dali/?month=11"
     },
     {
@@ -436,10 +436,10 @@
           "name": "city-dali-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 581819
+          "bytes": 568037
         }
       ],
-      "elapsedMs": 25.80000001192093,
+      "elapsedMs": 165,
       "qrURL": "https://roamorrow.com/nomads/cities/dali/?month=11"
     },
     {
@@ -451,10 +451,10 @@
           "name": "city-dali-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 258910
+          "bytes": 247937
         }
       ],
-      "elapsedMs": 21.600000023841858,
+      "elapsedMs": 81.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/dali/?month=11"
     },
     {
@@ -466,10 +466,10 @@
           "name": "city-dali-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 599364
+          "bytes": 585140
         }
       ],
-      "elapsedMs": 27.099999964237213,
+      "elapsedMs": 220.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/dali/?month=11"
     },
     {
@@ -481,10 +481,10 @@
           "name": "city-baku-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 863990
+          "bytes": 846234
         }
       ],
-      "elapsedMs": 86.5,
+      "elapsedMs": 154.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/baku/?month=11"
     },
     {
@@ -496,10 +496,10 @@
           "name": "city-baku-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 585097
+          "bytes": 644367
         }
       ],
-      "elapsedMs": 37,
+      "elapsedMs": 238.9000000357628,
       "qrURL": "https://roamorrow.com/nomads/cities/baku/?month=11"
     },
     {
@@ -511,10 +511,10 @@
           "name": "city-baku-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 861401
+          "bytes": 843798
         }
       ],
-      "elapsedMs": 35.10000002384186,
+      "elapsedMs": 213.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/baku/?month=11"
     },
     {
@@ -526,10 +526,10 @@
           "name": "city-baku-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 350054
+          "bytes": 337557
         }
       ],
-      "elapsedMs": 28.399999976158142,
+      "elapsedMs": 175.39999997615814,
       "qrURL": "https://roamorrow.com/nomads/cities/baku/?month=11"
     },
     {
@@ -541,10 +541,10 @@
           "name": "city-baku-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 877952
+          "bytes": 860096
         }
       ],
-      "elapsedMs": 36.60000002384186,
+      "elapsedMs": 229.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/baku/?month=11"
     },
     {
@@ -556,10 +556,10 @@
           "name": "city-ubud-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 1031602
+          "bytes": 1019546
         }
       ],
-      "elapsedMs": 39.10000002384186,
+      "elapsedMs": 134.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/ubud/?month=11"
     },
     {
@@ -571,10 +571,10 @@
           "name": "city-ubud-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 790870
+          "bytes": 849151
         }
       ],
-      "elapsedMs": 28,
+      "elapsedMs": 145.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/cities/ubud/?month=11"
     },
     {
@@ -586,10 +586,10 @@
           "name": "city-ubud-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 1029120
+          "bytes": 1017086
         }
       ],
-      "elapsedMs": 29.399999976158142,
+      "elapsedMs": 173.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/cities/ubud/?month=11"
     },
     {
@@ -601,10 +601,10 @@
           "name": "city-ubud-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 387524
+          "bytes": 378876
         }
       ],
-      "elapsedMs": 24.30000001192093,
+      "elapsedMs": 94.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/ubud/?month=11"
     },
     {
@@ -616,10 +616,10 @@
           "name": "city-ubud-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 1045764
+          "bytes": 1033767
         }
       ],
-      "elapsedMs": 47.5,
+      "elapsedMs": 110.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/ubud/?month=11"
     },
     {
@@ -631,10 +631,10 @@
           "name": "ranking-default-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 740290
+          "bytes": 727493
         }
       ],
-      "elapsedMs": 29.19999998807907,
+      "elapsedMs": 81.5,
       "qrURL": "https://roamorrow.com/nomads/?month=11"
     },
     {
@@ -646,10 +646,10 @@
           "name": "ranking-default-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 148450
+          "bytes": 135699
         }
       ],
-      "elapsedMs": 20.600000023841858,
+      "elapsedMs": 50.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/?month=11"
     },
     {
@@ -661,10 +661,10 @@
           "name": "ranking-default-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 680470
+          "bytes": 709924
         }
       ],
-      "elapsedMs": 27.69999998807907,
+      "elapsedMs": 53.5,
       "qrURL": "https://roamorrow.com/nomads/?month=11"
     },
     {
@@ -676,16 +676,16 @@
           "name": "ranking-default-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 302003
+          "bytes": 290817
         },
         {
           "name": "ranking-default-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 107722
+          "bytes": 94752
         }
       ],
-      "elapsedMs": 30.69999998807907,
+      "elapsedMs": 64.10000002384186,
       "qrURL": "https://roamorrow.com/nomads/?month=11"
     },
     {
@@ -697,10 +697,10 @@
           "name": "ranking-default-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 752754
+          "bytes": 739578
         }
       ],
-      "elapsedMs": 28.30000001192093,
+      "elapsedMs": 99.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/?month=11"
     },
     {
@@ -712,10 +712,10 @@
           "name": "ranking-cny-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 753221
+          "bytes": 740519
         }
       ],
-      "elapsedMs": 27.200000047683716,
+      "elapsedMs": 76.79999995231628,
       "qrURL": "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
     },
     {
@@ -727,10 +727,10 @@
           "name": "ranking-cny-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 161614
+          "bytes": 148796
         }
       ],
-      "elapsedMs": 20.80000001192093,
+      "elapsedMs": 54,
       "qrURL": "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
     },
     {
@@ -742,10 +742,10 @@
           "name": "ranking-cny-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 693183
+          "bytes": 722894
         }
       ],
-      "elapsedMs": 26.19999998807907,
+      "elapsedMs": 86.10000002384186,
       "qrURL": "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
     },
     {
@@ -757,16 +757,16 @@
           "name": "ranking-cny-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 311328
+          "bytes": 300255
         },
         {
           "name": "ranking-cny-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 110579
+          "bytes": 97618
         }
       ],
-      "elapsedMs": 26.19999998807907,
+      "elapsedMs": 103.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
     },
     {
@@ -778,10 +778,10 @@
           "name": "ranking-cny-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 767624
+          "bytes": 754565
         }
       ],
-      "elapsedMs": 29.30000001192093,
+      "elapsedMs": 86.90000003576279,
       "qrURL": "https://roamorrow.com/nomads/?month=11&budget=6000&budgetCurrency=CNY&w=20%2C10%2C5%2C3%2C70%2C2"
     },
     {
@@ -793,10 +793,10 @@
           "name": "ranking-empty-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 147406
+          "bytes": 142400
         }
       ],
-      "elapsedMs": 18.399999976158142,
+      "elapsedMs": 31.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
     },
     {
@@ -808,10 +808,10 @@
           "name": "ranking-empty-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 138080
+          "bytes": 132806
         }
       ],
-      "elapsedMs": 26.399999976158142,
+      "elapsedMs": 20.600000023841858,
       "qrURL": "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
     },
     {
@@ -823,10 +823,10 @@
           "name": "ranking-empty-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 144431
+          "bytes": 139419
         }
       ],
-      "elapsedMs": 18.5,
+      "elapsedMs": 22.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
     },
     {
@@ -838,16 +838,16 @@
           "name": "ranking-empty-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 91106
+          "bytes": 86097
         },
         {
           "name": "ranking-empty-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 98846
+          "bytes": 93788
         }
       ],
-      "elapsedMs": 16.80000001192093,
+      "elapsedMs": 45.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
     },
     {
@@ -859,10 +859,10 @@
           "name": "ranking-empty-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 161991
+          "bytes": 156640
         }
       ],
-      "elapsedMs": 11.800000011920929,
+      "elapsedMs": 29,
       "qrURL": "https://roamorrow.com/nomads/?q=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9F%8E%E5%B8%82abc&month=11"
     },
     {
@@ -874,10 +874,10 @@
           "name": "ranking-all-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 757599
+          "bytes": 749903
         }
       ],
-      "elapsedMs": 29.80000001192093,
+      "elapsedMs": 101.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
     },
     {
@@ -889,10 +889,10 @@
           "name": "ranking-all-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 171746
+          "bytes": 158927
         }
       ],
-      "elapsedMs": 31.19999998807907,
+      "elapsedMs": 72.90000003576279,
       "qrURL": "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
     },
     {
@@ -904,10 +904,10 @@
           "name": "ranking-all-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 632433
+          "bytes": 665824
         }
       ],
-      "elapsedMs": 26.599999964237213,
+      "elapsedMs": 76.29999995231628,
       "qrURL": "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
     },
     {
@@ -919,22 +919,16 @@
           "name": "ranking-all-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 310716
+          "bytes": 308937
         },
         {
           "name": "ranking-all-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 112136
-        },
-        {
-          "name": "ranking-all-landscape-3.png",
-          "width": 1200,
-          "height": 630,
-          "bytes": 94443
+          "bytes": 98792
         }
       ],
-      "elapsedMs": 38.19999998807907,
+      "elapsedMs": 77.39999997615814,
       "qrURL": "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
     },
     {
@@ -946,10 +940,10 @@
           "name": "ranking-all-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 778173
+          "bytes": 765075
         }
       ],
-      "elapsedMs": 30.399999976158142,
+      "elapsedMs": 98.20000004768372,
       "qrURL": "https://roamorrow.com/nomads/?region=%E4%BA%9A%E6%B4%B2&month=11&budget=1000&recommendedOnly=1&visa=visa_free"
     },
     {
@@ -961,10 +955,10 @@
           "name": "ranking-custom-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 831707
+          "bytes": 814540
         }
       ],
-      "elapsedMs": 29.80000001192093,
+      "elapsedMs": 75.5,
       "qrURL": "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
     },
     {
@@ -976,10 +970,10 @@
           "name": "ranking-custom-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 157719
+          "bytes": 140218
         }
       ],
-      "elapsedMs": 17.799999952316284,
+      "elapsedMs": 52.09999996423721,
       "qrURL": "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
     },
     {
@@ -991,10 +985,10 @@
           "name": "ranking-custom-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 725948
+          "bytes": 796274
         }
       ],
-      "elapsedMs": 22.80000001192093,
+      "elapsedMs": 91.60000002384186,
       "qrURL": "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
     },
     {
@@ -1006,16 +1000,16 @@
           "name": "ranking-custom-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 342298
+          "bytes": 328697
         },
         {
           "name": "ranking-custom-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 113294
+          "bytes": 96538
         }
       ],
-      "elapsedMs": 24.19999998807907,
+      "elapsedMs": 98.5,
       "qrURL": "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
     },
     {
@@ -1027,10 +1021,10 @@
           "name": "ranking-custom-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 845746
+          "bytes": 828187
         }
       ],
-      "elapsedMs": 29.19999998807907,
+      "elapsedMs": 100.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/?month=1&w=90%2C1%2C2%2C3%2C4%2C0"
     },
     {
@@ -1042,10 +1036,10 @@
           "name": "comparison-0-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 161075
+          "bytes": 153381
         }
       ],
-      "elapsedMs": 19.5,
+      "elapsedMs": 40.5,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
     },
     {
@@ -1057,10 +1051,10 @@
           "name": "comparison-0-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 149668
+          "bytes": 142231
         }
       ],
-      "elapsedMs": 9.299999952316284,
+      "elapsedMs": 25.5,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
     },
     {
@@ -1072,10 +1066,10 @@
           "name": "comparison-0-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 158147
+          "bytes": 150643
         }
       ],
-      "elapsedMs": 14.100000023841858,
+      "elapsedMs": 30.899999976158142,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
     },
     {
@@ -1087,16 +1081,16 @@
           "name": "comparison-0-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 107681
+          "bytes": 100122
         },
         {
           "name": "comparison-0-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 95295
+          "bytes": 87783
         }
       ],
-      "elapsedMs": 18,
+      "elapsedMs": 67.10000002384186,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
     },
     {
@@ -1108,10 +1102,10 @@
           "name": "comparison-0-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 172729
+          "bytes": 164751
         }
       ],
-      "elapsedMs": 11.399999976158142,
+      "elapsedMs": 32.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-penang/?month=11"
     },
     {
@@ -1123,10 +1117,10 @@
           "name": "comparison-1-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 161526
+          "bytes": 153754
         }
       ],
-      "elapsedMs": 19,
+      "elapsedMs": 36.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
     },
     {
@@ -1138,10 +1132,10 @@
           "name": "comparison-1-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 150264
+          "bytes": 142654
         }
       ],
-      "elapsedMs": 9.099999964237213,
+      "elapsedMs": 22.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
     },
     {
@@ -1153,10 +1147,10 @@
           "name": "comparison-1-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 158691
+          "bytes": 151130
         }
       ],
-      "elapsedMs": 12.100000023841858,
+      "elapsedMs": 21.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
     },
     {
@@ -1168,16 +1162,16 @@
           "name": "comparison-1-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 109101
+          "bytes": 101476
         },
         {
           "name": "comparison-1-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 96044
+          "bytes": 88386
         }
       ],
-      "elapsedMs": 12.900000035762787,
+      "elapsedMs": 55.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
     },
     {
@@ -1189,10 +1183,10 @@
           "name": "comparison-1-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 173150
+          "bytes": 165090
         }
       ],
-      "elapsedMs": 13.099999964237213,
+      "elapsedMs": 30.5,
       "qrURL": "https://roamorrow.com/nomads/compare/lisbon-vs-plovdiv/?month=11"
     },
     {
@@ -1204,10 +1198,10 @@
           "name": "comparison-2-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 154681
+          "bytes": 147064
         }
       ],
-      "elapsedMs": 12.199999988079071,
+      "elapsedMs": 29.200000047683716,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
     },
     {
@@ -1219,10 +1213,10 @@
           "name": "comparison-2-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 143701
+          "bytes": 135961
         }
       ],
-      "elapsedMs": 10.599999964237213,
+      "elapsedMs": 24,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
     },
     {
@@ -1234,10 +1228,10 @@
           "name": "comparison-2-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 151984
+          "bytes": 144374
         }
       ],
-      "elapsedMs": 11.300000011920929,
+      "elapsedMs": 23.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
     },
     {
@@ -1249,16 +1243,16 @@
           "name": "comparison-2-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 104940
+          "bytes": 97384
         },
         {
           "name": "comparison-2-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 91529
+          "bytes": 84012
         }
       ],
-      "elapsedMs": 17.599999964237213,
+      "elapsedMs": 35.89999997615814,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
     },
     {
@@ -1270,10 +1264,10 @@
           "name": "comparison-2-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 167491
+          "bytes": 159577
         }
       ],
-      "elapsedMs": 14.100000023841858,
+      "elapsedMs": 49.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-dali/?month=11"
     },
     {
@@ -1285,10 +1279,10 @@
           "name": "guide-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 111907
+          "bytes": 103921
         }
       ],
-      "elapsedMs": 12.199999988079071,
+      "elapsedMs": 29.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1300,10 +1294,10 @@
           "name": "guide-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 102938
+          "bytes": 94954
         }
       ],
-      "elapsedMs": 11.399999976158142,
+      "elapsedMs": 23.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1315,10 +1309,10 @@
           "name": "guide-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 110041
+          "bytes": 102009
         }
       ],
-      "elapsedMs": 9.300000011920929,
+      "elapsedMs": 21.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1330,10 +1324,10 @@
           "name": "guide-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 84750
+          "bytes": 76877
         }
       ],
-      "elapsedMs": 9.900000035762787,
+      "elapsedMs": 26.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1345,10 +1339,10 @@
           "name": "guide-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 124136
+          "bytes": 116166
         }
       ],
-      "elapsedMs": 9.800000011920929,
+      "elapsedMs": 24.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1360,10 +1354,10 @@
           "name": "topic-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 102082
+          "bytes": 94409
         }
       ],
-      "elapsedMs": 16.399999976158142,
+      "elapsedMs": 33.200000047683716,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1375,10 +1369,10 @@
           "name": "topic-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 93134
+          "bytes": 85163
         }
       ],
-      "elapsedMs": 7,
+      "elapsedMs": 19.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1390,10 +1384,10 @@
           "name": "topic-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 99691
+          "bytes": 91727
         }
       ],
-      "elapsedMs": 11.400000035762787,
+      "elapsedMs": 18,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1405,10 +1399,10 @@
           "name": "topic-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 75187
+          "bytes": 67637
         }
       ],
-      "elapsedMs": 7.200000047683716,
+      "elapsedMs": 18.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1420,10 +1414,10 @@
           "name": "topic-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 112960
+          "bytes": 105232
         }
       ],
-      "elapsedMs": 14.699999988079071,
+      "elapsedMs": 31.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1435,10 +1429,10 @@
           "name": "no-photo-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 105654
+          "bytes": 97704
         }
       ],
-      "elapsedMs": 14.099999964237213,
+      "elapsedMs": 21.400000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1450,10 +1444,10 @@
           "name": "no-photo-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 96378
+          "bytes": 88534
         }
       ],
-      "elapsedMs": 8.300000011920929,
+      "elapsedMs": 34.90000003576279,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1465,10 +1459,10 @@
           "name": "no-photo-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 102978
+          "bytes": 95357
         }
       ],
-      "elapsedMs": 9.199999988079071,
+      "elapsedMs": 19,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1480,10 +1474,10 @@
           "name": "no-photo-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 78135
+          "bytes": 70570
         }
       ],
-      "elapsedMs": 10,
+      "elapsedMs": 17.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1495,10 +1489,10 @@
           "name": "no-photo-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 116549
+          "bytes": 108688
         }
       ],
-      "elapsedMs": 11,
+      "elapsedMs": 21.900000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1510,10 +1504,10 @@
           "name": "checklist-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 105877
+          "bytes": 97863
         }
       ],
-      "elapsedMs": 12,
+      "elapsedMs": 24.600000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1525,10 +1519,10 @@
           "name": "checklist-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 96557
+          "bytes": 88753
         }
       ],
-      "elapsedMs": 8.300000011920929,
+      "elapsedMs": 16.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1540,10 +1534,10 @@
           "name": "checklist-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 103206
+          "bytes": 95558
         }
       ],
-      "elapsedMs": 12.599999964237213,
+      "elapsedMs": 31,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1555,10 +1549,10 @@
           "name": "checklist-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 78203
+          "bytes": 70649
         }
       ],
-      "elapsedMs": 7.5,
+      "elapsedMs": 16.299999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1570,10 +1564,10 @@
           "name": "checklist-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 116766
+          "bytes": 108902
         }
       ],
-      "elapsedMs": 11.900000035762787,
+      "elapsedMs": 21.399999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1585,10 +1579,10 @@
           "name": "directory-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 108986
+          "bytes": 100939
         }
       ],
-      "elapsedMs": 9,
+      "elapsedMs": 20.799999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1600,10 +1594,10 @@
           "name": "directory-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 99889
+          "bytes": 91885
         }
       ],
-      "elapsedMs": 7,
+      "elapsedMs": 20.299999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1615,10 +1609,10 @@
           "name": "directory-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 106781
+          "bytes": 98905
         }
       ],
-      "elapsedMs": 12.300000011920929,
+      "elapsedMs": 19.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1630,10 +1624,10 @@
           "name": "directory-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 81372
+          "bytes": 73672
         }
       ],
-      "elapsedMs": 10.200000047683716,
+      "elapsedMs": 36.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1645,10 +1639,10 @@
           "name": "directory-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 120257
+          "bytes": 112388
         }
       ],
-      "elapsedMs": 10.399999976158142,
+      "elapsedMs": 25.099999964237213,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1660,10 +1654,10 @@
           "name": "method-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 106645
+          "bytes": 98624
         }
       ],
-      "elapsedMs": 11.800000011920929,
+      "elapsedMs": 43.60000002384186,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1675,10 +1669,10 @@
           "name": "method-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 97366
+          "bytes": 89527
         }
       ],
-      "elapsedMs": 6.400000035762787,
+      "elapsedMs": 27.099999964237213,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1690,10 +1684,10 @@
           "name": "method-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 104003
+          "bytes": 96312
         }
       ],
-      "elapsedMs": 10.899999976158142,
+      "elapsedMs": 20.099999964237213,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1705,10 +1699,10 @@
           "name": "method-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 78842
+          "bytes": 71267
         }
       ],
-      "elapsedMs": 8.900000035762787,
+      "elapsedMs": 14.199999988079071,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1720,10 +1714,10 @@
           "name": "method-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 117581
+          "bytes": 109659
         }
       ],
-      "elapsedMs": 12.700000047683716,
+      "elapsedMs": 34.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -1735,10 +1729,10 @@
           "name": "answer-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 106631
+          "bytes": 91434
         }
       ],
-      "elapsedMs": 8.399999976158142,
+      "elapsedMs": 20.69999998807907,
       "qrURL": null
     },
     {
@@ -1750,10 +1744,10 @@
           "name": "answer-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 97609
+          "bytes": 82039
         }
       ],
-      "elapsedMs": 7.199999988079071,
+      "elapsedMs": 13,
       "qrURL": null
     },
     {
@@ -1765,10 +1759,10 @@
           "name": "answer-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 104412
+          "bytes": 88965
         }
       ],
-      "elapsedMs": 6.599999964237213,
+      "elapsedMs": 13.900000035762787,
       "qrURL": null
     },
     {
@@ -1780,10 +1774,10 @@
           "name": "answer-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 79894
+          "bytes": 65029
         }
       ],
-      "elapsedMs": 6.5,
+      "elapsedMs": 12.199999988079071,
       "qrURL": null
     },
     {
@@ -1795,10 +1789,10 @@
           "name": "answer-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 117888
+          "bytes": 102728
         }
       ],
-      "elapsedMs": 12.599999964237213,
+      "elapsedMs": 17,
       "qrURL": null
     },
     {
@@ -1810,28 +1804,28 @@
           "name": "long-answer-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 279100
+          "bytes": 279699
         },
         {
           "name": "long-answer-portrait-2.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 288696
+          "bytes": 274131
         },
         {
           "name": "long-answer-portrait-3.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 288775
+          "bytes": 274281
         },
         {
           "name": "long-answer-portrait-4.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 120304
+          "bytes": 90590
         }
       ],
-      "elapsedMs": 32.59999996423721,
+      "elapsedMs": 95.89999997615814,
       "qrURL": null
     },
     {
@@ -1843,34 +1837,34 @@
           "name": "long-answer-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 208085
+          "bytes": 193881
         },
         {
           "name": "long-answer-square-2.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 202774
+          "bytes": 202969
         },
         {
           "name": "long-answer-square-3.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 202842
+          "bytes": 203125
         },
         {
           "name": "long-answer-square-4.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 202698
+          "bytes": 202867
         },
         {
           "name": "long-answer-square-5.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 202810
+          "bytes": 143067
         }
       ],
-      "elapsedMs": 31.5,
+      "elapsedMs": 81.60000002384186,
       "qrURL": null
     },
     {
@@ -1882,28 +1876,28 @@
           "name": "long-answer-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 261331
+          "bytes": 261857
         },
         {
           "name": "long-answer-feed-2.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 270975
+          "bytes": 256524
         },
         {
           "name": "long-answer-feed-3.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 271054
+          "bytes": 256657
         },
         {
           "name": "long-answer-feed-4.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 165110
+          "bytes": 134027
         }
       ],
-      "elapsedMs": 33.80000001192093,
+      "elapsedMs": 68.60000002384186,
       "qrURL": null
     },
     {
@@ -1915,64 +1909,58 @@
           "name": "long-answer-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 121830
+          "bytes": 107575
         },
         {
           "name": "long-answer-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120551
+          "bytes": 119186
         },
         {
           "name": "long-answer-landscape-3.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120651
+          "bytes": 119318
         },
         {
           "name": "long-answer-landscape-4.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120481
+          "bytes": 119072
         },
         {
           "name": "long-answer-landscape-5.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120591
+          "bytes": 119240
         },
         {
           "name": "long-answer-landscape-6.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120712
+          "bytes": 119350
         },
         {
           "name": "long-answer-landscape-7.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120478
+          "bytes": 119024
         },
         {
           "name": "long-answer-landscape-8.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120737
+          "bytes": 119385
         },
         {
           "name": "long-answer-landscape-9.png",
           "width": 1200,
           "height": 630,
-          "bytes": 120721
-        },
-        {
-          "name": "long-answer-landscape-10.png",
-          "width": 1200,
-          "height": 630,
-          "bytes": 120802
+          "bytes": 66869
         }
       ],
-      "elapsedMs": 44.80000001192093,
+      "elapsedMs": 129.9000000357628,
       "qrURL": null
     },
     {
@@ -1984,22 +1972,22 @@
           "name": "long-answer-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 398945
+          "bytes": 384613
         },
         {
           "name": "long-answer-story-2.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 393805
+          "bytes": 394165
         },
         {
           "name": "long-answer-story-3.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 133945
+          "bytes": 101916
         }
       ],
-      "elapsedMs": 40,
+      "elapsedMs": 144.39999997615814,
       "qrURL": null
     },
     {
@@ -2011,10 +1999,10 @@
           "name": "mixed-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 111397
+          "bytes": 103445
         }
       ],
-      "elapsedMs": 11.199999988079071,
+      "elapsedMs": 50.59999996423721,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2026,10 +2014,10 @@
           "name": "mixed-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 102416
+          "bytes": 94406
         }
       ],
-      "elapsedMs": 7.600000023841858,
+      "elapsedMs": 24.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2041,10 +2029,10 @@
           "name": "mixed-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 109484
+          "bytes": 101504
         }
       ],
-      "elapsedMs": 12.099999964237213,
+      "elapsedMs": 22.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2056,10 +2044,10 @@
           "name": "mixed-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 83882
+          "bytes": 76055
         }
       ],
-      "elapsedMs": 8,
+      "elapsedMs": 29.400000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2071,10 +2059,10 @@
           "name": "mixed-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 123109
+          "bytes": 115253
         }
       ],
-      "elapsedMs": 13.899999976158142,
+      "elapsedMs": 22.400000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2086,10 +2074,10 @@
           "name": "long-title-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 142453
+          "bytes": 134524
         }
       ],
-      "elapsedMs": 13.100000023841858,
+      "elapsedMs": 27.600000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2101,10 +2089,10 @@
           "name": "long-title-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 131889
+          "bytes": 124281
         }
       ],
-      "elapsedMs": 10.300000011920929,
+      "elapsedMs": 43,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2116,10 +2104,10 @@
           "name": "long-title-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 139882
+          "bytes": 131979
         }
       ],
-      "elapsedMs": 14.899999976158142,
+      "elapsedMs": 22.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2131,10 +2119,10 @@
           "name": "long-title-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 106506
+          "bytes": 98935
         }
       ],
-      "elapsedMs": 17.799999952316284,
+      "elapsedMs": 24.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2146,10 +2134,10 @@
           "name": "long-title-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 154779
+          "bytes": 146745
         }
       ],
-      "elapsedMs": 10,
+      "elapsedMs": 29.899999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2161,10 +2149,10 @@
           "name": "missing-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 110300
+          "bytes": 102301
         }
       ],
-      "elapsedMs": 11.800000011920929,
+      "elapsedMs": 35.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2176,10 +2164,10 @@
           "name": "missing-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 100943
+          "bytes": 93200
         }
       ],
-      "elapsedMs": 10.800000011920929,
+      "elapsedMs": 18.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2191,10 +2179,10 @@
           "name": "missing-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 108090
+          "bytes": 100189
         }
       ],
-      "elapsedMs": 10.400000035762787,
+      "elapsedMs": 62.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2206,10 +2194,10 @@
           "name": "missing-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 81558
+          "bytes": 73866
         }
       ],
-      "elapsedMs": 33.90000003576279,
+      "elapsedMs": 20.600000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2221,10 +2209,10 @@
           "name": "missing-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 122265
+          "bytes": 114349
         }
       ],
-      "elapsedMs": 13.400000035762787,
+      "elapsedMs": 26.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2236,10 +2224,10 @@
           "name": "private-plan-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 99583
+          "bytes": 91934
         }
       ],
-      "elapsedMs": 9.699999988079071,
+      "elapsedMs": 33.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2251,10 +2239,10 @@
           "name": "private-plan-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 90748
+          "bytes": 82741
         }
       ],
-      "elapsedMs": 12.699999988079071,
+      "elapsedMs": 19.100000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2266,10 +2254,10 @@
           "name": "private-plan-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 97608
+          "bytes": 89656
         }
       ],
-      "elapsedMs": 8.5,
+      "elapsedMs": 20.200000047683716,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2281,10 +2269,10 @@
           "name": "private-plan-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 72901
+          "bytes": 65345
         }
       ],
-      "elapsedMs": 10.300000011920929,
+      "elapsedMs": 18.599999964237213,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2296,10 +2284,10 @@
           "name": "private-plan-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 110332
+          "bytes": 102685
         }
       ],
-      "elapsedMs": 11.399999976158142,
+      "elapsedMs": 27.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2311,10 +2299,10 @@
           "name": "zero-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 112164
+          "bytes": 104169
         }
       ],
-      "elapsedMs": 12.200000047683716,
+      "elapsedMs": 26.399999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2326,10 +2314,10 @@
           "name": "zero-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 102826
+          "bytes": 95050
         }
       ],
-      "elapsedMs": 7.299999952316284,
+      "elapsedMs": 24.899999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2341,10 +2329,10 @@
           "name": "zero-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 110079
+          "bytes": 102107
         }
       ],
-      "elapsedMs": 12.399999976158142,
+      "elapsedMs": 20.899999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2356,10 +2344,10 @@
           "name": "zero-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 83038
+          "bytes": 75246
         }
       ],
-      "elapsedMs": 10.5,
+      "elapsedMs": 24.400000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2371,10 +2359,10 @@
           "name": "zero-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 124528
+          "bytes": 116630
         }
       ],
-      "elapsedMs": 12.800000011920929,
+      "elapsedMs": 22.799999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2386,10 +2374,10 @@
           "name": "caveat-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 102442
+          "bytes": 94729
         }
       ],
-      "elapsedMs": 9.300000011920929,
+      "elapsedMs": 61.39999997615814,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2401,10 +2389,10 @@
           "name": "caveat-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 93377
+          "bytes": 85534
         }
       ],
-      "elapsedMs": 11,
+      "elapsedMs": 18,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2416,10 +2404,10 @@
           "name": "caveat-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 99980
+          "bytes": 92091
         }
       ],
-      "elapsedMs": 8.299999952316284,
+      "elapsedMs": 21.600000023841858,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2431,10 +2419,10 @@
           "name": "caveat-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 75369
+          "bytes": 67816
         }
       ],
-      "elapsedMs": 9.899999976158142,
+      "elapsedMs": 18.700000047683716,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2446,10 +2434,10 @@
           "name": "caveat-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 113284
+          "bytes": 105580
         }
       ],
-      "elapsedMs": 17,
+      "elapsedMs": 21.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2461,10 +2449,10 @@
           "name": "source-dates-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 103254
+          "bytes": 95542
         }
       ],
-      "elapsedMs": 9.800000011920929,
+      "elapsedMs": 20.899999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2476,10 +2464,10 @@
           "name": "source-dates-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 94191
+          "bytes": 86318
         }
       ],
-      "elapsedMs": 7.300000011920929,
+      "elapsedMs": 21.399999976158142,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2491,10 +2479,10 @@
           "name": "source-dates-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 100759
+          "bytes": 92864
         }
       ],
-      "elapsedMs": 11,
+      "elapsedMs": 34.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2506,10 +2494,10 @@
           "name": "source-dates-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 75826
+          "bytes": 68283
         }
       ],
-      "elapsedMs": 7,
+      "elapsedMs": 19.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2521,10 +2509,10 @@
           "name": "source-dates-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 114090
+          "bytes": 106365
         }
       ],
-      "elapsedMs": 13.199999988079071,
+      "elapsedMs": 82,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2536,10 +2524,10 @@
           "name": "unicode-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 120653
+          "bytes": 113042
         }
       ],
-      "elapsedMs": 17.900000035762787,
+      "elapsedMs": 30.299999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2551,10 +2539,10 @@
           "name": "unicode-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 112435
+          "bytes": 104461
         }
       ],
-      "elapsedMs": 8.900000035762787,
+      "elapsedMs": 18.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2566,10 +2554,10 @@
           "name": "unicode-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 118555
+          "bytes": 110635
         }
       ],
-      "elapsedMs": 8.400000035762787,
+      "elapsedMs": 17.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2581,10 +2569,10 @@
           "name": "unicode-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 89861
+          "bytes": 81952
         }
       ],
-      "elapsedMs": 10.899999976158142,
+      "elapsedMs": 22.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2596,10 +2584,10 @@
           "name": "unicode-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 134465
+          "bytes": 126499
         }
       ],
-      "elapsedMs": 10.300000011920929,
+      "elapsedMs": 29.5,
       "qrURL": "https://roamorrow.com/nomads/guides/"
     },
     {
@@ -2611,10 +2599,10 @@
           "name": "holdout-varna-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 144534
+          "bytes": 840765
         }
       ],
-      "elapsedMs": 13.799999952316284,
+      "elapsedMs": 123.10000002384186,
       "qrURL": "https://roamorrow.com/nomads/cities/varna/?month=11"
     },
     {
@@ -2626,10 +2614,10 @@
           "name": "holdout-varna-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 134734
+          "bytes": 707042
         }
       ],
-      "elapsedMs": 12.600000023841858,
+      "elapsedMs": 84.20000004768372,
       "qrURL": "https://roamorrow.com/nomads/cities/varna/?month=11"
     },
     {
@@ -2641,10 +2629,10 @@
           "name": "holdout-varna-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 141619
+          "bytes": 837828
         }
       ],
-      "elapsedMs": 9.899999976158142,
+      "elapsedMs": 95.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/varna/?month=11"
     },
     {
@@ -2656,10 +2644,10 @@
           "name": "holdout-varna-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 102278
+          "bytes": 337943
         }
       ],
-      "elapsedMs": 10.199999988079071,
+      "elapsedMs": 90,
       "qrURL": "https://roamorrow.com/nomads/cities/varna/?month=11"
     },
     {
@@ -2671,10 +2659,10 @@
           "name": "holdout-varna-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 158569
+          "bytes": 854464
         }
       ],
-      "elapsedMs": 11.599999964237213,
+      "elapsedMs": 123.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/cities/varna/?month=11"
     },
     {
@@ -2686,10 +2674,10 @@
           "name": "holdout-brno-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 148395
+          "bytes": 773584
         }
       ],
-      "elapsedMs": 13.899999976158142,
+      "elapsedMs": 131.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/brno/?month=11"
     },
     {
@@ -2701,10 +2689,10 @@
           "name": "holdout-brno-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 137883
+          "bytes": 628101
         }
       ],
-      "elapsedMs": 18.700000047683716,
+      "elapsedMs": 84.79999995231628,
       "qrURL": "https://roamorrow.com/nomads/cities/brno/?month=11"
     },
     {
@@ -2716,10 +2704,10 @@
           "name": "holdout-brno-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 145512
+          "bytes": 771010
         }
       ],
-      "elapsedMs": 12.300000011920929,
+      "elapsedMs": 111.09999996423721,
       "qrURL": "https://roamorrow.com/nomads/cities/brno/?month=11"
     },
     {
@@ -2731,10 +2719,10 @@
           "name": "holdout-brno-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 99216
+          "bytes": 317016
         }
       ],
-      "elapsedMs": 8.399999976158142,
+      "elapsedMs": 106.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/cities/brno/?month=11"
     },
     {
@@ -2746,10 +2734,10 @@
           "name": "holdout-brno-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 161675
+          "bytes": 785235
         }
       ],
-      "elapsedMs": 12,
+      "elapsedMs": 96.40000003576279,
       "qrURL": "https://roamorrow.com/nomads/cities/brno/?month=11"
     },
     {
@@ -2761,10 +2749,10 @@
           "name": "holdout-long-link-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 170046
+          "bytes": 164710
         }
       ],
-      "elapsedMs": 27.80000001192093,
+      "elapsedMs": 71.20000004768372,
       "qrURL": "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
     },
     {
@@ -2776,10 +2764,10 @@
           "name": "holdout-long-link-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 158606
+          "bytes": 153217
         }
       ],
-      "elapsedMs": 40.89999997615814,
+      "elapsedMs": 61.10000002384186,
       "qrURL": "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
     },
     {
@@ -2791,10 +2779,10 @@
           "name": "holdout-long-link-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 166951
+          "bytes": 161609
         }
       ],
-      "elapsedMs": 28.400000035762787,
+      "elapsedMs": 55.80000001192093,
       "qrURL": "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
     },
     {
@@ -2806,22 +2794,22 @@
           "name": "holdout-long-link-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 102544
+          "bytes": 97325
         },
         {
           "name": "holdout-long-link-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 95888
+          "bytes": 90665
         },
         {
           "name": "holdout-long-link-landscape-3.png",
           "width": 1200,
           "height": 630,
-          "bytes": 110108
+          "bytes": 104827
         }
       ],
-      "elapsedMs": 36.90000003576279,
+      "elapsedMs": 111.5,
       "qrURL": "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
     },
     {
@@ -2833,10 +2821,10 @@
           "name": "holdout-long-link-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 183053
+          "bytes": 177783
         }
       ],
-      "elapsedMs": 25.5,
+      "elapsedMs": 71.19999998807907,
       "qrURL": "https://roamorrow.com/nomads/?q=%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88%E6%B8%85%E8%BF%88&month=11"
     },
     {
@@ -2848,10 +2836,10 @@
           "name": "holdout-advisory-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 171378
+          "bytes": 163703
         }
       ],
-      "elapsedMs": 13.099999964237213,
+      "elapsedMs": 59.200000047683716,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
     },
     {
@@ -2863,10 +2851,10 @@
           "name": "holdout-advisory-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 159616
+          "bytes": 152178
         }
       ],
-      "elapsedMs": 9,
+      "elapsedMs": 44.30000001192093,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
     },
     {
@@ -2878,10 +2866,10 @@
           "name": "holdout-advisory-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 168585
+          "bytes": 160980
         }
       ],
-      "elapsedMs": 13.399999976158142,
+      "elapsedMs": 21.099999964237213,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
     },
     {
@@ -2893,16 +2881,16 @@
           "name": "holdout-advisory-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 115869
+          "bytes": 108334
         },
         {
           "name": "holdout-advisory-landscape-2.png",
           "width": 1200,
           "height": 630,
-          "bytes": 100988
+          "bytes": 93396
         }
       ],
-      "elapsedMs": 23.30000001192093,
+      "elapsedMs": 33.90000003576279,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
     },
     {
@@ -2914,10 +2902,166 @@
           "name": "holdout-advisory-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 182871
+          "bytes": 174845
         }
       ],
-      "elapsedMs": 19.299999952316284,
+      "elapsedMs": 29.69999998807907,
+      "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "portrait",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-city-advisory-portrait-1.png",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 982483
+        }
+      ],
+      "elapsedMs": 102.69999998807907,
+      "qrURL": "https://roamorrow.com/nomads/cities/kabul/?month=11"
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "square",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-city-advisory-square-1.png",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 834383
+        }
+      ],
+      "elapsedMs": 70,
+      "qrURL": "https://roamorrow.com/nomads/cities/kabul/?month=11"
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "feed",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-city-advisory-feed-1.png",
+          "width": 1080,
+          "height": 1350,
+          "bytes": 980104
+        }
+      ],
+      "elapsedMs": 94.40000003576279,
+      "qrURL": "https://roamorrow.com/nomads/cities/kabul/?month=11"
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "landscape",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-city-advisory-landscape-1.png",
+          "width": 1200,
+          "height": 630,
+          "bytes": 355802
+        }
+      ],
+      "elapsedMs": 102.5,
+      "qrURL": "https://roamorrow.com/nomads/cities/kabul/?month=11"
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "story",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-city-advisory-story-1.png",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 995777
+        }
+      ],
+      "elapsedMs": 89,
+      "qrURL": "https://roamorrow.com/nomads/cities/kabul/?month=11"
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "portrait",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-comparison-advisory-portrait-1.png",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 142019
+        }
+      ],
+      "elapsedMs": 23,
+      "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "square",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-comparison-advisory-square-1.png",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 131871
+        }
+      ],
+      "elapsedMs": 18,
+      "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "feed",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-comparison-advisory-feed-1.png",
+          "width": 1080,
+          "height": 1350,
+          "bytes": 139686
+        }
+      ],
+      "elapsedMs": 23.600000023841858,
+      "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "landscape",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-comparison-advisory-landscape-1.png",
+          "width": 1200,
+          "height": 630,
+          "bytes": 76728
+        },
+        {
+          "name": "personal-comparison-advisory-landscape-2.png",
+          "width": 1200,
+          "height": 630,
+          "bytes": 87965
+        }
+      ],
+      "elapsedMs": 31.5,
+      "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "story",
+      "passed": true,
+      "pages": [
+        {
+          "name": "personal-comparison-advisory-story-1.png",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 153711
+        }
+      ],
+      "elapsedMs": 42.39999997615814,
       "qrURL": "https://roamorrow.com/nomads/compare/chiang-mai-vs-kabul/?month=11"
     },
     {
@@ -2929,10 +3073,10 @@
           "name": "holdout-budget-peak-portrait-1.png",
           "width": 1080,
           "height": 1440,
-          "bytes": 167114
+          "bytes": 159283
         }
       ],
-      "elapsedMs": 12.800000011920929,
+      "elapsedMs": 34.69999998807907,
       "qrURL": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
     },
     {
@@ -2944,10 +3088,10 @@
           "name": "holdout-budget-peak-square-1.png",
           "width": 1080,
           "height": 1080,
-          "bytes": 156449
+          "bytes": 148468
         }
       ],
-      "elapsedMs": 10.099999964237213,
+      "elapsedMs": 29.400000035762787,
       "qrURL": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
     },
     {
@@ -2959,10 +3103,10 @@
           "name": "holdout-budget-peak-feed-1.png",
           "width": 1080,
           "height": 1350,
-          "bytes": 164066
+          "bytes": 156394
         }
       ],
-      "elapsedMs": 11.300000011920929,
+      "elapsedMs": 35.40000003576279,
       "qrURL": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
     },
     {
@@ -2974,10 +3118,10 @@
           "name": "holdout-budget-peak-landscape-1.png",
           "width": 1200,
           "height": 630,
-          "bytes": 128622
+          "bytes": 120845
         }
       ],
-      "elapsedMs": 13.600000023841858,
+      "elapsedMs": 34,
       "qrURL": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
     },
     {
@@ -2989,10 +3133,10 @@
           "name": "holdout-budget-peak-story-1.png",
           "width": 1080,
           "height": 1920,
-          "bytes": 180128
+          "bytes": 172173
         }
       ],
-      "elapsedMs": 13.099999964237213,
+      "elapsedMs": 42.299999952316284,
       "qrURL": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/?tier=comfort&nights=31&season=peak&work=cowork&currency=CNY"
     }
   ]
