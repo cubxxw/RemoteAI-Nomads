@@ -506,21 +506,21 @@
       "slug": "da-nang-monthly-budget",
       "sourceFile": "da-nang-monthly-budget.html",
       "approved": true,
-      "sha256": "45b2469ab97066bdd22524a371b6cecd8565c45e2fc7c370e207694777f91689",
+      "sha256": "b898dd4091c60a33be5dc2b23573c5ea33e41c5dc62fd16225f5985885a9a735",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "xiamen-monthly-budget",
       "sourceFile": "xiamen-monthly-budget.html",
       "approved": true,
-      "sha256": "0eea7f8e439da952d8c1ed88e8cd02c4c899d819579404a66f49e4a02777d332",
+      "sha256": "7bdff6308552c02f782638029d1130a9c6bece867d7765419aa1e578317ace44",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "japan-digital-nomad-chinese-passport",
       "sourceFile": "japan-digital-nomad-chinese-passport.html",
       "approved": true,
-      "sha256": "fd2597fb14959063d2e83483d513b6aab70e3daf224f2ceaa06e34ed533b310c",
+      "sha256": "eba717ec5b3e14384c704c53c59586127850f1023a8b70cae1bb5bcaa85f898b",
       "source": "research/2026-10-26-five-articles.md"
     }
   ],
