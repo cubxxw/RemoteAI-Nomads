@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "notes": "未测维度保持null。证据文件相对本文件解析。target-user代表真实用户研究，platform-receipt代表目标应用实际接收；不要用自动检查替代。",
+  "criticalFailures": [],
+  "dimensions": {
+    "coverage": {"score": null, "evidence": []},
+    "accuracy": {"score": null, "evidence": []},
+    "privacy": {"score": null, "evidence": []},
+    "usability": {"score": null, "evidence": []},
+    "reading": {"score": null, "evidence": []},
+    "visual": {"score": null, "evidence": []},
+    "platform": {"score": null, "evidence": []},
+    "resilience": {"score": null, "evidence": []}
+  }
+}

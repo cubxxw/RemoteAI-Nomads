@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {shell} from '../src/render.js';import {shareMarkup} from '../src/share-markup.js';
+import {augmentGuideRuntime} from '../src/city-guide-pages.js';
+test('every ordinary page has a real absolute raster link-preview fallback',()=>{const html=shell({title:'清迈城市资料',description:'保留来源与口径。',body:'<h1>清迈</h1>',env:{SITE_ORIGIN:'https://roamorrow.com/nomads',PREVIEW:'false'}});assert.match(html,/<meta property="og:image" content="https:\/\/roamorrow.com\/nomads\/images\/share-default.png">/);assert.match(html,/twitter:image/);assert.match(html,/og:image:alt/);});
+test('explicit approved article preview image is preserved',()=>{const html=shell({title:'原文章',description:'原摘要',body:'',image:'https://roamorrow.com/nomads/guide-assets/images/og-original.jpg',env:{SITE_ORIGIN:'https://roamorrow.com/nomads'}});assert.match(html,/og:image" content="https:\/\/roamorrow.com\/nomads\/guide-assets\/images\/og-original.jpg/);});
+test('share data cannot terminate its inert JSON script and mounting remains local',()=>{const markup=shareMarkup({title:'</script><script>alert(1)</script>'},'/nomads');assert.doesNotMatch(markup.head,/<script>alert/);assert.match(markup.head,/\\u003c/);assert.match(markup.head,/href="\/nomads\/share.css"/);});
+test('ordinary and approved-guide share actions explain preparation until the safe handler is bound',()=>{
+ assert.match(shareMarkup({title:'城市'}).toolbar,/\bdisabled\b/);assert.match(shareMarkup({title:'城市'}).toolbar,/aria-busy="true"/);
+ const html=augmentGuideRuntime('<html><head></head><main><button type="button" data-copy-budget>复制预算</button></main></html>',{kind:'guide',topic:true,title:'指南',summary:'摘要',citySlugs:[]},{SITE_ORIGIN:'https://roamorrow.com/nomads'});const button=html.match(/<button\b[^>]*data-copy-budget[^>]*>/)[0];assert.match(button,/disabled/);assert.match(button,/aria-busy="true"/);
+});

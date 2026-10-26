@@ -303,7 +303,7 @@ const application = {
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Strict-Transport-Security": "max-age=15552000",
             "Content-Security-Policy":
-              "default-src 'self'; img-src 'self' https://images.unsplash.com https://*.wikimedia.org; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+              "default-src 'self'; img-src 'self' blob: https://images.unsplash.com https://*.wikimedia.org; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
           },
         },
       );

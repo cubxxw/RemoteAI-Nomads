@@ -11,7 +11,7 @@ export function comparisonMetadata(a,b,{origin,month,indexable=false}) {
   const title=copy?.title||a.name+' vs '+b.name+'：数字游民逐项对比';
   const description=copy?.summary||comparisonFit(a,b,month)+' '+comparisonFit(b,a,month);
   const url=base+path;
-  return {title:article?.searchTitle||title,description,path,active:'compare',indexable,image,ogType:article?'article':'website',jsonld:{
+  return {title:article?.searchTitle||title,description,path,share:{kind:'comparison',cities:[a,b]},active:'compare',indexable,image,ogType:article?'article':'website',jsonld:{
     '@context':'https://schema.org',
     '@graph':[
       {'@type':'WebPage','@id':url+'#webpage',url,name:title,description,inLanguage:'zh-CN',

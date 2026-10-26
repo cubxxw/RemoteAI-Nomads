@@ -20,7 +20,7 @@ if(root){
     const marker=L.marker([p.lat,p.lon],{icon,title:label(p),alt:label(p),keyboard:false}).bindPopup(details(p)).addTo(group);markers.set(p.id,marker);
    }
   }
-  list.innerHTML=shown.slice(0,limit).map(p=>`<article class="place-list-item"><span class="place-dot ${p.kind}" aria-hidden="true"></span><div><strong>${esc(label(p))}</strong><small>${p.kind==='coworking'?'共享办公':'咖啡馆'} · ${(p.distanceM/1000).toFixed(1)} km</small></div><button type="button" data-show-place="${esc(p.id)}" aria-label="在地图定位${esc(label(p))}">定位</button><a href="https://www.openstreetmap.org/${esc(p.id)}" target="_blank" rel="noopener noreferrer" aria-label="查看${esc(label(p))}的地点资料">资料 ↗</a></article>`).join('');
+  list.innerHTML=shown.slice(0,limit).map(p=>`<article class="place-list-item"><span class="place-dot ${p.kind}" aria-hidden="true"></span><div><strong>${esc(label(p))}</strong><small>${p.kind==='coworking'?'共享办公':'咖啡馆'} · ${(p.distanceM/1000).toFixed(1)} km</small></div><button type="button" data-show-place="${esc(p.id)}" aria-label="在地图定位${esc(label(p))}">定位</button><a href="https://www.openstreetmap.org/${esc(p.id)}" target="_blank" rel="noopener noreferrer" aria-label="查看${esc(label(p))}的地点资料">资料 ↗</a><button type="button" data-share-place="${esc(p.id)}" aria-label="分享${esc(label(p))}">分享</button></article>`).join('');
   more.hidden=shown.length<=limit;
   status.textContent=shown.length?`地图显示 ${shown.length} 处，列表先列 ${Math.min(limit,shown.length)} 处。`:'这个分类还没有收录地点，可以换个分类看看。';
  }
@@ -43,6 +43,8 @@ if(root){
   if(button){filter=button.dataset.placeFilter;limit=10;root.querySelectorAll('[data-place-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));if(!loaded)await load();else render();}
   const locate=event.target.closest('[data-show-place]');
   if(locate){const marker=markers.get(locate.dataset.showPlace);if(marker){map.setView(marker.getLatLng(),16);marker.openPopup();stage.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});}}
+  const share=event.target.closest('[data-share-place]');
+  if(share){const p=places.find(place=>place.id===share.dataset.sharePlace);if(p){const [{createShare},{openShare}]=await Promise.all([import('./share-model.js'),import('./share-ui.js')]);openShare(createShare({kind:'place',title:label(p),subtitle:document.querySelector('h1')?.textContent.trim()||'',url:'https://www.openstreetmap.org/'+p.id,facts:[{label:'地图记录',value:p.kind==='coworking'?'共享办公':'咖啡馆',note:p.laptop==='no'?'标注不允许使用电脑':p.laptop==='yes'?'标注可用电脑，仍需确认店规':'能否办公请先问店家'}],caveats:['OSM 地点记录不代表工位许可、网络质量或实时营业状态。'],sources:[{title:'© OpenStreetMap contributors / ODbL',url:'https://www.openstreetmap.org/'+p.id}]}),share);}}
   if(event.target.closest('[data-more-places]')){limit+=10;render();}
  });
 }
