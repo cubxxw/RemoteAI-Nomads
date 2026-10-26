@@ -34,8 +34,7 @@ export function destinationDirectoryPage(cities, env) {
       ${presentRegions.map(region => {
         const countries = [...groups.get(region).values()].sort((a, b) => collator.compare(a.name, b.name));
         return `<section class="country-group" id="directory-region-${regions.indexOf(region)}"><div class="content-section-heading"><h2>${region}</h2><span>${countries.reduce((count, country) => count + country.cities.length, 0)} 座城市</span></div>${countries.map(country => `<section class="destination-country"><h3>${esc(country.name)}</h3><ul class="country-list">${country.cities.sort((a, b) => collator.compare(a.name, b.name)).map(city => `<li><a class="directory-city" href="/cities/${esc(encodeURIComponent(city.slug))}/"><strong>${esc(city.name)}</strong><span>${esc(city.nameEn)}</span>${travelAdvisory(city) ? '<small>暂勿前往 · 历史资料</small>' : ''}</a></li>`).join('')}</ul></section>`).join('')}</section>`;
-      }).join('')}
-      ${cities.length ? '' : '<p class="content-empty">城市资料正在整理。</p>'}
+      }).join('')}${cities.length ? '' : '<p class="content-empty">城市资料正在整理。</p>'}
       <p class="content-footnote">价格与气候保留各自的资料日期，出发前请核对具体住宿和停留条件。<a href="/about/">查看数据与方法</a></p></div>`,
   };
 }

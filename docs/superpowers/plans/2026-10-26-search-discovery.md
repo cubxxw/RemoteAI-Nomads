@@ -66,3 +66,5 @@ Task 2: RED → GREEN, 350 direct mounted links, draft exclusion, escaped labels
 Task 3: RED → GREEN, including invalid-timezone regression. Final suite: 401/401 passed with no skips; dry-run build passed. Final generated audit: 422 unique canonical/indexable sitemap URLs, 350 clean directory links, 350 distinct city descriptions.
 
 Final review: independent read-only review approved, with no findings. Broad title rewrites, opening country/filter indexing, and changes to article prose or source data remain outside this correction; they require evidence and editorial work rather than automatic broadening of indexable content.
+
+Final verification: remote CI caught whitespace in the newly generated directory, which the earlier unstaged diff check had not included. Reproduced with the complete base-to-head whitespace gate, removed the empty template line at its source and regenerated the page. Re-ran the full Web suite (401/401) and repository Python regression suite (100/100); the complete branch whitespace gate now passes.
