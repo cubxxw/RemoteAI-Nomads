@@ -88,7 +88,7 @@ export async function buildPublicPages({
     assert.ok(articles.every(article => ['guide', 'comparison'].includes(article.kind)), 'Unknown editorial kind must not be published automatically');
 
     const paths = [...new Set([
-      '/', '/cities/', '/destinations/', '/countries/', '/guides/', '/compare/', '/about/',
+      '/', '/cities/', '/destinations/', '/countries/', '/guides/', '/compare/', '/about/', '/developers/',
       ...cities.map(city => '/cities/' + encodeURIComponent(city.slug) + '/'),
       ...countries.map(country => '/countries/' + encodeURIComponent(country.id.toLowerCase()) + '/'),
       ...articles.map(article => '/' + (article.kind === 'comparison' ? 'compare' : 'guides') + '/' + encodeURIComponent(article.slug) + '/'),
