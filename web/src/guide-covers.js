@@ -1,9 +1,9 @@
 import {esc} from './render.js';
-import {editorialScene, sceneImage, AI_SCENE_LABEL} from './editorial-scenes.js';
+import {editorialScene, sceneImage} from './editorial-scenes.js';
 
 // Deterministic article-cover registry (2026-10-23). Each cover is either the
 // reviewed public photo of the article's own named city — with its original
-// attribution, never another city's photo — or a clearly labelled AI scene for
+// attribution, never another city's photo — or an editorial illustration for
 // articles that name no city. Provenance was reviewed from the public catalog
 // metadata; nothing here invents a location. See web/docs/design-refresh-2026-10-23.md.
 const CITY_COVERS = Object.freeze(
@@ -114,7 +114,7 @@ const CITY_COVERS = Object.freeze(
 );
 
 // Articles with no named city get a scene by their exact editorial subject,
-// then a deterministic category scene. The scene is always labelled as AI work.
+// then a deterministic category scene, with descriptive illustration alt text.
 const SCENE_BY_SLUG = Object.freeze({
   'nomad-budget-checklist': 'neighborhood-cafe',
   'video-meeting-room-checklist': 'work-by-the-lake',
@@ -132,5 +132,5 @@ export function articleCover(entry) {
 export function articleCoverHTML(entry) {
   const cover = articleCover(entry);
   if (cover.kind === 'city') return `<figure class="article-cover"><img src="${esc(cover.photo_url)}" alt="${esc(cover.name_zh)}城市实景" width="960" height="641" loading="lazy" decoding="async" data-photo-label="${esc(cover.name_zh)}"><figcaption class="article-cover-credit">${esc(cover.name_zh)} · <a href="${esc(cover.photo_source)}" target="_blank" rel="noopener noreferrer">${esc(cover.photo_credit)} ↗</a></figcaption></figure>`;
-  return `<figure class="article-cover">${sceneImage(cover.id, {className: 'article-cover-image', sizes: '(max-width:700px) 92vw, 28vw'})}<figcaption class="ai-scene-label">${esc(AI_SCENE_LABEL)}</figcaption></figure>`;
+  return `<figure class="article-cover">${sceneImage(cover.id, {className: 'article-cover-image', sizes: '(max-width:700px) 92vw, 28vw'})}</figure>`;
 }
