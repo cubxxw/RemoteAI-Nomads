@@ -62,7 +62,7 @@ export function cityShare(city,month,inputURL){
  return createShare({kind:'city',title:city.name,month,tags,citySlug:city.slug,cityProfile:{schemaVersion:1,slug:city.slug,name:city.name,nameEn:city.nameEn,tagline:city.why,tags,geography:city.country?[{label:'地理位置',value:city.country}]:[]},subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
   facts:[{label:'历史月花费',value:amountText(city.budget,city.budgetCurrency||'USD'),note:city.budgetCheckedAt?'核对 '+city.budgetCheckedAt:'资料日期待核对'},{label:month+'月历史均温',value:weather?.meanC===null||weather?.meanC===undefined?'待补充':Math.round(weather.meanC)+'°C',note:'2023–2025 年气候参考'},{label:domestic?'大陆居民入住':'大陆护照入境',value:city.visa?.label||'待补充',note:domestic?'证件与登记要求向住处确认':'旧标签待复核 · 工作许可另查'},{label:'网络旧评分',value:Number.isFinite(internet)?internet+' / 10':'待补充',note:'具体房间需实测'}],
   photos:[{url:city.photo,credit:city.photoCredit,source:city.photoSource,label:city.name}],
-  advisories:advisory?[advisory.reason]:[],caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价；气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核；工作许可另查。']:[])],
+  advisories:advisory?[advisory.reason]:[],caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价。气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核。工作许可另查。']:[])],
   sources:[{title:'城市资料与来源',url:shareURL(inputURL,{kind:'city',month}),date:city.checkedAt||''}]});
 }
 export function rankingShare(cities,state,inputURL,actualMonth=displayMonth(state)){
@@ -73,7 +73,7 @@ export function rankingShare(cities,state,inputURL,actualMonth=displayMonth(stat
   items:cities.slice(0,3).map(city=>({title:city.name,detail:[city.country,amountText(city.budget,city.budgetCurrency||'USD')+' / 月历史参考'].filter(Boolean).join('  ')})),
   photos:cities.slice(0,1).map(city=>({url:city.photo,credit:city.photoCredit,source:city.photoSource,label:city.name})),
   facts:cities.length?[]:[{label:'当前条件',value:'暂时没有符合的城市',note:'打开链接可继续调整条件'}],
-  caveats:['排行按当前偏好计算，图中最多三城；全部条件与权重随链接保留。','花费为历史参考，入境标签待复核；个人报价和会议未包含。'],captionNotes:['排名权重：'+sortedWeights.map(([key,value])=>LABELS[key]+value).join('、')],sources:[{title:'排行与资料口径',url:url.origin+url.pathname.replace(/\/cities\/?$/,'/').replace(/\/?$/,'/')+'about/',date:''},...cities.slice(0,3).map(city=>({title:city.name+'历史月参考',date:city.budgetCheckedAt||'日期待核对'}))]});
+  caveats:['排行按当前偏好计算，图中最多三城。全部条件与权重随链接保留。','花费为历史参考，入境标签待复核。个人报价和会议未包含。'],captionNotes:['排名权重：'+sortedWeights.map(([key,value])=>LABELS[key]+value).join('、')],sources:[{title:'排行与资料口径',url:url.origin+url.pathname.replace(/\/cities\/?$/,'/').replace(/\/?$/,'/')+'about/',date:''},...cities.slice(0,3).map(city=>({title:city.name+'历史月参考',date:city.budgetCheckedAt||'日期待核对'}))]});
 }
 export function shareText(card){
  const profile=card.cityProfile,profileRows=profile?[profile.tagline,profile.tags.join(' · '),...profile.geography.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...profile.statistics.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...profile.landmarks.map(row=>row.title+'：'+row.detail),...profile.culture.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，'))]:[];
@@ -84,5 +84,5 @@ export function comparisonShare(cities,month,inputURL){
  const warnings=cities.map(city=>travelAdvisory(city)).filter(Boolean);
  return createShare({kind:'comparison',title:cities.map(city=>city.name).join(' 与 '),subtitle:month+'月 / 两城之间',url:shareURL(inputURL,{kind:'comparison',month}),
   summary:'把住一个月的参考，放在一起看。',items:cities.map(city=>{const weather=city.months?.find(row=>Number(row.month)===month);return {title:city.name,detail:'历史月参考 '+amountText(city.budget,city.budgetCurrency||'USD')+'；'+month+'月历史均温 '+(weather?.meanC==null?'待补充':Math.round(weather.meanC)+'°C')};}),
-  advisories:warnings.map(warning=>warning.reason),caveats:[...warnings.map(warning=>warning.reason),'花费为历史参考，住宿条件未必相同；气候不是天气预报。','入境标签待复核，工作许可另查；不含个人报价。'],essentialCaveat:warnings.map(warning=>warning.reason).join(' '),sources:[...warnings.map(warning=>({title:'官方出行提醒',url:warning.url})),...cities.map(city=>({title:city.name+'资料',url:new URL('../..',inputURL).origin+new URL(inputURL).pathname.split('/compare/')[0]+'/cities/'+city.slug+'/',date:city.budgetCheckedAt||city.checkedAt||''}))]});
+  advisories:warnings.map(warning=>warning.reason),caveats:[...warnings.map(warning=>warning.reason),'花费为历史参考，住宿条件未必相同。气候不是天气预报。','入境标签待复核，工作许可另查。不含个人报价。'],essentialCaveat:warnings.map(warning=>warning.reason).join(' '),sources:[...warnings.map(warning=>({title:'官方出行提醒',url:warning.url})),...cities.map(city=>({title:city.name+'资料',url:new URL('../..',inputURL).origin+new URL(inputURL).pathname.split('/compare/')[0]+'/cities/'+city.slug+'/',date:city.budgetCheckedAt||city.checkedAt||''}))]});
 }

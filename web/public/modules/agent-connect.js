@@ -9,7 +9,7 @@ export async function copyField(field, feedback, clipboard = globalThis.navigato
   } catch {
     field.focus();
     field.select();
-    feedback.textContent = '未能自动复制，已选中文本；请长按或使用复制快捷键。';
+    feedback.textContent = '未能自动复制，已选中文本。请长按或使用复制快捷键。';
     return false;
   }
 }
