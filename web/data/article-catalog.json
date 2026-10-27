@@ -1108,7 +1108,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-26",
-      "assetPath": "/city-guides/japan-digital-nomad-chinese-passport.html"
+      "assetPath": "/city-guides/japan-digital-nomad-chinese-passport.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "two-person-monthly-budget",
@@ -1122,7 +1123,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/two-person-monthly-budget.html"
+      "assetPath": "/city-guides/two-person-monthly-budget.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "new-zealand-visitor-remote-work",
@@ -1137,7 +1139,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/new-zealand-visitor-remote-work.html"
+      "assetPath": "/city-guides/new-zealand-visitor-remote-work.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "kunming-monthly-budget",
@@ -1230,7 +1233,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/new-zealand-weekly-rent-thirty-nights.html"
+      "assetPath": "/city-guides/new-zealand-weekly-rent-thirty-nights.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "auckland-hop-cap-airport-transport",
@@ -1244,7 +1248,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/auckland-hop-cap-airport-transport.html"
+      "assetPath": "/city-guides/auckland-hop-cap-airport-transport.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "canggu-monthly-budget",
@@ -1297,7 +1302,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/korea-workation-f1d-2026.html"
+      "assetPath": "/city-guides/korea-workation-f1d-2026.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "seoul-climate-card-short-stay-2026",
@@ -1311,7 +1317,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/seoul-climate-card-short-stay-2026.html"
+      "assetPath": "/city-guides/seoul-climate-card-short-stay-2026.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "singapore-monthly-budget",
@@ -1352,7 +1359,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/de-rantau-sabah-scope.html"
+      "assetPath": "/city-guides/de-rantau-sabah-scope.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "auckland-wellington-beijing-workday",
@@ -1367,7 +1375,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/auckland-wellington-beijing-workday.html"
+      "assetPath": "/city-guides/auckland-wellington-beijing-workday.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "monthly-apartment-utilities",
@@ -1384,7 +1393,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/monthly-apartment-utilities.html"
+      "assetPath": "/city-guides/monthly-apartment-utilities.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "phuket-monthly-budget",
@@ -1426,7 +1436,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/remote-visa-income-balance.html"
+      "assetPath": "/city-guides/remote-visa-income-balance.html",
+      "topicCategory": "permission"
     },
     {
       "slug": "hua-hin-cross-season-thirty-nights",
@@ -1440,7 +1451,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/hua-hin-cross-season-thirty-nights.html"
+      "assetPath": "/city-guides/hua-hin-cross-season-thirty-nights.html",
+      "topicCategory": "season"
     },
     {
       "slug": "singapore-foreign-card-transit-fee",
@@ -1454,7 +1466,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/singapore-foreign-card-transit-fee.html"
+      "assetPath": "/city-guides/singapore-foreign-card-transit-fee.html",
+      "topicCategory": "budget"
     },
     {
       "slug": "cowork-call-hours",
@@ -1469,7 +1482,8 @@
       ],
       "status": "published",
       "updatedAt": "2026-10-27",
-      "assetPath": "/city-guides/cowork-call-hours.html"
+      "assetPath": "/city-guides/cowork-call-hours.html",
+      "topicCategory": "compare"
     }
   ]
 }
