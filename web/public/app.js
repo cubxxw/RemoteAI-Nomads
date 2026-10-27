@@ -234,10 +234,10 @@ if (document.querySelector("#ranking-root"))
     });
     document.querySelectorAll('[data-ranking-wait-control]').forEach(control=>{control.disabled=true;});
     const readiness=document.querySelector('[data-ranking-readiness]');
-    if(readiness){readiness.hidden=false;readiness.textContent='筛选与实时排序暂不可用，请刷新重试；下方城市资料仍可浏览。';}
+    if(readiness){readiness.hidden=false;readiness.textContent='筛选与实时排序暂不可用，请刷新重试。下方城市资料仍可浏览。';}
     const shareButton=document.querySelector('#share-ranking');
     if(shareButton){shareButton.disabled=true;shareButton.removeAttribute('aria-busy');shareButton.setAttribute('aria-label','分享暂不可用，请刷新重试');shareButton.title='分享暂不可用，请刷新重试';}
-    notify("实时排序暂时未载入，刷新页面可重试；当前排行与城市详情仍可浏览。");
+    notify("实时排序暂时未载入，刷新页面可重试。当前排行与城市详情仍可浏览。");
   });
 
 if(document.querySelector('[data-guide]'))
@@ -251,7 +251,7 @@ if(document.querySelector('#personal-comparison'))
     console.error('Comparison initialization failed',error);
     const panel=document.querySelector('#personal-comparison');panel.inert=true;panel.removeAttribute('aria-busy');
     const readiness=document.querySelector('[data-personal-readiness]');
-    if(readiness){readiness.hidden=false;readiness.textContent='本机方案暂不可用，请刷新重试；下方公共城市资料仍可对照。';}
+    if(readiness){readiness.hidden=false;readiness.textContent='本机方案暂不可用，请刷新重试。下方公共城市资料仍可对照。';}
   });
 
 let agentModule;

@@ -16,15 +16,15 @@
       "sourceFiles": [
         {
           "path": "content/editorial-50/start-budget.json",
-          "sha256": "c216ae536a8d9304c27659c134a7c6d67444158a9a3b28360b68f347e3ea1a18"
+          "sha256": "9a2141cf49a727fae6448804cd50c013288b366201f43590fa5eade490318cfc"
         },
         {
           "path": "content/editorial-50/season-compare.json",
-          "sha256": "cdaeb7ab6992029302490d8035c2757298151a080bb817f96d75c8ac684d96e5"
+          "sha256": "5a8438247974bb8fd393e9fe62650d409188548f22820951ed74a66b5f299a56"
         },
         {
           "path": "content/editorial-50/permission-tools.json",
-          "sha256": "6361d058c43cec44b96b8ece3d0066fec57774914fad7997048f8cf385534a98"
+          "sha256": "e959e174c2d4db9cee6b0ccfceba2f4404c3345238a8b2e2d7c6c42c23132ee9"
         }
       ]
     },
@@ -87,9 +87,16 @@
       "approvedOn": "2026-10-27",
       "authority": "User explicitly requested current SEO analysis and continued optimization. Scoped search metadata and existing related-guide links were reviewed against the unchanged article facts, budget conditions and source dates; final Chinese whitelist pass completed.",
       "reviewRecord": "research/2026-10-27-search-console-review.md"
+    },
+    "copyReview20261027": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User requested parallel whitelist language review of recent blog articles and product pages; global instructions authorize direct minimal revision and retesting. Parent verified exact wording, numeric tokens, links and immutable guide configuration before rebinding these source hashes.",
+      "reviewRecord": "research/2026-10-27-copy-cleanup.md",
+      "articleCount": 58
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -108,14 +115,14 @@
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "d74759ca8ea07d8fbfacc57ae16aafb4c7288138052ccd1539c656355de94fe8",
+      "sha256": "aa2da1887f4853c01d1b6dcce828dd90c813d52910f3794eb5cf0f9792103119",
       "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
     {
       "slug": "dali-monthly-budget",
       "sourceFile": "dali-monthly-budget.html",
-      "sha256": "57be5ca3aea59cf4a3f6fe3426f2df155b399dedc49774cfa69e25ceb9c6df46",
+      "sha256": "4bf671bbabb43c1f4e1984cae4cb915044dafa4260cba76a65c9bf3baf32a7b8",
       "source": "output/titles-20261020/dali-monthly-budget.html",
       "approved": true
     },
@@ -136,7 +143,7 @@
     {
       "slug": "hangzhou-monthly-budget",
       "sourceFile": "hangzhou-monthly-budget.html",
-      "sha256": "b9fe02f8f2fd6d21135a3b4cecac5cd4a0996c03e167a8179e8281cd3d1705ef",
+      "sha256": "c340d950e8bb19c6690e73dea175588870f5fec32c68a0d45b19e105cb6588a2",
       "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
@@ -223,7 +230,7 @@
     {
       "slug": "chinese-passport-long-stay",
       "sourceFile": "chinese-passport-long-stay.html",
-      "sha256": "a556a857457656d1725021366e300b8564ccfb9c19564e35bce6a53a6066186f",
+      "sha256": "03db2a5bcd1b1125774771c88777059c927a3831162daf784a1158f09d0d2526",
       "source": "output/seo-topics-20261022/chinese-passport-long-stay.html",
       "approved": true,
       "approvedOn": "2026-10-22"
@@ -266,21 +273,21 @@
     {
       "slug": "nomad-budget-checklist",
       "sourceFile": "nomad-budget-checklist.html",
-      "sha256": "11c19f84fd547d86c336020185e85e1324ab4f330ea700d1d9889a95cf1fa184",
+      "sha256": "7339f1805e79682e8cdfb440c1bc637756c36e26df0ac5b2ca4bcece1a23d761",
       "source": "web/content/editorial-50/start-budget.json (article 10)",
       "approved": true
     },
     {
       "slug": "dali-budget-5000-allocation",
       "sourceFile": "dali-budget-5000-allocation.html",
-      "sha256": "f77e457ee9c43bb1315d912a54c51747410d79cc6ae9bb678b873261188780ee",
+      "sha256": "7fc71c1d2dec71db8e2c281156494120bc4d4b42c87050eccd6e8c538714a394",
       "source": "web/content/editorial-50/start-budget.json (article 11)",
       "approved": true
     },
     {
       "slug": "chiang-mai-winter-monthly-rent",
       "sourceFile": "chiang-mai-winter-monthly-rent.html",
-      "sha256": "2a1d96fc1c9c704eea9d67ccafaabe65ce63cc392cf46b24aa329df4d04a4069",
+      "sha256": "78a1fc7706823eae7526527916fb121a607dbb0f9a84b787e96a136001e10558",
       "source": "web/content/editorial-50/start-budget.json (article 12)",
       "approved": true
     },
@@ -294,14 +301,14 @@
     {
       "slug": "kuala-lumpur-monthly-bill-extras",
       "sourceFile": "kuala-lumpur-monthly-bill-extras.html",
-      "sha256": "bc60a59f1be5addd9b1af696a2a5231c7a40a3be0a33f3c4d0ae54fbe17db3f5",
+      "sha256": "b5dc1fc92a896877ff75604cc95b063d8636c1c5a4d36fa931bc15a337b74870",
       "source": "web/content/editorial-50/start-budget.json (article 14)",
       "approved": true
     },
     {
       "slug": "hanoi-quiet-room-tay-ho-old-quarter",
       "sourceFile": "hanoi-quiet-room-tay-ho-old-quarter.html",
-      "sha256": "5968b3332f10a2084ecb5f4c7fbd15ed050c954cab6ec6786b1648d44bcfe22d",
+      "sha256": "2f78f26c1fec10888e0732282583a75227407eef340067121c5a6f53738bb633",
       "source": "web/content/editorial-50/start-budget.json (article 15)",
       "approved": true
     },
@@ -329,7 +336,7 @@
     {
       "slug": "chengdu-neighborhood-walk-or-metro",
       "sourceFile": "chengdu-neighborhood-walk-or-metro.html",
-      "sha256": "96e29b01f13f540633ea0a5c1c12c73889f781452b9c6a8d7dac6703d4f510d8",
+      "sha256": "3eb533cae29863388405665c5e7fcadba8463b4da85d6836311ffef5930d4429",
       "source": "web/content/editorial-50/start-budget.json (article 19)",
       "approved": true
     },
@@ -357,42 +364,42 @@
     {
       "slug": "spring-festival-month-rental-fees",
       "sourceFile": "spring-festival-month-rental-fees.html",
-      "sha256": "fb6a79e7f2eb604d3fa4a06900a0e9d45aae7bbd50631ed27904bcca5a19307e",
+      "sha256": "463a0de47e15602d64bef5703dad6f2c42ce0d3c8b34ea637ae6f37992fd7af5",
       "source": "web/content/editorial-50/season-compare.json (article 23)",
       "approved": true
     },
     {
       "slug": "chiang-mai-haze-moving-date",
       "sourceFile": "chiang-mai-haze-moving-date.html",
-      "sha256": "77634d71d5b6dd35f91989448b3385d2ef1131e785b8da11d6acf4595a3a0827",
+      "sha256": "221a033b982fc860c10f4d578fb59cc7932ed7171f2cefdcaef1c5326a7ae45b",
       "source": "web/content/editorial-50/season-compare.json (article 24)",
       "approved": true
     },
     {
       "slug": "da-nang-rainy-season-seaside-room",
       "sourceFile": "da-nang-rainy-season-seaside-room.html",
-      "sha256": "da6c45d3f290ff26b8a1f03f62cccefa8197295bf1a0d7af44aa55e8bf7e2ae3",
+      "sha256": "86f6910bbdb709d877f7f7ee8ca0319c3ed2bfb278430f219c4e496295c1b4e1",
       "source": "web/content/editorial-50/season-compare.json (article 25)",
       "approved": true
     },
     {
       "slug": "penang-three-years-rain-by-month",
       "sourceFile": "penang-three-years-rain-by-month.html",
-      "sha256": "ca2685e8c2f05a9125f54faf48d80a9bbff6b14a928a7b3e0f535741699ff307",
+      "sha256": "20eae731eafaccf1ce6c177c628933c981fb83cafadeb9b042774ffc6699b95b",
       "source": "web/content/editorial-50/season-compare.json (article 26)",
       "approved": true
     },
     {
       "slug": "dali-winter-sun-hot-water-heating",
       "sourceFile": "dali-winter-sun-hot-water-heating.html",
-      "sha256": "076fef435ebd814b53aeefa2d7d25e677dd34e4e10af15fc73e46bd2ac826bed",
+      "sha256": "0f95ffb970d2654fe5ef057e04ade3f5785edd5a7ba9354cdfdb799906f74e9a",
       "source": "web/content/editorial-50/season-compare.json (article 27)",
       "approved": true
     },
     {
       "slug": "ubud-rainy-season-room-inspection",
       "sourceFile": "ubud-rainy-season-room-inspection.html",
-      "sha256": "4105499cc7d6f084985aac3a9e7989ec8d89fcd299ef41a272b1da03bcc7faa3",
+      "sha256": "7c4a207f15513dca7c396709e2c98b0ecea4bec78a56d48dc3634c09d28ce38a",
       "source": "web/content/editorial-50/season-compare.json (article 28)",
       "approved": true
     },
@@ -406,14 +413,14 @@
     {
       "slug": "three-months-two-cities-rental-permission",
       "sourceFile": "three-months-two-cities-rental-permission.html",
-      "sha256": "50bd79218aa600da5143ff63c6760d591228daed08907bbe8a014a96aa095dd6",
+      "sha256": "cfae63dbc7bf32b7a80d7ec93b36d0727663514937dbacfabc138978f536e762",
       "source": "web/content/editorial-50/season-compare.json (article 30)",
       "approved": true
     },
     {
       "slug": "chiang-mai-dali-winter-workday",
       "sourceFile": "chiang-mai-dali-winter-workday.html",
-      "sha256": "ac7c0f6b6b2acb91ea1f90dbd4bff81c0edfe53b1a585b85ccb43a76a5117c63",
+      "sha256": "4eeef55612869282a35886c9ce7d6596b047442880bc5488508fbc3e7e357e85",
       "source": "web/content/editorial-50/season-compare.json (article 41)",
       "approved": true
     },
@@ -427,21 +434,21 @@
     {
       "slug": "penang-kuala-lumpur-one-working-day",
       "sourceFile": "penang-kuala-lumpur-one-working-day.html",
-      "sha256": "cde90d528b9072427d24877a8f2c4de934547302c1b1ce4474cef713e1f6a970",
+      "sha256": "0165aca69f6ea6f51a3d77a6475eb12dc6b5b9f1d6898c5a414bf03bf6ac0771",
       "source": "web/content/editorial-50/season-compare.json (article 43)",
       "approved": true
     },
     {
       "slug": "pokhara-chiang-mai-low-budget-workday",
       "sourceFile": "pokhara-chiang-mai-low-budget-workday.html",
-      "sha256": "bb4c566f77209872a746c56eb0a4f70b1282f16667f7f06afb39811d9038630c",
+      "sha256": "eeaa504ae5c9b5545fffe3f912589243f07a30221c12233d59b8a6db4009654c",
       "source": "web/content/editorial-50/season-compare.json (article 44)",
       "approved": true
     },
     {
       "slug": "lisbon-malaga-month-stay-tradeoffs",
       "sourceFile": "lisbon-malaga-month-stay-tradeoffs.html",
-      "sha256": "fea989083da22c271e8fa65ccb5e8b96986437bf404de1e0dcfd1a50deebcf74",
+      "sha256": "b6a430662dca5901dded23bd9ba6771afe9eb407d8a11fc54e75f64ba79f179e",
       "source": "web/content/editorial-50/season-compare.json (article 45)",
       "approved": true
     },
@@ -455,21 +462,21 @@
     {
       "slug": "thailand-dtv-before-applying",
       "sourceFile": "thailand-dtv-before-applying.html",
-      "sha256": "c3292050974a0f47e6f610e2e87158515d6e69ed9c15a2007a9ebed0586039e3",
+      "sha256": "480bb30860ec47cd80add2f3da60503fcc305810c16cd4fda57b7a28abe33f64",
       "source": "web/content/editorial-50/permission-tools.json (article 32)",
       "approved": true
     },
     {
       "slug": "de-rantau-employee-freelancer-documents",
       "sourceFile": "de-rantau-employee-freelancer-documents.html",
-      "sha256": "6720ad16b5b44489ee66f7a735ac572072c7ab3c08b73d01dfdbd6abc9acc67a",
+      "sha256": "8a57880ac554c0144dd30cf13763897cb5b8834ade131686017aeb52a9b69d11",
       "source": "web/content/editorial-50/permission-tools.json (article 33)",
       "approved": true
     },
     {
       "slug": "visa-validity-and-stay",
       "sourceFile": "visa-validity-and-stay.html",
-      "sha256": "4e87bdfb700a0b80f7bdf33bcd9e62b54ff94ca962a844cf53d3dd5ce9db739a",
+      "sha256": "e6ff71dff032a9eed808d4a870a5875b9f818ba0c602404c693c0f3728ca190b",
       "source": "web/content/editorial-50/permission-tools.json (article 34)",
       "approved": true
     },
@@ -483,7 +490,7 @@
     {
       "slug": "company-approval-abroad",
       "sourceFile": "company-approval-abroad.html",
-      "sha256": "eb3ceaf2701b6deaef44779235dd99e1b0fada2ba58b59c968170a392a63537e",
+      "sha256": "adb53f07db643bee6ef78cab335cb8693e9f28b1e360d82a1a7a0ab3913f0104",
       "source": "web/content/editorial-50/permission-tools.json (article 36)",
       "approved": true
     },
@@ -497,28 +504,28 @@
     {
       "slug": "lisbon-madrid-beijing-workday",
       "sourceFile": "lisbon-madrid-beijing-workday.html",
-      "sha256": "9136f95dfcc56f4777b4feea0c1c85f79cbf1b17cead502aaffcf9a11365972a",
+      "sha256": "4b2f38e366f90547622d276202e8a21afae844be1f5f80c921f1e7ca81baac00",
       "source": "web/content/editorial-50/permission-tools.json (article 38)",
       "approved": true
     },
     {
       "slug": "beijing-nine-chiangmai-penang-pokhara",
       "sourceFile": "beijing-nine-chiangmai-penang-pokhara.html",
-      "sha256": "29b6c90bdd6ed245502227884695cd56fadb23e1034d70b4416ee1cb4e84e330",
+      "sha256": "aaf6d0db279459d97778c7975b781882a92d0ce54db74f826a5441f65c70c3d8",
       "source": "web/content/editorial-50/permission-tools.json (article 39)",
       "approved": true
     },
     {
       "slug": "calendar-daylight-saving",
       "sourceFile": "calendar-daylight-saving.html",
-      "sha256": "72c215ed32057ff1d7126ed28752926c2013a17faeb1897b064fea71be21a558",
+      "sha256": "8ac30287b6ea26834cec709b106b3c4a425e1879a5aa0466e6f063003d9e363a",
       "source": "web/content/editorial-50/permission-tools.json (article 40)",
       "approved": true
     },
     {
       "slug": "coworking-day-pass-month-pass",
       "sourceFile": "coworking-day-pass-month-pass.html",
-      "sha256": "1d0399a5188bc60eda46ed078d2f5ea27bece0c87f515348b0f743c0685c551e",
+      "sha256": "ab5438551d16bbdfc973f2aacee519d67f87a4508ddb96e9fbc412f848ce4cc1",
       "source": "web/content/editorial-50/permission-tools.json (article 46)",
       "approved": true
     },
@@ -539,7 +546,7 @@
     {
       "slug": "calculator-living-scenarios",
       "sourceFile": "calculator-living-scenarios.html",
-      "sha256": "4bc4e4f0ac60c2d8e9af4e4dfed952c9f50ba2da3e3a62bea53bec1109151526",
+      "sha256": "1f52b662a0c1bd53611baec8da4cd8c12843b48c057444d086327906bf5e8989",
       "source": "web/content/editorial-50/permission-tools.json (article 49)",
       "approved": true
     },
@@ -554,42 +561,42 @@
       "slug": "da-nang-monthly-budget",
       "sourceFile": "da-nang-monthly-budget.html",
       "approved": true,
-      "sha256": "def5088c50ed98e54c6473bb45f7601b4291c5cecc41eacd01e77025564ca1f2",
+      "sha256": "bd24394a21103f4301650c7900b074f8bb015430c6b55f00a6f3596759807e7f",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "xiamen-monthly-budget",
       "sourceFile": "xiamen-monthly-budget.html",
       "approved": true,
-      "sha256": "ec0609b6d426097b532412737589a67d0aeb0cadc34010a974f15b37791623aa",
+      "sha256": "143736e12200e3628c56f72c607088d78214209b2e0212466c0db33bbb07d77a",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "japan-digital-nomad-chinese-passport",
       "sourceFile": "japan-digital-nomad-chinese-passport.html",
       "approved": true,
-      "sha256": "985397f790e29f3a94bb9acf29ee0743db2a7445abf52039660b7ae799f3de59",
+      "sha256": "2d9bad891eaff08dcd49fe907157be4d153ea81afbfbd46c7c6a1086d596838e",
       "source": "research/2026-10-26-five-articles.md"
     },
     {
       "slug": "kunming-monthly-budget",
       "sourceFile": "kunming-monthly-budget.html",
       "approved": true,
-      "sha256": "c5f842fee93ca7eaf9b224e1983278e0c9d30646eb5170f5d3c40977c7673476",
+      "sha256": "ab8de068af70cba3dad7cad7ad1087078d43cafc3d2742ff969ed7c1c34f4387",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "bangkok-monthly-budget",
       "sourceFile": "bangkok-monthly-budget.html",
       "approved": true,
-      "sha256": "db8aba7a06059c6c1d9574fae51ad0bff9fec654b780e25575d9de226561e8f5",
+      "sha256": "b3dc5d81a4c4bd2041bd5b37e3e1cdfc7e052038146ba83e98eab498913bf039",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "abu-dhabi-monthly-budget",
       "sourceFile": "abu-dhabi-monthly-budget.html",
       "approved": true,
-      "sha256": "7d714920d5debf7f6b1d8aa47682e829d33079e0a70b7ebb0011803c796ba032",
+      "sha256": "dcec6c7adad86de1034077d8744015117b0e83378f3f92889a1c15e3feb8629f",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
@@ -603,153 +610,153 @@
       "slug": "new-zealand-visitor-remote-work",
       "sourceFile": "new-zealand-visitor-remote-work.html",
       "approved": true,
-      "sha256": "6144d8d95f4d13647e3176a8ed8c5e883636c339184c512a9ec7bfd68a1de6b0",
+      "sha256": "2e0160b0fe3ecc8b18126abfeed602e4bf637a64f02e70270274468fad6f0d38",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "auckland-monthly-budget",
       "sourceFile": "auckland-monthly-budget.html",
       "approved": true,
-      "sha256": "75820a1757973f07428f210c0359d3a74514858b50fc3e857656c88032476563",
+      "sha256": "c2ce0c64aae2e0ddc6501a15c42db35c6f47b138fac651ccaa040e71d163dd3f",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "wellington-monthly-budget",
       "sourceFile": "wellington-monthly-budget.html",
       "approved": true,
-      "sha256": "7e1ea6123c574889391209917de0cda3e9e27fa7ad7d3d343c881185b7c872e7",
+      "sha256": "10132a49760690c74306d6ffd7e7ef3d78df951ae3d556ee689d4716c33ac14e",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "tbilisi-monthly-budget",
       "sourceFile": "tbilisi-monthly-budget.html",
       "approved": true,
-      "sha256": "c1916a312905b377698268efa342f88c293d9c9cc1a3eb9665b4bce035827be0",
+      "sha256": "ce798cd5d317c332a1a62f96268d2f1d27ac60dbaca07936815e977d014ab3d4",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "new-zealand-weekly-rent-thirty-nights",
       "sourceFile": "new-zealand-weekly-rent-thirty-nights.html",
       "approved": true,
-      "sha256": "c4890959500cf54a33edf857ba579f706ab39472b2c3a4a855820dcb78ca1433",
+      "sha256": "0873165fc92fe7f9151ea875c0461f0ca901a7d7450c405235679c9a2f7cd307",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "auckland-hop-cap-airport-transport",
       "sourceFile": "auckland-hop-cap-airport-transport.html",
       "approved": true,
-      "sha256": "f699657ebfd2dedeed4bf5d8dc83d8d782fe2ca1f287779f9f48977fc5783ae4",
+      "sha256": "06b56c03b6f50553b9876f8c536497aeddd8928d0443455ac45eb6c572c9e2f9",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "canggu-monthly-budget",
       "sourceFile": "canggu-monthly-budget.html",
-      "sha256": "76d21845333ad24bcb53977fbfdf33a4cec37c70088f2a55101815f36723b266",
+      "sha256": "6113a2f7a7ef6d8fea815efa1da3113d8abd7a1105c4b5461ef6b782c4554018",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "ho-chi-minh-city-monthly-budget",
       "sourceFile": "ho-chi-minh-city-monthly-budget.html",
-      "sha256": "e211b77afc51099ab9cb6076038983ac6059f32acad0b72444a58ed9376e4796",
+      "sha256": "792e36e43f9e01bc95f361787af2c82429061e11fb3ee2bd865efaae7b40d378",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "seoul-monthly-budget",
       "sourceFile": "seoul-monthly-budget.html",
-      "sha256": "240f45a9920b7be1600af671c7fc174cc6f9f5e8eb2b948e0981e06de5496b9e",
+      "sha256": "0ee2163e5ebd7f22cdecc2d91ed5d12e734cef1f951be288f6f468a316e281da",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "korea-workation-f1d-2026",
       "sourceFile": "korea-workation-f1d-2026.html",
-      "sha256": "22e04c38e5cc2e352814411e173126a977fe0b88d64d454102197d9f49261caa",
+      "sha256": "7a4943beb49eb07b6ea75ac4ef08ec13a22e117ff2e5c3a477feb323a5d1a072",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "seoul-climate-card-short-stay-2026",
       "sourceFile": "seoul-climate-card-short-stay-2026.html",
-      "sha256": "7f5eda9c50810412f48bf786cf95bfc2ab02721b23ef1135ff5ec36527509471",
+      "sha256": "568a399356a24bca97a3f929cae5bbdb8aea594d3fb7f1debd1657563ed46a2c",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "singapore-monthly-budget",
       "sourceFile": "singapore-monthly-budget.html",
-      "sha256": "01ffffbc69ec1d2f489d6acbccbe97be38dcaa0096739b8ff1b962c4822dd650",
+      "sha256": "6c4756a512a22e8cfa3aafae3ba420eaac20d0bfa136ccacd2d751ed5e0ced49",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "hua-hin-monthly-budget",
       "sourceFile": "hua-hin-monthly-budget.html",
-      "sha256": "1f175f0f51a38845ec2b19cdb65ad93110f5944675ca6206837edb650d2884bc",
+      "sha256": "a39ab476ab1a0ea08ef54a6dc1045c9b900071ace2b7676cbdc5a026e780208a",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "de-rantau-sabah-scope",
       "sourceFile": "de-rantau-sabah-scope.html",
-      "sha256": "44a1728990c7d4785c1407dd59628fbe4eb4a870debd6b775b04ab297edb0a4a",
+      "sha256": "865059f0c4833a63b1989b913b9e6d28b1f09845eac85e0b84a0b0e189bc0c80",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "auckland-wellington-beijing-workday",
       "sourceFile": "auckland-wellington-beijing-workday.html",
-      "sha256": "d9e79b695626fe9e6b8bfaf1d2ecab7994c2772da62ee99f91f5b4e962612cde",
+      "sha256": "88ff7ca2d5e4c486dd6710eda2d339f3693de8f6d76a34029497ba07e2f8391d",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "monthly-apartment-utilities",
       "sourceFile": "monthly-apartment-utilities.html",
-      "sha256": "fbc1a12a3a3761252469f8bb8c9a51368ce1a975b83cb8981c1f75cfb5ca7a8c",
+      "sha256": "17f2985ea252e9718b2fed6401bf43c388561b9c0a9f3033d15012ae6a9f24b4",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "phuket-monthly-budget",
       "sourceFile": "phuket-monthly-budget.html",
-      "sha256": "86dc7630fdd85328a88c13e06224fa6bd7e07c1090ec794d2030a2312aff25c1",
+      "sha256": "d421b36cd15be8b4235b47b0bb819916b23d47b373947ed0ba15d2229bf30aca",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "malacca-monthly-budget",
       "sourceFile": "malacca-monthly-budget.html",
-      "sha256": "bc60c90ecd1147772782a92fe08828702b76be03fbaac359fbb4f725a289c5f0",
+      "sha256": "65d78643b886adbb6d5f63ef7ba456116291cc9f97e823d576fd97c27f65b9bc",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "remote-visa-income-balance",
       "sourceFile": "remote-visa-income-balance.html",
-      "sha256": "4386376575dbcb460e1502ca8a2fd71bf8c707f572773e9a4bc5909e1911f753",
+      "sha256": "d97e4f042ef3888e453b3068cd7e5906b6fde822476f61f3063d79a4dc350073",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "hua-hin-cross-season-thirty-nights",
       "sourceFile": "hua-hin-cross-season-thirty-nights.html",
-      "sha256": "b5dfd210b8791d19c6fc5ef64051abd71d2813dcaa521d8cd13125fb424b1c45",
+      "sha256": "fb036daada4dc1d1d5e1308c2f1036a3d8a3cd98362bf8920fc233ba5a9e60d4",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "singapore-foreign-card-transit-fee",
       "sourceFile": "singapore-foreign-card-transit-fee.html",
-      "sha256": "1509f5830a86dbd26ac51c16d621e7a73d9bebd8cc8471e0d0f5b698b4e60fc8",
+      "sha256": "25d865348e46d768c03325b83a9dbf8c8dc36f2202d612dc201314cca79ba612",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "cowork-call-hours",
       "sourceFile": "cowork-call-hours.html",
-      "sha256": "fb365caa01dfe1dfb5f98b1ab7efd0e20a8055cd3d010a87671720dfdc6218cc",
+      "sha256": "a37073bbb263f39a45fa55ba19c067a7aa32fd8d08928051a8beb4283e697204",
       "source": "research/2026-10-27-call-hours.md",
       "approved": true
     }

@@ -147,7 +147,7 @@ export function layoutShare(ctx,card,format,{photo=false,qrSize:requestedQR}={})
  const setFont=(size,weight=400)=>ctx.font=`${weight} ${size}px ${FONT}`;
  const footerWidth=card.url?w-margin*2-qrSize-24:w-margin*2,caution=card.caveats.join(' '),maxFootLines=wide?3:4;
  setFont(wide?22:26);const cautionLines=wrapText(ctx,caution,footerWidth);
- const selectedNote=cautionLines.length<=maxFootLines?caution:(card.essentialCaveat||(card.private?'个人填写，未核验；只列已知费用，未包含项见配文。公开链接不含个人金额。':'历史资料供参考，实际价格、天气与停留条件请核对原页。'));
+ const selectedNote=cautionLines.length<=maxFootLines?caution:(card.essentialCaveat||(card.private?'个人填写，未核验。只列已知费用，未包含项见配文。公开链接不含个人金额。':'历史资料供参考，实际价格、天气与停留条件请核对原页。'));
  const note=[...(card.advisories||[]).filter(warning=>!selectedNote.includes(warning)),selectedNote].filter(Boolean).join(' ');
  const footerNote=cityPoster?'':note;
  const noteLines=wrapText(ctx,footerNote,footerWidth),noteHeight=footerNote?noteLines.length*Math.ceil((wide?22:26)*1.4):0;

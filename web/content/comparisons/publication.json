@@ -3,11 +3,11 @@
   "approved": true,
   "approvedOn": "2026-10-21",
   "authority": "User explicitly requested sourced comparison articles, publication and synchronized discovery; final Chinese, budget and real-image review completed.",
-  "sourceEdition": "comparisons-20261021",
+  "sourceEdition": "comparisons-20261021+copy-review-20261027",
   "files": {
     "data/comparison-articles.json": "9f36eac8cd1fee38f5c2f849502a937284cdebd69cf266ca44f60b257be288a1",
     "data/comparison-budgets.json": "38d6a078880b40333512e46f963ae0238982ef19b33afacf995fcf85ce5ba6e9",
-    "src/comparison-article.js": "c85c661d4d89dcb9c7500a94ae570fb43ee636ef4ad7ef201cfe76c69998e5bc",
+    "src/comparison-article.js": "76b1847817f3fdcb1053b985e85193f4011ebd0ae02874458d5dc2d353ee26ff",
     "public/comparison-article.css": "2a01e825df67d88a810aef643cb5df01349c9413c0c990431d14394be9512576"
   },
   "assets": {
@@ -24,5 +24,11 @@
     "public/guide-assets/images/chiang-mai-nimman-street.webp": "30e09d95be6ef6e5035766cdaecb77107b1f3754aeb77be3a7a88f26037d8d67",
     "public/guide-assets/images/penang-city.webp": "a2b34a711caf8561fd3bc1e5ac192cabd45031a19da8616b7d0d70dc0b4380ac",
     "public/images/city-da-nang.webp": "e46ec5c7d650612993309e1d5788dd7ee75af0cc0da38da29b8d049a646aab24"
+  },
+  "copyReview20261027": {
+    "approved": true,
+    "approvedOn": "2026-10-27",
+    "authority": "User requested product-page language correction. Parent verified that the comparison renderer changed Chinese punctuation only; comparison content, budgets, source URLs, images and date fields are unchanged.",
+    "reviewRecord": "research/2026-10-27-copy-cleanup.md"
   }
 }

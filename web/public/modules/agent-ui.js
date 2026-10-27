@@ -97,7 +97,7 @@ function renderAnswer(content,value,thread,message){
   if(value.budget_options?.length){
     const choices=document.createElement('section');choices.className='agent-budget-choices';
     const heading=document.createElement('h3');heading.textContent='选一组假设，接着算';
-    const note=document.createElement('p');note.className='agent-budget-choice-note';note.textContent='选择后沿用原单价；这些是预算假设，不是报价。';choices.append(heading,note);
+    const note=document.createElement('p');note.className='agent-budget-choice-note';note.textContent='选择后沿用原单价。这些是预算假设，不是报价。';choices.append(heading,note);
     for(const option of value.budget_options){
       const row=document.createElement('div');row.className='agent-budget-choice';const text=document.createElement('span');text.textContent=option.label+' · '+option.remaining_label+' '+option.remaining+' '+option.currency;
       const button=document.createElement('button');button.type='button';const selected=thread.budgetSelection?.messageId===message.id&&thread.budgetSelection?.optionId===option.id;button.textContent=selected?'已沿用':'沿用这组';button.setAttribute('aria-pressed',String(selected));
@@ -118,7 +118,7 @@ function renderAnswer(content,value,thread,message){
       const group=document.createElement('section');group.className='agent-source-group';group.tabIndex=-1;group.dataset.evidenceGroup=evidence.id;
       const heading=document.createElement('h3');heading.textContent=evidence.id+' · '+evidence.label;group.append(heading);
       for(const warning of new Set(evidence.warnings||[])){const p=document.createElement('p');p.textContent=warning;group.append(p);}
-      if(!evidence.sources?.length){const p=document.createElement('p');p.textContent='本次程序计算；假设和单位见回答。';group.append(p);}
+      if(!evidence.sources?.length){const p=document.createElement('p');p.textContent='本次程序计算。假设和单位见回答。';group.append(p);}
       for(const source of evidence.sources||[]){const a=document.createElement('a');if(/^https?:\/\//.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';}a.textContent=source.title+' · '+source.accessed_at+(source.kind==='legacy'?' · 旧资料':'');group.append(a);}
       details.append(group);
     }

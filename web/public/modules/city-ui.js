@@ -172,7 +172,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       root.querySelectorAll('[data-trip-length]').forEach(node=>{node.textContent=invalidDays?'—':days.value;});
       const total=root.querySelector('[data-overview-total]');if(total)total.textContent=display;
       const summary=root.querySelector('[data-overview-feedback]');if(summary)summary.textContent=estimate.error?'先修正停留天数或金额':estimate.amount===null?'填入开销后显示小计':`${days.value}天 · ${estimate.items.filter(row=>row.amount!==null).length}项已计入`;
-      const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金和保险另算；如需签证，费用也要确认。';
+      const missing=root.querySelector('[data-overview-missing]');if(missing)missing.textContent=(estimate.missing.length?'还没计入：'+estimate.missing.join('、')+'。':'已计入上面五项。')+'往返交通、押金和保险另算。如需签证，费用也要确认。';
       const capStatus=root.querySelector('#trip-ceiling-status');
       const invalidCap=ceilingInput&&!ceilingInput.validity.valid,balance=budgetBalance(ceilingAmount,estimate.amount);
       ceilingInput?.setAttribute('aria-invalid',String(invalidCap));
@@ -183,7 +183,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       const filled=keys.filter(key=>values[key]!==null).length,edited=keys.filter(key=>inputs[key]?.dataset.origin==='edited'&&values[key]!==null).length;
       const summaryLabel=adjustment?.querySelector('summary small');
       if(summaryLabel)summaryLabel.textContent=edited?`${filled}项已计入，其中${edited}项由你调整`:filled?`已带入${filled}项参考，其余可自行填写`:'没有适合自动填入的报价，可自行填写';
-      const overviewCaption=root.querySelector('[data-plan-basis]');if(overviewCaption)overviewCaption.textContent=edited?'按你填的金额估算；哪些是参考价、哪些还没算入，都分别标明。':'已带入当地参考价，还没算进去的费用列在下方。';
+      const overviewCaption=root.querySelector('[data-plan-basis]');if(overviewCaption)overviewCaption.textContent=edited?'按你填的金额估算。哪些是参考价、哪些还没算入，都分别标明。':'已带入当地参考价，还没算进去的费用列在下方。';
       for(const key of keys){
         const row=root.querySelector(`[data-traveler-row="${key}"]`);if(!row)continue;
         const raw=values[key],invalidRow=invalidFields.includes(key)||raw!==null&&raw<0,known=raw!==null&&!invalidRow;
@@ -225,7 +225,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
       planDirty=true;
       staleFx.clear();
       for(const key of keys){values[key]=defaults[key]?.amount??null;quotes[key]=null;cleared[key]=false;if(inputs[key]){inputs[key].value=values[key]===null?'':String(Number((values[key]*rate()).toFixed(2)));inputs[key].dataset.origin=values[key]===null?'missing':'reference';}}
-      const chosen=root.querySelector('[data-budget-chosen]');if(chosen)chosen.textContent='已恢复本城参考值；待补项目仍保留为空。';updateBudget();
+      const chosen=root.querySelector('[data-budget-chosen]');if(chosen)chosen.textContent='已恢复本城参考值。待补项目仍保留为空。';updateBudget();
     });
     root.querySelectorAll('[data-budget-fill]').forEach(button=>button.addEventListener('click',()=>{
       planDirty=true;

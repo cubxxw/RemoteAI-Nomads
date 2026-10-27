@@ -69,7 +69,7 @@ export function initContentPage() {
       guide.querySelector('[data-guide-progress]').textContent = `${checks.filter(check => check.checked).length} / ${checks.length} 项完成`;
       let saved = false;
       try { localStorage.setItem(key, JSON.stringify(checks.filter(check => check.checked).map(check => Number(check.dataset.guideCheck)))); saved = true; } catch {}
-      guide.querySelector('[data-guide-storage]').textContent = saved ? '清单已保存在当前浏览器' : '本页可继续勾选；当前浏览器无法保存，刷新后可能丢失。';
+      guide.querySelector('[data-guide-storage]').textContent = saved ? '清单已保存在当前浏览器' : '本页可继续勾选。当前浏览器无法保存，刷新后可能丢失。';
     };
     checks.forEach(check => check.addEventListener('change', update));
     guide.querySelector('[data-guide-clear]').addEventListener('click', () => { checks.forEach(check => { check.checked = false; }); update(); });
