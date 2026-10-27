@@ -69,9 +69,15 @@
       "approvedOn": "2026-10-27",
       "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
       "reviewRecord": "research/2026-10-27-articles-batch5.md"
+    },
+    "continuousFinalProse": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User explicitly authorized removing redundant/internal visible copy and a final Chinese whitelist pass; exact scoped editorial changes preserve code, model, numbers, headings, source links, images and material limitations.",
+      "reviewRecord": "research/2026-10-27-final-prose.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -557,153 +563,153 @@
       "slug": "kunming-monthly-budget",
       "sourceFile": "kunming-monthly-budget.html",
       "approved": true,
-      "sha256": "be5f98fc3b27c841515b3dd00988b9fe0d5bb838afd05c313aedb4d2578da612",
+      "sha256": "c5f842fee93ca7eaf9b224e1983278e0c9d30646eb5170f5d3c40977c7673476",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "bangkok-monthly-budget",
       "sourceFile": "bangkok-monthly-budget.html",
       "approved": true,
-      "sha256": "64cfc2a02a35dcaf422dca5d2c854fb96136009d3ac6b78081f388478eb0c12d",
+      "sha256": "db8aba7a06059c6c1d9574fae51ad0bff9fec654b780e25575d9de226561e8f5",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "abu-dhabi-monthly-budget",
       "sourceFile": "abu-dhabi-monthly-budget.html",
       "approved": true,
-      "sha256": "635c46dc975a821212e92e674bb789495a64a4c3f97a92adecd5cd363f3b00b2",
+      "sha256": "7d714920d5debf7f6b1d8aa47682e829d33079e0a70b7ebb0011803c796ba032",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "two-person-monthly-budget",
       "sourceFile": "two-person-monthly-budget.html",
       "approved": true,
-      "sha256": "78f95f9dfb098b3a7ee3d017bfe4b34473161f23e74c9b1c60f3a57c5d5fda8e",
+      "sha256": "7feefcd18a5e6854da5f5b867c19b9849d1566af427e1eb8dc959875e83b74fa",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "new-zealand-visitor-remote-work",
       "sourceFile": "new-zealand-visitor-remote-work.html",
       "approved": true,
-      "sha256": "81294ae6174554c2482d5f6e00210011e4b874acfe8b6bad86003c7cb201600a",
+      "sha256": "6144d8d95f4d13647e3176a8ed8c5e883636c339184c512a9ec7bfd68a1de6b0",
       "source": "research/2026-10-27-articles-batch1.md"
     },
     {
       "slug": "auckland-monthly-budget",
       "sourceFile": "auckland-monthly-budget.html",
       "approved": true,
-      "sha256": "3ca819f510cce5ec063a19074969e0aa287db3bb9e78d0246d2aadc866c8fe27",
+      "sha256": "75820a1757973f07428f210c0359d3a74514858b50fc3e857656c88032476563",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "wellington-monthly-budget",
       "sourceFile": "wellington-monthly-budget.html",
       "approved": true,
-      "sha256": "d488a216f38a7dcfafcf50b7872d08e3ddd68740cfdccdd84aa0f2eca9ffe8a6",
+      "sha256": "7e1ea6123c574889391209917de0cda3e9e27fa7ad7d3d343c881185b7c872e7",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "tbilisi-monthly-budget",
       "sourceFile": "tbilisi-monthly-budget.html",
       "approved": true,
-      "sha256": "c2532839d4325f4ce3c3508578792496fa7446dd0460b7f911a797264ebe2ba0",
+      "sha256": "c1916a312905b377698268efa342f88c293d9c9cc1a3eb9665b4bce035827be0",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "new-zealand-weekly-rent-thirty-nights",
       "sourceFile": "new-zealand-weekly-rent-thirty-nights.html",
       "approved": true,
-      "sha256": "37ba2dcb98cbe7c8c9c9c73a71bfb6e4d87945e9f9c60071e59ef462211d54a7",
+      "sha256": "c4890959500cf54a33edf857ba579f706ab39472b2c3a4a855820dcb78ca1433",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "auckland-hop-cap-airport-transport",
       "sourceFile": "auckland-hop-cap-airport-transport.html",
       "approved": true,
-      "sha256": "598f36dde39d10a04139ac904daec38d4e6ba14111ee27231283c18af9e371f2",
+      "sha256": "f699657ebfd2dedeed4bf5d8dc83d8d782fe2ca1f287779f9f48977fc5783ae4",
       "source": "research/2026-10-27-articles-batch2.md"
     },
     {
       "slug": "canggu-monthly-budget",
       "sourceFile": "canggu-monthly-budget.html",
-      "sha256": "11af9a173c6daae830ecf73e23c5f573feef2dd73cbc6950f204bedf60e805a3",
+      "sha256": "76d21845333ad24bcb53977fbfdf33a4cec37c70088f2a55101815f36723b266",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "ho-chi-minh-city-monthly-budget",
       "sourceFile": "ho-chi-minh-city-monthly-budget.html",
-      "sha256": "1a25975667df8241897f34e55239a8fdc5704fba8c6d9a55e48c6a8d0cec6d06",
+      "sha256": "e211b77afc51099ab9cb6076038983ac6059f32acad0b72444a58ed9376e4796",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "seoul-monthly-budget",
       "sourceFile": "seoul-monthly-budget.html",
-      "sha256": "88abdf90fc7a0263b691907493ca1cbcf1eacada8f9073b86fc1aa5255196d30",
+      "sha256": "240f45a9920b7be1600af671c7fc174cc6f9f5e8eb2b948e0981e06de5496b9e",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "korea-workation-f1d-2026",
       "sourceFile": "korea-workation-f1d-2026.html",
-      "sha256": "2ea506be308d2f58098f89587fd5c342949c54dd5102a5ceec81d7094e8e376d",
+      "sha256": "22e04c38e5cc2e352814411e173126a977fe0b88d64d454102197d9f49261caa",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "seoul-climate-card-short-stay-2026",
       "sourceFile": "seoul-climate-card-short-stay-2026.html",
-      "sha256": "150b258ce3c1123946da39fca45d22d04c4eca89ff1ff8f2d6279db634d78716",
+      "sha256": "7f5eda9c50810412f48bf786cf95bfc2ab02721b23ef1135ff5ec36527509471",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
     },
     {
       "slug": "singapore-monthly-budget",
       "sourceFile": "singapore-monthly-budget.html",
-      "sha256": "f13b361a87b1bb81db6562278f239870774d4f0def66a59b0784a11dbd7e1ad1",
+      "sha256": "01ffffbc69ec1d2f489d6acbccbe97be38dcaa0096739b8ff1b962c4822dd650",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "hua-hin-monthly-budget",
       "sourceFile": "hua-hin-monthly-budget.html",
-      "sha256": "f192bace9259b717dcbdad6d5fe8af200c25d424a8c58dd20accc894881921a8",
+      "sha256": "1f175f0f51a38845ec2b19cdb65ad93110f5944675ca6206837edb650d2884bc",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "de-rantau-sabah-scope",
       "sourceFile": "de-rantau-sabah-scope.html",
-      "sha256": "55b3381d8733c4a8cc7b2d45ab409ba77cc345b9f005458ceccf8ce43b4fc1de",
+      "sha256": "44a1728990c7d4785c1407dd59628fbe4eb4a870debd6b775b04ab297edb0a4a",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "auckland-wellington-beijing-workday",
       "sourceFile": "auckland-wellington-beijing-workday.html",
-      "sha256": "044fb8deb760a50d36b9ad400e3720ad6ae95f1afa61e3e04d937d10b43a7b09",
+      "sha256": "d9e79b695626fe9e6b8bfaf1d2ecab7994c2772da62ee99f91f5b4e962612cde",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "monthly-apartment-utilities",
       "sourceFile": "monthly-apartment-utilities.html",
-      "sha256": "d910009983c32ee159e9489fff0435e53a2f310441edce3707bb84cf17426f00",
+      "sha256": "fbc1a12a3a3761252469f8bb8c9a51368ce1a975b83cb8981c1f75cfb5ca7a8c",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
     },
     {
       "slug": "phuket-monthly-budget",
       "sourceFile": "phuket-monthly-budget.html",
-      "sha256": "b9eb34683fea5407c86ea6ad9bf90d81a58c07c5988f51f50b960f17bda66eab",
+      "sha256": "86dc7630fdd85328a88c13e06224fa6bd7e07c1090ec794d2030a2312aff25c1",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },
     {
       "slug": "malacca-monthly-budget",
       "sourceFile": "malacca-monthly-budget.html",
-      "sha256": "14688423198786b25a3a8f88e9b4beb2c98cd81b3f92596721361186e2ece10f",
+      "sha256": "bc60c90ecd1147772782a92fe08828702b76be03fbaac359fbb4f725a289c5f0",
       "source": "research/2026-10-27-articles-batch5.md",
       "approved": true
     },

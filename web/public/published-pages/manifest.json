@@ -2,7 +2,7 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-27T00:47:06.349Z",
+  "generated_at": "2026-10-27T01:21:02.939Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
   "db_sha256": "6efd41441da5699f6ade6ec43019571ea446da854b862cb9248730d90ed97c98",
@@ -18,7 +18,7 @@
     "comparisons": 2
   },
   "file_count": 714,
-  "bytes_excluding_manifest": 29209141,
+  "bytes_excluding_manifest": 29205528,
   "paths": [
     "/",
     "/cities/",
