@@ -8,14 +8,14 @@ import {cityPlacesSection} from './city-places.js';
 import {travelAdvisory} from '../public/modules/recommendation-policy.js';
 import {cityAdvisoryMarkup} from './travel-advisory.js';
 import { esc, external, photo } from './render.js';
-import {seasonalCityNote,seasonalProfile} from './seasonal-notes.js';
+import {seasonalCityNote} from './seasonal-notes.js';
 import { monthRanges } from '../public/modules/months.js';
 import { KEYS, LABELS } from '../public/modules/ranking.js';
 import { numberOrNull, monthValues, seasonLabel, formatAmount, meetingTime, timeDifference } from '../public/modules/city-ui.js';
 
 const climateText = (value, unit) => value === null ? '待补充' : `${Math.round(value)}${unit}`;
 const source = (url, label, date) => `<p class="city-source">${external(url, label)}${date ? `<span>核对 ${esc(date)}</span>` : ''}</p>`;
-const cityIcon = name => `<svg viewBox="0 0 20 20" aria-hidden="true"><path d="${({plus:'M10 4v12M4 10h12',heart:'M16.5 4.8a4.2 4.2 0 0 0-6.5.8 4.2 4.2 0 0 0-6.5-.8C.4 8.2 4.8 12.8 10 17c5.2-4.2 9.6-8.8 6.5-12.2Z',left:'m12 5-5 5 5 5',right:'m8 5 5 5-5 5'})[name]}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const cityIcon = name => `<svg viewBox="0 0 20 20" aria-hidden="true"><path d="${({plus:'M10 4v12M4 10h12',heart:'M16.5 4.8a4.2 4.2 0 0 0-6.5.8 4.2 4.2 0 0 0-6.5-.8C.4 8.2 4.8 12.8 10 17c5.2-4.2 9.6-8.8 6.5-12.2Z',left:'m12 5-5 5 5 5',right:'m8 5 5 5-5 5',share:'M10 13V3m-4 4 4-4 4 4M4 11v6h12v-6'})[name]}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const details = (title, content, cls = '') => `<details class="city-disclosure ${cls}"><summary>${title}<span aria-hidden="true">${cityIcon('plus')}</span></summary><div>${content}</div></details>`;
 const section = (id, title, content) => `<section class="city-section" id="${id}" aria-labelledby="${id}-title"><h2 id="${id}-title">${title}</h2>${content}</section>`;
 const dataAmount = (amount, currency) => `<span data-money-amount="${amount}">${formatAmount(amount, currency)}</span>`;
@@ -141,12 +141,63 @@ function searchDescription(c, coverage) {
   return `${place}旅居与远程工作参考。${coverage.monthlyGuide ? '附单人30晚的月住费用指南。' : ''}${costs}，${climate}。${coverage.meeting ? '支持与北京的会议时间换算。' : ''}${c.country_id === 'CN' ? '入住证件与登记要求向住处确认。' : '停留条件与工作许可需分别核对。'}`;
 }
 
+function invitationHero(c) {
+  const profile = c.profile;
+  const summary = c.summary && c.summary !== '从预算、月份与工作条件，了解这座城市。' ? cityText(c.summary) : '';
+  const tagline = profile?.tagline || summary;
+  return `<header class="city-invitation-hero${c.photo_url ? '' : ' city-hero-no-photo'}">
+    <figure class="city-cover">${photo(c, '', 'eager')}</figure>
+    <div class="city-hero-top"><p>${esc(c.country_name)}${c.region ? `<span aria-hidden="true">·</span>${esc(c.region)}` : ''}</p><div class="city-heading-actions">
+      <button type="button" class="city-action" data-save="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="收藏${esc(c.name_zh)}" aria-pressed="false">${cityIcon('heart')}<span>收藏</span></button>
+      <button type="button" class="city-action compare-add" data-compare="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-label="将${esc(c.name_zh)}加入对比" aria-pressed="false">${cityIcon('plus')}<span>对比</span></button>
+    </div></div>
+    <div class="city-hero-copy"><h1>${esc(c.name_zh)}</h1><p class="city-hero-name">${esc(c.name_en)}<span aria-hidden="true">·</span>${esc(c.country_name)}</p>${tagline ? `<p class="city-hero-tagline">${esc(tagline)}</p>` : ''}${profile?.tags?.length ? `<ul class="city-hero-tags" aria-label="城市特色">${profile.tags.map(tag => `<li>${esc(tag)}</li>`).join('')}</ul>` : ''}</div>
+  </header>`;
+}
+
+function invitationFacts(c, today, month, monthLabel) {
+  const current = monthValues(c, month), domestic = c.country_id === 'CN';
+  return `<div class="city-at-a-glance" aria-label="旅居参考">
+    <a href="#budget"><span>生活预算</span><strong>${c.budget_amount ? '≈ ' + formatAmount(c.budget_amount, c.budget_currency || 'USD') : '自己算一笔'}</strong><small>${c.budget_amount ? '历史月花费 · 按你的住法重算' : '按住法和停留时间估算'}</small></a>
+    <a href="#season"><span data-invitation-month>${month} 月均温</span><strong data-invitation-temperature>${climateText(current.mean, '°C')}</strong><small>气候统计：2023–2025 · 历史均值</small></a>
+    <a href="#work"><span>远程工作 · 与北京时差</span><strong class="city-zone-short" data-time-difference title="${esc(c.location?.timezone || '时区待补充')}">${esc(timeDifference(today, c.location?.timezone))}</strong><small data-time-difference-date>${esc(today)} · 换算会议时间</small></a>
+  </div><div class="city-arrival-facts"><a href="#season"><span>参考月份</span><strong class="city-months-short">${monthLabel || '待核验'}</strong></a><a href="#entry"><span>${domestic ? '中国大陆居民' : '中国大陆普通护照'}</span><strong>${esc(c.entry?.label || '入境条件待核验')}</strong><span aria-hidden="true">↗</span></a></div>`;
+}
+
+function profileSources(c, profile) {
+  const notes = [...(profile?.geography || []), ...(profile?.statistics || []), ...(profile?.culture || [])].filter(row => row.note);
+  const content = `${notes.length ? `<dl class="city-profile-notes">${notes.map(row => `<div><dt>${esc(row.label)}</dt><dd>${esc(row.note)}</dd></div>`).join('')}</dl>` : ''}${(profile?.sources || []).map(row => source(row.url, row.title, row.date)).join('')}${c.photo_source ? source(c.photo_source, `城市照片：${c.photo_credit || '查看摄影来源'}`) : ''}`;
+  return content ? details(profile ? '城市风貌的资料与口径' : '城市照片来源', content, 'city-profile-sources') : '';
+}
+
+function cityProfileSection(c) {
+  const profile = c.profile;
+  if (!profile) return profileSources(c, null);
+  const geography = profile.geography || [], statistics = profile.statistics || [], landmarks = profile.landmarks || [], culture = profile.culture || [];
+  const location = geography.find(row => row.label === '地理位置');
+  const coordinates = geography.find(row => /坐标/.test(row.label));
+  const geographyExtras = geography.filter(row => row !== location && row !== coordinates && !/国家|地区/.test(row.label));
+  const population = statistics.find(row => /人口/.test(row.label));
+  const facts = statistics.filter(row => row !== population);
+  const hasContent = location || coordinates || geographyExtras.length || statistics.length || landmarks.length || culture.length;
+  if (!hasContent) return profileSources(c, profile);
+  return `<section class="city-section city-discover" id="city-life" aria-labelledby="city-life-title">
+    <div class="city-discover-heading"><p class="city-kicker">认识这座城市</p><h2 id="city-life-title">${travelAdvisory(c) ? `认识${esc(c.name_zh)}的城市风貌` : `在${esc(c.name_zh)}，住进当地生活`}</h2></div>
+    ${location || coordinates || population ? `<div class="city-geography-lead"><div>${location ? `<h3>${esc(location.label)}</h3><p>${esc(location.value)}</p>${location.note ? `<small>${esc(location.note)}</small>` : ''}` : ''}${coordinates ? `<p class="city-coordinate">${esc(coordinates.label)}：${esc(coordinates.value)}${coordinates.note ? `<small>${esc(coordinates.note)}</small>` : ''}</p>` : ''}</div>${population ? `<dl class="city-population"><dt>${esc(population.label)}</dt><dd><strong>${esc(population.value)}</strong>${population.note ? `<small>${esc(population.note)}</small>` : ''}</dd></dl>` : ''}</div>` : ''}
+    ${facts.length || geographyExtras.length ? `<dl class="city-place-facts">${[...facts, ...geographyExtras].map(row => `<div><dt>${esc(/语言/.test(row.label) && /国家或地区口径/.test(row.note) ? '国家 / 地区语言' : row.label)}</dt><dd>${esc(row.value)}</dd></div>`).join('')}</dl>` : ''}
+    ${landmarks.length ? `<div class="city-landmarks"><h3>从这些地方认识${esc(c.name_zh)}</h3><div class="city-landmark-grid">${landmarks.map((row, index) => `<article class="city-landmark"><span aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><div><h4>${esc(row.title)}</h4><p>${esc(row.detail)}</p></div></article>`).join('')}</div></div>` : ''}
+    ${culture.length ? `<div class="city-culture">${culture.map(row => `<div><h3>${esc(row.label)}</h3><p>${esc(row.value)}</p></div>`).join('')}</div>` : ''}
+    ${profileSources(c, profile)}
+  </section>`;
+}
+
 export function renderCityPage(c, env = {}, options = {}) {
   const today = options.date || new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
   const coverage = searchCoverage(c, today);
   const chosenMonth=Number(options.month);
   const month = Number.isInteger(chosenMonth)&&chosenMonth>=1&&chosenMonth<=12?chosenMonth:Number(today.slice(5, 7));
   const budget = cityCostModel(c.costs);
+  const advisory = travelAdvisory(c);
   const visitorTransitCity = {seoul:'首尔', singapore:'新加坡'}[c.slug];
   if (visitorTransitCity) {
     budget.defaults.transport = {amount:null, basis:'按短访票种与实际路线填写', source:null};
@@ -158,7 +209,22 @@ export function renderCityPage(c, env = {}, options = {}) {
   const monthGroups = monthRanges(recommended);
   const monthLabel = monthGroups.map((range, i) => `<span>${range}${i === monthGroups.length - 1 ? ' 月' : ''}</span>`).join('、');
   const data = { slug:c.slug, climate: c.climate, months: c.months, timeZone: c.location?.timezone || null, budget: {currency: budget.currency, rates: budget.rates,defaults:budget.defaults} };
-  const body = `<link rel="stylesheet" href="/city.css"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css"><link rel="stylesheet" href="/places.css"><article class="city-guide" id="city-guide"><nav class="city-breadcrumbs" aria-label="面包屑"><a href="/cities/">城市</a><span aria-hidden="true">/</span><a href="/countries/${esc(c.country_id.toLowerCase())}/">${esc(c.country_name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(c.name_zh)}</span></nav><div class="city-heading"><div><h1>${esc(c.name_zh)}<span>${esc(c.name_en)}</span></h1></div><div class="city-heading-actions"><button type="button" class="city-action" data-save="${esc(c.slug)}" aria-label="收藏${esc(c.name_zh)}" aria-pressed="false">${cityIcon('heart')}</button><button type="button" class="city-action compare-add" data-compare="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-pressed="false">${cityIcon('plus')}<span>对比</span></button></div></div>${cityAdvisoryMarkup(c)}<figure class="city-cover">${photo(c, '', 'eager')}${c.photo_source ? `<figcaption>${external(c.photo_source, c.photo_credit)}</figcaption>` : ''}</figure>${!travelAdvisory(c) && !seasonalProfile(c.slug) && c.summary && c.summary !== "从预算、月份与工作条件，了解这座城市。" ? `<p class="city-intro">${esc(cityText(c.summary))}</p>` : ""}<div class="city-at-a-glance"><a href="#budget"><span>生活预算</span><strong>${c.budget_amount ? '≈ ' + formatAmount(c.budget_amount, c.budget_currency || 'USD') : '自己算一笔'}</strong><small>${c.budget_amount ? '历史月花费 · 按你的住法重算' : '按住法和停留时间估算'}</small></a><a href="#season"><span>参考月份</span><strong class="city-months-short">${monthLabel || '待核验'}</strong><small>查看全年气温与雨量</small></a><a href="#entry"><span>${domestic ? '入住证件' : '入境参考'}</span><strong>${esc(c.entry?.label || '待核验')}</strong><small>${domestic ? '中国大陆居民' : '中国大陆普通护照'}</small></a><a href="#work"><span>与北京的时差</span><strong class="city-zone-short" data-time-difference title="${esc(c.location?.timezone || '时区待补充')}">${esc(timeDifference(today, c.location?.timezone))}</strong><small data-time-difference-date>${esc(today)} · 换算会议时间</small></a></div>${seasonalCityNote(c.slug)}${relatedArticlesHTML(c.slug)}<nav class="city-section-nav" aria-label="城市资料"><a data-city-anchor href="#budget" aria-current="location">生活预算</a><a data-city-anchor href="#season">出发季节</a><a data-city-anchor href="#work">远程工作</a><a data-city-anchor href="#places">工作地图</a><a data-city-anchor href="#entry">${domestic ? '入住证件' : '停留入境'}</a></nav><div class="city-guide-layout"><div class="city-guide-main">${costSection(c, budget)}${seasonSection(c, month)}${workSection(c, today)}${cityPlacesSection(c)}${entrySection(c)}${details('这些分数怎么看', `<dl class="city-score-list">${KEYS.map(key => `<div><dt>${esc(key==='climate'?'环境（历史）':key==='community'?'社区（历史）':LABELS[key])}</dt><dd>${numberOrNull(c.ranking?.[key]) === null ? '待补充' : Number(c.ranking[key]).toFixed(1) + ' / 10'}</dd></div>`).join('')}</dl><p>这些是旧资料里的分数。网络要在具体房间里试，安全情况也要按街区了解。</p>${c.ranking ? source(c.ranking.source_url, '城市指标记录', c.ranking.checked_at) : ''}<p>资料日期 ${esc(c.checked_at || '日期待补充')}。<a href="/about/">查看资料来源与说明</a></p>`)}<div class="city-end-links"><a href="/cities/">继续找城市</a><a href="/guides/first-month/">第一周落地清单</a></div></div><aside class="city-plan"><div class="city-plan-inner"><h2>订房前问清楚</h2><p>${esc(caveat)}</p><ul><li>在房间里试一次平时的会议</li><li>留出押金和临时换房的钱</li><li>${domestic ? '确认入住证件与登记要求' : '确认停留期与工作许可'}</li></ul><button class="city-secretary" type="button" data-agent-open data-agent-question="${esc(`我想去${c.name_zh}住一阵，请根据城市资料帮我核对季节、预算和远程工作条件。`)}">检查这份预算有没有漏项<span aria-hidden="true">↗</span></button></div></aside></div><script type="application/json" id="city-guide-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script></article><script type="module" src="/modules/city-ui.js"></script><script type="module" src="/modules/city-places.js"></script>`;
+  const profileContent = cityProfileSection(c);
+  const hasCityLife = profileContent.includes('id="city-life"');
+  const additionalIntro = c.profile?.tagline && c.summary && c.summary !== c.profile.tagline && c.summary !== '从预算、月份与工作条件，了解这座城市。' ? `<p class="city-intro">${esc(cityText(c.summary))}</p>` : '';
+  const sectionNav = `<nav class="city-section-nav" aria-label="城市资料">${hasCityLife ? '<a data-city-anchor href="#city-life" aria-current="location">城市印象</a>' : ''}<a data-city-anchor href="#budget"${hasCityLife ? '' : ' aria-current="location"'}>生活预算</a><a data-city-anchor href="#season">出发季节</a><a data-city-anchor href="#work">远程工作</a><a data-city-anchor href="#places">工作地图</a><a data-city-anchor href="#entry">${domestic ? '入住证件' : '停留入境'}</a></nav>`;
+  const body = `<link rel="stylesheet" href="/city.css"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css"><link rel="stylesheet" href="/places.css"><article class="city-guide" id="city-guide">
+    <nav class="city-breadcrumbs" aria-label="面包屑"><a href="/cities/">城市</a><span aria-hidden="true">/</span><a href="/countries/${esc(c.country_id.toLowerCase())}/">${esc(c.country_name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(c.name_zh)}</span></nav>
+    ${cityAdvisoryMarkup(c)}${invitationHero(c)}${invitationFacts(c, today, month, monthLabel)}${additionalIntro}
+    ${sectionNav}
+    <div class="city-guide-layout"><div class="city-guide-main">
+      ${profileContent}${seasonalCityNote(c.slug)}${relatedArticlesHTML(c.slug)}
+      ${costSection(c, budget)}${seasonSection(c, month)}${workSection(c, today)}${cityPlacesSection(c)}${entrySection(c)}
+      ${details('这些分数怎么看', `<dl class="city-score-list">${KEYS.map(key => `<div><dt>${esc(key==='climate'?'环境（历史）':key==='community'?'社区（历史）':LABELS[key])}</dt><dd>${numberOrNull(c.ranking?.[key]) === null ? '待补充' : Number(c.ranking[key]).toFixed(1) + ' / 10'}</dd></div>`).join('')}</dl><p>这些是旧资料里的分数。网络要在具体房间里试，安全情况也要按街区了解。</p>${c.ranking ? source(c.ranking.source_url, '城市指标记录', c.ranking.checked_at) : ''}<p>资料日期 ${esc(c.checked_at || '日期待补充')}。<a href="/about/">查看资料来源与说明</a></p>`)}
+      <div class="city-end-links"><a href="/cities/">继续找城市</a><a href="/guides/first-month/">第一周落地清单</a></div>
+    </div><aside class="city-plan"><div class="city-plan-inner"><p class="city-kicker">${advisory ? '城市资料' : '准备住一阵'}</p><h2>${advisory ? '先核对出行提醒' : '把日常安排好'}</h2><div class="city-plan-jumps"><a href="#budget">${advisory ? '查阅生活费资料' : '算一笔生活费'}<span aria-hidden="true">↗</span></a><a href="#season">${advisory ? '查阅历史气候' : '看看出发月份'}<span aria-hidden="true">↗</span></a><a href="#places">${advisory ? '查阅地点资料' : '找一个工作角落'}<span aria-hidden="true">↗</span></a></div><h3>${advisory ? '查阅时留意' : '订房前问清楚'}</h3><p>${esc(caveat)}</p><ul><li>在房间里试一次平时的会议</li><li>留出押金和临时换房的钱</li><li>${domestic ? '确认入住证件与登记要求' : '确认停留期与工作许可'}</li></ul><button class="city-secretary" type="button" data-agent-open data-agent-question="${esc(`我想去${c.name_zh}住一阵，请根据城市资料帮我核对季节、预算和远程工作条件。`)}">检查这份预算有没有漏项<span aria-hidden="true">↗</span></button></div></aside></div>
+    <script type="application/json" id="city-guide-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
+  </article><script type="module" src="/modules/city-ui.js"></script><script type="module" src="/modules/city-places.js"></script><script type="module" src="/modules/city-profile-invitation.js"></script>`.replace(/^[\t ]+$/gm, '');
   return {
     title: searchTitle(c, coverage),
     description: searchDescription(c, coverage),
