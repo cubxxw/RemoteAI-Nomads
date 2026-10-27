@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as model from '../public/modules/share-model.js';
-import {layoutShare,prepareShareLayout} from '../public/modules/share-render.js';
+import {layoutShare,prepareShareLayout,resolveShareFormat} from '../public/modules/share-render.js';
 import * as ui from '../public/modules/share-ui.js';
 const city={slug:'pokhara',name:'博卡拉',nameEn:'Pokhara',country:'尼泊尔',countryCode:'NP',budget:450,budgetCurrency:'USD',budgetCheckedAt:'2026-10-17',why:'湖畔与雪山相遇',visa:{label:'落地签'},scores:{internet:8},months:[{month:10,meanC:21}]};
 const url='https://roamorrow.com/nomads/cities/pokhara/?month=10';
@@ -23,6 +23,23 @@ test('a city profile exports a real hero and every compact information section i
  assert.equal(blocks.filter(b=>b.type==='chip').length,4);assert.ok(blocks.some(b=>b.type==='qr'));assert.doesNotMatch(all,/待补|资料日期待核对|网络旧评分/);
  const caption=model.shareText(input);for(const value of ['安纳普尔纳山脚下的湖畔城市','尼泊尔中部','约 822 米','世界和平塔','达尔巴特与莫莫','https://ntb.gov.np/pokhara','2026-10-27','工作许可另查'])assert.ok(caption.includes(value),value);
 });
+test('city invitations use the approved taller portrait while other cards and formats retain their dimensions',()=>{
+ const input=card(),portrait=model.SHARE_FORMATS[0],layout=layoutShare(ctx,input,portrait,{photo:true});
+ assert.deepEqual([layout.width,layout.height],[1080,1800]);assert.equal(portrait.height,1440);
+ const hero=layout.pages[0].blocks.find(block=>block.role==='city-hero');assert.deepEqual([hero.x,hero.y,hero.width,hero.height],[0,0,1080,774]);
+ const title=layout.pages[0].blocks.find(block=>block.role==='city-title');assert.equal(title.color,'#ffffff');assert.ok(title.size>=100);assert.ok(title.y+title.height<hero.height);
+ assert.equal(layout.pages[0].blocks.filter(block=>block.type==='photo').length,1,'landmarks never receive invented thumbnails');
+ for(const format of model.SHARE_FORMATS.slice(1))assert.deepEqual(resolveShareFormat(input,format),format);
+ for(const other of [model.createShare({title:'旅居笔记'}),model.personalShare(input,{body:'我的计划'})])assert.equal(resolveShareFormat(other,portrait).height,1440);
+ for(const textOnly of [false,true]){const prepared=prepareShareLayout(ctx,input,portrait,{photo:true,textOnly});assert.equal(prepared.layout.height,1800);assert.equal(prepared.layout.pages[0].blocks.some(block=>block.type==='photo'),!textOnly);}
+});
+test('city image carries climate years and statistical scope while references and check timestamps stay in its caption',()=>{
+ const input=card({...profile,statistics:[{label:'人口',value:'约 51.35 万',note:'2021 年人口普查；博卡拉大都市行政区，非湖滨城区'}]}),layout=layoutShare(ctx,input,model.SHARE_FORMATS[0],{photo:true});
+ const image=layout.pages.flatMap(page=>page.blocks).map(block=>block.text||'').join('');
+ assert.match(image,/2021 年人口普查；博卡拉大都市行政区，非湖滨城区/);assert.match(image,/气候统计：2023–2025/);assert.match(image,/历史月花费/);
+ assert.doesNotMatch(image,/资料来源|来源 \d+|核对|2026-10-17|参考|完整出处|见配文|照片署名/);
+ const caption=model.shareText(input);assert.match(caption,/2026-10-17/);assert.match(caption,/https:\/\/ntb.gov.np\/pokhara/);assert.match(caption,/气候不是天气预报/);
+});
 test('empty or partial city profiles omit unavailable optional numbers and keep existing verified context',()=>{
  for(const input of [card({...profile,statistics:[],landmarks:[],culture:[],geography:[]}),model.cityShare({...city,budget:null,visa:null,scores:null,months:[]},10,url)]){
   assert.doesNotMatch(model.shareText(input),/待补/);
@@ -32,25 +49,25 @@ test('empty or partial city profiles omit unavailable optional numbers and keep 
 test('compact country metadata keeps full scope notes in the caption and does not crowd out numeric facts',()=>{
  const input=card({...profile,geography:[{label:'国家 / 地区',value:'尼泊尔'},{label:'地理坐标',value:'28.27°N / 83.97°E',note:'城市参考点；不代表行政边界'},{label:'地理位置',value:'甘达基省 · 安纳普尔纳山脉南麓'}],statistics:[{label:'官方语言',value:'尼泊尔语',note:'国家或地区口径；不表示全体居民的日常用语'},{label:'货币',value:'尼泊尔卢比 NPR',note:'国家或地区流通货币'},{label:'时区',value:'Asia/Kathmandu',note:'夏令时以当地当日为准'},...profile.statistics]});
  const layout=layoutShare(ctx,input,model.SHARE_FORMATS[0],{photo:true,qrSize:168});bounded(layout);assert.equal(layout.pages.length,1);
- const blocks=layout.pages.flatMap(p=>p.blocks);assert.ok(blocks.some(b=>b.role==='profile-metadata'&&b.text.includes('尼泊尔语')));assert.ok(blocks.some(b=>b.role==='fact-value'&&b.text==='约 822 米'));assert.match(model.shareText(input),/国家或地区口径；不表示全体居民的日常用语/);assert.match(model.shareText(input),/城市参考点；不代表行政边界/);
+ const blocks=layout.pages.flatMap(p=>p.blocks);assert.ok(blocks.some(b=>b.role==='profile-metadata'&&b.text.includes('尼泊尔语')));assert.ok(blocks.some(b=>b.role==='profile-detail'&&b.text.includes('约 822 米')));assert.match(model.shareText(input),/国家或地区口径；不表示全体居民的日常用语/);assert.match(model.shareText(input),/城市参考点；不代表行政边界/);
 });
 test('a scoped population note and two culture rows stay together instead of creating a nearly empty continuation',()=>{
  const input=card({...profile,tagline:'费瓦湖畔，抬头是安纳普尔纳群峰',geography:[{label:'国家 / 地区',value:'尼泊尔'},{label:'地理坐标',value:'28.27°N / 83.97°E'},{label:'地理位置',value:'尼泊尔中部，安纳普尔纳山麓的博卡拉谷地'}],statistics:[{label:'官方语言',value:'尼泊尔语'},{label:'货币',value:'尼泊尔卢比 NPR'},{label:'时区',value:'Asia/Kathmandu'},{label:'人口',value:'约 51.35 万',note:'2021 年人口普查；博卡拉大都市行政区，含城郊 33 个 ward；不等同于湖滨城区'}],landmarks:[{title:'费瓦湖 Phewa Lake',detail:'湖面映着鱼尾峰，湖滨是博卡拉的日常风景'},{title:'世界和平塔',detail:'费瓦湖南侧山丘上的佛塔，可眺望安纳普尔纳群峰'}],culture:[{label:'地方生活',value:'古老印藏商路上的山地城市，周边保留古隆族和马嘉族文化'},{label:'山间茶屋',value:'塔卡利人经营的茶屋，串起安纳普尔纳徒步路线'}]});
  const layout=layoutShare(ctx,input,model.SHARE_FORMATS[0],{photo:true,qrSize:168});bounded(layout);assert.equal(layout.pages.length,1);assert.ok(layout.pages[0].blocks.find(b=>b.type==='photo').height>=260);
  const all=layout.pages[0].blocks.map(b=>b.text||'').join('');for(const value of ['2021 年人口普查','不等同于湖滨城区','古隆族和马嘉族文化','塔卡利人经营的茶屋'])assert.ok(all.includes(value),value);
- const scope=layout.pages[0].blocks.filter(b=>b.role==='fact-scope');assert.ok(scope.length);assert.ok(scope.every(b=>b.width===976&&b.size>=20));assert.ok(scope.map(b=>b.text).join('').includes('2021 年人口普查；博卡拉大都市行政区，含城郊 33 个 ward；不等同于湖滨城区'));
+ const scope=layout.pages[0].blocks.filter(b=>b.role==='fact-scope');assert.ok(scope.length);assert.ok(scope.every(b=>b.width===944&&b.size>=20));assert.ok(scope.map(b=>b.text).join('').includes('2021 年人口普查；博卡拉大都市行政区，含城郊 33 个 ward；不等同于湖滨城区'));
 });
 test('core values measure with their final weight, fit their columns and retain a clear gutter',()=>{
  const measured={font:'',measureText(value){const size=Number(this.font.match(/(\d+)px/)?.[1]||36),weight=Number(this.font.split(' ')[0])||400;return {width:[...value].length*size*(weight>=500?1.1:.8)};}};
  const input=card({...profile,statistics:[{label:'人口',value:'约 123.45 万'}],landmarks:[],culture:[]}),layout=layoutShare(measured,input,model.SHARE_FORMATS[0],{photo:true,qrSize:168});bounded(layout);
- const values=layout.pages.flatMap(p=>p.blocks).filter(b=>b.role==='fact-value');for(const b of values){measured.font=`${b.weight} ${b.size}px Inter`;assert.ok(measured.measureText(b.text).width<=b.width);assert.ok(b.size>=30);}
- assert.ok(values[0].size<36);const columns=[...new Set(values.map(b=>b.x))].sort((a,b)=>a-b);assert.ok(columns[1]-(columns[0]+values[0].width)>=48-1e-6);
+ const values=layout.pages.flatMap(p=>p.blocks).filter(b=>b.role==='fact-value');for(const b of values){measured.font=`${b.weight} ${b.size}px Inter`;assert.ok(measured.measureText(b.text).width<=b.width);assert.ok(b.size>=40);}
+ assert.ok(values[0].size<56);const columns=[...new Set(values.map(b=>b.x))].sort((a,b)=>a-b);assert.ok(columns[1]-(columns[0]+values[0].width)>=32-1e-6);
 });
 test('language metadata retains its explicit country or region scope in the exported image',()=>{
  const note='国家或地区口径；Unicode CLDR，不表示全体居民的日常用语',input=card({...profile,statistics:[{label:'官方语言',value:'印地语、英语',note}]});
  const layout=layoutShare(ctx,input,model.SHARE_FORMATS[0],{photo:true,qrSize:168}),all=layout.pages.flatMap(p=>p.blocks).map(b=>b.text||'').join('');
- assert.match(all,/国家\/地区语言 \/ 印地语、英语/);assert.doesNotMatch(all,/官方语言 \/ 印地语、英语/);assert.match(model.shareText(input),new RegExp(note));bounded(layout);
- const local=card({...profile,statistics:[{label:'官方语言',value:'本地已核实语言',note:'城市政府公布的本市行政用语'}]}),localText=layoutShare(ctx,local,model.SHARE_FORMATS[0]).pages.flatMap(p=>p.blocks).map(b=>b.text||'').join('');assert.match(localText,/官方语言 \/ 本地已核实语言/);
+ assert.match(all,/国家\/地区语言印地语、英语/);assert.doesNotMatch(all,/官方语言印地语、英语/);assert.match(model.shareText(input),new RegExp(note));bounded(layout);
+ const local=card({...profile,statistics:[{label:'官方语言',value:'本地已核实语言',note:'城市政府公布的本市行政用语'}]}),localText=layoutShare(ctx,local,model.SHARE_FORMATS[0]).pages.flatMap(p=>p.blocks).map(b=>b.text||'').join('');assert.match(localText,/官方语言本地已核实语言/);
 });
 test('long public city profiles continue without clipping or losing content across every format',()=>{
  const long=card({...profile,tagline:'与雪山相伴的湖畔城市。'.repeat(8),geography:[{label:'地理位置',value:'地理说明'.repeat(50),note:'附注'.repeat(60)}],statistics:[{label:'海拔',value:'已核实说明'.repeat(40)}],landmarks:[{title:'费瓦湖',detail:'完整地标描述。'.repeat(45)},{title:'世界和平塔',detail:'第二处地标。'.repeat(45)}],culture:[{label:'当地风味',value:'完整饮食说明。'.repeat(30)}]});

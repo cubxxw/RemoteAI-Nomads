@@ -199,6 +199,49 @@ test('Seoul visitor transport stays unfilled in both SSR and reset data while hi
   assert.equal(JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(other)[1]).budget.defaults.transport.amount,338.99);
 });
 
+test('city invitation preserves geography, population scope, landmarks and culture before planning tools',()=>{
+  const profile={schemaVersion:1,slug:city.slug,tagline:'湖畔，抬头是群峰',tags:['湖畔','山麓'],
+    geography:[{label:'地理位置',value:'山麓的谷地'},{label:'地理坐标',value:'28.27°N / 83.97°E',note:'城市参考点；不代表行政边界'}],
+    statistics:[{label:'人口',value:'约 51.35 万',note:'2021 年人口普查；大都市行政区，含城郊 33 个 ward；不等同于湖滨城区'},{label:'官方语言',value:'尼泊尔语',note:'国家或地区口径'}],
+    landmarks:[{title:'湖泊 Phewa Lake',detail:'湖滨是城市的日常风景'}],culture:[{label:'当地吃食',value:'米饭配扁豆汤'}],
+    sources:[{title:'城市官方资料',url:'https://example.com/city-profile',date:'2026-10-27'}]};
+  const html=renderCityPage({...city,profile},{},{date:'2026-10-27',month:10}).body;
+  for(const text of ['湖畔，抬头是群峰','山麓的谷地','28.27°N / 83.97°E','不代表行政边界','约 51.35 万','2021 年人口普查；大都市行政区，含城郊 33 个 ward；不等同于湖滨城区','湖泊 Phewa Lake','湖滨是城市的日常风景','米饭配扁豆汤','国家或地区口径','https://example.com/city-profile'])assert.ok(html.includes(text),text);
+  assert.ok(html.indexOf('id="city-life"')<html.indexOf('id="budget"'));
+  assert.match(shell({...renderCityPage({...city,profile},{},{date:'2026-10-27'}),env:{}}),/data-share-page/);
+  for(const hook of ['data-save=','data-compare=','id="budget-rent"','id="city-month"','id="meeting-date"','id="places"','id="entry"'])assert.ok(html.includes(hook),hook);
+  assert.match(html,/<details class="city-disclosure city-profile-sources">/);
+});
+
+test('top month climate reads the requested month without changing original climate interaction hooks',()=>{
+  const html=renderCityPage({...city,climate:[{month:11,mean_c:17,rain_mm:8}]},{},{date:'2026-10-27',month:11}).body;
+  assert.match(html,/data-invitation-month>11 月均温/);
+  assert.match(html,/data-invitation-temperature>17°C/);
+  assert.match(html,/气候统计：2023–2025/);
+  assert.equal([...html.matchAll(/data-month-temperature/g)].length,1);
+  assert.equal([...html.matchAll(/data-time-difference(?=[\s>])/g)].length,1);
+  assert.match(html,/\/modules\/city-profile-invitation.js/);
+});
+
+test('missing city profile does not invent geography, landmarks or empty profile placeholders',()=>{
+  const html=renderCityPage(city,{},{date:'2026-10-27'}).body;
+  assert.doesNotMatch(html,/id="city-life"|city-landmark|城市风貌待补充|人口待补充/);
+  assert.match(html,/城市的简短介绍。/);
+  assert.match(html,/https:\/\/example.com\/photo/);
+  const unsafe=renderCityPage({...city,profile:{tagline:'<img src=x onerror=evil()>',tags:[],geography:[],statistics:[],landmarks:[{title:'<script>evil()</script>',detail:'地点'}],culture:[],sources:[]}},{},{date:'2026-10-27'}).body;
+  assert.doesNotMatch(unsafe,/<img src=x onerror=evil\(\)>|<script>evil\(\)<\/script>/);
+  assert.match(unsafe,/&lt;script&gt;evil/);
+});
+
+test('advisory cities introduce city reference material without a residential invitation',()=>{
+  const page=renderCityPage({...city,slug:'kabul',name_zh:'喀布尔',country_id:'AF',profile:{tagline:'山谷中的城市',geography:[{label:'地理位置',value:'山谷'}],statistics:[],landmarks:[],culture:[],sources:[]}},{},{date:'2026-10-27'}).body;
+  assert.ok(page.indexOf('aria-label="出行提醒"')<page.indexOf('class="city-invitation-hero'));
+  assert.match(page,/认识喀布尔的城市风貌/);
+  assert.match(page,/先核对出行提醒/);
+  assert.doesNotMatch(page,/在喀布尔，住进当地生活|准备住一阵|把日常安排好/);
+  for(const hook of ['id="budget"','id="season"','id="work"','id="entry"'])assert.ok(page.includes(hook));
+});
+
 
 test('Singapore visitor transport does not default to a resident monthly pass',()=>{
  const observations=[{scope:'city',provider:'costcompass',category:'transportation',field:'transport_monthly_pass',label:'Monthly pass',amount:120,currency:'CNY',period:'month',quality:'sample',quality_flags:[]}];

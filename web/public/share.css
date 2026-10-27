@@ -85,3 +85,43 @@
 .share-studio .share-preview img{box-shadow:0 12px 36px rgb(31 26 20 / .14)}
 .share-caption textarea{min-height:156px}
 @media(min-width:701px){.share-studio{width:min(1040px,calc(100vw - 48px))}.share-studio-body{grid-template-columns:minmax(0,1.2fr) minmax(320px,1fr)}.share-preview-panel{padding:28px 40px}.share-settings{padding:28px}}
+
+/* A quiet workspace around the invitation, with one clear save action. */
+.share-studio[data-share-kind=city]{--share-paper:#fbfcfa;--share-ink:#202c26;--share-muted:#637168;--share-brown:#18533c;--share-line:#dce5de;--share-mat:#edf1eb;--share-surface:#fff;width:min(1120px,calc(100vw - 48px));border-radius:20px}
+.share-studio[data-share-kind=city] .share-heading{padding:25px 32px;align-items:center}
+.share-studio[data-share-kind=city] .share-heading h2{font-size:26px;font-weight:600;letter-spacing:-.035em}
+.share-studio[data-share-kind=city] .share-heading p{margin-top:5px}
+.share-studio[data-share-kind=city] .share-heading button{width:44px;height:44px;border-radius:50%;color:var(--share-muted)}
+.share-studio[data-share-kind=city] .share-heading button:hover{background:var(--share-mat)}
+.share-studio[data-share-kind=city] .share-studio-body{grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr)}
+.share-studio[data-share-kind=city] .share-preview-panel{padding:32px 44px;gap:16px}
+.share-studio[data-share-kind=city] .share-preview img{max-height:min(690px,76dvh);box-shadow:0 12px 32px rgb(24 53 37 / .1)}
+.share-preview-caption{margin:0;color:var(--share-muted);font-size:12px;line-height:1.5}
+.share-studio[data-share-kind=city] .share-settings{padding:32px}
+.share-studio[data-share-kind=city] .share-format legend{font-size:13px;margin-bottom:12px;color:var(--share-muted)}
+.share-studio[data-share-kind=city] .share-segments{border:0;border-radius:12px;padding:5px;gap:5px}
+.share-studio[data-share-kind=city] .share-segments span{border-radius:8px;min-height:48px}
+.share-studio[data-share-kind=city] .share-platform-hint{font-size:12px;margin:10px 0 18px;letter-spacing:.03em}
+.share-studio[data-share-kind=city] .share-profile-note{font-size:15px;line-height:1.8;margin:0 0 24px;max-width:23em}
+.share-studio[data-share-kind=city] .share-save{min-height:52px;border-radius:10px;font-size:15px;font-weight:600}
+.share-studio[data-share-kind=city] .share-save:enabled:hover{background:#103e2b}
+.share-studio[data-share-kind=city] .share-secondary-actions{margin:8px 0}
+.share-caption>summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:14px;font-weight:500;list-style:none}
+.share-caption>summary::-webkit-details-marker{display:none}
+.share-caption>summary:after{content:'＋';font-weight:400;color:var(--share-muted)}
+.share-caption[open]>summary:after{content:'−'}
+.share-caption[open]{padding-bottom:16px}
+.share-caption .share-caption-heading{font-size:12px;font-weight:400;color:var(--share-muted)}
+.share-studio[data-share-kind=city] .share-feedback{min-height:24px;margin:12px 0 24px;font-size:12px}
+.share-studio[data-share-kind=city] .share-range{font-size:12px;line-height:1.8;margin-top:24px}
+@media(max-width:700px){
+ .share-studio[data-share-kind=city]{width:100%;max-width:100%;border-radius:20px 20px 0 0}
+ .share-studio[data-share-kind=city] .share-heading{padding:18px 22px}
+ .share-studio[data-share-kind=city] .share-heading h2{font-size:22px}
+ .share-studio[data-share-kind=city] .share-studio-body{grid-template-columns:1fr}
+ .share-studio[data-share-kind=city] .share-preview-panel{padding:24px 44px 18px}
+ .share-studio[data-share-kind=city] .share-preview img{max-height:min(560px,58dvh)}
+ .share-studio[data-share-kind=city] .share-settings{padding:24px 24px 112px}
+ .share-studio[data-share-kind=city] .share-primary-actions{position:fixed;bottom:0;left:0;right:0;z-index:4;padding:12px 24px max(12px,env(safe-area-inset-bottom));margin:0;background:var(--share-paper);border-top:1px solid var(--share-line);box-shadow:0 -4px 18px rgb(24 53 37 / .04)}
+ .share-studio[data-share-kind=city] .share-profile-note{max-width:none;margin-bottom:20px;font-size:14px}
+}

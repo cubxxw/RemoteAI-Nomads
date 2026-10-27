@@ -1,6 +1,7 @@
 import {agentConnectPage} from './agent-connect.js';
 import { renderCountryIndex, renderCountryPage, renderGuides, renderCompareIndex, renderAbout } from './content-pages.js';
 import { renderCityPage } from './city-page.js';
+import {readCityProfile} from './city-profile.js';
 import { readCityCosts } from './cost-data.js';
 import {mapTile} from './map-tiles.js';
 import {agentRoute} from './agent-gateway.js';
@@ -87,8 +88,8 @@ const visaHTML = (v) =>
   `<details class="evidence-detail"><summary>${esc(v.name)}<span>${esc(v.kind)}</span></summary><div><dl class="fact-list"><dt>停留与有效期</dt><dd>${esc(v.stay_text)}</dd><dt>财务要求</dt><dd>${esc(v.financial_rule)}</dd><dt>工作范围</dt><dd>${esc(v.work_scope)}</dd><dt>护照与领区</dt><dd>${esc(v.passport_scope)}</dd><dt>需要留意</dt><dd>${esc(v.restriction)}</dd><dt>证据状态</dt><dd>${esc(v.verification)} · 资料日期 ${esc(v.source_published_at || "未标明")}</dd></dl>${sourceLine(v.source_url, "查看官方说明", v.checked_at)}</div></details>`;
 
 async function cityPage(env, slug, url) {
-  const c = await cityData(env, slug);
-  return c ? renderCityPage(c, env, {month:url?.searchParams.get('month')}) : null;
+  const [c, profile] = await Promise.all([cityData(env, slug), readCityProfile(env, slug)]);
+  return c ? renderCityPage({...c, profile}, env, {month:url?.searchParams.get('month')}) : null;
 }
 
 async function compareIndex(env) {
