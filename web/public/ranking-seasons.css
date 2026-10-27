@@ -1,12 +1,13 @@
 /* A: keep season information in one predictable, directly readable place. */
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .ranking-row {
   grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-rows: auto auto auto auto 1fr;
   padding-bottom: 0;
   gap: 14px 8px;
 }
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-photo { aspect-ratio: 1.7; }
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-identity { padding-inline: 18px; }
-html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-identity p { min-height: 0; margin-top: 7px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-identity p { min-height: 3.4em; margin-top: 7px; }
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .cost-cell { grid-column: 1 / 3; grid-row: 3; }
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-score { grid-column: 3; grid-row: 3; padding-right: 18px; }
 html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .safety-cell { grid-column: 1; grid-row: 4; }
