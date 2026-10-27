@@ -739,17 +739,17 @@
     {
       "source": "assets/chiang-mai-akha-coffee.jpg",
       "destination": "images/chiang-mai-akha-coffee.jpg",
-      "sha256": "6caf6fc651dbf77375100eb4a4da2ee3c4baa90fe9639e7ee462e6a920900ebc"
+      "sha256": "ad5705c868be7ad159bc3ad067cf28c318b564100b0fdbc0f959d6b9ddb4ef55"
     },
     {
       "source": "assets/chiang-mai-baannoi-season.jpg",
       "destination": "images/chiang-mai-baannoi-season.jpg",
-      "sha256": "90692fedd27f0c1e9bf7644772e64f380b555a1f134e55f7713b69c12ef92ebe"
+      "sha256": "626d722ef256048b263cee7d01653ed5137fa5797cc04bfee700525cc3fc8ac8"
     },
     {
       "source": "assets/chiang-mai-jida-monthly.jpg",
       "destination": "images/chiang-mai-jida-monthly.jpg",
-      "sha256": "3b8def66dab076dfb9b59504e8239f647a0e89daae4b09be09a0b6b9731bad2d"
+      "sha256": "55bc8c2e38b025382a078752618a2a151aaa9ec7d4d3335892221b0df4f38536"
     },
     {
       "source": "assets/chiang-mai-nimman-street.webp",
@@ -759,22 +759,22 @@
     {
       "source": "assets/chiang-mai-realspace-pricing.jpg",
       "destination": "images/chiang-mai-realspace-pricing.jpg",
-      "sha256": "fe880aba477dddc838267e689d668a482eae0583f62e0fa9e350d5c918312230"
+      "sha256": "67838cde8dcd84a22d61cab46fc336d258e33369ebeb5e0a1d5a035288d14168"
     },
     {
       "source": "assets/og-chiang-mai-budget.jpg",
       "destination": "images/og-chiang-mai-budget.jpg",
-      "sha256": "4f79675accbd201cd04f586b88849d0c9c58d8d04bb50a2486cb4b9ef8403e63"
+      "sha256": "2c67e091b43407d4713da61aafb70a6a80f38450c9cca4dd3b06ea6b6d81286e"
     },
     {
       "source": "assets/og-penang-budget.jpg",
       "destination": "images/og-penang-budget.jpg",
-      "sha256": "0436ca514e71c63e5e9c8c08eb2af7055e06bbde24f05c970f8802e0a8539c15"
+      "sha256": "b72061f7f16c7302572ef445511672d962fb69d81c03352047f6ba80abd4a7b9"
     },
     {
       "source": "assets/penang-century-bay-monthly.jpg",
       "destination": "images/penang-century-bay-monthly.jpg",
-      "sha256": "e5ae06905169d5c52fced5b2418c1c4d563929412af4aee61368109bc6b4f0e6"
+      "sha256": "f6eafacd33953c26703c0fba188e60285aebb782d603bf00c5e738fafa2c93e4"
     },
     {
       "source": "assets/penang-city.webp",
@@ -784,7 +784,7 @@
     {
       "source": "assets/penang-settlements-monthly.jpg",
       "destination": "images/penang-settlements-monthly.jpg",
-      "sha256": "21f9d6a5fffab02855b6d49c60b94d04290e7bedc50101e9180a4db9796a9676"
+      "sha256": "e2ad3bc0bd5f94f36df8189a1ef1d897a50ea7afcda14f38034b62c4f63cae0b"
     },
     {
       "source": "preview.css",
@@ -799,7 +799,7 @@
     {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "6b0f16d32a8d2095c614f0e8f282c38c8d5da095936d88c9f3871e8d6c098f18"
+      "sha256": "49c305c5d547912e3da6dffedfca1c1a18c367488ed439725cdc63ac384703e3"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -864,7 +864,7 @@
     {
       "source": "assets/og-dali-budget.jpg",
       "destination": "images/og-dali-budget.jpg",
-      "sha256": "cad195aeb3551b8dea74199ec62a77c35eb18a5d9b33767ab35a3e8ed164d508"
+      "sha256": "9ca8582bf1a345a32d383043ca4d63e992a7ddc8d1dff3d75216cfb6c5436e4f"
     },
     {
       "source": "assets/kuala-lumpur-novo-monthly-rates.webp",
@@ -919,7 +919,7 @@
     {
       "source": "assets/og-pokhara-budget.jpg",
       "destination": "images/og-pokhara-budget.jpg",
-      "sha256": "0521cae1167a9e752da5f02d180adf6676b1338be1c4b9f339d810cf2f1631de"
+      "sha256": "8a872fe505bab46d14d902ffe166e4b8b3ae729999eba29ff63955b8cec7e10c"
     },
     {
       "source": "assets/baku-flame-towers.webp",
@@ -964,52 +964,52 @@
     {
       "source": "assets/og-baku-budget.jpg",
       "destination": "images/og-baku-budget.jpg",
-      "sha256": "d472edb641311ed1d43e3ee65b2cb1ff681a5dc77fcd61b1d088bb243e0939b4"
+      "sha256": "ae51f31ee4b674794310abc34f3c54b769207c12039a37102a5f6a42d328d34f"
     },
     {
       "source": "assets/og-chengdu-budget.jpg",
       "destination": "images/og-chengdu-budget.jpg",
-      "sha256": "1931467988265b09c427c94b1e33bbb1097ca2e8e3687ea17ddad321c1ad24ba"
+      "sha256": "a8d7117932b4c35bc739d75eaff8dc6ba1679b0a9e796ad7d65e79f0a0b395bd"
     },
     {
       "source": "assets/og-fethiye-budget.jpg",
       "destination": "images/og-fethiye-budget.jpg",
-      "sha256": "71a9087e0b554b6918f0357ea197b229ca29b83b64085be142f1602ca8fdadbe"
+      "sha256": "8680ce6066a99ea7053cf92fcafb47ce02ef2673b27f70430937a16e7656d07d"
     },
     {
       "source": "assets/og-hangzhou-budget.jpg",
       "destination": "images/og-hangzhou-budget.jpg",
-      "sha256": "9f7cb58cbe4125cbd688be12c05bd0b4472e40f2cd1722b0b3a680312d3a3419"
+      "sha256": "6edc2fef54e397fe486104624d0d4a471064eff26b46d139c9920336525db0a0"
     },
     {
       "source": "assets/og-hanoi-budget.jpg",
       "destination": "images/og-hanoi-budget.jpg",
-      "sha256": "bfc057826007f03fe4ce5edf8850f89fe4327bf12b2b794ce140fec04e7ff78a"
+      "sha256": "ac371b054fdd4ffeb1c65af4da993a3eecffb7d36ca0d262c6ffb92775e0dff1"
     },
     {
       "source": "assets/og-lisbon-budget.jpg",
       "destination": "images/og-lisbon-budget.jpg",
-      "sha256": "c5bb2c0bd4f462c132c7cf44f15ce8f9562a4481bf9df22ecf06567183bcb664"
+      "sha256": "8ecfc3795a468b59c4087ae7c6711add6381537dbc5a65faf5ae040b6153ca1d"
     },
     {
       "source": "assets/og-madrid-budget.jpg",
       "destination": "images/og-madrid-budget.jpg",
-      "sha256": "f76e592da1a8931c03af7fab35049903b8aac8c5d54caa0b13d904819e2a9a65"
+      "sha256": "dbc728a38fa4f0961c20b83c908cf4daf02eb1d485908c525bb75fb18415daa0"
     },
     {
       "source": "assets/og-malaga-budget.jpg",
       "destination": "images/og-malaga-budget.jpg",
-      "sha256": "de8cd738f87f4c5f7159d29b0580f720a63c91b071ab90d187cceb426a3566d3"
+      "sha256": "fa456fa5ca9c47219428c10651f3b5e59a595d274714463d397bedf0807df7d8"
     },
     {
       "source": "assets/og-plovdiv-budget.jpg",
       "destination": "images/og-plovdiv-budget.jpg",
-      "sha256": "43ec8485b11d2b7138fead38c2adf0e4d0d96243bf41ad03fd232bafb33db79f"
+      "sha256": "bf2f7804ec243bd3e589842a8ac7f64f6709e89b409cf2c8f74dafd671554e12"
     },
     {
       "source": "assets/og-ubud-budget.jpg",
       "destination": "images/og-ubud-budget.jpg",
-      "sha256": "22c51529ad5b2e5657985a913ebaee2514897b4efd98c3e6303f02dbd8b4401d"
+      "sha256": "b0c922bce7c050895971414c53e4aba96a4ce3ddf7a584b00940e8916e883049"
     },
     {
       "source": "assets/plovdiv-old-town.webp",
@@ -1164,27 +1164,27 @@
     {
       "source": "assets/og-editorial-kunming-monthly-budget.jpeg",
       "destination": "images/og-editorial-kunming-monthly-budget.jpeg",
-      "sha256": "d3c7b2748fe07585919c08e632883925ca52c6e2ade03113c945f7f26173d6c4"
+      "sha256": "a1dc93a0ac6d99789960c491a024e94f6cc75f808f8afabdcc4659b527c181e4"
     },
     {
       "source": "assets/og-editorial-bangkok-monthly-budget.jpeg",
       "destination": "images/og-editorial-bangkok-monthly-budget.jpeg",
-      "sha256": "4f2f442b369f71d0ede6503d2f6219ec776ac9a823742eac9857ed923d0f3308"
+      "sha256": "1b9664a0f53e28f81006440b65f979d12b2967a583391aeffb7a9c42b5bb3b27"
     },
     {
       "source": "assets/og-editorial-abu-dhabi-monthly-budget.jpeg",
       "destination": "images/og-editorial-abu-dhabi-monthly-budget.jpeg",
-      "sha256": "add7ee18c5e05f3045a8fc6ef15f5af3b2fcb7636e53748b08c34d13a4dd61d8"
+      "sha256": "fcac54cb2109bc04ef08d58f632a5aa73ea7df9f99858a5a47563bb6191043b8"
     },
     {
       "source": "assets/og-editorial-two-person-monthly-budget.jpeg",
       "destination": "images/og-editorial-two-person-monthly-budget.jpeg",
-      "sha256": "0851b5fe1f156d1200635fd27f88c95da838a084e28712dc4f679d28b1ce67ed"
+      "sha256": "ade17e8adb210810c9573efb2848556997dc309b306c795e645763f7b60796ba"
     },
     {
       "source": "assets/og-editorial-new-zealand-visitor-remote-work.jpeg",
       "destination": "images/og-editorial-new-zealand-visitor-remote-work.jpeg",
-      "sha256": "80d786f97f38b98ce831c16fa22de375fe86a2caaa0454c4e49b5fa11cb1b590"
+      "sha256": "f09c5b79edbaacfd16ee66d691bb3d443de613f0150b130c66b66bded2a1d935"
     },
     {
       "source": "assets/editorial-auckland.webp",
@@ -1214,27 +1214,27 @@
     {
       "source": "assets/og-editorial-auckland-monthly-budget.jpeg",
       "destination": "images/og-editorial-auckland-monthly-budget.jpeg",
-      "sha256": "e55fa145c26fb494238e1730066bcb08da02b3b8333c65ad696203d04226fdc9"
+      "sha256": "6c07b9e637a4f741128d5bc9a70f71b99560b565d63225b3fe603ee58b47ea9b"
     },
     {
       "source": "assets/og-editorial-wellington-monthly-budget.jpeg",
       "destination": "images/og-editorial-wellington-monthly-budget.jpeg",
-      "sha256": "8bd888d390cfab5d14390efc8b64dc3dc3f8b2d40a4f4d49c65668be23784a64"
+      "sha256": "69d235d68b209b5eb2963a2b3406db5fd8e6a20300697770ae018ced3450a044"
     },
     {
       "source": "assets/og-editorial-tbilisi-monthly-budget.jpeg",
       "destination": "images/og-editorial-tbilisi-monthly-budget.jpeg",
-      "sha256": "509760469352da5b7c63c85f33433f0a2115fcdfa04285f2969d81a33633ed14"
+      "sha256": "ed8ce0ed34de7099dc3f225e9d90d8e1ebbe87e1ea245f23140a293c1e5385ba"
     },
     {
       "source": "assets/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
       "destination": "images/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
-      "sha256": "ea3e5d8d647102d41d238ff09ba185356f961bdea6103b0b848e01e62e635292"
+      "sha256": "d7d5d650dd767fc9ce9cb88d95186a6e322fd1b3ecc3fe1d2343f334da554c31"
     },
     {
       "source": "assets/og-editorial-auckland-hop-cap-airport-transport.jpeg",
       "destination": "images/og-editorial-auckland-hop-cap-airport-transport.jpeg",
-      "sha256": "e6bca289a18fd60aa45c09087bd1b51f872282bcc2c09279c1133e2f03e3c7c1"
+      "sha256": "3b8eab44c2869b413678e41e07a8d9ab9abdda66edc78b677d27597e5a40704e"
     },
     {
       "source": "assets/editorial-canggu.webp",
@@ -1263,27 +1263,27 @@
     },
     {
       "source": "assets/og-editorial-canggu-monthly-budget.jpeg",
-      "sha256": "12c75dfd97c87976906324ea6848454478eb194e8da1307e5882dd2bcb843130",
+      "sha256": "4530c5d6563f0b8722b830bea11994a2db5a5a84b3f86968ef2be41643cf7c6e",
       "destination": "images/og-editorial-canggu-monthly-budget.jpeg"
     },
     {
       "source": "assets/og-editorial-ho-chi-minh-city-monthly-budget.jpeg",
-      "sha256": "3cd84ff4dc10d2283e8ee42c308005af388b4907aac7d8f2a18e3944a065fe8d",
+      "sha256": "ce9f014eba6779fdd109406aa1a28ef2b369daa73a5658cbb6516453be434d33",
       "destination": "images/og-editorial-ho-chi-minh-city-monthly-budget.jpeg"
     },
     {
       "source": "assets/og-editorial-seoul-monthly-budget.jpeg",
-      "sha256": "93ab05bb31efc4dc71c0e7cd96f4fa8e40bacfd59e38b6fc7e2cba77ddbb515c",
+      "sha256": "fea67963fb4ff936fdbe190aafd6d409831831647f07b6da54a0c647de5e8c6f",
       "destination": "images/og-editorial-seoul-monthly-budget.jpeg"
     },
     {
       "source": "assets/og-editorial-korea-workation-f1d-2026.jpeg",
-      "sha256": "120a60fa782747222b884efc274300e92e9483a3175d7edeefb7a7ebf54374a0",
+      "sha256": "a12596fd20fa17fd5ff8d5fcc3aa3460cd61bd0e8e4a81dc4418bd24d3939db3",
       "destination": "images/og-editorial-korea-workation-f1d-2026.jpeg"
     },
     {
       "source": "assets/og-editorial-seoul-climate-card-short-stay-2026.jpeg",
-      "sha256": "f037ebf201b84eac1dbfe18b32799523ef2f0b49cf7c218c32d3cadbb1adb82a",
+      "sha256": "6ef2c51093f016c5741522921927b68582f3568c4631cf7cf8bcf7cf24cdeea3",
       "destination": "images/og-editorial-seoul-climate-card-short-stay-2026.jpeg"
     },
     {
