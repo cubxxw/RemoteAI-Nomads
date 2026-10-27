@@ -465,9 +465,20 @@ figcaption { font-size: 12px; color: var(--ink-3); }
 
 .city-article-card .article-cover-credit a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
 .guides-index .guide-title-part { display:inline-block; white-space:nowrap; }
-.guides-index nav[aria-label="按问题找文章"] ul { display:flex; flex-wrap:wrap; gap:8px 20px; padding:0; margin:12px 0 24px; list-style:none; }
-.guides-index nav[aria-label="按问题找文章"] a { display:inline-flex; align-items:center; min-height:44px; border-bottom:1px solid var(--line); color:var(--ink-2); font-size:14px; }
-.guides-index nav[aria-label="按问题找文章"] a:hover { color:var(--brand-brown); border-color:var(--brand-brown); }
+.guides-index .guide-topic-nav ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:20px 0 18px; list-style:none; }
+.guide-topic-nav li { min-width:0; }
+.guides-index .guide-topic-nav a { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:7px 12px; min-height:104px; padding:18px 20px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink-1); line-height:1.5; transition:background-color 150ms ease,border-color 150ms ease; }
+.guide-topic-nav strong { font-size:18px; font-weight:650; }
+.guide-topic-count { align-self:center; color:var(--ink-2); font-size:12px; white-space:nowrap; }
+.guide-topic-description { grid-column:1 / -1; color:var(--ink-2); font-size:13px; }
+.guides-index .guide-topic-nav a:hover { border-color:var(--brand-brown); background:var(--soft); }
+.guides-index .guide-topic-nav a[aria-current="true"] { background:var(--brand-brown); border-color:var(--brand-brown); color:white; }
+.guide-topic-nav a[aria-current="true"] .guide-topic-count,.guide-topic-nav a[aria-current="true"] .guide-topic-description { color:#F4E9DC; }
+.guide-topic-status { font-size:13px; color:var(--ink-2); margin:0 0 24px; }
+.guide-topic-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:18px; }
+.guide-topic-heading h3 { font-size:21px; font-weight:600; }
+.guide-topic-heading>span { color:var(--ink-2); font-size:13px; }
+.guide-series-group { scroll-margin-top:96px; }
 
 /* ---------- responsive: 3 / 2 / 1 columns, no horizontal page overflow ---------- */
 @media (max-width: 1100px) {
@@ -500,9 +511,11 @@ figcaption { font-size: 12px; color: var(--ink-3); }
   .city-guide .city-cover img { aspect-ratio: 1.8 / 1; }
 }
 @media (max-width: 700px) {
-  .guides-index nav[aria-label="按问题找文章"] ul { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:thin; gap:16px; padding-bottom:8px; }
-  .guides-index nav[aria-label="按问题找文章"] li { flex-shrink:0; }
-  .guides-index nav[aria-label="按问题找文章"] a { white-space:nowrap; }
+  .guides-index .guide-topic-nav ul { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .guides-index .guide-topic-nav a { display:flex; flex-wrap:wrap; align-content:flex-start; align-items:baseline; min-height:112px; padding:14px 12px; gap:6px 8px; }
+  .guide-topic-nav strong { flex:1 1 min(100%,5em); min-width:0; max-width:100%; font-size:16px; }
+  .guide-topic-count { font-size:11px; }
+  .guide-topic-description { flex-basis:100%; font-size:12px; line-height:1.65; }
 }
 @media (max-width: 375px) {
   #ranking-root .rank-hero h1 { font-size: 1.55rem; }

@@ -1,12 +1,14 @@
 import { normalizeSearch, countryQueryCode } from "./country-search.js";
 import {sitePath} from './site-path.js';
 import {withPlanMonth,readJourneyMonth} from './trip-state.js';
+import {initGuideTopics} from './guide-topics.js';
 export function countryMatches(row, query, covered) {
   const needle = normalizeSearch(query), code = countryQueryCode(needle);
   return (!covered || Number(row.cities) > 0) && (!needle || ((code || /^[a-z]{2}$/.test(needle)) ? normalizeSearch(row.code) === normalizeSearch(code || needle) : normalizeSearch(row.search).includes(needle)));
 }
 
 export function initContentPage() {
+  initGuideTopics(document.querySelector('[data-guide-topics]'));
   const countryNavigation = document.querySelector('.country-navigation details');
   if (countryNavigation) {
     const narrow = matchMedia('(max-width:680px)');
