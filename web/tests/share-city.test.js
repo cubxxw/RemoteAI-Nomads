@@ -51,3 +51,11 @@ test('a long visa value keeps both rows aligned without crossing the QR footer',
  assert.equal(values.find(b=>b.text==='8 / 10').y,values[2].y);
  const qr=blocks.find(b=>b.type==='qr');assert.ok(values.every(b=>b.y+b.height<qr.y));
 });
+test('each separately saved continuation retains the official travel advisory',()=>{
+ const card=cityShare({...city,countryCode:'AF',slug:'kabul',name:'喀布尔'},10,url);
+ for(const [format,title] of [[SHARE_FORMATS[3],card.title],[SHARE_FORMATS[0],'长'.repeat(78)]]){
+  const layout=layoutShare(ctx,createShare({...card,title}),format);
+  assert.ok(layout.pages.length>1);
+  for(const page of layout.pages)assert.match(page.blocks.map(b=>b.text||'').join(''),/官方暂勿前往提醒/);
+ }
+});

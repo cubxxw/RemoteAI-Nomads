@@ -20,7 +20,7 @@ test('dangerous and credential-bearing URLs are rejected before becoming QR/text
 });
 test('city fact units and dates survive and unavailable values never become zero',()=>{
  const card=model.cityShare(fixture,11,'https://roamorrow.com/nomads/cities/chiang-mai/');
- assert.equal(card.title,'清迈');assert.match(model.shareText(card),/850/);assert.match(model.shareText(card),/历史月参考/);assert.match(model.shareText(card),/2025-02-01/);assert.match(model.shareText(card),/22°C/);assert.match(model.shareText(card),/待复核/);
+ assert.equal(card.title,'清迈');assert.match(model.shareText(card),/850/);assert.match(model.shareText(card),/历史月花费/);assert.match(model.shareText(card),/花费为历史参考/);assert.match(model.shareText(card),/2025-02-01/);assert.match(model.shareText(card),/22°C/);assert.match(model.shareText(card),/待复核/);
  const missing=model.cityShare({...fixture,budget:null,months:[]},11,'https://roamorrow.com/nomads/cities/chiang-mai/');assert.match(model.shareText(missing),/待补充/);assert.doesNotMatch(model.shareText(missing),/\$0|0°C/);
 });
 test('photos without attribution are not silently exported',()=>{

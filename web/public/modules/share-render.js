@@ -26,13 +26,13 @@ export function layoutShare(ctx,card,format,{photo=false,qrSize:requestedQR}={})
   const continued=pages.length>1;
   y=add(card.title+(continued?' / 续':''),margin,wide?88:106,w-margin*2,continued?40:wide?56:72,500,INK);
   if(!continued&&card.subtitle)y=add(card.subtitle,margin,y+8,w-margin*2,28,400,MUTED);y+=wide?18:24;
+  if(cityPoster&&card.advisories.length)y=add(card.advisories.join(' '),margin,y,w-margin*2,wide?26:30,500,INK,'advisory')+16;
   if(y>bottom)throw Error('标题较长，请在“调整图片文字”中缩短图片标题，或选择竖图。');
  }
  start();const mainWidth=wide&&photo?Math.round(w*.5)-margin:w-margin*2;
  const content=[];
  if(card.summary&&!cityPoster&&!(wide&&card.kind==='city'))content.push({text:card.summary,size:wide?30:36,weight:400,gap:24});
  if(cityPoster&&card.tags.length)content.push({tags:card.tags});
- if(cityPoster&&card.advisories.length)content.push({text:card.advisories.join(' '),size:wide?26:30,color:INK,gap:20});
  if(card.facts.length)content.push({facts:card.facts});
  card.items.forEach((row,index)=>{content.push({text:(card.kind==='ranking'?(index+1)+'  ':'')+row.title,size:wide?34:42,weight:500,gap:5});if(row.detail)content.push({text:row.detail,size:wide?26:30,color:MUTED,gap:26});});
  if(card.body)for(const paragraph of card.body.split(/\n\s*\n/))content.push({text:paragraph,size:wide?30:36,gap:24});
