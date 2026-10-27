@@ -75,9 +75,15 @@
       "approvedOn": "2026-10-27",
       "authority": "User explicitly authorized removing redundant/internal visible copy and a final Chinese whitelist pass; exact scoped editorial changes preserve code, model, numbers, headings, source links, images and material limitations.",
       "reviewRecord": "research/2026-10-27-final-prose.md"
+    },
+    "continuousCallHours": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User requested continuous autonomous researched writing until 11:00 Asia/Singapore; this narrow topic has independent source/arithmetical review, final editorial and whitelist passes.",
+      "reviewRecord": "research/2026-10-27-call-hours.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -732,6 +738,13 @@
       "sourceFile": "singapore-foreign-card-transit-fee.html",
       "sha256": "1509f5830a86dbd26ac51c16d621e7a73d9bebd8cc8471e0d0f5b698b4e60fc8",
       "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "cowork-call-hours",
+      "sourceFile": "cowork-call-hours.html",
+      "sha256": "fb365caa01dfe1dfb5f98b1ab7efd0e20a8055cd3d010a87671720dfdc6218cc",
+      "source": "research/2026-10-27-call-hours.md",
       "approved": true
     }
   ],
@@ -1395,6 +1408,16 @@
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
       "sha256": "253cb8c6b199fe5f81d7a71f2a715f2c1ae7811308250dfdb391ac38b0e1cfcb"
+    },
+    {
+      "source": "assets/cowork-call-hours.webp",
+      "destination": "images/cowork-call-hours.webp",
+      "sha256": "2f8a2683c4b388e627b6e80e4f1cb3dce5ae10b2c6ce9e2689705a07c1ca8f3b"
+    },
+    {
+      "source": "assets/og-editorial-cowork-call-hours.jpeg",
+      "destination": "images/og-editorial-cowork-call-hours.jpeg",
+      "sha256": "ff1217fbfdd7b27e36fa99930970a300e98fed194a6ad81e72ed1ef21779b4ed"
     }
   ]
 }

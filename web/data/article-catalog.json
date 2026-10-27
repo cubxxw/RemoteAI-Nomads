@@ -1455,6 +1455,21 @@
       "status": "published",
       "updatedAt": "2026-10-27",
       "assetPath": "/city-guides/singapore-foreign-card-transit-fee.html"
+    },
+    {
+      "slug": "cowork-call-hours",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/cowork-call-hours/",
+      "title": "工位能打电话，够你每天开两小时会吗？",
+      "summary": "用20个工作日、每天两小时独立通话的假设，比较BWork每日2小时、Tropical Nomad每月12小时，以及Let’s Work电话亭按日、会议室按周的权益。只算时数差，不把24/7进入当作私人会议包用。",
+      "citySlugs": [
+        "canggu",
+        "phuket"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/cowork-call-hours.html"
     }
   ]
 }
