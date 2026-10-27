@@ -33,8 +33,8 @@ async function sandbox(t, {copySources = false} = {}) {
 test('published articles associate with exact cities and both sides of multi-city comparisons', () => {
   assert.deepEqual(slugList(articlesForCity('chiang-mai')), ['chiang-mai-monthly-budget', 'chiang-mai-vs-penang', 'chiang-mai-vs-da-nang', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
   assert.deepEqual(slugList(articlesForCity('penang')), ['penang-monthly-budget', 'chiang-mai-vs-penang', 'november-nomad-destinations', 'beijing-time-remote-work', 'chinese-passport-long-stay']);
-  assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang', 'november-nomad-destinations', 'da-nang-monthly-budget']);
-  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget', 'beijing-time-remote-work', 'chinese-passport-long-stay', 'two-person-monthly-budget']);
+  assert.deepEqual(slugList(articlesForCity('da-nang')), ['chiang-mai-vs-da-nang', 'november-nomad-destinations', 'da-nang-monthly-budget', 'monthly-apartment-utilities']);
+  assert.deepEqual(slugList(articlesForCity('kuala-lumpur')), ['kuala-lumpur-monthly-budget', 'beijing-time-remote-work', 'chinese-passport-long-stay', 'two-person-monthly-budget', 'de-rantau-sabah-scope', 'monthly-apartment-utilities']);
   assert.deepEqual(slugList(articlesForCity('dali')), ['dali-monthly-budget', 'november-nomad-destinations', 'monthly-budget-5000', 'beijing-time-remote-work']);
   assert.deepEqual(articlesForCity('chiang'), []);
   assert.deepEqual(articlesForCity('chiang-mai-extra'), []);
