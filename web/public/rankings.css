@@ -6,12 +6,12 @@
   font-display: swap;
 }
 :root {
-  --paper: #fafafa;
-  --ink: #202323;
-  --muted: #626767;
+  --paper: #FAF8F6;
+  --ink: #1F1A14;
+  --muted: #6B5D4C;
   --green: #237a57;
-  --soft: #eef3f0;
-  --line: #e4e7e5;
+  --soft: #F4EEE6;
+  --line: #E6DCCB;
   font-family:
     Inter,
     -apple-system,
@@ -25,7 +25,7 @@
 body {
   font-size: 14px;
   line-height: 1.5;
-  background: #fafafa;
+  background: var(--paper);
 }
 h1,
 h2,
@@ -210,7 +210,7 @@ kbd {
   justify-content: space-between;
   font-size: 12px;
   font-weight: 550;
-  color: #4f5653;
+  color: #57493A;
 }
 .weight-control output {
   font-size: 12px;
@@ -224,14 +224,14 @@ kbd {
   width: 100%;
   height: 32px;
   margin: 0;
-  accent-color: var(--green);
+  accent-color: var(--brand-brown, #5D3000);
   cursor: ew-resize;
   touch-action: pan-y;
 }
 .weight-control input::-webkit-slider-runnable-track {
   height: 3px;
   border-radius: 0;
-  background: #d8ddda;
+  background: #E2D7C3;
 }
 .weight-control input::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -247,7 +247,7 @@ kbd {
 }
 .weight-control input::-moz-range-track {
   height: 3px;
-  background: #d8ddda;
+  background: #E2D7C3;
 }
 .weight-control input::-moz-range-thumb {
   width: 12px;
@@ -314,7 +314,7 @@ kbd {
 }
 .ranking-method a {
   font-size: 12px;
-  color: var(--green);
+  color: var(--brand-brown, #5D3000);
   text-decoration: underline;
 }
 .filter-panel {
@@ -414,7 +414,7 @@ kbd {
 .incomplete-toggle input {
   width: 15px;
   height: 15px;
-  accent-color: var(--green);
+  accent-color: var(--brand-brown, #5D3000);
 }
 #clear-filters {
   padding-left: 12px;
@@ -424,7 +424,7 @@ kbd {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #cddbd2;
+  border: 1px solid #E0D3BA;
   border-radius: 4px;
   padding-left: 12px;
   font-size: 12px;
@@ -613,7 +613,7 @@ kbd {
   border-radius: 1px;
 }
 .bar-track {
-  fill: #dce2dd;
+  fill: #EAE1CF;
 }
 .bar-value {
   fill: #237a57;
@@ -660,8 +660,8 @@ kbd {
   padding: 0;
 }
 .rank-compare[aria-pressed="true"] {
-  background: #e5efe8;
-  color: var(--green);
+  background: var(--soft);
+  color: var(--brand-brown, #5D3000);
 }
 .month-band {
   display: flex;
@@ -734,7 +734,7 @@ kbd {
   margin-top: 20px;
 }
 .ranking-footnote a {
-  color: var(--green);
+  color: var(--brand-brown, #5D3000);
   text-decoration: underline;
 }
 .ranking-empty {
@@ -760,7 +760,7 @@ kbd {
   margin-top: 16px;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: #fff;
+  background: #FFFDF8;
   overflow: hidden;
 }
 .map-heading {
@@ -781,7 +781,7 @@ kbd {
 }
 .map-stage {
   height: 264px;
-  background: #f7f8f7;
+  background: #F5EFE3;
   position: relative;
   overflow: hidden;
 }
@@ -796,8 +796,8 @@ kbd {
   cursor: grabbing;
 }
 .map-land path {
-  fill: #e5e9e5;
-  stroke: #f7f8f7;
+  fill: #E8DFCB;
+  stroke: #F5EFE3;
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
   stroke-linejoin: round;
@@ -898,7 +898,7 @@ kbd {
 .map-selection-actions a,
 .map-selection-actions button {
   font-size: 12px;
-  color: var(--green);
+  color: var(--brand-brown, #5D3000);
   min-height: 44px;
   display: flex;
   align-items: center;
@@ -924,9 +924,9 @@ kbd {
       0deg,
       transparent,
       transparent 47px,
-      #edf0ec 48px
+      #EFE7D8 48px
     ),
-    repeating-linear-gradient(90deg, #f8f9f7, #f8f9f7 47px, #edf0ec 48px);
+    repeating-linear-gradient(90deg, #FBF7EE, #FBF7EE 47px, #EFE7D8 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1469,7 +1469,7 @@ footer > div:first-child > p {
     content: "+";
     margin-left: 12px;
     font-size: 18px;
-    color: var(--green);
+    color: var(--brand-brown, #5D3000);
   }
   .weight-panel[data-expanded="true"] > .weight-summary:after {
     content: "−";
@@ -1878,8 +1878,8 @@ footer > div:first-child > p {
 }
 @media (prefers-contrast: more) {
   :root {
-    --muted: #414743;
-    --line: #929b94;
+    --muted: #453B2E;
+    --line: #9A8B74;
   }
   .rank-english,
   .rank-identity p,
@@ -1888,7 +1888,7 @@ footer > div:first-child > p {
     color: #424b45;
   }
   .filter-chip.selected {
-    border-color: #205f40;
+    border-color: #5D3000;
   }
   .month-mark rect {
     stroke: #657169;
@@ -2256,7 +2256,7 @@ footer > div:first-child > p {
   font-weight: 500;
 }
 .table-scroll:focus-visible {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--brand-gold, #C9A677);
   outline-offset: 4px;
 }
 @media (max-width: 700px) {
@@ -2383,7 +2383,7 @@ footer > div:first-child > p {
 
 /* A dated editorial view is visible and removable; it never alters source scores. */
 .rank-season-note { margin: 0 0 12px; max-width: 100%; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
-.rank-season-note a { color: var(--green); white-space: nowrap; }
+.rank-season-note a { color: var(--brand-brown, #5D3000); white-space: nowrap; }
 
 /* Unscored places stay discoverable without suggesting a low rank. */
 .rank-unrated-heading{padding:28px 0 16px;border-top:1px solid var(--line);margin-top:8px;color:var(--ink-3)}

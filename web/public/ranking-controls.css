@@ -9,8 +9,8 @@
 #ranking-root .rank-icon-button svg,#ranking-root .rank-pill svg,#ranking-root .rank-text-button svg{width:20px;height:20px;flex:none}
 #ranking-root button:hover,#ranking-root .preset-chip:hover{color:var(--ink-1,var(--ink));background:var(--green-soft,var(--soft))}
 #ranking-root .rank-pill.rank-solid,#ranking-root .preset-chip.selected{color:var(--paper,#fafafa);background:var(--ink-1,var(--ink));font-weight:500}
-#ranking-root .rank-pill.rank-solid:hover,#ranking-root .preset-chip.selected:hover{background:var(--green)}
-#ranking-root .agent-launch{color:var(--green)}
+#ranking-root .rank-pill.rank-solid:hover,#ranking-root .preset-chip.selected:hover{background:var(--brand-brown,#5D3000)}
+#ranking-root .agent-launch{color:var(--brand-brown,#5D3000)}
 #ranking-root #ranking-search-form{width:224px;min-width:160px;max-width:260px;position:relative;margin:0}
 #ranking-root #ranking-search-form>svg{position:absolute;left:12px;top:12px;pointer-events:none;color:var(--ink-3,var(--muted))}
 #ranking-root #rank-search{width:100%;min-height:44px;height:44px;padding:8px 36px 8px 40px;border-radius:999px;border:1px solid var(--line);background:transparent;font-size:14px;color:var(--ink-1,var(--ink))}
