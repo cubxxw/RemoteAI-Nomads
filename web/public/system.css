@@ -6,7 +6,7 @@
   --surface: #fff;
   --ink-1: #1F1A14;
   --ink-2: #6B5D4C;
-  --ink-3: #8A7A64;
+  --ink-3: #756955;
   /* Roamorrow brand tokens (BRAND.md in getyak/roamorrow): paper, ink,
      deep brown, sun gold. --green is a data-only accent (scores, bars,
      map dots); chrome uses ink / brand brown / brand gold. */
@@ -126,7 +126,7 @@ p { color: var(--ink-2); }
   width: 16px;
   height: 2px;
   border-radius: 1px;
-  background: var(--green);
+  background: var(--brand-brown);
 }
 .nav-toggle {
   display: none;
@@ -191,7 +191,7 @@ p { color: var(--ink-2); }
 .rank-compare { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; }
 .rank-compare[aria-pressed="true"] { color: var(--surface); background: var(--ink-1); border-color: var(--ink-1); }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--brand-brown);
   outline-offset: 4px;
 }
 kbd { color: var(--ink-3); border-color: var(--line); font-size: 12px; }
@@ -325,7 +325,7 @@ html:has(#wechat-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
   .site-header.is-menu-open .site-navigation { display: grid; }
   .site-header .site-navigation a,
   .site-header .site-navigation a:last-child { display: flex; min-height: 44px; padding: 10px 12px; border-radius: 999px; }
-  .site-header .site-navigation a[aria-current="page"] { background: var(--green-soft); color: var(--green); }
+  .site-header .site-navigation a[aria-current="page"] { background: var(--green-soft); color: var(--brand-brown); }
   .site-header .site-navigation a[aria-current="page"]::after { display: none; }
   .page-intro { padding-block: 28px 24px; }
   .page-intro h1 { margin-top: 12px; }

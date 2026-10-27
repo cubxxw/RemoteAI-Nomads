@@ -12,7 +12,7 @@
   --surface: #FFFDF8;
   --ink-1: #1F1A14;
   --ink-2: #6B5D4C;
-  --ink-3: #8A7A64;
+  --ink-3: #756955;
   --green: #174c38;
   --green-strong: #123c2c;
   --green-soft: #F4EEE6;
@@ -30,7 +30,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 a { text-underline-offset: 3px; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
 textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
-  outline: 3px solid var(--brand-gold);
+  outline: 3px solid var(--brand-brown);
   outline-offset: 3px;
   border-radius: 4px;
 }

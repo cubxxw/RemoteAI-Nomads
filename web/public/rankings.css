@@ -238,7 +238,7 @@ kbd {
   width: 12px;
   height: 12px;
   margin-top: -4px;
-  background: var(--green);
+  background: var(--brand-brown, #5D3000);
   border-radius: 50%;
 }
 .weight-control input {
@@ -252,7 +252,7 @@ kbd {
 .weight-control input::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: var(--green);
+  background: var(--brand-brown, #5D3000);
   border: 0;
 }
 .preset-row {
@@ -2256,7 +2256,7 @@ footer > div:first-child > p {
   font-weight: 500;
 }
 .table-scroll:focus-visible {
-  outline: 2px solid var(--brand-gold, #C9A677);
+  outline: 2px solid var(--brand-brown, #5D3000);
   outline-offset: 4px;
 }
 @media (max-width: 700px) {

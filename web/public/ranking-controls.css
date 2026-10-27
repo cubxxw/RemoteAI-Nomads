@@ -52,9 +52,9 @@
 #ranking-root .rank-month-field{grid-column:1/-1}
 #ranking-root .rank-filter-fields select,#ranking-root #map-city-select{width:100%;min-width:0;min-height:44px;height:44px;appearance:none;-webkit-appearance:none;padding:8px 32px 8px 12px;border:1px solid var(--line);border-radius:8px;background-color:transparent;background-image:url("icons/chevron-down.svg");background-repeat:no-repeat;background-position:right 12px center;color:var(--ink-1,var(--ink));font-size:14px}
 #ranking-root .rank-incomplete-toggle{display:flex;align-items:center;gap:8px;font-size:14px;min-height:44px;margin-top:12px;color:var(--ink-2,var(--muted))}
-#ranking-root .rank-incomplete-toggle input{width:18px;height:18px;accent-color:var(--green)}
+#ranking-root .rank-incomplete-toggle input{width:18px;height:18px;accent-color:var(--brand-brown,#5D3000)}
 #ranking-root .rank-filter-note{font-size:12px;color:var(--ink-3,var(--muted));line-height:1.7;margin:8px 0}
-#share-open{display:inline-flex;align-items:center;min-height:44px;color:var(--green);text-decoration:underline;text-underline-offset:3px}
+#share-open{display:inline-flex;align-items:center;min-height:44px;color:var(--brand-brown,#5D3000);text-decoration:underline;text-underline-offset:3px}
 #share-dialog .button{min-height:44px}
 #ranking-root .rank-popover-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
 #ranking-root dialog{color:var(--ink-1,var(--ink));background:var(--paper,#fafafa);border:1px solid var(--line);padding:0;box-sizing:border-box}
@@ -70,15 +70,15 @@
 #ranking-root .rank-dialog-intro{font-size:15px;color:var(--ink-3,var(--muted));line-height:1.7;margin:12px 0 24px}
 #ranking-root .weight-grid{display:grid;grid-template-columns:1fr;gap:16px;padding:0}
 #ranking-root .weight-control>span{font-size:15px;font-weight:400;color:var(--ink-2,var(--ink))}
-#ranking-root .weight-control output{font-size:14px;font-variant-numeric:tabular-nums;color:var(--green)}
-#ranking-root .weight-control input{width:100%;height:40px;margin:0;accent-color:var(--green)}
+#ranking-root .weight-control output{font-size:14px;font-variant-numeric:tabular-nums;color:var(--brand-brown,#5D3000)}
+#ranking-root .weight-control input{width:100%;height:40px;margin:0;accent-color:var(--brand-brown,#5D3000)}
 #ranking-root .rank-weight-feedback{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0;border-top:1px solid var(--line);margin-top:16px}
 #ranking-root .rank-weight-feedback output{font-size:20px;font-variant-numeric:tabular-nums;font-weight:500}
 #ranking-root .rank-weight-feedback>span{font-size:12px;color:var(--ink-3,var(--muted))}
 #ranking-root .ranking-method{display:block;margin:0;padding:0;position:static;font-size:13px;color:var(--ink-3,var(--muted))}
 #ranking-root .ranking-method>summary{display:flex;align-items:center;min-height:44px;padding:0;cursor:pointer;font-size:13px}
 #ranking-root .ranking-method p{font-size:13px;line-height:1.8;margin:0 0 12px}
-#ranking-root .ranking-method a{font-size:13px;color:var(--green)}
+#ranking-root .ranking-method a{font-size:13px;color:var(--brand-brown,#5D3000)}
 #ranking-root .rank-dialog-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
 #ranking-root .rank-dialog-footer .rank-text-button{padding-left:0;font-size:13px}
 #ranking-root .rank-command-dialog{position:fixed;inset:16vh 16px auto;width:560px;max-width:calc(100vw - 32px);max-height:68dvh;margin:0 auto;border-radius:16px;overflow:hidden}
@@ -102,8 +102,8 @@
 #ranking-root .ranking-row{min-height:108px;cursor:pointer;font-variant-numeric:tabular-nums}
 #ranking-root .ranking-row:focus-within{background:var(--green-soft,var(--soft))}
 #ranking-root .rank-country-link{display:inline-flex;align-items:center;gap:4px;min-height:24px;max-width:100%;color:var(--ink-2,var(--muted));border-radius:3px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
-#ranking-root .rank-country-link:hover{color:var(--green);text-decoration-color:currentColor}
-#ranking-root .rank-country-link:focus-visible,#ranking-root .rank-city-link:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+#ranking-root .rank-country-link:hover{color:var(--brand-brown,#5D3000);text-decoration-color:currentColor}
+#ranking-root .rank-country-link:focus-visible,#ranking-root .rank-city-link:focus-visible{outline:2px solid var(--brand-brown,#5D3000);outline-offset:4px}
 #ranking-root .rank-country-link .country-flag{font-size:13px;line-height:1;flex:none}
 #ranking-root .rank-country-link .country-flag img{width:16px;height:12px;vertical-align:middle}
 #ranking-root .rank-photo,#ranking-root .rank-photo img{width:48px;height:56px;border-radius:6px}
@@ -158,16 +158,16 @@
 #ranking-root .map-country-intro>p{margin:3px 0 6px;color:var(--muted);font-size:13px}
 #ranking-root .map-selection-title strong{font-size:22px;font-weight:550}
 #ranking-root .map-selection-title span{font-size:12px;white-space:nowrap;color:var(--muted)}
-#ranking-root .map-country-open{display:flex;justify-content:space-between;align-items:center;color:var(--green);min-height:40px;font-size:13px;font-weight:500}
+#ranking-root .map-country-open{display:flex;justify-content:space-between;align-items:center;color:var(--brand-brown,#5D3000);min-height:40px;font-size:13px;font-weight:500}
 #ranking-root .map-city-list-heading{font-size:12px;color:var(--muted);padding:12px 0 6px;border-top:1px solid var(--line);margin-top:8px}
 #ranking-root .map-country-cities ul{margin:0;padding:0;list-style:none}
 #ranking-root .map-country-cities li{display:flex;align-items:center;border-radius:4px}
 #ranking-root .map-country-cities li>a{min-height:44px;display:flex;align-items:center;justify-content:space-between;flex:1;gap:12px;min-width:0;font-size:14px;padding:4px 0}
 #ranking-root .map-country-cities li>a>span{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
 #ranking-root .map-country-cities small{color:var(--muted);font-size:11px}
-#ranking-root .map-country-cities li:hover>a,#ranking-root .map-country-cities li.is-active>a{color:var(--green)}
-#ranking-root .map-country-cities button{width:36px;min-height:44px;flex-shrink:0;background:none;border:0;color:var(--green);font-size:20px;cursor:pointer}
-#ranking-root .map-country-cities a:focus-visible,#ranking-root .map-country-open:focus-visible,#ranking-root .map-country-picker select:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+#ranking-root .map-country-cities li:hover>a,#ranking-root .map-country-cities li.is-active>a{color:var(--brand-brown,#5D3000)}
+#ranking-root .map-country-cities button{width:36px;min-height:44px;flex-shrink:0;background:none;border:0;color:var(--brand-brown,#5D3000);font-size:20px;cursor:pointer}
+#ranking-root .map-country-cities a:focus-visible,#ranking-root .map-country-open:focus-visible,#ranking-root .map-country-picker select:focus-visible{outline:2px solid var(--brand-brown,#5D3000);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){#ranking-root .map-land .map-country path{transition:none}}
 @media(max-width:1100px) and (min-width:701px){
   #ranking-root .ranking-toolbar{flex-wrap:wrap;gap:8px}
