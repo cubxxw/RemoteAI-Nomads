@@ -181,6 +181,18 @@ const CITY_COVERS = Object.freeze(
     "photo_url": "/images/city-kota-kinabalu.webp",
     "photo_credit": "FILMR Production / CC BY 3.0",
     "photo_source": "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Kota_Kinabalu_City.jpg"
+  },
+  "phuket": {
+    "name_zh": "普吉",
+    "photo_url": "/images/city-phuket.webp",
+    "photo_credit": "Bennypc / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Phuket_Aerial.jpg"
+  },
+  "malacca": {
+    "name_zh": "马六甲",
+    "photo_url": "/images/city-malacca.webp",
+    "photo_credit": "Marcin Konsek / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File%3A2016%20Malakka%2C%20Plac%20Holenderski%20%2804%29.jpg"
   }
 }
 );

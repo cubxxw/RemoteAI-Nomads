@@ -63,9 +63,15 @@
       "approvedOn": "2026-10-27",
       "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
       "reviewRecord": "research/2026-10-27-articles-batch4.md"
+    },
+    "continuousBatch5": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch5.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -686,6 +692,41 @@
       "sha256": "d910009983c32ee159e9489fff0435e53a2f310441edce3707bb84cf17426f00",
       "source": "research/2026-10-27-articles-batch4.md",
       "approved": true
+    },
+    {
+      "slug": "phuket-monthly-budget",
+      "sourceFile": "phuket-monthly-budget.html",
+      "sha256": "b9eb34683fea5407c86ea6ad9bf90d81a58c07c5988f51f50b960f17bda66eab",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "malacca-monthly-budget",
+      "sourceFile": "malacca-monthly-budget.html",
+      "sha256": "14688423198786b25a3a8f88e9b4beb2c98cd81b3f92596721361186e2ece10f",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "remote-visa-income-balance",
+      "sourceFile": "remote-visa-income-balance.html",
+      "sha256": "4386376575dbcb460e1502ca8a2fd71bf8c707f572773e9a4bc5909e1911f753",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "hua-hin-cross-season-thirty-nights",
+      "sourceFile": "hua-hin-cross-season-thirty-nights.html",
+      "sha256": "b5dfd210b8791d19c6fc5ef64051abd71d2813dcaa521d8cd13125fb424b1c45",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "singapore-foreign-card-transit-fee",
+      "sourceFile": "singapore-foreign-card-transit-fee.html",
+      "sha256": "1509f5830a86dbd26ac51c16d621e7a73d9bebd8cc8471e0d0f5b698b4e60fc8",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
     }
   ],
   "assets": [
@@ -1288,6 +1329,56 @@
       "source": "assets/og-editorial-monthly-apartment-utilities.jpeg",
       "destination": "images/og-editorial-monthly-apartment-utilities.jpeg",
       "sha256": "4a60deacac52b50456bd06ac6c53ce2c8a9cd62ae384a685e6448d6ac25da05e"
+    },
+    {
+      "source": "assets/editorial-phuket.webp",
+      "destination": "images/editorial-phuket.webp",
+      "sha256": "c0af0ce641ea4b4f9894c45c50f8604006c18be31ad94855d4a63e6c14755a66"
+    },
+    {
+      "source": "assets/editorial-malacca.webp",
+      "destination": "images/editorial-malacca.webp",
+      "sha256": "a1d249f9861f7e63469efc40d6b70215642c223e1f2f6fb0ba6f8ce034656594"
+    },
+    {
+      "source": "assets/remote-visa-income-balance.webp",
+      "destination": "images/remote-visa-income-balance.webp",
+      "sha256": "2f8a2683c4b388e627b6e80e4f1cb3dce5ae10b2c6ce9e2689705a07c1ca8f3b"
+    },
+    {
+      "source": "assets/hua-hin-cross-season-thirty-nights.webp",
+      "destination": "images/hua-hin-cross-season-thirty-nights.webp",
+      "sha256": "b97337f773cc76e441cb829857beaca5bfc0fb1b5cbc9291c272486d6b570593"
+    },
+    {
+      "source": "assets/singapore-foreign-card-transit-fee.webp",
+      "destination": "images/singapore-foreign-card-transit-fee.webp",
+      "sha256": "05af671bd7b19e0549b8f6165c6b00e3adf99504a64a0bf92c9edfb53ee811f4"
+    },
+    {
+      "source": "assets/og-editorial-phuket-monthly-budget.jpeg",
+      "destination": "images/og-editorial-phuket-monthly-budget.jpeg",
+      "sha256": "0d6a60625d31928499e26706b5968cb1bef9fb368f819122dd8512da99bbbef5"
+    },
+    {
+      "source": "assets/og-editorial-malacca-monthly-budget.jpeg",
+      "destination": "images/og-editorial-malacca-monthly-budget.jpeg",
+      "sha256": "f78ee35fb9d984e0ff081255a6112f503590254afba2c496db0864d32e6e7a6a"
+    },
+    {
+      "source": "assets/og-editorial-remote-visa-income-balance.jpeg",
+      "destination": "images/og-editorial-remote-visa-income-balance.jpeg",
+      "sha256": "b767229900e8474555e0cede254ca23e958a4e051d0527bf5d8571d4faeb37bc"
+    },
+    {
+      "source": "assets/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
+      "destination": "images/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
+      "sha256": "273ceb432097894dbcc03a0f4675c88de583da3c0703f4d07c319700a127b5ce"
+    },
+    {
+      "source": "assets/og-editorial-singapore-foreign-card-transit-fee.jpeg",
+      "destination": "images/og-editorial-singapore-foreign-card-transit-fee.jpeg",
+      "sha256": "a5af7c659aeb5bdf7fe73a5a7e67fbcd29d237966d511fd733737ad571c4512f"
     },
     {
       "source": "budget-model.mjs",
