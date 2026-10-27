@@ -36,7 +36,8 @@ test('selected conditions expose the exact units and scope needed to remove them
 });
 test('network preset changes relative weights, and visa remains an entry filter', () => {
   assert.ok(UI_PRESETS.internet.weights.internet > UI_PRESETS.internet.weights.cost);
-  assert.deepEqual(UI_PRESETS.visa.weights,DEFAULT_WEIGHTS);assert.equal(UI_PRESETS.visa.visa,'visa_free');assert.match(UI_PRESETS.visa.note,/待核验/);
+  const legacy=parseState(new URL('https://nomads.test/?preset=visa'));
+  assert.deepEqual(legacy.weights,DEFAULT_WEIGHTS);assert.equal(legacy.visa,'visa_free','existing shared links remain valid');
 });
 test('view summary names leading priorities while preserving the default metric name', () => {
   const state = parseState(new URL('https://nomads.test/'));assert.equal(viewLabel(state),'综合推荐');

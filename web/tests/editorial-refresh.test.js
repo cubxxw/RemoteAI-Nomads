@@ -85,7 +85,7 @@ test('ranking rows keep every incremental update hook in one shared SSR and dyna
   const list = renderRankingList([{...city(), rank: 1, score: 8.6}], state);
   assert.ok(list.includes(row), 'dynamic rows must reuse the server template');
   assert.match(row, /^<article class="ranking-row" data-city="chiang-mai"/);
-  for (const hook of ['class="rank-number"', 'class="rank-digit"', 'class="rank-score"', '<strong>8.6</strong>', 'class="rank-metric climate-cell"', 'class="metric-mobile-label">7月舒适度', 'class="month-band"', 'class="month-mark', 'class="rank-visa"', 'class="rank-compare" data-compare="chiang-mai" data-name="清迈" aria-label="对比清迈" aria-pressed="false"']) assert.ok(row.includes(hook), 'missing hook: ' + hook);
+  for (const hook of ['class="rank-number"', 'class="rank-digit"', 'class="rank-score"', '<strong>8.6</strong>', 'class="rank-metric climate-cell"', 'class="metric-mobile-label">7月舒适度', 'class="rank-season"', 'data-open-season=', 'class="rank-visa"', 'class="rank-compare" data-compare="chiang-mai" data-name="清迈" aria-label="对比清迈" aria-pressed="false"']) assert.ok(row.includes(hook), 'missing hook: ' + hook);
   assert.match(row, /title="免签资料待复核[^"]*"|title="原资料待复核"|class="legacy-indicator" aria-label="原资料待复核"/);
 });
 

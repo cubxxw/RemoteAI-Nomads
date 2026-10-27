@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {publishedFallback} from '../src/published-fallback.js';
-import {parseState,rankCities,stateParams} from '../public/modules/ranking.js';
+import {parseState,rankCities,stateParams,PRESETS} from '../public/modules/ranking.js';
 import {UI_PRESETS} from '../public/modules/rank-controls.js';
 import worker from '../src/worker.js';
 import {articleBySlug} from '../src/article-catalog.js';
@@ -70,14 +70,17 @@ test('all five seasonal links have the correct first paint, controls and noindex
   return new URL(request.url).pathname.endsWith('manifest.json')?Response.json({version:1,snapshot_date:'2026-10-18',paths:['/','/cities/']}):Response.json(catalog);
  }}};
  for(const key of ['default','budget','internet','visa','safe']){
-  const preset=UI_PRESETS[key],state={...parseState(new URL('https://nomads.example/?month=10&season=2026-10')),...preset};
+  const preset=UI_PRESETS[key] || PRESETS[key],state={...parseState(new URL('https://nomads.example/?month=10&season=2026-10')),...preset};
   const query=stateParams(state).toString(),expected=rankCities(catalog,state).slice(0,5).map(c=>c.slug);
   for(const path of ['/','/cities/']){
    const response=await publishedFallback(new Request('https://nomads.example'+path+'?'+query),env);
    assert.equal(response.status,200);assert.equal(response.headers.get('X-Data-Mode'),'published-snapshot');
    const body=await response.text(),rendered=[...body.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].slice(0,5).map(m=>m[1]);
    assert.deepEqual(rendered,expected,key+' SSR');
-   assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
+   if(key==='visa') {
+    assert.match(body,/data-remove-filter="visa"/);
+    assert.doesNotMatch(body,/data-preset="visa"/);
+   } else assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
    assert.match(body,/data-remove-filter="season"/);assert.match(body,/content="noindex,follow"/);
    assert.doesNotMatch(body,/<p class="rank-season-note" id="rank-season-note" hidden/);
    assert.equal(body.includes('<small>自定义分</small>'),!['default','visa'].includes(key));
@@ -128,7 +131,8 @@ test('stable README preset links render matching rows and selected controls befo
   const response=await publishedFallback(new Request(url),env);assert.equal(response.status,200);
   const body=await response.text(),slugs=[...body.matchAll(/<article class="ranking-row" data-city="([^"]+)"/g)].map(match=>match[1]);
   assert.deepEqual(slugs,expected.map(city=>city.slug));
-  assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
+  if(key==='visa') assert.match(body,/data-remove-filter="visa"/);
+  else assert.match(body,new RegExp('data-preset="'+key+'" class="preset-chip selected" aria-pressed="true"'));
   assert.match(body,/content="noindex,follow"/);
   if(key==='visa')assert.ok(expected.every(city=>city.visa.code==='visa_free'));
   if(key==='winter')assert.equal(state.month,1);

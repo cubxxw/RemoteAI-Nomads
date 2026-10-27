@@ -8,7 +8,8 @@ export const UI_PRESETS = {
   default: { ...PRESETS.default, label: '综合推荐' },
   budget: PRESETS.budget,
   internet: PRESETS.internet,
-  visa: { ...PRESETS.visa, label: '签证友好', note: '大陆护照免签 · 原资料待核验' },
+  // Keep old links and the README builder compatible; entry is no longer a visible sorting preset.
+  visa: {...PRESETS.visa,label:'签证友好',note:'大陆护照免签 · 原资料待核验',filterOnly:true},
   winter: PRESETS.winter,
   safe: PRESETS.safe,
 };
@@ -109,7 +110,7 @@ export function savePreference(state, storage) {
 export function commandItems(data, query = '') {
   const needle = query.normalize('NFKC').trim().toLocaleLowerCase();
   const actions = [
-    ...Object.entries(UI_PRESETS).map(([key,p]) => ({ kind: 'preset', value: key, label: p.label, detail: p.note || '切换排名视角', keywords: key === 'internet' ? '网速 网络 宽带 internet wifi' : key === 'visa' ? '签证 免签 护照 visa' : '' })),
+    ...Object.entries(UI_PRESETS).filter(([,preset])=>!preset.filterOnly).map(([key,p]) => ({ kind: 'preset', value: key, label: p.label, detail: p.note || '切换排名视角', keywords: key === 'internet' ? '网速 网络 宽带 internet wifi' : key === 'visa' ? '签证 免签 护照 visa' : '' })),
     ...quickFilters(parseState(new URL('https://nomads.example/'))).map(filter=>({kind:'quick',value:filter.key,label:filter.label,detail:'快捷筛选'+(filter.detail?' · '+filter.detail:''),keywords:filter.key==='domestic'?'中国 境内 国内':filter.key==='abroad'?'境外 海外 国外':''})),
     ...Object.entries(VISA_LABELS).map(([value,label]) => ({ kind: 'filter', key: 'visa', value, label, detail: '签证筛选 · 原资料待核验', keywords: '签证 护照 visa' })),
     ...['亚洲','欧洲','美洲','非洲','大洋洲'].map(value => ({ kind: 'filter', key: 'region', value, label: value, detail: '按地区筛选' })),
