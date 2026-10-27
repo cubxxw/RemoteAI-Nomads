@@ -1,7 +1,7 @@
 import {SHARE_FORMATS} from './share-model.js';
 import {sitePath} from './site-path.js';
 const FONT='Inter, "PingFang SC", "Noto Sans CJK SC", sans-serif';
-const INK='#183b32',TEXT='#253b35',MUTED='#52635b',PAPER='#fafbf7';
+const INK='#1f1a14',TEXT='#3e3429',MUTED='#6b5d4c',PAPER='#faf8f6';
 export function wrapText(ctx,input,width){
  const lines=[],closing=/[。，、；：！？）】》〉」』〕.,;:!?%]/,opening=/[（【《〈「『〔(\[]/;
  for(const paragraph of String(input).split('\n')){let line='';for(const char of paragraph){if(line&&ctx.measureText(line+char).width>width){const parts=[...line];let carry='';if(closing.test(char)){while(parts.length&&closing.test(parts.at(-1)))carry=parts.pop()+carry;if(parts.length)carry=parts.pop()+carry;}else if(opening.test(parts.at(-1)))carry=parts.pop();if(parts.length){lines.push(parts.join(''));line=carry;}else{lines.push(line);line='';}}line+=char;}lines.push(line);}return lines;
@@ -122,7 +122,7 @@ export async function renderShare(card,formatId='portrait',{signal,textOnly=fals
    for(const block of page.blocks){
     if(block.type==='text'){ctx.fillStyle=block.color;ctx.font=`${block.weight} ${block.size}px ${FONT}`;ctx.fillText(block.text,block.x,block.y);}
     if(block.type==='chip'){ctx.fillStyle='#eee6dc';ctx.beginPath();ctx.roundRect(block.x,block.y,block.width,block.height,21);ctx.fill();ctx.fillStyle=TEXT;ctx.font=`400 26px ${FONT}`;ctx.fillText(block.text,block.x+16,block.y+7);}
-    if(block.type==='rule'){ctx.fillStyle='#cbd4ca';ctx.fillRect(block.x,block.y,block.width,1);}
+    if(block.type==='rule'){ctx.fillStyle='#ded4c9';ctx.fillRect(block.x,block.y,block.width,1);}
     if(block.type==='photo'&&bitmap){const scale=Math.max(block.width/bitmap.width,block.height/bitmap.height),sw=block.width/scale,sh=block.height/scale;ctx.drawImage(bitmap,(bitmap.width-sw)/2,(bitmap.height-sh)/2,sw,sh,block.x,block.y,block.width,block.height);}
     if(block.type==='qr'&&qr){const count=qr.getModuleCount(),module=Math.floor(block.width/(count+8)),size=(count+8)*module;if(module<2)throw Error('分享链接较长，请使用配文中的完整链接。');const x=block.x+Math.floor((block.width-size)/2),y=block.y;ctx.fillStyle='#fff';ctx.fillRect(x,y,size,size);ctx.fillStyle=INK;for(let r=0;r<count;r++)for(let c=0;c<count;c++)if(qr.isDark(r,c))ctx.fillRect(x+(c+4)*module,y+(r+4)*module,module,module);}
    }
