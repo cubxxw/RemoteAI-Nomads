@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "dilijan",
+  "name": "迪利然",
+  "nameEn": "Dilijan",
+  "tagline": "森林中的亚美尼亚山城",
+  "tags": [
+    "森林",
+    "山城",
+    "修道院"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "亚美尼亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "40.74°N / 44.86°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "亚美尼亚东北部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "亚美尼亚语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "亚美尼亚德拉姆 AMD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Yerevan",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "哈加尔钦修道院",
+      "detail": "森林山地中的修道院"
+    },
+    {
+      "title": "迪利然国家公园",
+      "detail": "包围城镇的森林保护区"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "修道院与木石手工艺"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Dilijan（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Dilijan",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

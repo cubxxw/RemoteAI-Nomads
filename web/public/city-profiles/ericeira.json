@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "slug": "ericeira",
+  "name": "埃里塞拉",
+  "nameEn": "Ericeira",
+  "tagline": "葡萄牙 · Ericeira",
+  "tags": [
+    "欧洲",
+    "葡萄牙"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "葡萄牙"
+    },
+    {
+      "label": "地理坐标",
+      "value": "38.96°N / 9.42°W",
+      "note": "目的地代表点；不代表完整行政区或每个地点"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "葡萄牙语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "欧元 EUR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Lisbon",
+      "note": "公开地理数据中的目的地代表点；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "里贝拉迪利亚斯海滩",
+      "detail": "埃里塞拉的冲浪海滩"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "世界冲浪保护区与渔业传统"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Ericeira（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Ericeira",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Open-Meteo 地名检索 · 目的地坐标与时区",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Ericeira&count=5&language=en&format=json",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

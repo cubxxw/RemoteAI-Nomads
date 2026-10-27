@@ -4,6 +4,10 @@ GeoNames： https://www.geonames.org/ ，城市数据 https://download.geonames.
 
 历史气象：Open-Meteo / ECMWF ERA5， https://open-meteo.com/en/docs/historical-weather-api ，CC BY 4.0。改动为2023–2025逐日数据按日历月聚合。UTC日界线，网格重分析，非实测或未来预报。
 
+补充历史气象：NASA POWER / MERRA-2，https://power.larc.nasa.gov/docs/methodology/meteorology/ 。使用2023–2025逐日气温、日高温与降雨，按UTC日历月聚合；来源记录保留实际模型、服务版本和网格信息。0.5°×0.625°网格可能包含周边地形，不代表具体街区；地形差异较大的已补充目的地优先采用ERA5。184城使用ERA5，166城使用MERRA-2，既有158城的气候记录保持原值。
+
+城市分享档案：逐城保存公开来源链接和资料日期，人口等数值保留年份与行政范围。Unicode CLDR用于国家/地区语言及货币参考，https://cldr.unicode.org/ ，许可见public/city-profiles/UNICODE-LICENSE.txt。百科背景保留原页面链接，许可按来源页面说明；公开资料包不包含百科文章全文。
+
 地图：Natural Earth，公共领域， https://www.naturalearthdata.com/about/terms-of-use/ 。本地向量轮廓由 https://github.com/nvkelso/natural-earth-vector 的1:110m数据投影生成，非法律边界声明。
 
 字体：Inter，The Inter Project Authors，SIL OFL 1.1， https://github.com/rsms/inter 。许可随附public/fonts/OFL.txt。中文使用系统字体。

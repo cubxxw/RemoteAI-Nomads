@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "slug": "la-paz",
+  "name": "拉巴斯",
+  "nameEn": "La Paz",
+  "tagline": "安第斯山谷里，街道沿山坡铺开",
+  "tags": [
+    "安第斯山城",
+    "艾马拉文化",
+    "山谷景观"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "玻利维亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "16.50°S / 68.15°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "玻利维亚西部，伊宜马尼雪峰前的安第斯山谷"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "西班牙语、克丘亚语、艾马拉语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "玻利维亚诺 BOB",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/La_Paz",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "Killi Killi 观景台",
+      "detail": "从山坡眺望拉巴斯城区与伊宜马尼雪峰"
+    },
+    {
+      "title": "月亮谷 Valle de la Luna",
+      "detail": "水与风侵蚀黏土，形成尖塔般的谷地景观"
+    }
+  ],
+  "culture": [
+    {
+      "label": "当地吃食",
+      "value": "Chairo 汤，以 chuño 冻干土豆配羊肉或牛肉等食材熬煮"
+    },
+    {
+      "label": "地方传统",
+      "value": "艾马拉文化中的 apacheta 圣地，保留向大地母亲致意的仪式"
+    }
+  ],
+  "sources": [
+    {
+      "title": "拉巴斯市政府 · Chairo Paceño",
+      "url": "https://lapaz.bo/turismo/2025/09/25/chairo-paceno/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "拉巴斯市政府 · 月亮谷",
+      "url": "https://lapaz.bo/turismo/mallasa-valle-de-la-luna/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "拉巴斯市政府 · Periférica",
+      "url": "https://lapaz.bo/turismo/periferica/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

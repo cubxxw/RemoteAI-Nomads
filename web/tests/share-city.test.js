@@ -19,8 +19,8 @@ test('missing city data stays missing while an explicitly recorded zero score st
  assert.equal(cityShare({...city,scores:{internet:null}},10,url).facts[3].value,'待补充');
  assert.equal(cityShare({...city,scores:{internet:''}},10,url).facts[3].value,'待补充');
 });
-test('portrait city poster has aligned 2 by 2 values, a month eyebrow and a compact link footer',()=>{
- const card=cityShare(city,10,url);
+test('legacy city snapshots retain aligned 2 by 2 values, a month eyebrow and a compact link footer',()=>{
+ const card=createShare({...cityShare(city,10,url),cityProfile:null});
  for(const photo of [true,false]){
   const {layout}=prepareShareLayout(ctx,card,SHARE_FORMATS[0],{photo,textOnly:!photo});
   assert.equal(layout.pages.length,1);const blocks=layout.pages[0].blocks;
@@ -45,14 +45,14 @@ test('official travel advisories remain visible even when generic caveats move i
  }
 });
 test('a long visa value keeps both rows aligned without crossing the QR footer',()=>{
- const card=createShare({...cityShare(city,10,url),facts:[{label:'历史月花费',value:'US$450',note:'核对 2026-10-17'},{label:'10月历史均温',value:'21°C',note:'历史气候'},{label:'入境参考',value:'需要提前向使领馆申请并核对停留期',note:'旧标签待复核'},{label:'网络旧评分',value:'8 / 10',note:'需实测'}]});
+ const card=createShare({...cityShare(city,10,url),cityProfile:null,facts:[{label:'历史月花费',value:'US$450',note:'核对 2026-10-17'},{label:'10月历史均温',value:'21°C',note:'历史气候'},{label:'入境参考',value:'需要提前向使领馆申请并核对停留期',note:'旧标签待复核'},{label:'网络旧评分',value:'8 / 10',note:'需实测'}]});
  const blocks=layoutShare(ctx,card,SHARE_FORMATS[0],{photo:true}).pages[0].blocks;
  const values=blocks.filter(b=>b.role==='fact-value');assert.ok(values.length>=4);
  assert.equal(values.find(b=>b.text==='8 / 10').y,values[2].y);
  const qr=blocks.find(b=>b.type==='qr');assert.ok(values.every(b=>b.y+b.height<qr.y));
 });
 test('each separately saved continuation retains the official travel advisory',()=>{
- const card=cityShare({...city,countryCode:'AF',slug:'kabul',name:'喀布尔'},10,url);
+ const card=createShare({...cityShare({...city,countryCode:'AF',slug:'kabul',name:'喀布尔'},10,url),cityProfile:null});
  for(const [format,title] of [[SHARE_FORMATS[3],card.title],[SHARE_FORMATS[0],'长'.repeat(78)]]){
   const layout=layoutShare(ctx,createShare({...card,title}),format);
   assert.ok(layout.pages.length>1);

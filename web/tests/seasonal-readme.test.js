@@ -145,7 +145,7 @@ test('invalid copy leaves the current README untouched',async()=>{
  const {tmpdir}=await import('node:os');const {join}=await import('node:path');
  const directory=await mkdtemp(join(tmpdir(),'nomads-readme-'));
  try{
-  const fixture=join(directory,'edition.json'),bad=clone(edition);bad.city_notes[0].reasons=[{text:'仅供参考',facts:[]}];await writeFile(fixture,JSON.stringify(bad));
+  const fixture=join(directory,'edition.json'),bad=clone(edition);for(const note of bad.city_notes)note.reasons=[{text:'仅供参考',facts:[]}];await writeFile(fixture,JSON.stringify(bad));
   const before=await readFile(new URL('../../README.md',import.meta.url),'utf8');
   await assert.rejects(generateSeasonalReadme({editionPath:fixture}),/没有合格短评/);
   assert.equal(await readFile(new URL('../../README.md',import.meta.url),'utf8'),before);

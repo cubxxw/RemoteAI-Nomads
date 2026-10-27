@@ -80,3 +80,8 @@
 }
 @media(prefers-reduced-motion:reduce){.share-studio::backdrop{backdrop-filter:none}}
 @media print{.site-share,.share-page-toolbar,.share-item-button,.rank-row-share,.share-studio{display:none!important}}
+.share-profile-note{margin:0 0 18px;font-size:14px;line-height:1.65;color:var(--share-muted)}
+.share-studio[data-export-edition] .share-preview-panel{background:#e8e4dd}
+.share-studio .share-preview img{box-shadow:0 12px 36px rgb(31 26 20 / .14)}
+.share-caption textarea{min-height:156px}
+@media(min-width:701px){.share-studio{width:min(1040px,calc(100vw - 48px))}.share-studio-body{grid-template-columns:minmax(0,1.2fr) minmax(320px,1fr)}.share-preview-panel{padding:28px 40px}.share-settings{padding:28px}}

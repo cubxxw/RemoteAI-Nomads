@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "algiers",
+  "name": "阿尔及尔",
+  "nameEn": "Algiers",
+  "tagline": "白色城区沿地中海山坡展开",
+  "tags": [
+    "地中海",
+    "卡斯巴",
+    "山城"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "阿尔及利亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "36.73°N / 3.09°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "阿尔及利亚北部海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "阿拉伯语、法语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "阿尔及利亚第纳尔 DZD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Algiers",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "阿尔及尔卡斯巴",
+      "detail": "山坡上的历史老城"
+    },
+    {
+      "title": "非洲圣母大教堂",
+      "detail": "俯瞰海湾的教堂建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "卡斯巴街巷与阿拉伯安达卢西亚音乐"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Algiers（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Algiers",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

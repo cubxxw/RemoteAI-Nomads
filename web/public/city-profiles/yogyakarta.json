@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "yogyakarta",
+  "name": "日惹",
+  "nameEn": "Yogyakarta",
+  "tagline": "印度尼西亚 · Yogyakarta",
+  "tags": [
+    "亚洲",
+    "印度尼西亚"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "印度尼西亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "7.80°S / 110.36°E",
+      "note": "城市参考点；不代表行政边界"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "印度尼西亚语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "印度尼西亚卢比 IDR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Jakarta",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [],
+  "culture": [],
+  "sources": [
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

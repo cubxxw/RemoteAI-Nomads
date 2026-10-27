@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "slug": "belize-city",
+  "name": "伯利兹城",
+  "nameEn": "Belize City",
+  "tagline": "加勒比海与伯利兹河相接的老港",
+  "tags": [
+    "加勒比",
+    "河口",
+    "克里奥文化"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "伯利兹"
+    },
+    {
+      "label": "地理坐标",
+      "value": "17.50°N / 88.20°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "伯利兹东岸，伯利兹河口"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "伯利兹元 BZD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/Belize",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "伯利兹旋转桥",
+      "detail": "跨越伯利兹河的历史桥梁"
+    },
+    {
+      "title": "圣约翰大教堂",
+      "detail": "城市历史教堂"
+    }
+  ],
+  "culture": [],
+  "sources": [
+    {
+      "title": "维基百科 · Belize City（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Belize_City",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

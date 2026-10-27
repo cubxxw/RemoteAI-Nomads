@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "pristina",
+  "name": "普里什蒂纳",
+  "nameEn": "Pristina",
+  "tagline": "巴尔干高地上的年轻城市",
+  "tags": [
+    "巴尔干",
+    "咖啡馆",
+    "现代建筑"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "科索沃"
+    },
+    {
+      "label": "地理坐标",
+      "value": "42.67°N / 21.17°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "科索沃东北部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "阿尔巴尼亚语、塞尔维亚语、塞尔维亚语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "欧元 EUR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Belgrade",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "科索沃国家图书馆",
+      "detail": "以独特造型著称的公共建筑"
+    },
+    {
+      "title": "新生纪念碑",
+      "detail": "城市中心的字母雕塑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "咖啡馆与当代城市文化"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Pristina（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Pristina",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/codeMappings.json",
+      "date": "2026-10-17"
+    }
+  ]
+}

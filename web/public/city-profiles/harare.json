@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "harare",
+  "name": "哈拉雷",
+  "nameEn": "Harare",
+  "tagline": "津巴布韦高原上的花园城市",
+  "tags": [
+    "高原",
+    "花园",
+    "艺术"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "津巴布韦"
+    },
+    {
+      "label": "地理坐标",
+      "value": "17.83°S / 31.05°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "津巴布韦东北部高原"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "绍纳语、英语、北恩德贝勒语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "津巴布韦金元 ZWG / 美元 USD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Harare",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "津巴布韦国家美术馆",
+      "detail": "展示当地视觉艺术的公共美术馆"
+    },
+    {
+      "title": "哈拉雷花园",
+      "detail": "市中心的公共花园"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "津巴布韦石雕与视觉艺术"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Harare（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Harare",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

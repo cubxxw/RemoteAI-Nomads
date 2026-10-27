@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "minsk",
+  "name": "明斯克",
+  "nameEn": "Minsk",
+  "tagline": "斯维斯洛奇河畔的宽阔街道",
+  "tags": [
+    "河畔",
+    "广场",
+    "东欧"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "白俄罗斯"
+    },
+    {
+      "label": "地理坐标",
+      "value": "53.90°N / 27.57°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "白俄罗斯中部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "俄语、白俄罗斯语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "白俄罗斯卢布 BYN",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Minsk",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "独立广场",
+      "detail": "明斯克市中心的公共广场"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "战争记忆与战后重建建筑"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Minsk（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Minsk",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

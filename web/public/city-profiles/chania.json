@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "chania",
+  "name": "哈尼亚（克里特）",
+  "nameEn": "Chania",
+  "tagline": "威尼斯港口环着克里特老城",
+  "tags": [
+    "克里特",
+    "老港口",
+    "海滨"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "希腊"
+    },
+    {
+      "label": "地理坐标",
+      "value": "35.51°N / 24.03°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "希腊克里特岛西北海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "希腊语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "欧元 EUR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Athens",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "哈尼亚灯塔",
+      "detail": "老港口尽头的历史灯塔"
+    },
+    {
+      "title": "威尼斯港",
+      "detail": "老城滨海生活的中心"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "威尼斯与奥斯曼建筑遗存"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Chania（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Chania",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

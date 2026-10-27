@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "antananarivo",
+  "name": "塔那那利佛",
+  "nameEn": "Antananarivo",
+  "tagline": "高地山丘上的马达加斯加首都",
+  "tags": [
+    "高地",
+    "王宫",
+    "马拉加西文化"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "马达加斯加"
+    },
+    {
+      "label": "地理坐标",
+      "value": "18.91°S / 47.54°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "马达加斯加中部高原"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "马拉加斯语、法语、英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "马达加斯加阿里亚里 MGA",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Indian/Antananarivo",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "安塔那那利佛王宫",
+      "detail": "高丘上的王宫历史区"
+    },
+    {
+      "title": "安纳拉凯利市场",
+      "detail": "市中心的传统商业街区"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "梅里纳王国历史"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Antananarivo（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Antananarivo",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

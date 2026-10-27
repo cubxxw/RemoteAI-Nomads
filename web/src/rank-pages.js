@@ -58,16 +58,19 @@ async function readRankings(env) {
     ),
     rows(
       env.DB,
-      `SELECT m.city_id,m.month,m.mean_c,m.high_c,m.rain_mm FROM city_climate_months m JOIN cities c ON c.id=m.city_id ${where}`,
+      `SELECT m.city_id,m.month,m.mean_c,m.high_c,m.rain_mm,m.model FROM city_climate_months m JOIN cities c ON c.id=m.city_id ${where}`,
     ),
   ]);
   const monthly = new Map(),
-    weather = new Map();
+    weather = new Map(), climateModels = new Map();
   for (const m of months) {
     if (!monthly.has(m.city_id)) monthly.set(m.city_id, []);
     monthly.get(m.city_id).push(m);
   }
-  for (const m of climate) weather.set(m.city_id + ":" + m.month, m);
+  for (const m of climate) {
+    weather.set(m.city_id + ":" + m.month, m);
+    if(m.model){if(!climateModels.has(m.city_id))climateModels.set(m.city_id,new Set());climateModels.get(m.city_id).add(m.model);}
+  }
   return base.map((c) => enrichCommunity({
     slug: c.slug,
     name: c.name_zh,
@@ -90,6 +93,7 @@ async function readRankings(env) {
     lat: c.latitude,
     lon: c.longitude,
     timeZone: c.timezone,
+    climateModels: [...(climateModels.get(c.id) || [])],
     months: Array.from({ length: 12 }, (_, i) => {
       const m = monthly.get(c.id)?.find((x) => x.month === i + 1);
       const t = weather.get(c.id + ":" + (i + 1));

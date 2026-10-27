@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "luxembourg",
+  "name": "卢森堡市",
+  "nameEn": "Luxembourg",
+  "tagline": "峡谷与高地相间的卢森堡老城",
+  "tags": [
+    "峡谷",
+    "堡垒",
+    "老城"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "卢森堡"
+    },
+    {
+      "label": "地理坐标",
+      "value": "49.61°N / 6.13°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "卢森堡南部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语、卢森堡语、德语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "欧元 EUR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Luxembourg",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "博克要塞",
+      "detail": "高地上的历史防御遗址"
+    },
+    {
+      "title": "阿道夫桥",
+      "detail": "跨越佩特吕斯河谷的石拱桥"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "堡垒遗址与多语城市生活"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Luxembourg City（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Luxembourg_City",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

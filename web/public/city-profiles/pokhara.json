@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokhara",
+  "name": "博卡拉",
+  "nameEn": "Pokhara",
+  "tagline": "费瓦湖畔，抬头是安纳普尔纳群峰",
+  "tags": [
+    "喜马拉雅山麓",
+    "湖畔",
+    "徒步门户"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "尼泊尔"
+    },
+    {
+      "label": "地理坐标",
+      "value": "28.27°N / 83.97°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "尼泊尔中部，安纳普尔纳山麓的博卡拉谷地"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "尼泊尔语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "尼泊尔卢比 NPR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Kathmandu",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    },
+    {
+      "label": "人口",
+      "value": "约 51.35 万",
+      "note": "2021 年人口普查；博卡拉大都市行政区，含城郊 33 个 ward；不等同于湖滨城区"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "费瓦湖 Phewa Lake",
+      "detail": "湖面映着鱼尾峰，湖滨是博卡拉的日常风景"
+    },
+    {
+      "title": "世界和平塔",
+      "detail": "费瓦湖南侧山丘上的佛塔，可眺望安纳普尔纳群峰"
+    }
+  ],
+  "culture": [
+    {
+      "label": "地方生活",
+      "value": "古老印藏商路上的山地城市，周边保留古隆族和马嘉族文化"
+    },
+    {
+      "label": "当地吃食",
+      "value": "达尔巴特（米饭配扁豆汤）与莫莫饺子"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pokhara Tourism Council · Food and Cuisine",
+      "url": "https://pokharatourism.org.np/food-and-cuisine/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "尼泊尔旅游局 · 世界和平塔",
+      "url": "https://ntb.gov.np/en/world-peace-pagoda",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "博卡拉市政府 · 大都市行政区概况",
+      "url": "https://newebps.pokharamun.gov.np/Hom/detail/2",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "尼泊尔旅游局 · 博卡拉",
+      "url": "https://ntb.gov.np/en/pokhara",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "antigua",
+  "name": "安提瓜（危地马拉）",
+  "nameEn": "Antigua",
+  "tagline": "火山脚下的危地马拉石板街",
+  "tags": [
+    "火山",
+    "殖民街区",
+    "石板路"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "危地马拉"
+    },
+    {
+      "label": "地理坐标",
+      "value": "14.56°N / 90.73°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "危地马拉南部高地"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "西班牙语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "危地马拉格查尔 GTQ",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/Guatemala",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "拉梅尔塞德教堂",
+      "detail": "旧城中的巴洛克宗教建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "圣周游行与街道地毯"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Antigua Guatemala（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Antigua_Guatemala",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

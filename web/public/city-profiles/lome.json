@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "lome",
+  "name": "洛美",
+  "nameEn": "Lome",
+  "tagline": "几内亚湾边的多哥市场城",
+  "tags": [
+    "海岸",
+    "市场",
+    "西非"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "多哥"
+    },
+    {
+      "label": "地理坐标",
+      "value": "6.13°N / 1.22°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "多哥西南部几内亚湾沿岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "西非法郎 XOF",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Lome",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "洛美大市场",
+      "detail": "城市商业与日常生活的中心"
+    },
+    {
+      "title": "独立纪念碑",
+      "detail": "纪念多哥独立的公共地标"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "市场与本地手工艺"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Lomé（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Lom%C3%A9",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

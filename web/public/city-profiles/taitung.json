@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "taitung",
+  "name": "台东",
+  "nameEn": "Taitung",
+  "tagline": "山海之间，东台湾的慢节奏",
+  "tags": [
+    "东海岸",
+    "原住民文化",
+    "山海"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "台湾"
+    },
+    {
+      "label": "地理坐标",
+      "value": "22.76°N / 121.14°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "台湾东南部太平洋沿岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "繁体中文、闽南语、客家语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "新台币 TWD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Taipei",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "台东森林公园",
+      "detail": "城边的森林与湖泊空间"
+    },
+    {
+      "title": "铁花村",
+      "detail": "由铁路空间发展而来的文化街区"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "台湾原住民音乐与文化"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Taitung City（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Taitung_City",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/codeMappings.json",
+      "date": "2026-10-17"
+    }
+  ]
+}
