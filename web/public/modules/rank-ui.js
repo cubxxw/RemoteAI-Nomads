@@ -1,4 +1,5 @@
 import {openShare} from './share-ui.js';
+import {initRankingPresentation} from './ranking-presentation.js';
 import {rankingShare,cityShare} from './share-model.js';
 import {withPlanMonth} from './trip-state.js';
 import {sitePath} from './site-path.js';
@@ -26,6 +27,7 @@ const data = unpackRankingData(
   JSON.parse(document.querySelector("#ranking-data").textContent),
 );
 const preferenceStorage = { getItem: key => localStorage.getItem(key), setItem: (key,value) => localStorage.setItem(key,value), removeItem: key => localStorage.removeItem(key) };
+initRankingPresentation(root, preferenceStorage);
 let state = restorePreference(new URL(location.href), preferenceStorage),
   ranked = [],
   frame = 0,
@@ -272,9 +274,7 @@ function renderWeightPreview() {
   if (!leading.length) { const item=document.createElement('li');item.textContent='当前条件下暂无可排序的城市';container.append(item); }
 }
 function syncControls(editingBudget=false) {
-  // A carried condition compresses the editorial hero so results move up.
-  const hero = root.querySelector('[data-hero]');
-  if (hero) hero.dataset.compact = String(!!stateParams({...state,limit:40}).toString());
+  // The introduction is fixed before first paint, not by subsequent filters.
   const seasonNote = document.querySelector('#rank-season-note');if (seasonNote) seasonNote.hidden = state.season !== SEASONAL_VIEW.id;
   for (const filter of quickFilters(state)) { const button=root.querySelector(`[data-quick-filter="${filter.key}"]`);button.classList.toggle('selected',filter.selected);button.setAttribute('aria-pressed',String(filter.selected));if(filter.detail)button.querySelector('span').textContent=filter.detail; }
   renderWeightPreview();
@@ -583,3 +583,5 @@ try {
 document.querySelectorAll('[data-ranking-controls]').forEach(controls=>{controls.inert=false;controls.removeAttribute('aria-busy');});
 document.querySelectorAll('[data-ranking-wait-control]').forEach(control=>{control.disabled=false;});
 const readiness=document.querySelector('[data-ranking-readiness]');if(readiness)readiness.hidden=true;
+document.documentElement.removeAttribute('data-ranking-restoring');
+try { preferenceStorage.setItem('nomads-ranking-visited-v1', 'true'); } catch {}

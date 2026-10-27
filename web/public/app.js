@@ -227,6 +227,7 @@ update();
 if (document.querySelector("#ranking-root"))
   import("./modules/rank-ui.js").catch(error => {
     console.error('Ranking initialization failed',error);
+    document.documentElement.removeAttribute('data-ranking-restoring');
     document.querySelectorAll('[data-ranking-controls]').forEach(controls=>{
       controls.querySelectorAll('button,input,select').forEach(control=>{control.disabled=true;});
       controls.inert=false;controls.removeAttribute('aria-busy');

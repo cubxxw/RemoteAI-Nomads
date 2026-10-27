@@ -68,7 +68,7 @@ assert.ok(actualRankRejection,'locate actual ranking-import rejection callback')
 const savedPlan=()=>({version:1,month:11,days:30,currency:'CNY',ceiling:{amount:8000},values:{rent:{amount:3000,origin:'edited'},food:{amount:100,origin:'edited'},transport:{amount:400,origin:'reference'},mobile:{amount:100,origin:'edited'},other:{amount:500,origin:'edited'}}});
 function install(t,root,records,{readDenied=false,writeDenied=false,onRead=()=>{}}={}){
   const previous=new Map(['document','localStorage','addEventListener'].map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)])),events=new Map();
-  globalThis.document={querySelector:s=>root.querySelector(s),querySelectorAll:s=>root.querySelectorAll(s),getElementById:id=>root.querySelector('#'+id),createElement:tag=>new Element(tag)};
+  globalThis.document={documentElement:new Element('html'),querySelector:s=>root.querySelector(s),querySelectorAll:s=>root.querySelectorAll(s),getElementById:id=>root.querySelector('#'+id),createElement:tag=>new Element(tag)};
   globalThis.localStorage={getItem(key){onRead();if(readDenied)throw new Error('storage read denied');return records.get(key)??null;},setItem(key,value){if(writeDenied)throw new Error('storage write denied');records.set(key,value);}};
   globalThis.addEventListener=(type,fn)=>events.set(type,fn);
   t.after(()=>{for(const [key,descriptor]of previous)descriptor?Object.defineProperty(globalThis,key,descriptor):delete globalThis[key];});
@@ -88,7 +88,8 @@ function rankingFixture(t,{enforcePending=true}={}){
   const root=parseHTML(rankingPageFromData([rankCity],new URL('https://nomads.test/')).body);
   const controls=[...root.querySelectorAll('[data-quick-filter]'),...root.querySelectorAll('[data-preset]'),...['rank-search','toggle-filters','weights-toggle','view-sort','open-command','toggle-map','share-ranking'].map(id=>root.querySelector('#'+id)),...root.querySelectorAll('[data-reset-all]')];
   const records=new Map([['nomads-ranking-view-v1',JSON.stringify({version:1,query:'q=%E5%A4%A7%E7%90%86&month=11&w=20,60,5,5,5,5'})],['nomads-trip-month-v1','11']]);
-  install(t,root,records);const phases=[],notifications=[],errors=[],location={origin:'https://nomads.test',pathname:'/',search:''};
+  install(t,root,records);globalThis.document.documentElement.setAttribute('data-ranking-restoring','true');
+  const phases=[],notifications=[],errors=[],location={origin:'https://nomads.test',pathname:'/',search:''};
   const pending=()=>{if(enforcePending)assert.ok(controls.every(c=>c.blocked),'ranking controls must remain gated through preference commit, render and desktop setup');};
   const history={replaceState(_state,_title,value){pending();phases.push('commit');const url=new URL(value,location.origin);location.search=url.search;},pushState(_state,_title,value){const url=new URL(value,location.origin);location.search=url.search;}};
   const state=restorePreference(new URL('https://nomads.test/'),globalThis.localStorage);
@@ -195,6 +196,7 @@ test('actual rank boot releases controls after saved-view restoration without op
   assert.equal(h.context.state.q,'大理');assert.equal(h.context.state.month,11);
   assert.match(h.context.location.search,/q=%E5%A4%A7%E7%90%86/);
   assert.equal(h.root.querySelector('.rank-city-link').blocked,false);
+  assert.equal(globalThis.document.documentElement.hasAttribute('data-ranking-restoring'),false,'ready results must be revealed');
 });
 
 test('an explicitly saved desktop map opens before ranking controls are released',t=>{
@@ -221,6 +223,7 @@ test('actual ranking import failure disables controls with clear feedback while 
   assert.equal(h.errors[0]?.[1],failure,'preserve the original exception for diagnosis');
   assert.equal(h.controls.every(c=>c.disabled),true,'failed controls must be explicitly disabled rather than silently active');
   assert.equal(h.controls.some(c=>c.closest('[inert]')),false,'clear loading inertness so unavailable controls and feedback are exposed');
+  assert.equal(globalThis.document.documentElement.hasAttribute('data-ranking-restoring'),false,'failed imports must reveal the public fallback');
   assert.match(h.notifications.join(' '),/未载入|不可用|刷新/);
   assert.equal(h.root.querySelector('.rank-city-link').blocked,false);
   assert.ok(h.root.querySelectorAll('a').some(node=>node.href==='/about/'&&!node.blocked));
