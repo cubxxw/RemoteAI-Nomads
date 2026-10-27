@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "thimphu",
+  "name": "廷布",
+  "nameEn": "Thimphu",
+  "tagline": "喜马拉雅山谷里的不丹首都",
+  "tags": [
+    "山谷",
+    "宗堡",
+    "不丹"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "不丹"
+    },
+    {
+      "label": "地理坐标",
+      "value": "27.47°N / 89.64°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "不丹西部旺河谷"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "宗卡语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "不丹努尔特鲁姆 BTN / 印度卢比 INR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Thimphu",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "扎西却宗",
+      "detail": "河谷中的宗堡建筑"
+    },
+    {
+      "title": "多登玛大佛",
+      "detail": "山坡上的佛像与景观地标"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "廷布策秋节"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Thimphu（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Thimphu",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

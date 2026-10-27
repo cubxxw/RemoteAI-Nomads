@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "london",
+  "name": "伦敦",
+  "nameEn": "London",
+  "tagline": "泰晤士河串起伦敦的年代",
+  "tags": [
+    "泰晤士河",
+    "博物馆",
+    "剧场"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "英国"
+    },
+    {
+      "label": "地理坐标",
+      "value": "51.51°N / 0.13°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "英国英格兰东南部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "英镑 GBP",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/London",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "伦敦塔",
+      "detail": "泰晤士河北岸的历史城堡"
+    },
+    {
+      "title": "大英博物馆",
+      "detail": "收藏多文明历史文物的博物馆"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "西区剧院与多元饮食"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · London（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/London",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

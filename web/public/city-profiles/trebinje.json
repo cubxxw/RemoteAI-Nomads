@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "trebinje",
+  "name": "特雷比涅",
+  "nameEn": "Trebinje",
+  "tagline": "特雷比什尼察河边的石城",
+  "tags": [
+    "石桥",
+    "河畔",
+    "黑塞哥维那"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "波斯尼亚和黑塞哥维那"
+    },
+    {
+      "label": "地理坐标",
+      "value": "42.71°N / 18.34°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "波黑南部，特雷比什尼察河畔"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "波斯尼亚语、波斯尼亚语、克罗地亚语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "波斯尼亚-黑塞哥维那可兑换马克 BAM",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Sarajevo",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "阿尔斯拉纳吉奇桥",
+      "detail": "奥斯曼时期的石桥"
+    },
+    {
+      "title": "赫尔采格教堂",
+      "detail": "俯瞰城市的东正教堂"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "老城与石砌建筑"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Trebinje（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Trebinje",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "penang",
+  "name": "槟城",
+  "nameEn": "Penang",
+  "tagline": "乔治市街巷里的多元槟城",
+  "tags": [
+    "世遗街区",
+    "海岛",
+    "街头饮食"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "马来西亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "5.41°N / 100.34°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "马来半岛西北海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "马来语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "马来西亚林吉特 MYR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Kuala_Lumpur",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "极乐寺",
+      "detail": "亚依淡的山麓佛寺"
+    },
+    {
+      "title": "康华利斯堡",
+      "detail": "乔治市海边的历史堡垒"
+    }
+  ],
+  "culture": [
+    {
+      "label": "当地吃食",
+      "value": "Char kway teow，炒粿条"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Penang（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Penang",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

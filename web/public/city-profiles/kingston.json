@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "kingston",
+  "name": "金斯敦",
+  "nameEn": "Kingston",
+  "tagline": "蓝山脚下，雷鬼乐传向海港",
+  "tags": [
+    "雷鬼乐",
+    "蓝山",
+    "海港"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "牙买加"
+    },
+    {
+      "label": "地理坐标",
+      "value": "18.00°N / 76.79°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "牙买加东南海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "牙买加元 JMD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/Jamaica",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "鲍勃·马利博物馆",
+      "detail": "音乐家故居改建的博物馆"
+    },
+    {
+      "title": "德文大宅",
+      "detail": "保存历史住宅的文化场所"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "雷鬼乐与牙买加音乐"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Kingston, Jamaica（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Kingston%2C_Jamaica",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

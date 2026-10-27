@@ -63,3 +63,5 @@ venv/
 # Python guide validation
 __pycache__/
 *.py[cod]
+# Local source-research caches and browser evidence are not public assets.
+/.data/

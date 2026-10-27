@@ -22,7 +22,7 @@ const withFreshRoot = async callback => {
 test('the distributed seed is bounded, checksummed, and contains only reviewed public rows', () => {
   assert.ok(compressed.length < 1024 * 1024);
   assert.equal(seed.version, 1);
-  assert.equal(seed.snapshot_date, '2026-10-18');
+  assert.equal(seed.snapshot_date, '2026-10-27');
   assert.equal(seed.publication.private_notes_exported, 0);
   assert.equal(seed.publication.notion_page_identifiers_exported, 0);
   assert.deepEqual(seed.tables.map(table => table.name), PUBLIC_TABLES);

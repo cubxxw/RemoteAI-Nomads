@@ -66,13 +66,12 @@ test('city search descriptions identify the place and distinguish observed data 
   assert.ok(completeMeta.includes('按月份查看历史气候'));
   const sparse = db.prepare(`SELECT c.slug,c.name_zh FROM cities c
     WHERE NOT EXISTS (SELECT 1 FROM cost_observations o WHERE o.city_id=c.id AND o.scope='city')
-      AND NOT EXISTS (SELECT 1 FROM city_climate_months m WHERE m.city_id=c.id AND m.mean_c IS NOT NULL)
       AND c.country_id NOT IN ('AF','IR','SY','ML','SO','SD','LY') LIMIT 1`).get();
   const response = await worker.fetch(new Request(origin + '/cities/' + sparse.slug + '/'), env, context);
   const sparseMeta = (await response.text()).match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(sparseMeta.includes(sparse.name_zh));
   assert.ok(sparseMeta.includes('城市消费样本待补充'));
-  assert.ok(sparseMeta.includes('逐月历史气候待补充'));
+  assert.ok(sparseMeta.includes('按月份查看历史气候'),'climate completion must not imply missing cost samples also lack climate');
   const advisory = await worker.fetch(new Request(origin + '/cities/damascus/'), env, context);
   const advisoryMeta = (await advisory.text()).match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(advisoryMeta.includes('大马士革'));

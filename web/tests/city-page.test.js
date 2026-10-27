@@ -14,6 +14,13 @@ const city = {
   costs:{observations:[{scope:'national',label:'消费支出',field:'total_consumption',category:'total',amount:173042,currency:'JPY',period:'month',unit:'month',household_size:1,conversion:{amount:7700,currency:'CNY'},observed_at:'2025-12-31'}],sources:[],fx:{USD:{rate:6.68,date:'2026-10-16'},JPY:{rate:0.0445,date:'2026-10-16'}},limitations:[]},
 };
 
+test('city climate sources describe their stored reanalysis model rather than assuming ERA5',()=>{
+  const page=renderCityPage({...city,climate:[{month:10,mean_c:18,high_c:24,rain_mm:30,model:'MERRA-2',source_url:'https://power.larc.nasa.gov/docs/methodology/meteorology/',checked_at:'2026-10-27'}]},{},{date:'2026-10-27'}).body;
+  assert.match(page,/NASA POWER/);
+  assert.match(page,/MERRA-2/);
+  assert.doesNotMatch(page,/图中是ERA5/);
+});
+
 test('sparse city search titles only promise supported data and a usable meeting converter',()=>{
   const sparse=renderCityPage(city,{},{date:'2026-10-27'});
   assert.equal(sparse.title,'测试城市旅居资料：会议时差与入境参考');

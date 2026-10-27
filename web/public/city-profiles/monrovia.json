@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "monrovia",
+  "name": "蒙罗维亚",
+  "nameEn": "Monrovia",
+  "tagline": "梅苏拉多岬角上的利比里亚首都",
+  "tags": [
+    "大西洋",
+    "岬角",
+    "港口"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "利比里亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "6.30°N / 10.80°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "利比里亚大西洋海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "利比里亚元 LRD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Monrovia",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "利比里亚国家博物馆",
+      "detail": "展示国家历史的博物馆"
+    },
+    {
+      "title": "杜科尔酒店旧址",
+      "detail": "梅苏拉多岬角上的历史建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "利比里亚历史与海港生活"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Monrovia（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Monrovia",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "quanzhou",
+  "name": "泉州",
+  "nameEn": "Quanzhou",
+  "tagline": "古港街巷里，宗教建筑并立",
+  "tags": [
+    "海丝古港",
+    "多元宗教",
+    "闽南"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "中国"
+    },
+    {
+      "label": "地理坐标",
+      "value": "24.91°N / 118.59°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "中国福建东南沿海"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "中文",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "人民币 CNY",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Shanghai",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "开元寺",
+      "detail": "西街一带的历史佛寺"
+    },
+    {
+      "title": "清净寺",
+      "detail": "古港多元信仰的历史见证"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "南音与闽南传统"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Quanzhou（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Quanzhou",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

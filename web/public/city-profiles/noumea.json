@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "noumea",
+  "name": "努美阿",
+  "nameEn": "Noumea",
+  "tagline": "潟湖环绕的新喀里多尼亚港城",
+  "tags": [
+    "潟湖",
+    "太平洋",
+    "卡纳克文化"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "新喀里多尼亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "22.27°S / 166.45°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "新喀里多尼亚主岛西南"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "太平洋法郎 XPF",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Pacific/Noumea",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "吉巴乌文化中心",
+      "detail": "展示卡纳克文化的建筑群"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "卡纳克文化与太平洋生活"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Nouméa（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Noum%C3%A9a",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

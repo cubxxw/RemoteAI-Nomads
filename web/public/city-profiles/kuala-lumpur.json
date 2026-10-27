@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "kuala-lumpur",
+  "name": "吉隆坡",
+  "nameEn": "Kuala Lumpur",
+  "tagline": "清真寺与摩天楼之间的吉隆坡",
+  "tags": [
+    "多元饮食",
+    "双子塔",
+    "都市"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "马来西亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "3.14°N / 101.69°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "马来半岛中西部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "马来语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "马来西亚林吉特 MYR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Kuala_Lumpur",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "双子塔",
+      "detail": "吉隆坡天际线的标志"
+    },
+    {
+      "title": "独立广场",
+      "detail": "历史建筑围合的城市广场"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "马来、华人和印度社群共同塑造城市"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Kuala Lumpur（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

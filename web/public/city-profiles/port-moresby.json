@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "slug": "port-moresby",
+  "name": "莫尔兹比港",
+  "nameEn": "Port Moresby",
+  "tagline": "珊瑚海岸的巴布亚新几内亚首都",
+  "tags": [
+    "珊瑚海",
+    "港湾",
+    "太平洋"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "巴布亚新几内亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "9.48°S / 147.15°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "新几内亚岛东南海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "托克皮辛语、英语、希里莫图语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "巴布亚新几内亚基那 PGK",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Pacific/Port_Moresby",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "巴布亚新几内亚国家博物馆",
+      "detail": "展示该国文化与历史的博物馆"
+    },
+    {
+      "title": "伊拉海滩",
+      "detail": "市区面海的公共海滩"
+    }
+  ],
+  "culture": [],
+  "sources": [
+    {
+      "title": "维基百科 · Port Moresby（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Port_Moresby",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

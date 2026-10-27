@@ -3,3 +3,6 @@
 
 /city-guides/*
   X-Robots-Tag: noindex, nofollow
+
+/city-profiles/*
+  X-Robots-Tag: noindex, nofollow

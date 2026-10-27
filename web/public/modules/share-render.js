@@ -6,7 +6,105 @@ export function wrapText(ctx,input,width){
  const lines=[],closing=/[。，、；：！？）】》〉」』〕.,;:!?%]/,opening=/[（【《〈「『〔(\[]/;
  for(const paragraph of String(input).split('\n')){let line='';for(const char of paragraph){if(line&&ctx.measureText(line+char).width>width){const parts=[...line];let carry='';if(closing.test(char)){while(parts.length&&closing.test(parts.at(-1)))carry=parts.pop()+carry;if(parts.length)carry=parts.pop()+carry;}else if(opening.test(parts.at(-1)))carry=parts.pop();if(parts.length){lines.push(parts.join(''));line=carry;}else{lines.push(line);line='';}}line+=char;}lines.push(line);}return lines;
 }
+function layoutCityProfile(ctx,card,format,{photo=false,qrSize:requestedQR,heroHeight:fitHeroHeight}={}){
+ const {width:w,height:h}=format,wide=w>h,margin=wide?48:52,width=w-margin*2,profile=card.cityProfile,qrSize=requestedQR||(wide?138:152);
+ const pages=[];let page,y;
+ const font=(size,weight=400)=>ctx.font=`${weight} ${size}px ${FONT}`;
+ const measure=(value,available,size,weight=400)=>{font(size,weight);return wrapText(ctx,value,available);};
+ const height=(value,available,size,weight=400)=>measure(value,available,size,weight).length*Math.ceil(size*1.3);
+ const advisory=(card.advisories||[]).join(' '),footerTextWidth=width-qrSize-26;
+ const footerText=advisory||'城市资料与历史旅居参考；完整口径、来源及照片署名见配文。';
+ const footerLines=measure(footerText,footerTextWidth,wide?18:20),footerHeight=Math.max(qrSize+22,footerLines.length*(wide?24:27)+106),footerY=h-margin-footerHeight,bottom=footerY-20;
+ if(footerTextWidth<120||bottom<170)throw Error('分享链接较长，请使用配文中的完整链接。');
+ const line=(value,x,top,available,size=26,weight=400,color=TEXT,role='profile-detail')=>{
+  for(const text of measure(value,available,size,weight)){page.blocks.push({type:'text',text,x,y:top,width:available,height:Math.ceil(size*1.3),size,weight,color,role});top+=Math.ceil(size*1.3);}return top;
+ };
+ function start(first=false){
+  page={blocks:[]};pages.push(page);
+  page.blocks.push({type:'text',text:'roamorrow',x:margin,y:32,width:340,height:38,size:28,weight:600,color:INK});
+  page.blocks.push({type:'text',text:(card.month?card.month+'月 / ':'')+'城市手记',x:w-margin-320,y:36,width:320,height:32,size:23,weight:400,color:MUTED,align:'right'});
+  y=88;
+  if(first&&photo){const heroHeight=fitHeroHeight||(wide?Math.min(174,Math.round(h*.23)):Math.min(400,Math.round(h*.237)));if(y+heroHeight+18+height(card.title,width,wide?46:62,500)<bottom){page.blocks.push({type:'photo',role:'city-hero',x:margin,y,width,height:heroHeight});y+=heroHeight+18;}}
+  const titleSize=first?(wide?46:62):wide?32:38,title=card.title+(first?'':' / 续');
+  const titleHeight=height(title,width,titleSize,500);
+  if(y+titleHeight>bottom)throw Error('标题较长，请在“调整图片文字”中缩短图片标题。');
+  y=line(title,margin,y,width,titleSize,500,INK,'city-title');
+  if(first){const nameEn=profile.nameEn||card.subtitle.split(' / ')[0];if(nameEn){if(y+height(nameEn,width,24)+8>bottom)start();y=line(nameEn,margin,y+4,width,24,400,MUTED,'city-name-en')+7;}}
+  else y+=18;
+ }
+ function ensure(required){
+  if(y+required>bottom){
+   const heading=page.blocks.at(-1)?.role==='profile-section'?page.blocks.at(-1):null;
+   if(heading)page.blocks.splice(-2);
+   start();
+   if(heading){page.blocks.push({type:'rule',x:margin,y:y+2,width,height:1});y+=12;page.blocks.push({...heading,y});y+=heading.height+6;}
+  }
+  return y+required<=bottom;
+ }
+ function flow(value,{size=25,weight=400,color=TEXT,role='profile-detail',gap=10}={}){
+  if(!value)return;
+  for(const text of measure(value,width,size,weight)){const lineHeight=Math.ceil(size*1.3);if(!ensure(lineHeight))throw Error('标题较长，请缩短标题后再生成。');page.blocks.push({type:'text',text,x:margin,y,width,height:lineHeight,size,weight,color,role});y+=lineHeight;}y+=gap;
+ }
+ function section(title){ensure(70);page.blocks.push({type:'rule',x:margin,y:y+2,width,height:1});y+=12;flow(title,{size:20,weight:500,color:MUTED,role:'profile-section',gap:6});}
+ function paired(rows,{columns=2,labelSize=23,valueSize=25,noteSize=21,landmark=false}={}){
+  const gap=landmark?30:48,cols=wide?2:columns,cw=(width-(cols-1)*gap)/cols;
+  for(let offset=0;offset<rows.length;offset+=cols){
+   const group=rows.slice(offset,offset+cols),valueSizes=group.map(row=>{
+    if(landmark)return valueSize;
+    let size=valueSize;const measuredWidth=()=>{font(size,500);const metrics=ctx.measureText(row.value);return Math.max(metrics.width,(metrics.actualBoundingBoxLeft||0)+(metrics.actualBoundingBoxRight||0));};
+    while(size>30&&measuredWidth()>cw-10)size--;return size;
+   });
+   const longNotes=group.filter(row=>!landmark&&row.note&&measure(row.note,cw,noteSize).length>2),scopeSize=Math.max(20,noteSize),scopeNotes=longNotes.map(row=>({text:row.label+'口径  /  '+row.note}));
+   const labelHeight=Math.max(...group.map(row=>height(row.label||row.title,cw,labelSize,landmark?500:400))),valueHeight=Math.max(...group.map((row,index)=>height(row.value||row.detail,cw,valueSizes[index],landmark?400:500))),noteHeight=Math.max(0,...group.map(row=>row.note&&!longNotes.includes(row)?height(row.note,cw,noteSize):0)),scopeHeight=scopeNotes.reduce((sum,row)=>sum+height(row.text,width,scopeSize)+4,0),required=labelHeight+6+valueHeight+(noteHeight?7+noteHeight:0)+(scopeHeight?10+scopeHeight:0)+12;
+   if(!ensure(required)){
+    for(const row of group){flow(row.label||row.title,{size:labelSize,weight:500,gap:5});flow(row.value||row.detail,{size:valueSize,weight:landmark?400:500,gap:row.note?5:14});if(row.note)flow(row.note,{size:noteSize,color:MUTED,gap:18});}continue;
+   }
+   for(const [column,row]of group.entries()){
+    const x=margin+column*(cw+gap);line(row.label||row.title,x,y,cw,labelSize,landmark?500:400,landmark?INK:MUTED,landmark?'landmark-title':'fact-label');
+    line(row.value||row.detail,x,y+labelHeight+6,cw,valueSizes[column],landmark?400:500,landmark?TEXT:INK,landmark?'profile-detail':'fact-value');
+    if(row.note&&!longNotes.includes(row))line(row.note,x,y+labelHeight+6+valueHeight+7,cw,noteSize,400,MUTED,'fact-note');
+   }
+   let scopeTop=y+labelHeight+6+valueHeight+(noteHeight?7+noteHeight:0)+10;
+   for(const row of scopeNotes)scopeTop=line(row.text,margin,scopeTop,width,scopeSize,400,MUTED,'fact-scope')+4;
+   y+=required;
+  }
+ }
+ start(true);
+ if(profile.tagline)flow(profile.tagline,{size:wide?25:26,color:TEXT,role:'city-tagline',gap:12});
+ const tags=profile.tags.length?profile.tags:card.tags;
+ if(tags.length){font(22);let x=0;ensure(44);for(const tag of tags){const chipWidth=ctx.measureText(tag).width+28;if(chipWidth>width)continue;if(x&&x+chipWidth>width){x=0;y+=44;ensure(44);}page.blocks.push({type:'chip',text:tag,x:margin+x,y,width:chipWidth,height:36,size:22});x+=chipWidth+12;}y+=46;}
+ if(profile.geography.length){
+  const coordinates=profile.geography.filter(row=>/坐标|经纬/.test(row.label)),places=profile.geography.filter(row=>!/坐标|经纬/.test(row.label));
+  if(places.length)flow('地理位置  /  '+places.map(row=>row.value).join(' · '),{size:24,role:'profile-geography',gap:8});
+  for(const row of coordinates)flow(row.label+'  /  '+row.value,{size:19,color:MUTED,role:'profile-geography',gap:8});
+ }
+ const metadata=profile.statistics.filter(row=>/语言|货币|时区/.test(row.label));
+ const metadataLabel=row=>/语言/.test(row.label)&&/国家(?:或|\/|、)?地区|国家口径|地区口径/.test(row.note)?'国家/地区语言':row.label;
+ if(metadata.length)flow(metadata.map(row=>metadataLabel(row)+' / '+row.value).join('   ·   '),{size:19,color:MUTED,role:'profile-metadata',gap:8});
+ const known=card.facts.filter(row=>row.value&&!/待补|暂无|未知/.test(row.value)&&!/网络|入境|入住/.test(row.label)),stats=[...profile.statistics.filter(row=>!/语言|货币|时区/.test(row.label)),...known].slice(0,4);
+ if(stats.length){section('城市坐标 · 旅居参考');paired(stats,{columns:Math.min(3,stats.length),labelSize:21,valueSize:36,noteSize:18});}
+ if(profile.landmarks.length){section('城市地标');paired(profile.landmarks,{columns:2,labelSize:26,valueSize:24,noteSize:20,landmark:true});}
+ if(profile.culture.length){section('风土与日常');for(const row of profile.culture){flow(row.label+'  /  '+row.value,{size:22,gap:row.note?3:7});if(row.note)flow(row.note,{size:20,color:MUTED,gap:10});}}
+ for(const [index,item]of pages.entries()){
+  page=item;page.blocks.push({type:'rule',x:margin,y:footerY,width,height:1});
+  const sourceCount=profile.sources.length,sourceLabel=sourceCount?'资料来源 '+sourceCount+' 处 · 完整出处见配文':'城市资料 · 完整口径见配文';
+  let top=line(sourceLabel,margin,footerY+18,footerTextWidth,wide?18:20,500,INK,'profile-provenance');
+  line(footerText,margin,top+10,footerTextWidth,wide?18:20,advisory?500:400,MUTED,advisory?'advisory':'profile-provenance');
+  const domain=card.url?new URL(card.url).host:'roamorrow';
+  page.blocks.push({type:'text',text:domain+(pages.length>1?'   '+(index+1)+' / '+pages.length:''),x:margin,y:h-margin-27,width:footerTextWidth,height:27,size:19,weight:400,color:MUTED});
+  if(card.url)page.blocks.push({type:'qr',x:w-margin-qrSize,y:footerY+18,width:qrSize,height:qrSize});
+ }
+ // A short spillover should use a slightly shallower real-photo crop before
+ // creating a sparse extra image. Longer pieces still continue at full size.
+ if(!fitHeroHeight&&!wide&&h>=1350&&pages.length===2){
+  const hero=pages[0].blocks.find(block=>block.type==='photo'),tail=pages[1].blocks.filter(block=>block.role&&!['city-title','profile-provenance','advisory'].includes(block.role));
+  const tailHeight=tail.length?Math.max(...tail.map(block=>block.y+block.height))-Math.min(...tail.map(block=>block.y)):0;
+  if(hero&&hero.height>260&&tailHeight>0&&tailHeight<=240)return layoutCityProfile(ctx,card,format,{photo,qrSize:requestedQR,heroHeight:Math.max(260,hero.height-96)});
+ }
+ return {width:w,height:h,pages};
+}
 export function layoutShare(ctx,card,format,{photo=false,qrSize:requestedQR}={}){
+ if(card.kind==='city'&&card.cityProfile&&!card.private&&!card.body&&!card.items.length)return layoutCityProfile(ctx,card,format,{photo,qrSize:requestedQR});
  const {width:w,height:h}=format,wide=w>h,margin=wide?52:64;
  const cityPoster=card.kind==='city'&&card.facts.length===4&&!card.body&&!card.items.length&&!card.private;
  const qrSize=requestedQR||(wide?138:168);
@@ -120,8 +218,8 @@ export async function renderShare(card,formatId='portrait',{signal,textOnly=fals
   const pages=[];
   for(const page of layout.pages){signal?.throwIfAborted();ctx.fillStyle=PAPER;ctx.fillRect(0,0,canvas.width,canvas.height);ctx.textBaseline='top';
    for(const block of page.blocks){
-    if(block.type==='text'){ctx.fillStyle=block.color;ctx.font=`${block.weight} ${block.size}px ${FONT}`;ctx.fillText(block.text,block.x,block.y);}
-    if(block.type==='chip'){ctx.fillStyle='#eee6dc';ctx.beginPath();ctx.roundRect(block.x,block.y,block.width,block.height,21);ctx.fill();ctx.fillStyle=TEXT;ctx.font=`400 26px ${FONT}`;ctx.fillText(block.text,block.x+16,block.y+7);}
+    if(block.type==='text'){ctx.fillStyle=block.color;ctx.font=`${block.weight} ${block.size}px ${FONT}`;ctx.textAlign=block.align||'left';ctx.fillText(block.text,block.align==='right'?block.x+block.width:block.x,block.y);ctx.textAlign='left';}
+    if(block.type==='chip'){ctx.fillStyle='#eee6dc';ctx.beginPath();ctx.roundRect(block.x,block.y,block.width,block.height,block.size?4:21);ctx.fill();ctx.fillStyle=TEXT;ctx.font=`400 ${block.size||26}px ${FONT}`;ctx.fillText(block.text,block.x+(block.size?14:16),block.y+7);}
     if(block.type==='rule'){ctx.fillStyle='#ded4c9';ctx.fillRect(block.x,block.y,block.width,1);}
     if(block.type==='photo'&&bitmap){const scale=Math.max(block.width/bitmap.width,block.height/bitmap.height),sw=block.width/scale,sh=block.height/scale;ctx.drawImage(bitmap,(bitmap.width-sw)/2,(bitmap.height-sh)/2,sw,sh,block.x,block.y,block.width,block.height);}
     if(block.type==='qr'&&qr){const count=qr.getModuleCount(),module=Math.floor(block.width/(count+8)),size=(count+8)*module;if(module<2)throw Error('分享链接较长，请使用配文中的完整链接。');const x=block.x+Math.floor((block.width-size)/2),y=block.y;ctx.fillStyle='#fff';ctx.fillRect(x,y,size,size);ctx.fillStyle=INK;for(let r=0;r<count;r++)for(let c=0;c<count;c++)if(qr.isDark(r,c))ctx.fillRect(x+(c+4)*module,y+(r+4)*module,module,module);}

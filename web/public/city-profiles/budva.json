@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "slug": "budva",
+  "name": "布德瓦",
+  "nameEn": "Budva",
+  "tagline": "黑山 · Budva",
+  "tags": [
+    "欧洲",
+    "黑山"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "黑山"
+    },
+    {
+      "label": "地理坐标",
+      "value": "42.29°N / 18.84°E",
+      "note": "城市参考点；不代表行政边界"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "塞尔维亚语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "欧元 EUR",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Europe/Podgorica",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "布德瓦古城",
+      "detail": "城墙环绕的滨海历史街区"
+    },
+    {
+      "title": "斯韦蒂斯特凡",
+      "detail": "布德瓦附近连接海岸的小岛"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "老城教堂与地中海建筑"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Budva（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Budva",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

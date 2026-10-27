@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "san-juan",
+  "name": "圣胡安",
+  "nameEn": "San Juan",
+  "tagline": "彩色街巷伸向加勒比海岸",
+  "tags": [
+    "加勒比",
+    "古城",
+    "堡垒"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "波多黎各"
+    },
+    {
+      "label": "地理坐标",
+      "value": "18.47°N / 66.11°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "波多黎各北部海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "西班牙语、英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "美元 USD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/Puerto_Rico",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "圣克里斯托瓦尔堡",
+      "detail": "旧城的历史防御建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "旧圣胡安的西班牙殖民建筑"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · San Juan, Puerto Rico（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/San_Juan%2C_Puerto_Rico",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

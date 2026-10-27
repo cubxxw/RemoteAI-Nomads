@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "baghdad",
+  "name": "巴格达",
+  "nameEn": "Baghdad",
+  "tagline": "底格里斯河两岸的巴格达",
+  "tags": [
+    "底格里斯河",
+    "书市",
+    "两河历史"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "伊拉克"
+    },
+    {
+      "label": "地理坐标",
+      "value": "33.34°N / 44.40°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "伊拉克中部，底格里斯河畔"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "阿拉伯语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "伊拉克第纳尔 IQD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Baghdad",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "阿拔斯宫",
+      "detail": "与阿拔斯时代相关的历史建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "阿拉伯文学与书市传统"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Baghdad（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Baghdad",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

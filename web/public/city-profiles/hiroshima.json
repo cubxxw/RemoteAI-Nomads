@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "hiroshima",
+  "name": "广岛",
+  "nameEn": "Hiroshima",
+  "tagline": "河川分流处，记忆与日常并存",
+  "tags": [
+    "和平纪念",
+    "濑户内海",
+    "河城"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "日本"
+    },
+    {
+      "label": "地理坐标",
+      "value": "34.40°N / 132.45°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "日本本州西部濑户内海沿岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "日语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "日元 JPY",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Tokyo",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "广岛和平纪念公园",
+      "detail": "保存历史记忆的公共空间"
+    }
+  ],
+  "culture": [
+    {
+      "label": "当地吃食",
+      "value": "广岛式御好烧"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Hiroshima（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Hiroshima",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

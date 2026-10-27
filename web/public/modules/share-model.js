@@ -31,6 +31,18 @@ export function shareURL(input,{kind='page',month,base='',includeHousing=false}=
  void base;return url.href;
 }
 const freeze=value=>{if(value&&typeof value==='object'){for(const child of Object.values(value))freeze(child);Object.freeze(value);}return value;};
+const citySlug=value=>typeof value==='string'&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)&&value.length<=100?value:'';
+const profileText=(value,max=500)=>typeof value==='string'?[...value.replace(/[\u0000-\u001f\u007f]/g,'').trim()].slice(0,max).join(''):'';
+const knownProfileText=value=>value&&!/^(?:待补充?|暂无(?:资料|数据)?|未知|未提供|N\/?A|unknown|—|-)$/i.test(value);
+export function normalizeCityProfile(input,expectedSlug){
+ if(!input||input.schemaVersion!==1||!citySlug(input.slug)||input.slug!==expectedSlug)return null;
+ const list=(value,max)=>Array.isArray(value)?value.slice(0,max):[];
+ const rows=(value,max=4)=>list(value,max).filter(row=>row&&typeof row==='object').map(row=>({label:profileText(row.label,80),value:profileText(row.value,300),note:profileText(row.note,300)})).filter(row=>row.label&&knownProfileText(row.value));
+ const sources=list(input.sources,12).filter(row=>row&&typeof row==='object').flatMap(row=>{try{const url=safeURL(row.url).href,title=profileText(row.title,200);return title?[{title,url,date:profileText(row.date,80)}]:[];}catch{return [];}});
+ return freeze({schemaVersion:1,slug:input.slug,name:profileText(input.name,200),nameEn:profileText(input.nameEn,200),tagline:profileText(input.tagline,240),
+  tags:list(input.tags,4).map(value=>profileText(value,40)).filter(knownProfileText),geography:rows(input.geography),statistics:rows(input.statistics,8),
+  landmarks:list(input.landmarks,2).filter(row=>row&&typeof row==='object').map(row=>({title:profileText(row.title,100),detail:profileText(row.detail,600)})).filter(row=>row.title&&knownProfileText(row.detail)),culture:rows(input.culture),sources});
+}
 export function createShare(input){
  const fact=row=>({label:text(row.label,140),value:text(row.value??'待补充',400),note:text(row.note,400)});
  const source=row=>({title:text(row.title,200),url:row.url?safeURL(row.url).href:null,date:text(row.date,80)});
@@ -38,7 +50,7 @@ export function createShare(input){
   facts:(input.facts||[]).map(fact),items:(input.items||[]).map(row=>({title:text(row.title,200),detail:text(row.detail,600)})),
   caveats:(input.caveats||[]).map(value=>text(value,1000)),advisories:(input.advisories||[]).map(value=>text(value,1000)),captionNotes:(input.captionNotes||[]).map(value=>text(value,1000)),sources:(input.sources||[]).map(source),
   photos:(input.photos||[]).filter(row=>row.credit&&row.source&&/^\/(?!\/)/.test(row.url||'')).map(row=>({url:text(row.url,1000),credit:text(row.credit,4000),source:safeURL(row.source).href,label:text(row.label,200)})),
-  private:input.private===true,essentialCaveat:text(input.essentialCaveat,400),linkNote:text(input.linkNote,500)};
+  private:input.private===true,essentialCaveat:text(input.essentialCaveat,400),linkNote:text(input.linkNote,500),citySlug:citySlug(input.citySlug),cityProfile:normalizeCityProfile(input.cityProfile,citySlug(input.citySlug))};
  if(!result.title)throw Error('分享内容还没有标题。');return freeze(result);
 }
 export const amountText=(value,currency='USD')=>value===null||value===undefined||value===''?'待补充':new Intl.NumberFormat('zh-CN',{style:'currency',currency,maximumFractionDigits:0}).format(value);
@@ -47,7 +59,7 @@ export function cityShare(city,month,inputURL){
  const weather=city.months?.find(row=>Number(row.month)===Number(month)),advisory=travelAdvisory(city),domestic=city.countryCode==='CN';
  const tags=city.tags||(city.why?.includes('·')?city.why.split('·').map(value=>value.trim()):[]);
  const internet=city.scores?.internet;
- return createShare({kind:'city',title:city.name,month,tags,subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
+ return createShare({kind:'city',title:city.name,month,tags,citySlug:city.slug,cityProfile:{schemaVersion:1,slug:city.slug,name:city.name,nameEn:city.nameEn,tagline:city.why,tags,geography:city.country?[{label:'地理位置',value:city.country}]:[]},subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
   facts:[{label:'历史月花费',value:amountText(city.budget,city.budgetCurrency||'USD'),note:city.budgetCheckedAt?'核对 '+city.budgetCheckedAt:'资料日期待核对'},{label:month+'月历史均温',value:weather?.meanC===null||weather?.meanC===undefined?'待补充':Math.round(weather.meanC)+'°C',note:'2023–2025 年气候参考'},{label:domestic?'大陆居民入住':'大陆护照入境',value:city.visa?.label||'待补充',note:domestic?'证件与登记要求向住处确认':'旧标签待复核 · 工作许可另查'},{label:'网络旧评分',value:Number.isFinite(internet)?internet+' / 10':'待补充',note:'具体房间需实测'}],
   photos:[{url:city.photo,credit:city.photoCredit,source:city.photoSource,label:city.name}],
   advisories:advisory?[advisory.reason]:[],caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价；气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核；工作许可另查。']:[])],
@@ -64,7 +76,9 @@ export function rankingShare(cities,state,inputURL,actualMonth=displayMonth(stat
   caveats:['排行按当前偏好计算，图中最多三城；全部条件与权重随链接保留。','花费为历史参考，入境标签待复核；个人报价和会议未包含。'],captionNotes:['排名权重：'+sortedWeights.map(([key,value])=>LABELS[key]+value).join('、')],sources:[{title:'排行与资料口径',url:url.origin+url.pathname.replace(/\/cities\/?$/,'/').replace(/\/?$/,'/')+'about/',date:''},...cities.slice(0,3).map(city=>({title:city.name+'历史月参考',date:city.budgetCheckedAt||'日期待核对'}))]});
 }
 export function shareText(card){
- return [card.title,card.subtitle,card.summary,card.body,...card.facts.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...card.items.map(row=>[row.title,row.detail].filter(Boolean).join('：')),...new Set([...(card.advisories||[]),...card.caveats]),...card.captionNotes,...card.sources.map(row=>[row.title,row.date,row.url].filter(Boolean).join(' ')),...card.photos.map(row=>'照片：'+row.credit+' '+row.source),card.linkNote,card.url].filter(Boolean).join('\n\n');
+ const profile=card.cityProfile,profileRows=profile?[profile.tagline,profile.tags.join(' · '),...profile.geography.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...profile.statistics.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...profile.landmarks.map(row=>row.title+'：'+row.detail),...profile.culture.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，'))]:[];
+ const facts=profile&&card.kind==='city'&&!card.private?card.facts.filter(row=>knownProfileText(row.value)):card.facts;
+ return [card.title,card.subtitle,card.summary,card.body,...profileRows,...facts.map(row=>[row.label+'：'+row.value,row.note].filter(Boolean).join('，')),...card.items.map(row=>[row.title,row.detail].filter(Boolean).join('：')),...new Set([...(card.advisories||[]),...card.caveats]),...card.captionNotes,...card.sources.concat(profile?.sources||[]).map(row=>[row.title,row.date,row.url].filter(Boolean).join(' ')),...card.photos.map(row=>'照片：'+row.credit+' '+row.source),card.linkNote,card.url].filter(Boolean).join('\n\n');
 }
 export function comparisonShare(cities,month,inputURL){
  const warnings=cities.map(city=>travelAdvisory(city)).filter(Boolean);

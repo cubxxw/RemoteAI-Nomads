@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "bamako",
+  "name": "巴马科",
+  "nameEn": "Bamako",
+  "tagline": "尼日尔河两岸的马里城市",
+  "tags": [
+    "尼日尔河",
+    "音乐",
+    "西非"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "马里"
+    },
+    {
+      "label": "地理坐标",
+      "value": "12.61°N / 7.98°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "马里西南部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "西非法郎 XOF",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Bamako",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "马里国家博物馆",
+      "detail": "展示该国文化遗产的博物馆"
+    },
+    {
+      "title": "巴马科大清真寺",
+      "detail": "城市中心的宗教建筑"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "马里音乐与手工艺"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Bamako（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Bamako",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

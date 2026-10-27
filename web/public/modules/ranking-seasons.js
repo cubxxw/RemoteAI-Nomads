@@ -1,5 +1,6 @@
 import {withPlanMonth} from './trip-state.js';
 import {sitePath} from './site-path.js';
+import {climateModelsLabel} from './climate-provenance.js';
 
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const monthRecord = (city, month) => city.months?.find(row => row.month === month);
@@ -26,7 +27,7 @@ export function renderAnnualSeasons(city, selectedMonth) {
   return `<div class="rank-season-recommendation"><span>原资料推荐月份</span><strong>${recommendedMonthRanges(city.months)}</strong></div><table class="rank-season-table"><thead><tr><th scope="col">月份</th><th scope="col">历史均温</th><th scope="col">原资料标签</th></tr></thead><tbody>${Array.from({length:12},(_,i)=>{
     const month=i+1, row=monthRecord(city,month);
     return `<tr${month===selectedMonth?' class="is-selected"':''}><th scope="row">${month}月${month===selectedMonth?'<small>已选</small>':''}</th><td>${meanText(row?.meanC)}</td><td${row?.status==='recommended'?' class="is-recommended"':''}>${labels[row?.status] || '未标注'}</td></tr>`;
-  }).join('')}</tbody></table><p class="rank-season-source">气温取 2023—2025 年历史月均值，不是天气预报。推荐、需留意和未标注沿用原资料记录。</p>`;
+  }).join('')}</tbody></table><p class="rank-season-source">气温取 2023—2025 年历史月均值（${climateModelsLabel(city.climateModels)}），是网格参考，不是天气预报；山地和具体街区可能存在差异。推荐、需留意和未标注沿用原资料记录。</p>`;
 }
 
 export function installRankingSeasons(root, getCity, getMonth) {

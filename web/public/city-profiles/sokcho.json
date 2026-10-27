@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "sokcho",
+  "name": "束草",
+  "nameEn": "Sokcho",
+  "tagline": "雪岳山与东海之间的港城",
+  "tags": [
+    "雪岳山",
+    "海港",
+    "海滨"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "韩国"
+    },
+    {
+      "label": "地理坐标",
+      "value": "38.21°N / 128.59°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "韩国东北部东海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "韩语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "韩元 KRW",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Seoul",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "雪岳山国家公园",
+      "detail": "城西的山地国家公园"
+    }
+  ],
+  "culture": [
+    {
+      "label": "当地吃食",
+      "value": "阿爸村的朝鲜族饮食"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Sokcho（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Sokcho",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

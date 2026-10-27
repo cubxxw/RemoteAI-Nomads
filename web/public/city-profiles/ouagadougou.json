@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "ouagadougou",
+  "name": "瓦加杜古",
+  "nameEn": "Ouagadougou",
+  "tagline": "萨赫勒平原上的电影之城",
+  "tags": [
+    "萨赫勒",
+    "电影",
+    "西非"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "布基纳法索"
+    },
+    {
+      "label": "地理坐标",
+      "value": "12.37°N / 1.53°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "布基纳法索中部"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "西非法郎 XOF",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Ouagadougou",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "莫罗纳巴王宫",
+      "detail": "莫西王室传统的重要场所"
+    },
+    {
+      "title": "国家博物馆",
+      "detail": "展示布基纳法索文化的博物馆"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "FESPACO 泛非电影节"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Ouagadougou（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Ouagadougou",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

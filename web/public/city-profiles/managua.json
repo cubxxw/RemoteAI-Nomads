@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "managua",
+  "name": "马那瓜",
+  "nameEn": "Managua",
+  "tagline": "湖畔火山地形中的尼加拉瓜首都",
+  "tags": [
+    "湖畔",
+    "火山",
+    "中美洲"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "尼加拉瓜"
+    },
+    {
+      "label": "地理坐标",
+      "value": "12.13°N / 86.25°W",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "尼加拉瓜西部，马那瓜湖南岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "西班牙语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "尼加拉瓜科多巴 NIO",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "America/Managua",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "旧马那瓜大教堂",
+      "detail": "旧城中心的历史建筑"
+    },
+    {
+      "title": "蒂斯卡帕潟湖",
+      "detail": "市内火山口湖"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "圣多明各德古斯曼庆典"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Managua（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Managua",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

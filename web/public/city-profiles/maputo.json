@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "slug": "maputo",
+  "name": "马普托",
+  "nameEn": "Maputo",
+  "tagline": "德拉瓜湾畔的莫桑比克港城",
+  "tags": [
+    "海湾",
+    "铁路建筑",
+    "市场"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "莫桑比克"
+    },
+    {
+      "label": "地理坐标",
+      "value": "25.97°S / 32.58°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "莫桑比克南部，马普托湾畔"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "葡萄牙语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "莫桑比克美提卡 MZN",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Maputo",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "马普托堡",
+      "detail": "保存海港历史的堡垒"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "莫桑比克音乐与城市艺术"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Maputo（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Maputo",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

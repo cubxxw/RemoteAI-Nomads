@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "hanoi",
+  "name": "河内",
+  "nameEn": "Hanoi",
+  "tagline": "越南 · Hanoi",
+  "tags": [
+    "亚洲",
+    "越南"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "越南"
+    },
+    {
+      "label": "地理坐标",
+      "value": "21.02°N / 105.84°E",
+      "note": "城市参考点；不代表行政边界"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "越南语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "越南盾 VND",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Bangkok",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [],
+  "culture": [],
+  "sources": [
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

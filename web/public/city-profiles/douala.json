@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "slug": "douala",
+  "name": "杜阿拉",
+  "nameEn": "Douala",
+  "tagline": "武里河口的喀麦隆港城",
+  "tags": [
+    "河口",
+    "港口",
+    "中非"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "喀麦隆"
+    },
+    {
+      "label": "地理坐标",
+      "value": "4.05°N / 9.70°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "喀麦隆西部，武里河畔"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "法语、英语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "中非法郎 XAF",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Douala",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "拉努韦勒利伯泰雕塑",
+      "detail": "城市公共艺术的标志"
+    }
+  ],
+  "culture": [],
+  "sources": [
+    {
+      "title": "维基百科 · Douala（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Douala",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "dali",
+  "name": "大理",
+  "nameEn": "Dali",
+  "tagline": "苍山洱海间的白族古城",
+  "tags": [
+    "苍山",
+    "洱海",
+    "白族文化"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "中国"
+    },
+    {
+      "label": "地理坐标",
+      "value": "25.58°N / 100.21°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "云南西部，苍山洱海之间"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "中文",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "人民币 CNY",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Asia/Shanghai",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "崇圣寺三塔",
+      "detail": "大理古城北侧的历史建筑"
+    },
+    {
+      "title": "大理古城",
+      "detail": "洱海西侧的历史街区"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "白族建筑与地方生活"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Dali City（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Dali_City",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}

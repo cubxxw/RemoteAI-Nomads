@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "slug": "tripoli",
+  "name": "的黎波里",
+  "nameEn": "Tripoli",
+  "tagline": "地中海岸的老城与城堡",
+  "tags": [
+    "地中海",
+    "麦地那",
+    "港口"
+  ],
+  "geography": [
+    {
+      "label": "国家 / 地区",
+      "value": "利比亚"
+    },
+    {
+      "label": "地理坐标",
+      "value": "32.89°N / 13.19°E",
+      "note": "城市参考点；不代表行政边界"
+    },
+    {
+      "label": "地理位置",
+      "value": "利比亚西北海岸"
+    }
+  ],
+  "statistics": [
+    {
+      "label": "官方语言",
+      "value": "阿拉伯语",
+      "note": "国家或地区口径；Unicode CLDR，不表示全体居民的日常用语"
+    },
+    {
+      "label": "货币",
+      "value": "利比亚第纳尔 LYD",
+      "note": "国家或地区流通货币；Unicode CLDR"
+    },
+    {
+      "label": "时区",
+      "value": "Africa/Tripoli",
+      "note": "GeoNames 城市坐标匹配；夏令时以当地当日为准"
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "红堡",
+      "detail": "海边老城的历史堡垒"
+    },
+    {
+      "title": "马可奥勒留拱门",
+      "detail": "罗马时期的城市遗迹"
+    }
+  ],
+  "culture": [
+    {
+      "label": "城市文化",
+      "value": "麦地那街巷与手工艺"
+    }
+  ],
+  "sources": [
+    {
+      "title": "维基百科 · Tripoli, Libya（二手参考）",
+      "url": "https://en.wikipedia.org/wiki/Tripoli%2C_Libya",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "GeoNames · 城市坐标与时区",
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "date": "2026-10-17"
+    },
+    {
+      "title": "Unicode CLDR · 国家或地区语言资料",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Unicode CLDR · 流通货币",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/currencyData.json",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "国家或地区目录",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "date": "2026-10-17"
+    }
+  ]
+}
