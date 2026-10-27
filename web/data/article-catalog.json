@@ -1385,6 +1385,76 @@
       "status": "published",
       "updatedAt": "2026-10-27",
       "assetPath": "/city-guides/monthly-apartment-utilities.html"
+    },
+    {
+      "slug": "phuket-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/phuket-monthly-budget/",
+      "title": "普吉住一个月，把房间和工位放在同一片",
+      "summary": "单人承担整间30晚、房内工作，编辑预留50,000—106,000泰铢。比较普吉镇房型、芭东旺季计价，以及拉威和查龙的工位时段、通话权益与首次进入条件。",
+      "citySlugs": [
+        "phuket"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/phuket-monthly-budget.html"
+    },
+    {
+      "slug": "malacca-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/malacca-monthly-budget/",
+      "title": "马六甲住一个月，老城生活和外围工位怎么兼顾",
+      "summary": "单人30晚、默认房内办公，先留6,000／8,000／10,500令吉。以房主单客月标签和三处真实工位比较房型、厨房及工作日安排，分清促销日票、月合同与24个月低日均；住房库存和完整含费报价仍按实际日期确认。",
+      "citySlugs": [
+        "malacca"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/malacca-monthly-budget.html"
+    },
+    {
+      "slug": "remote-visa-income-balance",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/remote-visa-income-balance/",
+      "title": "E33G与韩国F-1-D，年收入和账户余额分别怎么证明",
+      "summary": "印尼E33G的6万美元年收入与2,000美元银行资金要求并列；韩国F-1-D还按年龄、住址和家属区分GNI倍数。用两组假设说明收入、余额、保险保额与生活预算各自证明什么。",
+      "citySlugs": [
+        "canggu",
+        "ubud",
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/remote-visa-income-balance.html"
+    },
+    {
+      "slug": "hua-hin-cross-season-thirty-nights",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/hua-hin-cross-season-thirty-nights/",
+      "title": "跨过12月1日，华欣30晚该用哪档房价？",
+      "summary": "BLU同一卧室套房的30晚价分两季，相差4,000泰铢。入住段跨过12月1日，先确认按哪一段日期计费，再看水电和退改。",
+      "citySlugs": [
+        "hua-hin"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/hua-hin-cross-season-thirty-nights.html"
+    },
+    {
+      "slug": "singapore-foreign-card-transit-fee",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/singapore-foreign-card-transit-fee/",
+      "title": "新加坡刷境外卡坐车，0.60新元按哪几天收？",
+      "summary": "境外Visa或Mastercard按使用日收行政费，车资汇总入账另有周期。用两个相隔日期白天乘车的单人例子，分清S$1.20、行程车资和银行费用，并把同卡同设备进出讲清。",
+      "citySlugs": [
+        "singapore"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/singapore-foreign-card-transit-fee.html"
     }
   ]
 }
