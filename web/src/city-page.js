@@ -1,5 +1,5 @@
 import {cityText} from '../public/modules/city-copy.js';
-import {relatedArticlesHTML} from './article-catalog.js';
+import {articleBySlug, relatedArticlesHTML} from './article-catalog.js';
 import {entryResourceMarkup,workspaceResourceMarkup} from './trip-resources.js';
 import {travelerBudgetMarkup} from './traveler-budget-markup.js';
 import {travelerDefaults} from '../public/modules/traveler-budget.js';
@@ -113,17 +113,36 @@ function entrySection(c) {
   return section('entry', domestic ? '入住与证件' : '停留与入境', `<div class="city-entry-summary"><strong>${esc(c.entry?.label || '入境条件待核验')}</strong><span>${domestic ? '中国大陆居民' : '中国大陆普通护照'}</span></div><p class="city-caption">${esc(entryDetail)}</p>${entryResourceMarkup(c.country_id)}${c.entry ? details(domestic ? '入住登记资料' : '旧入境资料说明', `<p>${domestic ? '入住需要哪些证件，向住处按自己的身份确认。' : '入境资格与远程工作的许可需分别确认。'+esc(c.entry.evidence_level === 'legacy' ? '这项建议来自旧资料，出发前要重新查。' : '')}</p>${source(c.entry.source_url, '历史标签的维护说明', c.entry.checked_at)}`) : ''}${c.visas.map(v => details(esc(v.name), `<dl class="city-evidence-list"><dt>停留与有效期</dt><dd>${esc(v.stay_text)}</dd><dt>财务要求</dt><dd>${esc(v.financial_rule)}</dd><dt>工作范围</dt><dd>${esc(v.work_scope)}</dd><dt>护照与领区</dt><dd>${esc(v.passport_scope)}</dd><dt>限制</dt><dd>${esc(v.restriction)}</dd><dt>政策资料</dt><dd>${esc(v.verification)} · 发布 ${esc(v.source_published_at || '未标明')}</dd></dl>${source(v.source_url, '官方政策', v.checked_at)}`)).join('')}${!c.visas.length ? `<p class="city-caption">${domestic ? '入住登记要求以当地和住处说明为准。' : '远程工作签证资料还没补齐，先到该国官方页面看看。'}</p>` : ''}`);
 }
 
-function searchDescription(c, date) {
+function searchCoverage(c, date) {
+  const guide = articleBySlug(`${c.slug}-monthly-budget`);
+  return {
+    monthlyGuide: Boolean(guide && !guide.topic && guide.citySlugs.includes(c.slug)),
+    costs: Boolean(c.costs?.observations?.some(row => row.scope === 'city' && numberOrNull(row.amount) !== null)),
+    climate: Boolean(c.climate?.some(row => numberOrNull(row.mean_c) !== null)),
+    meeting: Boolean(meetingTime(date, 12, c.location?.timezone)),
+  };
+}
+
+function searchTitle(c, coverage) {
+  if (travelAdvisory(c)) return `${c.name_zh}城市资料与出行提醒`;
+  if (coverage.costs && coverage.climate) return `${c.name_zh}数字游民指南：预算、月份与远程工作`;
+  const features = [coverage.monthlyGuide ? '月住费用' : coverage.costs ? '消费参考' : null, coverage.climate ? '历史气候' : null, coverage.meeting ? '会议时差' : null].filter(Boolean).slice(0, 2);
+  const entry = c.country_id === 'CN' ? '入住证件' : '入境参考';
+  return features.length ? `${c.name_zh}旅居资料：${features.length === 1 ? features[0] + '与' + entry : features.join('与')}` : `${c.name_zh}旅居资料与${entry}`;
+}
+
+function searchDescription(c, coverage) {
   const place = c.country_name && c.country_name !== c.name_zh ? `${c.name_zh}（${c.country_name}）` : c.name_zh;
   const advisory = travelAdvisory(c);
   if (advisory) return `${place}城市资料。${advisory.reason}。出行前请核对官方提醒；原有数据保留各自的资料日期。`;
-  const costs = c.costs?.observations?.some(row => row.scope === 'city') ? '城市消费样本可查' : '城市消费样本待补充';
-  const climate = c.climate?.some(row => numberOrNull(row.mean_c) !== null) ? '可按月份查看历史气候' : '逐月历史气候待补充';
-  return `${place}旅居与远程工作参考。${costs}，${climate}。${meetingTime(date, 12, c.location?.timezone) ? '支持与北京的会议时间换算。' : ''}停留条件与工作许可需分别核对。`;
+  const costs = coverage.costs ? '城市消费样本可查' : '城市消费样本待补充';
+  const climate = coverage.climate ? '可按月份查看历史气候' : '逐月历史气候待补充';
+  return `${place}旅居与远程工作参考。${coverage.monthlyGuide ? '附单人30晚的月住费用指南。' : ''}${costs}，${climate}。${coverage.meeting ? '支持与北京的会议时间换算。' : ''}${c.country_id === 'CN' ? '入住证件与登记要求向住处确认。' : '停留条件与工作许可需分别核对。'}`;
 }
 
 export function renderCityPage(c, env = {}, options = {}) {
   const today = options.date || new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const coverage = searchCoverage(c, today);
   const chosenMonth=Number(options.month);
   const month = Number.isInteger(chosenMonth)&&chosenMonth>=1&&chosenMonth<=12?chosenMonth:Number(today.slice(5, 7));
   const budget = cityCostModel(c.costs);
@@ -140,8 +159,8 @@ export function renderCityPage(c, env = {}, options = {}) {
   const data = { slug:c.slug, climate: c.climate, months: c.months, timeZone: c.location?.timezone || null, budget: {currency: budget.currency, rates: budget.rates,defaults:budget.defaults} };
   const body = `<link rel="stylesheet" href="/city.css"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css"><link rel="stylesheet" href="/places.css"><article class="city-guide" id="city-guide"><nav class="city-breadcrumbs" aria-label="面包屑"><a href="/cities/">城市</a><span aria-hidden="true">/</span><a href="/countries/${esc(c.country_id.toLowerCase())}/">${esc(c.country_name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(c.name_zh)}</span></nav><div class="city-heading"><div><h1>${esc(c.name_zh)}<span>${esc(c.name_en)}</span></h1></div><div class="city-heading-actions"><button type="button" class="city-action" data-save="${esc(c.slug)}" aria-label="收藏${esc(c.name_zh)}" aria-pressed="false">${cityIcon('heart')}</button><button type="button" class="city-action compare-add" data-compare="${esc(c.slug)}" data-name="${esc(c.name_zh)}" aria-pressed="false">${cityIcon('plus')}<span>对比</span></button></div></div>${cityAdvisoryMarkup(c)}<figure class="city-cover">${photo(c, '', 'eager')}${c.photo_source ? `<figcaption>${external(c.photo_source, c.photo_credit)}</figcaption>` : ''}</figure>${!travelAdvisory(c) && !seasonalProfile(c.slug) && c.summary && c.summary !== "从预算、月份与工作条件，了解这座城市。" ? `<p class="city-intro">${esc(cityText(c.summary))}</p>` : ""}<div class="city-at-a-glance"><a href="#budget"><span>生活预算</span><strong>${c.budget_amount ? '≈ ' + formatAmount(c.budget_amount, c.budget_currency || 'USD') : '自己算一笔'}</strong><small>${c.budget_amount ? '历史月花费 · 按你的住法重算' : '按住法和停留时间估算'}</small></a><a href="#season"><span>参考月份</span><strong class="city-months-short">${monthLabel || '待核验'}</strong><small>查看全年气温与雨量</small></a><a href="#entry"><span>${domestic ? '入住证件' : '入境参考'}</span><strong>${esc(c.entry?.label || '待核验')}</strong><small>${domestic ? '中国大陆居民' : '中国大陆普通护照'}</small></a><a href="#work"><span>与北京的时差</span><strong class="city-zone-short" data-time-difference title="${esc(c.location?.timezone || '时区待补充')}">${esc(timeDifference(today, c.location?.timezone))}</strong><small data-time-difference-date>${esc(today)} · 换算会议时间</small></a></div>${seasonalCityNote(c.slug)}${relatedArticlesHTML(c.slug)}<nav class="city-section-nav" aria-label="城市资料"><a data-city-anchor href="#budget" aria-current="location">生活预算</a><a data-city-anchor href="#season">出发季节</a><a data-city-anchor href="#work">远程工作</a><a data-city-anchor href="#places">工作地图</a><a data-city-anchor href="#entry">${domestic ? '入住证件' : '停留入境'}</a></nav><div class="city-guide-layout"><div class="city-guide-main">${costSection(c, budget)}${seasonSection(c, month)}${workSection(c, today)}${cityPlacesSection(c)}${entrySection(c)}${details('这些分数怎么看', `<dl class="city-score-list">${KEYS.map(key => `<div><dt>${esc(key==='climate'?'环境（历史）':key==='community'?'社区（历史）':LABELS[key])}</dt><dd>${numberOrNull(c.ranking?.[key]) === null ? '待补充' : Number(c.ranking[key]).toFixed(1) + ' / 10'}</dd></div>`).join('')}</dl><p>这些是旧资料里的分数。网络要在具体房间里试，安全情况也要按街区了解。</p>${c.ranking ? source(c.ranking.source_url, '城市指标记录', c.ranking.checked_at) : ''}<p>资料日期 ${esc(c.checked_at || '日期待补充')}。<a href="/about/">查看资料来源与说明</a></p>`)}<div class="city-end-links"><a href="/cities/">继续找城市</a><a href="/guides/first-month/">第一周落地清单</a></div></div><aside class="city-plan"><div class="city-plan-inner"><h2>订房前问清楚</h2><p>${esc(caveat)}</p><ul><li>在房间里试一次平时的会议</li><li>留出押金和临时换房的钱</li><li>${domestic ? '确认入住证件与登记要求' : '确认停留期与工作许可'}</li></ul><button class="city-secretary" type="button" data-agent-open data-agent-question="${esc(`我想去${c.name_zh}住一阵，请根据城市资料帮我核对季节、预算和远程工作条件。`)}">检查这份预算有没有漏项<span aria-hidden="true">↗</span></button></div></aside></div><script type="application/json" id="city-guide-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script></article><script type="module" src="/modules/city-ui.js"></script><script type="module" src="/modules/city-places.js"></script>`;
   return {
-    title: travelAdvisory(c) ? `${c.name_zh}城市资料与出行提醒` : `${c.name_zh}数字游民指南：预算、月份与远程工作`,
-    description: searchDescription(c, today),
+    title: searchTitle(c, coverage),
+    description: searchDescription(c, coverage),
     body, share:{kind:'city',city:{slug:c.slug,name:c.name_zh,nameEn:c.name_en,country:c.country_name,countryCode:c.country_id,budget:c.budget_amount,budgetCurrency:c.budget_currency||'USD',budgetCheckedAt:c.budget_checked_at,checkedAt:c.checked_at,photo:c.photo_url,photoCredit:c.photo_credit,photoSource:c.photo_source,why:travelAdvisory(c)?.reason||cityText(c.summary),visa:c.entry?{label:c.entry.label,detail:c.entry.detail}:null,months:Array.from({length:12},(_,i)=>({month:i+1,meanC:c.climate?.find(row=>Number(row.month)===i+1)?.mean_c??null}))}}, path: `/cities/${c.slug}/`, indexable: c.publication_status === 'published',
     jsonld: { '@context': 'https://schema.org', '@type': 'Place', name: c.name_zh, alternateName: c.name_en, url: `${(env.SITE_ORIGIN || 'http://127.0.0.1:8787').replace(/\/$/, '')}/cities/${c.slug}/` },
   };

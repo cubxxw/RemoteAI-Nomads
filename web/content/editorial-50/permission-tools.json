@@ -252,7 +252,10 @@
       ],
       "relatedSlugs": [
         "chiang-mai-monthly-budget",
-        "malaysia-thirty-days-not-nights"
+        "malaysia-thirty-days-not-nights",
+        "chinese-passport-long-stay",
+        "new-zealand-visitor-remote-work",
+        "de-rantau-sabah-scope"
       ],
       "lede": "签证上写着五年，为什么入境后还要看180日？免签没有贴纸，又为什么仍有最后停留日期？准备长期旅居时，这两个疑问经常出现在同一张机票订单里。本文帮助持中国普通护照的读者区分文件上不同日期的用途，适合第一次看电子签证或打算连续换城市的人。它不代你判断某一天一定可以入境，而是教你把签证、准证和本次实际停留记录分开放进日历。",
       "sections": [
@@ -309,7 +312,8 @@
         "width": 960,
         "height": 1233
       },
-      "researchNotes": ""
+      "researchNotes": "",
+      "updatedAt": "2026-10-27"
     },
     {
       "number": 35,

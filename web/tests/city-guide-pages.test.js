@@ -63,7 +63,8 @@ test('sitemap lists every topic guide with its reviewed update date',async()=>{
  assert.equal(r.status,200);const xml=await r.text();
  for(const slug of topicSlugs){
   assert.ok(xml.includes('<loc>https://roamorrow.com/nomads/guides/'+slug+'/</loc>'),'sitemap is missing '+slug);
-  assert.ok(xml.includes('<loc>https://roamorrow.com/nomads/guides/'+slug+'/</loc><lastmod>2026-10-22</lastmod>'),'topic lastmod '+slug);
+  const updatedAt=slug==='chinese-passport-long-stay'?'2026-10-27':'2026-10-22';
+  assert.ok(xml.includes('<loc>https://roamorrow.com/nomads/guides/'+slug+'/</loc><lastmod>'+updatedAt+'</lastmod>'),'topic lastmod '+slug);
  }
  assert.ok(xml.includes('<loc>https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/</loc>'));
 });

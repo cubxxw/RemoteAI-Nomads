@@ -14,6 +14,30 @@ const city = {
   costs:{observations:[{scope:'national',label:'消费支出',field:'total_consumption',category:'total',amount:173042,currency:'JPY',period:'month',unit:'month',household_size:1,conversion:{amount:7700,currency:'CNY'},observed_at:'2025-12-31'}],sources:[],fx:{USD:{rate:6.68,date:'2026-10-16'},JPY:{rate:0.0445,date:'2026-10-16'}},limitations:[]},
 };
 
+test('sparse city search titles only promise supported data and a usable meeting converter',()=>{
+  const sparse=renderCityPage(city,{},{date:'2026-10-27'});
+  assert.equal(sparse.title,'测试城市旅居资料：会议时差与入境参考');
+  const climate=renderCityPage({...city,climate:[{month:10,mean_c:0}]},{},{date:'2026-10-27'});
+  assert.equal(climate.title,'测试城市旅居资料：历史气候与会议时差');
+  const costs=renderCityPage({...city,costs:{...city.costs,observations:[{scope:'city',amount:1}]}},{},{date:'2026-10-27'});
+  assert.equal(costs.title,'测试城市旅居资料：消费参考与会议时差');
+  const invalid=renderCityPage({...city,location:{timezone:'invalid'}},{},{date:'2026-10-27'});
+  assert.equal(invalid.title,'测试城市旅居资料与入境参考');
+  assert.doesNotMatch(invalid.description,/支持与北京的会议时间换算/);
+  const complete=renderCityPage({...city,climate:[{month:10,mean_c:0}],costs:{...city.costs,observations:[{scope:'city',amount:1}]}},{},{date:'2026-10-27'});
+  assert.equal(complete.title,'测试城市数字游民指南：预算、月份与远程工作');
+});
+
+test('reviewed monthly guides add an accurate budget entrance without implying city price samples exist',()=>{
+  const page=renderCityPage({...city,slug:'dali',name_zh:'大理',country_id:'CN',country_name:'中国'},{},{date:'2026-10-27'});
+  assert.match(page.title,/月住费用/);
+  assert.match(page.description,/单人30晚的月住费用指南/);
+  assert.match(page.description,/城市消费样本待补充/);
+  assert.doesNotMatch(page.description,/工作许可|停留条件/);
+  assert.match(page.description,/入住证件与登记要求/);
+  assert.match(page.body,/href="\/guides\/dali-monthly-budget\/"/);
+});
+
 test('requested month is rendered before JavaScript and official resource checks appear in the city flow',()=>{
   const thai=renderCityPage({...city,country_id:'TH'},{},{date:'2026-10-19',month:12}).body;
   assert.match(thai,/option value="12" selected/);
