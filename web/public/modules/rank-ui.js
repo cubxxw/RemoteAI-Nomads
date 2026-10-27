@@ -1,5 +1,6 @@
 import {openShare} from './share-ui.js';
 import {initRankingPresentation} from './ranking-presentation.js';
+import {installRankingSeasons,renderSeasonSummary} from './ranking-seasons.js';
 import {rankingShare,cityShare} from './share-model.js';
 import {withPlanMonth} from './trip-state.js';
 import {sitePath} from './site-path.js';
@@ -138,9 +139,7 @@ function render(initial = false,editingBudget=false) {
       el.querySelector(".climate-cell small").textContent = month + "月舒适度";
       el.querySelector(".climate-cell .metric-mobile-label").textContent =
         month + "月舒适度";
-      el.querySelectorAll(".month-mark").forEach((m, i) =>
-        m.classList.toggle("chosen", state.month === i + 1),
-      );
+      el.querySelector('.rank-season').outerHTML=renderSeasonSummary(c,month);
     }
     el.querySelector(".rank-score small").textContent =
       scoreLabel(c,state);
@@ -344,6 +343,7 @@ function positionFilters() {
 }
 function closeFilters(restore = false) {
   filterPopover.hidden = true;filterToggle.setAttribute('aria-expanded','false');
+  document.querySelector('#entry-filters-toggle')?.setAttribute('aria-expanded','false');
   if (restore) filterToggle.focus({preventScroll:true});
 }
 function openFilters() {
@@ -398,6 +398,9 @@ function applyPreset(key) {
   change(() => { state.weights = {...preset.weights};state.warm = !!preset.warm;state.visa = preset.visa || '';applyRankingFilter(state,'month',preset.month || state.month); });
 }
 root.addEventListener('click', event => {
+  if(event.target.closest('#entry-filters-toggle')) {
+    openFilters();document.querySelector('#entry-filters-toggle').setAttribute('aria-expanded','true');document.querySelector('#filter-visa').focus({preventScroll:true});
+  }
   const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>toggleQuickFilter(state,quick.dataset.quickFilter));
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
@@ -413,6 +416,7 @@ root.addEventListener('click', event => {
   const locateButton = event.target.closest('[data-map-locate]');if (locateButton) locateFromMap(locateButton.dataset.mapLocate,true);
 });
 filterToggle.addEventListener('click', () => filterPopover.hidden ? openFilters() : closeFilters(true));
+installRankingSeasons(root,slug=>data.find(city=>city.slug===slug),()=>displayMonth(state));
 let budgetGesture=false;
 const budgetInput=document.querySelector('#filter-budget');
 budgetInput.addEventListener('blur',()=>{budgetGesture=false;});

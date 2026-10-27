@@ -1,4 +1,5 @@
 import {withPlanMonth} from './trip-state.js';
+import {renderSeasonSummary} from './ranking-seasons.js';
 import {mountMarkup} from './site-path.js';
 import { cityMatchesQuery } from "./country-search.js";
 import {recommendationEligible} from './recommendation-policy.js';
@@ -246,31 +247,6 @@ export const flag = (code) =>
     : "";
 export const money = (v) =>
   v === null ? "—" : "$" + Math.round(v).toLocaleString("en-US");
-export function monthBand(city, selected = null) {
-  const pieces = city.months.map((m) => {
-    const height =
-      m.meanC === null || m.meanC === undefined
-        ? 8
-        : Math.max(4, Math.min(22, (m.meanC + 10) / 2));
-    const label =
-      m.status === "recommended"
-        ? "有推荐记录"
-        : m.status === "caution"
-          ? "季节需留意"
-          : "未判定";
-    const temp =
-      m.meanC === null || m.meanC === undefined
-        ? " · 历史均温待补"
-        : " · 历史均温 " + m.meanC.toFixed(1) + "°C";
-    return `<span aria-hidden="true" class="month-mark ${m.status}${m.meanC === null || m.meanC === undefined ? " missing-temperature" : ""}${selected === m.month ? " chosen" : ""}" title="${m.month} 月 · ${label}${temp}"><span>${m.month}</span><svg viewBox="0 0 5 22" aria-hidden="true"><rect x="0" y="${22 - height}" width="5" height="${height}" rx="1"/></svg></span>`;
-  });
-  return `<span class="month-band" role="img" aria-label="推荐月份：${
-    city.months
-      .filter((m) => m.status === "recommended")
-      .map((m) => m.month)
-      .join("、") || "待补录"
-  }；颜色为原推荐标签，条高为历史均温，空心虚线为均温待补">${pieces.join("")}</span>`;
-}
 export function renderRow(c, state) {
   const month = displayMonth(state);
   const mean = c.months[month - 1]?.meanC;
@@ -286,7 +262,7 @@ export function renderRow(c, state) {
  <div class="rank-metric safety-cell"><span class="metric-mobile-label">安全</span><strong>${n(c.scores.safety)}</strong>${bar(c.scores.safety)}</div>
  <div class="rank-metric climate-cell"><span class="metric-mobile-label">${month}月舒适度</span><strong title="${month}月舒适度 /10；按历史气温、高温与雨量估算；均温${Number.isFinite(mean)?Math.round(mean)+'°C':'待补'}">${n(comfort)}</strong><small>${month}月舒适度</small></div>
  <div class="rank-metric internet-cell"><span class="metric-mobile-label">网络</span><strong title="旧资料网络评分；不是房间实测 Mbps">${n(c.scores.internet)}</strong>${bar(c.scores.internet)}</div>
- <div class="rank-season">${monthBand(c, state.month)}</div>
+ ${renderSeasonSummary(c, month)}
  <div class="rank-visa"><span class="metric-mobile-label">大陆护照</span><span class="rank-visa-label" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span></div>
  <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${scoreLabel(c,state)}</small></div>
  <button type="button" class="rank-row-share" data-share-city="${esc(c.slug)}" aria-label="分享${esc(c.name)}"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 13V3m-4 4 4-4 4 4M4 11v6h12v-6"/></svg></button>

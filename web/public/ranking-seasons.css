@@ -1,0 +1,66 @@
+/* A: keep season information in one predictable, directly readable place. */
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .ranking-row {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  padding-bottom: 0;
+  gap: 14px 8px;
+}
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-photo { aspect-ratio: 1.7; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-identity { padding-inline: 18px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-identity p { min-height: 0; margin-top: 7px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .cost-cell { grid-column: 1 / 3; grid-row: 3; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-score { grid-column: 3; grid-row: 3; padding-right: 18px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .safety-cell { grid-column: 1; grid-row: 4; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .climate-cell { grid-column: 2; grid-row: 4; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .internet-cell { grid-column: 3; grid-row: 4; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-metric { padding-inline: 18px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-metric .metric-mobile-label { font-size: 12px; letter-spacing: 0; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-metric strong { font-size: 18px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .cost-cell strong { font-size: 22px; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .micro-bar,
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-visa,
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .mobile-visa { display: none; }
+html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-season {
+  display: block;
+  grid-column: 1 / -1;
+  grid-row: 5;
+  align-self: end;
+  width: auto;
+  padding: 11px 18px 16px;
+  margin: 2px 0 0;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb,var(--green-soft) 48%,var(--surface));
+}
+.rank-season-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--ink-2); line-height: 1.6; }
+.rank-season-heading a { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; color: var(--green); font-size: 12px; white-space: nowrap; }
+.rank-season-heading a span { font-size: 19px; }
+.rank-season-range { display: block; margin: 1px 0 12px; font-size: 21px; line-height: 1.5; font-weight: 500; color: var(--green); letter-spacing: -.02em; overflow-wrap: anywhere; }
+.rank-season-current { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 11px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; }
+.rank-season-current strong { color: var(--green); font-size: 18px; font-weight: 500; white-space: nowrap; }
+html[data-ranking-layout="list"] #ranking-root #ranking-list .rank-season-range { font-size: 12px; margin: 2px 0 0; line-height: 1.6; }
+html[data-ranking-layout="list"] #ranking-root #ranking-list .rank-season-heading { display: block; font-size: 10px; }
+html[data-ranking-layout="list"] #ranking-root #ranking-list .rank-season-heading a { display: flex; min-height: 28px; font-size: 11px; }
+html[data-ranking-layout="list"] #ranking-root #ranking-list .rank-season-heading > span,
+html[data-ranking-layout="list"] #ranking-root #ranking-list .rank-season-current { display: none; }
+.rank-season-dialog { width: min(460px,calc(100% - 32px)); max-height: calc(100dvh - 40px); overflow-y: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink-1); padding: 28px; box-shadow: 0 24px 80px #17372824; }
+.rank-season-dialog::backdrop { background: #182c2547; }
+.rank-season-dialog h2 { margin: 0 40px 24px 0; font-size: 23px; line-height: 1.5; }
+.rank-season-close { float: right; margin: -6px -8px 0 0; width: 44px; height: 44px; border: 0; border-radius: 6px; background: transparent; color: var(--ink-2); font-size: 27px; cursor: pointer; }
+.rank-season-close:hover { background: var(--green-soft); }
+.rank-season-recommendation { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; padding: 14px 16px; border-radius: 8px; background: var(--green-soft); color: var(--ink-2); font-size: 12px; }
+.rank-season-recommendation strong { font-size: 19px; font-weight: 500; color: var(--green); }
+.rank-season-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rank-season-table th,.rank-season-table td { text-align: left; padding: 8px 6px; line-height: 1.5; border-bottom: 1px solid var(--line); font-weight: 400; }
+.rank-season-table thead th { color: var(--ink-3); font-size: 11px; }
+.rank-season-table tbody th { color: var(--ink-2); white-space: nowrap; }
+.rank-season-table tbody th small { margin-left: 6px; font-size: 10px; color: var(--green); }
+.rank-season-table .is-selected { background: var(--green-soft); }
+.rank-season-table .is-recommended { color: var(--green); font-weight: 500; }
+.rank-season-source { margin: 20px 0; font-size: 12px; line-height: 1.8; color: var(--ink-2); }
+.rank-season-city-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; border-top: 1px solid var(--line); color: var(--green); font-size: 13px; }
+@media(max-width:375px) {
+  html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-metric { padding-inline: 12px; }
+  html:not([data-ranking-layout="list"]) #ranking-root #ranking-list .rank-metric .metric-mobile-label { font-size: 11px; }
+  .rank-season-heading { font-size: 11px; }
+  .rank-season-heading a { font-size: 11px; }
+  .rank-season-dialog { padding: 20px; }
+}
