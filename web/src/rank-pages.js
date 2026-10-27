@@ -50,7 +50,7 @@ async function readRankings(env) {
   const [base, months, climate] = await Promise.all([
     rows(
       env.DB,
-      `SELECT c.id,c.slug,c.name_zh,c.name_en,c.country_id,c.region,c.budget_amount,c.budget_basis,c.photo_url,c.summary,k.name_zh country_name,k.iso2,s.safety,s.cost,s.climate,s.life,s.internet,s.community,s.original_metric_score,s.why_short,e.entry_type,e.label entry_label,e.detail entry_detail,l.latitude,l.longitude,l.timezone FROM cities c JOIN countries k ON k.id=c.country_id LEFT JOIN city_scores s ON s.city_id=c.id LEFT JOIN city_entry_conditions e ON e.city_id=c.id AND e.passport='CN' LEFT JOIN city_locations l ON l.city_id=c.id ${where}`,
+      `SELECT c.id,c.slug,c.name_zh,c.name_en,c.country_id,c.region,c.budget_amount,c.budget_basis,c.budget_currency,c.budget_checked_at,c.checked_at,c.photo_url,c.photo_credit,c.photo_source,c.summary,k.name_zh country_name,k.iso2,s.safety,s.cost,s.climate,s.life,s.internet,s.community,s.original_metric_score,s.why_short,e.entry_type,e.label entry_label,e.detail entry_detail,l.latitude,l.longitude,l.timezone FROM cities c JOIN countries k ON k.id=c.country_id LEFT JOIN city_scores s ON s.city_id=c.id LEFT JOIN city_entry_conditions e ON e.city_id=c.id AND e.passport='CN' LEFT JOIN city_locations l ON l.city_id=c.id ${where}`,
     ),
     rows(
       env.DB,
@@ -78,7 +78,7 @@ async function readRankings(env) {
     region: c.region,
     budget: c.budget_amount,
     budgetBasis: c.budget_basis,
-    photo: c.photo_url,
+    photo: c.photo_url,photoCredit:c.photo_credit,photoSource:c.photo_source,budgetCurrency:c.budget_currency,budgetCheckedAt:c.budget_checked_at,checkedAt:c.checked_at,
     why: c.why_short || c.summary,
     baseScore: c.original_metric_score,
     scores: Object.fromEntries(KEYS.map((k) => [k, c[k] ?? null])),

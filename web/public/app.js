@@ -1,3 +1,4 @@
+import {initSharing} from './modules/share-content.js';
 import {icon} from './modules/icons.js';
 import './modules/wechat-ui.js';
 import {installPhotoFallback} from './modules/photo-fallback.js';
@@ -219,6 +220,7 @@ navigation?.addEventListener('click', event => {
 });
 mobileNavigation.addEventListener('change', () => closeNavigation());
 installPhotoFallback(document);
+initSharing();
 document.addEventListener("nomads:rows-updated", update);
 document.addEventListener("nomads:notice", (e) => notify(e.detail));
 update();
@@ -257,4 +259,13 @@ document.addEventListener('click',async event=>{
  if(!button)return;
  try{agentModule??=import('./modules/agent-ui.js');(await agentModule).open(button);}
  catch{notify('小狐暂时没有载入，请刷新后重试。');}
+});
+
+// Share only the cities explicitly in the visible comparison tray.
+document.querySelector('#compare-share')?.addEventListener('click',async event=>{
+ if(!selected.length)return;
+ const [{createShare},{openShare}]=await Promise.all([import('./modules/share-model.js'),import('./modules/share-ui.js')]);
+ const month=currentPlanMonth(),url=new URL(location.origin+sitePath(selected.length===2?'/compare/'+selected.map(city=>city.slug).sort().join('-vs-')+'/':'/cities/'+selected[0].slug+'/'));
+ if(month)url.searchParams.set('month',month);
+ openShare(createShare({kind:'comparison',title:selected.map(city=>city.name).join(' 与 '),subtitle:'我的待选城市',items:selected.map(city=>({title:city.name,detail:'打开城市资料，再核对预算与出发条件。'})),url:url.href,caveats:['只包含这次明确选中的城市，不包含其他收藏、个人报价或对话。']}),event.currentTarget);
 });

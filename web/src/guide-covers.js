@@ -1,13 +1,37 @@
 import {esc} from './render.js';
-import {editorialScene, sceneImage, AI_SCENE_LABEL} from './editorial-scenes.js';
+import {editorialScene, sceneImage} from './editorial-scenes.js';
 
 // Deterministic article-cover registry (2026-10-23). Each cover is either the
 // reviewed public photo of the article's own named city — with its original
-// attribution, never another city's photo — or a clearly labelled AI scene for
+// attribution, never another city's photo — or an editorial illustration for
 // articles that name no city. Provenance was reviewed from the public catalog
 // metadata; nothing here invents a location. See web/docs/design-refresh-2026-10-23.md.
 const CITY_COVERS = Object.freeze(
 {
+  "abu-dhabi": {
+    "name_zh": "阿布扎比",
+    "photo_url": "/images/city-abu-dhabi.webp",
+    "photo_credit": "Wadiia / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Abu_dhabi_skylines_2014.jpg"
+  },
+  "auckland": {
+    "name_zh": "奥克兰",
+    "photo_url": "/images/city-auckland.webp",
+    "photo_credit": "elpinto007 / CC BY-SA 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Auckland_skyline_-_May_2024_%282%29.jpg"
+  },
+  "bangkok": {
+    "name_zh": "曼谷",
+    "photo_url": "/images/city-bangkok.webp",
+    "photo_credit": "Ninara from Helsinki, Finland / CC BY 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_%2833536795515%29.jpg"
+  },
+  "kunming": {
+    "name_zh": "昆明",
+    "photo_url": "/images/city-kunming.webp",
+    "photo_credit": "瑞丽江的河水 / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:%E4%BA%94%E5%8D%8E%E5%8C%BA%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2025-05-16_04.jpg"
+  },
   "baku": {
     "name_zh": "巴库",
     "photo_url": "/images/city-baku.webp",
@@ -109,12 +133,72 @@ const CITY_COVERS = Object.freeze(
     "photo_url": "/images/city-xiamen.webp",
     "photo_credit": "Windmemories / CC BY-SA 4.0",
     "photo_source": "https://commons.wikimedia.org/wiki/File:20121031_Xiamen_University_01.jpg"
+  },
+  "wellington": {
+    "name_zh": "惠灵顿",
+    "photo_url": "/images/city-wellington.webp",
+    "photo_credit": "russellstreet / CC BY-SA 2.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Seddon_Statue_in_Parliament_Grounds.jpg"
+  },
+  "tbilisi": {
+    "name_zh": "第比利斯",
+    "photo_url": "/images/city-tbilisi.webp",
+    "photo_credit": "Alexey Komarov / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:View_of_Tbilisi_from_Tabori_Church_2023-10-08-2.jpg"
+  },
+  "canggu": {
+    "name_zh": "苍古",
+    "photo_url": "/images/city-canggu.webp",
+    "photo_credit": "Schweigeblick / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Beach_Club_Canggu.jpg"
+  },
+  "ho-chi-minh-city": {
+    "name_zh": "胡志明市",
+    "photo_url": "/images/city-ho-chi-minh-city.webp",
+    "photo_credit": "Steffen Schmitz (more photos) / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg"
+  },
+  "seoul": {
+    "name_zh": "首尔",
+    "photo_url": "/images/city-seoul.webp",
+    "photo_credit": "Eunmi Park / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg"
+  },
+  "singapore": {
+    "name_zh": "新加坡",
+    "photo_url": "/images/city-singapore.webp",
+    "photo_credit": "Ramir Borja. / CC BY-SA 3.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File%3ARaffles%20Place.jpg"
+  },
+  "hua-hin": {
+    "name_zh": "华欣",
+    "photo_url": "/images/city-hua-hin.webp",
+    "photo_credit": "josef knecht / CC BY 3.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Busy_Hua_Hin_-_panoramio.jpg"
+  },
+  "kota-kinabalu": {
+    "name_zh": "亚庇",
+    "photo_url": "/images/city-kota-kinabalu.webp",
+    "photo_credit": "FILMR Production / CC BY 3.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Kota_Kinabalu_City.jpg"
+  },
+  "phuket": {
+    "name_zh": "普吉",
+    "photo_url": "/images/city-phuket.webp",
+    "photo_credit": "Bennypc / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File:Phuket_Aerial.jpg"
+  },
+  "malacca": {
+    "name_zh": "马六甲",
+    "photo_url": "/images/city-malacca.webp",
+    "photo_credit": "Marcin Konsek / CC BY-SA 4.0",
+    "photo_source": "https://commons.wikimedia.org/wiki/File%3A2016%20Malakka%2C%20Plac%20Holenderski%20%2804%29.jpg"
   }
 }
 );
 
 // Articles with no named city get a scene by their exact editorial subject,
-// then a deterministic category scene. The scene is always labelled as AI work.
+// then a deterministic category scene, with descriptive illustration alt text.
 const SCENE_BY_SLUG = Object.freeze({
   'nomad-budget-checklist': 'neighborhood-cafe',
   'video-meeting-room-checklist': 'work-by-the-lake',
@@ -132,5 +216,5 @@ export function articleCover(entry) {
 export function articleCoverHTML(entry) {
   const cover = articleCover(entry);
   if (cover.kind === 'city') return `<figure class="article-cover"><img src="${esc(cover.photo_url)}" alt="${esc(cover.name_zh)}城市实景" width="960" height="641" loading="lazy" decoding="async" data-photo-label="${esc(cover.name_zh)}"><figcaption class="article-cover-credit">${esc(cover.name_zh)} · <a href="${esc(cover.photo_source)}" target="_blank" rel="noopener noreferrer">${esc(cover.photo_credit)} ↗</a></figcaption></figure>`;
-  return `<figure class="article-cover">${sceneImage(cover.id, {className: 'article-cover-image', sizes: '(max-width:700px) 92vw, 28vw'})}<figcaption class="ai-scene-label">${esc(AI_SCENE_LABEL)}</figcaption></figure>`;
+  return `<figure class="article-cover">${sceneImage(cover.id, {className: 'article-cover-image', sizes: '(max-width:700px) 92vw, 28vw'})}</figure>`;
 }

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "path": "/images/share-default.png",
+  "width": 1200,
+  "height": 630,
+  "rendering": "Deterministic browser Canvas; native text and controlled crop, no generative repaint",
+  "photo": {
+    "city": "清迈",
+    "path": "/images/city-chiang-mai.webp",
+    "credit": "Nawit science / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg"
+  },
+  "sha256": "1349cade235a0e9113de53d5533d9f6f381568e4070fa233aafb18543b65821c",
+  "sourceFingerprint": "094290db970cc67c808869950b82e08d40261abd13f9bbee83914c5f3804912e",
+  "createdOn": "2026-10-26",
+  "attribution": "Complete author, license and source in accompanying text, expanded details and original page; not painted on the image."
+}

@@ -1,3 +1,4 @@
+import {shareMarkup} from './share-markup.js';
 import {articleBySlug} from './article-catalog.js';
 import {articleCover} from './guide-covers.js';
 import {esc} from './render.js';
@@ -10,6 +11,11 @@ import {sitePath} from '../public/modules/site-path.js';
 // public photo of the article's own city with its original attribution.
 export function augmentGuideRuntime(body, article, env) {
   const {base} = siteLocation(env);
+  body=body.replace(/<button\b([^>]*\bdata-copy-budget\b[^>]*)>/gi,(match,attributes)=>`<button${attributes} disabled aria-busy="true" aria-label="正在准备预算分享">`);
+  const cover=articleCover(article);
+  const sharing=shareMarkup({kind:'guide',title:article.title,summary:article.summary,photos:cover.kind==='city'?[{url:sitePath(cover.photo_url,base),credit:cover.photo_credit,source:cover.photo_source,label:cover.name_zh}]:[]},base);
+  body=body.replace(/<\/head>/i,()=>sharing.head+`<script type="module" src="${sitePath('/guide-share.js',base)}"></script></head>`);
+  body=body.replace(/(<main\b[^>]*>)/i,match=>match+sharing.toolbar);
   body = body.replace(/<\/head>/i, () => `<link rel="stylesheet" href="${sitePath('/guide-runtime.css', base)}"><script type="module" src="${sitePath('/guide-visuals.js', base)}"></script></head>`);
   if (article.kind === 'guide' && article.topic !== true) {
     const cover = articleCover(article);
@@ -48,6 +54,6 @@ export async function cityGuideResponse(request, env) {
     'Strict-Transport-Security':'max-age=15552000',
     // Leaflet positions its own tiles and controls using style attributes.
     // Executable inline JavaScript remains disallowed.
-    'Content-Security-Policy': "default-src 'self'; img-src 'self' data:; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self' 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+    'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self' 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
   }});
 }

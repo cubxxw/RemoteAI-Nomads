@@ -31,13 +31,13 @@
       "slug": "kuala-lumpur-monthly-budget",
       "kind": "guide",
       "path": "/guides/kuala-lumpur-monthly-budget/",
-      "title": "吉隆坡住一个月，预算、租房和办公怎么安排",
-      "summary": "一个人住吉隆坡30晚，舒适预算5,314令吉，约8,697元，含日间工位月票。房租、水电和从公寓到车站的路线一起比较，押金另备。",
+      "title": "吉隆坡住一个月，公寓位置和工位时间怎么选",
+      "summary": "单人住吉隆坡30晚，舒适规划5,314令吉，含日间工位月票，押金另备。比较Jalan Ampang、KLCC和Cheras，弄清月租水电、工位时段与实际停留日期。",
       "citySlugs": [
         "kuala-lumpur"
       ],
       "status": "published",
-      "updatedAt": "2026-10-20",
+      "updatedAt": "2026-10-26",
       "assetPath": "/city-guides/kuala-lumpur-monthly-budget.html"
     },
     {
@@ -83,13 +83,13 @@
       "slug": "hangzhou-monthly-budget",
       "kind": "guide",
       "path": "/guides/hangzhou-monthly-budget/",
-      "title": "杭州住一个月，西湖边和新区的房租怎么排",
-      "summary": "一个人住杭州30晚，舒适预算9,300 CNY，约9,300元。西湖边和新区的房租怎么排三档预算、已核公开报价与计算器，保留房型、租期和未确认费用。",
+      "title": "杭州住一个月，湖边生活和工位怎么安排",
+      "summary": "单人住杭州30晚，舒适规划9,300元，默认房间办公。比较景芳公寓、武林短租与湖滨、黄龙工位，弄清一个月租期、服务费和房间条件，押金另备。",
       "citySlugs": [
         "hangzhou"
       ],
       "status": "published",
-      "updatedAt": "2026-10-21",
+      "updatedAt": "2026-10-26",
       "assetPath": "/city-guides/hangzhou-monthly-budget.html"
     },
     {
@@ -1067,6 +1067,409 @@
       "assetPath": "/city-guides/which-nomad-data-to-trust.html",
       "seriesNumber": 50,
       "seriesCategory": "compare"
+    },
+    {
+      "slug": "da-nang-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/da-nang-monthly-budget/",
+      "title": "岘港住一个月，海边房间和雨天工位怎么安排",
+      "summary": "单人住岘港30晚，舒适规划2,740万越南盾，含工位月票，押金另备。比较美安与海洲住法，核对公寓水电、三家运营方价格和11月雨天安排。",
+      "citySlugs": [
+        "da-nang"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/da-nang-monthly-budget.html"
+    },
+    {
+      "slug": "xiamen-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/xiamen-monthly-budget/",
+      "title": "厦门住一个月，岛内和集美的房间怎么选",
+      "summary": "单人住厦门30晚，舒适规划7,500元，默认房间办公，押金另备。对照湖里一房与集美Loft，比较面积、短租条件、工位日票和冬季住法。",
+      "citySlugs": [
+        "xiamen"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/xiamen-monthly-budget.html"
+    },
+    {
+      "slug": "japan-digital-nomad-chinese-passport",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/japan-digital-nomad-chinese-passport/",
+      "title": "中国大陆护照能申请日本数字游民签证吗？",
+      "summary": "截至2026年10月26日，持中国大陆普通护照的申请人不在日本数字游民主申请人适用名单中。先核对护照资格，再看年收入、医疗保险与六个月停留条件。",
+      "citySlugs": [
+        "tokyo",
+        "osaka",
+        "fukuoka"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-26",
+      "assetPath": "/city-guides/japan-digital-nomad-chinese-passport.html"
+    },
+    {
+      "slug": "two-person-monthly-budget",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/two-person-monthly-budget/",
+      "title": "两个人住一个月，房租能平摊，哪些费用要重算？",
+      "summary": "用吉隆坡NOVO公寓与WORQ工位的公开价格演算双人月住：房费按整间确认，工位按人计算，押金单独准备。3300令吉只是一间Studio和两张月票的条件性小计，生活费及未确认收费另算。",
+      "citySlugs": [
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/two-person-monthly-budget.html"
+    },
+    {
+      "slug": "new-zealand-visitor-remote-work",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/new-zealand-visitor-remote-work/",
+      "title": "去新西兰边旅行边远程工作，雇主和客户要在哪里？",
+      "summary": "新西兰允许符合条件的访客为境外雇主或客户远程工作，但本地雇佣、换宿和需要在新西兰现场完成的活动有不同要求。按2026年10月现行官方说明，核对中国护照入境路径、实际停留期限与税务条件。",
+      "citySlugs": [
+        "auckland",
+        "wellington"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/new-zealand-visitor-remote-work.html"
+    },
+    {
+      "slug": "kunming-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/kunming-monthly-budget/",
+      "title": "昆明住一个月，翠湖周边、大观路和环南怎么选",
+      "summary": "单人在昆明住30晚，三档编辑预留4,800、7,000和10,500元，默认房间办公，押金另备。对照翠湖周边、大观路与环南房源，确认短租合同、冬季采光制热和工位使用条件。",
+      "citySlugs": [
+        "kunming"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/kunming-monthly-budget.html"
+    },
+    {
+      "slug": "bangkok-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/bangkok-monthly-budget/",
+      "title": "曼谷住一个月，房租要和工位、跨区交通一起算",
+      "summary": "单人承担整间房住30晚，按同一张工位月票比较38,850、52,000和71,350泰铢三档规划。看拉差达39平方米公寓、施工与月期条件，区分Thonglor和Ekkamai工位时段，再核中国护照停留与远程工作安排。",
+      "citySlugs": [
+        "bangkok"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/bangkok-monthly-budget.html"
+    },
+    {
+      "slug": "abu-dhabi-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/abu-dhabi-monthly-budget/",
+      "title": "阿布扎比住一个月，清晨开会和短租房间怎么选",
+      "summary": "单人住阿布扎比30晚，舒适规划20,350迪拉姆，默认房间办公。比较Studio与一卧酒店公寓的月价、凌晨五点早会和日票门禁，住房与工位押金另备。",
+      "citySlugs": [
+        "abu-dhabi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/abu-dhabi-monthly-budget.html"
+    },
+    {
+      "slug": "auckland-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/auckland-monthly-budget/",
+      "title": "奥克兰住一个月，北京时间上班要安排到晚上十一点",
+      "summary": "单人住奥克兰30晚，舒适档编辑预留7,450纽币，默认房间工作。北京9—18点对应当地14—23点，比较独卫周租房与整套公寓询价，也看工位门禁与HOP交通封顶。",
+      "citySlugs": [
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/auckland-monthly-budget.html"
+    },
+    {
+      "slug": "wellington-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/wellington-monthly-budget/",
+      "title": "惠灵顿住一个月，周租房的网络和晚班工位怎么选",
+      "summary": "单人整间房30晚，默认房间工作，三档编辑预留4700、6900和9500纽币。比较Willis街Studio的周租与计量网络、两家市中心工位的夜间门禁，再安排公交和周末采购。",
+      "citySlugs": [
+        "wellington"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/wellington-monthly-budget.html"
+    },
+    {
+      "slug": "tbilisi-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/tbilisi-monthly-budget/",
+      "title": "第比利斯住一个月，住维拉还是Fabrika附近",
+      "summary": "单人整间住30晚，舒适规划5,500拉里，默认房间办公。比较维拉Stamba与Fabrika附近住法，核对冬季供暖、工位进入时段，以及中国普通护照30日、保险和远程工作条件。",
+      "citySlugs": [
+        "tbilisi"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/tbilisi-monthly-budget.html"
+    },
+    {
+      "slug": "new-zealand-weekly-rent-thirty-nights",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/new-zealand-weekly-rent-thirty-nights/",
+      "title": "新西兰租房按周报价，住30晚的钱怎么算？",
+      "summary": "用惠灵顿Capital与奥克兰Studio 41的公开周租，分清四周28晚、30晚入住和最低合同。房费按实际日期询价，押金单独备，网络与共用厨房条件也一起看。",
+      "citySlugs": [
+        "wellington",
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/new-zealand-weekly-rent-thirty-nights.html"
+    },
+    {
+      "slug": "auckland-hop-cap-airport-transport",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/auckland-hop-cap-airport-transport/",
+      "title": "奥克兰坐车，一周封顶和机场交通怎么一起算？",
+      "summary": "用三区通勤和集中一天出行比较HOP周封顶与银行卡日封顶，分清Puhinui机场公交、内港渡轮和私营SkyDrive。30晚按实际7天区间演算，不把50纽币当全线路周票。",
+      "citySlugs": [
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/auckland-hop-cap-airport-transport.html"
+    },
+    {
+      "slug": "canggu-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/canggu-monthly-budget/",
+      "title": "苍古住一个月，选独立客房还是住工套餐",
+      "summary": "单人独占房间住30晚，预留1,650万／2,700万／4,000万印尼盾，默认房间办公。比较Matra月房、Cove独立客房与住工套餐，核对全时票、通话额度和雨天安排。",
+      "citySlugs": [
+        "canggu"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/canggu-monthly-budget.html"
+    },
+    {
+      "slug": "ho-chi-minh-city-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/ho-chi-minh-city-monthly-budget/",
+      "title": "胡志明市住一个月，公寓电费与跨区上班怎么安排？",
+      "summary": "单人承担整间服务公寓30晚，三档编辑预留5,000万、6,500万和8,800万越南盾。核对公寓电费额度、10天与全天工位票，以及第1郡、第3郡和Thảo Điền的工作日选择。",
+      "citySlugs": [
+        "ho-chi-minh-city"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/ho-chi-minh-city-monthly-budget.html"
+    },
+    {
+      "slug": "seoul-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/seoul-monthly-budget/",
+      "title": "首尔冬天住一个月，选独立厨房还是共居公区",
+      "summary": "按单人整间30晚、房内办公，编辑预留370万—730万韩元。比较江南带厨房公寓与新设洞共居，核对冬季房间、日票时段和2026年正式F-1-D门槛。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/seoul-monthly-budget.html"
+    },
+    {
+      "slug": "korea-workation-f1d-2026",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/korea-workation-f1d-2026/",
+      "title": "韩国F-1-D转正式后，收入门槛要看年龄、住址和家属",
+      "summary": "2026年6月30日起，韩国F-1-D正式制度按年龄和居住地区区分收入条件，携家属另有规则。用官方GNI示例解释年收入与月预算的区别，并列出保险、年限和申请入口。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/korea-workation-f1d-2026.html"
+    },
+    {
+      "slug": "seoul-climate-card-short-stay-2026",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/seoul-climate-card-short-stay-2026/",
+      "title": "首尔旧月卡停充后，短住该怎么买交通票",
+      "summary": "旧30天预付卡已停止充值，新Climate Pass按居民登记与月度消费返款。短访可用的1至7日票怎样起算、哪些车不能坐，以及三天和四个周末的费用演算。",
+      "citySlugs": [
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/seoul-climate-card-short-stay-2026.html"
+    },
+    {
+      "slug": "singapore-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/singapore-monthly-budget/",
+      "title": "新加坡住一个月：酒店单人房和带厨房Studio怎么选",
+      "summary": "单人30晚先留5,600／7,500／10,000新元。用Katong单人房与带厨房Studio的真实月标签，看清9%GST、刷卡费、押金与不可退条款；再分开住房最低住期、MOM境外工作FAQ和ICA短访条件。",
+      "citySlugs": [
+        "singapore"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/singapore-monthly-budget.html"
+    },
+    {
+      "slug": "hua-hin-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/hua-hin-monthly-budget/",
+      "title": "华欣住一个月，102巷套房与两处工位怎么选",
+      "summary": "单人承担整间房30晚、默认房内工作，三档编辑预留35,500、50,500和78,000泰铢。比较102巷55平方米一卧、VEHHA月住与两处工位，分清冬季价表、水电和首次进入条件。",
+      "citySlugs": [
+        "hua-hin"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/hua-hin-monthly-budget.html"
+    },
+    {
+      "slug": "de-rantau-sabah-scope",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/de-rantau-sabah-scope/",
+      "title": "持DE Rantau去沙巴，还能按原准证远程工作吗？",
+      "summary": "MDEC现行FAQ把DE Rantau的范围列为半岛与纳闽，持证人赴沙巴按旅游准证入境。用官方规则分清访问身份与工作用途，说明持续境外线上工作还缺哪项确认。",
+      "citySlugs": [
+        "kota-kinabalu",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/de-rantau-sabah-scope.html"
+    },
+    {
+      "slug": "auckland-wellington-beijing-workday",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/auckland-wellington-beijing-workday/",
+      "title": "晚上十一点才下班，奥克兰和惠灵顿怎么选住处",
+      "summary": "2026年11—12月，两城都在当地14—23点对应北京工作日。用具名房型、夜间工位权益和不同交通计法，选择能安排晚饭、会议与回程的30晚住法。",
+      "citySlugs": [
+        "wellington",
+        "auckland"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/auckland-wellington-beijing-workday.html"
+    },
+    {
+      "slug": "monthly-apartment-utilities",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/monthly-apartment-utilities/",
+      "title": "公寓说“含水电”，住一个月怎样记真实账",
+      "summary": "用AVE、Sitara、Saigon City和NOVO的真实收费规则，分清按表另付、用量额度和金额额度。只做一个AVE500kWh假设算例，房租、押金与实际附费分别记录。",
+      "citySlugs": [
+        "da-nang",
+        "bangkok",
+        "ho-chi-minh-city",
+        "kuala-lumpur"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/monthly-apartment-utilities.html"
+    },
+    {
+      "slug": "phuket-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/phuket-monthly-budget/",
+      "title": "普吉住一个月，把房间和工位放在同一片",
+      "summary": "单人承担整间30晚、房内工作，编辑预留50,000—106,000泰铢。比较普吉镇房型、芭东旺季计价，以及拉威和查龙的工位时段、通话权益与首次进入条件。",
+      "citySlugs": [
+        "phuket"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/phuket-monthly-budget.html"
+    },
+    {
+      "slug": "malacca-monthly-budget",
+      "kind": "guide",
+      "path": "/guides/malacca-monthly-budget/",
+      "title": "马六甲住一个月，老城生活和外围工位怎么兼顾",
+      "summary": "单人30晚、默认房内办公，先留6,000／8,000／10,500令吉。以房主单客月标签和三处真实工位比较房型、厨房及工作日安排，分清促销日票、月合同与24个月低日均；住房库存和完整含费报价仍按实际日期确认。",
+      "citySlugs": [
+        "malacca"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/malacca-monthly-budget.html"
+    },
+    {
+      "slug": "remote-visa-income-balance",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/remote-visa-income-balance/",
+      "title": "E33G与韩国F-1-D，年收入和账户余额分别怎么证明",
+      "summary": "印尼E33G的6万美元年收入与2,000美元银行资金要求并列；韩国F-1-D还按年龄、住址和家属区分GNI倍数。用两组假设说明收入、余额、保险保额与生活预算各自证明什么。",
+      "citySlugs": [
+        "canggu",
+        "ubud",
+        "seoul"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/remote-visa-income-balance.html"
+    },
+    {
+      "slug": "hua-hin-cross-season-thirty-nights",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/hua-hin-cross-season-thirty-nights/",
+      "title": "跨过12月1日，华欣30晚该用哪档房价？",
+      "summary": "BLU同一卧室套房的30晚价分两季，相差4,000泰铢。入住段跨过12月1日，先确认按哪一段日期计费，再看水电和退改。",
+      "citySlugs": [
+        "hua-hin"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/hua-hin-cross-season-thirty-nights.html"
+    },
+    {
+      "slug": "singapore-foreign-card-transit-fee",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/singapore-foreign-card-transit-fee/",
+      "title": "新加坡刷境外卡坐车，0.60新元按哪几天收？",
+      "summary": "境外Visa或Mastercard按使用日收行政费，车资汇总入账另有周期。用两个相隔日期白天乘车的单人例子，分清S$1.20、行程车资和银行费用，并把同卡同设备进出讲清。",
+      "citySlugs": [
+        "singapore"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/singapore-foreign-card-transit-fee.html"
+    },
+    {
+      "slug": "cowork-call-hours",
+      "kind": "guide",
+      "topic": true,
+      "path": "/guides/cowork-call-hours/",
+      "title": "工位能打电话，够你每天开两小时会吗？",
+      "summary": "用20个工作日、每天两小时独立通话的假设，比较BWork每日2小时、Tropical Nomad每月12小时，以及Let’s Work电话亭按日、会议室按周的权益。只算时数差，不把24/7进入当作私人会议包用。",
+      "citySlugs": [
+        "canggu",
+        "phuket"
+      ],
+      "status": "published",
+      "updatedAt": "2026-10-27",
+      "assetPath": "/city-guides/cowork-call-hours.html"
     }
   ]
 }

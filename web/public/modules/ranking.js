@@ -289,6 +289,7 @@ export function renderRow(c, state) {
  <div class="rank-season">${monthBand(c, state.month)}</div>
  <div class="rank-visa"><span class="metric-mobile-label">大陆护照</span><span class="rank-visa-label" title="${esc(c.visa.detail)}">${esc(c.visa.label)}<span class="legacy-indicator" aria-label="原资料待复核">*</span></span></div>
  <div class="rank-score"><strong>${c.score === null ? "—" : c.score.toFixed(1)}</strong><small>${scoreLabel(c,state)}</small></div>
+ <button type="button" class="rank-row-share" data-share-city="${esc(c.slug)}" aria-label="分享${esc(c.name)}"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 13V3m-4 4 4-4 4 4M4 11v6h12v-6"/></svg></button>
  <button class="rank-compare" data-compare="${esc(c.slug)}" data-name="${esc(c.name)}" aria-label="对比${esc(c.name)}" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></button>
  </article>`);
 }
