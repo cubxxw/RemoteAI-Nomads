@@ -211,7 +211,7 @@ test('guide covers use the article city photo with attribution, or an illustrati
 
 test('new city articles select their own existing photo rather than the generic scene fallback', async () => {
   const photos=JSON.parse(await readFile(join(root,'scripts/photos.json'),'utf8'));
-  for (const [slug,city] of [['kunming-monthly-budget','kunming'],['bangkok-monthly-budget','bangkok'],['abu-dhabi-monthly-budget','abu-dhabi'],['new-zealand-visitor-remote-work','auckland'],['auckland-monthly-budget','auckland'],['wellington-monthly-budget','wellington'],['tbilisi-monthly-budget','tbilisi'],['canggu-monthly-budget','canggu'],['ho-chi-minh-city-monthly-budget','ho-chi-minh-city'],['seoul-monthly-budget','seoul'],['korea-workation-f1d-2026','seoul']]) {
+  for (const [slug,city] of [['kunming-monthly-budget','kunming'],['bangkok-monthly-budget','bangkok'],['abu-dhabi-monthly-budget','abu-dhabi'],['new-zealand-visitor-remote-work','auckland'],['auckland-monthly-budget','auckland'],['wellington-monthly-budget','wellington'],['tbilisi-monthly-budget','tbilisi'],['canggu-monthly-budget','canggu'],['ho-chi-minh-city-monthly-budget','ho-chi-minh-city'],['seoul-monthly-budget','seoul'],['korea-workation-f1d-2026','seoul'],['singapore-monthly-budget','singapore'],['hua-hin-monthly-budget','hua-hin'],['de-rantau-sabah-scope','kota-kinabalu'],['auckland-wellington-beijing-workday','wellington'],['monthly-apartment-utilities','da-nang']]) {
     const article=publishedArticles().find(a=>a.slug===slug), cover=articleCover(article);
     assert.equal(cover.kind,'city',slug);
     assert.equal(cover.photo_url,`/images/city-${city}.webp`);

@@ -57,9 +57,15 @@
       "approvedOn": "2026-10-27",
       "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
       "reviewRecord": "research/2026-10-27-articles-batch3.md"
+    },
+    "continuousBatch4": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch4.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -645,6 +651,41 @@
       "sha256": "150b258ce3c1123946da39fca45d22d04c4eca89ff1ff8f2d6279db634d78716",
       "source": "research/2026-10-27-articles-batch3.md",
       "approved": true
+    },
+    {
+      "slug": "singapore-monthly-budget",
+      "sourceFile": "singapore-monthly-budget.html",
+      "sha256": "f13b361a87b1bb81db6562278f239870774d4f0def66a59b0784a11dbd7e1ad1",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "hua-hin-monthly-budget",
+      "sourceFile": "hua-hin-monthly-budget.html",
+      "sha256": "f192bace9259b717dcbdad6d5fe8af200c25d424a8c58dd20accc894881921a8",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "de-rantau-sabah-scope",
+      "sourceFile": "de-rantau-sabah-scope.html",
+      "sha256": "55b3381d8733c4a8cc7b2d45ab409ba77cc345b9f005458ceccf8ce43b4fc1de",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "auckland-wellington-beijing-workday",
+      "sourceFile": "auckland-wellington-beijing-workday.html",
+      "sha256": "044fb8deb760a50d36b9ad400e3720ad6ae95f1afa61e3e04d937d10b43a7b09",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "monthly-apartment-utilities",
+      "sourceFile": "monthly-apartment-utilities.html",
+      "sha256": "d910009983c32ee159e9489fff0435e53a2f310441edce3707bb84cf17426f00",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
     }
   ],
   "assets": [
@@ -1199,14 +1240,64 @@
       "destination": "images/og-editorial-seoul-climate-card-short-stay-2026.jpeg"
     },
     {
+      "source": "assets/editorial-singapore.webp",
+      "destination": "images/editorial-singapore.webp",
+      "sha256": "05af671bd7b19e0549b8f6165c6b00e3adf99504a64a0bf92c9edfb53ee811f4"
+    },
+    {
+      "source": "assets/editorial-hua-hin.webp",
+      "destination": "images/editorial-hua-hin.webp",
+      "sha256": "b97337f773cc76e441cb829857beaca5bfc0fb1b5cbc9291c272486d6b570593"
+    },
+    {
+      "source": "assets/de-rantau-sabah-scope.webp",
+      "destination": "images/de-rantau-sabah-scope.webp",
+      "sha256": "bdf892d97e6849674372fda721f3da16df4e67cc673600c6b54aef768c2dd66d"
+    },
+    {
+      "source": "assets/auckland-wellington-beijing-workday.webp",
+      "destination": "images/auckland-wellington-beijing-workday.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/monthly-apartment-utilities.webp",
+      "destination": "images/monthly-apartment-utilities.webp",
+      "sha256": "e46ec5c7d650612993309e1d5788dd7ee75af0cc0da38da29b8d049a646aab24"
+    },
+    {
+      "source": "assets/og-editorial-singapore-monthly-budget.jpeg",
+      "destination": "images/og-editorial-singapore-monthly-budget.jpeg",
+      "sha256": "6f9ffc86ae4cba90fdd3918406ee39af4d0997a685f3b287837b9a8fa42fbae0"
+    },
+    {
+      "source": "assets/og-editorial-hua-hin-monthly-budget.jpeg",
+      "destination": "images/og-editorial-hua-hin-monthly-budget.jpeg",
+      "sha256": "4a5fcbd8dc857ad3fe03a8ebd75dfb3c2931421bb882a329196ea70efc2b7d8d"
+    },
+    {
+      "source": "assets/og-editorial-de-rantau-sabah-scope.jpeg",
+      "destination": "images/og-editorial-de-rantau-sabah-scope.jpeg",
+      "sha256": "887759b72e007b40cf7b20249bd496afd2725cb23330be8b6f7e65fe56ecc07c"
+    },
+    {
+      "source": "assets/og-editorial-auckland-wellington-beijing-workday.jpeg",
+      "destination": "images/og-editorial-auckland-wellington-beijing-workday.jpeg",
+      "sha256": "3f0272ac5c06208fe51643f9f0ce0071b4a2db30acfb8716e756aa924604812f"
+    },
+    {
+      "source": "assets/og-editorial-monthly-apartment-utilities.jpeg",
+      "destination": "images/og-editorial-monthly-apartment-utilities.jpeg",
+      "sha256": "4a60deacac52b50456bd06ac6c53ce2c8a9cd62ae384a685e6448d6ac25da05e"
+    },
+    {
       "source": "budget-model.mjs",
       "destination": "budget-model.mjs",
-      "sha256": "aab48ee9d3b41989526dd1e786172368d7fcbeadd6f4c6f5a5d11ac9e36a4b8a"
+      "sha256": "3a15a048d4fa9f71259e3c33f06b38a62185fcc848cc238daf07b6e1b28c70b1"
     },
     {
       "source": "guide-tools.mjs",
       "destination": "guide-tools.mjs",
-      "sha256": "39ba73259bc5bd57f7a78e897179b9198f3f73a7396134ec58961a7595e900a0"
+      "sha256": "253cb8c6b199fe5f81d7a71f2a715f2c1ae7811308250dfdb391ac38b0e1cfcb"
     }
   ]
 }
