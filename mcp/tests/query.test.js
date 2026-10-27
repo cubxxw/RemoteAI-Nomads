@@ -52,7 +52,16 @@ test('hard climate filters require observations, preserve zero and exclude revie
     assert.ok(month.mean_c >= 18 && month.mean_c <= 28);
     assert.equal(c.recommendation.eligible, true);
   }
-  assert.ok(result.data.excluded_missing_climate > 0);
+  assert.equal(result.data.excluded_missing_climate,0,'the current public snapshot has complete climate coverage');
+  const changed=structuredClone(snapshot),gap=changed.cities.find(c=>c.id==='city:chiang-mai');
+  gap.climate=gap.climate.filter(row=>row.month!==11);
+  const missing=query(changed,'nomads_find_cities',{months:[11],min_temp:18,max_temp:28,limit:20});
+  assert.equal(missing.data.excluded_missing_climate,1);
+  assert.ok(!missing.data.cities.some(c=>c.id===gap.id));
+  gap.climate.push({...snapshot.cities.find(c=>c.id===gap.id).climate.find(row=>row.month===11),mean_c:0});
+  gap.months[10].meanC=0;
+  const zero=query(changed,'nomads_find_cities',{months:[11],min_temp:0,max_temp:0,limit:20});
+  assert.equal(zero.data.cities.find(c=>c.id===gap.id).climate[0].mean_c,0);
 });
 
 test('city and national costs remain separate, with original units and dated FX', () => {
@@ -201,8 +210,9 @@ test('country cost queries respect category and scope and make coverage scope ex
 });
 
 test('missing city timezone does not ask the user to correct a valid schedule', () => {
-  const city = snapshot.cities.find(c => !c.timeZone && !c.advisory);
-  const result = run('get_context', {place: city.id, work_schedule: {
+  const changed=structuredClone(snapshot),city=changed.cities.find(c=>c.id==='city:chiang-mai');
+  city.timeZone=null;
+  const result = query(changed,'nomads_get_context', {place: city.id, work_schedule: {
     home_timezone: 'Asia/Shanghai', date: '2026-11-16', times: ['09:00'],
   }});
   assert.equal(result.data.candidates[0].work.meeting_examples.error.code, 'TIMEZONE_MISSING');

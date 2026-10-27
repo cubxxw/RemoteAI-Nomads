@@ -277,7 +277,7 @@ function execute(snapshot, name, args, now) {
       priced_cities: new Set(snapshot.costs.filter(o => o.scope === 'city').map(o => o.city_id)).size,
       climate_cities: snapshot.cities.filter(c => c.climate.length).length,
       workspace_cities: new Set(snapshot.workspaces.map(w => w.city_id)).size},
-    methodology: {default_weights: DEFAULT_WEIGHTS, climate: '2023–2025 ERA5历史网格，不是预报',
+    methodology: {default_weights: DEFAULT_WEIGHTS, climate: '2023–2025历史再分析网格，具体来源模型随记录保留；不是预报',
       ranking: '沿用网站加权评分；缺失不补零；历史网络与安全指标不是当前实测',
       cost: '原币、单位、地域和日期保留；住房挂牌不是最低可行预算', fx: '仅使用ECB同日交叉汇率，超过7天标为过期'},
     data_origin: 'Reviewed public seed; no runtime database or model access',
