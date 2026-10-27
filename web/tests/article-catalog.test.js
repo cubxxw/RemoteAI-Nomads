@@ -77,6 +77,37 @@ test('topic classification is a validated optional boolean on guide entries', ()
   assert.throws(() => registry([{...topic, slug: 'topic-compare', path: '/compare/topic-compare/', assetPath: undefined, kind: 'comparison', topic: true}]), /Invalid article topic flag/);
 });
 
+test('topic navigation accounts for all reviewed articles once with honest category counts',()=>{
+ const html=guideCardsHTML();
+ const nav=html.match(/<nav class="guide-topic-nav"[\s\S]*?<\/nav>/)?.[0];
+ assert.ok(nav);
+ assert.equal((nav.match(/data-guide-topic-filter=/g)||[]).length,6);
+ assert.match(nav,/data-guide-topic-filter="all"[^>]*aria-current="true"/);
+ assert.match(nav,/全部专题/);
+ const groups=[...html.matchAll(/<div id="guide-series-([a-z]+)"[^>]*data-guide-topic-group="\1"[^>]*>([\s\S]*?)(?=<div id="guide-series-|<\/section>)/g)];
+ assert.equal(groups.length,5);
+ const topics=publishedArticles().filter(a=>a.topic);
+ for(const topic of topics){
+  const hits=groups.filter(g=>g[2].includes('href="'+topic.path+'"'));
+  assert.equal(hits.length,1,'Article must belong to one group: '+topic.slug);
+  assert.ok(topic.seriesCategory||topic.topicCategory,'Reviewed topic needs an explicit category: '+topic.slug);
+ }
+ for(const [key,count] of Object.entries({start:10,budget:16,season:11,permission:16,compare:11})){
+  assert.match(nav,new RegExp('data-guide-topic-filter="'+key+'"[^>]*>[\\s\\S]*?'+count+'篇'));
+ }
+ assert.doesNotMatch(nav,/再做更细的取舍|把钱花在哪/);
+});
+
+test('unclassified topics remain discoverable and invalid topic categories fail early',()=>{
+ const topic={...guide,slug:'new-topic',path:'/guides/new-topic/',assetPath:'/city-guides/new-topic.html',topic:true};
+ const html=registry([topic]).guideCardsHTML();
+ assert.match(html,/data-guide-topic-group="other"/);
+ assert.match(html,/href="\/guides\/new-topic\/"/);
+ assert.throws(()=>registry([{...topic,topicCategory:'unknown'}]),/topic category/);
+ assert.throws(()=>registry([{...topic,topicCategory:['budget']}]),/topic category/);
+ assert.throws(()=>registry([{...guide,topicCategory:'budget'}]),/topic category/);
+});
+
 test('draft entries stay out of lookup, navigation, city links and guide cards', () => {
   const draft = {...guide, slug: 'unreviewed-guide', path: '/guides/unreviewed-guide/', assetPath: '/city-guides/unreviewed-guide.html', status: 'draft', title: 'Unreviewed draft'};
   const catalog = registry([guide, draft]);
