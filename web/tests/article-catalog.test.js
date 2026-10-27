@@ -168,6 +168,11 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'seoul-monthly-budget': ['2026-10-27', '2026-10-26'],
       'korea-workation-f1d-2026': ['2026-10-27', null],
       'seoul-climate-card-short-stay-2026': ['2026-10-27', null],
+      'singapore-monthly-budget': ['2026-10-27', '2026-10-26'],
+      'hua-hin-monthly-budget': ['2026-10-27', '2026-10-26'],
+      'de-rantau-sabah-scope': ['2026-10-27', null],
+      'auckland-wellington-beijing-workday': ['2026-10-27', null],
+      'monthly-apartment-utilities': ['2026-10-27', null],
       'chengdu-monthly-budget': ['2026-10-21', '2026-10-20'],
       'fethiye-monthly-budget': ['2026-10-21', '2026-10-20'],
       'lisbon-monthly-budget': ['2026-10-21', '2026-10-20'],
@@ -215,7 +220,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 57);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 60);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);

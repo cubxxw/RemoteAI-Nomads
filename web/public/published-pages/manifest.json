@@ -2,7 +2,7 @@
   "version": 1,
   "origin": "https://roamorrow.com/nomads",
   "source_origin": "https://nomads.cubxxw.com",
-  "generated_at": "2026-10-26T23:03:37.197Z",
+  "generated_at": "2026-10-27T00:06:16.455Z",
   "snapshot_date": "2026-10-18",
   "snapshot_date_basis": "published database file mtime; source observation dates are retained in page content",
   "db_sha256": "6efd41441da5699f6ade6ec43019571ea446da854b862cb9248730d90ed97c98",
@@ -14,11 +14,11 @@
   "counts": {
     "cities": 350,
     "countries": 258,
-    "guides": 83,
+    "guides": 88,
     "comparisons": 2
   },
-  "file_count": 704,
-  "bytes_excluding_manifest": 28839320,
+  "file_count": 709,
+  "bytes_excluding_manifest": 29039156,
   "paths": [
     "/",
     "/cities/",
@@ -721,6 +721,11 @@
     "/guides/seoul-monthly-budget/",
     "/guides/korea-workation-f1d-2026/",
     "/guides/seoul-climate-card-short-stay-2026/",
+    "/guides/singapore-monthly-budget/",
+    "/guides/hua-hin-monthly-budget/",
+    "/guides/de-rantau-sabah-scope/",
+    "/guides/auckland-wellington-beijing-workday/",
+    "/guides/monthly-apartment-utilities/",
     "/api/rankings",
     "/sitemap.xml"
   ]
