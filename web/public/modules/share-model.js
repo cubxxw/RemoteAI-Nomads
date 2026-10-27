@@ -34,7 +34,7 @@ const freeze=value=>{if(value&&typeof value==='object'){for(const child of Objec
 export function createShare(input){
  const fact=row=>({label:text(row.label,140),value:text(row.value??'待补充',400),note:text(row.note,400)});
  const source=row=>({title:text(row.title,200),url:row.url?safeURL(row.url).href:null,date:text(row.date,80)});
- const result={kind:text(input.kind||'page',30),title:text(input.title,200),subtitle:text(input.subtitle,300),summary:text(input.summary,1200),body:text(input.body,24000),url:input.url?safeURL(input.url).href:null,
+ const result={kind:text(input.kind||'page',30),title:text(input.title,200),subtitle:text(input.subtitle,300),summary:text(input.summary,1200),body:text(input.body,24000),url:input.url?safeURL(input.url).href:null,month:monthValue(input.month),tags:(input.tags||[]).map(value=>text(value,60)).filter(Boolean).slice(0,3),
   facts:(input.facts||[]).map(fact),items:(input.items||[]).map(row=>({title:text(row.title,200),detail:text(row.detail,600)})),
   caveats:(input.caveats||[]).map(value=>text(value,1000)),advisories:(input.advisories||[]).map(value=>text(value,1000)),captionNotes:(input.captionNotes||[]).map(value=>text(value,1000)),sources:(input.sources||[]).map(source),
   photos:(input.photos||[]).filter(row=>row.credit&&row.source&&/^\/(?!\/)/.test(row.url||'')).map(row=>({url:text(row.url,1000),credit:text(row.credit,4000),source:safeURL(row.source).href,label:text(row.label,200)})),
@@ -44,9 +44,11 @@ export function createShare(input){
 export const amountText=(value,currency='USD')=>value===null||value===undefined||value===''?'待补充':new Intl.NumberFormat('zh-CN',{style:'currency',currency,maximumFractionDigits:0}).format(value);
 export function personalShare(card,changes){return createShare({...card,...changes,private:true,advisories:card.advisories});}
 export function cityShare(city,month,inputURL){
- const weather=city.months?.find(row=>Number(row.month)===month),advisory=travelAdvisory(city);
- return createShare({kind:'city',title:city.name,subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
-  facts:[{label:'历史月参考',value:amountText(city.budget,city.budgetCurrency||'USD'),note:city.budgetCheckedAt?'核对 '+city.budgetCheckedAt:'资料日期待核对'},{label:month+'月历史均温',value:weather?.meanC===null||weather?.meanC===undefined?'待补充':Math.round(weather.meanC)+'°C',note:'2023–2025 年气候参考'}],
+ const weather=city.months?.find(row=>Number(row.month)===Number(month)),advisory=travelAdvisory(city),domestic=city.countryCode==='CN';
+ const tags=city.tags||(city.why?.includes('·')?city.why.split('·').map(value=>value.trim()):[]);
+ const internet=city.scores?.internet;
+ return createShare({kind:'city',title:city.name,month,tags,subtitle:[city.nameEn,city.country].filter(Boolean).join(' / '),summary:advisory?.reason||city.why||'',url:shareURL(inputURL,{kind:'city',month}),
+  facts:[{label:'历史月花费',value:amountText(city.budget,city.budgetCurrency||'USD'),note:city.budgetCheckedAt?'核对 '+city.budgetCheckedAt:'资料日期待核对'},{label:month+'月历史均温',value:weather?.meanC===null||weather?.meanC===undefined?'待补充':Math.round(weather.meanC)+'°C',note:'2023–2025 年气候参考'},{label:domestic?'大陆居民入住':'大陆护照入境',value:city.visa?.label||'待补充',note:domestic?'证件与登记要求向住处确认':'旧标签待复核 · 工作许可另查'},{label:'网络旧评分',value:Number.isFinite(internet)?internet+' / 10':'待补充',note:'具体房间需实测'}],
   photos:[{url:city.photo,credit:city.photoCredit,source:city.photoSource,label:city.name}],
   advisories:advisory?[advisory.reason]:[],caveats:[...(advisory?[advisory.reason]:[]),'花费为历史参考，实际短租另询价；气候不是天气预报。',...(city.visa?.label?['大陆护照：'+city.visa.label+'，旧资料待复核；工作许可另查。']:[])],
   sources:[{title:'城市资料与来源',url:shareURL(inputURL,{kind:'city',month}),date:city.checkedAt||''}]});
