@@ -1,0 +1,2014 @@
+{
+  "at": "2026-10-27T04:12:37.032Z",
+  "engine": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "case": "city-chiang-mai",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        712095
+      ],
+      "elapsedMs": 93.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "city-chiang-mai",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        119917
+      ],
+      "elapsedMs": 55.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-chiang-mai",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        709459
+      ],
+      "elapsedMs": 62.39999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-chiang-mai",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        256010,
+        64105,
+        66041
+      ],
+      "elapsedMs": 87.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-chiang-mai",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        724910
+      ],
+      "elapsedMs": 55.59999996423721,
+      "passed": true
+    },
+    {
+      "case": "city-penang",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        886774
+      ],
+      "elapsedMs": 71.40000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-penang",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        518571
+      ],
+      "elapsedMs": 123,
+      "passed": true
+    },
+    {
+      "case": "city-penang",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        884101
+      ],
+      "elapsedMs": 133.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-penang",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        306550,
+        64648,
+        65810
+      ],
+      "elapsedMs": 62.39999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-penang",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        899654
+      ],
+      "elapsedMs": 70,
+      "passed": true
+    },
+    {
+      "case": "city-lisbon",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        947029
+      ],
+      "elapsedMs": 88.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-lisbon",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        122519
+      ],
+      "elapsedMs": 79.70000004768372,
+      "passed": true
+    },
+    {
+      "case": "city-lisbon",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        944532
+      ],
+      "elapsedMs": 68.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-lisbon",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        321535,
+        64322,
+        65290
+      ],
+      "elapsedMs": 130.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-lisbon",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        959663
+      ],
+      "elapsedMs": 218.79999995231628,
+      "passed": true
+    },
+    {
+      "case": "city-plovdiv",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        766589
+      ],
+      "elapsedMs": 102.20000004768372,
+      "passed": true
+    },
+    {
+      "case": "city-plovdiv",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        123730
+      ],
+      "elapsedMs": 43.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "city-plovdiv",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        764090
+      ],
+      "elapsedMs": 27,
+      "passed": true
+    },
+    {
+      "case": "city-plovdiv",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        293484,
+        65176,
+        67392
+      ],
+      "elapsedMs": 45.40000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-plovdiv",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        779691
+      ],
+      "elapsedMs": 46.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-hanoi",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        790233
+      ],
+      "elapsedMs": 59.60000002384186,
+      "passed": true
+    },
+    {
+      "case": "city-hanoi",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        116397
+      ],
+      "elapsedMs": 37.90000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-hanoi",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        787629
+      ],
+      "elapsedMs": 61,
+      "passed": true
+    },
+    {
+      "case": "city-hanoi",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        284488,
+        62061,
+        64341
+      ],
+      "elapsedMs": 51.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "city-hanoi",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        802905
+      ],
+      "elapsedMs": 64.5,
+      "passed": true
+    },
+    {
+      "case": "city-dali",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        532449
+      ],
+      "elapsedMs": 51.90000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-dali",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        278993
+      ],
+      "elapsedMs": 37.5,
+      "passed": true
+    },
+    {
+      "case": "city-dali",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        529865
+      ],
+      "elapsedMs": 36.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "city-dali",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        201408,
+        62364,
+        63592
+      ],
+      "elapsedMs": 87.60000002384186,
+      "passed": true
+    },
+    {
+      "case": "city-dali",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        545317
+      ],
+      "elapsedMs": 54.700000047683716,
+      "passed": true
+    },
+    {
+      "case": "city-baku",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        839368
+      ],
+      "elapsedMs": 91.09999996423721,
+      "passed": true
+    },
+    {
+      "case": "city-baku",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        119164
+      ],
+      "elapsedMs": 104.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-baku",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        836957
+      ],
+      "elapsedMs": 62.09999996423721,
+      "passed": true
+    },
+    {
+      "case": "city-baku",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        300905,
+        62380,
+        63678
+      ],
+      "elapsedMs": 73.5,
+      "passed": true
+    },
+    {
+      "case": "city-baku",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        851890
+      ],
+      "elapsedMs": 66.10000002384186,
+      "passed": true
+    },
+    {
+      "case": "city-ubud",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        1003411
+      ],
+      "elapsedMs": 65.90000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-ubud",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        622666
+      ],
+      "elapsedMs": 46,
+      "passed": true
+    },
+    {
+      "case": "city-ubud",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        1001084
+      ],
+      "elapsedMs": 52.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "city-ubud",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        333724,
+        66023,
+        67733
+      ],
+      "elapsedMs": 98.40000003576279,
+      "passed": true
+    },
+    {
+      "case": "city-ubud",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        1015833
+      ],
+      "elapsedMs": 75.10000002384186,
+      "passed": true
+    },
+    {
+      "case": "ranking-default",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        729272
+      ],
+      "elapsedMs": 76.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "ranking-default",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        137626
+      ],
+      "elapsedMs": 44.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "ranking-default",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        711727
+      ],
+      "elapsedMs": 54.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-default",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        291759,
+        96236
+      ],
+      "elapsedMs": 71.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "ranking-default",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        741439
+      ],
+      "elapsedMs": 55,
+      "passed": true
+    },
+    {
+      "case": "ranking-cny",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        742608
+      ],
+      "elapsedMs": 54.09999996423721,
+      "passed": true
+    },
+    {
+      "case": "ranking-cny",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        150878
+      ],
+      "elapsedMs": 58.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-cny",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        725149
+      ],
+      "elapsedMs": 63.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-cny",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        301459,
+        99090
+      ],
+      "elapsedMs": 73.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "ranking-cny",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        756893
+      ],
+      "elapsedMs": 64.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-empty",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        141359
+      ],
+      "elapsedMs": 23.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "ranking-empty",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        132171
+      ],
+      "elapsedMs": 25,
+      "passed": true
+    },
+    {
+      "case": "ranking-empty",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        138520
+      ],
+      "elapsedMs": 16.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "ranking-empty",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        87098,
+        92811
+      ],
+      "elapsedMs": 27.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "ranking-empty",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        155820
+      ],
+      "elapsedMs": 21.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "ranking-all",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        751585
+      ],
+      "elapsedMs": 58.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-all",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        160858
+      ],
+      "elapsedMs": 42.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-all",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        667656
+      ],
+      "elapsedMs": 54.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "ranking-all",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        310147,
+        100232
+      ],
+      "elapsedMs": 46.39999997615814,
+      "passed": true
+    },
+    {
+      "case": "ranking-all",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        766731
+      ],
+      "elapsedMs": 54.59999996423721,
+      "passed": true
+    },
+    {
+      "case": "ranking-custom",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        816972
+      ],
+      "elapsedMs": 55.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "ranking-custom",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        142529
+      ],
+      "elapsedMs": 41.39999997615814,
+      "passed": true
+    },
+    {
+      "case": "ranking-custom",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        798547
+      ],
+      "elapsedMs": 67.90000003576279,
+      "passed": true
+    },
+    {
+      "case": "ranking-custom",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        329929,
+        97972
+      ],
+      "elapsedMs": 57.60000002384186,
+      "passed": true
+    },
+    {
+      "case": "ranking-custom",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        830525
+      ],
+      "elapsedMs": 53.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "comparison-0",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        154490
+      ],
+      "elapsedMs": 22.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "comparison-0",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        143434
+      ],
+      "elapsedMs": 12.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "comparison-0",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        151836
+      ],
+      "elapsedMs": 14.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "comparison-0",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        101198,
+        88888
+      ],
+      "elapsedMs": 23.799999952316284,
+      "passed": true
+    },
+    {
+      "case": "comparison-0",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        165928
+      ],
+      "elapsedMs": 18.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "comparison-1",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        155284
+      ],
+      "elapsedMs": 16.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "comparison-1",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        144408
+      ],
+      "elapsedMs": 14.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "comparison-1",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        152713
+      ],
+      "elapsedMs": 14,
+      "passed": true
+    },
+    {
+      "case": "comparison-1",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        102539,
+        89547
+      ],
+      "elapsedMs": 19.900000035762787,
+      "passed": true
+    },
+    {
+      "case": "comparison-1",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        166584
+      ],
+      "elapsedMs": 17.099999964237213,
+      "passed": true
+    },
+    {
+      "case": "comparison-2",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        148338
+      ],
+      "elapsedMs": 19.599999964237213,
+      "passed": true
+    },
+    {
+      "case": "comparison-2",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        137168
+      ],
+      "elapsedMs": 13.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "comparison-2",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        145616
+      ],
+      "elapsedMs": 13.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "comparison-2",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        98450,
+        84890
+      ],
+      "elapsedMs": 19.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "comparison-2",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        160818
+      ],
+      "elapsedMs": 18.900000035762787,
+      "passed": true
+    },
+    {
+      "case": "guide",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        104246
+      ],
+      "elapsedMs": 15,
+      "passed": true
+    },
+    {
+      "case": "guide",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        95255
+      ],
+      "elapsedMs": 13.300000011920929,
+      "passed": true
+    },
+    {
+      "case": "guide",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        102355
+      ],
+      "elapsedMs": 12.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "guide",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        77485
+      ],
+      "elapsedMs": 14.5,
+      "passed": true
+    },
+    {
+      "case": "guide",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        116478
+      ],
+      "elapsedMs": 19.599999964237213,
+      "passed": true
+    },
+    {
+      "case": "topic",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        94866
+      ],
+      "elapsedMs": 14.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "topic",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        85632
+      ],
+      "elapsedMs": 11.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "topic",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        92204
+      ],
+      "elapsedMs": 11.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "topic",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        68156
+      ],
+      "elapsedMs": 14.599999964237213,
+      "passed": true
+    },
+    {
+      "case": "topic",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        105707
+      ],
+      "elapsedMs": 17.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "no-photo",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        98167
+      ],
+      "elapsedMs": 14.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "no-photo",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        89055
+      ],
+      "elapsedMs": 11.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "no-photo",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        95831
+      ],
+      "elapsedMs": 10.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "no-photo",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        71071
+      ],
+      "elapsedMs": 12.5,
+      "passed": true
+    },
+    {
+      "case": "no-photo",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        109210
+      ],
+      "elapsedMs": 16.700000047683716,
+      "passed": true
+    },
+    {
+      "case": "checklist",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        98214
+      ],
+      "elapsedMs": 33.59999996423721,
+      "passed": true
+    },
+    {
+      "case": "checklist",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        89138
+      ],
+      "elapsedMs": 11.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "checklist",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        95907
+      ],
+      "elapsedMs": 10.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "checklist",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        71105
+      ],
+      "elapsedMs": 11.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "checklist",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        109300
+      ],
+      "elapsedMs": 21.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        101329
+      ],
+      "elapsedMs": 13.899999976158142,
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        92295
+      ],
+      "elapsedMs": 10.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        99227
+      ],
+      "elapsedMs": 12.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        74175
+      ],
+      "elapsedMs": 13.400000035762787,
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        112713
+      ],
+      "elapsedMs": 15.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "method",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        99092
+      ],
+      "elapsedMs": 15.5,
+      "passed": true
+    },
+    {
+      "case": "method",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        90039
+      ],
+      "elapsedMs": 13.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "method",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        96777
+      ],
+      "elapsedMs": 10.5,
+      "passed": true
+    },
+    {
+      "case": "method",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        71672
+      ],
+      "elapsedMs": 9.5,
+      "passed": true
+    },
+    {
+      "case": "method",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        110145
+      ],
+      "elapsedMs": 18.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "answer",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        92021
+      ],
+      "elapsedMs": 12.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "answer",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        82700
+      ],
+      "elapsedMs": 10.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "answer",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        89664
+      ],
+      "elapsedMs": 8.900000035762787,
+      "passed": true
+    },
+    {
+      "case": "answer",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        65588
+      ],
+      "elapsedMs": 12,
+      "passed": true
+    },
+    {
+      "case": "answer",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        103384
+      ],
+      "elapsedMs": 14.900000035762787,
+      "passed": true
+    },
+    {
+      "case": "long-answer",
+      "format": "portrait",
+      "pages": 4,
+      "bytes": [
+        281755,
+        276082,
+        276233,
+        91075
+      ],
+      "elapsedMs": 50.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "long-answer",
+      "format": "square",
+      "pages": 5,
+      "bytes": [
+        195166,
+        204435,
+        204583,
+        204329,
+        144073
+      ],
+      "elapsedMs": 52.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "long-answer",
+      "format": "feed",
+      "pages": 4,
+      "bytes": [
+        263731,
+        258281,
+        258410,
+        134851
+      ],
+      "elapsedMs": 45,
+      "passed": true
+    },
+    {
+      "case": "long-answer",
+      "format": "landscape",
+      "pages": 9,
+      "bytes": [
+        107881,
+        119462,
+        119574,
+        119351,
+        119505,
+        119608,
+        119313,
+        119637,
+        67288
+      ],
+      "elapsedMs": 69.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "long-answer",
+      "format": "story",
+      "pages": 3,
+      "bytes": [
+        387340,
+        396677,
+        102402
+      ],
+      "elapsedMs": 45.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "mixed",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        103750
+      ],
+      "elapsedMs": 13.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "mixed",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        94765
+      ],
+      "elapsedMs": 10.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "mixed",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        101839
+      ],
+      "elapsedMs": 12.899999976158142,
+      "passed": true
+    },
+    {
+      "case": "mixed",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        76378
+      ],
+      "elapsedMs": 13.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "mixed",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        115533
+      ],
+      "elapsedMs": 23.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "long-title",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        135046
+      ],
+      "elapsedMs": 29.900000035762787,
+      "passed": true
+    },
+    {
+      "case": "long-title",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        124800
+      ],
+      "elapsedMs": 18.5,
+      "passed": true
+    },
+    {
+      "case": "long-title",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        132544
+      ],
+      "elapsedMs": 14.300000011920929,
+      "passed": true
+    },
+    {
+      "case": "long-title",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        99216
+      ],
+      "elapsedMs": 16.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "long-title",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        147195
+      ],
+      "elapsedMs": 21.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        102244
+      ],
+      "elapsedMs": 18,
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        93093
+      ],
+      "elapsedMs": 12.899999976158142,
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        100071
+      ],
+      "elapsedMs": 14.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        73774
+      ],
+      "elapsedMs": 12.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        114218
+      ],
+      "elapsedMs": 18.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "private-plan",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        92416
+      ],
+      "elapsedMs": 11.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "private-plan",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        83262
+      ],
+      "elapsedMs": 10.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "private-plan",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        90060
+      ],
+      "elapsedMs": 11.599999964237213,
+      "passed": true
+    },
+    {
+      "case": "private-plan",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        65781
+      ],
+      "elapsedMs": 9.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "private-plan",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        103187
+      ],
+      "elapsedMs": 15.899999976158142,
+      "passed": true
+    },
+    {
+      "case": "zero",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        104194
+      ],
+      "elapsedMs": 15.300000011920929,
+      "passed": true
+    },
+    {
+      "case": "zero",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        94989
+      ],
+      "elapsedMs": 10.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "zero",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        102103
+      ],
+      "elapsedMs": 10.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "zero",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        75291
+      ],
+      "elapsedMs": 11.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "zero",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        116664
+      ],
+      "elapsedMs": 17.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "caveat",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        95076
+      ],
+      "elapsedMs": 11.5,
+      "passed": true
+    },
+    {
+      "case": "caveat",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        85819
+      ],
+      "elapsedMs": 11.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "caveat",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        92382
+      ],
+      "elapsedMs": 11.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "caveat",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        68354
+      ],
+      "elapsedMs": 12.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "caveat",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        105924
+      ],
+      "elapsedMs": 18.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "source-dates",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        96035
+      ],
+      "elapsedMs": 12.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "source-dates",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        86788
+      ],
+      "elapsedMs": 10.699999988079071,
+      "passed": true
+    },
+    {
+      "case": "source-dates",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        93433
+      ],
+      "elapsedMs": 10.199999988079071,
+      "passed": true
+    },
+    {
+      "case": "source-dates",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        68716
+      ],
+      "elapsedMs": 11.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "source-dates",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        106851
+      ],
+      "elapsedMs": 15.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "unicode",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        113401
+      ],
+      "elapsedMs": 13.400000035762787,
+      "passed": true
+    },
+    {
+      "case": "unicode",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        104822
+      ],
+      "elapsedMs": 13.099999964237213,
+      "passed": true
+    },
+    {
+      "case": "unicode",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        110948
+      ],
+      "elapsedMs": 11.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "unicode",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        82417
+      ],
+      "elapsedMs": 16,
+      "passed": true
+    },
+    {
+      "case": "unicode",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        126820
+      ],
+      "elapsedMs": 19.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-varna",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        835052
+      ],
+      "elapsedMs": 98.89999997615814,
+      "passed": true
+    },
+    {
+      "case": "holdout-varna",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        121024
+      ],
+      "elapsedMs": 33.40000003576279,
+      "passed": true
+    },
+    {
+      "case": "holdout-varna",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        832520
+      ],
+      "elapsedMs": 47.60000002384186,
+      "passed": true
+    },
+    {
+      "case": "holdout-varna",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        296049,
+        64636,
+        66657
+      ],
+      "elapsedMs": 53.59999996423721,
+      "passed": true
+    },
+    {
+      "case": "holdout-varna",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        848038
+      ],
+      "elapsedMs": 50.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "holdout-brno",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        764296
+      ],
+      "elapsedMs": 57.10000002384186,
+      "passed": true
+    },
+    {
+      "case": "holdout-brno",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        120110
+      ],
+      "elapsedMs": 34.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-brno",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        761742
+      ],
+      "elapsedMs": 46.80000001192093,
+      "passed": true
+    },
+    {
+      "case": "holdout-brno",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        279404,
+        64063,
+        65508
+      ],
+      "elapsedMs": 51.60000002384186,
+      "passed": true
+    },
+    {
+      "case": "holdout-brno",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        776945
+      ],
+      "elapsedMs": 53.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-long-link",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        163259
+      ],
+      "elapsedMs": 42.10000002384186,
+      "passed": true
+    },
+    {
+      "case": "holdout-long-link",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        152324
+      ],
+      "elapsedMs": 35.299999952316284,
+      "passed": true
+    },
+    {
+      "case": "holdout-long-link",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        160237
+      ],
+      "elapsedMs": 34.90000003576279,
+      "passed": true
+    },
+    {
+      "case": "holdout-long-link",
+      "format": "landscape",
+      "pages": 3,
+      "bytes": [
+        98579,
+        91831,
+        104380
+      ],
+      "elapsedMs": 56.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-long-link",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        176898
+      ],
+      "elapsedMs": 43.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-advisory",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        165285
+      ],
+      "elapsedMs": 17.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-advisory",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        153891
+      ],
+      "elapsedMs": 12.700000047683716,
+      "passed": true
+    },
+    {
+      "case": "holdout-advisory",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        162635
+      ],
+      "elapsedMs": 12.799999952316284,
+      "passed": true
+    },
+    {
+      "case": "holdout-advisory",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        109370,
+        94467
+      ],
+      "elapsedMs": 24.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "holdout-advisory",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        176457
+      ],
+      "elapsedMs": 17.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        983670
+      ],
+      "elapsedMs": 51.09999996423721,
+      "passed": true
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        835691
+      ],
+      "elapsedMs": 38.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        981338
+      ],
+      "elapsedMs": 44.200000047683716,
+      "passed": true
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        358392
+      ],
+      "elapsedMs": 31.30000001192093,
+      "passed": true
+    },
+    {
+      "case": "personal-city-advisory",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        997166
+      ],
+      "elapsedMs": 44,
+      "passed": true
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        142793
+      ],
+      "elapsedMs": 13.5,
+      "passed": true
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        132776
+      ],
+      "elapsedMs": 13.100000023841858,
+      "passed": true
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        140537
+      ],
+      "elapsedMs": 14,
+      "passed": true
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "landscape",
+      "pages": 2,
+      "bytes": [
+        77996,
+        88682
+      ],
+      "elapsedMs": 22.399999976158142,
+      "passed": true
+    },
+    {
+      "case": "personal-comparison-advisory",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        154456
+      ],
+      "elapsedMs": 18.69999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-budget-peak",
+      "format": "portrait",
+      "pages": 1,
+      "bytes": [
+        158425
+      ],
+      "elapsedMs": 17.599999964237213,
+      "passed": true
+    },
+    {
+      "case": "holdout-budget-peak",
+      "format": "square",
+      "pages": 1,
+      "bytes": [
+        148082
+      ],
+      "elapsedMs": 15.800000011920929,
+      "passed": true
+    },
+    {
+      "case": "holdout-budget-peak",
+      "format": "feed",
+      "pages": 1,
+      "bytes": [
+        155444
+      ],
+      "elapsedMs": 16.19999998807907,
+      "passed": true
+    },
+    {
+      "case": "holdout-budget-peak",
+      "format": "landscape",
+      "pages": 1,
+      "bytes": [
+        120333
+      ],
+      "elapsedMs": 16.600000023841858,
+      "passed": true
+    },
+    {
+      "case": "holdout-budget-peak",
+      "format": "story",
+      "pages": 1,
+      "bytes": [
+        171568
+      ],
+      "elapsedMs": 19.19999998807907,
+      "passed": true
+    }
+  ],
+  "sourceCommit": "74ce1bbf72ae07a08eb160b6799de71836567c72",
+  "moduleHashes": {
+    "share-model.js": "a0d21ab01f79df6d4141e5117910a3a30cb2dbf9b4a204e2f10035340174f45e",
+    "share-render.js": "4815fd0087b310a16557912724bc426ac20437c6443fd0e3ed6cbb0912192b44",
+    "share-ui.js": "4067aebd0862649ade232da6f5e0d69a4b46705321cc3102dccea2395c237e17"
+  }
+}
