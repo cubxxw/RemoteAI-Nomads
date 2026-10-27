@@ -7,7 +7,7 @@
     "dev": "wrangler dev --ip 127.0.0.1 --port 8787",
     "db:migrate": "wrangler d1 migrations apply DB --local",
     "db:seed": "wrangler d1 execute DB --local --file .data/seed.sql",
-    "check": "node scripts/check-syntax.mjs && node --test tests/*.test.js",
+    "check": "node scripts/check-syntax.mjs && node --test --test-concurrency=1 tests/*.test.js",
     "build": "wrangler deploy --dry-run --outdir dist",
     "agent": "node agent/server.mjs",
     "costs:sync": "node scripts/sync-costs.mjs --apply",

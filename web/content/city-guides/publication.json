@@ -27,9 +27,57 @@
           "sha256": "94a260536b8cfef6b3b91457f68f2ba95b6f5007f338446cd4590f9fd2c1be7d"
         }
       ]
+    },
+    "fiveArticleBatch": {
+      "approved": true,
+      "approvedOn": "2026-10-26",
+      "authority": "User explicitly approved two article updates and three new researched articles, sequential writing, removal of redundant material, final whitelist language review, and publication under the established Roamorrow article workflow.",
+      "reviewRecord": "research/2026-10-26-five-articles.md",
+      "relatedTitleSync": [
+        "hangzhou-west-lake-rent-premium",
+        "video-meeting-room-checklist",
+        "penang-kuala-lumpur-one-working-day",
+        "kuala-lumpur-monthly-bill-extras"
+      ]
+    },
+    "continuousBatch1": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User explicitly requested continuous autonomous researched writing and publication at the prior batch scale until 11:00 Asia/Singapore; content integrated independent source review and final whitelist language review.",
+      "reviewRecord": "research/2026-10-27-articles-batch1.md"
+    },
+    "continuousBatch2": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched article publication until 11:00 Asia/Singapore; independent source/integration review and final Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch2.md"
+    },
+    "continuousBatch3": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch3.md"
+    },
+    "continuousBatch4": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch4.md"
+    },
+    "continuousBatch5": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "Continuing the user-authorized autonomous researched writing and publication until 11:00 Asia/Singapore; independent source review, final editorial review and Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-articles-batch5.md"
+    },
+    "continuousFinalProse": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User explicitly authorized removing redundant/internal visible copy and a final Chinese whitelist pass; exact scoped editorial changes preserve code, model, numbers, headings, source links, images and material limitations.",
+      "reviewRecord": "research/2026-10-27-final-prose.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -48,8 +96,8 @@
     {
       "slug": "kuala-lumpur-monthly-budget",
       "sourceFile": "kuala-lumpur-monthly-budget.html",
-      "sha256": "5aa31d8b235d67815ac70909aa6f3add80984ab43a2ee3681561a447baeb9eac",
-      "source": "output/titles-20261020/kuala-lumpur-monthly-budget.html",
+      "sha256": "d74759ca8ea07d8fbfacc57ae16aafb4c7288138052ccd1539c656355de94fe8",
+      "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
     {
@@ -76,8 +124,8 @@
     {
       "slug": "hangzhou-monthly-budget",
       "sourceFile": "hangzhou-monthly-budget.html",
-      "sha256": "f2502dcd6767e5c46902226fdac5f88d2ce273f763b76674a3b63b557896cef9",
-      "source": "output/seo-batch1-20261021/hangzhou-monthly-budget.html",
+      "sha256": "b9fe02f8f2fd6d21135a3b4cecac5cd4a0996c03e167a8179e8281cd3d1705ef",
+      "source": "research/2026-10-26-five-articles.md",
       "approved": true
     },
     {
@@ -192,7 +240,7 @@
     {
       "slug": "video-meeting-room-checklist",
       "sourceFile": "video-meeting-room-checklist.html",
-      "sha256": "dca4213b38f3432b4efea3665e14017c2e882cc07d810e26b1bb644e9b3bb1d5",
+      "sha256": "b34f5c39752cb1cd8ad3296204dacd62896c263b313c2394e81d625f4f0c1ecb",
       "source": "web/content/editorial-50/start-budget.json (article 8)",
       "approved": true
     },
@@ -234,7 +282,7 @@
     {
       "slug": "kuala-lumpur-monthly-bill-extras",
       "sourceFile": "kuala-lumpur-monthly-bill-extras.html",
-      "sha256": "bdb742f27d9da64ff5e6d365f752384176dc9ffa21269b9815658f66b01fea73",
+      "sha256": "bc60a59f1be5addd9b1af696a2a5231c7a40a3be0a33f3c4d0ae54fbe17db3f5",
       "source": "web/content/editorial-50/start-budget.json (article 14)",
       "approved": true
     },
@@ -276,7 +324,7 @@
     {
       "slug": "hangzhou-west-lake-rent-premium",
       "sourceFile": "hangzhou-west-lake-rent-premium.html",
-      "sha256": "929e93fe420f2ad538256995df554d730b27c1b0e66d758127be5570fea0f9f2",
+      "sha256": "40455cada4ca012daea923198ec8f08570a0d01fbef2fe9d99879eb232f76a60",
       "source": "web/content/editorial-50/start-budget.json (article 20)",
       "approved": true
     },
@@ -367,7 +415,7 @@
     {
       "slug": "penang-kuala-lumpur-one-working-day",
       "sourceFile": "penang-kuala-lumpur-one-working-day.html",
-      "sha256": "f72ef40b19efa9348db12a56b1931a3d4c1f8f5d53ebdf6a0434a8eb52d571a9",
+      "sha256": "cde90d528b9072427d24877a8f2c4de934547302c1b1ce4474cef713e1f6a970",
       "source": "web/content/editorial-50/season-compare.json (article 43)",
       "approved": true
     },
@@ -489,6 +537,202 @@
       "sha256": "37983a178075d88d20af57e6af761f9cb24434821f508164b2814012ac7ad954",
       "source": "web/content/editorial-50/permission-tools.json (article 50)",
       "approved": true
+    },
+    {
+      "slug": "da-nang-monthly-budget",
+      "sourceFile": "da-nang-monthly-budget.html",
+      "approved": true,
+      "sha256": "def5088c50ed98e54c6473bb45f7601b4291c5cecc41eacd01e77025564ca1f2",
+      "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "xiamen-monthly-budget",
+      "sourceFile": "xiamen-monthly-budget.html",
+      "approved": true,
+      "sha256": "ec0609b6d426097b532412737589a67d0aeb0cadc34010a974f15b37791623aa",
+      "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "japan-digital-nomad-chinese-passport",
+      "sourceFile": "japan-digital-nomad-chinese-passport.html",
+      "approved": true,
+      "sha256": "985397f790e29f3a94bb9acf29ee0743db2a7445abf52039660b7ae799f3de59",
+      "source": "research/2026-10-26-five-articles.md"
+    },
+    {
+      "slug": "kunming-monthly-budget",
+      "sourceFile": "kunming-monthly-budget.html",
+      "approved": true,
+      "sha256": "c5f842fee93ca7eaf9b224e1983278e0c9d30646eb5170f5d3c40977c7673476",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "bangkok-monthly-budget",
+      "sourceFile": "bangkok-monthly-budget.html",
+      "approved": true,
+      "sha256": "db8aba7a06059c6c1d9574fae51ad0bff9fec654b780e25575d9de226561e8f5",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "abu-dhabi-monthly-budget",
+      "sourceFile": "abu-dhabi-monthly-budget.html",
+      "approved": true,
+      "sha256": "7d714920d5debf7f6b1d8aa47682e829d33079e0a70b7ebb0011803c796ba032",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "two-person-monthly-budget",
+      "sourceFile": "two-person-monthly-budget.html",
+      "approved": true,
+      "sha256": "7feefcd18a5e6854da5f5b867c19b9849d1566af427e1eb8dc959875e83b74fa",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "new-zealand-visitor-remote-work",
+      "sourceFile": "new-zealand-visitor-remote-work.html",
+      "approved": true,
+      "sha256": "6144d8d95f4d13647e3176a8ed8c5e883636c339184c512a9ec7bfd68a1de6b0",
+      "source": "research/2026-10-27-articles-batch1.md"
+    },
+    {
+      "slug": "auckland-monthly-budget",
+      "sourceFile": "auckland-monthly-budget.html",
+      "approved": true,
+      "sha256": "75820a1757973f07428f210c0359d3a74514858b50fc3e857656c88032476563",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "wellington-monthly-budget",
+      "sourceFile": "wellington-monthly-budget.html",
+      "approved": true,
+      "sha256": "7e1ea6123c574889391209917de0cda3e9e27fa7ad7d3d343c881185b7c872e7",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "tbilisi-monthly-budget",
+      "sourceFile": "tbilisi-monthly-budget.html",
+      "approved": true,
+      "sha256": "c1916a312905b377698268efa342f88c293d9c9cc1a3eb9665b4bce035827be0",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "new-zealand-weekly-rent-thirty-nights",
+      "sourceFile": "new-zealand-weekly-rent-thirty-nights.html",
+      "approved": true,
+      "sha256": "c4890959500cf54a33edf857ba579f706ab39472b2c3a4a855820dcb78ca1433",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "auckland-hop-cap-airport-transport",
+      "sourceFile": "auckland-hop-cap-airport-transport.html",
+      "approved": true,
+      "sha256": "f699657ebfd2dedeed4bf5d8dc83d8d782fe2ca1f287779f9f48977fc5783ae4",
+      "source": "research/2026-10-27-articles-batch2.md"
+    },
+    {
+      "slug": "canggu-monthly-budget",
+      "sourceFile": "canggu-monthly-budget.html",
+      "sha256": "76d21845333ad24bcb53977fbfdf33a4cec37c70088f2a55101815f36723b266",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "ho-chi-minh-city-monthly-budget",
+      "sourceFile": "ho-chi-minh-city-monthly-budget.html",
+      "sha256": "e211b77afc51099ab9cb6076038983ac6059f32acad0b72444a58ed9376e4796",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "seoul-monthly-budget",
+      "sourceFile": "seoul-monthly-budget.html",
+      "sha256": "240f45a9920b7be1600af671c7fc174cc6f9f5e8eb2b948e0981e06de5496b9e",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "korea-workation-f1d-2026",
+      "sourceFile": "korea-workation-f1d-2026.html",
+      "sha256": "22e04c38e5cc2e352814411e173126a977fe0b88d64d454102197d9f49261caa",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "seoul-climate-card-short-stay-2026",
+      "sourceFile": "seoul-climate-card-short-stay-2026.html",
+      "sha256": "7f5eda9c50810412f48bf786cf95bfc2ab02721b23ef1135ff5ec36527509471",
+      "source": "research/2026-10-27-articles-batch3.md",
+      "approved": true
+    },
+    {
+      "slug": "singapore-monthly-budget",
+      "sourceFile": "singapore-monthly-budget.html",
+      "sha256": "01ffffbc69ec1d2f489d6acbccbe97be38dcaa0096739b8ff1b962c4822dd650",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "hua-hin-monthly-budget",
+      "sourceFile": "hua-hin-monthly-budget.html",
+      "sha256": "1f175f0f51a38845ec2b19cdb65ad93110f5944675ca6206837edb650d2884bc",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "de-rantau-sabah-scope",
+      "sourceFile": "de-rantau-sabah-scope.html",
+      "sha256": "44a1728990c7d4785c1407dd59628fbe4eb4a870debd6b775b04ab297edb0a4a",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "auckland-wellington-beijing-workday",
+      "sourceFile": "auckland-wellington-beijing-workday.html",
+      "sha256": "d9e79b695626fe9e6b8bfaf1d2ecab7994c2772da62ee99f91f5b4e962612cde",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "monthly-apartment-utilities",
+      "sourceFile": "monthly-apartment-utilities.html",
+      "sha256": "fbc1a12a3a3761252469f8bb8c9a51368ce1a975b83cb8981c1f75cfb5ca7a8c",
+      "source": "research/2026-10-27-articles-batch4.md",
+      "approved": true
+    },
+    {
+      "slug": "phuket-monthly-budget",
+      "sourceFile": "phuket-monthly-budget.html",
+      "sha256": "86dc7630fdd85328a88c13e06224fa6bd7e07c1090ec794d2030a2312aff25c1",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "malacca-monthly-budget",
+      "sourceFile": "malacca-monthly-budget.html",
+      "sha256": "bc60c90ecd1147772782a92fe08828702b76be03fbaac359fbb4f725a289c5f0",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "remote-visa-income-balance",
+      "sourceFile": "remote-visa-income-balance.html",
+      "sha256": "4386376575dbcb460e1502ca8a2fd71bf8c707f572773e9a4bc5909e1911f753",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "hua-hin-cross-season-thirty-nights",
+      "sourceFile": "hua-hin-cross-season-thirty-nights.html",
+      "sha256": "b5dfd210b8791d19c6fc5ef64051abd71d2813dcaa521d8cd13125fb424b1c45",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
+    },
+    {
+      "slug": "singapore-foreign-card-transit-fee",
+      "sourceFile": "singapore-foreign-card-transit-fee.html",
+      "sha256": "1509f5830a86dbd26ac51c16d621e7a73d9bebd8cc8471e0d0f5b698b4e60fc8",
+      "source": "research/2026-10-27-articles-batch5.md",
+      "approved": true
     }
   ],
   "assets": [
@@ -545,7 +789,7 @@
     {
       "source": "preview.css",
       "destination": "guide.css",
-      "sha256": "db5c7509a87c61e4f5ddd1797bd5f85350606033d952270877842a2f29ce348c"
+      "sha256": "b3b9723f1c3afa94b667c709965d7da6394b33f88721f40f9e3417d4877d9f6f"
     },
     {
       "source": "reader.js",
@@ -553,19 +797,9 @@
       "sha256": "40ad11048eb02a02510052ab851eb28526b1c8581c14448945ec43bd3f7f0e34"
     },
     {
-      "source": "guide-tools.mjs",
-      "destination": "guide-tools.mjs",
-      "sha256": "8276afcc77b94dfd0b5a48e55a1926a263c5470167b91b8ae420d19b2583f021"
-    },
-    {
-      "source": "budget-model.mjs",
-      "destination": "budget-model.mjs",
-      "sha256": "5af8f55fd8c6bbbf6a56b1598d386f5b34e7de42e8ea01b654f312964eb09ea7"
-    },
-    {
       "source": "assets/og-kuala-lumpur-budget.jpg",
       "destination": "images/og-kuala-lumpur-budget.jpg",
-      "sha256": "58edd887fa4a5011912bb27ade4f55b6a1c862172252e516b527c5ae9b28c89f"
+      "sha256": "6b0f16d32a8d2095c614f0e8f282c38c8d5da095936d88c9f3871e8d6c098f18"
     },
     {
       "source": "assets/kuala-lumpur-kl-monorail-imbi-hang-tuah.webp",
@@ -745,7 +979,7 @@
     {
       "source": "assets/og-hangzhou-budget.jpg",
       "destination": "images/og-hangzhou-budget.jpg",
-      "sha256": "dcae0aa7836c63e1d36248672b37dd9fa37c599a8c68c712691f5b2548583fc2"
+      "sha256": "9f7cb58cbe4125cbd688be12c05bd0b4472e40f2cd1722b0b3a680312d3a3419"
     },
     {
       "source": "assets/og-hanoi-budget.jpg",
@@ -871,6 +1105,296 @@
       "source": "assets/og-editorial-ubud-rice-terrace.webp",
       "destination": "images/og-editorial-ubud-rice-terrace.webp",
       "sha256": "aafc20243fb10d6ff1cf9b11d103a501574cde20339f46fa222b1d0bdc59bd46"
+    },
+    {
+      "source": "assets/editorial-da-nang.webp",
+      "destination": "images/editorial-da-nang.webp",
+      "sha256": "e46ec5c7d650612993309e1d5788dd7ee75af0cc0da38da29b8d049a646aab24"
+    },
+    {
+      "source": "assets/editorial-xiamen.webp",
+      "destination": "images/editorial-xiamen.webp",
+      "sha256": "2b84bee8a618742f05986750966ed3e8be2d25d77b9462482f171ff06f7b1a5e"
+    },
+    {
+      "source": "assets/osaka-city.webp",
+      "destination": "images/osaka-city.webp",
+      "sha256": "f822821a0ec6c16f26a80655c65a87799e87668bbe10d354468c8b1a7dba0c53"
+    },
+    {
+      "source": "assets/og-editorial-da-nang.webp",
+      "destination": "images/og-editorial-da-nang.webp",
+      "sha256": "b41e8b7705895d9a6c6bd2afeeb72c7b2a944272f7453c2f966b7bd0732b2b69"
+    },
+    {
+      "source": "assets/og-editorial-xiamen.webp",
+      "destination": "images/og-editorial-xiamen.webp",
+      "sha256": "38e846ab8330eb79f978c17b3895c6ea1d4ca1fac12d8ca75dfa1a3963a38b96"
+    },
+    {
+      "source": "assets/og-editorial-osaka-city.webp",
+      "destination": "images/og-editorial-osaka-city.webp",
+      "sha256": "a2e6b7e7b5b1652034f1d3687468a75e0fc1562e958b97d7541dde10b510aafe"
+    },
+    {
+      "source": "assets/editorial-kunming.webp",
+      "destination": "images/editorial-kunming.webp",
+      "sha256": "0522323e8c1c0f21338fc50422956912713992d619b5ab343f30c5f326b94008"
+    },
+    {
+      "source": "assets/editorial-bangkok.webp",
+      "destination": "images/editorial-bangkok.webp",
+      "sha256": "d4ce76398641e871c46570bf15ccdce73adb0052435c093507a1e60c71c287e6"
+    },
+    {
+      "source": "assets/editorial-abu-dhabi.webp",
+      "destination": "images/editorial-abu-dhabi.webp",
+      "sha256": "00e1fe71166df0d53240262dec7872efdfc9b7d9e1727a4daa4f960f65681811"
+    },
+    {
+      "source": "assets/two-person-monthly-budget.webp",
+      "destination": "images/two-person-monthly-budget.webp",
+      "sha256": "d773689be46d36cba5cc495e49b83ff5a657dab09e775918ac4aba12245cf8ba"
+    },
+    {
+      "source": "assets/new-zealand-visitor-remote-work.webp",
+      "destination": "images/new-zealand-visitor-remote-work.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/og-editorial-kunming-monthly-budget.jpeg",
+      "destination": "images/og-editorial-kunming-monthly-budget.jpeg",
+      "sha256": "d3c7b2748fe07585919c08e632883925ca52c6e2ade03113c945f7f26173d6c4"
+    },
+    {
+      "source": "assets/og-editorial-bangkok-monthly-budget.jpeg",
+      "destination": "images/og-editorial-bangkok-monthly-budget.jpeg",
+      "sha256": "4f2f442b369f71d0ede6503d2f6219ec776ac9a823742eac9857ed923d0f3308"
+    },
+    {
+      "source": "assets/og-editorial-abu-dhabi-monthly-budget.jpeg",
+      "destination": "images/og-editorial-abu-dhabi-monthly-budget.jpeg",
+      "sha256": "add7ee18c5e05f3045a8fc6ef15f5af3b2fcb7636e53748b08c34d13a4dd61d8"
+    },
+    {
+      "source": "assets/og-editorial-two-person-monthly-budget.jpeg",
+      "destination": "images/og-editorial-two-person-monthly-budget.jpeg",
+      "sha256": "0851b5fe1f156d1200635fd27f88c95da838a084e28712dc4f679d28b1ce67ed"
+    },
+    {
+      "source": "assets/og-editorial-new-zealand-visitor-remote-work.jpeg",
+      "destination": "images/og-editorial-new-zealand-visitor-remote-work.jpeg",
+      "sha256": "80d786f97f38b98ce831c16fa22de375fe86a2caaa0454c4e49b5fa11cb1b590"
+    },
+    {
+      "source": "assets/editorial-auckland.webp",
+      "destination": "images/editorial-auckland.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/editorial-wellington.webp",
+      "destination": "images/editorial-wellington.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/editorial-tbilisi.webp",
+      "destination": "images/editorial-tbilisi.webp",
+      "sha256": "0af908aa7c04fb65b42ac9ecaf6bae947958b0055878bf9e5ed2646153e008e4"
+    },
+    {
+      "source": "assets/new-zealand-weekly-rent-thirty-nights.webp",
+      "destination": "images/new-zealand-weekly-rent-thirty-nights.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/auckland-hop-cap-airport-transport.webp",
+      "destination": "images/auckland-hop-cap-airport-transport.webp",
+      "sha256": "aca85cc392f10bb70bf5b21800543454328f98026e1d957ca0c781a2da378573"
+    },
+    {
+      "source": "assets/og-editorial-auckland-monthly-budget.jpeg",
+      "destination": "images/og-editorial-auckland-monthly-budget.jpeg",
+      "sha256": "e55fa145c26fb494238e1730066bcb08da02b3b8333c65ad696203d04226fdc9"
+    },
+    {
+      "source": "assets/og-editorial-wellington-monthly-budget.jpeg",
+      "destination": "images/og-editorial-wellington-monthly-budget.jpeg",
+      "sha256": "8bd888d390cfab5d14390efc8b64dc3dc3f8b2d40a4f4d49c65668be23784a64"
+    },
+    {
+      "source": "assets/og-editorial-tbilisi-monthly-budget.jpeg",
+      "destination": "images/og-editorial-tbilisi-monthly-budget.jpeg",
+      "sha256": "509760469352da5b7c63c85f33433f0a2115fcdfa04285f2969d81a33633ed14"
+    },
+    {
+      "source": "assets/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
+      "destination": "images/og-editorial-new-zealand-weekly-rent-thirty-nights.jpeg",
+      "sha256": "ea3e5d8d647102d41d238ff09ba185356f961bdea6103b0b848e01e62e635292"
+    },
+    {
+      "source": "assets/og-editorial-auckland-hop-cap-airport-transport.jpeg",
+      "destination": "images/og-editorial-auckland-hop-cap-airport-transport.jpeg",
+      "sha256": "e6bca289a18fd60aa45c09087bd1b51f872282bcc2c09279c1133e2f03e3c7c1"
+    },
+    {
+      "source": "assets/editorial-canggu.webp",
+      "sha256": "2f8a2683c4b388e627b6e80e4f1cb3dce5ae10b2c6ce9e2689705a07c1ca8f3b",
+      "destination": "images/editorial-canggu.webp"
+    },
+    {
+      "source": "assets/editorial-ho-chi-minh-city.webp",
+      "sha256": "9a0e0e5a16f25dfa663b345e02bd7e0a534a88e87d9ebe584dcb8439750ed6a8",
+      "destination": "images/editorial-ho-chi-minh-city.webp"
+    },
+    {
+      "source": "assets/editorial-seoul.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/editorial-seoul.webp"
+    },
+    {
+      "source": "assets/korea-workation-f1d-2026.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/korea-workation-f1d-2026.webp"
+    },
+    {
+      "source": "assets/seoul-climate-card-short-stay-2026.webp",
+      "sha256": "3137b0507001a7efa903d7f4c76ad118183f15ccb10b1b4a8b6d7666fa9746f9",
+      "destination": "images/seoul-climate-card-short-stay-2026.webp"
+    },
+    {
+      "source": "assets/og-editorial-canggu-monthly-budget.jpeg",
+      "sha256": "12c75dfd97c87976906324ea6848454478eb194e8da1307e5882dd2bcb843130",
+      "destination": "images/og-editorial-canggu-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-ho-chi-minh-city-monthly-budget.jpeg",
+      "sha256": "3cd84ff4dc10d2283e8ee42c308005af388b4907aac7d8f2a18e3944a065fe8d",
+      "destination": "images/og-editorial-ho-chi-minh-city-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-seoul-monthly-budget.jpeg",
+      "sha256": "93ab05bb31efc4dc71c0e7cd96f4fa8e40bacfd59e38b6fc7e2cba77ddbb515c",
+      "destination": "images/og-editorial-seoul-monthly-budget.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-korea-workation-f1d-2026.jpeg",
+      "sha256": "120a60fa782747222b884efc274300e92e9483a3175d7edeefb7a7ebf54374a0",
+      "destination": "images/og-editorial-korea-workation-f1d-2026.jpeg"
+    },
+    {
+      "source": "assets/og-editorial-seoul-climate-card-short-stay-2026.jpeg",
+      "sha256": "f037ebf201b84eac1dbfe18b32799523ef2f0b49cf7c218c32d3cadbb1adb82a",
+      "destination": "images/og-editorial-seoul-climate-card-short-stay-2026.jpeg"
+    },
+    {
+      "source": "assets/editorial-singapore.webp",
+      "destination": "images/editorial-singapore.webp",
+      "sha256": "05af671bd7b19e0549b8f6165c6b00e3adf99504a64a0bf92c9edfb53ee811f4"
+    },
+    {
+      "source": "assets/editorial-hua-hin.webp",
+      "destination": "images/editorial-hua-hin.webp",
+      "sha256": "b97337f773cc76e441cb829857beaca5bfc0fb1b5cbc9291c272486d6b570593"
+    },
+    {
+      "source": "assets/de-rantau-sabah-scope.webp",
+      "destination": "images/de-rantau-sabah-scope.webp",
+      "sha256": "bdf892d97e6849674372fda721f3da16df4e67cc673600c6b54aef768c2dd66d"
+    },
+    {
+      "source": "assets/auckland-wellington-beijing-workday.webp",
+      "destination": "images/auckland-wellington-beijing-workday.webp",
+      "sha256": "01845a83649ca97899411a5093312b8df5dddea51a56ebcf08870d0efe9756b5"
+    },
+    {
+      "source": "assets/monthly-apartment-utilities.webp",
+      "destination": "images/monthly-apartment-utilities.webp",
+      "sha256": "e46ec5c7d650612993309e1d5788dd7ee75af0cc0da38da29b8d049a646aab24"
+    },
+    {
+      "source": "assets/og-editorial-singapore-monthly-budget.jpeg",
+      "destination": "images/og-editorial-singapore-monthly-budget.jpeg",
+      "sha256": "6f9ffc86ae4cba90fdd3918406ee39af4d0997a685f3b287837b9a8fa42fbae0"
+    },
+    {
+      "source": "assets/og-editorial-hua-hin-monthly-budget.jpeg",
+      "destination": "images/og-editorial-hua-hin-monthly-budget.jpeg",
+      "sha256": "4a5fcbd8dc857ad3fe03a8ebd75dfb3c2931421bb882a329196ea70efc2b7d8d"
+    },
+    {
+      "source": "assets/og-editorial-de-rantau-sabah-scope.jpeg",
+      "destination": "images/og-editorial-de-rantau-sabah-scope.jpeg",
+      "sha256": "887759b72e007b40cf7b20249bd496afd2725cb23330be8b6f7e65fe56ecc07c"
+    },
+    {
+      "source": "assets/og-editorial-auckland-wellington-beijing-workday.jpeg",
+      "destination": "images/og-editorial-auckland-wellington-beijing-workday.jpeg",
+      "sha256": "3f0272ac5c06208fe51643f9f0ce0071b4a2db30acfb8716e756aa924604812f"
+    },
+    {
+      "source": "assets/og-editorial-monthly-apartment-utilities.jpeg",
+      "destination": "images/og-editorial-monthly-apartment-utilities.jpeg",
+      "sha256": "4a60deacac52b50456bd06ac6c53ce2c8a9cd62ae384a685e6448d6ac25da05e"
+    },
+    {
+      "source": "assets/editorial-phuket.webp",
+      "destination": "images/editorial-phuket.webp",
+      "sha256": "c0af0ce641ea4b4f9894c45c50f8604006c18be31ad94855d4a63e6c14755a66"
+    },
+    {
+      "source": "assets/editorial-malacca.webp",
+      "destination": "images/editorial-malacca.webp",
+      "sha256": "a1d249f9861f7e63469efc40d6b70215642c223e1f2f6fb0ba6f8ce034656594"
+    },
+    {
+      "source": "assets/remote-visa-income-balance.webp",
+      "destination": "images/remote-visa-income-balance.webp",
+      "sha256": "2f8a2683c4b388e627b6e80e4f1cb3dce5ae10b2c6ce9e2689705a07c1ca8f3b"
+    },
+    {
+      "source": "assets/hua-hin-cross-season-thirty-nights.webp",
+      "destination": "images/hua-hin-cross-season-thirty-nights.webp",
+      "sha256": "b97337f773cc76e441cb829857beaca5bfc0fb1b5cbc9291c272486d6b570593"
+    },
+    {
+      "source": "assets/singapore-foreign-card-transit-fee.webp",
+      "destination": "images/singapore-foreign-card-transit-fee.webp",
+      "sha256": "05af671bd7b19e0549b8f6165c6b00e3adf99504a64a0bf92c9edfb53ee811f4"
+    },
+    {
+      "source": "assets/og-editorial-phuket-monthly-budget.jpeg",
+      "destination": "images/og-editorial-phuket-monthly-budget.jpeg",
+      "sha256": "0d6a60625d31928499e26706b5968cb1bef9fb368f819122dd8512da99bbbef5"
+    },
+    {
+      "source": "assets/og-editorial-malacca-monthly-budget.jpeg",
+      "destination": "images/og-editorial-malacca-monthly-budget.jpeg",
+      "sha256": "f78ee35fb9d984e0ff081255a6112f503590254afba2c496db0864d32e6e7a6a"
+    },
+    {
+      "source": "assets/og-editorial-remote-visa-income-balance.jpeg",
+      "destination": "images/og-editorial-remote-visa-income-balance.jpeg",
+      "sha256": "b767229900e8474555e0cede254ca23e958a4e051d0527bf5d8571d4faeb37bc"
+    },
+    {
+      "source": "assets/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
+      "destination": "images/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
+      "sha256": "273ceb432097894dbcc03a0f4675c88de583da3c0703f4d07c319700a127b5ce"
+    },
+    {
+      "source": "assets/og-editorial-singapore-foreign-card-transit-fee.jpeg",
+      "destination": "images/og-editorial-singapore-foreign-card-transit-fee.jpeg",
+      "sha256": "a5af7c659aeb5bdf7fe73a5a7e67fbcd29d237966d511fd733737ad571c4512f"
+    },
+    {
+      "source": "budget-model.mjs",
+      "destination": "budget-model.mjs",
+      "sha256": "3a15a048d4fa9f71259e3c33f06b38a62185fcc848cc238daf07b6e1b28c70b1"
+    },
+    {
+      "source": "guide-tools.mjs",
+      "destination": "guide-tools.mjs",
+      "sha256": "253cb8c6b199fe5f81d7a71f2a715f2c1ae7811308250dfdb391ac38b0e1cfcb"
     }
   ]
 }

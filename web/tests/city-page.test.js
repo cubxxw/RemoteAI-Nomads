@@ -151,3 +151,30 @@ test('readable Beijing time differences account for DST, fractional offsets and 
   assert.equal(timeDifference('2026-02-30', 'Asia/Tokyo'), '时差待补充');
   assert.equal(timeDifference('2026-10-18', 'invalid'), '时差待补充');
 });
+
+test('Seoul visitor transport stays unfilled in both SSR and reset data while historical samples remain readable',()=>{
+  const observations=[{scope:'city',provider:'costcompass',category:'transport',field:'transport_monthly_pass',label:'Public transport monthly pass',amount:338.99,currency:'CNY',period:'month',quality:'sample',quality_flags:[],source_url:'https://example.com/month-pass'}, {scope:'city',provider:'costcompass',category:'transport',field:'transport_oneway_ticket',label:'Single ticket',amount:8,currency:'CNY',period:'trip',quality:'sample',quality_flags:[]}];
+  const before=structuredClone(observations);
+  const page=renderCityPage({...city,slug:'seoul',country_id:'KR',costs:{...city.costs,observations,sources:[{url:'https://example.com/month-pass',title:'Historical transit sample'}]}},{},{date:'2026-10-27'}).body;
+  const data=JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(page)[1]);
+  assert.equal(data.budget.defaults.transport.amount,null);
+  assert.equal(data.budget.defaults.transport.source,null);
+  assert.match(page, /id="budget-transport"[^>]*value=""/);
+  assert.match(page,/首尔短访交通按实际票种与路线填写/);
+  assert.match(page,/seoul-climate-card-short-stay-2026/);
+  assert.match(page,/https:\/\/example.com\/month-pass/);
+  assert.deepEqual(observations,before);
+  const other=renderCityPage({...city,costs:{...city.costs,observations}},{},{date:'2026-10-27'}).body;
+  assert.equal(JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(other)[1]).budget.defaults.transport.amount,338.99);
+});
+
+
+test('Singapore visitor transport does not default to a resident monthly pass',()=>{
+ const observations=[{scope:'city',provider:'costcompass',category:'transportation',field:'transport_monthly_pass',label:'Monthly pass',amount:120,currency:'CNY',period:'month',quality:'sample',quality_flags:[]}];
+ const page=renderCityPage({...city,slug:'singapore',country_id:'SG',costs:{...city.costs,observations}},{},{date:'2026-10-27'}).body;
+ const data=JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(page)[1]);
+ assert.equal(data.budget.defaults.transport.amount,null);
+ assert.match(page,/id="budget-transport"[^>]*value=""/);
+ assert.match(page,/新加坡短访交通按实际票种与路线填写/);
+ assert.match(page,/Monthly pass|公共交通月票/);
+});

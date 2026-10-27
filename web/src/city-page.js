@@ -127,6 +127,11 @@ export function renderCityPage(c, env = {}, options = {}) {
   const chosenMonth=Number(options.month);
   const month = Number.isInteger(chosenMonth)&&chosenMonth>=1&&chosenMonth<=12?chosenMonth:Number(today.slice(5, 7));
   const budget = cityCostModel(c.costs);
+  const visitorTransitCity = {seoul:'首尔', singapore:'新加坡'}[c.slug];
+  if (visitorTransitCity) {
+    budget.defaults.transport = {amount:null, basis:'按短访票种与实际路线填写', source:null};
+    budget.transportAssumption = visitorTransitCity + '短访交通按实际票种与路线填写，未确认适用的月票参考暂不计入';
+  }
   const domestic = c.country_id === 'CN';
   const caveat = domestic && c.caveat === '具体住宿、网络、停留资格需要单独核验。' ? '问清房间条件和网络，入住需要的证件也向住处确认。' : cityText(c.caveat || '先用可取消的短住，验证一个完整工作日。');
   const recommended = c.months.filter(m => m.suitability === 'recommended').map(m => m.month);
