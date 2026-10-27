@@ -16,3 +16,12 @@
 .share-edit .share-field{margin-top:10px}
 .share-manual-link{margin-top:8px}
 @media(max-width:700px){.share-primary-actions{grid-template-columns:1fr}}
+
+.share-format{border:0;padding:0;margin:0;min-width:0}
+.share-format legend{padding:0;margin-bottom:10px;font-size:14px;font-weight:500}
+.share-segments{display:grid;grid-template-columns:1fr 1fr;padding:4px;border:1px solid #cfd8ca;border-radius:10px;gap:4px}
+.share-segments label{position:relative;cursor:pointer;min-width:0}
+.share-segments input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.share-segments span{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:6px;color:#5a6d55;font-size:14px;font-weight:400}
+.share-segments input:checked+span{background:#fff;box-shadow:0 1px 4px rgb(22 37 28 / .12);color:#233e33;font-weight:500}
+.share-segments input:focus-visible+span{outline:3px solid #719e65;outline-offset:2px}
