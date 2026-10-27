@@ -167,3 +167,14 @@ test('Seoul visitor transport stays unfilled in both SSR and reset data while hi
   const other=renderCityPage({...city,costs:{...city.costs,observations}},{},{date:'2026-10-27'}).body;
   assert.equal(JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(other)[1]).budget.defaults.transport.amount,338.99);
 });
+
+
+test('Singapore visitor transport does not default to a resident monthly pass',()=>{
+ const observations=[{scope:'city',provider:'costcompass',category:'transportation',field:'transport_monthly_pass',label:'Monthly pass',amount:120,currency:'CNY',period:'month',quality:'sample',quality_flags:[]}];
+ const page=renderCityPage({...city,slug:'singapore',country_id:'SG',costs:{...city.costs,observations}},{},{date:'2026-10-27'}).body;
+ const data=JSON.parse(/id="city-guide-data">([\s\S]*?)<\/script>/.exec(page)[1]);
+ assert.equal(data.budget.defaults.transport.amount,null);
+ assert.match(page,/id="budget-transport"[^>]*value=""/);
+ assert.match(page,/新加坡短访交通按实际票种与路线填写/);
+ assert.match(page,/Monthly pass|公共交通月票/);
+});
