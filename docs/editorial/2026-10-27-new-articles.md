@@ -1,6 +1,6 @@
 # 2026年10月27日新增文章
 
-本轮共13篇城市月住指南、12篇专题。费用依据、资料日期和适用条件见各篇正文。
+本轮共13篇城市月住指南、13篇专题。费用依据、资料日期和适用条件见各篇正文。
 
 ## 城市月住
 
@@ -32,3 +32,4 @@
 - [E33G与韩国F-1-D，年收入和账户余额分别怎么证明](https://roamorrow.com/nomads/guides/remote-visa-income-balance/)
 - [跨过12月1日，华欣30晚该用哪档房价？](https://roamorrow.com/nomads/guides/hua-hin-cross-season-thirty-nights/)
 - [新加坡刷境外卡坐车，0.60新元按哪几天收？](https://roamorrow.com/nomads/guides/singapore-foreign-card-transit-fee/)
+- [工位能打电话，够你每天开两小时会吗？](https://roamorrow.com/nomads/guides/cowork-call-hours/)
