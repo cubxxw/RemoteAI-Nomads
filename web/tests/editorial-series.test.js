@@ -31,6 +31,17 @@ test('source renderer guards executable fragments and wide tables while escaping
  assert.match(html,/href="monthly-budget-5000.html"/);
  assert.match(html,/\\u003cscript>/);
 });
+test('an editorial revision updates modification dates without relabelling source verification',()=>{
+ const a={...sample(5),updatedAt:'2026-10-27'};
+ const html=renderEditorialArticle(a,publishedArticles());
+ assert.match(html,/"dateModified":"2026-10-27"/);
+ assert.match(html,/编辑更新：2026-10-27/);
+ assert.match(html,/"checkedOn":"2026-10-23"/);
+ assert.match(html,/本轮核读 2026-10-22/);
+ assert.match(html,/沿用核读 2026-10-20/);
+ const invalid=complete();invalid[0].updatedAt='2026-02-30';
+ assert.throws(()=>validateEditorialArticles(invalid),/update date/);
+});
 test('series navigation groups numbered guides and rejects duplicate sequence numbers',()=>{
  const entry={...publishedArticles().find(e=>e.kind==='guide'),topic:true,seriesNumber:5,seriesCategory:'start'};
  const registry=createArticleCatalog({schemaVersion:1,entries:[entry]});

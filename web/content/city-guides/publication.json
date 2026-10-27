@@ -24,7 +24,7 @@
         },
         {
           "path": "content/editorial-50/permission-tools.json",
-          "sha256": "94a260536b8cfef6b3b91457f68f2ba95b6f5007f338446cd4590f9fd2c1be7d"
+          "sha256": "6361d058c43cec44b96b8ece3d0066fec57774914fad7997048f8cf385534a98"
         }
       ]
     },
@@ -81,9 +81,15 @@
       "approvedOn": "2026-10-27",
       "authority": "User requested continuous autonomous researched writing until 11:00 Asia/Singapore; this narrow topic has independent source/arithmetical review, final editorial and whitelist passes.",
       "reviewRecord": "research/2026-10-27-call-hours.md"
+    },
+    "seoReview20261027": {
+      "approved": true,
+      "approvedOn": "2026-10-27",
+      "authority": "User explicitly requested current SEO analysis and continued optimization. Scoped search metadata and existing related-guide links were reviewed against the unchanged article facts, budget conditions and source dates; final Chinese whitelist pass completed.",
+      "reviewRecord": "research/2026-10-27-search-console-review.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -109,7 +115,7 @@
     {
       "slug": "dali-monthly-budget",
       "sourceFile": "dali-monthly-budget.html",
-      "sha256": "8394e7b7d6f2399b9852a713fbc28d298271ebf755c7c1d01cc2f7e051a0a75c",
+      "sha256": "57be5ca3aea59cf4a3f6fe3426f2df155b399dedc49774cfa69e25ceb9c6df46",
       "source": "output/titles-20261020/dali-monthly-budget.html",
       "approved": true
     },
@@ -217,7 +223,7 @@
     {
       "slug": "chinese-passport-long-stay",
       "sourceFile": "chinese-passport-long-stay.html",
-      "sha256": "d2935fdb3d40ce03faa20e416f2f392735c6fa3fd12c571625a7ba50364c10c7",
+      "sha256": "a556a857457656d1725021366e300b8564ccfb9c19564e35bce6a53a6066186f",
       "source": "output/seo-topics-20261022/chinese-passport-long-stay.html",
       "approved": true,
       "approvedOn": "2026-10-22"
@@ -463,7 +469,7 @@
     {
       "slug": "visa-validity-and-stay",
       "sourceFile": "visa-validity-and-stay.html",
-      "sha256": "36a743b40f2cb02b134bd392d86d74ecb595c9e373b3736350e323626446c5b6",
+      "sha256": "4e87bdfb700a0b80f7bdf33bcd9e62b54ff94ca962a844cf53d3dd5ce9db739a",
       "source": "web/content/editorial-50/permission-tools.json (article 34)",
       "approved": true
     },
