@@ -92,7 +92,7 @@ test('topic navigation accounts for all reviewed articles once with honest categ
   assert.equal(hits.length,1,'Article must belong to one group: '+topic.slug);
   assert.ok(topic.seriesCategory||topic.topicCategory,'Reviewed topic needs an explicit category: '+topic.slug);
  }
- for(const [key,count] of Object.entries({start:10,budget:16,season:11,permission:16,compare:11})){
+ for(const [key,count] of Object.entries({start:10,budget:16,season:11,permission:16,compare:38})){
   assert.match(nav,new RegExp('data-guide-topic-filter="'+key+'"[^>]*>[\\s\\S]*?'+count+'篇'));
  }
  assert.doesNotMatch(nav,/再做更细的取舍|把钱花在哪/);
@@ -210,6 +210,33 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'hua-hin-cross-season-thirty-nights': ['2026-10-27', null],
       'singapore-foreign-card-transit-fee': ['2026-10-27', null],
       'cowork-call-hours': ['2026-10-27', null],
+      'async-standup-recording-minimum': ['2026-10-28', null],
+      'four-day-week-nomad': ['2026-10-28', null],
+      'freelancer-milestone-moving-days': ['2026-10-28', null],
+      'high-meeting-density-week': ['2026-10-28', null],
+      'interview-negotiation-week-no-moving': ['2026-10-28', null],
+      'moving-day-work-schedule': ['2026-10-28', null],
+      'nap-across-timezones': ['2026-10-28', null],
+      'on-call-nomad-limits': ['2026-10-28', null],
+      'peak-season-stay-stable': ['2026-10-28', null],
+      'portable-monitor-worth-it': ['2026-10-28', null],
+      'posture-rotation-workday': ['2026-10-28', null],
+      'sleep-after-night-meetings': ['2026-10-28', null],
+      'timezone-etiquette-remote-teams': ['2026-10-28', null],
+      'work-phone-personal-phone-notifications': ['2026-10-28', null],
+      'account-security-before-departure': ['2026-10-28', null],
+      'backup-internet-plan': ['2026-10-28', null],
+      'confidential-meetings-shared-space': ['2026-10-28', null],
+      'home-office-ergonomics-check': ['2026-10-28', null],
+      'laptop-breaks-abroad': ['2026-10-28', null],
+      'sync-async-work-split': ['2026-10-28', null],
+      'two-people-working-from-home': ['2026-10-28', null],
+      'working-from-cafes-cost': ['2026-10-28', null],
+      'ai-route-planning-three-months': ['2026-10-28', null],
+      'custom-ranking-weights': ['2026-10-28', null],
+      'map-count-coworking-cafes': ['2026-10-28', null],
+      'monthly-cost-three-numbers': ['2026-10-28', null],
+      'ai-assistant-verify-official': ['2026-10-28', null],
       'chengdu-monthly-budget': ['2026-10-21', '2026-10-20'],
       'fethiye-monthly-budget': ['2026-10-21', '2026-10-20'],
       'lisbon-monthly-budget': ['2026-10-21', '2026-10-20'],
@@ -257,7 +284,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 64);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 91);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);
