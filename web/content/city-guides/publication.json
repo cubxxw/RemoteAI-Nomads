@@ -109,9 +109,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "blog150Batch3": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -1180,6 +1185,206 @@
       "sourceFile": "year-nomad-ledger.html",
       "sha256": "99b96326b86b22003d44f5d7ff99cb5992c9e84ff0aa2332f44d3372cddf882b",
       "source": "docs/editorial/blog-drafts-2026-10/year-nomad-ledger.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "28-nights-vs-month",
+      "sourceFile": "28-nights-vs-month.html",
+      "sha256": "24c4edaaf778a6bd04b1c470aa7a52e26868eecb2ecb43c8ddea932ec316b3cc",
+      "source": "docs/editorial/blog-drafts-2026-10/28-nights-vs-month.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "deposit-deductions-checkout",
+      "sourceFile": "deposit-deductions-checkout.html",
+      "sha256": "a497dc88aea6209a675f5d7877c2b9e5deb687a875e05e84736e36ac982571a2",
+      "source": "docs/editorial/blog-drafts-2026-10/deposit-deductions-checkout.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "emergency-fund-sizing",
+      "sourceFile": "emergency-fund-sizing.html",
+      "sha256": "630fa1e5c878d8909f24333c63683b3233b5cc5baae3a5616dd51948df074214",
+      "source": "docs/editorial/blog-drafts-2026-10/emergency-fund-sizing.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "exchange-rate-buffer-line",
+      "sourceFile": "exchange-rate-buffer-line.html",
+      "sha256": "853d15149dcfa63927afb3b66438a4431b8177cb305fcbe44c2152e887afedea",
+      "source": "docs/editorial/blog-drafts-2026-10/exchange-rate-buffer-line.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "freelancer-social-insurance",
+      "sourceFile": "freelancer-social-insurance.html",
+      "sha256": "3b44151b68f4eaa0d5fb1ae58d932b4e4d7c618881bde622376d3000608d88da",
+      "source": "docs/editorial/blog-drafts-2026-10/freelancer-social-insurance.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "landlord-payment-proof",
+      "sourceFile": "landlord-payment-proof.html",
+      "sha256": "20e25aa98e8ff5b88d908445a87985e546c1006a1708d7db4bbfbd5234e9e1f5",
+      "source": "docs/editorial/blog-drafts-2026-10/landlord-payment-proof.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "money-three-layers-abroad",
+      "sourceFile": "money-three-layers-abroad.html",
+      "sha256": "31a11ab7820a74813c6113262fa9dc5019b0bd49908ce5f48feb0018e6aaf159",
+      "source": "docs/editorial/blog-drafts-2026-10/money-three-layers-abroad.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "tax-residency-183-days",
+      "sourceFile": "tax-residency-183-days.html",
+      "sha256": "ec00b8e56b9ecaaa2e24d4fe44d841a73c27b297d711d6f19254b1ce47064f3c",
+      "source": "docs/editorial/blog-drafts-2026-10/tax-residency-183-days.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "end-of-stay-wrap-up-checklist",
+      "sourceFile": "end-of-stay-wrap-up-checklist.html",
+      "sha256": "bb0def1790c374a0a550bad95a92ebc9cb74d052192c4dd3d2efae49e5db421c",
+      "source": "docs/editorial/blog-drafts-2026-10/end-of-stay-wrap-up-checklist.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "family-visit-two-weeks",
+      "sourceFile": "family-visit-two-weeks.html",
+      "sha256": "6f378c31556ecc87b95fb031ff3f3dff4be2abcfbff722be1757c8d2be51e38a",
+      "source": "docs/editorial/blog-drafts-2026-10/family-visit-two-weeks.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "food-options-monthly-cost",
+      "sourceFile": "food-options-monthly-cost.html",
+      "sha256": "b2b51ec65e0cf770a56c891e7f5444c62342abf21f130777015f560c3b48c74b",
+      "source": "docs/editorial/blog-drafts-2026-10/food-options-monthly-cost.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "language-barrier-repairs-landlord-doctor",
+      "sourceFile": "language-barrier-repairs-landlord-doctor.html",
+      "sha256": "6bd1c10ea8f6268a17be8f441f18081325ff758c1e93fd516fc976af33eba855",
+      "source": "docs/editorial/blog-drafts-2026-10/language-barrier-repairs-landlord-doctor.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "making-friends-social-budget",
+      "sourceFile": "making-friends-social-budget.html",
+      "sha256": "b379342c2bbb197303066435ffe0e01eb60231fcf60630b3cece43a8280f9908",
+      "source": "docs/editorial/blog-drafts-2026-10/making-friends-social-budget.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "seasonal-clothes-luggage-storage",
+      "sourceFile": "seasonal-clothes-luggage-storage.html",
+      "sha256": "9f0176d906c5d680f82c1925c7bc40f927daa762d281838d5f17e4156266eec9",
+      "source": "docs/editorial/blog-drafts-2026-10/seasonal-clothes-luggage-storage.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "three-month-room-second-check",
+      "sourceFile": "three-month-room-second-check.html",
+      "sha256": "2a7c07418e73e4197074b663132d58b2ea61183c1f8c033680bdc7ff846f0ad1",
+      "source": "docs/editorial/blog-drafts-2026-10/three-month-room-second-check.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "traveling-with-pets",
+      "sourceFile": "traveling-with-pets.html",
+      "sha256": "71bf819b1c11d55cfec151be4ccabd25574286abc43e7908fbd592439c79e531",
+      "source": "docs/editorial/blog-drafts-2026-10/traveling-with-pets.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "moving-pace-cost",
+      "sourceFile": "moving-pace-cost.html",
+      "sha256": "1ebeeaa7ed85045b65825e1d0f40e669c9d15557a7bfcc667d00204967f1a3b1",
+      "source": "docs/editorial/blog-drafts-2026-10/moving-pace-cost.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "border-port-city-short-stay",
+      "sourceFile": "border-port-city-short-stay.html",
+      "sha256": "1742f3b02874bb8aa032b8470d9fe70690c856d40c4d5edc775d54d7cc68d724",
+      "source": "docs/editorial/blog-drafts-2026-10/border-port-city-short-stay.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "capital-or-second-city-first",
+      "sourceFile": "capital-or-second-city-first.html",
+      "sha256": "7d00d397d56810e528cbfad7c97a3ca130bf7dd40c4d536aeeacda3ef0f21ace",
+      "source": "docs/editorial/blog-drafts-2026-10/capital-or-second-city-first.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "chiang-rai-slow-month-tradeoffs",
+      "sourceFile": "chiang-rai-slow-month-tradeoffs.html",
+      "sha256": "dfc586da7862ec85e39de76f40c6007155bea07921628403970982e5b6c8bc16",
+      "source": "docs/editorial/blog-drafts-2026-10/chiang-rai-slow-month-tradeoffs.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "high-altitude-city-one-month-pacing",
+      "sourceFile": "high-altitude-city-one-month-pacing.html",
+      "sha256": "1a1cc74e46c00581e0b458089c319c4ba1a429c9ee12b53ece30e0a8ea483bd7",
+      "source": "docs/editorial/blog-drafts-2026-10/high-altitude-city-one-month-pacing.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "island-long-stay-three-gates",
+      "sourceFile": "island-long-stay-three-gates.html",
+      "sha256": "0967ce78cb4fc382dd12c85819f25d687e42e38f1474f603b56ce91769ca1ff6",
+      "source": "docs/editorial/blog-drafts-2026-10/island-long-stay-three-gates.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "pick-domestic-practice-city",
+      "sourceFile": "pick-domestic-practice-city.html",
+      "sha256": "f31908b3f4c02ec0e7b044896c5c5ba56f6b53354a1d227df68bad78b4c2505f",
+      "source": "docs/editorial/blog-drafts-2026-10/pick-domestic-practice-city.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "shanghai-one-month-work-system-cost",
+      "sourceFile": "shanghai-one-month-work-system-cost.html",
+      "sha256": "0410a90fbc15882911f3ffd0b2a7db55c5400f7fa1ca05fc13f7777b952f4d9e",
+      "source": "docs/editorial/blog-drafts-2026-10/shanghai-one-month-work-system-cost.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "shenzhen-as-transition-stop",
+      "sourceFile": "shenzhen-as-transition-stop.html",
+      "sha256": "05d96faa5a164c51ea27850c5eb66a5b0c450c096aeff4d60c6259d2f28df8e6",
+      "source": "docs/editorial/blog-drafts-2026-10/shenzhen-as-transition-stop.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }
