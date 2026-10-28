@@ -114,9 +114,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "blog150Batch4": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -1385,6 +1390,198 @@
       "sourceFile": "shenzhen-as-transition-stop.html",
       "sha256": "05d96faa5a164c51ea27850c5eb66a5b0c450c096aeff4d60c6259d2f28df8e6",
       "source": "docs/editorial/blog-drafts-2026-10/shenzhen-as-transition-stop.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "switch-city-same-country",
+      "sourceFile": "switch-city-same-country.html",
+      "sha256": "1dab7cf08522f9f8ea81aeafe29b8d70c43f2173e9faddd939ca931640c2d7cd",
+      "source": "docs/editorial/blog-drafts-2026-10/switch-city-same-country.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "tashkent-entry-stay-extension-checks",
+      "sourceFile": "tashkent-entry-stay-extension-checks.html",
+      "sha256": "c14068e4d55b0d2d4004a6b3bedefc0b976e54c60e3255b8eb921d5054933645",
+      "source": "docs/editorial/blog-drafts-2026-10/tashkent-entry-stay-extension-checks.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "tashkent-one-month-workday",
+      "sourceFile": "tashkent-one-month-workday.html",
+      "sha256": "778089f05034e518b1b5f0e703fc3c2d810935968d380f2ac9841c7ff9f963dc",
+      "source": "docs/editorial/blog-drafts-2026-10/tashkent-one-month-workday.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "yerevan-tashkent-route-order",
+      "sourceFile": "yerevan-tashkent-route-order.html",
+      "sha256": "daa925cb73b9baa2a0153edc7d0f09c373858c3cfe299bd86217b71bffdd9c8b",
+      "source": "docs/editorial/blog-drafts-2026-10/yerevan-tashkent-route-order.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "yerevan-visa-free-long-stay-systems",
+      "sourceFile": "yerevan-visa-free-long-stay-systems.html",
+      "sha256": "9a36aa54ceece1b1f117bc9db22d421ab15ccf740a32e42462a063d3a1907073",
+      "source": "docs/editorial/blog-drafts-2026-10/yerevan-visa-free-long-stay-systems.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "yerevan-workday-timezone-meetings",
+      "sourceFile": "yerevan-workday-timezone-meetings.html",
+      "sha256": "93cab30cb2472723e13cb4a2c06efbae79da751126cfa2aa558de3539899038f",
+      "source": "docs/editorial/blog-drafts-2026-10/yerevan-workday-timezone-meetings.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "annual-checkup-dental-window",
+      "sourceFile": "annual-checkup-dental-window.html",
+      "sha256": "21ada0a7fbc1a1a3027977329aae01083eec786938b5779cf927c2818ca3e84f",
+      "source": "docs/editorial/blog-drafts-2026-10/annual-checkup-dental-window.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "drivers-license-car-rental-checks",
+      "sourceFile": "drivers-license-car-rental-checks.html",
+      "sha256": "009e59edb170872658617b91b91613dfd0138d406ee7305e5aa116786b71fa47",
+      "source": "docs/editorial/blog-drafts-2026-10/drivers-license-car-rental-checks.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "dual-base-system",
+      "sourceFile": "dual-base-system.html",
+      "sha256": "e564358f5ed8e1a4e8f3057689819b79cc8968c27ee8cdeb3ea2db333b80fb12",
+      "source": "docs/editorial/blog-drafts-2026-10/dual-base-system.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "freeze-home-buying-decision",
+      "sourceFile": "freeze-home-buying-decision.html",
+      "sha256": "1f6d074d37a1d967e85ec0ec62f68f900b537076f88575548c9e03a9c3560d2d",
+      "source": "docs/editorial/blog-drafts-2026-10/freeze-home-buying-decision.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "passport-blank-pages-count",
+      "sourceFile": "passport-blank-pages-count.html",
+      "sha256": "ef466b93cb2af981927f4d54bd51c421564278276b14b2fcd7aa7b1eacfc4d11",
+      "source": "docs/editorial/blog-drafts-2026-10/passport-blank-pages-count.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "personal-digital-archive",
+      "sourceFile": "personal-digital-archive.html",
+      "sha256": "4273133411172776eff7ad6b49effb676cfbfe468d89142a7fbe0924a11cfc89",
+      "source": "docs/editorial/blog-drafts-2026-10/personal-digital-archive.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "return-home-base-choice",
+      "sourceFile": "return-home-base-choice.html",
+      "sha256": "3a6e6cba559f7dd0d587d71b378352e6809e3e3d691cbe675ed236fd4a9193fe",
+      "source": "docs/editorial/blog-drafts-2026-10/return-home-base-choice.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "shipping-to-long-stay-base",
+      "sourceFile": "shipping-to-long-stay-base.html",
+      "sha256": "2ca8ecc0564a8ab516d7801461c7f0adfefd5afee121ff26134f4f3cefd31995",
+      "source": "docs/editorial/blog-drafts-2026-10/shipping-to-long-stay-base.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "accessibility-room-viewing-checklist",
+      "sourceFile": "accessibility-room-viewing-checklist.html",
+      "sha256": "2223a6d027582ccae7da174bddccb94226fda4b4b45465056d4c147c732e168a",
+      "source": "docs/editorial/blog-drafts-2026-10/accessibility-room-viewing-checklist.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "chronic-checkup-calendar-alignment",
+      "sourceFile": "chronic-checkup-calendar-alignment.html",
+      "sha256": "fea8d85780ebc43df3ed073c89e71509402d41f1d1947186a71b1084049c5220",
+      "source": "docs/editorial/blog-drafts-2026-10/chronic-checkup-calendar-alignment.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "first-job-remote-start-near",
+      "sourceFile": "first-job-remote-start-near.html",
+      "sha256": "e39c433309f10090cbb15eac514dbbbfd8896c46644a0e8164e0bc9e63a91b81",
+      "source": "docs/editorial/blog-drafts-2026-10/first-job-remote-start-near.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "home-affairs-contact-person",
+      "sourceFile": "home-affairs-contact-person.html",
+      "sha256": "e050da2f312952e22f1a2f60484401aa249312fd171340c9098671e62255d595",
+      "source": "docs/editorial/blog-drafts-2026-10/home-affairs-contact-person.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "one-travels-one-stays-rhythm-budget",
+      "sourceFile": "one-travels-one-stays-rhythm-budget.html",
+      "sha256": "ba0093ab0c680bedc0f19db81bbe6be48bade229ac3f08c332de935b489ad4c1",
+      "source": "docs/editorial/blog-drafts-2026-10/one-travels-one-stays-rhythm-budget.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "parents-one-month-three-person",
+      "sourceFile": "parents-one-month-three-person.html",
+      "sha256": "9d54186fc11ea8ddb39d8b312c9524c4b6e20ca49126a6c6d1cd4a88d0a41526",
+      "source": "docs/editorial/blog-drafts-2026-10/parents-one-month-three-person.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "partner-not-remote-alignment",
+      "sourceFile": "partner-not-remote-alignment.html",
+      "sha256": "bba741d834967e2a6f22b0815a8e2109d0178f243bb5703b3c26dfc9e9e08640",
+      "source": "docs/editorial/blog-drafts-2026-10/partner-not-remote-alignment.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "pre-retirement-trial-stay",
+      "sourceFile": "pre-retirement-trial-stay.html",
+      "sha256": "b838822f36495e0cfbc7a1fd76c74338cb3a03f7f437b61fcdb8d096e2871744",
+      "source": "docs/editorial/blog-drafts-2026-10/pre-retirement-trial-stay.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "preschool-child-one-month",
+      "sourceFile": "preschool-child-one-month.html",
+      "sha256": "7cf4b5cb3e4646c30f2303a97dea638cde24c16ed43d948b4200494f4f2299a7",
+      "source": "docs/editorial/blog-drafts-2026-10/preschool-child-one-month.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "solo-living-weekly-structure",
+      "sourceFile": "solo-living-weekly-structure.html",
+      "sha256": "bea054afbd67a66e644f96af61ffd397462394873ed494b0a62be6289c1b1606",
+      "source": "docs/editorial/blog-drafts-2026-10/solo-living-weekly-structure.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }

@@ -92,7 +92,7 @@ test('topic navigation accounts for all reviewed articles once with honest categ
   assert.equal(hits.length,1,'Article must belong to one group: '+topic.slug);
   assert.ok(topic.seriesCategory||topic.topicCategory,'Reviewed topic needs an explicit category: '+topic.slug);
  }
- for(const [key,count] of Object.entries({start:18,budget:47,season:11,permission:16,compare:48})){
+ for(const [key,count] of Object.entries({start:42,budget:47,season:11,permission:16,compare:48})){
   assert.match(nav,new RegExp('data-guide-topic-filter="'+key+'"[^>]*>[\\s\\S]*?'+count+'篇'));
  }
  assert.doesNotMatch(nav,/再做更细的取舍|把钱花在哪/);
@@ -210,6 +210,30 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'hua-hin-cross-season-thirty-nights': ['2026-10-27', null],
       'singapore-foreign-card-transit-fee': ['2026-10-27', null],
       'cowork-call-hours': ['2026-10-27', null],
+      'switch-city-same-country': ['2026-10-28', null],
+      'tashkent-entry-stay-extension-checks': ['2026-10-28', null],
+      'tashkent-one-month-workday': ['2026-10-28', null],
+      'yerevan-tashkent-route-order': ['2026-10-28', null],
+      'yerevan-visa-free-long-stay-systems': ['2026-10-28', null],
+      'yerevan-workday-timezone-meetings': ['2026-10-28', null],
+      'annual-checkup-dental-window': ['2026-10-28', null],
+      'drivers-license-car-rental-checks': ['2026-10-28', null],
+      'dual-base-system': ['2026-10-28', null],
+      'freeze-home-buying-decision': ['2026-10-28', null],
+      'passport-blank-pages-count': ['2026-10-28', null],
+      'personal-digital-archive': ['2026-10-28', null],
+      'return-home-base-choice': ['2026-10-28', null],
+      'shipping-to-long-stay-base': ['2026-10-28', null],
+      'accessibility-room-viewing-checklist': ['2026-10-28', null],
+      'chronic-checkup-calendar-alignment': ['2026-10-28', null],
+      'first-job-remote-start-near': ['2026-10-28', null],
+      'home-affairs-contact-person': ['2026-10-28', null],
+      'one-travels-one-stays-rhythm-budget': ['2026-10-28', null],
+      'parents-one-month-three-person': ['2026-10-28', null],
+      'partner-not-remote-alignment': ['2026-10-28', null],
+      'pre-retirement-trial-stay': ['2026-10-28', null],
+      'preschool-child-one-month': ['2026-10-28', null],
+      'solo-living-weekly-structure': ['2026-10-28', null],
       '28-nights-vs-month': ['2026-10-28', null],
       'deposit-deductions-checkout': ['2026-10-28', null],
       'emergency-fund-sizing': ['2026-10-28', null],
@@ -333,7 +357,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 140);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 164);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);
