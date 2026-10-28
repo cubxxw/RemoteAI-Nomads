@@ -1484,6 +1484,19 @@
       "updatedAt": "2026-10-27",
       "assetPath": "/city-guides/cowork-call-hours.html",
       "topicCategory": "compare"
+    },
+    {
+      "slug": "ai-assistant-verify-official",
+      "kind": "guide",
+      "topic": true,
+      "topicCategory": "compare",
+      "path": "/guides/ai-assistant-verify-official/",
+      "title": "用 AI 助手查城市和签证：哪些回答必须回到官方来源核对",
+      "summary": "AI 助手给出的城市筛选、价格和签证信息，答错的代价完全不同：筛选与排序可以直接用来缩小范围，具体价格要回原页面复核，签证资格、停留天数和工作许可只能以官方原文为准。",
+      "citySlugs": [],
+      "status": "published",
+      "updatedAt": "2026-10-28",
+      "assetPath": "/city-guides/ai-assistant-verify-official.html"
     }
   ]
 }

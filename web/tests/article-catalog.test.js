@@ -92,7 +92,7 @@ test('topic navigation accounts for all reviewed articles once with honest categ
   assert.equal(hits.length,1,'Article must belong to one group: '+topic.slug);
   assert.ok(topic.seriesCategory||topic.topicCategory,'Reviewed topic needs an explicit category: '+topic.slug);
  }
- for(const [key,count] of Object.entries({start:10,budget:16,season:11,permission:16,compare:11})){
+ for(const [key,count] of Object.entries({start:10,budget:16,season:11,permission:16,compare:12})){
   assert.match(nav,new RegExp('data-guide-topic-filter="'+key+'"[^>]*>[\\s\\S]*?'+count+'篇'));
  }
  assert.doesNotMatch(nav,/再做更细的取舍|把钱花在哪/);
@@ -210,6 +210,7 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'hua-hin-cross-season-thirty-nights': ['2026-10-27', null],
       'singapore-foreign-card-transit-fee': ['2026-10-27', null],
       'cowork-call-hours': ['2026-10-27', null],
+      'ai-assistant-verify-official': ['2026-10-28', null],
       'chengdu-monthly-budget': ['2026-10-21', '2026-10-20'],
       'fethiye-monthly-budget': ['2026-10-21', '2026-10-20'],
       'lisbon-monthly-budget': ['2026-10-21', '2026-10-20'],
@@ -257,7 +258,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 64);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 65);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);
