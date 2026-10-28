@@ -99,9 +99,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides; this pilot converts one article first for pipeline verification."
+    },
+    "blog150Batch1": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -770,6 +775,214 @@
       "sourceFile": "ai-assistant-verify-official.html",
       "sha256": "ad77c30210052c9a6b8081b451732f8ee1227b33895a8806d9f751a22a74324f",
       "source": "docs/editorial/blog-drafts-2026-10/ai-assistant-verify-official.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "async-standup-recording-minimum",
+      "sourceFile": "async-standup-recording-minimum.html",
+      "sha256": "fec8a04df8d44112436112364f0377025801538c53607e141b2335113ab61584",
+      "source": "docs/editorial/blog-drafts-2026-10/async-standup-recording-minimum.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "four-day-week-nomad",
+      "sourceFile": "four-day-week-nomad.html",
+      "sha256": "03d374889d282379e39657ff4317145e851227e5d81bfa60e8cb54d21c60c722",
+      "source": "docs/editorial/blog-drafts-2026-10/four-day-week-nomad.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "freelancer-milestone-moving-days",
+      "sourceFile": "freelancer-milestone-moving-days.html",
+      "sha256": "4c8d05c60169d0f3c90209bee99f516180fb2ca201b33ff3105d7bf630b00b2e",
+      "source": "docs/editorial/blog-drafts-2026-10/freelancer-milestone-moving-days.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "high-meeting-density-week",
+      "sourceFile": "high-meeting-density-week.html",
+      "sha256": "d5cd992515b58b0c264b25644e35870e8a97596aefd36827362c05e3abbac562",
+      "source": "docs/editorial/blog-drafts-2026-10/high-meeting-density-week.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "interview-negotiation-week-no-moving",
+      "sourceFile": "interview-negotiation-week-no-moving.html",
+      "sha256": "fee9d46b09aa35630531c210959f4998c43b09e9478e711f21c5708b1601b440",
+      "source": "docs/editorial/blog-drafts-2026-10/interview-negotiation-week-no-moving.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "moving-day-work-schedule",
+      "sourceFile": "moving-day-work-schedule.html",
+      "sha256": "b1d7fcf4d1d6cc7d1a6ef568d5024ae47bca61db05e9bca2b2c80b4546aeca64",
+      "source": "docs/editorial/blog-drafts-2026-10/moving-day-work-schedule.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "nap-across-timezones",
+      "sourceFile": "nap-across-timezones.html",
+      "sha256": "7dc5b8857ef1f5862572a5a2409ba9337265992af24ad5ff277ca675e677ab2c",
+      "source": "docs/editorial/blog-drafts-2026-10/nap-across-timezones.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "on-call-nomad-limits",
+      "sourceFile": "on-call-nomad-limits.html",
+      "sha256": "013d3b156d5025236b91c8f2022a26dd1ce57893bd488f1d5bd43d7a2808c4a5",
+      "source": "docs/editorial/blog-drafts-2026-10/on-call-nomad-limits.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "peak-season-stay-stable",
+      "sourceFile": "peak-season-stay-stable.html",
+      "sha256": "e8618dc902ac0da1f9757d29d3e05feec6b3056bb5c445ebbda3b0e01ee280c5",
+      "source": "docs/editorial/blog-drafts-2026-10/peak-season-stay-stable.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "portable-monitor-worth-it",
+      "sourceFile": "portable-monitor-worth-it.html",
+      "sha256": "622a5af8da952f2170cf275ced36d748953bc419b2e9cc20e27cdc29f9128e2c",
+      "source": "docs/editorial/blog-drafts-2026-10/portable-monitor-worth-it.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "posture-rotation-workday",
+      "sourceFile": "posture-rotation-workday.html",
+      "sha256": "49675d3b02eaeb36f3c399540c5e4c4ee21702e22084d1507947d7f1cfb0c467",
+      "source": "docs/editorial/blog-drafts-2026-10/posture-rotation-workday.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "sleep-after-night-meetings",
+      "sourceFile": "sleep-after-night-meetings.html",
+      "sha256": "df93ecee55c78bbf480e6accecf0ed47801815b25af492cf4f8010b1ffb35bae",
+      "source": "docs/editorial/blog-drafts-2026-10/sleep-after-night-meetings.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "timezone-etiquette-remote-teams",
+      "sourceFile": "timezone-etiquette-remote-teams.html",
+      "sha256": "bef9d0d594d1a0c86393e4331f349662aa06ed8cb177385b8f6307a14142954d",
+      "source": "docs/editorial/blog-drafts-2026-10/timezone-etiquette-remote-teams.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "work-phone-personal-phone-notifications",
+      "sourceFile": "work-phone-personal-phone-notifications.html",
+      "sha256": "5a88f68383d3f0534604079ac7bf45b0c119596a391723c01a325b6d81cb16dc",
+      "source": "docs/editorial/blog-drafts-2026-10/work-phone-personal-phone-notifications.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "account-security-before-departure",
+      "sourceFile": "account-security-before-departure.html",
+      "sha256": "cb8df5dadc171d2e301a2c35cfaaebce944b4a49ed0919bb23a76c15fd56b569",
+      "source": "docs/editorial/blog-drafts-2026-10/account-security-before-departure.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "backup-internet-plan",
+      "sourceFile": "backup-internet-plan.html",
+      "sha256": "c124767a422689812b51788e9c5c5f6ff212392f64546bc5e74565407ab48962",
+      "source": "docs/editorial/blog-drafts-2026-10/backup-internet-plan.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "confidential-meetings-shared-space",
+      "sourceFile": "confidential-meetings-shared-space.html",
+      "sha256": "0a711df0c22db9e4787ebbf728f136084c24dee4eb51e1a3c5447e2820f4a2bf",
+      "source": "docs/editorial/blog-drafts-2026-10/confidential-meetings-shared-space.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "home-office-ergonomics-check",
+      "sourceFile": "home-office-ergonomics-check.html",
+      "sha256": "9a28b2079c480d68f89470f57b0a5af14fe4fffddc8417699d9584578fabecfd",
+      "source": "docs/editorial/blog-drafts-2026-10/home-office-ergonomics-check.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "laptop-breaks-abroad",
+      "sourceFile": "laptop-breaks-abroad.html",
+      "sha256": "170fc6bd6dc1f7c1f6c77e9cb5fb6e86d0d16d98ad851fbc6c71e5b2357eab66",
+      "source": "docs/editorial/blog-drafts-2026-10/laptop-breaks-abroad.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "sync-async-work-split",
+      "sourceFile": "sync-async-work-split.html",
+      "sha256": "caa7a14c5492465369903bf244b8a0b509168d43ee1af32e0f16bfe83b66fc3b",
+      "source": "docs/editorial/blog-drafts-2026-10/sync-async-work-split.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "two-people-working-from-home",
+      "sourceFile": "two-people-working-from-home.html",
+      "sha256": "d4519a1ac31b06358f043e8d4869322fd6ae8a307ec9f12997cfc31e900926bf",
+      "source": "docs/editorial/blog-drafts-2026-10/two-people-working-from-home.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "working-from-cafes-cost",
+      "sourceFile": "working-from-cafes-cost.html",
+      "sha256": "58f23d0b962a7f7445990e3b8bae60f5c70cc654984157bb5bf4b3b58c762ce4",
+      "source": "docs/editorial/blog-drafts-2026-10/working-from-cafes-cost.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "ai-route-planning-three-months",
+      "sourceFile": "ai-route-planning-three-months.html",
+      "sha256": "25edc23f69e6b04930878a16f0eeed3820e94a8b893e245360d787ec090099d2",
+      "source": "docs/editorial/blog-drafts-2026-10/ai-route-planning-three-months.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "custom-ranking-weights",
+      "sourceFile": "custom-ranking-weights.html",
+      "sha256": "6125a14ab6f258e3606b64d15f7bc9070a7a7c0d0ced13a6cfea2517f898a23a",
+      "source": "docs/editorial/blog-drafts-2026-10/custom-ranking-weights.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "map-count-coworking-cafes",
+      "sourceFile": "map-count-coworking-cafes.html",
+      "sha256": "8759fa7d4546a9ecb2e3440f8c0bea1f3d8f163583c856139e09b03efc0c5656",
+      "source": "docs/editorial/blog-drafts-2026-10/map-count-coworking-cafes.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "monthly-cost-three-numbers",
+      "sourceFile": "monthly-cost-three-numbers.html",
+      "sha256": "e0f4e91005c45778ce90d6b6157c26ac123a6ab41ecaaa3adec0aab886805966",
+      "source": "docs/editorial/blog-drafts-2026-10/monthly-cost-three-numbers.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }
