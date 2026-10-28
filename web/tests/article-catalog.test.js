@@ -92,7 +92,7 @@ test('topic navigation accounts for all reviewed articles once with honest categ
   assert.equal(hits.length,1,'Article must belong to one group: '+topic.slug);
   assert.ok(topic.seriesCategory||topic.topicCategory,'Reviewed topic needs an explicit category: '+topic.slug);
  }
- for(const [key,count] of Object.entries({start:52,budget:47,season:25,permission:16,compare:48})){
+ for(const [key,count] of Object.entries({start:52,budget:47,season:31,permission:36,compare:48})){
   assert.match(nav,new RegExp('data-guide-topic-filter="'+key+'"[^>]*>[\\s\\S]*?'+count+'篇'));
  }
  assert.doesNotMatch(nav,/再做更细的取舍|把钱花在哪/);
@@ -210,6 +210,32 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'hua-hin-cross-season-thirty-nights': ['2026-10-27', null],
       'singapore-foreign-card-transit-fee': ['2026-10-27', null],
       'cowork-call-hours': ['2026-10-27', null],
+      'europe-three-ledger-stays': ['2026-10-28', null],
+      'february-after-spring-festival': ['2026-10-28', null],
+      'practice-stay-domestic-first': ['2026-10-28', null],
+      'same-climate-zone-route': ['2026-10-28', null],
+      'shoulder-season-booking': ['2026-10-28', null],
+      'three-months-return-checklists': ['2026-10-28', null],
+      'empty-home-three-months': ['2026-10-28', null],
+      'first-day-three-things': ['2026-10-28', null],
+      'jet-lag-first-week': ['2026-10-28', null],
+      'one-suitcase-three-months': ['2026-10-28', null],
+      'passport-validity-countdown': ['2026-10-28', null],
+      'pre-departure-china-admin': ['2026-10-28', null],
+      'transit-not-entry': ['2026-10-28', null],
+      'daily-services-haircut-dental-glasses': ['2026-10-28', null],
+      'exercise-routine-after-moving': ['2026-10-28', null],
+      'medication-glasses-prep': ['2026-10-28', null],
+      'seeing-a-doctor-abroad-steps': ['2026-10-28', null],
+      'solo-stay-safety-checks': ['2026-10-28', null],
+      'nomad-medical-insurance-types': ['2026-10-28', null],
+      'schengen-90-180-counting': ['2026-10-28', null],
+      'emergency-return-home-plan': ['2026-10-28', null],
+      'fake-listing-fraud-signals': ['2026-10-28', null],
+      'flight-cancellation-chain': ['2026-10-28', null],
+      'housing-falls-through-48h': ['2026-10-28', null],
+      'passport-lost-day': ['2026-10-28', null],
+      'phone-lost-day': ['2026-10-28', null],
       'chinese-community-uses-limits': ['2026-10-28', null],
       'explaining-nomad-life-to-family': ['2026-10-28', null],
       'keeping-contacts-after-return': ['2026-10-28', null],
@@ -381,7 +407,7 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);
-  assert.equal(report.pages.filter(page => page.fxDate === null).length, 188);
+  assert.equal(report.pages.filter(page => page.fxDate === null).length, 214);
   assert.deepEqual(report.pages.filter(page => page.fxDate === null).map(page => page.slug).sort(), publishedArticles().filter(article => article.topic && article.assetPath).map(article => article.slug).sort());
   await edit('chiang-mai-monthly-budget', html => html.replace('"fx":{"date":"2026-10-16"', '"fx":{"date":null'));
   await assert.rejects(buildCityGuides(options), /Budget guide FX date is required/);

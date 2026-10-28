@@ -124,9 +124,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "blog150Batch6": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028+blog150-batch6-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -1779,6 +1784,214 @@
       "sourceFile": "typhoon-season-booking-cancellation.html",
       "sha256": "395e53d0c2e15bb91524e544cee76b5f90ddbd48b9fce197132fb6f8e75b47dd",
       "source": "docs/editorial/blog-drafts-2026-10/typhoon-season-booking-cancellation.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "europe-three-ledger-stays",
+      "sourceFile": "europe-three-ledger-stays.html",
+      "sha256": "6f95089d8243262338cbdbc4579e9ed22943118bbe7eb1a30c9dba1ec601caaf",
+      "source": "docs/editorial/blog-drafts-2026-10/europe-three-ledger-stays.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "february-after-spring-festival",
+      "sourceFile": "february-after-spring-festival.html",
+      "sha256": "5298dd1f543f076f90bf0e586285639722588ae697287f3cd8bddf54382ccf39",
+      "source": "docs/editorial/blog-drafts-2026-10/february-after-spring-festival.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "practice-stay-domestic-first",
+      "sourceFile": "practice-stay-domestic-first.html",
+      "sha256": "38582018c4f8b6ff0735ec4e7667e9c26d0c3bd07094fe45d25c5915b1c076da",
+      "source": "docs/editorial/blog-drafts-2026-10/practice-stay-domestic-first.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "same-climate-zone-route",
+      "sourceFile": "same-climate-zone-route.html",
+      "sha256": "5deabf99f010dbb40ee45da496ce1135d8809b3ba5b08fa32c346d536f569fa2",
+      "source": "docs/editorial/blog-drafts-2026-10/same-climate-zone-route.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "shoulder-season-booking",
+      "sourceFile": "shoulder-season-booking.html",
+      "sha256": "3e726eb26b15f98d9806004caa9688b888843a13d9a6f2e63c0cee5c27e9202d",
+      "source": "docs/editorial/blog-drafts-2026-10/shoulder-season-booking.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "three-months-return-checklists",
+      "sourceFile": "three-months-return-checklists.html",
+      "sha256": "8766ba18b62f49aa418f9ad55b0d98f05b39ed58fb8cdb3ff9638a2a21511201",
+      "source": "docs/editorial/blog-drafts-2026-10/three-months-return-checklists.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "empty-home-three-months",
+      "sourceFile": "empty-home-three-months.html",
+      "sha256": "4450e18eeed521b900f9558f046eb94c7dc436f6acab1d1bd35b3b33d52eb73d",
+      "source": "docs/editorial/blog-drafts-2026-10/empty-home-three-months.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "first-day-three-things",
+      "sourceFile": "first-day-three-things.html",
+      "sha256": "628aca9495d4cc7b587ea6cd03a454fb202acce47d3fa4e6df9653400462c893",
+      "source": "docs/editorial/blog-drafts-2026-10/first-day-three-things.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "jet-lag-first-week",
+      "sourceFile": "jet-lag-first-week.html",
+      "sha256": "341d0a80886484e47a9f9e507e662c87ac99d8d532b1962a1e84bb352c439604",
+      "source": "docs/editorial/blog-drafts-2026-10/jet-lag-first-week.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "one-suitcase-three-months",
+      "sourceFile": "one-suitcase-three-months.html",
+      "sha256": "e61282b0dbfae844b9683889ca556df1acf1b0d75fcf40274a260a25c0310a5d",
+      "source": "docs/editorial/blog-drafts-2026-10/one-suitcase-three-months.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "passport-validity-countdown",
+      "sourceFile": "passport-validity-countdown.html",
+      "sha256": "c31a99deed192f2c37e32eaeb8de663bab59bc587d6ec52ffe2ebb9d04de40d6",
+      "source": "docs/editorial/blog-drafts-2026-10/passport-validity-countdown.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "pre-departure-china-admin",
+      "sourceFile": "pre-departure-china-admin.html",
+      "sha256": "cb151eda75e320e27af6ffd9c8cb449a2ab30980e738551409b21d570e45b980",
+      "source": "docs/editorial/blog-drafts-2026-10/pre-departure-china-admin.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "transit-not-entry",
+      "sourceFile": "transit-not-entry.html",
+      "sha256": "55bd84f497ac17fb2593dee5ada9647fa36137d5d2bf1a7db13b9c9f5ccc6d80",
+      "source": "docs/editorial/blog-drafts-2026-10/transit-not-entry.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "daily-services-haircut-dental-glasses",
+      "sourceFile": "daily-services-haircut-dental-glasses.html",
+      "sha256": "fe4cd232fd3fb9ee1609fb2b6e9cbb06848b05e5483579d90e3fa8012cec1610",
+      "source": "docs/editorial/blog-drafts-2026-10/daily-services-haircut-dental-glasses.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "exercise-routine-after-moving",
+      "sourceFile": "exercise-routine-after-moving.html",
+      "sha256": "5714489e3fcc70b76c11fe9aefdd62c7eb916f64a2dec51df04a5707139aafd5",
+      "source": "docs/editorial/blog-drafts-2026-10/exercise-routine-after-moving.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "medication-glasses-prep",
+      "sourceFile": "medication-glasses-prep.html",
+      "sha256": "31d393fec19af21c1152e2444736368ffa207aad4bc6f40440f7753837c894c5",
+      "source": "docs/editorial/blog-drafts-2026-10/medication-glasses-prep.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "seeing-a-doctor-abroad-steps",
+      "sourceFile": "seeing-a-doctor-abroad-steps.html",
+      "sha256": "c93b7e2667c5db41061b4ee51054abc519b343bceb8c831343baa56e8f971711",
+      "source": "docs/editorial/blog-drafts-2026-10/seeing-a-doctor-abroad-steps.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "solo-stay-safety-checks",
+      "sourceFile": "solo-stay-safety-checks.html",
+      "sha256": "98b9b2f064230212d68aaf6c58ae926679ea17ae7aaf121ff46b1b2fa8cce9a2",
+      "source": "docs/editorial/blog-drafts-2026-10/solo-stay-safety-checks.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "nomad-medical-insurance-types",
+      "sourceFile": "nomad-medical-insurance-types.html",
+      "sha256": "d6262c92158262d004e155ffe79722700e93cc1a5f43ec4b83fc7dd01d39f427",
+      "source": "docs/editorial/blog-drafts-2026-10/nomad-medical-insurance-types.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "schengen-90-180-counting",
+      "sourceFile": "schengen-90-180-counting.html",
+      "sha256": "598ec36101e3f86390c82b53cb442c4d879430c7e790480af2d8561f6415dcc9",
+      "source": "docs/editorial/blog-drafts-2026-10/schengen-90-180-counting.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "emergency-return-home-plan",
+      "sourceFile": "emergency-return-home-plan.html",
+      "sha256": "6b5c0e2a05f042dc65daa5d84d8470491100fb4bc1b0855a9267096bca6828d0",
+      "source": "docs/editorial/blog-drafts-2026-10/emergency-return-home-plan.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "fake-listing-fraud-signals",
+      "sourceFile": "fake-listing-fraud-signals.html",
+      "sha256": "8d1665635eff282177812bb16e025cd7b8722e18cbeb6b15fdb47d08ad9ec11a",
+      "source": "docs/editorial/blog-drafts-2026-10/fake-listing-fraud-signals.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "flight-cancellation-chain",
+      "sourceFile": "flight-cancellation-chain.html",
+      "sha256": "92cb435e391f3c5b3839e3e9cde123c069c63465c879d556d53ade575eff4cdf",
+      "source": "docs/editorial/blog-drafts-2026-10/flight-cancellation-chain.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "housing-falls-through-48h",
+      "sourceFile": "housing-falls-through-48h.html",
+      "sha256": "55f4b33c876ca48201aa3c36188115ac2ab0f99a2914b1debb45ea7342aba21b",
+      "source": "docs/editorial/blog-drafts-2026-10/housing-falls-through-48h.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "passport-lost-day",
+      "sourceFile": "passport-lost-day.html",
+      "sha256": "d4a397623848bb978b4a15648cedff83203ecb84230d1dfceebe0c21d48fd7d3",
+      "source": "docs/editorial/blog-drafts-2026-10/passport-lost-day.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "phone-lost-day",
+      "sourceFile": "phone-lost-day.html",
+      "sha256": "7df196467664588b5bc9937cabba17639cef31da4b38fb25e8cfbdaa51131e61",
+      "source": "docs/editorial/blog-drafts-2026-10/phone-lost-day.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }
