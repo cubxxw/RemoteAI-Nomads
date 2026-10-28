@@ -94,9 +94,14 @@
       "authority": "User requested parallel whitelist language review of recent blog articles and product pages; global instructions authorize direct minimal revision and retesting. Parent verified exact wording, numeric tokens, links and immutable guide configuration before rebinding these source hashes.",
       "reviewRecord": "research/2026-10-27-copy-cleanup.md",
       "articleCount": 58
+    },
+    "blogDrafts150Batch": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides; this pilot converts one article first for pipeline verification."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -759,6 +764,14 @@
       "sha256": "a37073bbb263f39a45fa55ba19c067a7aa32fd8d08928051a8beb4283e697204",
       "source": "research/2026-10-27-call-hours.md",
       "approved": true
+    },
+    {
+      "slug": "ai-assistant-verify-official",
+      "sourceFile": "ai-assistant-verify-official.html",
+      "sha256": "ad77c30210052c9a6b8081b451732f8ee1227b33895a8806d9f751a22a74324f",
+      "source": "docs/editorial/blog-drafts-2026-10/ai-assistant-verify-official.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
     }
   ],
   "assets": [
