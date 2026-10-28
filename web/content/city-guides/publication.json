@@ -104,9 +104,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "blog150Batch2": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -983,6 +988,198 @@
       "sourceFile": "monthly-cost-three-numbers.html",
       "sha256": "e0f4e91005c45778ce90d6b6157c26ac123a6ab41ecaaa3adec0aab886805966",
       "source": "docs/editorial/blog-drafts-2026-10/monthly-cost-three-numbers.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "backup-phone-setup",
+      "sourceFile": "backup-phone-setup.html",
+      "sha256": "d1ae1e9fa9f2ac7cd531207b0d8e81cf115e0b50ff8f715a1df5281d91b1a0c7",
+      "source": "docs/editorial/blog-drafts-2026-10/backup-phone-setup.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "buy-gear-locally-payback-line",
+      "sourceFile": "buy-gear-locally-payback-line.html",
+      "sha256": "d4b61fc50e53aa6495cc746dc062e34168d82cc64df61160a3dcb8807ee0e9af",
+      "source": "docs/editorial/blog-drafts-2026-10/buy-gear-locally-payback-line.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "clothing-modules-climate-zones",
+      "sourceFile": "clothing-modules-climate-zones.html",
+      "sha256": "30f0b57172f1821a770cbb998049ebe1034a128ba9382b0679c89f8fea068cd6",
+      "source": "docs/editorial/blog-drafts-2026-10/clothing-modules-climate-zones.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "creative-gear-protection-backup",
+      "sourceFile": "creative-gear-protection-backup.html",
+      "sha256": "775ad094f7fbcfe8754d26f8b90b0f8e1069d766604dea4f5128fd008f7b304c",
+      "source": "docs/editorial/blog-drafts-2026-10/creative-gear-protection-backup.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "gear-redundancy-cables-charging",
+      "sourceFile": "gear-redundancy-cables-charging.html",
+      "sha256": "b54eba1d70b636d29a38c570bbe0b927b15d93178c210bfbadc84a194b501258",
+      "source": "docs/editorial/blog-drafts-2026-10/gear-redundancy-cables-charging.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "luggage-weight-budget-three-categories",
+      "sourceFile": "luggage-weight-budget-three-categories.html",
+      "sha256": "2dd62bc1bcdc392267f2b6a8437bfde28a35c2c166098948f121c237715d6435",
+      "source": "docs/editorial/blog-drafts-2026-10/luggage-weight-budget-three-categories.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "noise-cancelling-call-gear-checklist",
+      "sourceFile": "noise-cancelling-call-gear-checklist.html",
+      "sha256": "8683f509bcea742303851aaf155012e75858fd3d7266583caa7b3d7305fa86e4",
+      "source": "docs/editorial/blog-drafts-2026-10/noise-cancelling-call-gear-checklist.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "one-backpack-daily-commute-kit",
+      "sourceFile": "one-backpack-daily-commute-kit.html",
+      "sha256": "22bb1d24a953a8c09cc698f57200dba7a2ee8d403e3eae1ce4a3bd57da35ecdc",
+      "source": "docs/editorial/blog-drafts-2026-10/one-backpack-daily-commute-kit.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "plugs-power-multi-country-check",
+      "sourceFile": "plugs-power-multi-country-check.html",
+      "sha256": "fedcb053f0517772d6c042dfc1d359f31e9ded6ff0d6a3bb41d3845200e2131d",
+      "source": "docs/editorial/blog-drafts-2026-10/plugs-power-multi-country-check.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "valuables-carry-storage-split",
+      "sourceFile": "valuables-carry-storage-split.html",
+      "sha256": "80175087c96bba042c174c6f386355f1e42fa15a90de360c84127e5d9e2c0983",
+      "source": "docs/editorial/blog-drafts-2026-10/valuables-carry-storage-split.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "annual-budget-cap",
+      "sourceFile": "annual-budget-cap.html",
+      "sha256": "4f494db345ee608838a214091d751abe15bfa2fbd283df6c114848b939c202bb",
+      "source": "docs/editorial/blog-drafts-2026-10/annual-budget-cap.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "contracts-invoices-freelancer-nodes",
+      "sourceFile": "contracts-invoices-freelancer-nodes.html",
+      "sha256": "3c4b5723b1237c3742641904ab7e8d6e6789925ec42df3a175e7641bcf193011",
+      "source": "docs/editorial/blog-drafts-2026-10/contracts-invoices-freelancer-nodes.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "currency-exchange-four-checks",
+      "sourceFile": "currency-exchange-four-checks.html",
+      "sha256": "001ed5fa5a679526f293a8c61ffb6f4014243e6a4dc22ac9c91c2a219e8a3d46",
+      "source": "docs/editorial/blog-drafts-2026-10/currency-exchange-four-checks.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "dealing-with-agents-fees-contract",
+      "sourceFile": "dealing-with-agents-fees-contract.html",
+      "sha256": "8653a9f596c4b2a25f6543c84652c1e7b833a6070cd7d298da52fdc43b71e9b1",
+      "source": "docs/editorial/blog-drafts-2026-10/dealing-with-agents-fees-contract.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "deposits-holds-preauthorization",
+      "sourceFile": "deposits-holds-preauthorization.html",
+      "sha256": "66eca9b66376fb3fa7308de20c21713af52396c88b2b14f205cca996f4e9a603",
+      "source": "docs/editorial/blog-drafts-2026-10/deposits-holds-preauthorization.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "early-termination-loss-cut",
+      "sourceFile": "early-termination-loss-cut.html",
+      "sha256": "9bf54a05cc1199ee85e5a217205083185da3474bcf5b512bfebebc7794ee5f77",
+      "source": "docs/editorial/blog-drafts-2026-10/early-termination-loss-cut.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "first-week-cash-rhythm",
+      "sourceFile": "first-week-cash-rhythm.html",
+      "sha256": "75733157c7751cbf6e95502c166aa09ae7e2fdc7c2adf4c1b2033c3c23f39b68",
+      "source": "docs/editorial/blog-drafts-2026-10/first-week-cash-rhythm.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "freelancer-payment-channels-checklist",
+      "sourceFile": "freelancer-payment-channels-checklist.html",
+      "sha256": "e909a232b37038c8beaaa95b41e24a678ebf349994dc5481312d31934c5a266e",
+      "source": "docs/editorial/blog-drafts-2026-10/freelancer-payment-channels-checklist.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "multi-currency-bookkeeping",
+      "sourceFile": "multi-currency-bookkeeping.html",
+      "sha256": "6bc5faa215d769c277949723dc2234f2422adcc382178e6c17cbd60b2cc7e8de",
+      "source": "docs/editorial/blog-drafts-2026-10/multi-currency-bookkeeping.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "points-rebates-not-decide",
+      "sourceFile": "points-rebates-not-decide.html",
+      "sha256": "573c988a2b3cf38544b79c9352887283c69335c04b0e5e657681937d8d4f4162",
+      "source": "docs/editorial/blog-drafts-2026-10/points-rebates-not-decide.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "renewal-negotiation-second-month",
+      "sourceFile": "renewal-negotiation-second-month.html",
+      "sha256": "40ea7d93620dabd3f03151f44f97aff79fa8b6974c074dc92c638559324ec749",
+      "source": "docs/editorial/blog-drafts-2026-10/renewal-negotiation-second-month.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "rent-negotiation-concessions",
+      "sourceFile": "rent-negotiation-concessions.html",
+      "sha256": "efbf437ab215a56812cd8b1f170ae87d7a8ca8fd39fc383c48e3ce1ec4c50d28",
+      "source": "docs/editorial/blog-drafts-2026-10/rent-negotiation-concessions.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "shared-rent-bill-splitting",
+      "sourceFile": "shared-rent-bill-splitting.html",
+      "sha256": "09757d6e14b27468e9a66b4d47b460443cb2545f136d0043fd766731fe0a3444",
+      "source": "docs/editorial/blog-drafts-2026-10/shared-rent-bill-splitting.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "year-nomad-ledger",
+      "sourceFile": "year-nomad-ledger.html",
+      "sha256": "99b96326b86b22003d44f5d7ff99cb5992c9e84ff0aa2332f44d3372cddf882b",
+      "source": "docs/editorial/blog-drafts-2026-10/year-nomad-ledger.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }
