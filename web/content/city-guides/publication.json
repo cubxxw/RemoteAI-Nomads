@@ -119,9 +119,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "blog150Batch5": {
+      "approved": true,
+      "approvedOn": "2026-10-28",
+      "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -1582,6 +1587,198 @@
       "sourceFile": "solo-living-weekly-structure.html",
       "sha256": "bea054afbd67a66e644f96af61ffd397462394873ed494b0a62be6289c1b1606",
       "source": "docs/editorial/blog-drafts-2026-10/solo-living-weekly-structure.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "chinese-community-uses-limits",
+      "sourceFile": "chinese-community-uses-limits.html",
+      "sha256": "52874813a34d01b5901c4ad22cf52037b65326558f59ce3b04019f639ec29c49",
+      "source": "docs/editorial/blog-drafts-2026-10/chinese-community-uses-limits.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "explaining-nomad-life-to-family",
+      "sourceFile": "explaining-nomad-life-to-family.html",
+      "sha256": "3175fd61c15470f991b75032f08bb4c6d75abc322f44f4ea7d94f2d8e85b02d5",
+      "source": "docs/editorial/blog-drafts-2026-10/explaining-nomad-life-to-family.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "keeping-contacts-after-return",
+      "sourceFile": "keeping-contacts-after-return.html",
+      "sha256": "5492da105af8f39be454fb4dbff9d83d16e271bcc84a5b6eff02b5b19f6ecd79",
+      "source": "docs/editorial/blog-drafts-2026-10/keeping-contacts-after-return.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "language-course-payback-math",
+      "sourceFile": "language-course-payback-math.html",
+      "sha256": "e0457ea8db9df983d930ba9f230ca79bb710b89447ca97907e7d0193305f9b9c",
+      "source": "docs/editorial/blog-drafts-2026-10/language-course-payback-math.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "language-exchange-hour-for-hour",
+      "sourceFile": "language-exchange-hour-for-hour.html",
+      "sha256": "612585188235b8004fb5d64f500a8c352ff48b339ff283696abc55b43fc11d1f",
+      "source": "docs/editorial/blog-drafts-2026-10/language-exchange-hour-for-hour.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "local-events-find-and-judge",
+      "sourceFile": "local-events-find-and-judge.html",
+      "sha256": "162a6a2d1437a99719bb5f243892f492684bf91783655493d00460fd75050366",
+      "source": "docs/editorial/blog-drafts-2026-10/local-events-find-and-judge.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "local-language-how-much",
+      "sourceFile": "local-language-how-much.html",
+      "sha256": "f4144f3f482df30744e4f323782b8836410fc5d30f5c39dc140d489ec581e14f",
+      "source": "docs/editorial/blog-drafts-2026-10/local-language-how-much.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "local-public-holidays-impact",
+      "sourceFile": "local-public-holidays-impact.html",
+      "sha256": "88d97ecbbcdb217a9b572abf464250a7fe0870b4e824a51b170d6e59d7610f5f",
+      "source": "docs/editorial/blog-drafts-2026-10/local-public-holidays-impact.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "traveling-together-ground-rules",
+      "sourceFile": "traveling-together-ground-rules.html",
+      "sha256": "477d5b8e6c52081ac95392903ec10dbcaf1c7b5984eb30cb4a69c02cc4a74ca7",
+      "source": "docs/editorial/blog-drafts-2026-10/traveling-together-ground-rules.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "volunteering-permit-boundaries",
+      "sourceFile": "volunteering-permit-boundaries.html",
+      "sha256": "2f6f21e35ab70d60797c5f42329119ffc4674124c5dc41347cfd706fd0aae35a",
+      "source": "docs/editorial/blog-drafts-2026-10/volunteering-permit-boundaries.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "april-festival-calendar-first",
+      "sourceFile": "april-festival-calendar-first.html",
+      "sha256": "c12773b4e98eb00633018d0f5e1cd6786173373a0b433a3ccae1fe1a1197dfca",
+      "source": "docs/editorial/blog-drafts-2026-10/april-festival-calendar-first.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "cross-hemisphere-summer-chase",
+      "sourceFile": "cross-hemisphere-summer-chase.html",
+      "sha256": "cc19746f6d64053fb34c357e9f037f1acaa146e5c0344305a542bab6f9898769",
+      "source": "docs/editorial/blog-drafts-2026-10/cross-hemisphere-summer-chase.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "extreme-weather-change-plan",
+      "sourceFile": "extreme-weather-change-plan.html",
+      "sha256": "a3609ef99c51d3a7d63a7d932794cb2795ec18837ad5dc0ecd2a0b7fb7925d9e",
+      "source": "docs/editorial/blog-drafts-2026-10/extreme-weather-change-plan.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "july-august-summer-price-peak",
+      "sourceFile": "july-august-summer-price-peak.html",
+      "sha256": "350b24b46e857182ec4e0bf3f4edca86cf80c6068b962b765b01b98519bfa46e",
+      "source": "docs/editorial/blog-drafts-2026-10/july-august-summer-price-peak.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "june-europe-summer-daylight",
+      "sourceFile": "june-europe-summer-daylight.html",
+      "sha256": "c0a9f7c40a3d41532c4c4ea3a008839eae0e114c702789cf0da0133989508254",
+      "source": "docs/editorial/blog-drafts-2026-10/june-europe-summer-daylight.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "march-where-to-go",
+      "sourceFile": "march-where-to-go.html",
+      "sha256": "449846be4aa6758284b2a0de5fc85e18f788797fa8e1a4e6ff2a6e33c4afa031",
+      "source": "docs/editorial/blog-drafts-2026-10/march-where-to-go.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "may-off-peak-rainy-season-edge",
+      "sourceFile": "may-off-peak-rainy-season-edge.html",
+      "sha256": "a68b5919b9d8253a4bf4e577540df56af566964ab6bf5dec16e47ca170dd6774",
+      "source": "docs/editorial/blog-drafts-2026-10/may-off-peak-rainy-season-edge.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "october-where-to-go",
+      "sourceFile": "october-where-to-go.html",
+      "sha256": "11ee6a78259da265052b110af070725350e23edf58466eeca710f8bff8377635",
+      "source": "docs/editorial/blog-drafts-2026-10/october-where-to-go.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "rain-data-pick-moving-week",
+      "sourceFile": "rain-data-pick-moving-week.html",
+      "sha256": "9479a38da6918fcffcbf026d10274c4fde87707ea0bd2acdb3321ed24015c7dc",
+      "source": "docs/editorial/blog-drafts-2026-10/rain-data-pick-moving-week.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "rainy-season-long-stay-dehumidify",
+      "sourceFile": "rainy-season-long-stay-dehumidify.html",
+      "sha256": "d86e6210badf7dffcc9d6ed262424b149ace1b5dd099675ba0a8dd446666e0c3",
+      "source": "docs/editorial/blog-drafts-2026-10/rainy-season-long-stay-dehumidify.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "read-city-twelve-months",
+      "sourceFile": "read-city-twelve-months.html",
+      "sha256": "642cc2f6741ecc7f76e19948dd19bc21b470be1993c6a546f36eaddf098cea58",
+      "source": "docs/editorial/blog-drafts-2026-10/read-city-twelve-months.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "september-where-to-go",
+      "sourceFile": "september-where-to-go.html",
+      "sha256": "3a2c8417b2c9dedbcceee7422ecc06c094c285eae1d60b56f278ac66dd0c7d98",
+      "source": "docs/editorial/blog-drafts-2026-10/september-where-to-go.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "southern-hemisphere-winter-night-meetings",
+      "sourceFile": "southern-hemisphere-winter-night-meetings.html",
+      "sha256": "b5f6f5dea450d533736ec21f5238d3953c3d7afe5cfbdf761aa6d7d2698af40b",
+      "source": "docs/editorial/blog-drafts-2026-10/southern-hemisphere-winter-night-meetings.md",
+      "approved": true,
+      "approvedOn": "2026-10-28"
+    },
+    {
+      "slug": "typhoon-season-booking-cancellation",
+      "sourceFile": "typhoon-season-booking-cancellation.html",
+      "sha256": "395e53d0c2e15bb91524e544cee76b5f90ddbd48b9fce197132fb6f8e75b47dd",
+      "source": "docs/editorial/blog-drafts-2026-10/typhoon-season-booking-cancellation.md",
       "approved": true,
       "approvedOn": "2026-10-28"
     }
