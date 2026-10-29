@@ -1,0 +1,23 @@
+{
+  "origin": "https://roamorrow.com/nomads",
+  "summary": {
+    "pages": 862,
+    "sitemapURLs": 602,
+    "canonicalPages": 602,
+    "errors": 0,
+    "warnings": 2
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "code": "large_html",
+      "url": "https://roamorrow.com/nomads",
+      "detail": "671561 uncompressed bytes; measure real loading separately"
+    },
+    {
+      "code": "large_html",
+      "url": "https://roamorrow.com/nomads/cities/",
+      "detail": "671576 uncompressed bytes; measure real loading separately"
+    }
+  ]
+}
