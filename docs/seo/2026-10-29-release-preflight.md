@@ -13,6 +13,6 @@ Validation on the integrated source:
 - Main's existing artifact test incorrectly treated `account` and `agents` inside published guide slugs as private routes. Its reproduced failure is corrected to match actual route namespaces; the full suite then passes.
 - CI now runs `npm run seo:check` after generating the public pages.
 
-The earlier audit and its 423-URL local fixture are historical evidence from the original checkout. The 602-URL check is the release candidate based on current main. Neither count is an assertion of Google indexing.
+The [earlier audit](2026-10-29-audit.md) and its [423-URL local fixture](2026-10-29-snapshot-audit.json) are historical evidence from the original checkout. The [602-URL check](2026-10-29-main-snapshot-audit.json) is the release candidate based on current main. Neither count is an assertion of Google indexing.
 
 Merge, deploy and live acceptance are the remaining release steps. The live Worker version, route checks, browser observations and preservation comparison will be recorded in the release PR and the local acceptance artifact after deployment. The existing D1 contents, publication scope and observation dates are not changed by a migration or seed import.
