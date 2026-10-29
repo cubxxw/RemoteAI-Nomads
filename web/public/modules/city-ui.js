@@ -50,6 +50,68 @@ export function monthValues(data, month) {
 export const seasonLabel = status => ({ recommended: '旧资料推荐', caution: '留意季节', unknown: '暂无月份建议' })[status] || '暂无月份建议';
 const climateText = (value, unit) => value === null ? '待补充' : `${Math.round(value)}${unit}`;
 
+function initClimateChart(root, data, selectMonth) {
+  const chart = root.querySelector('.city-weather-chart');
+  const buttons = [...(chart?.querySelectorAll('[data-climate-month]') || [])];
+  if (!buttons.length) return () => {};
+  const tooltip = chart.querySelector('[role="tooltip"]');
+  const hint = chart.querySelector('.city-climate-hint');
+  let hovered = null, focused = null, dismissed = false;
+  function hide() {
+    tooltip.hidden = true;
+    hint.hidden = false;
+    chart.querySelectorAll('.is-preview').forEach(node => node.classList.remove('is-preview'));
+    buttons.forEach(button => button.removeAttribute('aria-describedby'));
+  }
+  function preview(month) {
+    if (!month || dismissed) { hide(); return; }
+    const values = monthValues(data, month), button = buttons[month - 1];
+    tooltip.querySelector('[data-climate-label]').textContent = `${month} 月`;
+    tooltip.querySelector('[data-climate-temperature]').textContent = climateText(values.mean, '°C');
+    tooltip.querySelector('[data-climate-rain]').textContent = climateText(values.rain, ' mm');
+    chart.querySelectorAll('[data-chart-month]').forEach(node => node.classList.toggle('is-preview', Number(node.dataset.chartMonth) === month));
+    buttons.forEach(node => node.removeAttribute('aria-describedby'));
+    button.setAttribute('aria-describedby', tooltip.id);
+    tooltip.hidden = false;
+    hint.hidden = true;
+  }
+  buttons.forEach((button, index) => {
+    const month = index + 1;
+    button.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'touch') return;
+      hovered = month; dismissed = false; preview(month);
+    });
+    button.addEventListener('focus', () => {
+      focused = month; dismissed = false;
+      buttons.forEach(node => { node.tabIndex = node === button ? 0 : -1; });
+      preview(month);
+    });
+    button.addEventListener('blur', () => { focused = null; preview(hovered); });
+    button.addEventListener('click', () => { selectMonth(month); dismissed = false; preview(month); });
+    button.addEventListener('keydown', event => {
+      const next = ({ArrowLeft:(index + 11) % 12, ArrowRight:(index + 1) % 12, Home:0, End:11})[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      hovered = null;
+      buttons[next].focus();
+    });
+  });
+  chart.addEventListener('pointerleave', () => { hovered = null; preview(focused); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { dismissed = true; hide(); }
+  });
+  document.addEventListener('pointerdown', event => {
+    if (!chart.contains(event.target)) { hovered = focused = null; hide(); }
+  });
+  return month => {
+    hovered = null; hide();
+    buttons.forEach(button => {
+      button.setAttribute('aria-pressed', String(Number(button.dataset.climateMonth) === month));
+      button.tabIndex = Number(button.dataset.climateMonth) === (focused || month) ? 0 : -1;
+    });
+  };
+}
+
 export function cityPlanQuestion(plan) {
   const month = Number(plan.month), days = Number(plan.days);
   const currency = ['CNY', 'USD', 'JPY'].includes(plan.currency) ? plan.currency : '币种待确认';
@@ -90,6 +152,11 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
   monthSelect.value=String(planMonth(new URL(location.href),storedPlan?.month||savedMonth,monthSelect.value));
   const initialMonth=Number(monthSelect.value);
   let planDirty=Boolean(storedPlan),persistPlan=()=>{};
+  const updateChart = initClimateChart(root, data, month => {
+    monthSelect.value = String(month);
+    planDirty = true;
+    updateMonth();
+  });
   function updateMonth({writeURL=true}={}) {
     const values = monthValues(data, monthSelect.value);
     root.querySelector('[data-month-temperature]').textContent = climateText(values.mean, '°C');
@@ -99,6 +166,7 @@ export function initCityPage(root = document.querySelector('#city-guide')) {
     status.dataset.status = values.status;
     root.querySelector('[data-month-note]').textContent = /继承|Notion/.test(values.note) ? '月份建议来自旧资料，选日期时也看看对应的气温和降雨。' : values.note || '这个月份暂无建议，可以参考气温和雨量。';
     root.querySelectorAll('[data-chart-month]').forEach(node => node.classList.toggle('is-current', Number(node.dataset.chartMonth) === values.month));
+    updateChart(values.month);
     root.querySelector('[data-selected-month]').textContent = `${values.month} 月`;
     if(writeURL){const url=new URL(location.href);url.searchParams.set('month',String(values.month));history.replaceState(null,'',url);}
     try{localStorage.setItem(TRIP_MONTH_KEY,String(values.month));}catch{}
