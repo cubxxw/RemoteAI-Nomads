@@ -34,12 +34,31 @@ async function staticAsset(request, env) {
   return new Response(request.method === 'HEAD' ? null : asset.body, {status:asset.status, headers});
 }
 
+function mountedRedirect(response, requestURL, env) {
+  const location = response.headers.get('Location');
+  if (!location || response.status < 300 || response.status >= 400) return response;
+  const target = new URL(location, requestURL), {origin} = siteLocation(env);
+  if (![origin, requestURL.origin].includes(target.origin)) return response;
+  const headers = new Headers(response.headers);
+  headers.set('Location', publicURL(target.pathname + target.search + target.hash, env));
+  return new Response(response.body, {status: response.status, statusText: response.statusText, headers});
+}
+
 // Workers Assets normally precede the script. run_worker_first lets legacy URLs
 // redirect while the binding still serves the unmounted file paths explicitly.
 // https://developers.cloudflare.com/workers/static-assets/routing/worker-script/
 export async function mountedRequest(request, env, ctx, handler) {
   const url = new URL(request.url), {origin, base} = siteLocation(env);
   const localPath=appPath(url.pathname,base);
+  let decodedPath = localPath;
+  try {decodedPath = decodeURIComponent(localPath);} catch {}
+  // Only the asset binding may read publication storage. Public pages use
+  // /guides/ and the reviewed fallback renderer, including during a DB outage.
+  if (/^\/(?:published-pages|city-guides)(?:\/|$)/.test(decodedPath)) {
+    return new Response(request.method === 'HEAD' ? null : 'Not found', {status: 404, headers: {
+      'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-store',
+    }});
+  }
   if(localPath==='/local-data/'&&env.ASSETS&&['GET','HEAD'].includes(request.method)){
     const asset=await env.ASSETS.fetch(new Request(new URL('/local-data.html',url)));
     const headers=new Headers(asset.headers);headers.set('X-Robots-Tag','noindex, nofollow');headers.set('Cache-Control','no-store');
@@ -65,13 +84,7 @@ export async function mountedRequest(request, env, ctx, handler) {
   internalURL.host = new URL(origin).host;
   internalURL.pathname = url.pathname.slice(base.length) || '/';
   const internal = new Request(internalURL, request);
-  if (staticPath(internalURL.pathname) && env.ASSETS) return staticAsset(internal,env);
-  const response = await handler(internal, env, ctx);
-  const location = response.headers.get('Location');
-  if (!location) return response;
-  const target = new URL(location, internalURL);
-  if (![origin, url.origin].includes(target.origin)) return response;
-  const headers = new Headers(response.headers);
-  headers.set('Location', publicURL(target.pathname + target.search + target.hash, env));
-  return new Response(response.body, {status: response.status, statusText: response.statusText, headers});
+  const response = staticPath(internalURL.pathname) && env.ASSETS
+    ? await staticAsset(internal, env) : await handler(internal, env, ctx);
+  return mountedRedirect(response, internalURL, env);
 }

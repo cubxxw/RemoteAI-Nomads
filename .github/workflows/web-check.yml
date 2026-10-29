@@ -28,6 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run data:bootstrap
       - run: npm run data:pages
+      - run: npm run seo:check
       - run: npm run seasonal:readme -- --check
       - run: npm run db:migrate
       - run: npm run db:seed

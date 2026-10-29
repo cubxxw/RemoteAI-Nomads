@@ -28,6 +28,9 @@ npm run dev
 npm run data:bootstrap
 npm run data:pages
 
+# 核对公开快照的站点地图、索引声明与页面信息
+npm run seo:check
+
 # 自动测试与 Worker 打包检查；不会调用模型
 npm run check
 npm run build

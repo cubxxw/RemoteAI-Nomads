@@ -45,7 +45,9 @@ test('generated manifest and route set match exactly the reviewed published data
     assert.deepEqual(new Set(manifest.paths), new Set(expected));
     assert.equal(manifest.paths.length, expected.length);
     assert.equal(manifest.paths.filter(path => path.startsWith('/compare/') && path !== '/compare/').length, 2);
-    assert.ok(!manifest.paths.some(path => /agent|healthz|release\.json|internal|account|session/iu.test(path)));
+    // Public guide slugs may discuss account security or travel agents. Reject
+    // actual private route namespaces, rather than words inside article names.
+    assert.ok(!manifest.paths.some(path => /^\/(?:api\/agent|agent|healthz|release\.json|internal|account|session)(?:\/|$)/iu.test(path)));
     assert.equal(manifest.private_notes_exported, 0);
     assert.equal(manifest.notion_page_identifiers_exported, 0);
     assert.equal(manifest.published_only, true);
