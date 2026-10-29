@@ -28,10 +28,15 @@ npm run dev
 npm run data:bootstrap
 npm run data:pages
 
+# 核对公开快照的站点地图、索引声明与页面信息
+npm run seo:check
+
 # 自动测试与 Worker 打包检查；不会调用模型
 npm run check
 npm run build
 ```
+
+本轮 SEO 的版本、检查结果与发布边界见[发布前记录](../docs/seo/2026-10-29-release-preflight.md)。
 
 种子初始化不能代替后续数据更新。现有数据的更新要先生成差异、复核范围，再导入；不要反复执行 `db:seed` 更新日常数据。
 

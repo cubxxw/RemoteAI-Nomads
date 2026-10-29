@@ -47,9 +47,10 @@ async (page) => {
   assert(await page.locator('#city-month').inputValue() === '12', 'Enter did not select');
   await page.keyboard.press('Home');
   assert(await chart.locator('[data-climate-month="1"]').evaluate(el => el === document.activeElement), 'Home failed');
-  await page.keyboard.press('End');
   await page.keyboard.press('Space');
-  assert(await page.locator('#city-month').inputValue() === '12', 'Space did not select');
+  assert(await page.locator('#city-month').inputValue() === '1', 'Space did not select');
+  await page.keyboard.press('End');
+  assert(await chart.locator('[data-climate-month="12"]').evaluate(el => el === document.activeElement), 'End failed');
   await page.keyboard.press('Escape');
   assert(!await tooltip.isVisible(), 'Escape did not dismiss focus tooltip');
   await page.keyboard.press('Tab');

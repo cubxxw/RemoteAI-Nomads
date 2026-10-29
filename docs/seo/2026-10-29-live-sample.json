@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-29",
+  "scope": "Public HTTP sample, before deployment; timings are individual observations, not Core Web Vitals",
+  "results": [
+    {
+      "url": "https://roamorrow.com/robots.txt",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/sitemap.xml",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/cities/",
+      "status": 200,
+      "seconds": 14.85,
+      "uncompressed_bytes": 671551,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Robots-Tag": "index, follow"
+      },
+      "title": "最佳数字游民城市排行榜 · Roamorrow",
+      "description": "按安全、预算、气候环境、生活、网络与社区调整权重，实时比较全球数字游民城市。",
+      "canonical": "https://roamorrow.com/nomads",
+      "robots": "index,follow"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/cities/chiang-mai/",
+      "status": 200,
+      "seconds": 13.13,
+      "uncompressed_bytes": 68333,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Robots-Tag": "index, follow"
+      },
+      "title": "清迈数字游民指南：预算、月份与远程工作 · Roamorrow",
+      "description": "清迈（泰国）旅居与远程工作参考。附单人30晚的月住费用指南。城市消费样本可查，可按月份查看历史气候。支持与北京的会议时间换算。停留条件与工作许可需分别核对。",
+      "canonical": "https://roamorrow.com/nomads/cities/chiang-mai/",
+      "robots": "index,follow"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/",
+      "status": 200,
+      "seconds": 9.38,
+      "uncompressed_bytes": 102100,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Robots-Tag": "index, follow"
+      },
+      "title": "2026清迈旅居一个月：租房与工位选择，预算28,900泰铢",
+      "description": "一个人住清迈30晚，舒适预算28,900泰铢，约5,783元。古城边和河东住处怎么选、日票和月票差在哪，连同烟霾季与押金一起算。",
+      "canonical": "https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/",
+      "robots": "index,follow"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/countries/th/",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/seo-missing-page-20261029/",
+      "status": 404,
+      "seconds": 2.97,
+      "uncompressed_bytes": 13100,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Robots-Tag": "noindex, follow"
+      },
+      "title": "这个地方还没有页面 · Roamorrow",
+      "description": "返回城市目录继续查找。",
+      "canonical": "https://roamorrow.com/nomads",
+      "robots": "noindex,follow"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/published-pages/cities/chiang-mai/index.html",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/city-guides/chiang-mai-monthly-budget.html",
+      "status": 307,
+      "seconds": 5.55,
+      "uncompressed_bytes": 0,
+      "headers": {
+        "Location": "/city-guides/chiang-mai-monthly-budget",
+        "X-Robots-Tag": "noindex, nofollow"
+      },
+      "title": null,
+      "description": null,
+      "canonical": null,
+      "robots": null
+    },
+    {
+      "url": "https://nomads.cubxxw.com/cities/chiang-mai/",
+      "status": 308,
+      "seconds": 7.34,
+      "uncompressed_bytes": 0,
+      "headers": {
+        "Location": "https://roamorrow.com/nomads/cities/chiang-mai/"
+      },
+      "title": null,
+      "description": null,
+      "canonical": null,
+      "robots": null
+    }
+  ],
+  "retry_results": [
+    {
+      "url": "https://roamorrow.com/robots.txt",
+      "status": 200,
+      "uncompressed_bytes": 265,
+      "body": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /app/\nDisallow: /nomads/api/\nDisallow: /nomads/published-pages/\nDisallow: /nomads/local-data/\n\nHost: https://roamorrow.com\nSitemap: https://roamorrow.com/sitemap.xml\nSitemap: https://roamorrow.com/nomads/sitemap.xml\n"
+    },
+    {
+      "url": "https://roamorrow.com/nomads/sitemap.xml",
+      "status": 200,
+      "uncompressed_bytes": 34834,
+      "sitemap_urls": 452,
+      "unique_urls": 452
+    },
+    {
+      "url": "https://roamorrow.com/nomads/",
+      "status": 200,
+      "uncompressed_bytes": 671525,
+      "title": "最佳数字游民城市排行榜 · Roamorrow",
+      "canonical": "https://roamorrow.com/nomads"
+    }
+  ]
+}
