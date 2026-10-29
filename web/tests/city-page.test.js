@@ -89,6 +89,17 @@ test('missing climate remains unknown while observed zero rain stays zero', () =
   assert.match(chart,/chart-missing/);
 });
 
+test('every climate month exposes a named control, including missing values and zero rain', () => {
+  const chart=climateChart([{month:1,mean_c:-2.4,rain_mm:0},{month:10,mean_c:12,rain_mm:78}],10);
+  const controls=[...chart.matchAll(/<button\b[^>]*data-climate-month="(\d+)"[^>]*>/g)];
+  assert.equal(controls.length,12);
+  assert.match(controls[0][0],/aria-label="1 月，历史均温 -2°C，月平均降雨 0 mm"/);
+  assert.match(controls[1][0],/aria-label="2 月，历史均温 待补充，月平均降雨 待补充"/);
+  assert.match(controls[9][0],/aria-pressed="true"/);
+  assert.match(chart,/role="tooltip"[^>]*hidden/);
+  assert.doesNotMatch(climateChart([],10),/data-climate-month/);
+});
+
 test('cost rates convert from display CNY without turning national data into city costs', () => {
   const model=cityCostModel(city.costs);
   assert.equal(model.rates.USD.rate,1/6.68);
