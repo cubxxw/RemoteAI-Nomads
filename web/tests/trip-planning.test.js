@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {parseState,stateParams,rankCities} from '../public/modules/ranking.js';
+import {parseState,stateParams,rankCities,SEASONAL_VIEW} from '../public/modules/ranking.js';
 import {applyRankingFilter,toggleQuickFilter} from '../public/modules/rank-controls.js';
 import {referenceBudgetIn,RANKING_FX} from '../public/modules/budget-currency.js';
 import {budgetBalance} from '../public/modules/traveler-budget.js';
@@ -28,7 +28,7 @@ test('a departure month compares every available climate record; original recomm
  assert.equal(state.month,11);assert.equal(state.recommendedOnly,true);
 });
 test('a dated editorial view still requires its original recommended month and exclusions',()=>{
- const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const state=parseState(new URL(`https://nomads.test/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`));
  assert.equal(rankCities([city('recommended',800,'recommended'),city('caution',800,'caution'),{...city('japan',800,'recommended'),countryCode:'JP'}],state).length,1);
  applyRankingFilter(state,'recommendedOnly',false);
  assert.equal(state.season,'');

@@ -1864,6 +1864,39 @@
       "read_scope": "见摘要；官方/运营方/新闻分别使用",
       "editorial_summary": "公开网页主帖与秋冬路线/机场风况/房租口径关键评论",
       "use": "used_with_limits"
+    },
+    {
+      "id": "N1101-TH-CLIMATE",
+      "platform": "web",
+      "url": "https://www.tmd.go.th/forecast/threemonthcontentcountry/092026-112028",
+      "published_at": "2026-09-30",
+      "retrieved_on": "2026-11-01",
+      "author": null,
+      "read_scope": "opened_official_pdf_pages_1_2",
+      "editorial_summary": "泰国十一月区域降雨预计减少且偏热；保留预测区域范围，不替代清迈街区预警。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1101-TH-ENTRY",
+      "platform": "web",
+      "url": "https://th.china-embassy.gov.cn/zgqz/1w1/202609/t20260902_12014754.html",
+      "published_at": "2026-09-02",
+      "retrieved_on": "2026-11-01",
+      "author": null,
+      "read_scope": "opened_official_body",
+      "editorial_summary": "中泰双边免签单次30日、每180日累计90日；工作等活动另办相应签证。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1101-BALI-RAIN",
+      "platform": "web",
+      "url": "https://kominfostatistik.denpasarkota.go.id/berita/musim-hujan-bali-2026-2027-diprediksi-dimulai-november",
+      "published_at": "2026-09-28",
+      "retrieved_on": "2026-11-01",
+      "author": null,
+      "read_scope": "opened_official_body",
+      "editorial_summary": "巴厘岛2026/27雨季预测：15%分区十一月、85%十二月起；不直接推定乌布当天雨况。",
+      "use": "used_with_limits"
     }
   ]
 }

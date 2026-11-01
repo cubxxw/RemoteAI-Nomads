@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_on": "2026-10-22",
+  "updated_on": "2026-11-01",
   "recommendations_are": "带条件的编辑建议，不是现场验证或全球排名",
   "destinations": [
     {
@@ -9,15 +9,17 @@
       "country": "泰国",
       "timezone": "Asia/Bangkok",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "10月下旬先试住，11–12月优先；天气与洪水影响出发前复核",
+      "seasonal_choice": "11–12月候选；十一月区域预测少雨但偏热，街区预警出发前另查",
       "areas_to_compare": "Nimman / Santitham / Old City",
       "good_fit": "咖啡馆与持续停留的工作同伴",
-      "caveats": "10月14日核读的洪水材料仅作历史风险提示，当前影响需出发前复核；航线噪音、年初空气污染、旺季工位",
+      "caveats": "10月14日核读的洪水材料仅作历史风险提示，当前影响需出发前复核；航线噪音、年初空气污染、旺季工位；大陆普通护照短访免签单次最多30日、每180日累计90日，工作手续另核",
       "source_ids": [
         "R-1w597j6",
         "T-DVFeEs0Ex1v",
         "O01",
-        "O16"
+        "O16",
+        "N1101-TH-CLIMATE",
+        "N1101-TH-ENTRY"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -40,13 +42,15 @@
       "country": "泰国",
       "timezone": "Asia/Bangkok",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "秋冬候选，近期预警另查",
+      "seasonal_choice": "11–12月候选；十一月区域预测少雨但偏热，街区预警出发前另查",
       "areas_to_compare": "BTS/MRT附近",
       "good_fit": "城市设施与交通",
-      "caveats": "通勤、热湿、社交需主动",
+      "caveats": "通勤、热湿、社交需主动；大陆普通护照短访免签单次最多30日、每180日累计90日，工作手续另核",
       "source_ids": [
         "X-2101566345322078215",
-        "T-DSwurnVFCpb"
+        "T-DSwurnVFCpb",
+        "N1101-TH-CLIMATE",
+        "N1101-TH-ENTRY"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -281,12 +285,13 @@
       "country": "印度尼西亚",
       "timezone": "Asia/Makassar",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "10月天气与雨季进程另核，接受阵雨再长住",
+      "seasonal_choice": "11–12月雨季过渡候选；分区起始时间不同，接受阵雨并另核住所积水与室内工位",
       "areas_to_compare": "住所到工位实际通勤",
       "good_fit": "自然与安静日常",
       "caveats": "300美元为熟客优惠，不能复用为市场价",
       "source_ids": [
-        "X-2101566345322078215"
+        "X-2101566345322078215",
+        "N1101-BALI-RAIN"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",

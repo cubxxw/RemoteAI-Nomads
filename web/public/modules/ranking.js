@@ -7,10 +7,10 @@ import {climateComfort,communityScore,comparableMetric} from './places.js';
 import {referenceBudgetIn} from './budget-currency.js';
 // A dated editorial view; the underlying historical scores remain unchanged.
 export const SEASONAL_VIEW = {
-  id: '2026-10', month: 10, label: '10月出发建议', reviewedAt: '2026-10-18',
+  id: '2026-11', month: 11, label: '11月出发建议', reviewedAt: '2026-11-01',
   excludedCountries: ['JP'],
   note: '本期另按赴日提醒及通行条件筛选；暂勿前往范围始终排除。大陆普通护照参考，非全目录风险审查。',
-  methodology: 'https://github.com/cubxxw/RemoteAI-Nomads/blob/main/guides/seasonal-2026-10.md',
+  methodology: 'https://github.com/cubxxw/RemoteAI-Nomads/blob/main/guides/seasonal-2026-11.md',
 };
 export const KEYS = [
   "safety",
