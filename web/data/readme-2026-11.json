@@ -59,7 +59,7 @@
       "slug": "baguio",
       "reasons": [
         {
-          "text": "{temperature}，免签仅14日不能延期",
+          "text": "{temperature}，14日免签通道不可延期",
           "facts": [
             {
               "kind": "climate"

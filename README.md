@@ -10,7 +10,7 @@
 <tbody>
 <tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> 🇹🇭</td><td nowrap align="right">≈$850</td><td nowrap align="right">9.9 / 10</td><td nowrap>免签</td><td nowrap>25°C，泰北进入少雨时段</td></tr>
 <tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/bangalore/">班加罗尔</a> 🇮🇳</td><td nowrap align="right">≈$530</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>22°C，月参考$530</td></tr>
-<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> 🇵🇭</td><td nowrap align="right">≈$680</td><td nowrap align="right">8.2 / 10</td><td nowrap>免签</td><td nowrap>19°C，免签仅14日不能延期</td></tr>
+<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> 🇵🇭</td><td nowrap align="right">≈$680</td><td nowrap align="right">8.2 / 10</td><td nowrap>免签</td><td nowrap>19°C，14日免签通道不可延期</td></tr>
 <tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/kathmandu/">加德满都</a> 🇳🇵</td><td nowrap align="right">≈$450</td><td nowrap align="right">9.2 / 10</td><td nowrap>落地签</td><td nowrap>16°C，落地旅游签禁止就业</td></tr>
 <tr><td nowrap>5. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a> 🇨🇳</td><td nowrap align="right">≈$950</td><td nowrap align="right">8.5 / 10</td><td nowrap>境内</td><td nowrap>14°C，月参考$950</td></tr>
 <tr><td nowrap>6. <a href="https://roamorrow.com/nomads/cities/bangkok/">曼谷</a> 🇹🇭</td><td nowrap align="right">≈$1,040</td><td nowrap align="right">9.1 / 10</td><td nowrap>免签</td><td nowrap>28°C，曼谷少雨仍偏热</td></tr>
