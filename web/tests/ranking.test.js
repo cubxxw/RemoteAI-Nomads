@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {packRankingData,unpackRankingData,KEYS,DEFAULT_WEIGHTS,validWeights,customScore,referenceCostScore,rankCities,parseState,stateParams,renderRow} from '../public/modules/ranking.js';
+import {packRankingData,unpackRankingData,KEYS,DEFAULT_WEIGHTS,validWeights,customScore,referenceCostScore,rankCities,parseState,stateParams,renderRow,SEASONAL_VIEW} from '../public/modules/ranking.js';
 const city=(id,metrics={})=>({slug:id,name:id,nameEn:id,country:'Thailand',countryCode:'TH',region:'亚洲',budget:1000,budgetBasis:'estimate',why:'A city',photo:null,baseScore:8.6,scores:{safety:9,cost:9,climate:4,life:9,internet:10,community:10,...metrics},visa:{code:'visa_free',label:'免签',detail:'legacy'},months:Array.from({length:12},(_,i)=>({month:i+1,status:i===0?'recommended':'unknown',meanC:22}))});
 test('default calculation ignores the stored legacy total',()=>{const c=city('a');assert.equal(customScore({...c,baseScore:99},DEFAULT_WEIGHTS),customScore(c,DEFAULT_WEIGHTS));assert.ok(customScore(c,DEFAULT_WEIGHTS)<=10);});
 test('custom score reflects weighted values, never original order',()=>{const a={...city('a',{cost:10}),budget:2400},b={...city('b',{cost:1}),budget:300};const s=parseState(new URL('http://test/'));s.weights={safety:0,cost:100,climate:0,life:0,internet:0,community:0};assert.deepEqual(rankCities([a,b],s).map(c=>c.slug),['b','a']);assert.equal(customScore(b,s.weights),10);});
@@ -17,16 +17,16 @@ test('compact month transport retains unknowns, zero temperatures and precipitat
 
 test('the dated departure view excludes reviewed travel concerns without changing source scores',()=>{
  const ordinary=city('base'),japan={...city('fukuoka'),countryCode:'JP'},taipei={...city('taipei'),visa:{code:'unavailable',label:'条件待核'}},visaRequired={...city('munich'),countryCode:'DE',visa:{code:'visa_required',label:'需签证'}};
- const data=[ordinary,japan,taipei,visaRequired];for(const item of data)item.months[9].status='recommended';
+ const data=[ordinary,japan,taipei,visaRequired];for(const item of data)item.months[SEASONAL_VIEW.month-1].status='recommended';
  const raw=JSON.parse(JSON.stringify(data));
- const regular=parseState(new URL('https://nomads.test/?month=10'));assert.equal(rankCities(data,regular).length,4);
- const selected=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const regular=parseState(new URL(`https://nomads.test/?month=${SEASONAL_VIEW.month}`));assert.equal(rankCities(data,regular).length,4);
+ const selected=parseState(new URL(`https://nomads.test/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`));
  assert.deepEqual(rankCities(data,selected).map(c=>c.slug),['base','munich']);
  assert.deepEqual(data,raw);assert.equal(customScore(japan,DEFAULT_WEIGHTS),customScore(ordinary,DEFAULT_WEIGHTS));
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(selected))),selected);
 });
 test('dated advice cannot silently apply to another month or an unreviewed period',()=>{
- for(const url of ['?month=11&season=2026-10','?season=2026-10','?month=10&season=2026-11']) {
+ for(const url of [`?month=${SEASONAL_VIEW.month%12+1}&season=${SEASONAL_VIEW.id}`,`?season=${SEASONAL_VIEW.id}`,`?month=${SEASONAL_VIEW.month}&season=unreviewed`]) {
   const state=parseState(new URL('https://nomads.test/'+url));assert.equal(state.season,'');assert.equal(stateParams(state).has('season'),false);
  }
 });

@@ -10,9 +10,10 @@ import { DOMESTIC_START, DOMESTIC_END, NEEDS_START, NEEDS_END, domesticRecommend
 
 const webRoot = fileURLToPath(new URL('../', import.meta.url));
 const catalog = JSON.parse(await readFile(new URL('../public/published-pages/rankings.json', import.meta.url), 'utf8'));
-const editorial = JSON.parse(await readFile(new URL('../data/seasonal-2026-10.json', import.meta.url), 'utf8'));
+const editorial = JSON.parse(await readFile(new URL(`../data/seasonal-${SEASONAL_VIEW.id}.json`, import.meta.url), 'utf8'));
+const historical = JSON.parse(await readFile(new URL('../data/seasonal-2026-10.json', import.meta.url), 'utf8'));
 const clone = value => structuredClone(value);
-const edition = JSON.parse(await readFile(new URL('../data/readme-2026-10.json', import.meta.url), 'utf8'));
+const edition = JSON.parse(await readFile(new URL(`../data/readme-${SEASONAL_VIEW.id}.json`, import.meta.url), 'utf8'));
 
 test('all recommendation links reproduce the website state and order',()=>{
  for(const group of [...seasonalGroups(catalog,editorial),...needRecommendations(catalog)]){
@@ -26,7 +27,7 @@ test('all recommendation links reproduce the website state and order',()=>{
  assert.equal(recommendationViews().length,6);
 });
 test('the README top ten follow recomputed scores, never stored legacy totals or editorial order',()=>{
- const state=parseState(new URL('https://nomads.test/?month=10&season=2026-10'));
+ const state=parseState(new URL(`https://nomads.test/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`));
  const cities=seasonalTopTen(catalog,editorial,edition);
  assert.deepEqual(cities.map(c=>c.slug),rankCities(catalog,state).slice(0,10).map(c=>c.slug));
  assert.equal(new Set(cities.map(c=>c.slug)).size,10);
@@ -37,7 +38,7 @@ test('main table keeps ten five-column rows, concise factual reasons and month c
  const block=renderSeasonalBlock(catalog,editorial,edition);
  const rows=block.split('\n').filter(line=>/^<tr><td nowrap>/.test(line));
  assert.equal(rows.length,10);assert.equal((block.match(/<td nowrap/g)||[]).length,50);
- assert.match(block,/10月舒适度/);assert.ok(!block.includes('10月均温'));
+ assert.ok(block.includes(`${SEASONAL_VIEW.month}月舒适度`));assert.ok(!block.includes('10月均温'));
  for(const row of rows){const reason=row.match(/<td nowrap>([^<]+)<\/td><\/tr>$/)[1];assert.ok([...reason].length<=25);assert.ok(reason.length);}
  assertReaderCopy(block);
  const changed=clone(catalog),first=seasonalTopTen(catalog,editorial,edition)[0].slug;
@@ -67,11 +68,11 @@ test('domestic discovery retains all fourteen cities and unknowns after the scor
  assert.equal(group.other.length,9);assert.equal(group.other[0].slug,'dali');
  assert.ok(group.other.every(c=>c.score===null&&c.rank===null));
  assert.deepEqual(group.cities,rankCities(catalog,parseState(new URL(group.url))).filter(c=>c.score!==null).slice(0,5));
- const block=renderDomesticBlock(catalog);assert.match(block,/10月舒适度/);assert.ok(!block.includes('$0'));
+ const block=renderDomesticBlock(catalog);assert.ok(block.includes(`${SEASONAL_VIEW.month}月舒适度`));assert.ok(!block.includes('$0'));
 });
 test('need-based views enforce their budgets, passport and seasonal conditions',()=>{
  for(const group of needRecommendations(catalog)){
-  assert.equal(group.cities.length,3);assert.equal(group.state.month,group.key==='winter'?1:10);
+  assert.equal(group.cities.length,3);assert.equal(group.state.month,group.key==='winter'?1:SEASONAL_VIEW.month);
   if(['budget','visa'].includes(group.key))assert.ok(group.cities.every(c=>c.budget<=1000));
   if(group.key==='visa')assert.ok(group.cities.every(c=>c.visa.code==='visa_free'));
   if(['internet','safe','warm','winter'].includes(group.key))assert.ok(group.cities.every(c=>!['CN','HK','MO','TW'].includes(c.countryCode)));
@@ -94,20 +95,20 @@ test('checked-in README has three tables, no removed notes and no generator drif
 
 test('new social captions retain the precise body/search boundary', () => {
   for (const slug of ['ubud', 'hangzhou', 'chengdu']) {
-    const city = editorial.cities.find(item => item.slug === slug);
+    const city = historical.cities.find(item => item.slug === slug);
     assert.ok(city.sources.some(source => source.platform === 'xiaohongshu' && source.read_scope === 'opened_post_caption'));
   }
-  const shenzhen = editorial.cities.find(city => city.slug === 'shenzhen');
+  const shenzhen = historical.cities.find(city => city.slug === 'shenzhen');
   assert.equal(shenzhen.platform_checks.find(check => check.platform === 'xiaohongshu').status, 'search_only');
   assert.ok(!shenzhen.sources.some(source => source.platform === 'xiaohongshu'));
   assert.match(shenzhen.sources.find(source => source.platform === 'x').limits, /已过/);
-  const fethiye = editorial.cities.find(city => city.slug === 'fethiye');
+  const fethiye = historical.cities.find(city => city.slug === 'fethiye');
   assert.match(fethiye.sources.find(source => source.platform === 'x').limits, /不是十月经历/);
 });
 
 test('European time-zone advice retains the fixed Beijing start-time condition', () => {
   for (const slug of ['malaga', 'lisbon']) {
-    const city = editorial.cities.find(item => item.slug === slug);
+    const city = historical.cities.find(item => item.slug === slug);
     assert.match(city.summary, /若按北京时间9点开工/);
     assert.ok(!city.summary.includes('中国团队需接受凌晨'));
     assert.ok(!city.summary.includes('中国作息需凌晨'));
@@ -153,7 +154,7 @@ test('invalid copy leaves the current README untouched',async()=>{
 });
 
 test('city and data-method links retain source and publication boundaries behind the compact README',async()=>{
- const guide=await readFile(new URL('../../guides/seasonal-2026-10.md',import.meta.url),'utf8');
+ const guide=await readFile(new URL(`../../guides/seasonal-${SEASONAL_VIEW.id}.md`,import.meta.url),'utf8');
  const method=await readFile(new URL('../docs/data-and-methods.md',import.meta.url),'utf8');
  for(const city of editorial.cities)assert.ok(guide.includes(`id="${city.slug}"`));
  for(const phrase of ['2023–2025','不能视为','不是实测Mbps','并非四个平台的正文都已读到'])assert.ok(method.includes(phrase));

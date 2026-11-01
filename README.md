@@ -3,21 +3,21 @@
 帮中文远程工作者选城市。[打开排行 →](https://roamorrow.com/nomads/)
 
 <!-- seasonal:table:start -->
-## 2026年10月，去哪住一阵
+## 2026年11月，去哪住一阵
 
-<table tabindex="0" aria-label="2026年10月十城推荐，可横向滚动">
-<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>10月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>
+<table tabindex="0" aria-label="2026年11月十城推荐，可横向滚动">
+<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>
 <tbody>
-<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/hanoi/">河内</a> 🇻🇳</td><td nowrap align="right">≈$740</td><td nowrap align="right">9.8 / 10</td><td nowrap>电子签</td><td nowrap>26°C，月参考$740</td></tr>
-<tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a> 🇨🇳</td><td nowrap align="right">≈$950</td><td nowrap align="right">10.0 / 10</td><td nowrap>境内</td><td nowrap>西湖边约21°C，下班还能绕湖走一段</td></tr>
-<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/chengdu/">成都</a> 🇨🇳</td><td nowrap align="right">≈$730</td><td nowrap align="right">10.0 / 10</td><td nowrap>境内</td><td nowrap>国庆后回到成都街区，约19°C过秋天</td></tr>
-<tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/fethiye/">费特希耶</a> 🇹🇷</td><td nowrap align="right">≈$1,240</td><td nowrap align="right">10.0 / 10</td><td nowrap>免签</td><td nowrap>厄吕代尼兹的蓝色海湾，十月还能续夏天</td></tr>
-<tr><td nowrap>5. <a href="https://roamorrow.com/nomads/cities/yerevan/">埃里温</a> 🇦🇲</td><td nowrap align="right">≈$1,410</td><td nowrap align="right">8.7 / 10</td><td nowrap>免签</td><td nowrap>15°C，月参考$1,410</td></tr>
-<tr><td nowrap>6. <a href="https://roamorrow.com/nomads/cities/lisbon/">里斯本</a> 🇵🇹</td><td nowrap align="right">≈$2,050</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>里斯本坡道19°C，欧洲作息更好配合</td></tr>
-<tr><td nowrap>7. <a href="https://roamorrow.com/nomads/cities/plovdiv/">普罗夫迪夫</a> 🇧🇬</td><td nowrap align="right">≈$1,090</td><td nowrap align="right">8.8 / 10</td><td nowrap>需签证</td><td nowrap>15°C，月参考$1,090</td></tr>
-<tr><td nowrap>8. <a href="https://roamorrow.com/nomads/cities/shanghai/">上海</a> 🇨🇳</td><td nowrap align="right">≈$1,200</td><td nowrap align="right">10.0 / 10</td><td nowrap>境内</td><td nowrap>21°C，月参考$1,200</td></tr>
-<tr><td nowrap>9. <a href="https://roamorrow.com/nomads/cities/malaga/">马拉加</a> 🇪🇸</td><td nowrap align="right">≈$1,900</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>马拉加21°C，把午休留给地中海</td></tr>
-<tr><td nowrap>10. <a href="https://roamorrow.com/nomads/cities/baku/">巴库</a> 🇦🇿</td><td nowrap align="right">≈$890</td><td nowrap align="right">10.0 / 10</td><td nowrap>免签</td><td nowrap>18°C，月参考$890</td></tr>
+<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> 🇹🇭</td><td nowrap align="right">≈$850</td><td nowrap align="right">9.9 / 10</td><td nowrap>免签</td><td nowrap>25°C，泰北进入少雨时段</td></tr>
+<tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/bangalore/">班加罗尔</a> 🇮🇳</td><td nowrap align="right">≈$530</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>22°C，月参考$530</td></tr>
+<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> 🇵🇭</td><td nowrap align="right">≈$680</td><td nowrap align="right">8.2 / 10</td><td nowrap>免签</td><td nowrap>19°C，免签仅14日不能延期</td></tr>
+<tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/kathmandu/">加德满都</a> 🇳🇵</td><td nowrap align="right">≈$450</td><td nowrap align="right">9.2 / 10</td><td nowrap>落地签</td><td nowrap>16°C，落地旅游签禁止就业</td></tr>
+<tr><td nowrap>5. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a> 🇨🇳</td><td nowrap align="right">≈$950</td><td nowrap align="right">8.5 / 10</td><td nowrap>境内</td><td nowrap>14°C，月参考$950</td></tr>
+<tr><td nowrap>6. <a href="https://roamorrow.com/nomads/cities/bangkok/">曼谷</a> 🇹🇭</td><td nowrap align="right">≈$1,040</td><td nowrap align="right">9.1 / 10</td><td nowrap>免签</td><td nowrap>28°C，曼谷少雨仍偏热</td></tr>
+<tr><td nowrap>7. <a href="https://roamorrow.com/nomads/cities/malaga/">马拉加</a> 🇪🇸</td><td nowrap align="right">≈$1,900</td><td nowrap align="right">9.7 / 10</td><td nowrap>需签证</td><td nowrap>17°C，月参考$1,900</td></tr>
+<tr><td nowrap>8. <a href="https://roamorrow.com/nomads/cities/funchal/">丰沙尔</a> 🇵🇹</td><td nowrap align="right">≈$1,980</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>19°C，月参考$1,980</td></tr>
+<tr><td nowrap>9. <a href="https://roamorrow.com/nomads/cities/pokhara/">博卡拉</a> 🇳🇵</td><td nowrap align="right">≈$450</td><td nowrap align="right">9.1 / 10</td><td nowrap>落地签</td><td nowrap>17°C，秋季湖山观景窗口</td></tr>
+<tr><td nowrap>10. <a href="https://roamorrow.com/nomads/cities/shenzhen/">深圳</a> 🇨🇳</td><td nowrap align="right">≈$1,080</td><td nowrap align="right">10.0 / 10</td><td nowrap>境内</td><td nowrap>22°C，月参考$1,080</td></tr>
 </tbody>
 </table>
 <!-- seasonal:table:end -->
@@ -28,34 +28,34 @@
 已收录14座国内目的地，5座参与评分。按本月舒适度与默认偏好排序，保留未评分资料入口。
 
 <table tabindex="0" aria-label="国内综合推荐，可横向滚动">
-<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>10月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>
+<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>
 <tbody>
-<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a></td><td nowrap align="right">≈$950</td><td nowrap align="right">10.0 / 10</td><td nowrap>3月 · 10–11月</td></tr>
-<tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/chengdu/">成都</a></td><td nowrap align="right">≈$730</td><td nowrap align="right">10.0 / 10</td><td nowrap>3–5月 · 10月</td></tr>
-<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/shanghai/">上海</a></td><td nowrap align="right">≈$1,200</td><td nowrap align="right">10.0 / 10</td><td nowrap>4月 · 10–11月</td></tr>
-<tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/shenzhen/">深圳</a></td><td nowrap align="right">≈$1,080</td><td nowrap align="right">9.5 / 10</td><td nowrap>1–3月 · 10–12月</td></tr>
+<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a></td><td nowrap align="right">≈$950</td><td nowrap align="right">8.5 / 10</td><td nowrap>3月 · 10–11月</td></tr>
+<tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/chengdu/">成都</a></td><td nowrap align="right">≈$730</td><td nowrap align="right">8.2 / 10</td><td nowrap>3–5月 · 10月</td></tr>
+<tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/shenzhen/">深圳</a></td><td nowrap align="right">≈$1,080</td><td nowrap align="right">10.0 / 10</td><td nowrap>1–3月 · 10–12月</td></tr>
+<tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/shanghai/">上海</a></td><td nowrap align="right">≈$1,200</td><td nowrap align="right">8.4 / 10</td><td nowrap>4月 · 10–11月</td></tr>
 <tr><td nowrap>5. <a href="https://roamorrow.com/nomads/cities/xiamen/">厦门</a></td><td nowrap align="right">≈$780</td><td nowrap align="right">10.0 / 10</td><td nowrap>1–3月 · 11–12月</td></tr>
 </tbody>
 </table>
 
 [查看全部国内目的地 →](https://roamorrow.com/nomads/?country=CN)
 
-也可以看<a href="https://roamorrow.com/nomads/cities/dali/">大理</a>（18°C） · <a href="https://roamorrow.com/nomads/cities/anji/">安吉</a>（18°C） · <a href="https://roamorrow.com/nomads/cities/beijing/">北京</a>（12°C） · <a href="https://roamorrow.com/nomads/cities/guangzhou/">广州</a>（24°C） · <a href="https://roamorrow.com/nomads/cities/kunming/">昆明</a>（18°C） · <a href="https://roamorrow.com/nomads/cities/quanzhou/">泉州</a>（26°C） · <a href="https://roamorrow.com/nomads/cities/tengchong/">腾冲</a>（19°C） · <a href="https://roamorrow.com/nomads/cities/wanning/">万宁</a>（27°C） · <a href="https://roamorrow.com/nomads/cities/wuxi/">无锡</a>（20°C）。气温取10月均温，这9座的月预算与评分还在补充。
+也可以看<a href="https://roamorrow.com/nomads/cities/dali/">大理</a>（13°C） · <a href="https://roamorrow.com/nomads/cities/anji/">安吉</a>（11°C） · <a href="https://roamorrow.com/nomads/cities/beijing/">北京</a>（4°C） · <a href="https://roamorrow.com/nomads/cities/guangzhou/">广州</a>（20°C） · <a href="https://roamorrow.com/nomads/cities/kunming/">昆明</a>（14°C） · <a href="https://roamorrow.com/nomads/cities/quanzhou/">泉州</a>（21°C） · <a href="https://roamorrow.com/nomads/cities/tengchong/">腾冲</a>（14°C） · <a href="https://roamorrow.com/nomads/cities/wanning/">万宁</a>（24°C） · <a href="https://roamorrow.com/nomads/cities/wuxi/">无锡</a>（13°C）。气温取11月均温，这9座的月预算与评分还在补充。
 <!-- seasonal:domestic:end -->
 
 <!-- seasonal:needs:start -->
 ## 按你在意的选
 
-除1月避寒外，均取本期10月视角；每行列出对应条件的前三名。网络与安全用评分表示。手机可横滑表格。
+除1月避寒外，均取本期11月视角；每行列出对应条件的前三名。网络与安全用评分表示。手机可横滑表格。
 
 <table tabindex="0" aria-label="按预算、签证、网络、安全与季节选城市，可横向滚动">
 <thead><tr><th scope="col" nowrap>你在意什么</th><th scope="col" nowrap>先看这3座</th></tr></thead>
 <tbody>
-<tr><th scope="row" nowrap>月预算≤$1,000<br><a href="https://roamorrow.com/nomads/?preset=budget&amp;budget=1000&amp;month=10&amp;season=2026-10">查看24城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/pokhara/">博卡拉</a> · ≈$450/月<br><a href="https://roamorrow.com/nomads/cities/chengdu/">成都</a> · ≈$730/月<br><a href="https://roamorrow.com/nomads/cities/hanoi/">河内</a> · ≈$740/月</td></tr>
-<tr><th scope="row" nowrap>大陆护照免签<br>≤$1,000<br><a href="https://roamorrow.com/nomads/?preset=visa&amp;budget=1000&amp;month=10&amp;season=2026-10">查看9城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/baku/">巴库</a> · ≈$890/月<br><a href="https://roamorrow.com/nomads/cities/tashkent/">塔什干</a> · ≈$940/月<br><a href="https://roamorrow.com/nomads/cities/samarkand/">撒马尔罕</a> · ≈$720/月</td></tr>
-<tr><th scope="row" nowrap>国外<br>网络优先<br><a href="https://roamorrow.com/nomads/?preset=internet&amp;abroad=1&amp;month=10&amp;season=2026-10">查看84城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/hanoi/">河内</a> · 10/10 · ≈$740/月<br><a href="https://roamorrow.com/nomads/cities/bucharest/">布加勒斯特</a> · 10/10 · ≈$1,200/月<br><a href="https://roamorrow.com/nomads/cities/las-palmas/">拉斯帕尔马斯</a> · 10/10 · ≈$1,600/月</td></tr>
-<tr><th scope="row" nowrap>国外<br>安全优先<br><a href="https://roamorrow.com/nomads/?preset=safe&amp;abroad=1&amp;month=10&amp;season=2026-10">查看84城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/fethiye/">费特希耶</a> · 9/10 · ≈$1,240/月<br><a href="https://roamorrow.com/nomads/cities/tashkent/">塔什干</a> · 9/10 · ≈$940/月<br><a href="https://roamorrow.com/nomads/cities/plovdiv/">普罗夫迪夫</a> · 9/10 · ≈$1,090/月</td></tr>
-<tr><th scope="row" nowrap>10月温暖<br>18–28°C<br><a href="https://roamorrow.com/nomads/?warm=1&amp;abroad=1&amp;month=10&amp;season=2026-10">查看48城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/hanoi/">河内</a> · 26°C · ≈$740/月<br><a href="https://roamorrow.com/nomads/cities/fethiye/">费特希耶</a> · 22°C · ≈$1,240/月<br><a href="https://roamorrow.com/nomads/cities/lisbon/">里斯本</a> · 19°C · ≈$2,050/月</td></tr>
+<tr><th scope="row" nowrap>月预算≤$1,000<br><a href="https://roamorrow.com/nomads/?preset=budget&amp;budget=1000&amp;month=11&amp;season=2026-11">查看30城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/pokhara/">博卡拉</a> · ≈$450/月<br><a href="https://roamorrow.com/nomads/cities/kathmandu/">加德满都</a> · ≈$450/月<br><a href="https://roamorrow.com/nomads/cities/hurghada/">赫尔格达</a> · ≈$500/月</td></tr>
+<tr><th scope="row" nowrap>大陆护照免签<br>≤$1,000<br><a href="https://roamorrow.com/nomads/?preset=visa&amp;budget=1000&amp;month=11&amp;season=2026-11">查看10城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> · ≈$850/月<br><a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> · ≈$680/月<br><a href="https://roamorrow.com/nomads/cities/pattaya/">芭提雅</a> · ≈$970/月</td></tr>
+<tr><th scope="row" nowrap>国外<br>网络优先<br><a href="https://roamorrow.com/nomads/?preset=internet&amp;abroad=1&amp;month=11&amp;season=2026-11">查看72城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> · 10/10 · ≈$850/月<br><a href="https://roamorrow.com/nomads/cities/funchal/">丰沙尔</a> · 10/10 · ≈$1,980/月<br><a href="https://roamorrow.com/nomads/cities/las-palmas/">拉斯帕尔马斯</a> · 10/10 · ≈$1,600/月</td></tr>
+<tr><th scope="row" nowrap>国外<br>安全优先<br><a href="https://roamorrow.com/nomads/?preset=safe&amp;abroad=1&amp;month=11&amp;season=2026-11">查看72城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> · 9/10 · ≈$850/月<br><a href="https://roamorrow.com/nomads/cities/funchal/">丰沙尔</a> · 10/10 · ≈$1,980/月<br><a href="https://roamorrow.com/nomads/cities/manama/">麦纳麦</a> · 10/10 · ≈$1,420/月</td></tr>
+<tr><th scope="row" nowrap>11月温暖<br>18–28°C<br><a href="https://roamorrow.com/nomads/?warm=1&amp;abroad=1&amp;month=11&amp;season=2026-11">查看48城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> · 25°C · ≈$850/月<br><a href="https://roamorrow.com/nomads/cities/bangalore/">班加罗尔</a> · 22°C · ≈$530/月<br><a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> · 19°C · ≈$680/月</td></tr>
 <tr><th scope="row" nowrap>提前看1月避寒<br><a href="https://roamorrow.com/nomads/?preset=winter&amp;abroad=1">查看95城 →</a></th><td nowrap><a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> · 22°C · ≈$850/月<br><a href="https://roamorrow.com/nomads/cities/da-nang/">岘港</a> · 22°C · ≈$790/月<br><a href="https://roamorrow.com/nomads/cities/chiang-rai/">清莱</a> · 21°C · ≈$780/月</td></tr>
 </tbody>
 </table>

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {publishedFallback} from '../src/published-fallback.js';
-import {parseState,rankCities,stateParams,PRESETS} from '../public/modules/ranking.js';
+import {parseState,rankCities,stateParams,PRESETS,SEASONAL_VIEW} from '../public/modules/ranking.js';
 import {UI_PRESETS} from '../public/modules/rank-controls.js';
 import worker from '../src/worker.js';
 import {articleBySlug} from '../src/article-catalog.js';
@@ -70,7 +70,7 @@ test('all five seasonal links have the correct first paint, controls and noindex
   return new URL(request.url).pathname.endsWith('manifest.json')?Response.json({version:1,snapshot_date:'2026-10-18',paths:['/','/cities/']}):Response.json(catalog);
  }}};
  for(const key of ['default','budget','internet','visa','safe']){
-  const preset=UI_PRESETS[key] || PRESETS[key],state={...parseState(new URL('https://nomads.example/?month=10&season=2026-10')),...preset};
+  const preset=UI_PRESETS[key] || PRESETS[key],state={...parseState(new URL(`https://nomads.example/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`)),...preset};
   const query=stateParams(state).toString(),expected=rankCities(catalog,state).slice(0,5).map(c=>c.slug);
   for(const path of ['/','/cities/']){
    const response=await publishedFallback(new Request('https://nomads.example'+path+'?'+query),env);
@@ -88,7 +88,7 @@ test('all five seasonal links have the correct first paint, controls and noindex
  }
  const root=await publishedFallback(new Request('https://nomads.example/'),env),body=await root.text();
  assert.match(body,/content="index,follow"/);assert.match(body,/<p class="rank-season-note" id="rank-season-note" hidden/);
- const head=await publishedFallback(new Request('https://nomads.example/?month=10&season=2026-10',{method:'HEAD'}),env);assert.equal(await head.text(),'');
+ const head=await publishedFallback(new Request(`https://nomads.example/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`,{method:'HEAD'}),env);assert.equal(await head.text(),'');
 });
 test('two published cities can still be compared for the requested month without indexing unreviewed combinations',async()=>{
  const city=slug=>({slug,name:slug,nameEn:slug,country:'Test',budget:1000,scores:{safety:8,cost:7,climate:6,life:7,internet:8,community:2},visa:{label:'需复核'},months:Array.from({length:12},(_,i)=>({month:i+1,meanC:20+i,rainMm:10,status:'recommended'}))});

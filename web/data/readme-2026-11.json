@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "month": "2026-11",
+  "updated_at": "2026-11-01",
+  "city_notes": [
+    {
+      "slug": "chiang-mai",
+      "reasons": [
+        {
+          "text": "{temperature}，泰北进入少雨时段",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bangkok",
+      "reasons": [
+        {
+          "text": "{temperature}，曼谷少雨仍偏热",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pokhara",
+      "reasons": [
+        {
+          "text": "{temperature}，秋季湖山观景窗口",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kathmandu",
+      "reasons": [
+        {
+          "text": "{temperature}，落地旅游签禁止就业",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "baguio",
+      "reasons": [
+        {
+          "text": "{temperature}，免签仅14日不能延期",
+          "facts": [
+            {
+              "kind": "climate"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "changes": []
+}
