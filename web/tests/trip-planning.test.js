@@ -10,7 +10,7 @@ test('an exact CNY ceiling filters the dated USD baseline and survives a shared 
  const state=parseState(new URL('https://nomads.test/?budget=6000&budgetCurrency=CNY&month=11'));
  assert.equal(state.budgetCurrency,'CNY');assert.equal(state.budget,6000);
  assert.deepEqual(parseState(new URL('https://nomads.test/?'+stateParams(state))),state);
- assert.deepEqual(rankCities([city('below',890),city('above',900),city('unknown',null)],state).map(c=>c.slug),['below']);
+ assert.deepEqual(rankCities([city('below',6000/RANKING_FX.cnyPerUSD-1),city('above',6000/RANKING_FX.cnyPerUSD+1),city('unknown',null)],state).map(c=>c.slug),['below']);
  assert.equal(referenceBudgetIn(900,'CNY'),900*RANKING_FX.cnyPerUSD);
  assert.equal(parseState(new URL('https://nomads.test/?budget=1000')).budgetCurrency,'USD');
  assert.equal(parseState(new URL('https://nomads.test/?budget=1000&budgetCurrency=BAD')).budgetCurrency,'USD');

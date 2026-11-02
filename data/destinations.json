@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_on": "2026-11-01",
+  "updated_on": "2026-11-02",
   "recommendations_are": "带条件的编辑建议，不是现场验证或全球排名",
   "destinations": [
     {
@@ -80,7 +80,8 @@
       "source_ids": [
         "O05",
         "O06",
-        "R-1qg6doj"
+        "R-1qg6doj",
+        "N1102-KOHUB"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",

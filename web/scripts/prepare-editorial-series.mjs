@@ -25,6 +25,7 @@ export function validateEditorialArticles(articles) {
     if (a.number === 6) assert.equal(a.slug, 'first-month');
     assert.ok(groups[a.category], 'Unknown editorial category');
     for (const key of ['title','summary','lede']) assert.ok(typeof a[key] === 'string' && a[key].trim(), 'Missing ' + key);
+    if (a.checkedOn !== undefined) assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(a.checkedOn) && new Date(a.checkedOn).toISOString().slice(0,10) === a.checkedOn, 'Invalid source review date: ' + a.slug);
     if (a.updatedAt !== undefined) assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(a.updatedAt) && !Number.isNaN(Date.parse(a.updatedAt)) && new Date(a.updatedAt).toISOString().slice(0,10) === a.updatedAt, 'Invalid article update date: ' + a.slug);
     assert.ok(Array.isArray(a.citySlugs) && new Set(a.citySlugs).size === a.citySlugs.length);
     assert.ok(Array.isArray(a.relatedSlugs) && a.relatedSlugs.length >= 2 && new Set(a.relatedSlugs).size === a.relatedSlugs.length && !a.relatedSlugs.includes(a.slug));
@@ -66,7 +67,7 @@ export function renderEditorialArticle(a, catalog) {
   const og = 'og-editorial-' + a.image.file;
   const contents = [...a.sections.map(s=>({id:s.id,title:s.title})), {id:'sources',title:'来源与阅读范围'}, {id:'related',title:'接着看'}];
   const links = contents.map(s=>`<a data-chapter-link href="#${s.id}">${esc(s.title)}</a>`).join('');
-  const config = {topic:true,config:{kind:'topic',checkedOn:DATE,sources:Object.fromEntries(a.sources.map(s=>[s.id,s]))}};
+  const config = {topic:true,config:{kind:'topic',checkedOn:a.checkedOn || DATE,sources:Object.fromEntries(a.sources.map(s=>[s.id,s]))}};
   const structured = {'@context':'https://schema.org','@graph':[
     {'@type':'Article',headline:a.title,description:a.summary,dateModified:updatedAt,inLanguage:'zh-CN',mainEntityOfPage:canonical,author:{'@type':'Organization',name:'Roamorrow 编辑部',url:SITE+'/about/'}},
     {'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'旅居指南',item:SITE+'/guides/'},{'@type':'ListItem',position:2,name:a.title,item:canonical}]},

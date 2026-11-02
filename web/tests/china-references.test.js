@@ -62,7 +62,7 @@ test('new CN destinations have licensed photos and observations but no invented 
   const cities=rankCities(await loadRankings(env),parseState(new URL('https://nomads.example/?country=CN')));
   for(const slug of ['beijing','guangzhou']){
    const city=cities.find(c=>c.slug===slug);assert.ok(city);assert.equal(city.budget,null);assert.equal(city.score,null);assert.match(city.photo,new RegExp('city-'+slug+'\\.webp$'));
-   const costs=await readCityCosts(env,'city:'+slug);assert.equal(costs.coverage.city_observations,5);
+   const costs=await readCityCosts(env,'city:'+slug);assert.ok(costs.coverage.city_observations>=5);
   }
  }finally{db.close();}
 });

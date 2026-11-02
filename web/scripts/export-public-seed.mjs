@@ -34,7 +34,8 @@ export async function exportPublicSeed({ databasePath = join(ROOT, '.data/releas
     };
     validatePublicSeed(seed);
     const encoded = Buffer.from(JSON.stringify(seed) + '\n'), compressed = gzipSync(encoded, { level: 9 });
-    assert.ok(compressed.length < 1024 * 1024, 'Public catalog exceeded the 1 MiB distribution target');
+    // Append-only price history grows with each reviewed monthly collection.
+    assert.ok(compressed.length < 2 * 1024 * 1024, 'Public catalog exceeded the 2 MiB distribution target');
     await mkdir(dirname(outputPath), { recursive: true });
     await writeFile(outputPath, compressed);
     return { version: seed.version, snapshot_date: seed.snapshot_date, compressed_bytes: compressed.length, uncompressed_bytes: encoded.length, artifact_sha256: publicSha256(compressed), seed_sha256: seed.seed_sha256, source_db_sha256: seed.source_db_sha256, private_notes_exported: 0, notion_page_identifiers_exported: 0, rows: seed.publication.rows };
