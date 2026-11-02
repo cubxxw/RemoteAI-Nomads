@@ -87,3 +87,5 @@ npm run dev
 需要临时关闭查询时，将 `MCP_ENABLED` 设为 `false` 后发布，客户端得到503和重试时间。部署回退使用 Cloudflare 已保存的 Worker 版本，原始公开种子不随回退改写。
 
 协议处理使用 [官方TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) 的 `createMcpHandler`，直接复用其无状态与旧版兼容实现，不自写握手。Skill 格式依据 [Agent Skills规范](https://agentskills.io/specification)。
+
+月度更新后，MCP发布投影只包含每个提供方、地点、范围与字段的最新消费观察，使用与查询相同的样本日期排序。完整历史仍保存在网站数据库与公开种子；不把重复历史行装入每次查询需要加载的投影。

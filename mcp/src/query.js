@@ -1,4 +1,5 @@
 import {tools} from './tools.js';
+import {latestCostObservations as latestCosts} from './cost-history.js';
 import {convertMeeting} from './meeting.js';
 import {calculateBudget} from '../../web/src/agent-budget.js';
 import {rankCities, parseState, PRESETS, currentMonth, customScore, scoringValues, DEFAULT_WEIGHTS} from '../../web/public/modules/ranking.js';
@@ -104,16 +105,6 @@ function conversion(snapshot, amount, from, to, now) {
 
 const costOrder = o => (o.provider === 'estat' && o.field === 'total_consumption' ? -1 :
   ({housing: 0, food: 1, restaurants: 1, transportation: 2, utilities: 3}[o.category] ?? 4));
-function latestCosts(rows) {
-  const ordered = [...rows].sort((a,b) => (b.sample_end || '').localeCompare(a.sample_end || '') ||
-    (b.checked_at || '').localeCompare(a.checked_at || '') || b.id.localeCompare(a.id));
-  const seen = new Set();
-  return ordered.filter(o => {
-    const key = [o.provider, o.city_id || o.area_id || o.country_id, o.scope, o.field].join('|');
-    if (seen.has(key)) return false;
-    seen.add(key); return true;
-  });
-}
 function observation(snapshot, o, currency, now) {
   const days = age(o.sample_end, now);
   return {...o, observed_at: o.sample_end, stale: days === null ? null : days > (o.provider === 'estat' || o.period === 'year' ? 550 : 60),

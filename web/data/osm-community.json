@@ -1932,14 +1932,14 @@
     "license": "ODbL-1.0"
   },
   "malaga": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 36.72016,
     "lon": -4.42034,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T09:20:02Z",
     "coworking": 13,
-    "cafes": 210,
+    "cafes": 216,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -2544,12 +2544,12 @@
     "license": "ODbL-1.0"
   },
   "pokhara": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 28.26689,
     "lon": 83.96851,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T09:18:02Z",
     "coworking": 0,
     "cafes": 36,
     "source": "OpenStreetMap / Overpass",

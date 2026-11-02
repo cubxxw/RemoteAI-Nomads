@@ -8,7 +8,7 @@ import {query} from '../src/query.js';
 
 const seed = JSON.parse(gunzipSync(await readFile(new URL('../../web/data/public-catalog.json.gz', import.meta.url))));
 const snapshot = createSnapshot(seed);
-const run = (name, args = {}) => query(snapshot, 'nomads_' + name, args, {now: new Date('2026-10-26T00:00:00Z')});
+const run = (name, args = {}) => query(snapshot, 'nomads_' + name, args, {now: new Date('2026-11-02T00:00:00Z')});
 
 test('the public projection is stable, field-limited and carries honest provenance', () => {
   assert.equal(snapshot.cities.length, 350);
@@ -72,13 +72,19 @@ test('city and national costs remain separate, with original units and dated FX'
   for (const o of result.data.observations) {
     assert.ok(o.unit && o.period && o.source_id && o.observed_at);
     if (o.conversion && o.currency !== 'CNY') {
-      assert.equal(o.conversion.date, '2026-10-16');
-      assert.equal(o.conversion.stale, true);
+      assert.equal(o.conversion.date, '2026-10-30');
+      assert.equal(o.conversion.stale, false);
     }
   }
   const country = run('get_costs', {place: '日本'});
   assert.ok(country.data.priced_cities.length > 0);
   assert.equal(country.data.scope, 'country_coverage');
+});
+
+test('dated FX becomes stale after its reference window', () => {
+  const result = query(snapshot, 'nomads_get_costs', {place:'东京',currency:'CNY'}, {now:new Date('2026-11-15T00:00:00Z')});
+  const converted = result.data.observations.filter(o=>o.conversion && o.currency!=='CNY');
+  assert.ok(converted.length);assert.ok(converted.every(o=>o.conversion.date==='2026-10-30' && o.conversion.stale));
 });
 
 test('entry applicability never assumes CN and unsupported passports retain the actual gap', () => {
@@ -179,7 +185,7 @@ test('a single comparison includes current snapshot price evidence and work cove
 test('context prices cover available core categories without pretending to be a complete budget', () => {
   const result = run('get_context', {place: '悉尼'});
   const samples = result.data.candidates[0].cost_samples;
-  assert.deepEqual(new Set(samples.observations.map(o => o.category)), new Set(['housing','food','transportation','utilities']));
+  assert.deepEqual(new Set(samples.observations.map(o => o.category)), new Set(['housing','food','restaurants','transportation','utilities']));
   assert.ok(samples.observations.length <= 8);
   assert.equal(samples.complete, false);
   assert.equal(samples.selection, 'representative_samples_by_category');
