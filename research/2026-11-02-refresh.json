@@ -1,0 +1,104 @@
+{
+  "checkedOn": "2026-11-02",
+  "appendOnly": {
+    "sources": 3,
+    "cost_observations": 6005,
+    "fx_rates": 29
+  },
+  "unchanged": [
+    "cities",
+    "city_scores",
+    "city_climate_months",
+    "city_entry_conditions"
+  ],
+  "patchSha256": "78535814e51a2f7a6b6847fc5577ccecc92917a42557d839260f4ed505ca6aa5",
+  "costs": {
+    "costcompass": {
+      "newObservations": 6005,
+      "cities": 158,
+      "monthlyTotalsImported": 0
+    },
+    "estat": {
+      "year": 2025,
+      "scope": "national",
+      "householdSize": 1,
+      "newObservations": 0
+    }
+  },
+  "fx": {
+    "date": "2026-10-30",
+    "newRates": 29
+  },
+  "places": {
+    "requested": 15,
+    "updated": 12,
+    "retainedAfterFailure": [
+      "dali",
+      "shenzhen",
+      "kathmandu"
+    ]
+  },
+  "climate": {
+    "cities": 350,
+    "months": 4200,
+    "samplePeriod": "2023-2025",
+    "newMeasurements": 0
+  },
+  "sourceArtifacts": [
+    {
+      "url": "https://costcompass.net/data/cities.json",
+      "file": "costcompass.net-197b3d71b471.json",
+      "bytes": 113137,
+      "sha256": "afda266a35b8e0ba09fce6b7a2f7a1e6ea09729c80db51b5d8ea96d7cb2d5f65"
+    },
+    {
+      "url": "https://costcompass.net/data/prices.csv",
+      "file": "costcompass.net-39ba394bef21.csv",
+      "bytes": 1925345,
+      "sha256": "3c45428719f6aa6582e08e19be5f54e85053ba23039ff8abda45b531c4943c64"
+    },
+    {
+      "url": "https://www.e-stat.go.jp/stat-search/files?cycle=7&layout=dataset&page=1&tclass1=000000330001&tclass2=000000330022&tclass3=000000330023&tclass4val=0&toukei=00200561&tstat=000000330001&year=20250",
+      "file": "e-stat.go.jp-4e8e6c1eb1a9.html",
+      "bytes": 236795,
+      "sha256": "2686650decdbdfd2172346afc650f6e3fde76105dc08abf8a1f36eb64c82c91f"
+    },
+    {
+      "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040409815&fileKind=0",
+      "file": "e-stat.go.jp-0b106bed2b90.xlsx",
+      "bytes": 61891,
+      "sha256": "1178196a42a415496c27762b09a1fa7363ac3607a556b122fb43f2f35af7b96a"
+    },
+    {
+      "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+      "file": "ecb.europa.eu-d73c465c892b.xml",
+      "bytes": 1547,
+      "sha256": "c7620e39ea8dd6674479deb3336338f84da9d8a1cdda80fbafe58805ed7ca9b1"
+    }
+  ],
+  "visaDiscovery": [
+    {
+      "url": "https://nomadterminal.com/data/nomad-visa-tracker.json",
+      "checkedOn": "2026-11-02",
+      "status": "unavailable",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://getwherenext.com/api/data/digital-nomad-visas",
+      "checkedOn": "2026-11-02",
+      "status": "read",
+      "sha256": "c1133bed6e274d6d7e1f649094a449ac81f55b4f5ec1d410fc623716ee453f3e",
+      "bytes": 39573,
+      "keys": [
+        "dataset",
+        "description",
+        "methodology",
+        "license",
+        "attribution",
+        "source"
+      ],
+      "count": null,
+      "use": "discovery_only"
+    }
+  ]
+}

@@ -228,14 +228,14 @@
     "license": "ODbL-1.0"
   },
   "baguio": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 16.41639,
     "lon": 120.59306,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T02:10:02Z",
-    "coworking": 9,
-    "cafes": 227,
+    "osmBase": "2026-11-02T08:59:51Z",
+    "coworking": 8,
+    "cafes": 229,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -288,26 +288,26 @@
     "license": "ODbL-1.0"
   },
   "bangalore": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 12.97194,
     "lon": 77.59369,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:55:41Z",
+    "osmBase": "2026-11-02T09:15:00Z",
     "coworking": 43,
-    "cafes": 321,
+    "cafes": 324,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
   "bangkok": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 13.75398,
     "lon": 100.50144,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:57:44Z",
+    "osmBase": "2026-11-02T09:01:51Z",
     "coworking": 10,
-    "cafes": 853,
+    "cafes": 858,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -648,14 +648,14 @@
     "license": "ODbL-1.0"
   },
   "chiang-mai": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 18.79038,
     "lon": 98.98468,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:44:18Z",
+    "osmBase": "2026-11-02T08:54:45Z",
     "coworking": 14,
-    "cafes": 948,
+    "cafes": 949,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -756,14 +756,14 @@
     "license": "ODbL-1.0"
   },
   "da-nang": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 16.06778,
     "lon": 108.22083,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:47:25Z",
-    "coworking": 2,
-    "cafes": 864,
+    "osmBase": "2026-11-02T08:54:45Z",
+    "coworking": 3,
+    "cafes": 871,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -1056,14 +1056,14 @@
     "license": "ODbL-1.0"
   },
   "funchal": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 32.66568,
     "lon": -16.92547,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:56:37Z",
+    "osmBase": "2026-11-02T08:59:51Z",
     "coworking": 2,
-    "cafes": 214,
+    "cafes": 215,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -1224,26 +1224,26 @@
     "license": "ODbL-1.0"
   },
   "hangzhou": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 30.29365,
     "lon": 120.16142,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T08:59:51Z",
     "coworking": 0,
     "cafes": 164,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
   "hanoi": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 21.0245,
     "lon": 105.84117,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:57:44Z",
+    "osmBase": "2026-11-02T09:01:51Z",
     "coworking": 3,
-    "cafes": 1025,
+    "cafes": 1029,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -1932,14 +1932,14 @@
     "license": "ODbL-1.0"
   },
   "malaga": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 36.72016,
     "lon": -4.42034,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T09:20:02Z",
     "coworking": 13,
-    "cafes": 210,
+    "cafes": 216,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },
@@ -2472,12 +2472,12 @@
     "license": "ODbL-1.0"
   },
   "penang": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 5.41123,
     "lon": 100.33543,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:47:25Z",
+    "osmBase": "2026-11-02T08:54:45Z",
     "coworking": 2,
     "cafes": 301,
     "source": "OpenStreetMap / Overpass",
@@ -2544,12 +2544,12 @@
     "license": "ODbL-1.0"
   },
   "pokhara": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": 28.26689,
     "lon": 83.96851,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T09:18:02Z",
     "coworking": 0,
     "cafes": 36,
     "source": "OpenStreetMap / Overpass",
@@ -3480,12 +3480,12 @@
     "license": "ODbL-1.0"
   },
   "ubud": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-02",
     "radiusM": 5000,
     "lat": -8.5098,
     "lon": 115.2654,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-02T09:01:51Z",
     "coworking": 3,
     "cafes": 199,
     "source": "OpenStreetMap / Overpass",

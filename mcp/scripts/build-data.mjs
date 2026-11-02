@@ -8,6 +8,7 @@ import {validatePublicSeed} from '../../web/scripts/bootstrap-public.mjs';
 import {enrichCommunity} from '../../web/src/community.js';
 import {travelAdvisory} from '../../web/public/modules/recommendation-policy.js';
 import articles from '../../web/data/article-catalog.json' with {type: 'json'};
+import {latestCostObservations} from '../src/cost-history.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const pick = (row, keys) => Object.fromEntries(keys.split(' ').filter(k => Object.hasOwn(row, k)).map(k => [k, row[k]]));
@@ -58,7 +59,7 @@ export function createSnapshot(seed) {
   const payload = {
     schema_version: 1, source_snapshot_date: seed.snapshot_date,
     origin: 'https://roamorrow.com/nomads', countries, cities, sources,
-    costs: rows('cost_observations').map(r => ({...pick(r,
+    costs: latestCostObservations(rows('cost_observations')).map(r => ({...pick(r,
       'id provider city_id country_id scope category field label amount currency period unit household_size sample_start sample_end sample_size min_amount max_amount quality source_id checked_at'),
       quality_flags: JSON.parse(r.quality_flags || '[]')})),
     regional: rows('regional_reference_observations').map(r => ({...pick(r,

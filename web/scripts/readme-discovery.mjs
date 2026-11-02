@@ -76,7 +76,7 @@ export function renderDomesticBlock(catalog) {
   const month = SEASONAL_VIEW.month;
   const lines = [DOMESTIC_START, '## 国内先看哪里', '', `已收录${group.total}座国内目的地，${group.scoredCount}座参与评分。按本月舒适度与默认偏好排序，保留未评分资料入口。`, '',
     `<table tabindex="0" aria-label="国内综合推荐，可横向滚动">`,
-    `<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>${month}月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>`, '<tbody>'];
+    `<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>历史月参考 / USD</th><th scope="col" nowrap>${month}月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>`, '<tbody>'];
   for (const [i, city] of group.cities.entries()) lines.push(`<tr><td nowrap>${i+1}. ${cityLink(city)}</td><td nowrap align="right">${money(city.budget)}</td><td nowrap align="right">${climateComfort(city.months[month-1])?.toFixed(1)??'—'} / 10</td><td nowrap>${recommendedMonths(city)}</td></tr>`);
   lines.push('</tbody>', '</table>', '', `[查看全部国内目的地 →](${group.url})`);
   if (group.other.length) {

@@ -1897,6 +1897,17 @@
       "read_scope": "opened_official_body",
       "editorial_summary": "巴厘岛2026/27雨季预测：15%分区十一月、85%十二月起；不直接推定乌布当天雨况。",
       "use": "used_with_limits"
+    },
+    {
+      "id": "N1102-KOHUB",
+      "platform": "web",
+      "url": "https://kohub.org/",
+      "published_at": null,
+      "retrieved_on": "2026-11-02",
+      "author": "KoHub",
+      "read_scope": "opened_operator_homepage_body",
+      "editorial_summary": "运营方首页显示We are open，每年11月1日至4月30日营业；此为商家公告，工位空位、当日接待及网速未实测。",
+      "use": "used_with_limits"
     }
   ]
 }

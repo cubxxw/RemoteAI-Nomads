@@ -17,3 +17,7 @@
 `osm-community.json`保存同一5公里半径的共享办公和咖啡馆计数，`public/places/`保留逐城地点、来源标识和采集日期。`osm-coverage.json`列出本批覆盖与缺口。2026-10-19已采集314城；28城请求失败，8城缺少坐标，未补为零。访问网站不会自动批量采集。
 
 维护命令为`npm run places:sync`，已有快照默认跳过；可用`-- --slugs=xiamen --batch=1`仅补单城。上游错误保留原数据，429/406后至少等待30秒。地点数据来自[OpenStreetMap contributors](https://www.openstreetmap.org/copyright)，适用ODbL；咖啡馆标注不证明允许办公，地图漏标也不等于当地没有。
+
+2026-11-02消费更新追加6,005条CostCompass观察（158城），保留原样本期；e-Stat单人家庭资料仍为2025年度。新增29条2026-10-30 ECB汇率，城市历史预算与评分不变。完整更新后的公开种子约1.07 MiB，分发上限调整为2 MiB以保留历史观察；载入安全上限仍为8 MiB。
+
+场所已有快照可显式刷新：`npm run places:sync -- --refresh --slugs=chiang-mai,hanoi --batch=1`。刷新必须指定城市；未知城市或缺少坐标会报错。上游失败保留旧快照，并以非零状态退出。

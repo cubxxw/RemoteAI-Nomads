@@ -367,12 +367,12 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'malaga-monthly-budget': ['2026-10-21', '2026-10-20'],
       'ubud-monthly-budget': ['2026-10-21', '2026-10-20'],
       'madrid-monthly-budget': ['2026-10-21', '2026-10-20'],
-      'november-nomad-destinations': ['2026-10-22', null],
+      'november-nomad-destinations': ['2026-11-02', null],
       'monthly-budget-5000': ['2026-10-22', null],
       'beijing-time-remote-work': ['2026-10-22', null],
       'chinese-passport-long-stay': ['2026-10-22', null],
     };
-    const expected = (articleBySlug(page.slug).seriesNumber > 4 ? ['2026-10-23', null] : batch[page.slug])
+    const expected = (articleBySlug(page.slug).seriesNumber > 4 ? [page.slug==='hanoi-da-nang-november-workday'?'2026-11-02':'2026-10-23', null] : batch[page.slug])
       ?? (page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
       : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16']);
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
@@ -401,9 +401,9 @@ test('topic guides need sources and checkedOn without an FX date, while budget g
     entry.sha256 = sha256(await readFile(path));
     await writeFile(manifestPath, JSON.stringify(manifest));
   };
-  await edit('november-nomad-destinations', html => html.replace('"checkedOn":"2026-10-22"', '"checkedOn":null'));
+  await edit('november-nomad-destinations', html => html.replace('"kind":"topic","checkedOn":"2026-11-02"', '"kind":"topic","checkedOn":null'));
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
-  await edit('november-nomad-destinations', html => html.replace('"checkedOn":null', '"checkedOn":"2026-10-22"').replace('"sources":{', '"sourcesRenamed":{'));
+  await edit('november-nomad-destinations', html => html.replace('"checkedOn":null', '"checkedOn":"2026-11-02"').replace('"sources":{', '"sourcesRenamed":{'));
   await assert.rejects(buildCityGuides(options), /source dates and source attribution/);
   await edit('november-nomad-destinations', html => html.replace('"sourcesRenamed":{', '"sources":{'));
   const report = await buildCityGuides(options);

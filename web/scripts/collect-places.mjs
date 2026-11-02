@@ -2,6 +2,8 @@
 import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {normalizePlaces,summarizePlaces} from '../public/modules/places.js';
+import {selectPlaceCities} from './place-selection.mjs';
+import {fetchPlaceBatch} from './place-fetch.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const catalog=JSON.parse(await readFile(root+'public/published-pages/rankings.json','utf8'));
 const selected=process.argv.find(a=>a.startsWith('--slugs='))?.slice(8).split(',');
@@ -11,24 +13,19 @@ if(!Number.isInteger(batchSize)||batchSize<1||batchSize>12||![1,2].includes(conc
 const endpoints=['https://overpass.private.coffee/api/interpreter','https://overpass-api.de/api/interpreter'];
 let summaries={};try{summaries=JSON.parse(await readFile(root+'data/osm-community.json','utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
 await mkdir(root+'public/places',{recursive:true});
-const cities=catalog.filter(c=>Number.isFinite(c.lat)&&Number.isFinite(c.lon)&&(!selected||selected.includes(c.slug))&&!summaries[c.slug]);
+const cities=selectPlaceCities(catalog,summaries,{selected,refresh:process.argv.includes('--refresh')});
 const radiusM=5000,checkedAt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 let next=0,saving=Promise.resolve();
+const failed=[];
 async function collect(){while(next<cities.length){
  const index=next;next+=batchSize;
  const batch=cities.slice(index,index+batchSize);
  const selectors=batch.flatMap(c=>['[office=coworking]','[amenity=coworking_space]','[amenity=cafe]'].map(tag=>`nwr${tag}(around:${radiusM},${c.lat},${c.lon});`));
  const query=`[out:json][timeout:60];(${selectors.join('')});out center tags;`;
  let payload,endpoint;
- for(const candidate of endpoints){
-  try{
-   const response=await fetch(candidate,{method:'POST',body:new URLSearchParams({data:query}),headers:{'User-Agent':'RemoteAI-Nomads/1.0 (https://github.com/cubxxw/RemoteAI-Nomads)'},signal:AbortSignal.timeout(75000)});
-   if([429,406].includes(response.status))await new Promise(resolve=>setTimeout(resolve,30000));
-   if(!response.ok)throw new Error('HTTP '+response.status);
-   payload=await response.json();if(payload.remark||!Array.isArray(payload.elements))throw new Error(payload.remark||'Invalid OSM response');endpoint=candidate;break;
-  }catch(error){console.error(candidate+': '+error.message);}
- }
- if(!payload?.elements||payload.remark){console.error('Preserved previous snapshots; batch failed: '+batch.map(c=>c.slug));continue;}
+ try { ({payload,endpoint}=await fetchPlaceBatch(endpoints,query,{onError:message=>console.error(message)})); }
+ catch { /* The batch is marked failed below; no writer sees rejected data. */ }
+ if(!payload?.elements||payload.remark){failed.push(...batch.map(c=>c.slug));console.error('Preserved previous snapshots; batch failed: '+batch.map(c=>c.slug));continue;}
  for(const city of batch){
   const center={lat:city.lat,lon:city.lon},places=normalizePlaces(payload.elements,center,radiusM);
   const stats=summarizePlaces(places,{checkedAt,radiusM,...center,endpoint,osmBase:payload.osm3s?.timestamp_osm_base||null});
@@ -46,3 +43,4 @@ async function collect(){while(next<cities.length){
 // At most two concurrent requests, within the public service's modest-use limit.
 await Promise.all(Array.from({length:concurrency},()=>collect()));
 console.log('OSM snapshots: '+Object.keys(summaries).length+'/'+catalog.length);
+if(failed.length){console.error('Failed cities: '+failed.join(','));process.exitCode=1;}

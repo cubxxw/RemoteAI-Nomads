@@ -2,11 +2,15 @@
 
 帮中文远程工作者选城市。[打开排行 →](https://roamorrow.com/nomads/)
 
+十一月专题：[清迈、河内、大理与海边备选](https://roamorrow.com/nomads/guides/november-nomad-destinations/) · [河内还是岘港](https://roamorrow.com/nomads/guides/hanoi-da-nang-november-workday/)。[本轮数据与来源](research/2026-11-02-refresh.md)。
+
 <!-- seasonal:table:start -->
 ## 2026年11月，去哪住一阵
 
+金额沿用历史月参考，舒适度按11月历史气候计算；本月新采消费不替代具体房源报价。
+
 <table tabindex="0" aria-label="2026年11月十城推荐，可横向滚动">
-<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>
+<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>历史月参考 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>
 <tbody>
 <tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> 🇹🇭</td><td nowrap align="right">≈$850</td><td nowrap align="right">9.9 / 10</td><td nowrap>免签</td><td nowrap>25°C，泰北进入少雨时段</td></tr>
 <tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/bangalore/">班加罗尔</a> 🇮🇳</td><td nowrap align="right">≈$530</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>22°C，月参考$530</td></tr>
@@ -28,7 +32,7 @@
 已收录14座国内目的地，5座参与评分。按本月舒适度与默认偏好排序，保留未评分资料入口。
 
 <table tabindex="0" aria-label="国内综合推荐，可横向滚动">
-<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>月花费 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>
+<thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>历史月参考 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>推荐月份</th></tr></thead>
 <tbody>
 <tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/hangzhou/">杭州</a></td><td nowrap align="right">≈$950</td><td nowrap align="right">8.5 / 10</td><td nowrap>3月 · 10–11月</td></tr>
 <tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/chengdu/">成都</a></td><td nowrap align="right">≈$730</td><td nowrap align="right">8.2 / 10</td><td nowrap>3–5月 · 10月</td></tr>

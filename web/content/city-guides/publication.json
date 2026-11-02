@@ -20,7 +20,7 @@
         },
         {
           "path": "content/editorial-50/season-compare.json",
-          "sha256": "5a8438247974bb8fd393e9fe62650d409188548f22820951ed74a66b5f299a56"
+          "sha256": "6f0d475f4751edf8ad68dc757b05edf9c96b095ea71e6974ffae05f33106eb5b"
         },
         {
           "path": "content/editorial-50/permission-tools.json",
@@ -129,9 +129,14 @@
       "approved": true,
       "approvedOn": "2026-10-28",
       "authority": "User (XINWEI) explicitly decided on 2026-10-28 to convert all 150 editorial drafts (docs/editorial/blog-drafts-2026-10) into published topic guides (\"全部 150 篇转制上线\")."
+    },
+    "novemberRefresh": {
+      "approved": true,
+      "approvedOn": "2026-11-02",
+      "authority": "User requested comprehensive November updates, article writing and direct implementation. Parent reviewed refreshed sources and retained historical dates and budget boundaries; independent final reviews are recorded separately."
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028+blog150-batch6-20261028",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028+blog150-batch6-20261028+november-refresh-20261102",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -241,10 +246,10 @@
     {
       "slug": "november-nomad-destinations",
       "sourceFile": "november-nomad-destinations.html",
-      "sha256": "4e97a46e806bd895a78f3a078f71280242d43cd92c206f7f5178596f84ff0db8",
+      "sha256": "ed8272d12bfc6da8f028b5391c0d39d40b32f45db615940735fd32aa4b967c01",
       "source": "output/seo-topics-20261022/november-nomad-destinations.html",
       "approved": true,
-      "approvedOn": "2026-10-22"
+      "approvedOn": "2026-11-02"
     },
     {
       "slug": "monthly-budget-5000",
@@ -385,28 +390,28 @@
     {
       "slug": "december-chiang-mai-penang-xiamen",
       "sourceFile": "december-chiang-mai-penang-xiamen.html",
-      "sha256": "7188c132d4304aee427db53b46402e2631641859a67e336aa5fd7e5cbcf158f4",
+      "sha256": "d1aab32e288fe5d127b04d0ae80df4e96eb1c12269e6a597d814eadb0008c51c",
       "source": "web/content/editorial-50/season-compare.json (article 21)",
       "approved": true
     },
     {
       "slug": "january-warm-room-after-sunset",
       "sourceFile": "january-warm-room-after-sunset.html",
-      "sha256": "4ac64273c596225e842eb9198fb48c2deeaa1c468630b6a3636454288eaf3717",
+      "sha256": "48c5a37e61970ffd471c2fa984f22e8aa5c8169740f191be9610d4a6dd25f677",
       "source": "web/content/editorial-50/season-compare.json (article 22)",
       "approved": true
     },
     {
       "slug": "spring-festival-month-rental-fees",
       "sourceFile": "spring-festival-month-rental-fees.html",
-      "sha256": "463a0de47e15602d64bef5703dad6f2c42ce0d3c8b34ea637ae6f37992fd7af5",
+      "sha256": "c4025aed00b876c915580e84b34662a37a000d7193150bc3958023c26ea03b2b",
       "source": "web/content/editorial-50/season-compare.json (article 23)",
       "approved": true
     },
     {
       "slug": "chiang-mai-haze-moving-date",
       "sourceFile": "chiang-mai-haze-moving-date.html",
-      "sha256": "221a033b982fc860c10f4d578fb59cc7932ed7171f2cefdcaef1c5326a7ae45b",
+      "sha256": "5b8e737f4a9a35a8c9ad90614bb2d00103ce08d7e57a0937db7e71301581a016",
       "source": "web/content/editorial-50/season-compare.json (article 24)",
       "approved": true
     },
@@ -420,28 +425,28 @@
     {
       "slug": "penang-three-years-rain-by-month",
       "sourceFile": "penang-three-years-rain-by-month.html",
-      "sha256": "20eae731eafaccf1ce6c177c628933c981fb83cafadeb9b042774ffc6699b95b",
+      "sha256": "381770bc940747fc6ba439cfae305f558ab09a9ebeb62e367eaec0a0c381c0ff",
       "source": "web/content/editorial-50/season-compare.json (article 26)",
       "approved": true
     },
     {
       "slug": "dali-winter-sun-hot-water-heating",
       "sourceFile": "dali-winter-sun-hot-water-heating.html",
-      "sha256": "0f95ffb970d2654fe5ef057e04ade3f5785edd5a7ba9354cdfdb799906f74e9a",
+      "sha256": "f08bd948e3edf4b2a1ce63921dd2adf4cd5192a9d718f5b7906f2dee50fa325e",
       "source": "web/content/editorial-50/season-compare.json (article 27)",
       "approved": true
     },
     {
       "slug": "ubud-rainy-season-room-inspection",
       "sourceFile": "ubud-rainy-season-room-inspection.html",
-      "sha256": "7c4a207f15513dca7c396709e2c98b0ecea4bec78a56d48dc3634c09d28ce38a",
+      "sha256": "156bcfed36b8870551d80085510c8ea041cf3a03acf2568d296d8c7234f7cca1",
       "source": "web/content/editorial-50/season-compare.json (article 28)",
       "approved": true
     },
     {
       "slug": "fethiye-winter-daily-facilities",
       "sourceFile": "fethiye-winter-daily-facilities.html",
-      "sha256": "604a430d1fa53dd51275e0f0a4b196d3ace690e414d702a0d954f2d868feacc4",
+      "sha256": "e7ffa1002f4966647138b8296a5ba97b8fc0c4161ff5609c031f26ad33cab7ae",
       "source": "web/content/editorial-50/season-compare.json (article 29)",
       "approved": true
     },
@@ -455,16 +460,17 @@
     {
       "slug": "chiang-mai-dali-winter-workday",
       "sourceFile": "chiang-mai-dali-winter-workday.html",
-      "sha256": "4eeef55612869282a35886c9ce7d6596b047442880bc5488508fbc3e7e357e85",
+      "sha256": "2e1f63a9b83012c9d2c70d5ac988d3fe7fb1f4e66717e28fdad7f8968aebb013",
       "source": "web/content/editorial-50/season-compare.json (article 41)",
       "approved": true
     },
     {
       "slug": "hanoi-da-nang-november-workday",
       "sourceFile": "hanoi-da-nang-november-workday.html",
-      "sha256": "1333153fa3eb2f9f092877578309e76a130d7ca2f3024afad8247d2da3d9dbda",
+      "sha256": "2b9d14769c9f7329f2aa020ca09cd7bb228f6c1387a8640a8b6214b589cb432a",
       "source": "web/content/editorial-50/season-compare.json (article 42)",
-      "approved": true
+      "approved": true,
+      "approvedOn": "2026-11-02"
     },
     {
       "slug": "penang-kuala-lumpur-one-working-day",
