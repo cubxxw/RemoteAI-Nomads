@@ -22,8 +22,20 @@
 
 ## GitHub与正式发布
 
-生产增量已在备份后执行并重新导出回读：来源2,284条、消费观察10,627条、汇率58条；城市350条、评分348条、历史气候4,200条及入境350条与本轮审阅公开库逐行一致。最终部署版本、正式网址回读与GitHub状态将在发布后补入本节；此段不作为已上线证明。
+生产增量已在备份后执行并重新导出回读：来源2,284条、消费观察10,627条、汇率58条；城市350条、评分348条、历史气候4,200条及入境350条与本轮审阅公开库逐行一致。官网实际发布版本为`nomads-067c22e3eac1632b`，Worker版本`21fa2efc-1d65-4b80-96b0-0a2956d58cdc`。MCP正式发布版本为`d6cf47c5-09b9-4c11-bf82-19f5b3ca5aca`，数据版本`public-e89465a44594e137c61f`。正式接口两代官方SDK均发现12项工具、正确读取泰国上下文与工作时间，并完成预算运算。
+
+正式两篇文章再次通过1440px与390px复核；无横向溢出和坏图。浏览器有既存Cloudflare统计请求`/cdn-cgi/rum`返回404，不影响阅读和本文交互，没有记作控制台零错误。
+
+[GitHub PR #79](https://github.com/cubxxw/RemoteAI-Nomads/pull/79)包含本轮完整变更与回执，所有要求的检查通过后合入。
 
 ## Google Search Console
 
 已通过现有登录读取`sc-domain:roamorrow.com`。正式站点地图状态为Success，最后读取2026-11-02，发现602页。十一月专题URL检查显示“URL is on Google / Page is indexed”；最近抓取界面显示2026-10-24 22:07:41，用户canonical为正式文章地址，Google canonical为Inspected URL。这证明旧版地址已经索引，不证明本轮新正文已经重抓。
+
+河内与岘港比较URL检查也显示“URL is on Google / Page is indexed”，最近抓取为2026-10-24 19:25:21，用户canonical为自身正式地址，Google canonical为Inspected URL。该URL的Sitemaps发现字段显示Temporary processing error，而站点地图总表为Success；如实保留两处状态，不据此声称新内容已经重抓。
+
+MCP修复后26项检查全通过，两代官方客户端对本地真实HTTP调用通过。独立评审比较完整历史和最新投影在350城、13类别上的4,550次消费查询，响应差异为0，保留来源均可解析，158个有价城市范围相同。
+
+正式发布后已在GSC重新提交`https://roamorrow.com/nomads/sitemap.xml`，界面明确返回“Sitemap submitted successfully”。这表示已提交等待周期处理，不表示两篇新正文已经被Google重新抓取。
+
+最终回执闭环：16条正式网页/接口路径均为200，发布版本匹配；两篇文章的修改日、canonical、唯一sitemap项及公开分享图正确，五座相关城市均可进入专题。两位独立评审已分别复核正式阅读效果与生产数据/接口证据，未发现未闭环P0/P1。
