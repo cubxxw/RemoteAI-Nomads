@@ -4,9 +4,7 @@
 
 默认按本月历史气候排序，每月自动切换（新加坡时间，与北京时间同为 UTC+8）。也可以选择固定出发月份；链接中的筛选优先于本机偏好。旧链接里的 `month=10` 会保留10月，点击「跟随本月」可恢复自动月份。「本月推荐」还会只保留该月有原推荐记录的城市。
 
-![城市排行与筛选：可切换地区、入境方式、每月参考上限和出发月份，月份说明显示当前实际排序月份](docs/images/ranking-filters.png)
-
-截图使用公开演示数据；界面或 README 更新时，按[截图更新步骤](web/README.md#更新-readme-筛选截图)覆盖同一文件。
+![城市排行筛选示例：国外、本月推荐11月，以及月花费、舒适度、推荐月份和入境条件](docs/images/ranking-filters.png)
 
 十一月专题：[清迈、河内、大理与海边备选](https://roamorrow.com/nomads/guides/november-nomad-destinations/) · [河内还是岘港](https://roamorrow.com/nomads/guides/hanoi-da-nang-november-workday/)。[本轮数据与来源](research/2026-11-02-refresh.md)。
 
