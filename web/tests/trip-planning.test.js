@@ -23,9 +23,10 @@ test('a departure month compares every available climate record; original recomm
  assert.deepEqual(rankCities(records,state).map(c=>c.slug),['recommended']);
  assert.equal(stateParams(state).get('recommendedOnly'),'1');
  toggleQuickFilter(state,'month',new Date('2026-11-01T00:00:00Z'));
- assert.equal(state.month,null);assert.equal(state.recommendedOnly,false);
+ assert.equal(state.month,null);assert.equal(state.recommendedOnly,true);
+ assert.equal(stateParams(state).get('month'),'current');
  toggleQuickFilter(state,'month',new Date('2026-11-01T00:00:00Z'));
- assert.equal(state.month,11);assert.equal(state.recommendedOnly,true);
+ assert.equal(state.month,null);assert.equal(state.recommendedOnly,false);
 });
 test('a dated editorial view still requires its original recommended month and exclusions',()=>{
  const state=parseState(new URL(`https://nomads.test/?month=${SEASONAL_VIEW.month}&season=${SEASONAL_VIEW.id}`));

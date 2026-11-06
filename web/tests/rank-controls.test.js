@@ -105,7 +105,7 @@ test('quick geography switches a real country constraint while retaining the cho
 test('current-month shortcut composes with geography, follows Singapore month boundaries and can be removed',()=>{
  const state=parseState(new URL('https://nomads.test/?country=CN&month=1&warm=1'));
  const date=new Date('2026-10-31T16:01:00Z');
- toggleQuickFilter(state,'month',date);assert.equal(state.month,11);assert.equal(state.country,'CN');assert.equal(state.warm,false);
+ toggleQuickFilter(state,'month',date);assert.equal(state.month,null);assert.equal(stateParams(state).get('month'),'current');assert.equal(state.country,'CN');assert.equal(state.warm,false);
  assert.deepEqual(quickFilters(state,date).filter(f=>f.selected).map(f=>f.key),['domestic','month']);
  assert.deepEqual(additionalFilters(state,date),[]);
  toggleQuickFilter(state,'month',date);assert.equal(state.month,null);assert.equal(state.country,'CN');

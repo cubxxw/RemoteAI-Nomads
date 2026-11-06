@@ -9,6 +9,7 @@
 - [ ] 城市卡说明主要风险，费用注明条件；没有可比报价时明确待询，不把空预算当免费。
 - [ ] 修改事实或价格时保留直接来源与事实日期，区分编辑日、核读日、历史个案与当前状态。
 - [ ] 在桌面和约 390px 窄屏走查受影响内容，检查标题、链接名称与表格滚动；未验证项在下方说明。
+- [ ] 更新首页 README 或筛选界面时，已运行 `cd web && npm run readme:screenshot` 覆盖 `docs/images/ranking-filters.png`，并检查截图可读；未追加旧截图。
 - [ ] 已运行 `python3 -m unittest discover -s tests -v`、`python3 scripts/check_data.py`、`python3 scripts/check_links.py` 和 `python3 scripts/check_reading.py`，并查看复核提醒。
 
 ## 验证证据与仍待核对的内容

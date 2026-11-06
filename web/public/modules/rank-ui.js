@@ -2,13 +2,14 @@ import {openShare} from './share-ui.js';
 import {initRankingPresentation} from './ranking-presentation.js';
 import {installRankingSeasons,renderSeasonSummary} from './ranking-seasons.js';
 import {rankingShare,cityShare} from './share-model.js';
-import {withPlanMonth} from './trip-state.js';
+import {withPlanMonth,TRIP_MONTH_KEY} from './trip-state.js';
 import {sitePath} from './site-path.js';
 import {scoreLabel} from './ranking.js';
 import {climateComfort} from './places.js';
 import {
   unpackRankingData,
   displayMonth,
+  monthContext,
   KEYS,
   DEFAULT_WEIGHTS,
   PRESETS,
@@ -253,6 +254,7 @@ function resetAll() {
   finishSearch();checkpoint();
   state = parseState(new URL(location.origin + location.pathname));
   search.value = '';
+  try { preferenceStorage.removeItem(TRIP_MONTH_KEY); } catch {}
   render();commit();
   notify('已恢复综合推荐，清除本地偏好。');
 }
@@ -285,7 +287,8 @@ function syncControls(editingBudget=false) {
   }
   if (!composing && document.activeElement !== search) search.value = state.q;
   document.querySelector('#recommended-only').checked=state.recommendedOnly||state.season===SEASONAL_VIEW.id;
-  document.querySelector('#recommended-only').disabled=!state.month;
+  document.querySelector('#ranking-month-context').textContent=monthContext(state);
+  document.querySelector('[data-follow-current-month]').hidden=!state.month;
   document.querySelector('#include-incomplete').checked = state.incomplete || state.country==='CN';
   document.querySelector('#include-incomplete').disabled = state.country==='CN';
   document.querySelector('#incomplete-label').textContent = state.country==='CN' ? '国内视角保留未评分目的地' : '包含指标待补的城市';
@@ -401,7 +404,14 @@ root.addEventListener('click', event => {
   if(event.target.closest('#entry-filters-toggle')) {
     openFilters();document.querySelector('#entry-filters-toggle').setAttribute('aria-expanded','true');document.querySelector('#filter-visa').focus({preventScroll:true});
   }
-  const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>toggleQuickFilter(state,quick.dataset.quickFilter));
+  if(event.target.closest('[data-follow-current-month]'))change(()=>{
+    applyRankingFilter(state,'month',null);
+    try { preferenceStorage.removeItem(TRIP_MONTH_KEY); } catch {}
+  });
+  const quick=event.target.closest('[data-quick-filter]');if(quick)change(()=>{
+    toggleQuickFilter(state,quick.dataset.quickFilter);
+    if(quick.dataset.quickFilter==='month')try { preferenceStorage.removeItem(TRIP_MONTH_KEY); } catch {}
+  });
   const preset = event.target.closest('[data-preset]');if (preset) applyPreset(preset.dataset.preset);
   const remove = event.target.closest('[data-remove-filter]');
   if (remove) change(() => { const key = remove.dataset.removeFilter;applyRankingFilter(state,key,key === 'budget' || key === 'month' ? null : key === 'warm' || key === 'incomplete' || key === 'abroad' || key === 'recommendedOnly' ? false : ''); });
@@ -461,6 +471,9 @@ list.addEventListener('click',navigateRow);
 list.addEventListener('auxclick',navigateRow);
 list.addEventListener('pointerover', event => { const row = event.target.closest('[data-city]');if (row && active !== row.dataset.city) highlight(row.dataset.city); });
 list.addEventListener('focusin', event => { const row = event.target.closest('[data-city]');if (row) highlight(row.dataset.city); });
+// Re-evaluate the rolling month after a suspended tab or a BFCache return.
+window.addEventListener('pageshow',()=>{if(!state.month)render();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!state.month)render();});
 window.addEventListener('popstate', () => { clearTimeout(searchTimer);searchTimer = null;state = parseState(new URL(location.href));search.value = state.q;searchHistory = false;searchCheckpoint = false;render();savePreference(state,preferenceStorage); });
 function renderCommands() {
   commands = commandItems(data,commandSearch.value);commandIndex = 0;
