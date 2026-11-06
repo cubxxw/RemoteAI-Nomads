@@ -3,8 +3,7 @@
 帮中文远程工作者选城市。[打开排行 →](https://roamorrow.com/nomads/)
 
 
-![城市排行与筛选：可切换地区、入境方式、每月参考上限和出发月份，月份说明显示当前实际排序月份](<img width="1099" height="890" alt="image" src="https://github.com/user-attachments/assets/79e9c945-35eb-41a4-be8e-e3b21cf7a9cb" />
-)
+![城市排行筛选示例：国外与本月推荐11月](docs/images/ranking-filters.png)
 
 <!-- seasonal:table:start -->
 ## 2026年11月，去哪住一阵

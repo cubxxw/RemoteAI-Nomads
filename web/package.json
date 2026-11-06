@@ -18,7 +18,6 @@
     "evals:dsh": "node evals/run.mjs",
     "data:bootstrap": "node scripts/bootstrap-public.mjs",
     "seasonal:readme": "node scripts/update-seasonal-readme.mjs",
-    "readme:screenshot": "node scripts/capture-readme-filters.mjs",
     "data:pages": "node scripts/build-public-pages.mjs",
     "seo:check": "node scripts/audit-seo.mjs",
     "demo": "npm run data:bootstrap && npm run data:pages && npm run db:migrate && npm run db:seed && npm run dev",
@@ -30,7 +29,6 @@
     "evals:share:browser": "node evals/share-preview-server.mjs"
   },
   "devDependencies": {
-    "playwright": "1.64.1",
     "wrangler": "^4.155.0"
   },
   "dependencies": {
