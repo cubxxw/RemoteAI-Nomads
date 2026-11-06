@@ -51,20 +51,6 @@ npm run build
 | 数据采集、公开种子与页面快照 | `scripts/`、[数据说明](data/README.md) |
 | 设计、证据和已知限制 | [设计约定](design.md)、[验收入口](docs/verification.md) |
 
-## 更新 README 筛选截图
-
-每次更新项目首页 README 或筛选界面时，在已初始化的公开演示预览中重拍，覆盖 `docs/images/ranking-filters.png`，不要追加日期文件或旧截图。先在 `web/` 运行 `npm run dev`（首次运行用上面的 `npm run demo`），再在另一个终端运行：
-
-```sh
-cd web
-npx playwright install chromium # 首次安装浏览器
-npm run readme:screenshot
-```
-
-脚本只允许本机 URL，使用无本地偏好的新浏览器、真实当前月份和公开演示数据，自动打开列表与筛选面板并替换原图。需要使用已安装的 Chrome 时，可运行 `PLAYWRIGHT_CHANNEL=chrome npm run readme:screenshot`。本地站点有路径前缀时，把干净的排行地址作为参数传入，例如 `npm run readme:screenshot -- http://127.0.0.1:8787/nomads/`。重拍后目视检查图片和 README 渲染，将图片与文档放进同一个 PR。
-
-月份默认跟随新加坡时间（UTC+8）的本月；URL 的明确筛选优先于本机排序偏好和旅程月份。固定月份保持不变；「跟随本月」清除固定月份和旧旅程月份。「本月推荐」用 `month=current&recommendedOnly=1` 保存，每月继续跟随当前月份。历史数字月份链接不自动迁移，以保留用户原先的明确选择。
-
 ## 小狐与模型接入
 
 全站右下角的小狐可打开、收起、检索历史、新建和继续对话。全文与草稿由当前浏览器的 IndexedDB 保存，可导出或删除；不会同步到账号和其他设备，清理浏览器数据后不能恢复。只有发送问题才请求模型，最近三轮问答会作为上下文发往服务端和模型供应商。
