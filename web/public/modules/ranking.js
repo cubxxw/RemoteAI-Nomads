@@ -22,7 +22,8 @@ export const KEYS = [
 ];
 const monthFormatter = new Intl.DateTimeFormat('en-US', {timeZone:'Asia/Singapore',month:'numeric'});
 export const currentMonth = (date = new Date()) => Number(monthFormatter.format(date));
-export const displayMonth = (state) => state.month || currentMonth();
+export const displayMonth = (state, date = new Date()) => state.month || currentMonth(date);
+export const monthContext = state => `按${displayMonth(state)}月历史气候排序 · ${state.month ? '已指定出发月份' : '跟随本月（新加坡时间）'}`;
 export const LABELS = {
   safety: "安全",
   cost: "花费",
@@ -117,7 +118,7 @@ export function parseState(url) {
     budget: Number.isFinite(b) && b >= 0.01 && b <= 10000000 ? Math.round(b*100)/100 : null,
     budgetCurrency:p.get('budgetCurrency')==='CNY'?'CNY':'USD',
     month: Number.isInteger(m) && m > 0 && m < 13 ? m : null,
-    recommendedOnly:p.get('recommendedOnly')==='1'&&Number.isInteger(m)&&m>=1&&m<=12,
+    recommendedOnly:p.get('recommendedOnly')==='1'&&(p.get('month')==='current'||Number.isInteger(m)&&m>=1&&m<=12),
     visa: !p.has('visa') ? preset.visa || '' : [
       "visa_free",
       "evisa",
@@ -141,10 +142,11 @@ export function stateParams(s) {
   if (s.country) p.set('country', s.country);
   if (s.abroad) p.set('abroad', '1');
   if (s.month) p.set("month", String(s.month));
+  else if (s.recommendedOnly) p.set('month', 'current');
   if (s.season === SEASONAL_VIEW.id && s.month === SEASONAL_VIEW.month) p.set("season", s.season);
   if (s.budget) p.set("budget", String(s.budget));
   if(s.budgetCurrency==='CNY')p.set('budgetCurrency','CNY');
-  if(s.recommendedOnly&&s.month)p.set('recommendedOnly','1');
+  if(s.recommendedOnly)p.set('recommendedOnly','1');
   if (s.visa) p.set("visa", s.visa);
   if (s.warm) p.set("warm", "1");
   if (s.incomplete) p.set("incomplete", "1");
@@ -190,8 +192,9 @@ export function scoreLabel(city,state) {
   const missing=['climate','life'].filter(key=>state.weights[key]>0&&!Number.isFinite(values[key]));
   return missing.length?missing.map(key=>key==='climate'?'气候':'生活').join('、')+'待补':isDefault(state.weights)?'综合分':'自定义分';
 }
-export function rankCities(cities, state) {
+export function rankCities(cities, state, date = new Date()) {
   const query = state.q.normalize("NFKC").trim().toLocaleLowerCase();
+  const month = displayMonth(state, date);
   const result = [], preciseScores = new Map();
   for (const city of cities) {
     if (!recommendationEligible(city)) continue;
@@ -207,13 +210,13 @@ export function rankCities(cities, state) {
     if (state.budget && (city.budget === null || referenceBudgetIn(city.budget,state.budgetCurrency) > state.budget))
       continue;
     if (state.visa && city.visa.code !== state.visa) continue;
-    if (state.month && (state.recommendedOnly||state.season===SEASONAL_VIEW.id) && city.months[state.month - 1]?.status !== "recommended")
+    if ((state.recommendedOnly||state.season===SEASONAL_VIEW.id) && city.months[month - 1]?.status !== "recommended")
       continue;
     if (state.warm) {
-      const t = city.months[(state.month || 1) - 1]?.meanC;
+      const t = city.months[month - 1]?.meanC;
       if (t === null || t === undefined || t < 18 || t > 28) continue;
     }
-    const scoringMonth=state.scoringMonth||displayMonth(state);
+    const scoringMonth=state.scoringMonth||month;
     const precise = scoreValue(city, state.weights,scoringMonth);
     const score = precise === null ? null : Math.round(precise * 10) / 10;
     // A domestic view/search is also a discovery surface, not only a score table.

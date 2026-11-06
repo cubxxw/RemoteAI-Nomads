@@ -38,7 +38,7 @@ export function quickFilters(state, date = new Date()) {
     {key:'asia',label:'亚洲',selected:state.region==='亚洲'&&!state.country},
     {key:'domestic',label:'国内',selected:state.country==='CN'},
     {key:'abroad',label:'国外',selected:!!state.abroad},
-    {key:'month',label:'本月推荐',detail:month+'月',selected:state.month===month&&state.recommendedOnly},
+    {key:'month',label:'本月推荐',detail:month+'月',selected:!state.month&&state.recommendedOnly},
   ];
 }
 export function toggleQuickFilter(state, key, date = new Date()) {
@@ -56,7 +56,8 @@ export function toggleQuickFilter(state, key, date = new Date()) {
     if(state.visa==='domestic')state.visa='';
   }
   if (key==='month') {
-    applyRankingFilter(state,'month',selected?null:currentMonth(date));
+    // A rolling choice must not become a fixed month in URLs or saved views.
+    applyRankingFilter(state,'month',null);
     state.recommendedOnly=!selected;
     state.warm=false;
   }
@@ -85,7 +86,7 @@ export function additionalFilters(state,date=new Date()) {
     !(filter.key==='region'&&state.region==='亚洲'&&!state.country)&&
     !(filter.key==='country'&&state.country==='CN')&&
     filter.key!=='abroad'&&
-    !(['month','recommendedOnly'].includes(filter.key)&&state.month===currentMonth(date)&&state.recommendedOnly&&!state.season));
+    !(filter.key==='recommendedOnly'&&!state.month&&state.recommendedOnly));
 }
 export function restorePreference(url, storage) {
   const current = parseState(url);
@@ -96,7 +97,7 @@ export function restorePreference(url, storage) {
     if (stored?.version === 1 && typeof stored.query === 'string' && stored.query.length <= 2000) restored=parseState(new URL('/?' + stored.query, url.origin));
   } catch {}
   const journeyMonth=readJourneyMonth(storage);
-  if(journeyMonth)applyRankingFilter(restored,'month',journeyMonth);
+  if(journeyMonth&&(restored.month||!restored.recommendedOnly))applyRankingFilter(restored,'month',journeyMonth);
   return restored;
 }
 export function savePreference(state, storage) {
