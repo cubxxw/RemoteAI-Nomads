@@ -2581,27 +2581,27 @@
     {
       "source": "assets/og-editorial-singapore-monthly-budget.jpeg",
       "destination": "images/og-editorial-singapore-monthly-budget.jpeg",
-      "sha256": "6f9ffc86ae4cba90fdd3918406ee39af4d0997a685f3b287837b9a8fa42fbae0"
+      "sha256": "d7aa224988698af3fbcff6a91a10459631f7c38729a031fcf407821ddb899e88"
     },
     {
       "source": "assets/og-editorial-hua-hin-monthly-budget.jpeg",
       "destination": "images/og-editorial-hua-hin-monthly-budget.jpeg",
-      "sha256": "4a5fcbd8dc857ad3fe03a8ebd75dfb3c2931421bb882a329196ea70efc2b7d8d"
+      "sha256": "1a0f1d0f35c622bf3c2dfd74b8742420cdf5d13019d8d7c13dae75496e085c88"
     },
     {
       "source": "assets/og-editorial-de-rantau-sabah-scope.jpeg",
       "destination": "images/og-editorial-de-rantau-sabah-scope.jpeg",
-      "sha256": "887759b72e007b40cf7b20249bd496afd2725cb23330be8b6f7e65fe56ecc07c"
+      "sha256": "2ebf2c6216d1b0f2fd0c56427d13275f304155418435bd46831f95d23e834ffc"
     },
     {
       "source": "assets/og-editorial-auckland-wellington-beijing-workday.jpeg",
       "destination": "images/og-editorial-auckland-wellington-beijing-workday.jpeg",
-      "sha256": "3f0272ac5c06208fe51643f9f0ce0071b4a2db30acfb8716e756aa924604812f"
+      "sha256": "2f77bbb1ba094ba8097b8ba24190467ae91a8a27c68e88af76186e6a493d7083"
     },
     {
       "source": "assets/og-editorial-monthly-apartment-utilities.jpeg",
       "destination": "images/og-editorial-monthly-apartment-utilities.jpeg",
-      "sha256": "4a60deacac52b50456bd06ac6c53ce2c8a9cd62ae384a685e6448d6ac25da05e"
+      "sha256": "472797d1fc2a5bd69155c952d54ba933f48af46f699d5f92413f64488cf12230"
     },
     {
       "source": "assets/editorial-phuket.webp",
@@ -2631,27 +2631,27 @@
     {
       "source": "assets/og-editorial-phuket-monthly-budget.jpeg",
       "destination": "images/og-editorial-phuket-monthly-budget.jpeg",
-      "sha256": "0d6a60625d31928499e26706b5968cb1bef9fb368f819122dd8512da99bbbef5"
+      "sha256": "8a2b0df9e56b2c36df188e6aa6e0eb8ed15ec11caad3727e6157ac38ca90fe1c"
     },
     {
       "source": "assets/og-editorial-malacca-monthly-budget.jpeg",
       "destination": "images/og-editorial-malacca-monthly-budget.jpeg",
-      "sha256": "f78ee35fb9d984e0ff081255a6112f503590254afba2c496db0864d32e6e7a6a"
+      "sha256": "0b0ba7e70e8a05566a18db795b290de851095f4211c4653be3eb969ed0e2ab3b"
     },
     {
       "source": "assets/og-editorial-remote-visa-income-balance.jpeg",
       "destination": "images/og-editorial-remote-visa-income-balance.jpeg",
-      "sha256": "b767229900e8474555e0cede254ca23e958a4e051d0527bf5d8571d4faeb37bc"
+      "sha256": "045dcc5819793beb4b3cc4c63876d5daf6df66adc0de81ea091f25ff11a0b18d"
     },
     {
       "source": "assets/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
       "destination": "images/og-editorial-hua-hin-cross-season-thirty-nights.jpeg",
-      "sha256": "273ceb432097894dbcc03a0f4675c88de583da3c0703f4d07c319700a127b5ce"
+      "sha256": "caab43e2ad3e9ffdeacb225431d9ba50ffc590f7a333632572a780429063c206"
     },
     {
       "source": "assets/og-editorial-singapore-foreign-card-transit-fee.jpeg",
       "destination": "images/og-editorial-singapore-foreign-card-transit-fee.jpeg",
-      "sha256": "a5af7c659aeb5bdf7fe73a5a7e67fbcd29d237966d511fd733737ad571c4512f"
+      "sha256": "0d2fa355d9c9ab0e31d7e98a696772df7ffaf935626e4cec92676a87af088cb9"
     },
     {
       "source": "budget-model.mjs",
@@ -2671,7 +2671,7 @@
     {
       "source": "assets/og-editorial-cowork-call-hours.jpeg",
       "destination": "images/og-editorial-cowork-call-hours.jpeg",
-      "sha256": "ff1217fbfdd7b27e36fa99930970a300e98fed194a6ad81e72ed1ef21779b4ed"
+      "sha256": "faaf93fc48e95cb68a22fad8ebf90997b2061fd5feb3f4c48aab290084653660"
     }
   ]
 }
