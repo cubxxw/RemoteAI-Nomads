@@ -372,7 +372,9 @@ test('guide package includes exactly public images and runtime, preserves copy a
       'beijing-time-remote-work': ['2026-10-22', null],
       'chinese-passport-long-stay': ['2026-10-22', null],
     };
-    const expected = (articleBySlug(page.slug).seriesNumber > 4 ? [page.slug==='hanoi-da-nang-november-workday'?'2026-11-02':'2026-10-23', null] : batch[page.slug])
+    const midmonthRefresh = new Set(['de-rantau-employee-freelancer-documents', 'de-rantau-sabah-scope', 'hanoi-da-nang-november-workday']);
+    const expected = (midmonthRefresh.has(page.slug) ? ['2026-11-14', null]
+      : articleBySlug(page.slug).seriesNumber > 4 ? ['2026-10-23', null] : batch[page.slug])
       ?? (page.slug === 'pokhara-monthly-budget' ? ['2026-10-20', '2026-10-20']
       : /^(?:dali|kuala-lumpur)-/.test(page.slug) ? ['2026-10-20', '2026-10-19'] : ['2026-10-19', '2026-10-16']);
     assert.deepEqual([page.checkedOn, page.fxDate], expected);
