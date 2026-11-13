@@ -41,6 +41,9 @@ jobs:
       - name: Validate destination and source data
         id: data
         if: ${{ !cancelled() }}
+        # Editorial verification dates and the maintenance schedule use Beijing time.
+        env:
+          TZ: Asia/Shanghai
         shell: bash
         run: python3 scripts/check_data.py | tee "$RUNNER_TEMP/guide-data.txt"
       - name: Validate local documentation links
