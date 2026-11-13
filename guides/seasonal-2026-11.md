@@ -65,3 +65,26 @@
 ## 11月2日补充
 
 [本轮数据、两篇文章与来源记录](../research/2026-11-02-refresh.md)补充了消费、汇率与十二城场所刷新。下文既有核读日期仍为11月1日；历史预算与气候样本不更换为现价或天气预报。
+
+## 11月14日中旬复核
+
+保留上文11月1日来源；下列才是本次新核读范围。[本轮计划](../docs/superpowers/plans/2026-11-14-midmonth-refresh.md)与[来源账本](../research/2026-11-14-midmonth-refresh.md)分别记录待办和证据。
+
+<a id="kuala-lumpur"></a>
+<a id="penang"></a>
+### 吉隆坡与槟城
+
+DE Rantau新申请11月暂停，计划12月1日恢复。科技类届时新申请及续签年收入门槛升至36,000美元，非科技类仍60,000美元；最多合计4年须逐次获批。11月首次续签另有限制，不把通知套给砂拉越版本。[MDEC公告](https://www.mdec.my/expats-announcements/enhanced-de-rantau-nomad-pass-framework-and-temporary-closure-of-new-application-submissions) · [增强框架FAQ](https://www.mdec.my/api/media/file/Enhanced-DERantau-Pass%20Framework-FAQ-v1_%20NM.pdf)，2026-11-14读正文，FAQ第1、3、5页另核渲染。
+
+<a id="hanoi"></a>
+<a id="da-nang"></a>
+### 河内与岘港
+
+[11月7日越南政府报道](https://baochinhphu.vn/chinh-phu-trinh-quoc-hoi-co-che-chinh-sach-dac-thu-ve-phat-trien-du-lich-viet-nam-102261107090821648.htm)介绍的远程工作试点仍为草案，未证明开放申请。岘港[Enosta](https://enostaspace.com/co-working/)日票110,000越南盾起、月票2,300,000越南盾起，平日8点开门；[Green Residence Villa](https://greenresidence.vn/villa/)单卧公寓最多2人，约15,000,000越南盾/月起，网络与周清洁含，水电另计、押金另备一月租金。11月14日重读，与11月2日记录一致，未查日期库存、未现场测速。
+
+<a id="koh-lanta"></a>
+### 清迈、曼谷与兰塔岛
+
+[气象局10月21日发布的11月至次年1月展望](https://www.tmd.go.th/media/climate/3-months/newsndj_2026_english.pdf)描述泰北转凉少雨，南部尤其东岸仍多雨。11月14日读第1页正文及渲染，不把区域预测当房源天气；[七日预报](https://www.tmd.go.th/en/forecast/sevenday)本次可读的是11月13–19日一期，超出窗口须重查。
+
+[KoHub](https://kohub.org/)首页显示开放，营业季11月1日至次年4月30日，空位和通话预约仍另问，旧价不改核读日。[Baannoi月租](https://www.baannoinornmuan.com/en/monthly-stay/)11–2月标准房15,000泰铢/月、较大房18,000泰铢/月，水电、清洁和押金另计，条件见[清迈卡片](destination-notes.md#chiang-mai)。这些公开信息均未替代试住或网络实测。

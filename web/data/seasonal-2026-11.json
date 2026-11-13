@@ -1,15 +1,15 @@
 {
   "version": 1,
   "month": "2026-11",
-  "checked_at": "2026-11-01",
-  "source_boundary": "本轮读取官方季节与入境正文，不新增社媒实住、工位测速或现价结论。排名使用既有公开目录历史指标；未研究的新结果只显示数值，十月观察保留原日期。",
+  "checked_at": "2026-11-14",
+  "source_boundary": "本轮读取官方季节与入境正文，不新增未经核验的社媒实住、工位测速或现价结论。排名使用既有公开目录历史指标；未研究的新结果只显示数值，十月观察保留原日期。 11月14日仅新增或复核下列城市的官方政策、季节与运营方条件；各来源保留自己的读取日。消费、汇率和场所同步尚未执行。",
   "cities": [
     {
       "slug": "chiang-mai",
       "name_zh": "清迈",
-      "summary": "泰国气象局十一月展望预计北部降雨减少，清迈可作为短停候选；山区与街区天气另查。大陆普通护照免签每次最多30日、每180日累计最多90日，工作另核相应手续。",
-      "read_at": "2026-11-01",
-      "checked_at": "2026-11-01",
+      "summary": "泰国11月至次年1月展望指北部转凉少雨；短期仍可能雷雨。大陆普通护照短访单次最多30日、每180日累计90日，工作手续另核。月租和网络按具体房源确认。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
       "sources": [
         {
           "url": "https://www.tmd.go.th/forecast/threemonthcontentcountry/092026-112028",
@@ -24,15 +24,22 @@
           "read_scope": "opened_official_body",
           "read_at": "2026-11-01",
           "published_at": "2026-09-02"
+        },
+        {
+          "url": "https://www.tmd.go.th/media/climate/3-months/newsndj_2026_english.pdf",
+          "title": "泰国气象局：11月至次年1月季节展望：泰国北部转凉、降雨减少，南部尤其东岸仍多雨",
+          "read_scope": "官方PDF第1页季节正文及渲染；未逐张核验后续地图",
+          "read_at": "2026-11-14",
+          "published_at": "2026-10-21"
         }
       ]
     },
     {
       "slug": "bangkok",
       "name_zh": "曼谷",
-      "summary": "十一月曼谷通常转向少雨，气象局本期仍预计偏热；通勤和住宿要考虑白天高温。大陆普通护照免签每次最多30日、每180日累计最多90日，不能据此推定工作许可。",
-      "read_at": "2026-11-01",
-      "checked_at": "2026-11-01",
+      "summary": "曼谷仍需防白天高温与短时雷雨，少雨季节不保证每天晴。大陆普通护照短访单次最多30日、每180日累计90日，不能据此推定工作许可。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
       "sources": [
         {
           "url": "https://www.tmd.go.th/forecast/threemonthcontentcountry/092026-112028",
@@ -47,6 +54,13 @@
           "read_scope": "opened_official_body",
           "read_at": "2026-11-01",
           "published_at": "2026-09-02"
+        },
+        {
+          "url": "https://www.tmd.go.th/media/climate/3-months/newsndj_2026_english.pdf",
+          "title": "泰国气象局：11月至次年1月季节展望：泰国北部转凉、降雨减少，南部尤其东岸仍多雨",
+          "read_scope": "官方PDF第1页季节正文及渲染；未逐张核验后续地图",
+          "read_at": "2026-11-14",
+          "published_at": "2026-10-21"
         }
       ]
     },
@@ -114,6 +128,110 @@
           "read_scope": "opened_official_body",
           "read_at": "2026-11-01",
           "published_at": "2026-09-28"
+        }
+      ]
+    },
+    {
+      "slug": "kuala-lumpur",
+      "name_zh": "吉隆坡",
+      "summary": "DE Rantau新申请11月1–30日暂停，计划12月1日恢复；科技类届时年收入门槛升至3.6万美元。续签须符合条件、逐次获批；短期免签不替代工作许可。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
+      "sources": [
+        {
+          "url": "https://www.mdec.my/expats-announcements/enhanced-de-rantau-nomad-pass-framework-and-temporary-closure-of-new-application-submissions",
+          "title": "MDEC：11月1至30日暂停DE Rantau新申请，计划12月1日恢复",
+          "read_scope": "官方公告正文；新申请与符合条件的首次续签分别读取",
+          "read_at": "2026-11-14",
+          "published_at": "2026-10-29"
+        },
+        {
+          "url": "https://www.mdec.my/api/media/file/Enhanced-DERantau-Pass%20Framework-FAQ-v1_%20NM.pdf",
+          "title": "MDEC：12月1日起科技类新申请及续签年收入门槛由2.4万升至3.6万美元，非科技类仍6万美元",
+          "read_scope": "PDF正文Q1–27；第1、3、5页另做渲染核对，非全文件视觉核验",
+          "read_at": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "slug": "penang",
+      "name_zh": "槟城",
+      "summary": "准备DE Rantau长住时先核申请窗口：新申请11月暂停，计划12月1日恢复，科技类年收入门槛届时升至3.6万美元；非科技类仍6万美元。不能仅凭租房或旅游免签认定可工作。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
+      "sources": [
+        {
+          "url": "https://www.mdec.my/expats-announcements/enhanced-de-rantau-nomad-pass-framework-and-temporary-closure-of-new-application-submissions",
+          "title": "MDEC：11月1至30日暂停DE Rantau新申请，计划12月1日恢复",
+          "read_scope": "官方公告正文；新申请与符合条件的首次续签分别读取",
+          "read_at": "2026-11-14",
+          "published_at": "2026-10-29"
+        },
+        {
+          "url": "https://www.mdec.my/api/media/file/Enhanced-DERantau-Pass%20Framework-FAQ-v1_%20NM.pdf",
+          "title": "MDEC：12月1日起科技类新申请及续签年收入门槛由2.4万升至3.6万美元，非科技类仍6万美元",
+          "read_scope": "PDF正文Q1–27；第1、3、5页另做渲染核对，非全文件视觉核验",
+          "read_at": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "slug": "hanoi",
+      "name_zh": "河内",
+      "summary": "越南11月7日政府报道介绍远程工作受控试点草案，未证明已开放申请。旅游电子签、工作资格与住满一个月分别核对，不用草案代替现行手续。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
+      "sources": [
+        {
+          "url": "https://baochinhphu.vn/chinh-phu-trinh-quoc-hoi-co-che-chinh-sach-dac-thu-ve-phat-trien-du-lich-viet-nam-102261107090821648.htm",
+          "title": "越南政府电子报：政府向国会介绍旅游特殊政策草案，包括受控远程工作试点",
+          "read_scope": "越文政府报道正文；草案阶段及第11条远程工作试点提案",
+          "read_at": "2026-11-14",
+          "published_at": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "slug": "da-nang",
+      "name_zh": "岘港",
+      "summary": "远程工作试点仍属草案，不能据此办理签证或认定可工作。Villa单卧公寓约1500万越南盾/月起，最多2人，水电另付、一月押金另备；雨天通勤与房间网络另核。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
+      "sources": [
+        {
+          "url": "https://baochinhphu.vn/chinh-phu-trinh-quoc-hoi-co-che-chinh-sach-dac-thu-ve-phat-trien-du-lich-viet-nam-102261107090821648.htm",
+          "title": "越南政府电子报：政府向国会介绍旅游特殊政策草案，包括受控远程工作试点",
+          "read_scope": "越文政府报道正文；草案阶段及第11条远程工作试点提案",
+          "read_at": "2026-11-14",
+          "published_at": "2026-11-07"
+        },
+        {
+          "url": "https://greenresidence.vn/villa/",
+          "title": "Green Residence：单卧公寓最多2人，一月起租约1500万越南盾/月起",
+          "read_scope": "运营方Villa月住正文、人数与费用范围；未查询日期库存",
+          "read_at": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "slug": "koh-lanta",
+      "name_zh": "兰塔岛",
+      "summary": "KoHub首页显示开放，营业季11月1日至次年4月30日；工位与通话间余位另问。泰国南部11月仍多雨，营业季不保证船班或晴天。未现场测速，旧工位价格保留原核读日。",
+      "read_at": "2026-11-14",
+      "checked_at": "2026-11-14",
+      "sources": [
+        {
+          "url": "https://kohub.org/",
+          "title": "KoHub：首页显示开放，营业季每年11月1日至次年4月30日",
+          "read_scope": "运营方首页状态与设施正文；未读取价格页、未实测",
+          "read_at": "2026-11-14"
+        },
+        {
+          "url": "https://www.tmd.go.th/media/climate/3-months/newsndj_2026_english.pdf",
+          "title": "泰国气象局：11月至次年1月季节展望：泰国北部转凉、降雨减少，南部尤其东岸仍多雨",
+          "read_scope": "官方PDF第1页季节正文及渲染；未逐张核验后续地图",
+          "read_at": "2026-11-14",
+          "published_at": "2026-10-21"
         }
       ]
     }

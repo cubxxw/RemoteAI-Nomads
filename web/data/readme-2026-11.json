@@ -1,13 +1,13 @@
 {
   "version": 1,
   "month": "2026-11",
-  "updated_at": "2026-11-01",
+  "updated_at": "2026-11-14",
   "city_notes": [
     {
       "slug": "chiang-mai",
       "reasons": [
         {
-          "text": "{temperature}，泰北进入少雨时段",
+          "text": "{temperature}，泰北转凉仍查短期雨",
           "facts": [
             {
               "kind": "climate"

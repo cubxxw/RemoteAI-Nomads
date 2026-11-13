@@ -20,11 +20,11 @@
         },
         {
           "path": "content/editorial-50/season-compare.json",
-          "sha256": "6f0d475f4751edf8ad68dc757b05edf9c96b095ea71e6974ffae05f33106eb5b"
+          "sha256": "23363d2cf9c409010df74b5031777b7f8fb5c572202bb25e7af0930853f80982"
         },
         {
           "path": "content/editorial-50/permission-tools.json",
-          "sha256": "e959e174c2d4db9cee6b0ccfceba2f4404c3345238a8b2e2d7c6c42c23132ee9"
+          "sha256": "f9431b5e0899e658e406555a5aa5d3a86c780973d11c6b0451c78cc1d3b52a96"
         }
       ]
     },
@@ -134,9 +134,15 @@
       "approved": true,
       "approvedOn": "2026-11-02",
       "authority": "User requested comprehensive November updates, article writing and direct implementation. Parent reviewed refreshed sources and retained historical dates and budget boundaries; independent final reviews are recorded separately."
+    },
+    "midmonthRefresh": {
+      "approved": true,
+      "approvedOn": "2026-11-14",
+      "authority": "User requested comprehensive README and website updates and sequential execution. Reviewed official policy changes and retained historical source dates; website build and release gates are recorded separately.",
+      "reviewRecord": "research/2026-11-14-midmonth-refresh.md"
     }
   },
-  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028+blog150-batch6-20261028+november-refresh-20261102",
+  "sourceEdition": "titles-20261020+topics-20261022+series50-20261023+five-articles-20261026+continuous-batch1-20261027+continuous-batch2-20261027+continuous-batch3-20261027+continuous-batch4-20261027+continuous-batch5-20261027+final-prose-20261027+call-hours-20261027+seo-review-20261027+copy-review-20261027+blog150-pilot-20261028+blog150-batch1-20261028+blog150-batch2-20261028+blog150-batch3-20261028+blog150-batch4-20261028+blog150-batch5-20261028+blog150-batch6-20261028+november-refresh-20261102+midmonth-refresh-20261114",
   "articles": [
     {
       "slug": "chiang-mai-monthly-budget",
@@ -467,10 +473,10 @@
     {
       "slug": "hanoi-da-nang-november-workday",
       "sourceFile": "hanoi-da-nang-november-workday.html",
-      "sha256": "2b9d14769c9f7329f2aa020ca09cd7bb228f6c1387a8640a8b6214b589cb432a",
+      "sha256": "86bb23c7d810a2404772f586b56c6b12d1ee00b82f4a7b42b38438ef2394fc71",
       "source": "web/content/editorial-50/season-compare.json (article 42)",
       "approved": true,
-      "approvedOn": "2026-11-02"
+      "approvedOn": "2026-11-14"
     },
     {
       "slug": "penang-kuala-lumpur-one-working-day",
@@ -510,9 +516,10 @@
     {
       "slug": "de-rantau-employee-freelancer-documents",
       "sourceFile": "de-rantau-employee-freelancer-documents.html",
-      "sha256": "8a57880ac554c0144dd30cf13763897cb5b8834ade131686017aeb52a9b69d11",
+      "sha256": "e96e8447b0d7ba73b045d55491c79bde387ab76b6550f9627fd53d6296f3400e",
       "source": "web/content/editorial-50/permission-tools.json (article 33)",
-      "approved": true
+      "approved": true,
+      "approvedOn": "2026-11-14"
     },
     {
       "slug": "visa-validity-and-stay",
@@ -741,9 +748,10 @@
     {
       "slug": "de-rantau-sabah-scope",
       "sourceFile": "de-rantau-sabah-scope.html",
-      "sha256": "865059f0c4833a63b1989b913b9e6d28b1f09845eac85e0b84a0b0e189bc0c80",
+      "sha256": "6b7e7179471b597de06f5ae2bba6546a11193049192778dac5cda0cbb995816d",
       "source": "research/2026-10-27-articles-batch4.md",
-      "approved": true
+      "approved": true,
+      "approvedOn": "2026-11-14"
     },
     {
       "slug": "auckland-wellington-beijing-workday",
