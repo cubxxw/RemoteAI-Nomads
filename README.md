@@ -13,7 +13,7 @@
 <table tabindex="0" aria-label="2026年11月十城推荐，可横向滚动">
 <thead><tr><th scope="col" nowrap>城市</th><th scope="col" nowrap>历史月参考 / USD</th><th scope="col" nowrap>11月舒适度</th><th scope="col" nowrap>大陆护照</th><th scope="col" nowrap>为什么这个月去</th></tr></thead>
 <tbody>
-<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> 🇹🇭</td><td nowrap align="right">≈$850</td><td nowrap align="right">9.9 / 10</td><td nowrap>免签</td><td nowrap>25°C，泰北进入少雨时段</td></tr>
+<tr><td nowrap>1. <a href="https://roamorrow.com/nomads/cities/chiang-mai/">清迈</a> 🇹🇭</td><td nowrap align="right">≈$850</td><td nowrap align="right">9.9 / 10</td><td nowrap>免签</td><td nowrap>25°C，泰北转凉仍查短期雨</td></tr>
 <tr><td nowrap>2. <a href="https://roamorrow.com/nomads/cities/bangalore/">班加罗尔</a> 🇮🇳</td><td nowrap align="right">≈$530</td><td nowrap align="right">10.0 / 10</td><td nowrap>需签证</td><td nowrap>22°C，月参考$530</td></tr>
 <tr><td nowrap>3. <a href="https://roamorrow.com/nomads/cities/baguio/">碧瑶</a> 🇵🇭</td><td nowrap align="right">≈$680</td><td nowrap align="right">8.2 / 10</td><td nowrap>免签</td><td nowrap>19°C，14日免签通道不可延期</td></tr>
 <tr><td nowrap>4. <a href="https://roamorrow.com/nomads/cities/kathmandu/">加德满都</a> 🇳🇵</td><td nowrap align="right">≈$450</td><td nowrap align="right">9.2 / 10</td><td nowrap>落地签</td><td nowrap>16°C，落地旅游签禁止就业</td></tr>
@@ -74,6 +74,8 @@
 [目的地笔记与工作条件](guides/destination-notes.md) · [两城比较与询问模板](guides/choose-a-base.md) · [第一周试住清单](guides/first-week-checklist.md)
 
 十一月专题：[清迈、河内、大理与海边备选](https://roamorrow.com/nomads/guides/november-nomad-destinations/) · [河内还是岘港](https://roamorrow.com/nomads/guides/hanoi-da-nang-november-workday/)。[本轮数据与来源](research/2026-11-02-refresh.md)。
+
+11月中旬出发前：[DE Rantau申请暂停与12月门槛、越南试点草案](guides/entry-and-work.md#十一月中旬先核这两项) · [住房、工位与营业季复核](guides/seasonal-2026-11.md#11月14日中旬复核)。
 
 
 ## 想改进它，或自己运行

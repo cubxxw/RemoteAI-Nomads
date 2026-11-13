@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-14",
   "recommendations_are": "带条件的编辑建议，不是现场验证或全球排名",
   "destinations": [
     {
@@ -9,7 +9,7 @@
       "country": "泰国",
       "timezone": "Asia/Bangkok",
       "recommendation_for": "2026-10_to_2026-12",
-      "seasonal_choice": "11–12月候选；十一月区域预测少雨但偏热，街区预警出发前另查",
+      "seasonal_choice": "11–12月候选；11月至次年1月官方展望北部转凉少雨，仍须查短期预报",
       "areas_to_compare": "Nimman / Santitham / Old City",
       "good_fit": "咖啡馆与持续停留的工作同伴",
       "caveats": "10月14日核读的洪水材料仅作历史风险提示，当前影响需出发前复核；航线噪音、年初空气污染、旺季工位；大陆普通护照短访免签单次最多30日、每180日累计90日，工作手续另核",
@@ -19,7 +19,10 @@
         "O01",
         "O16",
         "N1101-TH-CLIMATE",
-        "N1101-TH-ENTRY"
+        "N1101-TH-ENTRY",
+        "N1114-TH-SEASON",
+        "N1114-TH-WEEK",
+        "N1114-BAANNOI"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -32,6 +35,16 @@
           "source_date": "2026-09-02",
           "source_date_kind": "published_on",
           "scope": "老城酒店房间，原价14/晚；非现价",
+          "not_a_city_average": true
+        },
+        {
+          "amount": 15000,
+          "currency": "THB",
+          "period": "月",
+          "source_id": "N1114-BAANNOI",
+          "source_date": "2026-11-14",
+          "source_date_kind": "checked_on",
+          "scope": "Baannoi标准房11–2月旺季月租，页面适合1–2人；水200泰铢/人/月、电8泰铢/度、清洁洗衣早餐另计，押金一月房租，指定日期需询价",
           "not_a_city_average": true
         }
       ]
@@ -50,7 +63,9 @@
         "X-2101566345322078215",
         "T-DSwurnVFCpb",
         "N1101-TH-CLIMATE",
-        "N1101-TH-ENTRY"
+        "N1101-TH-ENTRY",
+        "N1114-TH-SEASON",
+        "N1114-TH-WEEK"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -76,12 +91,15 @@
       "seasonal_choice": "11月1日至次年4月30日KoHub营业",
       "areas_to_compare": "Long Beach / KoHub步行范围",
       "good_fit": "海滩与现成工位",
-      "caveats": "10月关闭、摩托依赖、每日通话间3h限制",
+      "caveats": "10月关闭、摩托依赖、每日通话间3h限制；11月14日首页显示开放，不代表指定工位或通话间有余位；南部短期强降雨与船班另核",
       "source_ids": [
         "O05",
         "O06",
         "R-1qg6doj",
-        "N1102-KOHUB"
+        "N1102-KOHUB",
+        "N1114-KOHUB",
+        "N1114-TH-SEASON",
+        "N1114-TH-WEEK"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -107,11 +125,12 @@
       "seasonal_choice": "10–11月季节候选",
       "areas_to_compare": "Tây Hồ / Trúc Bạch",
       "good_fit": "凉爽秋季与城市生活",
-      "caveats": "噪音、空气、房内线路、月租待核",
+      "caveats": "噪音、空气、房内线路、月租待核；11月7日官方介绍的远程工作试点仍属草案，不能据此申请或认定获准工作",
       "source_ids": [
         "O04",
         "O15",
-        "Q01"
+        "Q01",
+        "N1114-VN-DRAFT"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -137,12 +156,15 @@
       "seasonal_choice": "按10月14日材料，10月降级；后续优先比较春季，出发前复核天气",
       "areas_to_compare": "Mỹ An / An Thượng / 河边住宅",
       "good_fit": "海滩与开发者咖啡馆",
-      "caveats": "10月14日核读的积水/滑坡报道仅作历史风险提示，当前影响需出发前复核；施工、霉味、短租质量",
+      "caveats": "10月14日核读的积水/滑坡报道仅作历史风险提示，当前影响需出发前复核；施工、霉味、短租质量；11月7日官方介绍的远程工作试点仍属草案，不能据此申请或认定获准工作",
       "source_ids": [
         "R-1kic8aj",
         "X-2017205056857395496",
         "O02",
-        "O03"
+        "O03",
+        "N1114-VN-DRAFT",
+        "N1114-ENOSTA",
+        "N1114-GREEN"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -156,6 +178,26 @@
           "source_date_kind": "published_on",
           "scope": "My An37层基础一居室旧短租",
           "not_a_city_average": true
+        },
+        {
+          "amount": 2300000,
+          "currency": "VND",
+          "period": "月",
+          "source_id": "N1114-ENOSTA",
+          "source_date": "2026-11-14",
+          "source_date_kind": "checked_on",
+          "scope": "Enosta共享工位月票起价，不含住宿；适用门店、税费与电话间另核，非24小时承诺",
+          "not_a_city_average": true
+        },
+        {
+          "amount": 15000000,
+          "currency": "VND",
+          "period": "月",
+          "source_id": "N1114-GREEN",
+          "source_date": "2026-11-14",
+          "source_date_kind": "checked_on",
+          "scope": "Green Residence Villa单卧公寓最多2人，一月起租约1500万越南盾/月起；网络和周清洁含，水电另付；一月押金另备，最终价依日期",
+          "not_a_city_average": true
         }
       ]
     },
@@ -168,10 +210,11 @@
       "seasonal_choice": "9–1月湿，2–8月较晴热",
       "areas_to_compare": "古城/田野，通勤单独核",
       "good_fit": "散步与慢生活",
-      "caveats": "雨季洪水、稳定会议未核",
+      "caveats": "雨季洪水、稳定会议未核；11月7日官方介绍的远程工作试点仍属草案，不能据此申请或认定获准工作",
       "source_ids": [
         "O04",
-        "R-1q31zyd"
+        "R-1q31zyd",
+        "N1114-VN-DRAFT"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -186,9 +229,11 @@
       "seasonal_choice": "全年工作便利候选，热湿有雨",
       "areas_to_compare": "轨道站 / Bangsar / TTDI",
       "good_fit": "英语与同一时区",
-      "caveats": "不能把两人餐费账本当单人总预算",
+      "caveats": "不能把两人餐费账本当单人总预算；DE Rantau新申请11月暂停、计划12月1日恢复，科技类届时年收入门槛升至3.6万美元；免签与工作许可分别判断",
       "source_ids": [
-        "X-2102054171465981996"
+        "X-2102054171465981996",
+        "N1114-MY-TRANSITION",
+        "N1114-MY-FRAMEWORK"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",
@@ -214,10 +259,12 @@
       "seasonal_choice": "全年热湿，按天气安排",
       "areas_to_compare": "George Town",
       "good_fit": "美食、老城与固定工位",
-      "caveats": "海滩期待、月房租待核",
+      "caveats": "海滩期待、月房租待核；DE Rantau新申请11月暂停、计划12月1日恢复，科技类届时年收入门槛升至3.6万美元；免签与工作许可分别判断",
       "source_ids": [
         "O07",
-        "R-1dt0y7a"
+        "R-1dt0y7a",
+        "N1114-MY-TRANSITION",
+        "N1114-MY-FRAMEWORK"
       ],
       "monthly_total_budget": null,
       "budget_gap": "尚无同人数/房型/租期/季节的完整可比月预算",

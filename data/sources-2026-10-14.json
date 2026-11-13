@@ -1908,6 +1908,111 @@
       "read_scope": "opened_operator_homepage_body",
       "editorial_summary": "运营方首页显示We are open，每年11月1日至4月30日营业；此为商家公告，工位空位、当日接待及网速未实测。",
       "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-MY-TRANSITION",
+      "platform": "Official",
+      "url": "https://www.mdec.my/expats-announcements/enhanced-de-rantau-nomad-pass-framework-and-temporary-closure-of-new-application-submissions",
+      "published_at": "2026-10-29",
+      "retrieved_on": "2026-11-14",
+      "author": "MDEC",
+      "read_scope": "官方公告正文；新申请与符合条件的首次续签分别读取",
+      "editorial_summary": "11月1至30日暂停DE Rantau新申请，计划12月1日恢复；符合条件的首次续签继续处理。未将该通知外推到砂拉越独立项目。",
+      "use": "used_with_limits",
+      "review_after": "2026-12-01",
+      "review_reason": "新申请计划恢复及增强框架生效日，须读回官方平台确认"
+    },
+    {
+      "id": "N1114-MY-FRAMEWORK",
+      "platform": "Official",
+      "url": "https://www.mdec.my/api/media/file/Enhanced-DERantau-Pass%20Framework-FAQ-v1_%20NM.pdf",
+      "published_at": null,
+      "retrieved_on": "2026-11-14",
+      "author": "MDEC",
+      "read_scope": "PDF正文Q1–27；第1、3、5页另做渲染核对，非全文件视觉核验",
+      "editorial_summary": "12月1日起科技类新申请及续签年收入门槛由2.4万升至3.6万美元，非科技类仍6万美元；合资格持有人经逐次批准最多合计4年。过渡期首次续签限制见Q23。",
+      "use": "used_with_limits",
+      "review_after": "2026-12-01",
+      "review_reason": "新申请计划恢复及增强框架生效日，须读回官方平台确认"
+    },
+    {
+      "id": "N1114-VN-DRAFT",
+      "platform": "Official",
+      "url": "https://baochinhphu.vn/chinh-phu-trinh-quoc-hoi-co-che-chinh-sach-dac-thu-ve-phat-trien-du-lich-viet-nam-102261107090821648.htm",
+      "published_at": "2026-11-07",
+      "retrieved_on": "2026-11-14",
+      "author": "越南政府电子报",
+      "read_scope": "越文政府报道正文；草案阶段及第11条远程工作试点提案",
+      "editorial_summary": "政府向国会介绍旅游特殊政策草案，包括受控远程工作试点；不证明已经立法生效或开放申请，未发布可直接申请的门槛、费用或办理通道。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-TH-SEASON",
+      "platform": "Official",
+      "url": "https://www.tmd.go.th/media/climate/3-months/newsndj_2026_english.pdf",
+      "published_at": "2026-10-21",
+      "retrieved_on": "2026-11-14",
+      "author": "泰国气象局",
+      "read_scope": "官方PDF第1页季节正文及渲染；未逐张核验后续地图",
+      "editorial_summary": "11月至次年1月季节展望：泰国北部转凉、降雨减少，南部尤其东岸仍多雨；不是街区预报。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-TH-WEEK",
+      "platform": "Official",
+      "url": "https://www.tmd.go.th/en/forecast/sevenday",
+      "published_at": "2026-11-13",
+      "retrieved_on": "2026-11-14",
+      "author": "泰国气象局",
+      "read_scope": "官方网页13–19 November 2026预报、Caution及地区段落",
+      "editorial_summary": "预报窗口11月13至19日：泰北17至18日仍可能雷雨；南部18至19日降雨增强并有洪水、滑坡提醒。不得在窗口后沿用为当前预警。",
+      "use": "used_with_limits",
+      "review_after": "2026-11-20",
+      "review_reason": "七日预报已超窗口时只作历史材料，重新读取最新一期"
+    },
+    {
+      "id": "N1114-BAANNOI",
+      "platform": "Official",
+      "url": "https://www.baannoinornmuan.com/en/monthly-stay/",
+      "published_at": null,
+      "retrieved_on": "2026-11-14",
+      "author": "Baannoi Nornmuan",
+      "read_scope": "运营方月租正文及包含项；未查询日期库存、未入住或测速",
+      "editorial_summary": "11至2月标准房15000泰铢/月、较大房18000泰铢/月；水费每人每月200泰铢、电费每度8泰铢，清洁洗衣早餐另计，押金一月房租。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-ENOSTA",
+      "platform": "Official",
+      "url": "https://enostaspace.com/co-working/",
+      "published_at": null,
+      "retrieved_on": "2026-11-14",
+      "author": "Enosta Space",
+      "read_scope": "运营方Co-working报价与营业时间正文；未预约、未测速",
+      "editorial_summary": "日票110000越南盾起、月票2300000越南盾起；周一至五8:00–18:30、周六8:00–17:00。适用门店、税费及通话间另核。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-GREEN",
+      "platform": "Official",
+      "url": "https://greenresidence.vn/villa/",
+      "published_at": null,
+      "retrieved_on": "2026-11-14",
+      "author": "Green Residence",
+      "read_scope": "运营方Villa月住正文、人数与费用范围；未查询日期库存",
+      "editorial_summary": "单卧公寓最多2人，一月起租约1500万越南盾/月起；网络与周清洁含，水电另付；入住付首月租金加一月押金，最终价依日期。",
+      "use": "used_with_limits"
+    },
+    {
+      "id": "N1114-KOHUB",
+      "platform": "Official",
+      "url": "https://kohub.org/",
+      "published_at": null,
+      "retrieved_on": "2026-11-14",
+      "author": "KoHub",
+      "read_scope": "运营方首页状态与设施正文；未读取价格页、未实测",
+      "editorial_summary": "首页显示开放，营业季每年11月1日至次年4月30日；列有通话间与全天开放，现场可用性和预约另核，不刷新旧工位价格日期。",
+      "use": "used_with_limits"
     }
   ]
 }

@@ -35,13 +35,18 @@ test('workspace conditions retain their direct operator and first-hand evidence 
 test('new observations show their own month while unrevisited cities retain October dates',()=>{
  for(const city of currentEdition.cities){
   const body=seasonalCityNote(city.slug);
-  assert.match(body,/2026年11月 · 旅居观察/);assert.match(body,/2026-11-01/);
+  assert.match(body,/2026年11月 · 旅居观察/);
+  assert.ok(body.includes('核对 '+city.checked_at));
   assert.ok(body.includes(cityText(city.summary)));
   assert.ok(body.includes('guides/seasonal-2026-11.md#'+city.slug));
   assert.equal(seasonalProfile(city.slug),city);
  }
  assert.match(seasonalCityNote('munich'),/2026年10月/);
  assert.match(seasonalCityNote('munich'),/2026-10-18/);
+ const chiangMai=currentEdition.cities.find(city=>city.slug==='chiang-mai');
+ assert.equal(chiangMai.checked_at,'2026-11-14');
+ assert.equal(chiangMai.sources.find(source=>source.url.includes('t20260902_12014754')).read_at,'2026-11-01');
+ assert.equal(chiangMai.sources.find(source=>source.url.includes('newsndj_2026_english.pdf')).read_at,'2026-11-14');
 });
 
 test('a new policy or weather observation preserves the older operator and social evidence with its original date',()=>{
