@@ -3048,14 +3048,14 @@
     "license": "ODbL-1.0"
   },
   "shenzhen": {
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-11-15",
     "radiusM": 5000,
     "lat": 22.54554,
     "lon": 114.0683,
     "endpoint": "https://overpass-api.de/api/interpreter",
-    "osmBase": "2026-10-19T01:45:21Z",
+    "osmBase": "2026-11-15T09:11:41Z",
     "coworking": 0,
-    "cafes": 170,
+    "cafes": 171,
     "source": "OpenStreetMap / Overpass",
     "license": "ODbL-1.0"
   },

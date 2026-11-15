@@ -8,7 +8,7 @@ import {query} from '../src/query.js';
 
 const seed = JSON.parse(gunzipSync(await readFile(new URL('../../web/data/public-catalog.json.gz', import.meta.url))));
 const snapshot = createSnapshot(seed);
-const run = (name, args = {}) => query(snapshot, 'nomads_' + name, args, {now: new Date('2026-11-02T00:00:00Z')});
+const run = (name, args = {}) => query(snapshot, 'nomads_' + name, args, {now: new Date('2026-11-15T00:00:00Z')});
 
 test('the public projection is stable, field-limited and carries honest provenance', () => {
   assert.equal(snapshot.cities.length, 350);
@@ -72,7 +72,7 @@ test('city and national costs remain separate, with original units and dated FX'
   for (const o of result.data.observations) {
     assert.ok(o.unit && o.period && o.source_id && o.observed_at);
     if (o.conversion && o.currency !== 'CNY') {
-      assert.equal(o.conversion.date, '2026-10-30');
+      assert.equal(o.conversion.date, '2026-11-13');
       assert.equal(o.conversion.stale, false);
     }
   }
@@ -82,9 +82,9 @@ test('city and national costs remain separate, with original units and dated FX'
 });
 
 test('dated FX becomes stale after its reference window', () => {
-  const result = query(snapshot, 'nomads_get_costs', {place:'东京',currency:'CNY'}, {now:new Date('2026-11-15T00:00:00Z')});
+  const result = query(snapshot, 'nomads_get_costs', {place:'东京',currency:'CNY'}, {now:new Date('2026-11-21T00:00:00Z')});
   const converted = result.data.observations.filter(o=>o.conversion && o.currency!=='CNY');
-  assert.ok(converted.length);assert.ok(converted.every(o=>o.conversion.date==='2026-10-30' && o.conversion.stale));
+  assert.ok(converted.length);assert.ok(converted.every(o=>o.conversion.date==='2026-11-13' && o.conversion.stale));
 });
 
 test('entry applicability never assumes CN and unsupported passports retain the actual gap', () => {
