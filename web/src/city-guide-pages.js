@@ -1,12 +1,12 @@
 import {shareMarkup} from './share-markup.js';
 import {articleBySlug} from './article-catalog.js';
-import {articleCover} from './guide-covers.js';
+import {articleCover, guideCityName} from './guide-covers.js';
 import {esc} from './render.js';
 import {relocatePublishedHTML, siteLocation} from './site-path.js';
 import {sitePath} from '../public/modules/site-path.js';
 
 // Approved article HTML and its publication fingerprints stay untouched. The
-// renderer may only add, at runtime: a same-origin alignment stylesheet and —
+// renderer adds sharing, city navigation, a same-origin stylesheet and —
 // for standalone budget guides whose first screen has no photo — the reviewed
 // public photo of the article's own city with its original attribution.
 export function augmentGuideRuntime(body, article, env) {
@@ -27,6 +27,10 @@ export function augmentGuideRuntime(body, article, env) {
       if (body.includes('<section class="answer-hero"')) body = body.replace('<section class="answer-hero"', () => figure + '<section class="answer-hero"');
       else body = body.replace(/(<main\b[^>]*>)/, match => match + figure);
     }
+  }
+  if (article.citySlugs?.length) {
+    const links = article.citySlugs.map(slug => `<a href="${sitePath('/cities/' + esc(slug) + '/', base)}">${esc(guideCityName(slug))}</a>`).join('');
+    body = body.replace(/<\/main>/i, () => `<nav class="guide-runtime-cities" aria-label="本文城市资料"><span>查看城市资料</span>${links}</nav></main>`);
   }
   return body;
 }

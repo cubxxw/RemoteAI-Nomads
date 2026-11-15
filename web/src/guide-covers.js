@@ -197,6 +197,12 @@ const CITY_COVERS = Object.freeze(
 }
 );
 
+// Navigation also covers the three Japanese cities named by published guides
+// that currently use an editorial cover rather than a city photograph.
+export function guideCityName(slug) {
+  return CITY_COVERS[slug]?.name_zh || {tokyo:'东京',osaka:'大阪',fukuoka:'福冈'}[slug] || slug;
+}
+
 // Articles with no named city get a scene by their exact editorial subject,
 // then a deterministic category scene, with descriptive illustration alt text.
 const SCENE_BY_SLUG = Object.freeze({

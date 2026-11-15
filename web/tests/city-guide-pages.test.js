@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../src/worker.js';
-import {cityGuideResponse} from '../src/city-guide-pages.js';
+import {augmentGuideRuntime, cityGuideResponse} from '../src/city-guide-pages.js';
 const html='<!doctype html><html lang="zh-CN"><head><meta name="robots" content="index,follow"><link rel="canonical" href="https://roamorrow.com/nomads/guides/chiang-mai-monthly-budget/"><link rel="stylesheet" href="/nomads/guide-assets/guide.css"></head><main><h1>清迈旅居一个月要花多少钱</h1></main></html>';
 const env={SITE_ORIGIN:'https://roamorrow.com/nomads',PREVIEW:'false',DB:{prepare(){throw Error('Guide must not query D1');}},ASSETS:{async fetch(r){assert.equal(new URL(r.url).pathname,'/city-guides/chiang-mai-monthly-budget.html');return new Response(html,{headers:{'Content-Type':'text/html','X-Robots-Tag':'noindex'}});}}};
 test('published city guide is indexable and can load without D1',async()=>{
@@ -27,6 +27,28 @@ import {fileURLToPath} from 'node:url';
 import {publishedArticles} from '../src/article-catalog.js';
 const SOURCES=resolve(dirname(fileURLToPath(import.meta.url)),'../content/city-guides');
 const topicSlugs=['november-nomad-destinations','monthly-budget-5000','beijing-time-remote-work','chinese-passport-long-stay'];
+test('published articles link back to every associated city without D1 at either site mount',async()=>{
+ const cases={
+  'de-rantau-employee-freelancer-documents':[['penang','槟城'],['kuala-lumpur','吉隆坡']],
+  'de-rantau-sabah-scope':[['kota-kinabalu','亚庇'],['kuala-lumpur','吉隆坡']],
+  'hanoi-da-nang-november-workday':[['hanoi','河内'],['da-nang','岘港']],
+ };
+ for(const base of ['/nomads','']) for(const [slug,cities] of Object.entries(cases)){
+  const article=publishedArticles().find(a=>a.slug===slug);
+  const r=await cityGuideResponse(new Request('https://roamorrow.com/guides/'+slug+'/'),{
+   SITE_ORIGIN:'https://roamorrow.com'+base,PREVIEW:'false',
+   DB:{prepare(){throw Error('Article navigation must not query D1');}},
+   ASSETS:{async fetch(){return new Response(topicHTML(slug));}},
+  });
+  const body=await r.text();
+  const nav=body.match(/<nav\b[^>]*aria-label="本文城市资料"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
+  assert.ok(nav,'city navigation for '+article.slug);
+  for(const [city,name] of cities) assert.ok(nav.includes('href="'+base+'/cities/'+city+'/">'+name+'</a>'),city+' city link');
+  assert.equal((nav.match(/<a\b/g)||[]).length,cities.length);
+ }
+ const noCities=augmentGuideRuntime(topicHTML('general'),{kind:'guide',topic:true,title:'通用指南',summary:'摘要',citySlugs:[]},env);
+ assert.doesNotMatch(noCities,/aria-label="本文城市资料"/);
+});
 test('all fifty series routes load the real approved HTML independently of D1',async()=>{
  const articles=publishedArticles().filter(a=>a.seriesNumber);
  assert.equal(articles.length,50);
