@@ -31,6 +31,24 @@
   text-underline-offset: 3px;
 }
 
+.guide-runtime-cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 20px;
+  margin: 32px 0 16px;
+  padding-top: 20px;
+  border-top: 1px solid #d9e1db;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.guide-runtime-cities span { color: #626767; }
+.guide-runtime-cities a {
+  color: #174c38;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 700px) {
   .guide-runtime-cover img {
     max-height: 240px;
