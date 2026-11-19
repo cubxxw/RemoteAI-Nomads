@@ -48,6 +48,8 @@ DTV 的官方财务证据基准是至少 **THB500,000**，并需符合所选活�
 
 11月过渡期继续受理的首次续签有条件：初次12个月准证须在2027年1月31日或之前到期，并按规定时间提交完整材料。第二、三次续签从12月1日起开放。此处不把半岛项目通知套给砂拉越独立版本，也不据新续签政策推定沙巴地域范围改变。[MDEC公告](https://www.mdec.my/expats-announcements/enhanced-de-rantau-nomad-pass-framework-and-temporary-closure-of-new-application-submissions) · [增强框架FAQ，Q4、Q15–17、Q23](https://www.mdec.my/api/media/file/Enhanced-DERantau-Pass%20Framework-FAQ-v1_%20NM.pdf)。实际核读2026-11-14，12月1日须再确认平台恢复状态。
 
+**11月19日补核三点**（增强框架FAQ与MDEC公开说明，核读2026-11-19）：一、国籍限制很少，公开规则明确排除的只有以色列公民，中国大陆护照不在排除之列、可以申请——这与只认免签国籍的日本、台湾DNV不同，是大陆护照可实际使用的长住通道。二、收入须全部来自马来西亚境外（境外雇主或境外客户，不得接本地客户），并须持有覆盖马来西亚的医疗保险。三、第二次续签（第三年）须额外提交Renewal Eligibility Report，按MDEC规定格式说明此前在马的专业活动、收入来源与税务合规情况并附证明材料，模板由MDEC在Mandatory Documents中发布。
+
 **越南远程工作试点仍处草案阶段。** 2026-11-07政府向国会介绍旅游特殊政策草案，第11条提及受控远程工作试点。这篇报道不证明签证已经推出，没有给出可直接申请的收入门槛、费用、停留期限或办理入口。不能按报道中的拟议生效期提前安排长期工作；现行电子签和实际工作资格仍分别确认。[越南政府原文](https://baochinhphu.vn/chinh-phu-trinh-quoc-hoi-co-che-chinh-sach-dac-thu-ve-phat-trien-du-lich-viet-nam-102261107090821648.htm)，实际核读2026-11-14。
 
 没有核到完整适用条件时，先看官方入口，再按实际申请领区确认。这里不提供未经核验的停留天数或收入门槛。
